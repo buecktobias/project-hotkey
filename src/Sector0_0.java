@@ -12,8 +12,8 @@ public class Sector0_0 extends World {
      * Constructor for objects of class Level1.
      */
     public Sector0_0() {
-        super(1280, 720, 1);  //Konstruktor der super Klasse aufrufen mit den Parametern worldWidth, worldHeight, cellSize
-        setBackground("background.png"); //Felder auf den Hintergrund malen
+        super(992, 726, 1);  //Konstruktor der super Klasse aufrufen mit den Parametern worldWidth, worldHeight, cellSize
+        setBackground("title_background.png"); //Felder auf den Hintergrund malen
         setPaintOrder(Player.class);  //Player is painted last
 
         Player player = new Player();
