@@ -16,7 +16,18 @@ public abstract class MovingActor extends General {
 
 
 
-
+    public void moveUp(){
+        setLocation(getX(),getY()-1);
+    }
+    public void moveRight(){
+        setLocation(getX() + 1,getY());
+    }
+    public void moveLeft(){
+        setLocation(getX() - 1,getY());
+    }
+    public void moveDown(){
+        setLocation(getX(),getY()+1);
+    }
     /**
      * Determines if the spot in front of the Actor is blocked, or the Actor should be able to move.
      *

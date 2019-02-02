@@ -3,21 +3,20 @@ import greenfoot.Greenfoot;
 
 public class Player extends MovingActor {
 
+
     private void performMovement() {
         if(Greenfoot.isKeyDown("W")) {
-            setLocation(getX(), getY()-1);
+            moveUp();
         }
         if(Greenfoot.isKeyDown("A")) {
-            setLocation(getX()-1, getY());
+            moveLeft();
         }
         if(Greenfoot.isKeyDown("S")) {
-            setLocation(getX(), getY()+1);
+            moveDown();
         }
         if(Greenfoot.isKeyDown("D")) {
-            setLocation(getX()+1, getY());
+            moveRight();
         }
-
-
     }
 
 
