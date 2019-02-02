@@ -9,7 +9,7 @@ import java.util.List;
  * MovingActor provides basic methods for movement control, as well as text based methods.
  * @author SAE
  */
-public abstract class MovingActor extends Environment {
+public abstract class MovingActor extends General {
 
 
     private DummyActor dummyActor = new DummyActor();
