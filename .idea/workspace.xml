@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b052e2bc-c100-4699-b9d4-b65ca5c8f191" name="Default Changelist" comment="project base">
-      <change afterPath="$PROJECT_DIR$/src/InventoryDisplayAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b052e2bc-c100-4699-b9d4-b65ca5c8f191" name="Default Changelist" comment="Added Class InventoryDisplayAdapter">
+      <change beforePath="$PROJECT_DIR$/src/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NPC.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,22 +15,27 @@
     <session id="-542593320">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="1" />
+          <entry key="JAVA/" value="2" />
+          <entry key="java" value="2" />
+          <entry key="uml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="1" />
+          <entry key="JAVA" value="2" />
+          <entry key="UML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="14" />
+          <entry key="java" value="34" />
+          <entry key="txt" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="14" />
+          <entry key="JAVA" value="34" />
+          <entry key="PLAIN_TEXT" value="35" />
         </counts>
       </usages-collector>
     </session>
@@ -62,7 +65,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/InventoryDisplayAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="100">
@@ -72,19 +75,226 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/NotMoving.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
+        <entry file="uml://JAVA/">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement />
+              <nodes>
+                <node x="304.7019230769231" y="701.0">NPC</node>
+                <node x="241.7019230769231" y="802.0">Friendly</node>
+                <node x="416.0" y="211.5">Sector0_0</node>
+                <node x="312.3269230769231" y="0.0">greenfoot</node>
+                <node x="535.0" y="211.5">helper</node>
+                <node x="208.7019230769231" y="701.0">Items</node>
+                <node x="285.4519230769231" y="423.0">MovingActor</node>
+                <node x="0.0" y="211.5">InventoryDisplayAdapter</node>
+                <node x="394.7019230769231" y="679.0">Player</node>
+                <node x="135.2019230769231" y="511.5">NotMoving</node>
+                <node x="350.7019230769231" y="802.0">Hostile</node>
+                <node x="199.0" y="79.0">General</node>
+                <node x="74.7019230769231" y="701.0">Environment</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="helper" target="greenfoot">
+                  <point x="0.0" y="-14.5" />
+                  <point x="591.0" y="49.0" />
+                  <point x="427.8269230769231" y="49.0" />
+                  <point x="49.5" y="14.5" />
+                </edge>
+                <edge source="InventoryDisplayAdapter" target="greenfoot">
+                  <point x="0.0" y="-14.5" />
+                  <point x="89.5" y="49.0" />
+                  <point x="328.8269230769231" y="49.0" />
+                  <point x="-49.5" y="14.5" />
+                </edge>
+                <edge source="NPC" target="MovingActor">
+                  <point x="0.0" y="-14.5" />
+                  <point x="339.7019230769231" y="654.0" />
+                  <point x="351.7019230769231" y="654.0" />
+                  <point x="-66.25" y="103.0" />
+                </edge>
+                <edge source="NotMoving" target="General">
+                  <point x="0.0" y="-14.5" />
+                  <point x="189.2019230769231" y="398.0" />
+                  <point x="248.25" y="398.0" />
+                  <point x="-49.25" y="147.0" />
+                </edge>
+                <edge source="Items" target="NotMoving">
+                  <point x="0.0" y="-14.5" />
+                  <point x="246.7019230769231" y="654.0" />
+                  <point x="216.2019230769231" y="654.0" />
+                  <point x="27.0" y="14.5" />
+                </edge>
+                <edge source="MovingActor" target="General">
+                  <point x="0.0" y="-103.0" />
+                  <point x="417.9519230769231" y="398.0" />
+                  <point x="346.75" y="398.0" />
+                  <point x="49.25" y="147.0" />
+                </edge>
+                <edge source="Player" target="MovingActor">
+                  <point x="0.0" y="-36.5" />
+                  <point x="496.2019230769231" y="654.0" />
+                  <point x="484.2019230769231" y="654.0" />
+                  <point x="66.25" y="103.0" />
+                </edge>
+                <edge source="Sector0_0" target="greenfoot">
+                  <point x="0.0" y="-14.5" />
+                  <point x="465.5" y="59.0" />
+                  <point x="394.8269230769231" y="59.0" />
+                  <point x="16.5" y="14.5" />
+                </edge>
+                <edge source="Friendly" target="NPC">
+                  <point x="0.0" y="-14.5" />
+                  <point x="286.2019230769231" y="777.0" />
+                  <point x="322.2019230769231" y="777.0" />
+                  <point x="-17.5" y="14.5" />
+                </edge>
+                <edge source="Environment" target="NotMoving">
+                  <point x="0.0" y="-14.5" />
+                  <point x="131.7019230769231" y="654.0" />
+                  <point x="162.2019230769231" y="654.0" />
+                  <point x="-27.0" y="14.5" />
+                </edge>
+                <edge source="General" target="greenfoot">
+                  <point x="0.0" y="-147.0" />
+                  <point x="297.5" y="59.0" />
+                  <point x="361.8269230769231" y="59.0" />
+                  <point x="-16.5" y="14.5" />
+                </edge>
+                <edge source="Hostile" target="NPC">
+                  <point x="2.8421709430404007E-14" y="-14.5" />
+                  <point x="393.2019230769231" y="777.0" />
+                  <point x="357.2019230769231" y="777.0" />
+                  <point x="17.5" y="14.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="0.8297297297297297" x="-30.82537097357948" y="269.25081433224756" />
+              <SelectedNodes />
+              <Categories>
+                <Category>Methods</Category>
+                <Category>Properties</Category>
+              </Categories>
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/class_diagramm.uml">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement />
+              <nodes>
+                <node x="304.7019230769231" y="701.0">NPC</node>
+                <node x="241.7019230769231" y="802.0">Friendly</node>
+                <node x="416.0" y="211.5">Sector0_0</node>
+                <node x="312.3269230769231" y="0.0">greenfoot</node>
+                <node x="535.0" y="211.5">helper</node>
+                <node x="208.7019230769231" y="701.0">Items</node>
+                <node x="285.4519230769231" y="423.0">MovingActor</node>
+                <node x="0.0" y="211.5">InventoryDisplayAdapter</node>
+                <node x="394.7019230769231" y="679.0">Player</node>
+                <node x="135.2019230769231" y="511.5">NotMoving</node>
+                <node x="350.7019230769231" y="802.0">Hostile</node>
+                <node x="199.0" y="79.0">General</node>
+                <node x="74.7019230769231" y="701.0">Environment</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="helper" target="greenfoot">
+                  <point x="0.0" y="-14.5" />
+                  <point x="591.0" y="49.0" />
+                  <point x="427.8269230769231" y="49.0" />
+                  <point x="49.5" y="14.5" />
+                </edge>
+                <edge source="NPC" target="MovingActor">
+                  <point x="0.0" y="-14.5" />
+                  <point x="339.7019230769231" y="654.0" />
+                  <point x="351.7019230769231" y="654.0" />
+                  <point x="-66.25" y="103.0" />
+                </edge>
+                <edge source="InventoryDisplayAdapter" target="greenfoot">
+                  <point x="0.0" y="-14.5" />
+                  <point x="89.5" y="49.0" />
+                  <point x="328.8269230769231" y="49.0" />
+                  <point x="-49.5" y="14.5" />
+                </edge>
+                <edge source="NotMoving" target="General">
+                  <point x="0.0" y="-14.5" />
+                  <point x="189.2019230769231" y="398.0" />
+                  <point x="248.25" y="398.0" />
+                  <point x="-49.25" y="147.0" />
+                </edge>
+                <edge source="Items" target="NotMoving">
+                  <point x="0.0" y="-14.5" />
+                  <point x="246.7019230769231" y="654.0" />
+                  <point x="216.2019230769231" y="654.0" />
+                  <point x="27.0" y="14.5" />
+                </edge>
+                <edge source="MovingActor" target="General">
+                  <point x="0.0" y="-103.0" />
+                  <point x="417.9519230769231" y="398.0" />
+                  <point x="346.75" y="398.0" />
+                  <point x="49.25" y="147.0" />
+                </edge>
+                <edge source="Player" target="MovingActor">
+                  <point x="0.0" y="-36.5" />
+                  <point x="496.2019230769231" y="654.0" />
+                  <point x="484.2019230769231" y="654.0" />
+                  <point x="66.25" y="103.0" />
+                </edge>
+                <edge source="Sector0_0" target="greenfoot">
+                  <point x="0.0" y="-14.5" />
+                  <point x="465.5" y="59.0" />
+                  <point x="394.8269230769231" y="59.0" />
+                  <point x="16.5" y="14.5" />
+                </edge>
+                <edge source="Friendly" target="NPC">
+                  <point x="0.0" y="-14.5" />
+                  <point x="286.2019230769231" y="777.0" />
+                  <point x="322.2019230769231" y="777.0" />
+                  <point x="-17.5" y="14.5" />
+                </edge>
+                <edge source="Environment" target="NotMoving">
+                  <point x="0.0" y="-14.5" />
+                  <point x="131.7019230769231" y="654.0" />
+                  <point x="162.2019230769231" y="654.0" />
+                  <point x="-27.0" y="14.5" />
+                </edge>
+                <edge source="General" target="greenfoot">
+                  <point x="0.0" y="-147.0" />
+                  <point x="297.5" y="59.0" />
+                  <point x="361.8269230769231" y="59.0" />
+                  <point x="-16.5" y="14.5" />
+                </edge>
+                <edge source="Hostile" target="NPC">
+                  <point x="2.8421709430404007E-14" y="-14.5" />
+                  <point x="393.2019230769231" y="777.0" />
+                  <point x="357.2019230769231" y="777.0" />
+                  <point x="17.5" y="14.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="0.8297297297297297" x="468.0" y="374.0" />
+              <SelectedNodes />
+              <Categories>
+                <Category>Methods</Category>
+                <Category>Properties</Category>
+              </Categories>
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Friendly.java">
+        <entry file="file://$PROJECT_DIR$/src/NPC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state>
+              <caret column="47" lean-forward="true" selection-start-column="47" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -99,21 +309,11 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Items.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="45" selection-start-column="45" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Player.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
               <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="e#725#726#0" expanded="true" />
                 <element signature="e#758#759#0" expanded="true" />
               </folding>
@@ -202,6 +402,7 @@
         <option value="$PROJECT_DIR$/src/Sector0_0.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/InventoryDisplayAdapter.java" />
+        <option value="$PROJECT_DIR$/src/NPC.java" />
       </list>
     </option>
   </component>
@@ -233,17 +434,6 @@
               <item name="project-hotkey" type="b2602c69:ProjectViewProjectNode" />
               <item name="project-hotkey" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="project-hotkey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-hotkey" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project-hotkey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-hotkey" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="helper" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -258,8 +448,8 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="grundbegriffeoop_v6" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549106143013" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../OOP_Inventar_v1" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549109508158" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -449,11 +639,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549058611793</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added Class InventoryDisplayAdapter">
+      <created>1549108607859</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1549108607859</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10075000" />
+    <option name="totallyTimeSpent" value="11034000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -468,7 +665,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30067113" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12281879" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -478,12 +675,12 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.06524823" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.06524823" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49946696" weight="0.32936078" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49946696" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50053304" side_tool="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32936078" />
@@ -542,7 +739,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="project base" />
-    <option name="LAST_COMMIT_MESSAGE" value="project base" />
+    <MESSAGE value="Added Class InventoryDisplayAdapter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Class InventoryDisplayAdapter" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/character/Rabbit.java" />
@@ -598,6 +796,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="34" column="52" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
+          <folding>
+            <element signature="e#495#496#0" expanded="true" />
+            <element signature="e#554#555#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -643,18 +845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2373">
           <caret line="171" column="16" selection-start-line="171" selection-start-column="16" selection-end-line="171" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#725#726#0" expanded="true" />
-            <element signature="e#758#759#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -723,10 +913,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Friendly.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Items.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="45" selection-start-column="45" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+          <folding>
+            <element signature="e#725#726#0" expanded="true" />
+            <element signature="e#758#759#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/NPC.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="27" selection-start-column="27" selection-end-column="27" />
+          <caret column="47" lean-forward="true" selection-start-column="47" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -734,6 +949,218 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="304.7019230769231" y="701.0">NPC</node>
+            <node x="241.7019230769231" y="802.0">Friendly</node>
+            <node x="416.0" y="211.5">Sector0_0</node>
+            <node x="312.3269230769231" y="0.0">greenfoot</node>
+            <node x="535.0" y="211.5">helper</node>
+            <node x="208.7019230769231" y="701.0">Items</node>
+            <node x="285.4519230769231" y="423.0">MovingActor</node>
+            <node x="0.0" y="211.5">InventoryDisplayAdapter</node>
+            <node x="394.7019230769231" y="679.0">Player</node>
+            <node x="135.2019230769231" y="511.5">NotMoving</node>
+            <node x="350.7019230769231" y="802.0">Hostile</node>
+            <node x="199.0" y="79.0">General</node>
+            <node x="74.7019230769231" y="701.0">Environment</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="helper" target="greenfoot">
+              <point x="0.0" y="-14.5" />
+              <point x="591.0" y="49.0" />
+              <point x="427.8269230769231" y="49.0" />
+              <point x="49.5" y="14.5" />
+            </edge>
+            <edge source="InventoryDisplayAdapter" target="greenfoot">
+              <point x="0.0" y="-14.5" />
+              <point x="89.5" y="49.0" />
+              <point x="328.8269230769231" y="49.0" />
+              <point x="-49.5" y="14.5" />
+            </edge>
+            <edge source="NPC" target="MovingActor">
+              <point x="0.0" y="-14.5" />
+              <point x="339.7019230769231" y="654.0" />
+              <point x="351.7019230769231" y="654.0" />
+              <point x="-66.25" y="103.0" />
+            </edge>
+            <edge source="NotMoving" target="General">
+              <point x="0.0" y="-14.5" />
+              <point x="189.2019230769231" y="398.0" />
+              <point x="248.25" y="398.0" />
+              <point x="-49.25" y="147.0" />
+            </edge>
+            <edge source="Items" target="NotMoving">
+              <point x="0.0" y="-14.5" />
+              <point x="246.7019230769231" y="654.0" />
+              <point x="216.2019230769231" y="654.0" />
+              <point x="27.0" y="14.5" />
+            </edge>
+            <edge source="MovingActor" target="General">
+              <point x="0.0" y="-103.0" />
+              <point x="417.9519230769231" y="398.0" />
+              <point x="346.75" y="398.0" />
+              <point x="49.25" y="147.0" />
+            </edge>
+            <edge source="Player" target="MovingActor">
+              <point x="0.0" y="-36.5" />
+              <point x="496.2019230769231" y="654.0" />
+              <point x="484.2019230769231" y="654.0" />
+              <point x="66.25" y="103.0" />
+            </edge>
+            <edge source="Sector0_0" target="greenfoot">
+              <point x="0.0" y="-14.5" />
+              <point x="465.5" y="59.0" />
+              <point x="394.8269230769231" y="59.0" />
+              <point x="16.5" y="14.5" />
+            </edge>
+            <edge source="Friendly" target="NPC">
+              <point x="0.0" y="-14.5" />
+              <point x="286.2019230769231" y="777.0" />
+              <point x="322.2019230769231" y="777.0" />
+              <point x="-17.5" y="14.5" />
+            </edge>
+            <edge source="Environment" target="NotMoving">
+              <point x="0.0" y="-14.5" />
+              <point x="131.7019230769231" y="654.0" />
+              <point x="162.2019230769231" y="654.0" />
+              <point x="-27.0" y="14.5" />
+            </edge>
+            <edge source="General" target="greenfoot">
+              <point x="0.0" y="-147.0" />
+              <point x="297.5" y="59.0" />
+              <point x="361.8269230769231" y="59.0" />
+              <point x="-16.5" y="14.5" />
+            </edge>
+            <edge source="Hostile" target="NPC">
+              <point x="2.8421709430404007E-14" y="-14.5" />
+              <point x="393.2019230769231" y="777.0" />
+              <point x="357.2019230769231" y="777.0" />
+              <point x="17.5" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.8297297297297297" x="-30.82537097357948" y="269.25081433224756" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/class_diagramm.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="304.7019230769231" y="701.0">NPC</node>
+            <node x="241.7019230769231" y="802.0">Friendly</node>
+            <node x="416.0" y="211.5">Sector0_0</node>
+            <node x="312.3269230769231" y="0.0">greenfoot</node>
+            <node x="535.0" y="211.5">helper</node>
+            <node x="208.7019230769231" y="701.0">Items</node>
+            <node x="285.4519230769231" y="423.0">MovingActor</node>
+            <node x="0.0" y="211.5">InventoryDisplayAdapter</node>
+            <node x="394.7019230769231" y="679.0">Player</node>
+            <node x="135.2019230769231" y="511.5">NotMoving</node>
+            <node x="350.7019230769231" y="802.0">Hostile</node>
+            <node x="199.0" y="79.0">General</node>
+            <node x="74.7019230769231" y="701.0">Environment</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="helper" target="greenfoot">
+              <point x="0.0" y="-14.5" />
+              <point x="591.0" y="49.0" />
+              <point x="427.8269230769231" y="49.0" />
+              <point x="49.5" y="14.5" />
+            </edge>
+            <edge source="NPC" target="MovingActor">
+              <point x="0.0" y="-14.5" />
+              <point x="339.7019230769231" y="654.0" />
+              <point x="351.7019230769231" y="654.0" />
+              <point x="-66.25" y="103.0" />
+            </edge>
+            <edge source="InventoryDisplayAdapter" target="greenfoot">
+              <point x="0.0" y="-14.5" />
+              <point x="89.5" y="49.0" />
+              <point x="328.8269230769231" y="49.0" />
+              <point x="-49.5" y="14.5" />
+            </edge>
+            <edge source="NotMoving" target="General">
+              <point x="0.0" y="-14.5" />
+              <point x="189.2019230769231" y="398.0" />
+              <point x="248.25" y="398.0" />
+              <point x="-49.25" y="147.0" />
+            </edge>
+            <edge source="Items" target="NotMoving">
+              <point x="0.0" y="-14.5" />
+              <point x="246.7019230769231" y="654.0" />
+              <point x="216.2019230769231" y="654.0" />
+              <point x="27.0" y="14.5" />
+            </edge>
+            <edge source="MovingActor" target="General">
+              <point x="0.0" y="-103.0" />
+              <point x="417.9519230769231" y="398.0" />
+              <point x="346.75" y="398.0" />
+              <point x="49.25" y="147.0" />
+            </edge>
+            <edge source="Player" target="MovingActor">
+              <point x="0.0" y="-36.5" />
+              <point x="496.2019230769231" y="654.0" />
+              <point x="484.2019230769231" y="654.0" />
+              <point x="66.25" y="103.0" />
+            </edge>
+            <edge source="Sector0_0" target="greenfoot">
+              <point x="0.0" y="-14.5" />
+              <point x="465.5" y="59.0" />
+              <point x="394.8269230769231" y="59.0" />
+              <point x="16.5" y="14.5" />
+            </edge>
+            <edge source="Friendly" target="NPC">
+              <point x="0.0" y="-14.5" />
+              <point x="286.2019230769231" y="777.0" />
+              <point x="322.2019230769231" y="777.0" />
+              <point x="-17.5" y="14.5" />
+            </edge>
+            <edge source="Environment" target="NotMoving">
+              <point x="0.0" y="-14.5" />
+              <point x="131.7019230769231" y="654.0" />
+              <point x="162.2019230769231" y="654.0" />
+              <point x="-27.0" y="14.5" />
+            </edge>
+            <edge source="General" target="greenfoot">
+              <point x="0.0" y="-147.0" />
+              <point x="297.5" y="59.0" />
+              <point x="361.8269230769231" y="59.0" />
+              <point x="-16.5" y="14.5" />
+            </edge>
+            <edge source="Hostile" target="NPC">
+              <point x="2.8421709430404007E-14" y="-14.5" />
+              <point x="393.2019230769231" y="777.0" />
+              <point x="357.2019230769231" y="777.0" />
+              <point x="17.5" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.8297297297297297" x="468.0" y="374.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>

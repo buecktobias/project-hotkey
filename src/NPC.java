@@ -1,2 +1,2 @@
-public abstract class NPC {
+public abstract class NPC extends MovingActor {
 }
