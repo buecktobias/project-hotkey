@@ -1,19 +1,11 @@
 import greenfoot.*;
 
 
-/**
- * First level of our game
- *
- * @author SAE
- */
 public class Sector0_0 extends World {
 
-    /**
-     * Constructor for objects of class Level1.
-     */
     public Sector0_0() {
-        super(992, 726, 1);  //Konstruktor der super Klasse aufrufen mit den Parametern worldWidth, worldHeight, cellSize
-        setBackground("title_background.png"); //Felder auf den Hintergrund malen
+        super(1024, 736, 1);  //Konstruktor der super Klasse aufrufen mit den Parametern worldWidth, worldHeight, cellSize
+        setBackground("background_debug.png"); //Felder auf den Hintergrund malen
         setPaintOrder(Player.class);  //Player is painted last
 
         Player player = new Player();

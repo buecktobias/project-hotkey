@@ -1,21 +1,8 @@
 import greenfoot.Greenfoot;
-import helper.Direction;
 
-import java.util.List;
 
-/**
- * The main character called player.
- * @author SAE
- */
 public class Player extends MovingActor {
 
-    //Attribute
-
-
-    //Konstruktoren
-
-
-    //Methoden
     private void performMovement() {
         if(Greenfoot.isKeyDown("W")) {
             setLocation(getX(), getY()-1);
@@ -33,9 +20,7 @@ public class Player extends MovingActor {
 
     }
 
-    /**
-     * Is called once per time unit.
-     */
+
     public void act() {
         performMovement();
     }
