@@ -14,8 +14,25 @@ public abstract class MovingActor extends General {
 
     private DummyActor dummyActor = new DummyActor();
 
-
-
+    public void move(Direction d){
+        moveDirection(d,1);
+    }
+    public void moveDirection(Direction d,int distance){
+        switch(d){
+            case RIGHT:
+                moveRight(distance);
+                break;
+            case LEFT:
+                moveLeft(distance);
+                break;
+            case UP:
+                moveUp(distance);
+                break;
+            case DOWN:
+                moveDown(distance);
+                break;
+        }
+    }
     public void moveUp() {
         setLocation(getX(),getY()-1);
     }
@@ -28,6 +45,7 @@ public abstract class MovingActor extends General {
     public void moveDown() {
         setLocation(getX(),getY()+1);
     }
+
 
     public void moveUp(int distance){
         setLocation(getX(),getY()-distance);
