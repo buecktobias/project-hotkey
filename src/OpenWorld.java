@@ -4,7 +4,7 @@ import greenfoot.World;
 
 import java.util.List;
 
-public class OpenWorld extends World {
+public abstract class OpenWorld extends World {
 
     //A maximum size of the Scrolling World. If the value for width or height is 0 the world is infinite in this direction.
     //The variables are final so they have to be set before compiling the game and can't be set while executing the game.
