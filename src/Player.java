@@ -5,6 +5,31 @@ import helper.Direction;
 public class Player extends MovingActor {
     private int speed;
     private int life = 100;
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public int getLife() {
+        return life;
+    }
+
+    public void setLife(int life) {
+        this.life = life;
+    }
+
+    public double getEndurance() {
+        return endurance;
+    }
+
+    public void setEndurance(double endurance) {
+        this.endurance = endurance;
+    }
+
     private double endurance = 1000;
     private double enduranceRegeneration = 1;
     private int minEndurance = 0;
