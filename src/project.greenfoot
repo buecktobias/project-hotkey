@@ -12,6 +12,7 @@ class.Rock.image=environment/rock.png
 class.Rock.superclass=greenfoot.Actor
 class.Star.image=environment/star1.png
 class.Star.superclass=greenfoot.Actor
+class.Enemy.image=images/Enemy.png
 class.World.superclass=
 dependency1.from=Rock
 dependency1.to=Star
