@@ -4,7 +4,7 @@ import greenfoot.World;
 
 import java.util.List;
 
-public class OpenWorld extends World {
+public abstract class OpenWorld extends World {
 
     //A maximum size of the Scrolling World. If the value for width or height is 0 the world is infinite in this direction.
     //The variables are final so they have to be set before compiling the game and can't be set while executing the game.
@@ -37,19 +37,18 @@ public class OpenWorld extends World {
     }
 
     public OpenWorld(int screenWidth, int screenHeight, int cellSize, int scrollingWidth, int scrollingHeight) {
-        super(screenWidth, screenHeight, cellSize, false);
+        super(screenWidth, screenHeight, cellSize, true);
         WORLD_WIDTH = scrollingWidth;
         WORLD_HEIGHT = scrollingHeight;
     }
 
-    /**
-     * Reset the position of the ScrollingActor and set the position of all other objects in the world.
-     */
     public final void resetPlayersPosition(Player player) {
         int xMovement = (int) ((double) getWidth() / 2 - player.getX());
         int yMovement = (int) ((double) getHeight() / 2 - player.getY());
         totalXMovement += xMovement;
         totalYMovement += yMovement;
+        System.out.println(totalYMovement);
+        System.out.println(totalYMovement);
         List<Actor> actors = getObjects(Actor.class);
         for (Actor actor : actors) {
             if (actor instanceof Player) {
@@ -62,6 +61,7 @@ public class OpenWorld extends World {
         }
         createTextur();
     }
+
     protected final void createTextur() {
         int x;
         int y;
@@ -69,8 +69,7 @@ public class OpenWorld extends World {
             for (x = totalXMovement; x > 0; x -= textur.getWidth()) {
                 ;
             }
-        }
-        else {
+        } else {
             for (x = totalXMovement; x < 0; x += textur.getWidth()) {
                 ;
             }
@@ -80,8 +79,7 @@ public class OpenWorld extends World {
             for (y = totalYMovement; y > 0; y -= textur.getHeight()) {
                 ;
             }
-        }
-        else {
+        } else {
             for (y = totalYMovement; y < 0; y += textur.getHeight()) {
                 ;
             }
@@ -96,72 +94,11 @@ public class OpenWorld extends World {
     }
 
     /**
-     * Remove all objects that currently are in the world.
-     */
-    public void removeAllObjects() {
-        removeObjects(getObjects(null));
-    }
-
-    /**
-     * Remove all objects that currently are in the world with the exception of the actor given as parameter.
-     *
-     * @param actor
-     *      The only object that will not be removed from the world.
-     */
-    public void removeAllObjectsBut(Actor actor) {
-        List<Actor> allActors = getObjects(null);
-        for (Actor a : allActors) {
-            if (!a.equals(actor)) {
-                removeObject(a);
-            }
-        }
-    }
-
-    /**
      * Change the background image of the scrolling world to the given image.
      *
-     * @param bgImage
-     *      The new background image.
+     * @param bgImage The new background image.
      */
     public void setScrollingBackground(GreenfootImage bgImage) {
         textur = bgImage;
-    }
-
-    /**
-     * Returns the width of to scrolling world. (0 => infinite).
-     *
-     * @return
-     *      The width of the scrolling system. If 0 is returned the world width is infinite.
-     */
-    public int getScrollingWidth() {
-        return WORLD_WIDTH;
-    }
-    /**
-     * Returns the height of to scrolling world. (0 => infinite).
-     *
-     * @return
-     *      The height of the scrolling system. If 0 is returned the world height is infinite.
-     */
-    public int getScrollingHeight() {
-        return WORLD_HEIGHT;
-    }
-
-    /**
-     * Get the total movement in x direction.
-     *
-     * @return
-     *      The total movement in x direction the scrolling actor has covered.
-     */
-    public int getTotalXMovement() {
-        return totalXMovement;
-    }
-    /**
-     * Get the total movement in y direction.
-     *
-     * @return
-     *      The total movement in y direction the scrolling actor has covered.
-     */
-    public int getTotalYMovement() {
-        return totalYMovement;
     }
 }

@@ -11,9 +11,20 @@ import java.util.List;
  */
 public abstract class MovingActor extends General {
 
-
+    abstract int getSpeed();
     private DummyActor dummyActor = new DummyActor();
+    public void moveInDirectionTo(Actor actor){
+        if(getX() < actor.getX()){
+            moveRight(getSpeed());
+        }else if(getX() > actor.getX()){
+            moveLeft(getSpeed());
+        }else if(getY() < actor.getY()){
+            moveDown(getSpeed());
+        }else if(getY() > actor.getY()){
+            moveUp(getSpeed());
+        }
 
+    }
     public void move(Direction d){
         moveDirection(d,1);
     }
