@@ -6,18 +6,20 @@ public class Player extends MovingActor {
     private int speed;
     private int life = 100;
 
+    private Item[] inventory = new Item[9];
+
+
     public int getSpeed() {
         return speed;
     }
-
     public void setSpeed(int speed) {
         this.speed = speed;
     }
 
+
     public int getLife() {
         return life;
     }
-
     public void setLife(int life) {
         this.life = life;
     }
@@ -25,7 +27,6 @@ public class Player extends MovingActor {
     public double getEndurance() {
         return endurance;
     }
-
     public void setEndurance(double endurance) {
         this.endurance = endurance;
     }
@@ -61,6 +62,7 @@ public class Player extends MovingActor {
     }
 
 
+
     public void act() {
         performMovement();
         endurance += enduranceRegeneration;
@@ -71,5 +73,6 @@ public class Player extends MovingActor {
         }
         print(endurance);
     }
+    
 
 }

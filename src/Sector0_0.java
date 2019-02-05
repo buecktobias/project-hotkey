@@ -1,4 +1,4 @@
-import greenfoot.*;
+import greenfoot.GreenfootImage;
 
 
 public class Sector0_0 extends OpenWorld {
@@ -11,6 +11,10 @@ public class Sector0_0 extends OpenWorld {
         addObject(player, getWidth()/2, getHeight()/2);
         addObject(new Enemy(),100,100);
         setScrollingBackground(new GreenfootImage("cell_debug.png"));
+
+        HUD hud = new HUD();
+        addObject(hud,getWidth()/2, getHeight()/2);
+
 
 
     }

@@ -1,6 +1,6 @@
 #Greenfoot project file
 class.Actor.superclass=
-class.Carrot.image=consumable/carrot.png
+class.Carrot.image=logo.png
 class.Carrot.superclass=greenfoot.Actor
 class.MovingActor.superclass=greenfoot.Actor
 class.Level1.superclass=greenfoot.World
