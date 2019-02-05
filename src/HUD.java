@@ -4,29 +4,38 @@ import java.awt.*;
 
 public class HUD extends Player {
 
-    GreenfootImage Background = new GreenfootImage("images/EmptyHealthbar.png");
+    GreenfootImage Background = new GreenfootImage("StatBars.png");
 
     public HUD(){
         setImage(Background);
     }
+    //TODO bars need do sync with actual values
     public void act(){
         Background.clear();
-        Background = new GreenfootImage("images/EmptyHealthbar.png");
+        Background = new GreenfootImage("StatBars.png");
         setImage(Background);
         healthBar();
+        enduranceBar();
     }
 
-    public void healthBar(){
-
+    private void healthBar(){
         int health = super.getLife();
         Background.setColor(Color.RED);
-        Background.fillRect(50,-10, health,30);
+        Background.fillRect(75,21, health*2,44);
+
+    }
+    private void enduranceBar(){
+        double doubleOfEndurance = super.getEndurance();
+        //doubleOfEndurance = doubleOfEndurance*0.18;
+        int intOfEndurance = (int) doubleOfEndurance;
+        Background.setColor(Color.GREEN);
+        Background.fillRect(70,85, intOfEndurance,48);
 
 
     }
 
 
-    //shows Text on screen|not working|maybe used for WeaponDisplay
+    //shows Text on screen|not working|may be used for WeaponNameDisplay
     public void fontTest(Graphics itemName){
         itemName.drawString("Schwert", 100,100);
         Font equipedWeapon = new Font("Arial", Font.BOLD, 12);

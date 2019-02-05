@@ -4,7 +4,7 @@ import helper.Direction;
 
 public class Player extends MovingActor {
     private int speed;
-    private int life = 100;
+    private int life = 80;
 
     private Item[] inventory = new Item[9];
 
