@@ -13,7 +13,7 @@ public abstract class MovingActor extends General {
 
     abstract int getSpeed();
     private DummyActor dummyActor = new DummyActor();
-    public void moveInDirectionTo(Actor actor){
+    public void moveInDirectionOf(Actor actor){
         if(getX() < actor.getX()){
             moveRight(getSpeed());
         }else if(getX() > actor.getX()){

@@ -1,5 +1,4 @@
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
 
 public class Enemy extends Hostile {
     private int visualRange = 1000;
@@ -11,12 +10,11 @@ public class Enemy extends Hostile {
     }
     @Override
     public void act() {
-        List<Player> playersInVisualRange= getObjectsInRange(this.visualRange,Player.class);
-        if(playersInVisualRange.size() != 0){
-            Player player = playersInVisualRange.get(0);
-            moveInDirectionTo(player);
+        Player player = getPlayer(this.visualRange);
+        if(player != null) {
+            moveInDirectionOf(player);
+        }
         }
 
 
     }
-}
