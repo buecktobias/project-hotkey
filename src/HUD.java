@@ -7,7 +7,7 @@ public class HUD extends NotMoving {
     GreenfootImage Background = new GreenfootImage("StatBars.png");
 
 
-    private HUD(){
+    public HUD(){
         setImage(Background);
     }
     //TODO bars need do sync with actual values
