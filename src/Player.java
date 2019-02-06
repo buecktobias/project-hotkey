@@ -6,7 +6,8 @@ public class Player extends MovingActor {
     private int currentSpeed;
     private final int normalSpeed = 2;
     private final int sprintSpeed = 4;
-    private int life = 80;
+    private int life = 280;
+
 
     private Item[] inventory = new Item[9];
 
