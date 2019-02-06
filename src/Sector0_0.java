@@ -15,8 +15,6 @@ public class Sector0_0 extends OpenWorld {
         HUD hud = new HUD();
         addObject(hud,getWidth()/2, getHeight()/2);
 
-
-
     }
 
 }
