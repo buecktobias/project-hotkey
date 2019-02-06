@@ -1,17 +1,8 @@
 #Greenfoot project file
-class.Actor.superclass=
-class.Carrot.image=logo.png
-class.Carrot.superclass=greenfoot.Actor
 class.MovingActor.superclass=greenfoot.Actor
 class.Level1.superclass=greenfoot.World
 class.Player.image=test_player.png
 class.Player.superclass=MovingActor
-class.Rabbit.image=character/Rabbit.png
-class.Rabbit.superclass=greenfoot.Actor
-class.Rock.image=environment/rock.png
-class.Rock.superclass=greenfoot.Actor
-class.Star.image=environment/star1.png
-class.Star.superclass=greenfoot.Actor
 class.Enemy.image=images/Enemy.png
 class.World.superclass=
 dependency1.from=Rock
