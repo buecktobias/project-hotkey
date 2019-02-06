@@ -3,17 +3,16 @@ import helper.Direction;
 
 
 public class Player extends MovingActor {
-    private int speed;
+    private int currentSpeed;
+    private final int normalSpeed = 2;
+    private final int sprintSpeed = 4;
     private int life = 80;
 
     private Item[] inventory = new Item[9];
 
 
     public int getSpeed() {
-        return speed;
-    }
-    public void setSpeed(int speed) {
-        this.speed = speed;
+        return currentSpeed;
     }
 
 
@@ -35,29 +34,33 @@ public class Player extends MovingActor {
     private double enduranceRegeneration = 1;
     private int minEndurance = 0;
     private int maxEndurance = 1000;
-    Player(){
-        speed = (int)Math.round(endurance / 200);
-    }
     private void move(Direction d,int distance){
-        endurance -= speed;
-        super.moveDirection(d,speed);
+        super.moveDirection(d,distance);
         if(getWorld() instanceof  OpenWorld){
             ((OpenWorld) getWorld()).resetPlayersPosition(this);
         }
-        speed = (int)Math.round(endurance / 200);
     }
     private void performMovement() {
+        if(Greenfoot.isKeyDown("F")){
+            if(endurance > 100) {
+                this.currentSpeed = this.sprintSpeed;
+            }else{
+                this.currentSpeed = this.normalSpeed;
+            }
+        }else{
+            this.currentSpeed = this.normalSpeed;
+        }
         if(Greenfoot.isKeyDown("W")) {
-            move(Direction.UP,speed);
+            move(Direction.UP,this.currentSpeed);
         }
         if(Greenfoot.isKeyDown("A")) {
-            move(Direction.LEFT,speed);
+            move(Direction.LEFT,this.currentSpeed);
         }
         if(Greenfoot.isKeyDown("S")) {
-            move(Direction.DOWN,speed);
+            move(Direction.DOWN,this.currentSpeed);
         }
         if(Greenfoot.isKeyDown("D")) {
-            move(Direction.RIGHT,speed);
+            move(Direction.RIGHT,this.currentSpeed);
         }
     }
 
@@ -65,7 +68,11 @@ public class Player extends MovingActor {
 
     public void act() {
         performMovement();
-        endurance += enduranceRegeneration;
+        if(currentSpeed == this.sprintSpeed){
+            endurance -= this.sprintSpeed;
+        }else {
+            endurance += enduranceRegeneration;
+        }
         if(endurance < minEndurance){
             endurance = minEndurance;
         }else if(endurance > maxEndurance){
