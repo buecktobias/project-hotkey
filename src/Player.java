@@ -10,11 +10,15 @@ public class Player extends MovingActor implements Attackable {
 
     private final int maxLife = 1000;
     private int life = maxLife;
-
+    private final int minLife = 0;
 
     private Item[] inventory = new Item[9];
 
 
+    private double enduranceRegeneration = 1;
+    private int minEndurance = 0;
+    private final int maxEndurance = 1000;
+    private double endurance = maxEndurance;
     public int getSpeed() {
         return currentSpeed;
     }
@@ -33,11 +37,6 @@ public class Player extends MovingActor implements Attackable {
     public void setEndurance(double endurance) {
         this.endurance = endurance;
     }
-
-    private double endurance = 1000;
-    private double enduranceRegeneration = 1;
-    private int minEndurance = 0;
-    private int maxEndurance = 1000;
     private void move(Direction d,int distance){
         super.moveDirection(d,distance);
         /*
@@ -71,9 +70,7 @@ public class Player extends MovingActor implements Attackable {
     }
 
 
-
-    public void act() {
-        performMovement();
+    public void calculateEndurance(){
         if(currentSpeed == this.sprintSpeed){
             endurance -= this.sprintSpeed;
         }else {
@@ -84,7 +81,13 @@ public class Player extends MovingActor implements Attackable {
         }else if(endurance > maxEndurance){
             endurance = maxEndurance;
         }
-        print(endurance);
+    }
+    public void act() {
+        performMovement();
+        calculateEndurance();
+        if(this.life < minLife){
+            Greenfoot.stop();
+        }
     }
     
 
