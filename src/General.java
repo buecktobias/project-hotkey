@@ -10,6 +10,7 @@ public abstract class General extends Actor {
     /**
      * Default constructor
      */
+
     public General() {
         this.defaultImage = new GreenfootImage(getImage());
     }
@@ -20,6 +21,12 @@ public abstract class General extends Actor {
      */
     public boolean isBlocking() {
         return false;
+    }
+    public int getWidth(){
+        return this.getImage().getWidth();
+    }
+    public int getHeight(){
+        return this.getImage().getHeight();
     }
 
     /**

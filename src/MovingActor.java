@@ -11,16 +11,30 @@ public abstract class MovingActor extends General {
 
     abstract int getSpeed();
     public void moveInDirectionOf(Actor actor){
-        if(getX() < actor.getX()){
-            moveRight(getSpeed());
-        }else if(getX() > actor.getX()){
-            moveLeft(getSpeed());
-        }else if(getY() < actor.getY()){
-            moveDown(getSpeed());
-        }else if(getY() > actor.getY()){
-            moveUp(getSpeed());
-        }
+        int actorX = actor.getX();
+        int actorY = actor.getY();
 
+        int xDifference = this.getX() - actorX;
+        int yDifference = this.getY() - actorY;
+
+        int absXDifference = Math.abs(xDifference);
+        int absYDifference = Math.abs(yDifference);
+
+        if(Math.max(absXDifference,absYDifference) == absXDifference){
+            if(xDifference > 0){
+                moveLeft();
+            }else if (xDifference <0){
+                moveRight();
+            }
+        }else if(Math.max(absXDifference,absYDifference) == absYDifference){
+            if(yDifference > 0){
+                moveUp();
+            }else{
+                moveDown();
+
+            }
+
+        }
     }
     public void move(Direction d){
         moveDirection(d,1);

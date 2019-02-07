@@ -21,15 +21,7 @@ public class Enemy extends Hostile implements Attackable {
     }
     @Override
     public void act() {
-        Player player = getPlayer(this.visualRange);
-        if(player != null) {
-            moveInDirectionOf(player);
+        moveToPlayer(this.visualRange);
+        attackPlayer(this.attackRange,this.damage);
         }
-        Player attackPlayer = getPlayer(this.attackRange);
-        if(attackPlayer != null){
-            attack(attackPlayer,damage);
-        }
-        }
-
-
     }
