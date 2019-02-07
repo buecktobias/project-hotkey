@@ -30,7 +30,8 @@ public class HUD extends NotMoving {
     private void drawStatBars(Player p){
         int health = p.getLife();
         Background.setColor(Color.RED);
-        Background.fillRect(50,20, health,27);
+        int healthBarWidth = (int) ((double) p.getLife()/ (double) p.getMaxLife() * 280);
+        Background.fillRect(50,20, healthBarWidth,27);
 
         double endurance = p.getEndurance();
         endurance = endurance*0.18;

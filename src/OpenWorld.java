@@ -1,11 +1,10 @@
-import greenfoot.Actor;
-import greenfoot.GreenfootImage;
 import greenfoot.World;
 
-import java.util.List;
-
 public abstract class OpenWorld extends World {
-
+    public OpenWorld() {
+        super(1024, 736, 1, true);
+    }
+    /*
     //A maximum size of the Scrolling World. If the value for width or height is 0 the world is infinite in this direction.
     //The variables are final so they have to be set before compiling the game and can't be set while executing the game.
     private static int WORLD_WIDTH;
@@ -47,8 +46,8 @@ public abstract class OpenWorld extends World {
         int yMovement = (int) ((double) getHeight() / 2 - player.getY());
         totalXMovement += xMovement;
         totalYMovement += yMovement;
-        System.out.println(totalYMovement);
-        System.out.println(totalYMovement);
+        // System.out.println(totalYMovement);
+        // System.out.println(totalYMovement);
         List<Actor> actors = getObjects(Actor.class);
         for (Actor actor : actors) {
             if (actor instanceof Player) {
@@ -92,13 +91,8 @@ public abstract class OpenWorld extends World {
             }
         }
     }
-
-    /**
-     * Change the background image of the scrolling world to the given image.
-     *
-     * @param bgImage The new background image.
-     */
     public void setScrollingBackground(GreenfootImage bgImage) {
         textur = bgImage;
     }
+    */
 }

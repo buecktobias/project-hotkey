@@ -6,7 +6,10 @@ public class Player extends MovingActor implements Attackable {
     private int currentSpeed;
     private final int normalSpeed = 2;
     private final int sprintSpeed = 4;
-    private int life = 280;
+
+
+    private final int maxLife = 1000;
+    private int life = maxLife;
 
 
     private Item[] inventory = new Item[9];
@@ -16,7 +19,7 @@ public class Player extends MovingActor implements Attackable {
         return currentSpeed;
     }
 
-
+    public int getMaxLife() { return maxLife; }
     public int getLife() {
         return life;
     }
@@ -37,9 +40,11 @@ public class Player extends MovingActor implements Attackable {
     private int maxEndurance = 1000;
     private void move(Direction d,int distance){
         super.moveDirection(d,distance);
+        /*
         if(getWorld() instanceof  OpenWorld){
             ((OpenWorld) getWorld()).resetPlayersPosition(this);
         }
+        */
     }
     private void performMovement() {
         if(Greenfoot.isKeyDown("F")){
