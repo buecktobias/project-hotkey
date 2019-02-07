@@ -52,9 +52,6 @@ public abstract class OpenWorld extends World {
         List<Actor> actors = getObjects(Actor.class);
         for (Actor actor : actors) {
             if (actor instanceof Player) {
-                if(actor instanceof HUD){
-                    continue;
-                }
                 ((Player) actor).setLocation(actor.getX() + xMovement, actor.getY() + yMovement);
             } else if (actor instanceof InventoryDisplayAdapter || actor instanceof HUD) {
 

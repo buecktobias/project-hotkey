@@ -1,6 +1,6 @@
+import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 import helper.Direction;
-import greenfoot.Actor;
 
 public abstract class General extends Actor {
 
@@ -13,7 +13,6 @@ public abstract class General extends Actor {
     public General() {
         this.defaultImage = new GreenfootImage(getImage());
     }
-
     /**
      * Determines if this part of the environment is blocking.
      *

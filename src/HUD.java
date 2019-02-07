@@ -6,6 +6,10 @@ public class HUD extends NotMoving {
 
     GreenfootImage Background = new GreenfootImage("StatBars.png");
 
+    @Override
+    public boolean isBlocking() {
+        return false;
+    }
 
     public HUD(){
         setImage(Background);
@@ -17,7 +21,7 @@ public class HUD extends NotMoving {
         setImage(Background);
         if (getWorld().getObjects(Player.class).get(0)!= null) {
            Player p = getWorld().getObjects(Player.class).get(0);
-            drawStatBars(p);
+           drawStatBars(p);
         }else{
             System.out.println("No Player found");
         }
