@@ -2,7 +2,7 @@ import greenfoot.Greenfoot;
 import helper.Direction;
 
 
-public class Player extends MovingActor implements Attackable {
+public class Player extends MovingActor implements Attackable,Blocking {
     private int currentSpeed;
     private final int normalSpeed = 2;
     private final int sprintSpeed = 4;

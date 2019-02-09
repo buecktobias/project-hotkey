@@ -19,9 +19,6 @@ public abstract class General extends Actor {
      *
      * @return true if it is blocking
      */
-    public boolean isBlocking() {
-        return false;
-    }
     public int getWidth(){
         return this.getImage().getWidth();
     }

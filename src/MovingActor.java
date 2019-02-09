@@ -70,12 +70,8 @@ public abstract class MovingActor extends General {
 
     public boolean intersectsWithBlockingObject(){
         List<General> actors= getIntersectingObjects(General.class);
-        for(General actor:actors){
-            if(actor.isBlocking()){
-                return true;
-            }
-        }
-        return false;
+        actors.removeIf(actor -> !(actor instanceof Blocking));
+        return actors.size() > 0;
     }
     public void moveTo(int x,int y){
         int oldX = this.getX();
@@ -105,12 +101,6 @@ public abstract class MovingActor extends General {
         int x = getX();
         int y = getY()+distance;
         moveTo(x,y);
-    }
-
-
-    @Override
-    public boolean isBlocking() {
-        return true;
     }
 
 }

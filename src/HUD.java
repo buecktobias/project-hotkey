@@ -6,10 +6,6 @@ public class HUD extends NotMoving {
 
     GreenfootImage Background = new GreenfootImage("StatBars.png");
 
-    @Override
-    public boolean isBlocking() {
-        return false;
-    }
 
     public HUD(){
         setImage(Background);
