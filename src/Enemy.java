@@ -4,7 +4,7 @@ public class Enemy extends Hostile implements Attackable,Blocking {
     private int damage = 5;
     private int speed = 1;
     private int life = 100;
-
+    private int hitboxRadius=getWidth();
     @Override
     public int getLife() {
         return life;
@@ -19,9 +19,11 @@ public class Enemy extends Hostile implements Attackable,Blocking {
     public int getSpeed() {
         return speed;
     }
+
     @Override
     public void act() {
         moveToPlayer(this.visualRange);
-        attackPlayer(this.attackRange,this.damage);
-        }
+        attackPlayer(this.attackRange, this.damage);
     }
+
+}

@@ -8,7 +8,7 @@ import java.util.List;
  * @author SAE
  */
 public abstract class MovingActor extends General {
-
+    public int hitboxRadius=getWidth()*4;
     abstract int getSpeed();
     public void moveInDirectionOf(Actor actor){
         int actorX = actor.getX();
@@ -68,16 +68,35 @@ public abstract class MovingActor extends General {
         moveDown(1);
     }
 
-    public boolean intersectsWithBlockingObject(){
-        List<General> actors= getIntersectingObjects(General.class);
-        actors.removeIf(actor -> !(actor instanceof Blocking));
-        return actors.size() > 0;
+    public boolean intersectsWithBlockingObject(boolean again){
+        List<General> intersectingObjects = getIntersectingObjects(General.class);
+        intersectingObjects.removeIf(intersect -> !(intersect instanceof Blocking));
+        List<General> objectsInRange = getObjectsInRange(this.hitboxRadius,General.class);
+        if(intersectingObjects.size() > 0) {
+            for(General intersect:intersectingObjects){
+                for(General object:objectsInRange){
+                    if(intersect == object){
+                        if(!(again)){
+                            return true;
+                        }else{
+                        if(intersect instanceof MovingActor){
+                            if(((MovingActor) intersect).intersectsWithBlockingObject(false)){
+                                return true;
+                            }
+                        }
+                    }
+                    }
+                }
+
+            }
+        }
+        return false;
     }
     public void moveTo(int x,int y){
         int oldX = this.getX();
         int oldY = this.getY();
         setLocation(x,y);
-        if(intersectsWithBlockingObject()){
+        if(intersectsWithBlockingObject(true)){
             setLocation(oldX,oldY);
         }
 
