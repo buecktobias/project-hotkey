@@ -1,7 +1,7 @@
 import greenfoot.Actor;
 import helper.Direction;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * MovingActor provides basic methods for movement control, as well as text based methods.
@@ -36,6 +36,38 @@ public abstract class MovingActor extends General {
 
         }
     }
+
+    public void moveInDirectionOf2(Actor actor) {
+        int actorX = actor.getX();
+        int actorY = actor.getY();
+
+        HashMap<Direction, Integer> distances = new HashMap<>();
+        distances.put(Direction.UP, Math.abs(actorX - getX()) + Math.abs(actorY - getY() - 1));
+        distances.put(Direction.RIGHT, Math.abs(actorX - getX() + 1) + Math.abs(actorY - getY()));
+        distances.put(Direction.DOWN, Math.abs(actorX - getX()) + Math.abs(actorY - getY() + 1));
+        distances.put(Direction.LEFT, Math.abs(actorX - getX() - 1) + Math.abs(actorY - getY()));
+
+        List<Direction> possibleDirections = new ArrayList<>();
+
+        int max = 0;
+
+        for(int distance : distances.values()) {
+            if(distance > max) {
+                max = distance;
+            }
+        }
+
+        for(Map.Entry<Direction, Integer> entry : distances.entrySet()) {
+            if(entry.getValue() == max) {
+                possibleDirections.add(entry.getKey());
+            }
+        }
+
+        Direction directionToGo = possibleDirections.get(new Random().nextInt(possibleDirections.size()));
+
+        move(directionToGo);
+    }
+
     public void move(Direction d){
         moveDirection(d,1);
     }
