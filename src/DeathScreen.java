@@ -1,10 +1,10 @@
 import greenfoot.Greenfoot;
 import greenfoot.World;
 
-public class LoadScreen extends World {
-    public LoadScreen(){
+public class DeathScreen extends World {
+    public DeathScreen(){
         super(1024, 736, 1);
-        setBackground("loadscreen.png");
+        setBackground("images/DeathScreen.png");
     }
 
     @Override

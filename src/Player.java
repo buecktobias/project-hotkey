@@ -86,6 +86,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
         performMovement();
         calculateEndurance();
         if(this.life < minLife){
+            Greenfoot.setWorld(new DeathScreen());
             Greenfoot.stop();
         }
     }
