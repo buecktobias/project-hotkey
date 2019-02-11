@@ -3,6 +3,7 @@ import greenfoot.World;
 public abstract class OpenWorld extends World {
     public OpenWorld() {
         super(1024, 736, 1, true);
+        setPaintOrder(Player.class);
     }
 
 
