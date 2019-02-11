@@ -46,7 +46,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
         */
     }
     private void performMovement() {
-        if(Greenfoot.isKeyDown("F")){
+        if(Greenfoot.isKeyDown("SHIFT")){
             if(endurance > minEndurance) {
                 this.currentSpeed = this.sprintSpeed;
             }else{
