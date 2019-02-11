@@ -14,7 +14,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
 
     private Item[] inventory = new Item[9];
 
-
+    private int waitEndurance=0;
     private double enduranceRegeneration = 1;
     private int minEndurance = 0;
     private final int maxEndurance = 1000;
@@ -74,9 +74,14 @@ public class Player extends MovingActor implements Attackable,Blocking {
         if(currentSpeed == this.sprintSpeed){
             endurance -= this.sprintSpeed;
         }else {
-            endurance += enduranceRegeneration;
+            if (endurance==minEndurance && waitEndurance < 100) {
+                waitEndurance++;
+            }else {
+                endurance += enduranceRegeneration;
+            }
         }
         if(endurance < minEndurance){
+            waitEndurance=0;
             endurance = minEndurance;
         }else if(endurance > maxEndurance){
             endurance = maxEndurance;
