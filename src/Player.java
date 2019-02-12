@@ -44,6 +44,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
     }
     private void move(Direction d,int distance){
         super.moveDirection(d,distance);
+        calculateEndurance();
         /*
         if(getWorld() instanceof  OpenWorld){
             ((OpenWorld) getWorld()).resetPlayersPosition(this);
@@ -51,15 +52,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
         */
     }
     private void performMovement() {
-        if(Greenfoot.isKeyDown("SHIFT")){
-            if(endurance > minEndurance) {
-                this.currentSpeed = this.sprintSpeed;
-            }else{
-                this.currentSpeed = this.normalSpeed;
-            }
-        }else{
-            this.currentSpeed = this.normalSpeed;
-        }
+
         if(Greenfoot.isKeyDown("W")) {
             move(Direction.UP,this.currentSpeed);
         }
@@ -76,6 +69,15 @@ public class Player extends MovingActor implements Attackable,Blocking {
 
 
     public void calculateEndurance(){
+        if(Greenfoot.isKeyDown("SHIFT")){
+            if(endurance > minEndurance) {
+                this.currentSpeed = this.sprintSpeed;
+            }else{
+                this.currentSpeed = this.normalSpeed;
+            }
+        }else{
+            this.currentSpeed = this.normalSpeed;
+        }
         if(currentSpeed == this.sprintSpeed){
             endurance -= this.sprintSpeed;
         }else {
@@ -94,7 +96,6 @@ public class Player extends MovingActor implements Attackable,Blocking {
     }
     public void act() {
         performMovement();
-        calculateEndurance();
         if(this.life < minLife){
             Greenfoot.setWorld(new DeathScreen());
             Greenfoot.stop();
