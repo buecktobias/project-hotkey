@@ -45,11 +45,10 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private void move(Direction d,int distance){
         super.moveDirection(d,distance);
         calculateEndurance();
-        /*
+
         if(getWorld() instanceof  OpenWorld){
             ((OpenWorld) getWorld()).resetPlayersPosition(this);
         }
-        */
     }
     private void performMovement() {
 
