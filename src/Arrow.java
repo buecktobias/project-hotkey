@@ -1,4 +1,4 @@
-public class Arrow extends Weapon {
+public class Arrow extends Projectiles {
 
     private double damage;
     private int attackSpeed;
@@ -11,7 +11,7 @@ public class Arrow extends Weapon {
     }
 
     public void act() {
-
+        move(getDirection());
     }
 }
 

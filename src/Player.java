@@ -15,10 +15,15 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private Item[] inventory = new Item[9];
 
     private int waitEndurance=0;
+    private final int waitTimeWhenEnduranceIsZero = 5;
     private double enduranceRegeneration = 1;
     private int minEndurance = 0;
     private final int maxEndurance = 1000;
     private double endurance = maxEndurance;
+    private final int gameSpeed = 50;
+    Player(){
+        Greenfoot.setSpeed(gameSpeed);
+    }
     public int getSpeed() {
         return currentSpeed;
     }
@@ -39,22 +44,14 @@ public class Player extends MovingActor implements Attackable,Blocking {
     }
     private void move(Direction d,int distance){
         super.moveDirection(d,distance);
-        /*
+        calculateEndurance();
+
         if(getWorld() instanceof  OpenWorld){
             ((OpenWorld) getWorld()).resetPlayersPosition(this);
         }
-        */
     }
     private void performMovement() {
-        if(Greenfoot.isKeyDown("SHIFT")){
-            if(endurance > minEndurance) {
-                this.currentSpeed = this.sprintSpeed;
-            }else{
-                this.currentSpeed = this.normalSpeed;
-            }
-        }else{
-            this.currentSpeed = this.normalSpeed;
-        }
+
         if(Greenfoot.isKeyDown("W")) {
             move(Direction.UP,this.currentSpeed);
         }
@@ -71,10 +68,19 @@ public class Player extends MovingActor implements Attackable,Blocking {
 
 
     public void calculateEndurance(){
+        if(Greenfoot.isKeyDown("SHIFT")){
+            if(endurance > minEndurance) {
+                this.currentSpeed = this.sprintSpeed;
+            }else{
+                this.currentSpeed = this.normalSpeed;
+            }
+        }else{
+            this.currentSpeed = this.normalSpeed;
+        }
         if(currentSpeed == this.sprintSpeed){
             endurance -= this.sprintSpeed;
         }else {
-            if (endurance==minEndurance && waitEndurance < 100) {
+            if (endurance==minEndurance && waitEndurance < waitTimeWhenEnduranceIsZero * gameSpeed) {
                 waitEndurance++;
             }else {
                 endurance += enduranceRegeneration;
@@ -89,7 +95,6 @@ public class Player extends MovingActor implements Attackable,Blocking {
     }
     public void act() {
         performMovement();
-        calculateEndurance();
         if(this.life < minLife){
             Greenfoot.setWorld(new DeathScreen());
             Greenfoot.stop();

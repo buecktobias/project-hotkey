@@ -1,17 +1,14 @@
+import greenfoot.Actor;
+import greenfoot.GreenfootImage;
 import greenfoot.World;
+
+import java.util.List;
 
 public abstract class OpenWorld extends World {
     public OpenWorld() {
-        super(1024, 736, 1, true);
+        super(1024, 736, 1, false);
         setPaintOrder(Player.class);
     }
-
-
-    /*
-    //A maximum size of the Scrolling World. If the value for width or height is 0 the world is infinite in this direction.
-    //The variables are final so they have to be set before compiling the game and can't be set while executing the game.
-    private static int WORLD_WIDTH;
-    private static int WORLD_HEIGHT;
 
     private int totalXMovement = 0;
     private int totalYMovement = 0;
@@ -20,37 +17,11 @@ public abstract class OpenWorld extends World {
     //If you want to use another image just chang the path.
     private GreenfootImage textur;
 
-    public OpenWorld(int screenWidth, int screenHeight) {
-        super(screenWidth, screenHeight, 1, false);
-        WORLD_WIDTH = 0;
-        WORLD_HEIGHT = 0;
-    }
-
-    public OpenWorld(int screenWidth, int screenHeight, int cellSize) {
-        super(screenWidth, screenHeight, cellSize, false);
-        WORLD_WIDTH = 0;
-        WORLD_HEIGHT = 0;
-    }
-
-    public OpenWorld(int screenWidth, int screenHeight, int scrollingWidth, int scrollingHeight) {
-        super(screenWidth, screenHeight, 1, false);
-        WORLD_WIDTH = scrollingWidth;
-        WORLD_HEIGHT = scrollingHeight;
-    }
-
-    public OpenWorld(int screenWidth, int screenHeight, int cellSize, int scrollingWidth, int scrollingHeight) {
-        super(screenWidth, screenHeight, cellSize, true);
-        WORLD_WIDTH = scrollingWidth;
-        WORLD_HEIGHT = scrollingHeight;
-    }
-
     public final void resetPlayersPosition(Player player) {
         int xMovement = (int) ((double) getWidth() / 2 - player.getX());
         int yMovement = (int) ((double) getHeight() / 2 - player.getY());
         totalXMovement += xMovement;
         totalYMovement += yMovement;
-        // System.out.println(totalYMovement);
-        // System.out.println(totalYMovement);
         List<Actor> actors = getObjects(Actor.class);
         for (Actor actor : actors) {
             if (actor instanceof Player) {
@@ -97,5 +68,5 @@ public abstract class OpenWorld extends World {
     public void setScrollingBackground(GreenfootImage bgImage) {
         textur = bgImage;
     }
-    */
+
 }
