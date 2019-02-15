@@ -1,5 +1,3 @@
-package projektHotkey;
-
 public class Bow extends Weapon {
 
     private int attackSpeed;

@@ -1,4 +1,4 @@
-package projektHotkey.helper;
+package helper;
 
 import greenfoot.Actor;
 

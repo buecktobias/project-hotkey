@@ -1,5 +1,3 @@
-package projektHotkey;
-
 public class Staff extends Weapon {
 
     private double damage;

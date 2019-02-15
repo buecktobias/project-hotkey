@@ -1,8 +1,6 @@
-package projektHotkey;
-
 import greenfoot.Actor;
 import greenfoot.GreenfootImage;
-import projektHotkey.helper.Direction;
+import helper.Direction;
 
 public abstract class General extends Actor {
 

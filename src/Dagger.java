@@ -1,5 +1,3 @@
-package projektHotkey;
-
 public class Dagger extends Weapon {
 
     private double damage;

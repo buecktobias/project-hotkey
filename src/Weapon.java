@@ -1,5 +1,3 @@
-package projektHotkey;
-
 public abstract class Weapon extends Item {
 
     private double poisonDamage = 1;  // sollen multiplier sein

@@ -1,8 +1,5 @@
-package projektHotkey;
-
 import greenfoot.Actor;
-import projektHotkey.Interfaces.Blocking;
-import projektHotkey.helper.Direction;
+import helper.Direction;
 
 import java.util.*;
 

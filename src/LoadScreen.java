@@ -1,8 +1,5 @@
-package projektHotkey.Screens;
-
 import greenfoot.Greenfoot;
 import greenfoot.World;
-import projektHotkey.Worlds.Sector0_0;
 
 public class LoadScreen extends World {
     public LoadScreen(){
