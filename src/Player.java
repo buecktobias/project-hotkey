@@ -1,6 +1,5 @@
 import greenfoot.Greenfoot;
 import helper.Direction;
-import images.SkillScreen;
 
 import java.util.List;
 
@@ -11,8 +10,10 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private final int sprintSpeed = 4;
     private int attackRange = 500;
     private int damage = 5;
-
-    private SkillScreen skillScreen = new SkillScreen();
+    private int waitScreen = 0;
+    private final int timewaitScreen = 30;
+    private int last = 0;
+    private SkillWindow skillWindow = new SkillWindow();
     private boolean skillScreenShown = false;
 
     private final int maxLife = 1000;
@@ -29,6 +30,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private double endurance = maxEndurance;
     private final int gameSpeed = 50;
     Player(){
+
         Greenfoot.setSpeed(gameSpeed);
     }
     public int getSpeed() {
@@ -51,11 +53,25 @@ public class Player extends MovingActor implements Attackable,Blocking {
     }
     private void move(Direction d,int distance){
         super.moveDirection(d,distance);
-        calculateEndurance();
-
         if(getWorld() instanceof  OpenWorld){
             ((OpenWorld) getWorld()).resetPlayersPosition(this);
         }
+    }
+    private boolean testIfMoveKeys(){
+        boolean iskey = false;
+        if(Greenfoot.isKeyDown("W")) {
+            iskey=true;
+        }
+        if(Greenfoot.isKeyDown("A")) {
+            iskey=true;
+        }
+        if(Greenfoot.isKeyDown("S")) {
+            iskey=true;
+        }
+        if(Greenfoot.isKeyDown("D")) {
+            iskey=true;
+        }
+        return iskey;
     }
     private void performMovement() {
 
@@ -75,7 +91,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
 
 
     public void calculateEndurance(){
-        if(Greenfoot.isKeyDown("SHIFT")){
+        if(Greenfoot.isKeyDown("SHIFT") && testIfMoveKeys()){
             if(endurance > minEndurance) {
                 this.currentSpeed = this.sprintSpeed;
             }else{
@@ -87,7 +103,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
         if(currentSpeed == this.sprintSpeed){
             endurance -= this.sprintSpeed;
         }else {
-            if (endurance==minEndurance && waitEndurance < waitTimeWhenEnduranceIsZero * gameSpeed) {
+            if (endurance<=minEndurance && waitEndurance < waitTimeWhenEnduranceIsZero * gameSpeed) {
                 waitEndurance++;
             }else {
                 endurance += enduranceRegeneration;
@@ -101,26 +117,29 @@ public class Player extends MovingActor implements Attackable,Blocking {
         }
     }
     public void act() {
+        performMovement();
+        calculateEndurance();
         if(Greenfoot.isKeyDown("H")){
             List<NPC> NPCs = getObjectsInRange(attackRange,NPC.class);
             if(NPCs.size()>0){
                 attack(NPCs.get(0),damage);
             }
         }
-        if(Greenfoot.isKeyDown("R")){
-            if(skillScreenShown){
-                getWorld().removeObject(skillScreen);
-            }else {
-                getWorld().addObject(skillScreen, 100, 100);
+        waitScreen++;
+        if(timewaitScreen < waitScreen) {
+            if (Greenfoot.isKeyDown("R")) {
+                if (skillScreenShown) {
+                    getWorld().removeObject(skillWindow);
+                } else {
+                    getWorld().addObject(skillWindow, 100, 100);
+                }
+                skillScreenShown = !skillScreenShown;
+                waitScreen = 0;
             }
-            skillScreenShown = !skillScreenShown;
         }
-        performMovement();
         if(this.life < minLife){
             Greenfoot.setWorld(new DeathScreen());
             Greenfoot.stop();
         }
     }
-    
-
 }

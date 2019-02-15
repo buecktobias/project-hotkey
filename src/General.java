@@ -4,7 +4,7 @@ import helper.Direction;
 
 public abstract class General extends Actor {
 
-
+    private int timer = 0;
     private GreenfootImage defaultImage;
 
     /**
@@ -12,8 +12,15 @@ public abstract class General extends Actor {
      */
 
     public General() {
+
         this.defaultImage = new GreenfootImage(getImage());
     }
+
+    @Override
+    public void act() {
+        timer++;
+    }
+
     /**
      * Determines if this part of the environment is blocking.
      *
@@ -146,4 +153,7 @@ public abstract class General extends Actor {
         return this.getClass().getCanonicalName() + "; at=(" + getX() + ", " + getY() + ")";
     }
 
+    public int getTimer() {
+        return timer;
+    }
 }

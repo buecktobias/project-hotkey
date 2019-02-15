@@ -26,8 +26,8 @@ public abstract class OpenWorld extends World {
         for (Actor actor : actors) {
             if (actor instanceof Player) {
                 ((Player) actor).setLocation(actor.getX() + xMovement, actor.getY() + yMovement);
-            } else if (actor instanceof InventoryDisplayAdapter || actor instanceof HUD) {
-
+            } else if (actor instanceof Fixed) {
+                ;
             } else {
                 actor.setLocation(actor.getX() + xMovement, actor.getY() + yMovement);
             }
