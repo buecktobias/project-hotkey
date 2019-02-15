@@ -1,8 +1,15 @@
+package projektHotkey;
+
+import greenfoot.Actor;
 import greenfoot.Greenfoot;
-import helper.Direction;
+import greenfoot.World;
+import projektHotkey.Interfaces.Attackable;
+import projektHotkey.Interfaces.Blocking;
+import projektHotkey.Screens.DeathScreen;
+import projektHotkey.helper.Direction;
 
 
-public class Player extends MovingActor implements Attackable,Blocking {
+public class Player extends MovingActor implements Attackable, Blocking {
     private int currentSpeed;
     private final int normalSpeed = 2;
     private final int sprintSpeed = 4;
@@ -12,8 +19,8 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private int life = maxLife;
     private final int minLife = 0;
 
-    private Item[] inventory = new Item[9];
-
+    private Actor[] inventory = new Actor[9];
+    private InventoryDisplayAdapter inventoryAdapter;
     private int waitEndurance=0;
     private final int waitTimeWhenEnduranceIsZero = 5;
     private double enduranceRegeneration = 1;
@@ -21,7 +28,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private final int maxEndurance = 1000;
     private double endurance = maxEndurance;
     private final int gameSpeed = 50;
-    Player(){
+    public Player(){
         Greenfoot.setSpeed(gameSpeed);
     }
     public int getSpeed() {
@@ -46,10 +53,19 @@ public class Player extends MovingActor implements Attackable,Blocking {
         super.moveDirection(d,distance);
         calculateEndurance();
         /*
-        if(getWorld() instanceof  OpenWorld){
-            ((OpenWorld) getWorld()).resetPlayersPosition(this);
+        if(getWorld() instanceof  projektHotkey.Worlds.OpenWorld){
+            ((projektHotkey.Worlds.OpenWorld) getWorld()).resetPlayersPosition(this);
         }
         */
+    }
+    public void addedToWorld(World world){
+        //TODO: 2) Erstellen Sie ein neues Objekt vom Typ InventoryDisplayAdapter mit der passenden Größe.
+        //         Speichern Sie das Objekt im passenden Attribut.
+        //TODO: 3) InventoryDisplayAdapter in der Welt platzieren (0, Höhe der Welt -1) => unten links
+        inventoryAdapter = new InventoryDisplayAdapter(inventory.length);
+        getWorld().addObject(inventoryAdapter,0,0);
+        inventoryAdapter.linkItems(inventory);
+
     }
     private void performMovement() {
 

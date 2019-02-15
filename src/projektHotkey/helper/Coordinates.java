@@ -1,4 +1,4 @@
-package helper;
+package projektHotkey.helper;
 
 /**
  * Container for x and y coordinates.

@@ -1,8 +1,11 @@
+package projektHotkey;
+
+import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 
 import java.awt.*;
 
-public class HUD extends NotMoving {
+public class HUD extends Actor {
 
     GreenfootImage Background = new GreenfootImage("StatBars.png");
 

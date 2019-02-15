@@ -1,3 +1,8 @@
+package projektHotkey.Worlds;
+import projektHotkey.Enemy;
+import projektHotkey.HUD;
+import projektHotkey.Player;
+
 public class Sector0_0 extends OpenWorld {
 
     public Sector0_0() {

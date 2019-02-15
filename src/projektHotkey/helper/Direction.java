@@ -1,4 +1,4 @@
-package helper;
+package projektHotkey.helper;
 
 /**
  * @author SAE

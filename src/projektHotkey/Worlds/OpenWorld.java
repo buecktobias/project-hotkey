@@ -1,4 +1,7 @@
+package projektHotkey.Worlds;
+
 import greenfoot.World;
+import projektHotkey.Player;
 
 public abstract class OpenWorld extends World {
     public OpenWorld() {
@@ -20,25 +23,25 @@ public abstract class OpenWorld extends World {
     //If you want to use another image just chang the path.
     private GreenfootImage textur;
 
-    public OpenWorld(int screenWidth, int screenHeight) {
+    public projektHotkey.Worlds.OpenWorld(int screenWidth, int screenHeight) {
         super(screenWidth, screenHeight, 1, false);
         WORLD_WIDTH = 0;
         WORLD_HEIGHT = 0;
     }
 
-    public OpenWorld(int screenWidth, int screenHeight, int cellSize) {
+    public projektHotkey.Worlds.OpenWorld(int screenWidth, int screenHeight, int cellSize) {
         super(screenWidth, screenHeight, cellSize, false);
         WORLD_WIDTH = 0;
         WORLD_HEIGHT = 0;
     }
 
-    public OpenWorld(int screenWidth, int screenHeight, int scrollingWidth, int scrollingHeight) {
+    public projektHotkey.Worlds.OpenWorld(int screenWidth, int screenHeight, int scrollingWidth, int scrollingHeight) {
         super(screenWidth, screenHeight, 1, false);
         WORLD_WIDTH = scrollingWidth;
         WORLD_HEIGHT = scrollingHeight;
     }
 
-    public OpenWorld(int screenWidth, int screenHeight, int cellSize, int scrollingWidth, int scrollingHeight) {
+    public projektHotkey.Worlds.OpenWorld(int screenWidth, int screenHeight, int cellSize, int scrollingWidth, int scrollingHeight) {
         super(screenWidth, screenHeight, cellSize, true);
         WORLD_WIDTH = scrollingWidth;
         WORLD_HEIGHT = scrollingHeight;

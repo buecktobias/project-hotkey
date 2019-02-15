@@ -1,4 +1,9 @@
-public class Enemy extends Hostile implements Attackable,Blocking {
+package projektHotkey;
+
+import projektHotkey.Interfaces.Attackable;
+import projektHotkey.Interfaces.Blocking;
+
+public class Enemy extends Hostile implements Attackable, Blocking {
     private int visualRange = 500;
     private int attackRange = 150;
     private int damage = 5;

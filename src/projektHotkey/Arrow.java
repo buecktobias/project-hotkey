@@ -1,3 +1,5 @@
+package projektHotkey;
+
 public class Arrow extends Weapon {
 
     private double damage;
