@@ -1,12 +1,19 @@
 import greenfoot.Greenfoot;
 import helper.Direction;
+import images.SkillScreen;
+
+import java.util.List;
 
 
 public class Player extends MovingActor implements Attackable,Blocking {
     private int currentSpeed;
     private final int normalSpeed = 2;
     private final int sprintSpeed = 4;
+    private int attackRange = 500;
+    private int damage = 5;
 
+    private SkillScreen skillScreen = new SkillScreen();
+    private boolean skillScreenShown = false;
 
     private final int maxLife = 1000;
     private int life = maxLife;
@@ -94,6 +101,20 @@ public class Player extends MovingActor implements Attackable,Blocking {
         }
     }
     public void act() {
+        if(Greenfoot.isKeyDown("H")){
+            List<NPC> NPCs = getObjectsInRange(attackRange,NPC.class);
+            if(NPCs.size()>0){
+                attack(NPCs.get(0),damage);
+            }
+        }
+        if(Greenfoot.isKeyDown("R")){
+            if(skillScreenShown){
+                getWorld().removeObject(skillScreen);
+            }else {
+                getWorld().addObject(skillScreen, 100, 100);
+            }
+            skillScreenShown = !skillScreenShown;
+        }
         performMovement();
         if(this.life < minLife){
             Greenfoot.setWorld(new DeathScreen());

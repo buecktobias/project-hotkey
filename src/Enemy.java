@@ -24,6 +24,9 @@ public class Enemy extends Hostile implements Attackable,Blocking {
     public void act() {
         moveToPlayer(this.visualRange);
         attackPlayer(this.attackRange, this.damage);
+        if(life <0){
+            getWorld().removeObject(this);
+        }
     }
 
 }

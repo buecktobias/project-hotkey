@@ -153,5 +153,8 @@ public abstract class MovingActor extends General {
         int y = getY()+distance;
         moveTo(x,y);
     }
+    public void attack(Attackable actor,int damage){
+        actor.setLife(actor.getLife()-damage);
+    }
 
 }

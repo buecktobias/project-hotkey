@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.Random;
 
-public abstract class NPC extends MovingActor {
+public abstract class NPC extends MovingActor implements Attackable {
     private int speed = 1;
     private static final Random r = new Random();
     public Player getPlayer(int visualRange) {

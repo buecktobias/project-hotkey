@@ -25,7 +25,6 @@ public abstract class General extends Actor {
     public int getHeight(){
         return this.getImage().getHeight();
     }
-
     /**
      * Determines the direction the Actor is currently facing.
      *

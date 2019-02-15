@@ -1,7 +1,4 @@
 public abstract class Hostile extends NPC {
-    public void attack(Attackable actor,int damage){
-        actor.setLife(actor.getLife()-damage);
-    }
     public void moveToPlayer(int visualRange){
         Player player = getPlayer(visualRange);
         if(player != null) {
