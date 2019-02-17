@@ -35,11 +35,5 @@ public class HUD extends NotMoving {
     }
 
 
-    //shows Text on screen|not working|may be used for WeaponNameDisplay
-    public void fontTest(Graphics itemName, String name){
-        itemName.drawString(name, 100,100);
-        Font equipedWeapon = new Font("Arial", Font.BOLD, 12);
-        itemName.setColor(Color.BLACK);
-        itemName.setFont(equipedWeapon);
-    }
+
 }

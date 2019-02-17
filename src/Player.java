@@ -18,7 +18,6 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private final int minLife = 0;
 
 
-    private boolean isInventoryActive = false;
     private Item[] inventory = new Item[10];
 
     private int waitEndurance=0;
@@ -123,22 +122,20 @@ public class Player extends MovingActor implements Attackable,Blocking {
         }
     }
     public void useInventory() {
-        Inventory inventory = new Inventory();
+        List<Inventory> inventories = getWorld().getObjects(Inventory.class);
+        Inventory i = inventories.get(0);
         String key = Greenfoot.getKey();
-        if("m".equals(key) && !isInventoryActive){
-            System.out.println("on");
-            isInventoryActive = true;
-            //getWorld().addObject(inventory, 100,100);
-        }else if (("m".equals(key)) && isInventoryActive){
+        if (("m".equals(key)&& i.isActive()) ){
+            i.setActive(false);
             System.out.println("off");
-            isInventoryActive = false;
-            //getWorld().removeObject(inventory);
-        }
 
+        }else if("m".equals(key) && !i.isActive()) {
+            i.setActive(true);
+            System.out.println("on");
+        }
     }
 
     //Getters and Setters
-
     public int getSpeed() {
         return currentSpeed;
     }
