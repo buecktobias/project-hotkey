@@ -10,7 +10,6 @@ public class Sector0_0 extends OpenWorld {
         HUD hud = new HUD();
         addObject(hud,getWidth()/2, getHeight()/2);
         setScrollingBackground(new GreenfootImage("cell_debug.png"));
-
         Staff staff = new Staff(42);
         addObject(staff,getWidth()/2, getHeight()/2);
 

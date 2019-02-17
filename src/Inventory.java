@@ -14,7 +14,6 @@ public class Inventory extends Actor {
         this.capacity = 42;
     }
 
-
     public void act(){
         if(active){
             drawInventory();
@@ -36,6 +35,7 @@ public class Inventory extends Actor {
         itemName.setColor(Color.BLACK);
         itemName.setFont(equipedWeapon);
     }
+
 
     //Getters and Setters
     public boolean isActive() {

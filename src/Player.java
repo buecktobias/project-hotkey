@@ -128,7 +128,6 @@ public class Player extends MovingActor implements Attackable,Blocking {
         if (("m".equals(key)&& i.isActive()) ){
             i.setActive(false);
             System.out.println("off");
-
         }else if("m".equals(key) && !i.isActive()) {
             i.setActive(true);
             System.out.println("on");

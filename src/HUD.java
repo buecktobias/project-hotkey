@@ -34,6 +34,4 @@ public class HUD extends NotMoving {
         Background.fillRect(60,60, (int)endurance,27);
     }
 
-
-
 }
