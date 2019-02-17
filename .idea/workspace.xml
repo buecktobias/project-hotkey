@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/Player.java" line="121" />
+    <bookmark url="file://$PROJECT_DIR$/src/Player.java" line="128" />
+    <bookmark url="file://$PROJECT_DIR$/src/Player.java" line="127" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b052e2bc-c100-4699-b9d4-b65ca5c8f191" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/images/SkillScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/SkillScreen.png" afterDir="false" />
+    <list default="true" id="b052e2bc-c100-4699-b9d4-b65ca5c8f191" name="Default Changelist" comment="HUD now extends NotMoving">
+      <change afterPath="$PROJECT_DIR$/src/KeyManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/General.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/General.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Hostile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hostile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MovingActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovingActor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NPC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sector0_0.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sector0_0.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,218 +25,80 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/ProjectHotkey$GreenfootOOP.ic" NAME="GreenfootOOP Coverage Results" MODIFIED="1549484627762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
-  </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-244180509">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="29" />
-          <entry key="png" value="2" />
-          <entry key="xml" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Image" value="2" />
-          <entry key="JAVA" value="29" />
-          <entry key="XML" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="2661" />
-          <entry key="txt" value="274" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="2661" />
-          <entry key="PLAIN_TEXT" value="274" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="-1977752585">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="class" value="1" />
-          <entry key="java" value="32" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="32" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="1368" />
-          <entry key="txt" value="66" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="1368" />
-          <entry key="PLAIN_TEXT" value="66" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="1479080383">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="6" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="6" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="544" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="544" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Item.java">
+        <entry file="file://$PROJECT_DIR$/src/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="45" selection-start-column="45" selection-end-column="45" />
+            <state relative-caret-position="392">
+              <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
+              <folding>
+                <element signature="method#move#0;class#Player#0" />
+                <element signature="method#performMovement#0;class#Player#0" />
+                <element signature="method#calculateEndurance#0;class#Player#0" />
+                <element signature="method#act#0;class#Player#0" />
+                <element signature="method#pick#0;class#Player#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Enemy.java">
+        <entry file="file://$PROJECT_DIR$/src/Inventory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="27" column="42" lean-forward="true" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Hostile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="39" lean-forward="true" selection-start-column="39" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MovingActor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="157" column="5" selection-start-line="157" selection-start-column="5" selection-end-line="157" selection-end-column="5" />
+            <state relative-caret-position="378">
+              <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4702#4703#0" expanded="true" />
-                <element signature="e#4755#4756#0" expanded="true" />
+                <element signature="e#686#716#1" />
+                <element signature="e#1051#1052#0" expanded="true" />
+                <element signature="e#759#796#1" />
+                <element signature="e#1131#1132#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/images/SkillScreen.java">
+        <entry file="file://$PROJECT_DIR$/src/HUD.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
-              <folding>
-                <element signature="e#100#101#0" expanded="true" />
-                <element signature="e#126#127#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1904">
-              <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/NPC.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/General.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DeathScreen.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+            <state relative-caret-position="315">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#245#246#0" expanded="true" />
-                <element signature="e#296#297#0" expanded="true" />
+                <element signature="method#act#0;class#HUD#0" />
+                <element signature="method#drawStatBars#0;class#HUD#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Arrow.java">
+        <entry file="file://$PROJECT_DIR$/src/KeyManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="13" selection-start-column="13" selection-end-column="13" />
+            <state relative-caret-position="42">
+              <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Item.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Sector0_0.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -288,27 +153,28 @@
         <option value="$PROJECT_DIR$/src/Rabbit.java" />
         <option value="$PROJECT_DIR$/src/Rock.java" />
         <option value="$PROJECT_DIR$/src/Star.java" />
-        <option value="$PROJECT_DIR$/src/Carrot.java" />
         <option value="$PROJECT_DIR$/src/helper/Coordinates.java" />
         <option value="$PROJECT_DIR$/src/Level1.java" />
         <option value="$PROJECT_DIR$/src/Environment.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/project.greenfoot" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/Item.java" />
-        <option value="$PROJECT_DIR$/src/HUD.java" />
-        <option value="$PROJECT_DIR$/src/Attackable.java" />
-        <option value="$PROJECT_DIR$/src/OpenWorld.java" />
-        <option value="$PROJECT_DIR$/src/LoadScreen.java" />
-        <option value="$PROJECT_DIR$/src/Sector0_0.java" />
-        <option value="$PROJECT_DIR$/src/DeathScreen.java" />
-        <option value="$PROJECT_DIR$/src/images/SkillScreen.java" />
-        <option value="$PROJECT_DIR$/src/General.java" />
-        <option value="$PROJECT_DIR$/src/Hostile.java" />
-        <option value="$PROJECT_DIR$/src/NPC.java" />
         <option value="$PROJECT_DIR$/src/MovingActor.java" />
+        <option value="$PROJECT_DIR$/src/Attackable.java" />
+        <option value="$PROJECT_DIR$/src/Weapon.java" />
+        <option value="$PROJECT_DIR$/src/Pickable.java" />
+        <option value="$PROJECT_DIR$/src/ItemManager.java" />
+        <option value="$PROJECT_DIR$/src/OpenWorld.java" />
+        <option value="$PROJECT_DIR$/src/Carrot.java" />
+        <option value="$PROJECT_DIR$/src/Staff.java" />
+        <option value="$PROJECT_DIR$/src/KeyManagerAdapter.java" />
+        <option value="$PROJECT_DIR$/src/KeyManager.java" />
+        <option value="$PROJECT_DIR$/src/Item.java" />
+        <option value="$PROJECT_DIR$/src/Bow.java" />
+        <option value="$PROJECT_DIR$/src/Sector0_0.java" />
+        <option value="$PROJECT_DIR$/src/HUD.java" />
+        <option value="$PROJECT_DIR$/src/Inventory.java" />
         <option value="$PROJECT_DIR$/src/Player.java" />
-        <option value="$PROJECT_DIR$/src/Enemy.java" />
       </list>
     </option>
   </component>
@@ -318,17 +184,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand />
-      <select />
-    </treeState>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="30" />
-    <option name="width" value="1939" />
-    <option name="height" value="1059" />
+    <option name="x" value="-8" />
+    <option name="y" value="32" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -338,29 +198,33 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="project-hotkey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-hotkey" type="462c0819:PsiDirectoryNode" />
+              <item name="ProjectHotkey" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectHotkey" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="project-hotkey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-hotkey" type="462c0819:PsiDirectoryNode" />
+              <item name="ProjectHotkey" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectHotkey" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="project-hotkey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-hotkey" type="462c0819:PsiDirectoryNode" />
+              <item name="ProjectHotkey" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectHotkey" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectHotkey" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -371,7 +235,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="grundbegriffeoop_v6" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550225731882" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550397111799" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -384,6 +248,7 @@
       <recent name="helper" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Ordner\Schule\Info\ProjectHotkey\ProjectHotkey\src\images" />
       <recent name="F:\workspaces\IntelliJWS\GrundbegriffeOOP_v5\lib" />
     </key>
   </component>
@@ -401,7 +266,7 @@
   </component>
   <component name="RunManager">
     <configuration name="GreenfootOOP" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../Java/Java 8/jre" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="greenfoot.export.GreenfootScenarioMain" />
       <module name="ProjectHotkey" />
@@ -425,9 +290,6 @@
       <workItem from="1549101158278" duration="1204000" />
       <workItem from="1549102620145" duration="6760000" />
       <workItem from="1549144627268" duration="5630000" />
-      <workItem from="1549538178153" duration="11593000" />
-      <workItem from="1549723882343" duration="9203000" />
-      <workItem from="1550224203730" duration="1438000" />
     </task>
     <task id="LOCAL-00001" summary="project base">
       <created>1549046329316</created>
@@ -485,74 +347,60 @@
       <option name="project" value="LOCAL" />
       <updated>1549471453602</updated>
     </task>
-    <task id="LOCAL-00009" summary="sector does not extend OpenWorld anymore,MovingActors cant go through Blocking Objects.">
-      <created>1549552222463</created>
+    <task id="LOCAL-00009" summary="HUD now extends NotMoving">
+      <created>1549486856255</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1549552222463</updated>
+      <updated>1549486856255</updated>
     </task>
-    <task id="LOCAL-00010" summary="added attack function in Hostile function.">
-      <created>1549554221524</created>
+    <task id="LOCAL-00010" summary="HUD now extends NotMoving">
+      <created>1549486951595</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1549554221524</updated>
+      <updated>1549486951595</updated>
     </task>
-    <task id="LOCAL-00011" summary="improved Enemy movement">
-      <created>1549566856261</created>
+    <task id="LOCAL-00011" summary="HUD now extends NotMoving">
+      <created>1549487044989</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1549566856261</updated>
+      <updated>1549487044989</updated>
     </task>
-    <task id="LOCAL-00012" summary="Player can die.">
-      <created>1549567262669</created>
+    <task id="LOCAL-00012" summary="HUD now extends NotMoving">
+      <created>1549487347225</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1549567262669</updated>
+      <updated>1549487347225</updated>
     </task>
-    <task id="LOCAL-00013" summary="small improvements.">
-      <created>1549568639667</created>
+    <task id="LOCAL-00013" summary="HUD now extends NotMoving">
+      <created>1550392808532</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1549568639667</updated>
+      <updated>1550392808532</updated>
     </task>
-    <task id="LOCAL-00014" summary="Item extends NotMoving">
-      <created>1549648992273</created>
+    <task id="LOCAL-00014" summary="HUD now extends NotMoving">
+      <created>1550392835766</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1549648992273</updated>
+      <updated>1550392835766</updated>
     </task>
-    <task id="LOCAL-00015" summary="Added Blocking Interface">
-      <created>1549724496833</created>
+    <task id="LOCAL-00015" summary="HUD now extends NotMoving">
+      <created>1550392977325</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1549724496833</updated>
+      <updated>1550392977325</updated>
     </task>
-    <task id="LOCAL-00016" summary="improved Blocking">
-      <created>1549738327392</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1549738327392</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Added DeathScreen">
-      <created>1549771886736</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1549771886736</updated>
-    </task>
-    <option name="localTasksCounter" value="18" />
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40767000" />
+    <option name="totallyTimeSpent" value="18533000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -564,10 +412,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15100671" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11140725" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -577,31 +425,31 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.13333334" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.1971831" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4989339" weight="0.14326242" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4989339" weight="0.06933911" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010661" side_tool="true" weight="0.04442037" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32765958" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010661" side_tool="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4989339" weight="0.32827735" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Maven Projects" order="1" weight="0.3295302" />
-      <window_info anchor="right" id="Database" order="2" weight="0.3295302" />
-      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Maven" order="9" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Maven" order="8" />
+      <window_info anchor="right" id="Database" order="9" />
       <window_info anchor="right" id="Coverage" order="10" side_tool="true" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19194631" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21002132" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -611,7 +459,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.0" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.34236187" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -623,16 +471,15 @@
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Maven Projects" order="1" weight="0.3295302" />
-      <window_info anchor="right" id="Database" order="2" weight="0.3295302" />
-      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Maven" order="9" />
-      <window_info anchor="right" id="Coverage" order="10" side_tool="true" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Maven" order="8" />
+      <window_info anchor="right" id="Database" order="9" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -673,9 +520,20 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="project base" />
@@ -685,19 +543,27 @@
     <MESSAGE value="Added new Image (StatBars.png)&#10;Player Healt is now displayed at corect position on HUD Background&#10;Player Endurance is now displayed on screen //still out of sync" />
     <MESSAGE value="Added HealthBar to Player.&#10;Still Work In Progress" />
     <MESSAGE value="HUD now extends NotMoving" />
-    <MESSAGE value="sector does not extend OpenWorld anymore,MovingActors cant go through Blocking Objects." />
-    <MESSAGE value="added attack function in Hostile function." />
-    <MESSAGE value="improved Enemy movement" />
-    <MESSAGE value="Player can die." />
-    <MESSAGE value="small improvements." />
-    <MESSAGE value="Item extends NotMoving" />
-    <MESSAGE value="Added Blocking Interface" />
-    <MESSAGE value="improved Blocking" />
-    <MESSAGE value="Added DeathScreen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added DeathScreen" />
+    <option name="LAST_COMMIT_MESSAGE" value="HUD now extends NotMoving" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="jar://$PROJECT_DIR$/lib/greenfoot.jar!/greenfoot/export/GreenfootScenarioViewer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="130" selection-start-line="130" selection-end-line="130" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Character.java" />
+    <entry file="file://$PROJECT_DIR$/src/helper/DummyActor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/index.html" />
+    <entry file="file://$PROJECT_DIR$/src/Rabbit.java" />
     <entry file="file://$PROJECT_DIR$/doc/MovingActor.html" />
     <entry file="jar://$PROJECT_DIR$/lib/greenfoot.jar!/greenfoot/core/Simulation.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -710,6 +576,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="34" column="52" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
+          <folding>
+            <element signature="e#495#496#0" expanded="true" />
+            <element signature="e#554#555#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -744,6 +614,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/greenfoot.jar!/greenfoot/Actor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2373">
+          <caret line="171" column="16" selection-start-line="171" selection-start-column="16" selection-end-line="171" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NotMoving.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9" lean-forward="true" selection-start-column="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md" />
     <entry file="file://$PROJECT_DIR$/class_diagramm.uml" />
     <entry file="file://$PROJECT_DIR$/src/images/test_player.png">
@@ -768,217 +652,202 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovingActor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#384#385#0" expanded="true" />
+            <element signature="e#405#406#0" expanded="true" />
+            <element signature="e#438#439#0" expanded="true" />
+            <element signature="e#482#483#0" expanded="true" />
+            <element signature="e#512#513#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
+            <element signature="e#587#588#0" expanded="true" />
+            <element signature="e#633#634#0" expanded="true" />
+            <element signature="e#1070#1071#0" expanded="true" />
+            <element signature="e#1115#1116#0" expanded="true" />
+            <element signature="e#732#733#0" expanded="true" />
+            <element signature="e#783#784#0" expanded="true" />
+            <element signature="e#824#825#0" expanded="true" />
+            <element signature="e#876#877#0" expanded="true" />
+            <element signature="e#916#917#0" expanded="true" />
+            <element signature="e#968#969#0" expanded="true" />
+            <element signature="e#1008#1009#0" expanded="true" />
+            <element signature="e#1059#1060#0" expanded="true" />
+            <element signature="e#2825#2826#0" expanded="true" />
+            <element signature="e#2859#2860#0" expanded="true" />
+            <element signature="e#2950#2951#0" expanded="true" />
+            <element signature="e#2986#2987#0" expanded="true" />
+            <element signature="e#3072#3073#0" expanded="true" />
+            <element signature="e#3108#3109#0" expanded="true" />
+            <element signature="e#3196#3197#0" expanded="true" />
+            <element signature="e#3233#3234#0" expanded="true" />
+            <element signature="e#3283#3284#0" expanded="true" />
+            <element signature="e#3310#3311#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/images/EmptyHealthbar.png" />
     <entry file="file://$PROJECT_DIR$/src/images/StatBar.png" />
-    <entry file="file://$PROJECT_DIR$/src/Carrot.java" />
     <entry file="file://$PROJECT_DIR$/src/images/StatBars.png">
       <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/General.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1071">
+          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Environment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/loadscreen.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Friendly.java">
+    <entry file="file://$PROJECT_DIR$/src/Attackable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" selection-start-column="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/Enemy.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/greenfoot.jar!/greenfoot/Actor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="439" column="40" selection-start-line="439" selection-start-column="40" selection-end-line="439" selection-end-column="40" />
+        <state relative-caret-position="84">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Weapon.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="22" selection-start-column="22" selection-end-column="22" />
+          <caret column="46" selection-start-column="46" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Attackable.java">
+    <entry file="file://$PROJECT_DIR$/src/Pickable.java" />
+    <entry file="file://$PROJECT_DIR$/src/ItemManager.java" />
+    <entry file="jar://$PROJECT_DIR$/lib/greenfoot.jar!/greenfoot/GreenfootImage.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+        <state relative-caret-position="238">
+          <caret line="155" selection-start-line="155" selection-end-line="155" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Blocking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/images/carrot.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Sector0_0.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InventoryDisplayAdapter.java" />
     <entry file="file://$PROJECT_DIR$/src/OpenWorld.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NotMoving.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="9" selection-start-column="9" selection-end-column="9" />
+        <state relative-caret-position="324">
+          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LoadScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="26" />
+        <state relative-caret-position="42">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HUD.java">
+    <entry file="jar://$PROJECT_DIR$/lib/greenfoot.jar!/greenfoot/gui/input/KeyboardManager.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Inventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="49">
+          <caret line="140" selection-start-line="140" selection-end-line="140" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Staff.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        <state relative-caret-position="315">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Environment.java">
+    <entry file="file://$PROJECT_DIR$/src/Carrot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="63">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/InventoryDisplayAdapter.java">
+    <entry file="file://$PROJECT_DIR$/src/KeyManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dagger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="42">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Item.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="45" selection-start-column="45" selection-end-column="45" />
+        <state relative-caret-position="63">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DeathScreen.java">
+    <entry file="file://$PROJECT_DIR$/src/Sector0_0.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+        <state relative-caret-position="357">
+          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HUD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#245#246#0" expanded="true" />
-            <element signature="e#296#297#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Arrow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/SkillScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
-          <folding>
-            <element signature="e#100#101#0" expanded="true" />
-            <element signature="e#126#127#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/General.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NPC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovingActor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="157" column="5" selection-start-line="157" selection-start-column="5" selection-end-line="157" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4702#4703#0" expanded="true" />
-            <element signature="e#4755#4756#0" expanded="true" />
+            <element signature="method#act#0;class#HUD#0" />
+            <element signature="method#drawStatBars#0;class#HUD#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1904">
-          <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+        <state relative-caret-position="392">
+          <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
+          <folding>
+            <element signature="method#move#0;class#Player#0" />
+            <element signature="method#performMovement#0;class#Player#0" />
+            <element signature="method#calculateEndurance#0;class#Player#0" />
+            <element signature="method#act#0;class#Player#0" />
+            <element signature="method#pick#0;class#Player#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Hostile.java">
+    <entry file="file://$PROJECT_DIR$/src/Bow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="39" lean-forward="true" selection-start-column="39" selection-end-column="39" />
+        <state relative-caret-position="168">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Enemy.java">
+    <entry file="file://$PROJECT_DIR$/src/Inventory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" column="42" lean-forward="true" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+        <state relative-caret-position="378">
+          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#686#716#1" />
+            <element signature="e#1051#1052#0" expanded="true" />
+            <element signature="e#759#796#1" />
+            <element signature="e#1131#1132#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

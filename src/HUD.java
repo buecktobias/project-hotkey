@@ -7,11 +7,10 @@ public class HUD extends Actor implements Fixed {
 
     GreenfootImage Background = new GreenfootImage("StatBars.png");
 
-
     public HUD(){
         setImage(Background);
     }
-    //TODO bars need do sync with actual values
+
     public void act(){
         Background.clear();
         Background = new GreenfootImage("StatBars.png");
@@ -36,11 +35,4 @@ public class HUD extends Actor implements Fixed {
         Background.fillRect(60,60, (int)endurance,27);
     }
 
-    //shows Text on screen|not working|may be used for WeaponNameDisplay
-    public void fontTest(Graphics itemName, String name){
-        itemName.drawString(name, 100,100);
-        Font equipedWeapon = new Font("Arial", Font.BOLD, 12);
-        itemName.setColor(Color.BLACK);
-        itemName.setFont(equipedWeapon);
-    }
 }
