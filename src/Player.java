@@ -138,6 +138,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
     }
 
     //Getters and Setters
+
     public int getSpeed() {
         return currentSpeed;
     }

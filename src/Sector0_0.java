@@ -14,8 +14,6 @@ public class Sector0_0 extends OpenWorld {
         Staff staff = new Staff(42);
         addObject(staff,getWidth()/2, getHeight()/2);
 
-
-
     }
 
 }

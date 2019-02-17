@@ -17,6 +17,5 @@ public class Inventory extends Actor {
     public void drawInventory(){
         System.out.println("Inventory working");
     }
-
     //Getters and Setters
 }

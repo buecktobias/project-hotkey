@@ -34,6 +34,7 @@ public class HUD extends NotMoving {
         Background.fillRect(60,60, (int)endurance,27);
     }
 
+
     //shows Text on screen|not working|may be used for WeaponNameDisplay
     public void fontTest(Graphics itemName, String name){
         itemName.drawString(name, 100,100);
