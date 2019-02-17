@@ -8,7 +8,7 @@ public class Inventory extends Actor {
     private Item[] items;
     private int capacity;
     private boolean active = false;
-    GreenfootImage InventoryScreen = new GreenfootImage("images/inventoryScreen.png");
+    GreenfootImage InventoryScreen = new GreenfootImage("images/inventoryScreenTest.png");
 
     public Inventory(){
         this.capacity = 42;
