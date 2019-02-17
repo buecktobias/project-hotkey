@@ -30,7 +30,6 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private final int gameSpeed = 50;
 
     Player(){
-
         Greenfoot.setSpeed(gameSpeed);
     }
     private void move(Direction d,int distance){
