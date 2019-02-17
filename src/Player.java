@@ -11,15 +11,15 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private final int sprintSpeed = 4;
     private int attackRange = 500;
     private int damage = 5;
-
     private SkillScreen skillScreen = new SkillScreen();
     private boolean skillScreenShown = false;
-
     private final int maxLife = 1000;
     private int life = maxLife;
     private final int minLife = 0;
 
-    private Item[] inventory = new Item[9];
+
+    private boolean isInventoryActive = false;
+    private Item[] inventory = new Item[10];
 
     private int waitEndurance=0;
     private final int waitTimeWhenEnduranceIsZero = 5;
@@ -28,26 +28,10 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private final int maxEndurance = 1000;
     private double endurance = maxEndurance;
     private final int gameSpeed = 50;
+
     Player(){
+
         Greenfoot.setSpeed(gameSpeed);
-    }
-    public int getSpeed() {
-        return currentSpeed;
-    }
-
-    public int getMaxLife() { return maxLife; }
-    public int getLife() {
-        return life;
-    }
-    public void setLife(int life) {
-        this.life = life;
-    }
-
-    public double getEndurance() {
-        return endurance;
-    }
-    public void setEndurance(double endurance) {
-        this.endurance = endurance;
     }
     private void move(Direction d,int distance){
         super.moveDirection(d,distance);
@@ -72,8 +56,6 @@ public class Player extends MovingActor implements Attackable,Blocking {
             move(Direction.RIGHT,this.currentSpeed);
         }
     }
-
-
     public void calculateEndurance(){
         if(Greenfoot.isKeyDown("SHIFT")){
             if(endurance > minEndurance) {
@@ -101,6 +83,10 @@ public class Player extends MovingActor implements Attackable,Blocking {
         }
     }
     public void act() {
+        useInventory();
+        if(Greenfoot.isKeyDown("E")){
+            pick();
+        }
         if(Greenfoot.isKeyDown("H")){
             List<NPC> NPCs = getObjectsInRange(attackRange,NPC.class);
             if(NPCs.size()>0){
@@ -121,6 +107,58 @@ public class Player extends MovingActor implements Attackable,Blocking {
             Greenfoot.stop();
         }
     }
-    
 
+    public void pick(){
+        List<Item> objs = getWorld().getObjectsAt(getX(), getY(), Item.class);
+        for (int i = 0; i < objs.size() ; i++) {
+            if(objs.size()>0){
+                for(int j = 0; j < inventory.length; j++){
+                    if(inventory[i]==null){
+                        Item obj = objs.get(0);
+                        inventory[i] = obj;
+                        getWorld().removeObject(obj);
+                        return;
+                    }
+                }
+            }
+        }
+    }
+    public void useInventory() {
+        Inventory inventory = new Inventory();
+        String key = Greenfoot.getKey();
+        if("m".equals(key) && !isInventoryActive){
+            System.out.println("on");
+            isInventoryActive = true;
+            //getWorld().addObject(inventory, 100,100);
+        }else if (("m".equals(key)) && isInventoryActive){
+            System.out.println("off");
+            isInventoryActive = false;
+            //getWorld().removeObject(inventory);
+        }
+
+    }
+
+    //Getters and Setters
+    public int getSpeed() {
+        return currentSpeed;
+    }
+    public int getMaxLife() { return maxLife; }
+    public int getLife() {
+        return life;
+    }
+    public void setLife(int life) {
+        this.life = life;
+    }
+    public double getEndurance() {
+        return endurance;
+    }
+    public void setEndurance(double endurance) {
+        this.endurance = endurance;
+    }
+    public Item[] getInventory() {
+        return inventory;
+    }
+    public void setInventory(Item[] inventory) {
+        this.inventory = inventory;
+    }
 }
