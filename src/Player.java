@@ -9,6 +9,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private int currentSpeed;
     private int normalSpeed = 2;
     private int level = 1;
+    private int lifeGeneration = 1;
 
     public int getLevel() {
         return level;
@@ -144,7 +145,20 @@ public class Player extends MovingActor implements Attackable,Blocking {
             endurance = maxEndurance;
         }
     }
+    public void attackNPCs() {
+        List<NPC> NPCs = getObjectsInRange(attackRange, NPC.class);
+        if (NPCs.size() > 0) {
+            attack(NPCs.get(0), damage);
+            if(NPCs.get(0).getLife() < 0) {
+                skillWindow.showSkills();
+                level++;
+            }
+        }
+    }
     public void act() {
+        if(life < maxLife) {
+            life += lifeGeneration;
+        }
         performMovement();
         calculateEndurance();
         //useInventory();
@@ -152,10 +166,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
             //pick();
         }
         if(Greenfoot.isKeyDown("H")){
-            List<NPC> NPCs = getObjectsInRange(attackRange,NPC.class);
-            if(NPCs.size()>0){
-                attack(NPCs.get(0),damage);
-            }
+            attackNPCs();
         }
         waitScreen++;
         if(timewaitScreen < waitScreen) {
@@ -164,7 +175,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
                     skillWindow.deleteButtons();
                     getWorld().removeObject(skillWindow);
                 } else {
-                    getWorld().addObject(skillWindow, 500, 250);
+                    getWorld().addObject(skillWindow, 500, 400);
                 }
                 skillScreenShown = !skillScreenShown;
                 waitScreen = 0;
