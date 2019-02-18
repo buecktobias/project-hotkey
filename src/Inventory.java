@@ -2,6 +2,7 @@ import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 
 import java.awt.*;
+import java.util.List;
 
 public class Inventory extends Actor {
 
@@ -16,13 +17,19 @@ public class Inventory extends Actor {
 
     public void act(){
         if(active){
-            drawInventory();
-        }
+            List<HUD>  huds = getWorld().getObjectsAt(getX(), getY(), HUD.class);
+            if (huds != null){
+                drawInventory(huds.get(0));
+            }
+        }else removeInventory();
     }
 
-    public void drawInventory(){
+    public void drawInventory(HUD hud){
         System.out.println("Inventory open");
-        setImage(InventoryScreen);
+        hud.Background.drawImage(InventoryScreen, 42,42);
+    }
+    public void removeInventory(){
+
     }
     public void getItems(Player p){
        items =  p.getInventory();

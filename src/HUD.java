@@ -32,5 +32,12 @@ public class HUD extends Actor implements Fixed {
         Background.setColor(Color.GREEN);
         Background.fillRect(60,60, (int)endurance,27);
     }
+    //Getters and Setters
 
+    public GreenfootImage getBackground() {
+        return Background;
+    }
+    public void setBackground(GreenfootImage background) {
+        Background = background;
+    }
 }
