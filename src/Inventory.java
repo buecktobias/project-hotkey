@@ -26,7 +26,7 @@ public class Inventory extends Actor {
 
     public void drawInventory(HUD hud){
         System.out.println("Inventory open");
-        hud.Background.drawImage(InventoryScreen, 42,42);
+        hud.Background.drawImage(InventoryScreen, getWorld().getWidth()/4, 125);
     }
 
     public void getItems(Player p){
