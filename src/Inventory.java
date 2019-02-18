@@ -21,16 +21,14 @@ public class Inventory extends Actor {
             if (huds != null){
                 drawInventory(huds.get(0));
             }
-        }else removeInventory();
+        }
     }
 
     public void drawInventory(HUD hud){
         System.out.println("Inventory open");
         hud.Background.drawImage(InventoryScreen, 42,42);
     }
-    public void removeInventory(){
 
-    }
     public void getItems(Player p){
        items =  p.getInventory();
     }
