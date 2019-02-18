@@ -156,6 +156,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
         }
     }
     public void act() {
+        useInventory();
         if(life < maxLife) {
             life += lifeGeneration;
         }
