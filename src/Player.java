@@ -10,22 +10,6 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private int normalSpeed = 2;
     private int level = 1;
     private int lifeGeneration = 1;
-
-    public int getLevel() {
-        return level;
-    }
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
-    public void setNormalSpeed(int normalSpeed) {
-        this.normalSpeed = normalSpeed;
-    }
-
-    public void setSprintSpeed(int sprintSpeed) {
-        this.sprintSpeed = sprintSpeed;
-    }
-
     private int sprintSpeed = 4;
     private int attackRange = 500;
     private int damage = 5;
@@ -34,26 +18,6 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private int last = 0;
     private SkillWindow skillWindow;
     private boolean skillScreenShown = false;
-
-    public int getNormalSpeed() {
-        return normalSpeed;
-    }
-
-    public int getSprintSpeed() {
-        return sprintSpeed;
-    }
-
-    public int getDamage() {
-        return damage;
-    }
-
-    public void setDamage(int damage) {
-        this.damage = damage;
-    }
-
-    public int getMaxEndurance() {
-        return maxEndurance;
-    }
     private int maxLife = 1000;
     private int life = maxLife;
     private final int minLife = 0;
@@ -62,12 +26,6 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private final int waitTimeWhenEnduranceIsZero = 5;
     private double enduranceRegeneration = 1;
     private int minEndurance = 0;
-    public void setMaxLife(int maxLife) {
-        this.maxLife = maxLife;
-    }
-    public void setMaxEndurance(int maxEndurance) {
-        this.maxEndurance = maxEndurance;
-    }
 
     private int maxEndurance = 1000;
     private double endurance = maxEndurance;
@@ -237,5 +195,38 @@ public class Player extends MovingActor implements Attackable,Blocking {
     }
     public void setInventory(Item[] inventory) {
         this.inventory = inventory;
+    }
+    public int getLevel() {
+        return level;
+    }
+    public void setLevel(int level) {
+        this.level = level;
+    }
+    public void setNormalSpeed(int normalSpeed) {
+        this.normalSpeed = normalSpeed;
+    }
+    public void setSprintSpeed(int sprintSpeed) {
+        this.sprintSpeed = sprintSpeed;
+    }
+    public int getNormalSpeed() {
+        return normalSpeed;
+    }
+    public int getSprintSpeed() {
+        return sprintSpeed;
+    }
+    public int getDamage() {
+        return damage;
+    }
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+    public int getMaxEndurance() {
+        return maxEndurance;
+    }
+    public void setMaxLife(int maxLife) {
+        this.maxLife = maxLife;
+    }
+    public void setMaxEndurance(int maxEndurance) {
+        this.maxEndurance = maxEndurance;
     }
 }
