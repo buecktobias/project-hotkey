@@ -108,7 +108,6 @@ public class Player extends MovingActor implements Attackable,Blocking {
         if (NPCs.size() > 0) {
             attack(NPCs.get(0), damage);
             if(NPCs.get(0).getLife() < 0) {
-                skillWindow.showSkills();
                 level++;
             }
         }
