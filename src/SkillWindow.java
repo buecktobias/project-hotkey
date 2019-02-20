@@ -67,7 +67,7 @@ public class SkillWindow extends General implements Fixed{
             image.setColor(Color.DARK_GRAY);
             image.fillRect(20,y-50,image.getWidth()-40,60);
             image.setColor(Color.BLACK);
-            image.drawString(keys[i], 20, y);
+            image.drawString(keys[i], 50, y);
             image.drawString(String.valueOf(skills.get(keys[i])), 400, y);
             setImage(image);
         }

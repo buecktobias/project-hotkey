@@ -19,18 +19,18 @@ public abstract class Button extends Actor implements Fixed {
             setImage(unClicked);
             clicked();
         }else {
-            int mouseX = Greenfoot.getMouseInfo().getX();
-            int mouseY = Greenfoot.getMouseInfo().getY();
-            int width = this.getImage().getWidth();
-            int height = this.getImage().getHeight();
-            if (mouseX > getX()- width /2 && mouseX < getX() + width / 2 && mouseY < getY() + height/2 && mouseY > getY()-height/2) {
-                GreenfootImage img = new GreenfootImage(getImage());
-                img.scale(50, 50);
-                setImage(img);
-                System.out.println("mouse");
-            } else{
-                setImage(unClicked);
-                System.out.println("not mouse");
+            if(Greenfoot.getMouseInfo() != null) {
+                int mouseX = Greenfoot.getMouseInfo().getX();
+                int mouseY = Greenfoot.getMouseInfo().getY();
+                int width = this.getImage().getWidth();
+                int height = this.getImage().getHeight();
+                if (mouseX > getX() - width / 2 && mouseX < getX() + width / 2 && mouseY < getY() + height / 2 && mouseY > getY() - height / 2) {
+                    GreenfootImage img = new GreenfootImage(getImage());
+                    img.scale(50, 50);
+                    setImage(img);
+                } else {
+                    setImage(unClicked);
+                }
             }
         }
 
