@@ -26,7 +26,8 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private final int waitTimeWhenEnduranceIsZero = 5;
     private double enduranceRegeneration = 1;
     private int minEndurance = 0;
-
+    private boolean isIActive = false;
+    private Inventory iO = new Inventory(this);
     private int maxEndurance = 1000;
     private double endurance = maxEndurance;
     private final int gameSpeed = 50;
@@ -161,14 +162,14 @@ public class Player extends MovingActor implements Attackable,Blocking {
         }
     }
     public void useInventory() {
-        List<Inventory> inventories = getWorld().getObjects(Inventory.class);
-        Inventory i = inventories.get(0);
         String key = Greenfoot.getKey();
-        if (("m".equals(key)&& i.isActive()) ){
-            i.setActive(false);
+        if (("m".equals(key)&& isIActive) ){
+            getWorld().removeObject(iO);
+            setIActive(false);
             System.out.println("off");
-        }else if("m".equals(key) && !i.isActive()) {
-            i.setActive(true);
+        }else if("m".equals(key) && !isIActive()) {
+            getWorld().addObject(iO, getWorld().getWidth()/2, getWorld().getHeight()/2);
+            setIActive(true);
             System.out.println("on");
         }
     }
@@ -228,5 +229,11 @@ public class Player extends MovingActor implements Attackable,Blocking {
     }
     public void setMaxEndurance(int maxEndurance) {
         this.maxEndurance = maxEndurance;
+    }
+    public boolean isIActive() {
+        return isIActive;
+    }
+    public void setIActive(boolean IActive) {
+        isIActive = IActive;
     }
 }
