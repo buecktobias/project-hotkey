@@ -104,6 +104,7 @@ public abstract class MovingActor extends General {
         List<General> intersectingObjects = getIntersectingObjects(General.class);
         intersectingObjects.removeIf(intersect -> !(intersect instanceof Blocking));
         List<General> objectsInRange = getObjectsInRange(this.hitboxRadius,General.class);
+        objectsInRange.removeIf(object -> !(object instanceof Blocking));
         if(intersectingObjects.size() > 0) {
             for(General intersect:intersectingObjects){
                 for(General object:objectsInRange){
@@ -115,6 +116,8 @@ public abstract class MovingActor extends General {
                             if(((MovingActor) intersect).intersectsWithBlockingObject(false)){
                                 return true;
                             }
+                        }else{
+                            return true;
                         }
                     }
                     }
