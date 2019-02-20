@@ -2,35 +2,25 @@ import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 
 import java.awt.*;
-import java.util.List;
 
-public class Inventory extends Actor {
-
+public class Inventory extends Actor implements Fixed {
+    private Player p;
     private Item[] items;
     private int capacity;
-    private boolean active = false;
     GreenfootImage InventoryScreen = new GreenfootImage("images/inventoryScreenTest.png");
 
-    public Inventory(){
+    public Inventory(Player p){
+        this.p = p;
         this.capacity = 42;
+        setImage(InventoryScreen);
     }
-
-    public void act(){
-        if(active){
-            List<HUD>  huds = getWorld().getObjectsAt(getX(), getY(), HUD.class);
-            if (huds != null){
-                drawInventory(huds.get(0));
-            }
-        }
-    }
-
     public void drawInventory(HUD hud){
         System.out.println("Inventory open");
         hud.Background.drawImage(InventoryScreen, getWorld().getWidth()/4, 125);
     }
 
     public void getItems(Player p){
-       items =  p.getInventory();
+        items =  p.getInventory();
     }
 
     //shows Text on screen|not working|may be used for WeaponNameDisplay
@@ -43,10 +33,4 @@ public class Inventory extends Actor {
 
 
     //Getters and Setters
-    public boolean isActive() {
-        return active;
-    }
-    public void setActive(boolean active) {
-        this.active = active;
-    }
 }

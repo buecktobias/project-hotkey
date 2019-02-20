@@ -16,8 +16,8 @@ public class HUD extends Actor implements Fixed {
         Background = new GreenfootImage("StatBars.png");
         setImage(Background);
         if (getWorld().getObjects(Player.class).get(0)!= null) {
-           Player p = getWorld().getObjects(Player.class).get(0);
-           drawStatBars(p);
+            Player p = getWorld().getObjects(Player.class).get(0);
+            drawStatBars(p);
         }else{
             System.out.println("No Player found");
         }
