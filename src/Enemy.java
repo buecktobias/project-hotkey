@@ -21,6 +21,11 @@ public class Enemy extends Hostile implements Attackable,Blocking {
     }
 
     @Override
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    @Override
     public void act() {
         moveToPlayer(this.visualRange);
         attackPlayer(this.attackRange, this.damage);

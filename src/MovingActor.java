@@ -9,7 +9,20 @@ import java.util.*;
  */
 public abstract class MovingActor extends General {
     public int hitboxRadius=getWidth()*4;
+
     abstract int getSpeed();
+    abstract void setSpeed(int n);
+
+    @Override
+    public void act() {
+        if(getOneIntersectingObject(Water.class) != null){
+            if(getSpeed() > 0){
+                setSpeed((int)Math.round(getSpeed() / 2));
+            }
+
+        }
+    }
+
     public void moveInDirectionOf(Actor actor){
         int actorX = actor.getX();
         int actorY = actor.getY();
@@ -22,15 +35,15 @@ public abstract class MovingActor extends General {
 
         if(Math.max(absXDifference,absYDifference) == absXDifference){
             if(xDifference > 0){
-                moveLeft();
+                moveDirection(Direction.LEFT,this.getSpeed());
             }else if (xDifference <0){
-                moveRight();
+                moveDirection(Direction.RIGHT,this.getSpeed());
             }
         }else if(Math.max(absXDifference,absYDifference) == absYDifference){
             if(yDifference > 0){
-                moveUp();
+                moveDirection(Direction.UP,this.getSpeed());
             }else{
-                moveDown();
+                moveDirection(Direction.DOWN,this.getSpeed());
 
             }
 
@@ -87,16 +100,16 @@ public abstract class MovingActor extends General {
                 break;
         }
     }
-    public void moveUp() {
+    private void moveUp() {
         moveUp(1);
     }
-    public void moveRight() {
+    private void moveRight() {
         moveRight(1);
     }
-    public void moveLeft() {
+    private void moveLeft() {
         moveLeft(1);
     }
-    public void moveDown() {
+    private void moveDown() {
         moveDown(1);
     }
 
@@ -127,7 +140,7 @@ public abstract class MovingActor extends General {
         }
         return false;
     }
-    public void moveTo(int x,int y){
+    private void moveTo(int x,int y){
         int oldX = this.getX();
         int oldY = this.getY();
         setLocation(x,y);
@@ -136,22 +149,22 @@ public abstract class MovingActor extends General {
         }
 
     }
-    public void moveUp(int distance){
+    private void moveUp(int distance){
         int x = getX();
         int y = getY() - distance;
         moveTo(x,y);
     }
-    public void moveRight(int distance){
+    private void moveRight(int distance){
         int x = getX()+distance;
         int y = getY();
         moveTo(x,y);
     }
-    public void moveLeft(int distance){
+    private void moveLeft(int distance){
         int x = getX()-distance;
         int y = getY();
         moveTo(x,y);
     }
-    public void moveDown(int distance){
+    private void moveDown(int distance){
         int x = getX();
         int y = getY()+distance;
         moveTo(x,y);

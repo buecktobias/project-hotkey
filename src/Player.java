@@ -117,9 +117,9 @@ public class Player extends MovingActor implements Attackable,Blocking {
         useInventory();
         if(life < maxLife) {
             life += lifeGeneration;
-        }
+        }calculateEndurance();
+        super.act();
         performMovement();
-        calculateEndurance();
         //useInventory();
         if(Greenfoot.isKeyDown("E")){
             //pick();
@@ -177,6 +177,10 @@ public class Player extends MovingActor implements Attackable,Blocking {
     public int getSpeed() {
         return currentSpeed;
     }
+    public void setSpeed(int currentSpeed) {
+        this.currentSpeed = currentSpeed;
+    }
+
     public int getMaxLife() { return maxLife; }
     public int getLife() {
         return life;
@@ -187,9 +191,6 @@ public class Player extends MovingActor implements Attackable,Blocking {
     public double getEndurance() {
         return endurance;
     }
-    public void setEndurance(double endurance) {
-        this.endurance = endurance;
-    }
     public Item[] getInventory() {
         return inventory;
     }
@@ -198,9 +199,6 @@ public class Player extends MovingActor implements Attackable,Blocking {
     }
     public int getLevel() {
         return level;
-    }
-    public void setLevel(int level) {
-        this.level = level;
     }
     public void setNormalSpeed(int normalSpeed) {
         this.normalSpeed = normalSpeed;

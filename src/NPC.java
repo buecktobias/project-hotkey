@@ -1,3 +1,5 @@
+import helper.Direction;
+
 import java.util.List;
 import java.util.Random;
 
@@ -22,16 +24,16 @@ public abstract class NPC extends MovingActor implements Attackable {
     public void randomMove(){
         switch(r.nextInt(4)){
             case 0:
-                moveDown(speed);
+                moveDirection(Direction.DOWN,speed);
                 break;
             case 1:
-                moveLeft(speed);
+                moveDirection(Direction.LEFT,speed);
                 break;
             case 2:
-                moveRight(speed);
+                moveDirection(Direction.RIGHT,speed);
                 break;
             case 3:
-                moveUp(speed);
+                moveDirection(Direction.UP,speed);
                 break;
         }
     }
