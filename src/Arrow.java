@@ -9,7 +9,6 @@ public class Arrow extends Projectiles {
         this.attackSpeed = attackSpeed;
         this.attackRange = attackRange;
     }
-
     public void act() {
         move(getDirection());
     }
