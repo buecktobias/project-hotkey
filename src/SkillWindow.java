@@ -1,7 +1,7 @@
+import greenfoot.Color;
 import greenfoot.GreenfootImage;
 import greenfoot.World;
 
-import java.awt.*;
 import java.util.HashMap;
 import java.util.LinkedList;
 
@@ -48,7 +48,8 @@ public class SkillWindow extends General implements Fixed{
         setImage(new GreenfootImage(bg));
         deleteButtons();
         GreenfootImage image = getImage();
-        image.setFont(new Font(Font.SANS_SERIF, Font.ITALIC, 50));
+        //TODO fix Fonts
+        //image.setFont(new Font(Font.SANS_SERIF, Font.ITALIC, 50));
         String[] keys = skills.keySet().toArray(new String[0]);
         Button button;
         GreenfootImage buttonImg;

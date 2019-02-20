@@ -1,7 +1,6 @@
 import greenfoot.Actor;
+import greenfoot.Color;
 import greenfoot.GreenfootImage;
-
-import java.awt.*;
 
 public class HUD extends Actor implements Fixed {
 
