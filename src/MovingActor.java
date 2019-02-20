@@ -13,14 +13,21 @@ public abstract class MovingActor extends General {
     abstract int getSpeed();
     abstract void setSpeed(int n);
 
+    public void getEffects(){
+        List<Environment> environments = getIntersectingObjects(Environment.class);
+        HashSet<Class> classes = new HashSet<>();
+        for(Environment hasEffect:environments){
+            if(hasEffect instanceof HasEffect){
+                if( !(classes.contains(hasEffect.getClass()))) {
+                    ((HasEffect) hasEffect).effects(this);
+                }
+                classes.add(hasEffect.getClass());
+            }
+        }
+    }
     @Override
     public void act() {
-        if(getOneIntersectingObject(Water.class) != null){
-            if(getSpeed() > 0){
-                setSpeed((int)Math.round(getSpeed() / 2));
-            }
-
-        }
+        getEffects();
     }
 
     public void moveInDirectionOf(Actor actor){

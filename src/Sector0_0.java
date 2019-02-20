@@ -21,6 +21,7 @@ public class Sector0_0 extends OpenWorld {
         randomObjects(Grass.class, 700, 600, 1000, 900, 6);
         randomObjects(Rock.class, 100, -500, 900, 300, 8);
         randomObjects(Water.class, -500, 200, 100, 6000, 1);
+        randomObjects(Fire.class, 700, 600, 1000, 900, 5);
         setPaintOrder(HUD.class, MovingActor.class);
         boundingRocks(-2_000, -1_000, 2_000, 1_000);
 
