@@ -1,4 +1,7 @@
+import greenfoot.Actor;
 import greenfoot.GreenfootImage;
+
+import java.util.Random;
 
 public class Sector0_0 extends OpenWorld {
     private Enemy enemy = new Enemy();
@@ -12,6 +15,26 @@ public class Sector0_0 extends OpenWorld {
         setScrollingBackground(new GreenfootImage("cell_debug.png"));
         Inventory inventory = new Inventory();
         addObject(inventory,getWidth()/2, getHeight()/2);
+        try {
+            randomObjects(Tree.class,20,100,500,300,50);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }
+
+    }
+    public void randomObjects(Class a, int fromX, int fromY, int toX, int toY,int density) throws IllegalAccessException, InstantiationException {
+        Random r = new Random();
+        if(density < 32){
+            density = 32;
+        }
+        for(;fromX<toX;fromX+=r.nextInt(density-32)+32){
+            for(;fromY<toY;fromY+=r.nextInt(density-32)+32){
+                addObject((NotMoving)a.newInstance(),fromX,fromY);
+            }
+        }
+
     }
 
     @Override
