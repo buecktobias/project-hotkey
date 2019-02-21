@@ -10,8 +10,8 @@ public class Spider extends Hostile implements Blocking,Attackable {
         GreenfootImage img = new GreenfootImage("images/Spider.png");
         img.scale(64,32);
         setImage(img);
-        visualRange = this.getWidth() *20;
-        attackRange = this.getWidth();
+        visualRange = this.getWidth() *5;
+        attackRange = this.getWidth()+this.getHeight();
     }
 
     @Override
