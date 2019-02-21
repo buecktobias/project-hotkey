@@ -63,7 +63,7 @@ public class SkillWindow extends General implements Fixed{
         for (int i = 0; i < keys.length; i++){
             image.setColor(Color.BLACK);
             int ySkill = 150;
-            int y = ySkill+20 + i * 60;
+            int y = ySkill+ 20 + i * 60;
             image.setColor(Color.DARK_GRAY);
             image.fillRect(20,y-50,image.getWidth()-40,60);
             image.setColor(Color.BLACK);

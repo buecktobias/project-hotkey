@@ -12,18 +12,22 @@ public class Sector0_0 extends OpenWorld {
     public Sector0_0() {
         setBackground("cell_debug.png");
         Player player = new Player();
-        addObject(player, getWidth() / 2, getHeight() / 2);
-        addObject(enemy, 200, getHeight() / 2);
+        addObject(player, 0, 0);
+        addObject(enemy, 200, 200);
         HUD hud = new HUD();
         addObject(hud, getWidth() / 2, getHeight() / 2);
         setScrollingBackground(new GreenfootImage("cell_debug.png"));
         randomObjects(Tree.class, 20, 100, 800, 600, 2);
         randomObjects(Grass.class, 700, 600, 1000, 900, 6);
-        randomObjects(Rock.class, 100, -500, 900, 300, 8);
-        randomObjects(Water.class, -500, 200, 100, 6000, 1);
+        randomObjects(Rock.class, 500, -500, 900, 300, 8);
+        randomObjects(Water.class, -600, 200, -100, 1_000, 1);
         randomObjects(Fire.class, 700, 600, 1000, 900, 5);
-        setPaintOrder(HUD.class, MovingActor.class);
-        boundingRocks(-2_000, -1_000, 2_000, 1_000);
+        randomObjects(Fire.class,-1000,-1000,-100,-200,10);
+        addObject(new Spider(),-400,-500);
+        addObject(new Pig(),-200,200);
+        setPaintOrder(Button.class,HUD.class, MovingActor.class);
+        boundingRocks(-1_000, -1_000, 1_000, 1_000);
+        resetPlayersPosition(player);
 
     }
 
@@ -112,9 +116,5 @@ public class Sector0_0 extends OpenWorld {
 
     @Override
     public void act() {
-        if (enemy.getWorld() == null) {
-            enemy = new Enemy();
-            addObject(enemy, 200, getHeight() / 2);
-        }
     }
 }

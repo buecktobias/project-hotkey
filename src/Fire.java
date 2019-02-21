@@ -11,7 +11,6 @@ public class Fire extends Environment implements HasEffect {
 
     @Override
     public void effects(MovingActor movingActor) {
-        System.out.println("fire");
         if(movingActor instanceof Attackable){
             ((Attackable) movingActor).setLife(((Attackable) movingActor).getLife()-this.damage);
         }

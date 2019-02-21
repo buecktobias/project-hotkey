@@ -3,7 +3,7 @@ import helper.Direction;
 import java.util.List;
 import java.util.Random;
 
-public abstract class NPC extends MovingActor implements Attackable {
+public abstract class NPC extends MovingActor{
     private int speed = 1;
     private static final Random r = new Random();
     public Player getPlayer(int visualRange) {

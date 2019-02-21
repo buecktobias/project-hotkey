@@ -106,10 +106,14 @@ public class Player extends MovingActor implements Attackable,Blocking {
     }
     public void attackNPCs() {
         List<NPC> NPCs = getObjectsInRange(attackRange, NPC.class);
+        NPCs.removeIf(npc -> !(npc instanceof Attackable));
         if (NPCs.size() > 0) {
-            attack(NPCs.get(0), damage);
-            if(NPCs.get(0).getLife() < 0) {
-                level++;
+            if(NPCs.get(0) instanceof Attackable) {
+                Attackable attackable = (Attackable) NPCs.get(0);
+                attack(attackable, damage);
+                if (attackable.getLife() < 0) {
+                    level++;
+                }
             }
         }
     }
