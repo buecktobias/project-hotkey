@@ -1,17 +1,29 @@
+import helper.Direction;
+
 public class Arrow extends Projectiles {
 
-    private double damage;
-    private int attackSpeed;
+    private int damage;
     private int attackRange;
+    private int projectileSpeed;
+    private Player player;
 
-    public Arrow(double damage, int attackSpeed, int attackRange) {
+    public Arrow(int damage, int projectileSpeed, int attackRange,Player player) {
+        setImage("arrow.png");
         this.damage = damage;
-        this.attackSpeed = attackSpeed;
         this.attackRange = attackRange;
+        this.projectileSpeed = projectileSpeed;
+        this.player = player;
     }
 
     public void act() {
-        move(getDirection());
+        for(int i = 0;i < attackRange; i++) {
+            move(getDirection(),1);
+        }
+    }
+    private void move(Direction d, int distance){
+        super.moveDirection(d,distance);
     }
 }
+
+
 
