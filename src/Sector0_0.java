@@ -15,7 +15,7 @@ public class Sector0_0 extends OpenWorld {
     private final int BorderY2 = 1_000;
 
     public Sector0_0() {
-        setPaintOrder(Button.class, HUD.class, MovingActor.class);
+        setPaintOrder(Button.class, Inventory.class, HUD.class, MovingActor.class);
         setBackground("cell_debug.png");
         Player player = new Player();
         addObject(player, 0, 0);
@@ -148,6 +148,7 @@ public class Sector0_0 extends OpenWorld {
 
     @Override
     public void act() {
+        /*
         if (time % 30 == 0) {
             randomSpawn(Pig.class);
 
@@ -156,5 +157,6 @@ public class Sector0_0 extends OpenWorld {
             randomSpawn(Spider.class);
         }
         time++;
+        */
     }
 }

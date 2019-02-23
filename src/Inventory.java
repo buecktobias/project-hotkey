@@ -8,7 +8,7 @@ public class Inventory extends Actor implements Fixed {
     private Player p;
     private LinkedList<Item> items;
     private int capacity;
-    GreenfootImage InventoryScreen = new GreenfootImage("images/inventoryScreenTest.png");
+    GreenfootImage InventoryScreen = new GreenfootImage("images/MyInventoryV1.png");
 
     public Inventory(Player p){
         this.p = p;
