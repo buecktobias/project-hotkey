@@ -2,10 +2,11 @@ import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 
 import java.awt.*;
+import java.util.LinkedList;
 
 public class Inventory extends Actor implements Fixed {
     private Player p;
-    private Item[] items;
+    private LinkedList<Item> items;
     private int capacity;
     GreenfootImage InventoryScreen = new GreenfootImage("images/inventoryScreenTest.png");
 

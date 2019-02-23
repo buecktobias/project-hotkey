@@ -4,6 +4,10 @@ public class Dagger extends Weapon {
     private int attackSpeed;
     private int attackRange;
 
+    // Pickable Atributes
+    public int count;
+    public final int id = 3;
+    public String name = "Zahnstocher";
 
     public void setDamage(double damage) {
         this.damage = damage;
@@ -49,4 +53,23 @@ public class Dagger extends Weapon {
     }
     */
 
+    //Pickable Methods
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public int getId() {
+        return id;
+    }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

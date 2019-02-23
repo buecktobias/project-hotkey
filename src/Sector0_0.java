@@ -15,6 +15,7 @@ public class Sector0_0 extends OpenWorld {
     private final int BorderY2 = 1_000;
 
     public Sector0_0() {
+        setPaintOrder(Button.class, HUD.class, MovingActor.class);
         setBackground("cell_debug.png");
         Player player = new Player();
         addObject(player, 0, 0);
@@ -22,6 +23,9 @@ public class Sector0_0 extends OpenWorld {
         HUD hud = new HUD();
         addObject(hud, getWidth() / 2, getHeight() / 2);
         setScrollingBackground(new GreenfootImage("cell_debug.png"));
+        Staff staff = new Staff(42);
+        addObject(staff, 100, 100);
+
         randomObjects(Tree.class, 20, 100, 800, 600, 2);
         randomObjects(Grass.class, 700, 600, 1000, 900, 6);
         randomObjects(Rock.class, 500, -500, 900, 300, 8);
@@ -29,9 +33,9 @@ public class Sector0_0 extends OpenWorld {
         randomObjects(Fire.class, 700, 600, 1000, 900, 5);
         randomObjects(Fire.class, -1000, -1000, -100, -200, 10);
         randomObjects(Grass.class, BorderX1, BorderY1, BorderX2, BorderY2, 12);
+
         addObject(new Spider(), -400, -500);
         addObject(new Pig(), -200, 200);
-        setPaintOrder(Button.class, HUD.class, MovingActor.class);
         boundingRocks(BorderX1, BorderY1, BorderX2, BorderY2);
 
     }
@@ -50,6 +54,7 @@ public class Sector0_0 extends OpenWorld {
             addObject(new Rock(), maxX, y);
         }
     }
+
 
     public void randomSpawn(Class c) {
         int x = r.nextInt(Math.abs(BorderX2 - BorderX1)) + BorderX1;
