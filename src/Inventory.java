@@ -15,9 +15,8 @@ public class Inventory extends Actor implements Fixed {
         this.capacity = 42;
         setImage(InventoryScreen);
     }
-    public void drawInventory(HUD hud){
-        System.out.println("Inventory open");
-        hud.Background.drawImage(InventoryScreen, getWorld().getWidth()/4, 125);
+    public void drawItems(){
+
     }
 
     public void getItems(Player p){
