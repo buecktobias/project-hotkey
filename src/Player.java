@@ -144,6 +144,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
         if(Greenfoot.isKeyDown("H")){
             attackNPCs();
         }
+        printCoords();
         waitScreen++;
         if(timewaitScreen < waitScreen) {
             if (Greenfoot.isKeyDown("R")) {
