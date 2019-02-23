@@ -45,29 +45,25 @@ public class SkillWindow extends General implements Fixed{
         buttonList = new LinkedList<Button>();
         this.world = world;
         buttonList = new LinkedList<>();
-        bg = new GreenfootImage("images/SkillScreen2.png");
+        bg = new GreenfootImage("images/SkillScreenV1.png");
         bg.setTransparency(150);
         }
     public void showSkills() {
         setImage(new GreenfootImage(bg));
         deleteButtons();
         GreenfootImage image = getImage();
-        image.setFont(new Font(Font.SANS_SERIF, Font.ITALIC, 50));
+        image.setFont(new Font(Font.SANS_SERIF, Font.ITALIC, 20));
         String[] keys = skills.keySet().toArray(new String[0]);
         Player player = world.getObjects(Player.class).get(0);
         int skillPoints = player.getLevel() - usedSkillPoints();
         String stringSkillPoints = String.valueOf(skillPoints);
-        image.drawString("SkillPoints " + stringSkillPoints,100,60);
-        image.setColor(Color.BLACK);
-        image.fillRect(20,70,image.getWidth()-40,100);
+        image.setColor(Color.WHITE);
+        image.drawString("SkillPoints " + stringSkillPoints,280,160);
         for (int i = 0; i < keys.length; i++){
-            image.setColor(Color.BLACK);
-            int ySkill = 150;
+            int ySkill = 180;
             int y = ySkill+ 20 + i * 60;
-            image.setColor(Color.DARK_GRAY);
-            image.fillRect(20,y-50,image.getWidth()-40,60);
-            image.setColor(Color.BLACK);
-            image.drawString(keys[i], 50, y);
+            image.setColor(Color.WHITE);
+            image.drawString(keys[i], 240, y);
             image.drawString(String.valueOf(skills.get(keys[i])), 400, y);
             setImage(image);
         }
@@ -77,7 +73,7 @@ public class SkillWindow extends General implements Fixed{
     }
     private void createButtons(){
         String[] keys = skills.keySet().toArray(new String[0]);
-        int ySkill = 150;
+        int ySkill = 195;
         Button button;
         GreenfootImage buttonImgUnClicked;
         GreenfootImage buttonImgClicked;
@@ -95,7 +91,7 @@ public class SkillWindow extends General implements Fixed{
                 }
             };
             buttonList.add(button);
-            world.addObject(button, 200 + getX(), ySkill + i * 60 + getY() - getHeight() / 2);
+            world.addObject(button, 100 + getX(), ySkill + i * 60 + getY() - getHeight() / 2);
         }
     }
     private void updatePlayersAttributes(){

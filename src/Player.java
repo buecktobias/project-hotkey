@@ -120,21 +120,24 @@ public class Player extends MovingActor implements Attackable,Blocking {
             }
         }
     }
-    public void act() {
-        useInventory();
-        performMovement();
+    public void regenerateLife(){
+        if(life < maxLife) {
+            life += lifeGeneration;
+        }
+    }
+    public void printCoords(){
         World w = getWorld();
         if(w instanceof OpenWorld){
             int x=((OpenWorld) w).getTotalXMovement();
             int y=((OpenWorld) w).getTotalYMovement();
             print(x +"\n"+y);
         }
-
-        if(life < maxLife) {
-            life += lifeGeneration;
-        }calculateEndurance();
+    }
+    public void act() {
+        useInventory();
+        performMovement();
+        calculateEndurance();
         super.act();
-
         if(Greenfoot.isKeyDown("E")){
             pick();
         }
