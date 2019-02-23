@@ -7,9 +7,9 @@ public class Staff extends Weapon implements Pickable {
     private int attackRange;
 
     //Pickable Atributes
-    public int count = 0;
-    public final int id = 1;
-    public String name = "The Elder Wand";
+    public int itemCount = 0;
+    public final int itemId = 1;
+    public String itemName = "The Elder Wand";
 
 
     public Staff(int attackRange) {
@@ -24,14 +24,14 @@ public class Staff extends Weapon implements Pickable {
 
     //Pickable Methods
     public void pick(Player p, LinkedList inventory){
-        this.count = this.count + 1;
+        this.itemCount = this.itemCount + 1;
         inventory.add(this);
         getWorld().removeObject(this);
-        System.out.println("Count: " + this.getCount() + "| Id: " + this.getId() + "| Name: " + this.getName());
+        System.out.println("Count: " + this.getItemCount() + "| Id: " + this.getItemId() + "| Name: " + this.getItemName());
     }
     public void compareIDs(Player p, LinkedList inventory, Pickable item) {
-            if (item.getId() == this.getId()) {
-                item.setCount(item.getCount() + 1);
+            if (item.getItemId() == this.getItemId()) {
+                item.setItemCount(item.getItemCount() + 1);
                 getWorld().removeObject(this);
                 return;
             }else{
@@ -41,19 +41,21 @@ public class Staff extends Weapon implements Pickable {
             }
     }
 
-    public int getCount() {
-        return count;
+    public int getItemCount() {
+        return itemCount;
     }
-    public void setCount(int count) {
-        this.count = count;
+    public void setItemCount(int itemCount) {
+        this.itemCount = itemCount;
     }
-    public int getId() {
-        return id;
+
+    public int getItemId() {
+        return itemId;
     }
-    public String getName() {
-        return name;
+
+    public String getItemName() {
+        return itemName;
     }
-    public void setName(String name) {
-        this.name = name;
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
     }
 }

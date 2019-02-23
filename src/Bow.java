@@ -8,9 +8,9 @@ public class Bow extends Weapon implements Pickable{
     private Player player;
 
     // Pickable Atributes
-    public int count;
-    public final int id = 3;
-    public String name = "Dragonslayer GreatBow";
+    public int itemCount;
+    public final int itemId = 3;
+    public String itemName = "Dragonslayer GreatBow";
 
     public Bow(int attackSpeed, Player player) {
         this.attackSpeed = attackSpeed;
@@ -30,14 +30,14 @@ public class Bow extends Weapon implements Pickable{
 
     //Pickable Methods
     public void pick(Player p, LinkedList inventory){
-        this.count = this.count + 1;
+        this.itemCount = this.itemCount + 1;
         inventory.add(this);
         getWorld().removeObject(this);
-        System.out.println("Count: " + this.getCount() + "| Id: " + this.getId() + "| Name: " + this.getName());
+        System.out.println("Count: " + this.getItemCount() + "| Id: " + this.getItemId() + "| Name: " + this.getItemName());
     }
     public void compareIDs(Player p, LinkedList inventory, Pickable item) {
-        if (item.getId() == this.getId()) {
-            item.setCount(item.getCount() + 1);
+        if (item.getItemId() == this.getItemId()) {
+            item.setItemCount(item.getItemCount() + 1);
             getWorld().removeObject(this);
             return;
         }else{
@@ -47,19 +47,19 @@ public class Bow extends Weapon implements Pickable{
         }
     }
 
-    public int getCount() {
-        return count;
+    public int getItemCount() {
+        return itemCount;
     }
-    public void setCount(int count) {
-        this.count = count;
+    public void setItemCount(int itemCount) {
+        this.itemCount = itemCount;
     }
-    public int getId() {
-        return id;
+    public int getItemId() {
+        return itemId;
     }
-    public String getName() {
-        return name;
+    public String getItemName() {
+        return itemName;
     }
-    public void setName(String name) {
-        this.name = name;
+    public void setItemNameame(String itemName) {
+        this.itemName = itemName;
     }
 }
