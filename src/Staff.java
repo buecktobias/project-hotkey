@@ -5,7 +5,7 @@ public class Staff extends Weapon implements Pickable {
     private int attackRange;
 
     //Pickable Atributes
-    public int count;
+    public int count = 0;
     public final int id = 1;
     public String name = "The Elder Wand";
 

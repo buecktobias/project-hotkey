@@ -170,7 +170,9 @@ public class Player extends MovingActor implements Attackable,Blocking {
             if (inventory != null && inventory.isEmpty()) {
                 inventory.add(currentItem);
                 getWorld().removeObject(currentItem);
-                System.out.println("Id: " +currentItem.getId() + "  Name: " + currentItem.getName());
+
+                System.out.println("Count: " + currentItem.getCount() + "| Id: " + currentItem.getId() + "| Name: " + currentItem.getName());
+
                 return;
             }else if(!inventory.isEmpty()){
                 for (Item item : inventory) {
