@@ -1,11 +1,16 @@
 import helper.Direction;
 
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Random;
 
-public abstract class NPC extends MovingActor{
+public abstract class NPC extends MovingActor {
     private int speed = 1;
+
+    private Queue<Direction> movingList = new LinkedList<>();
     private static final Random r = new Random();
+
     public Player getPlayer(int visualRange) {
         List<Player> playersInVisualRange = getObjectsInRange(visualRange, Player.class);
         if (playersInVisualRange.size() != 0) {
@@ -13,7 +18,8 @@ public abstract class NPC extends MovingActor{
         }
         return null;
     }
-    public Player getPlayer(){
+
+    public Player getPlayer() {
         List<Player> playersInVisualRange = getWorld().getObjects(Player.class);
         if (playersInVisualRange.size() != 0) {
             return playersInVisualRange.get(0);
@@ -21,20 +27,51 @@ public abstract class NPC extends MovingActor{
         return null;
 
     }
-    public void randomMove(){
-        switch(r.nextInt(4)){
+
+    private Direction getRandomDirection() {
+        switch (r.nextInt(4)) {
             case 0:
-                moveDirection(Direction.DOWN,speed);
-                break;
+                return Direction.DOWN;
             case 1:
-                moveDirection(Direction.LEFT,speed);
-                break;
+                return Direction.LEFT;
             case 2:
-                moveDirection(Direction.RIGHT,speed);
-                break;
+                return Direction.RIGHT;
             case 3:
-                moveDirection(Direction.UP,speed);
-                break;
+                return Direction.UP;
+        }
+        return null;
+    }
+
+    public void randomMove() {
+        moveDirection(getRandomDirection(), getSpeed());
+    }
+
+    private void move() {
+        Direction directionToGo = movingList.poll();
+        if (directionToGo != null) {
+            moveDirection(directionToGo, getSpeed());
         }
     }
+
+    private void addToMovingList(Direction d, int times) {
+        for (int i = 0; i < times; i++) {
+            movingList.add(d);
+        }
+    }
+    private Direction getRandomDirectionOrNull(){
+        if(r.nextInt(100)<80) {
+            return getRandomDirection();
+        }else{
+            return null;
+        }
+    }
+
+
+    public void randomMove(int range) {
+        while (movingList.size() <= 0) {
+            addToMovingList(getRandomDirectionOrNull(), r.nextInt(range));
+        }
+        move();
+    }
+
 }

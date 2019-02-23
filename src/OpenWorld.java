@@ -10,6 +10,22 @@ public abstract class OpenWorld extends World {
         setPaintOrder(Player.class);
     }
 
+    public int getTotalXMovement() {
+        return totalXMovement;
+    }
+
+    public void setTotalXMovement(int totalXMovement) {
+        this.totalXMovement = totalXMovement;
+    }
+
+    public int getTotalYMovement() {
+        return totalYMovement;
+    }
+
+    public void setTotalYMovement(int totalYMovement) {
+        this.totalYMovement = totalYMovement;
+    }
+
     private int totalXMovement = 0;
     private int totalYMovement = 0;
 

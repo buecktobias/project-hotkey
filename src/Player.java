@@ -118,6 +118,12 @@ public class Player extends MovingActor implements Attackable,Blocking {
         }
     }
     public void act() {
+        World w = getWorld();
+        if(w instanceof OpenWorld){
+            int x=((OpenWorld) w).getTotalXMovement();
+            int y=((OpenWorld) w).getTotalYMovement();
+            print(x +"\n"+y);
+        }
         useInventory();
         if(life < maxLife) {
             life += lifeGeneration;

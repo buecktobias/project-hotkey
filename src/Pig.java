@@ -1,7 +1,20 @@
 import greenfoot.GreenfootImage;
 
-public class Pig extends Friendly implements Blocking {
+public class Pig extends Friendly implements Blocking,Attackable {
     private int speed = 1;
+    private final int defaultLife = 20;
+    private int life = defaultLife;
+
+    @Override
+    public int getLife() {
+        return life;
+    }
+
+    @Override
+    public void setLife(int life) {
+        this.life = life;
+    }
+
     public Pig(){
         GreenfootImage img = new GreenfootImage("images/lilpig.png");
         img.scale(64,32);
@@ -10,8 +23,10 @@ public class Pig extends Friendly implements Blocking {
 
     @Override
     public void act() {
-        randomMove();
-
+        randomMove(200);
+        if(life<0){
+            getWorld().removeObject(this);
+        }
     }
 
     @Override

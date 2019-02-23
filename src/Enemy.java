@@ -36,7 +36,11 @@ public class Enemy extends Hostile implements Attackable,Blocking {
     @Override
     public void act() {
         super.act();
-        moveToPlayer(this.visualRange);
+        if(moveToPlayer(this.visualRange)){
+
+        }else{
+            randomMove(500);
+        }
         if(attackPlayer(this.attackRange, this.damage)){
         }
         if(life <0){

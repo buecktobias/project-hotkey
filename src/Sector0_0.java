@@ -9,10 +9,11 @@ public class Sector0_0 extends OpenWorld {
     private int time = 0;
     private Enemy enemy = new Enemy();
     private Random r = new Random();
-    private final int BorderX1=-1_000;
-    private final int BorderY1=-1_000;
-    private final int BorderX2=1_000;
-    private final int BorderY2=1_000;
+    private final int BorderX1 = -1_000;
+    private final int BorderY1 = -1_000;
+    private final int BorderX2 = 1_000;
+    private final int BorderY2 = 1_000;
+
     public Sector0_0() {
         setBackground("cell_debug.png");
         Player player = new Player();
@@ -26,13 +27,13 @@ public class Sector0_0 extends OpenWorld {
         randomObjects(Rock.class, 500, -500, 900, 300, 8);
         randomObjects(Water.class, -600, 200, -100, 1_000, 1);
         randomObjects(Fire.class, 700, 600, 1000, 900, 5);
-        randomObjects(Fire.class,-1000,-1000,-100,-200,10);
-        randomObjects(Grass.class,BorderX1,BorderY1,BorderX2,BorderY2,12);
-        addObject(new Spider(),-400,-500);
-        addObject(new Pig(),-200,200);
-        setPaintOrder(Button.class,HUD.class, MovingActor.class);
+        randomObjects(Fire.class, -1000, -1000, -100, -200, 10);
+        randomObjects(Grass.class, BorderX1, BorderY1, BorderX2, BorderY2, 12);
+        addObject(new Spider(), -400, -500);
+        addObject(new Pig(), -200, 200);
+        setPaintOrder(Button.class, HUD.class, MovingActor.class);
         boundingRocks(BorderX1, BorderY1, BorderX2, BorderY2);
-        resetPlayersPosition(player);
+
     }
 
     private void boundingRocks(final int smallX, final int smallY, final int maxX, final int maxY) {
@@ -49,14 +50,21 @@ public class Sector0_0 extends OpenWorld {
             addObject(new Rock(), maxX, y);
         }
     }
-    public void randomSpawn(Class c){
-        int x =r.nextInt(Math.abs(BorderX2 - BorderX1)) + BorderX1;
-        int y =r.nextInt(Math.abs(BorderY2 - BorderY1)) + BorderY1;
-        if(x > BorderX2 || x < BorderX1 || y > BorderY2 || y < BorderY1){
+
+    public void randomSpawn(Class c) {
+        int x = r.nextInt(Math.abs(BorderX2 - BorderX1)) + BorderX1;
+        int y = r.nextInt(Math.abs(BorderY2 - BorderY1)) + BorderY1;
+        if (x > BorderX2 || x < BorderX1 || y > BorderY2 || y < BorderY1) {
             return;
         }
         try {
-            addObject((Actor)c.newInstance(),x,y);
+            General actor = (General) c.newInstance();
+            addObject(actor, x, y);
+            List<General> generalList = actor.getIntersectingObjects(General.class);
+            generalList.removeIf(general -> !(general instanceof Blocking));
+            if (generalList.size() > 0) {
+                removeObject(actor);
+            }
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
@@ -64,6 +72,7 @@ public class Sector0_0 extends OpenWorld {
         }
 
     }
+
     public void randomObjects(Class a, final int fromX, final int fromY, final int toX, final int toY, double density) {
 
         int width;
@@ -134,11 +143,11 @@ public class Sector0_0 extends OpenWorld {
 
     @Override
     public void act() {
-        if(time % 30 == 0) {
+        if (time % 30 == 0) {
             randomSpawn(Pig.class);
 
         }
-        if(time % 20 ==0){
+        if (time % 20 == 0) {
             randomSpawn(Spider.class);
         }
         time++;

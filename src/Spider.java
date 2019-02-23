@@ -1,24 +1,32 @@
 import greenfoot.GreenfootImage;
 
 public class Spider extends Hostile implements Blocking,Attackable {
-    private int speed = 2;
+    private final int defaultSpeed = 2;
+    private int speed = defaultSpeed;
     private int life = 10;
     private int visualRange;
     private int attackRange;
+    private final GreenfootImage angryImage = new GreenfootImage("images/Spider_RED_EYES.png");
+    private final GreenfootImage defaultImage = new GreenfootImage("images/Spider.png");
     private int damage = 5;
     public Spider(){
-        GreenfootImage img = new GreenfootImage("images/Spider.png");
-        img.scale(64,32);
-        setImage(img);
-        visualRange = this.getWidth() *5;
+        defaultImage.scale(64,32);
+        setImage(defaultImage);
+        visualRange = this.getWidth() *3;
         attackRange = this.getWidth()+this.getHeight();
     }
 
     @Override
     public void act() {
-        setSpeed(2);
-        super.act();
-        moveToPlayer(this.visualRange);
+        setSpeed(defaultSpeed);
+        if(moveToPlayer(this.visualRange)){
+            angryImage.scale(64,32);
+            setImage(angryImage);
+        }else{
+            defaultImage.scale(64,32);
+            setImage(defaultImage);
+            randomMove(200);
+        }
         if(attackPlayer(this.attackRange, this.damage)){
         }
         if(life <0){
