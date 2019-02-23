@@ -168,13 +168,14 @@ public class Player extends MovingActor implements Attackable,Blocking {
         Item currentItem = objs.get(0);
         if (currentItem instanceof Pickable) {
             if (inventory != null && inventory.isEmpty()) {
+                currentItem.setCount(currentItem.getCount() +1);
                 inventory.add(currentItem);
                 getWorld().removeObject(currentItem);
 
                 System.out.println("Count: " + currentItem.getCount() + "| Id: " + currentItem.getId() + "| Name: " + currentItem.getName());
 
                 return;
-            }else if(!inventory.isEmpty()){
+            }else{
                 for (Item item : inventory) {
                     if (item.getId() == currentItem.getId()) {
                         item.setCount(item.getCount() + 1);
