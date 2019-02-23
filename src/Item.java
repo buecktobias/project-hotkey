@@ -1,2 +1,2 @@
-public abstract class Item extends NotMoving implements Pickable{
+public abstract class Item extends NotMoving{
 }
