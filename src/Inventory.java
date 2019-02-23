@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 public class Inventory extends Actor implements Fixed {
     private Player p;
-    private LinkedList<Item> items;
+    private LinkedList<Pickable> items;
     private int capacity;
     GreenfootImage InventoryScreen = new GreenfootImage("images/MyInventoryV1.png");
 
@@ -18,9 +18,8 @@ public class Inventory extends Actor implements Fixed {
     public void drawItems(){
 
     }
+    public void getItems(){
 
-    public void getItems(Player p){
-        items =  p.getInventory();
     }
 
     //shows Text on screen|not working|may be used for WeaponNameDisplay
@@ -30,7 +29,6 @@ public class Inventory extends Actor implements Fixed {
         itemName.setColor(Color.BLACK);
         itemName.setFont(equipedWeapon);
     }
-
 
     //Getters and Setters
 }

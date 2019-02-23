@@ -3,13 +3,7 @@ import helper.Direction;
 
 import java.util.*;
 
-//TODO stop inheritance from Items and remove Pickable Methods and Atribuite afterwards
 public class Projectiles extends Weapon{
-
-    // Pickable Atributes
-    public int count;
-    public final int id = 0;
-    public String name = "NotRealyAnItem";
 
     public int hitboxRadius=getWidth()*4;
     public void moveInDirectionOf(Actor actor){
@@ -156,25 +150,4 @@ public class Projectiles extends Weapon{
         moveTo(x,y);
     }
 
-    //Pickable Methods
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

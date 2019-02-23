@@ -1,6 +1,8 @@
 import greenfoot.Greenfoot;
 
-public class Bow extends Weapon {
+import java.util.LinkedList;
+
+public class Bow extends Weapon implements Pickable{
 
     private int attackSpeed;
     private Player player;
@@ -20,7 +22,6 @@ public class Bow extends Weapon {
         getWorld().addObject(arrow,getX(),getY());
     }
 
-
     public void act() {
         if(Greenfoot.isKeyDown("V")) {
             shoot();
@@ -28,22 +29,36 @@ public class Bow extends Weapon {
     }
 
     //Pickable Methods
+    public void pick(Player p, LinkedList inventory){
+        this.count = this.count + 1;
+        inventory.add(this);
+        getWorld().removeObject(this);
+        System.out.println("Count: " + this.getCount() + "| Id: " + this.getId() + "| Name: " + this.getName());
+    }
+    public void compareIDs(Player p, LinkedList inventory, Pickable item) {
+        if (item.getId() == this.getId()) {
+            item.setCount(item.getCount() + 1);
+            getWorld().removeObject(this);
+            return;
+        }else{
+            inventory.add(this);
+            getWorld().removeObject(this);
+            return;
+        }
+    }
+
     public int getCount() {
         return count;
     }
-
     public void setCount(int count) {
         this.count = count;
     }
-
     public int getId() {
         return id;
     }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }

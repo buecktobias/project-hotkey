@@ -24,7 +24,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private int life = maxLife;
     private final int minLife = 0;
 
-    private LinkedList<Item> inventory = new LinkedList<>();
+    private LinkedList<Pickable> inventory = new LinkedList<>();
     private int waitEndurance=0;
     private final int waitTimeWhenEnduranceIsZero = 5;
     private double enduranceRegeneration = 1;
@@ -168,29 +168,15 @@ public class Player extends MovingActor implements Attackable,Blocking {
         Item currentItem = objs.get(0);
         if (currentItem instanceof Pickable) {
             if (inventory != null && inventory.isEmpty()) {
-                currentItem.setCount(currentItem.getCount() +1);
-                inventory.add(currentItem);
-                getWorld().removeObject(currentItem);
-
-                System.out.println("Count: " + currentItem.getCount() + "| Id: " + currentItem.getId() + "| Name: " + currentItem.getName());
-
+                ((Pickable) currentItem).pick(this, inventory);
                 return;
             }else{
-                for (Item item : inventory) {
-                    if (item.getId() == currentItem.getId()) {
-                        item.setCount(item.getCount() + 1);
-                        getWorld().removeObject(currentItem);
-                        return;
-                    }else{
-                        inventory.add(currentItem);
-                        getWorld().removeObject(currentItem);
-                        return;
-                    }
+                for (Pickable item : inventory) {
+                    ((Pickable) currentItem).compareIDs(this, inventory, item);
                 }
             }
         }
     }
-
 
     public void useInventory() {
         String key = Greenfoot.getKey();
@@ -259,11 +245,11 @@ public class Player extends MovingActor implements Attackable,Blocking {
         isIActive = IActive;
     }
 
-    public LinkedList<Item> getInventory() {
+    public LinkedList<Pickable> getInventory() {
         return inventory;
     }
 
-    public void setInventory(LinkedList<Item> inventory) {
+    public void setInventory(LinkedList<Pickable> inventory) {
         this.inventory = inventory;
     }
 }
