@@ -1,3 +1,5 @@
+import greenfoot.GreenfootImage;
+
 import java.util.LinkedList;
 
 public class Staff extends Weapon implements Pickable {
@@ -12,11 +14,13 @@ public class Staff extends Weapon implements Pickable {
     public final int itemId = itemManager.getItemID();
     public final String itemType = itemManager.getItemTYPE();
     public String itemName = itemManager.getItemNAME();
+    public GreenfootImage itemImage = itemManager.getItemIMAGE();
 
     public Staff(int attackRange) {
         this.attackRange = attackRange;
         this.attackSpeed = attackSpeed;
         this.damage = damage;
+        setImage(itemImage);
     }
     public void act() {
 
@@ -56,5 +60,8 @@ public class Staff extends Weapon implements Pickable {
     }
     public String getItemName() {
         return itemName;
+    }
+    public GreenfootImage getItemImage() {
+        return itemImage;
     }
 }

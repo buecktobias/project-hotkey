@@ -1,3 +1,5 @@
+import greenfoot.GreenfootImage;
+
 import java.util.LinkedList;
 
 public class Dagger extends Weapon implements Pickable{
@@ -12,6 +14,7 @@ public class Dagger extends Weapon implements Pickable{
     public final int itemId = itemManager.getItemID();
     public final String itemType = itemManager.getItemTYPE();
     public String itemName = itemManager.getItemNAME();
+    public GreenfootImage itemImage = itemManager.getItemIMAGE();
 
     public void setDamage(double damage) {
         this.damage = damage;
@@ -91,6 +94,9 @@ public class Dagger extends Weapon implements Pickable{
     }
     public String getItemName() {
         return itemName;
+    }
+    public GreenfootImage getItemImage() {
+        return itemImage;
     }
 
 }

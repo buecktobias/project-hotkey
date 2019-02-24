@@ -8,15 +8,14 @@ import java.util.LinkedList;
 public class Inventory extends Actor implements Fixed {
     private Player p;
     private LinkedList<Pickable> items;
-    private LinkedList<Pickable> ArmorTab;
-    private LinkedList<Pickable> WeaponTab;
-    private LinkedList<Pickable> ItemTab;
+    private LinkedList<Pickable> ArmorTab = new LinkedList<>();
+    private LinkedList<Pickable> WeaponTab = new LinkedList<>();
+    private LinkedList<Pickable> ItemTab = new LinkedList<>();
     private int inventoryTab = 0;
 
-    private LinkedList<Button> buttonList;
 
     private int capacity;
-    GreenfootImage InventoryScreen = new GreenfootImage("images/MyInventoryV2.png");
+    GreenfootImage InventoryScreen = new GreenfootImage("images/MyInventoryV3.png");
 
     public Inventory(Player p){
         this.p = p;
@@ -25,7 +24,7 @@ public class Inventory extends Actor implements Fixed {
         drawTabFonts(InventoryScreen);
         getItems(p);
         sortItems(items);
-        //drawCurrentTab();
+        drawCurrentTab();
     }
 
     public void drawTabFonts(GreenfootImage g){
@@ -74,8 +73,18 @@ public class Inventory extends Actor implements Fixed {
     }
 
     public void drawTab(LinkedList<Pickable> itemsToDraw){
-        for (Pickable item:itemsToDraw) {
-            return;
+        int drawAtX = 500;
+        int drawAtY = 500;
+        int itemsDrawn = 0;
+        for (Pickable item: itemsToDraw) {
+            if(itemsDrawn == 7){
+                drawAtY = drawAtY +32;
+                drawAtX = drawAtX - 32*7;
+                itemsDrawn = 0;
+            }
+            InventoryScreen.drawImage(item.getItemImage(), drawAtX, drawAtY);
+            drawAtX = drawAtX + 32;
+            itemsDrawn++;
         }
     }
 

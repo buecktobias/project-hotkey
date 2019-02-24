@@ -1,4 +1,5 @@
 import greenfoot.Greenfoot;
+import greenfoot.GreenfootImage;
 
 import java.util.LinkedList;
 
@@ -13,6 +14,7 @@ public class Bow extends Weapon implements Pickable{
     public final int itemId = itemManager.getItemID();
     public final String itemType = itemManager.getItemTYPE();
     public String itemName = itemManager.getItemNAME();
+    public GreenfootImage itemImage = itemManager.getItemIMAGE();
 
     public Bow(int attackSpeed, Player player) {
         this.attackSpeed = attackSpeed;
@@ -64,5 +66,8 @@ public class Bow extends Weapon implements Pickable{
     }
     public String getItemName() {
         return itemName;
+    }
+    public GreenfootImage getItemImage() {
+        return itemImage;
     }
 }

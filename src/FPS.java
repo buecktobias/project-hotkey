@@ -27,10 +27,10 @@ public class FPS extends Actor implements Fixed {
         int update = 10;
         if(frame % update ==0) {
             long elapsedTime = System.currentTimeMillis() - startTime;
-            System.out.println(elapsedTime);
+           // System.out.println(elapsedTime);
             startTime = System.currentTimeMillis();
             double secondselapsed = elapsedTime / 1000f;
-            System.out.println(secondselapsed);
+            //System.out.println(secondselapsed);
             fps = (int) Math.round(update / secondselapsed);
         }
         img.setColor(Color.BLACK);
