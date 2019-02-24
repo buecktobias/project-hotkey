@@ -31,7 +31,7 @@ public class Staff extends Weapon implements Pickable {
         this.itemCount = this.itemCount + 1;
         inventory.add(this);
         getWorld().removeObject(this);
-        System.out.println("Count: " + this.getItemCount() + "| Id: " + this.getItemId() + "| Name: " + this.getItemName());
+        System.out.println("Staff Says: Count: " + this.getItemCount() + "| Id: " + this.getItemId() + "| Name: " + this.getItemName());
     }
     public void compareIDs(Player p, LinkedList inventory, Pickable item) {
             if (item.getItemId() == this.getItemId()) {
