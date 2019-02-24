@@ -7,7 +7,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Inventory extends Actor implements Fixed {
-
+    //TODO implement "switchTab-Buttons"
+    //TODO implement InventoryTab is full message /
     private World world;
     private Player p;
     private LinkedList<Pickable> allItems;
@@ -15,7 +16,7 @@ public class Inventory extends Actor implements Fixed {
     private LinkedList<Pickable> WeaponList = new LinkedList<>();
     private LinkedList<Pickable> ItemList = new LinkedList<>();
     private int inventoryTab = 0;
-    GreenfootImage InventoryScreen = new GreenfootImage("images/MyInventoryV3.png");
+    private GreenfootImage InventoryScreen = new GreenfootImage("images/MyInventoryV3.png");
 
     protected void addedToWorld(World world) {
         inventoryLogic();
@@ -90,10 +91,15 @@ public class Inventory extends Actor implements Fixed {
                 drawAtX = drawAtX - 32*7;
                 itemsDrawn = 0;
             }
+            drawItemBase();
             InventoryScreen.drawImage(item.getItemImage(), drawAtX, drawAtY);
             drawAtX = drawAtX + 32;
             itemsDrawn++;
         }
+    }
+    public void drawItemBase(){
+        InventoryScreen.setColor(Color.cyan);
+        InventoryScreen.fillRect(400,200, 32,32);
     }
 
     //Getters and Setters
