@@ -15,7 +15,7 @@ public class Sector0_0 extends OpenWorld {
     private final int BorderY2 = 1_000;
 
     public Sector0_0() {
-        setPaintOrder(Button.class, Inventory.class, HUD.class, MovingActor.class);
+        setPaintOrder(Button.class, Inventory.class, HUD.class,FPS.class, MovingActor.class);
         setBackground("cell_debug.png");
         Player player = new Player();
         addObject(player, 0, 0);
@@ -25,6 +25,7 @@ public class Sector0_0 extends OpenWorld {
         setScrollingBackground(new GreenfootImage("cell_debug.png"));
         Staff staff = new Staff(42);
         addObject(staff, 100, 100);
+        addObject(new FPS(),1000,32);
 
         randomObjects(Tree.class, 20, 100, 800, 600, 2);
         randomObjects(Grass.class, 700, 600, 1000, 900, 6);
