@@ -11,6 +11,9 @@ public class Inventory extends Actor implements Fixed {
     private LinkedList<Pickable> ArmorTab;
     private LinkedList<Pickable> WeaponTab;
     private LinkedList<Pickable> ItemTab;
+    private int inventoryTab = 0;
+
+    private LinkedList<Button> buttonList;
 
     private int capacity;
     GreenfootImage InventoryScreen = new GreenfootImage("images/MyInventoryV2.png");
@@ -19,11 +22,29 @@ public class Inventory extends Actor implements Fixed {
         this.p = p;
         this.capacity = 42;
         setImage(InventoryScreen);
+        drawTabFonts(InventoryScreen);
         getItems(p);
         sortItems(items);
+        //drawCurrentTab();
     }
-    public void drawItems(){
 
+    public void drawTabFonts(GreenfootImage g){
+        String armor = "Armor";
+        String weapons = "Weapons";
+        String items = "Items";
+        g.setFont(new Font(Font.SANS_SERIF, Font.ITALIC, 20));
+        g.setColor(Color.WHITE);
+        g.drawString(weapons,   470,175);
+        g.drawString(armor,     580,175);
+        g.drawString(items,     680,175);
+        g.setColor(Color.RED);
+        if(inventoryTab == 0){
+            g.drawString(weapons,   470,175);
+        }else if(inventoryTab == 1){
+            g.drawString(armor,     580,175);
+        }else if(inventoryTab == 2){
+            g.drawString(items,     680,175);
+        }
     }
     public void getItems(Player p){
         items = p.getInventory();
@@ -40,14 +61,30 @@ public class Inventory extends Actor implements Fixed {
             }
         }
     }
+    public void drawCurrentTab(){
+        if(inventoryTab == 0){
+            drawTab(WeaponTab);
+        }else if(inventoryTab == 1){
+            drawTab(ArmorTab);
+        }else if(inventoryTab == 2){
+            drawTab(ItemTab);
+        }else{
+            setInventoryTab(0);
+        }
+    }
 
-    //shows Text on screen|not working|may be used for WeaponNameDisplay
-    public void fontTest(Graphics g, String name){
-        g.drawString(name, 100,100);
-        Font equipedWeapon = new Font("Arial", Font.BOLD, 12);
-        g.setColor(Color.BLACK);
-        g.setFont(equipedWeapon);
+    public void drawTab(LinkedList<Pickable> itemsToDraw){
+        for (Pickable item:itemsToDraw) {
+            return;
+        }
     }
 
     //Getters and Setters
+
+    public int getInventoryTab() {
+        return inventoryTab;
+    }
+    public void setInventoryTab(int inventoryTab) {
+        this.inventoryTab = inventoryTab;
+    }
 }
