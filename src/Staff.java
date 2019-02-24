@@ -7,9 +7,11 @@ public class Staff extends Weapon implements Pickable {
     private int attackRange;
 
     //Pickable Atributes
+    ItemManager itemManager = ItemManager.Staff;
     public int itemCount = 0;
-    public final int itemId = 1;
-    public String itemName = "The Elder Wand";
+    public final int itemId = itemManager.getItemID();
+    public final String itemType = itemManager.getItemTYPE();
+    public String itemName = itemManager.getItemNAME();
 
 
     public Staff(int attackRange) {
@@ -20,7 +22,6 @@ public class Staff extends Weapon implements Pickable {
     public void act() {
 
     }
-
 
     //Pickable Methods
     public void pick(Player p, LinkedList inventory){
@@ -47,15 +48,10 @@ public class Staff extends Weapon implements Pickable {
     public void setItemCount(int itemCount) {
         this.itemCount = itemCount;
     }
-
     public int getItemId() {
         return itemId;
     }
-
     public String getItemName() {
         return itemName;
-    }
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
     }
 }

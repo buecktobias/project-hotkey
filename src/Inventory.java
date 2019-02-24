@@ -8,6 +8,9 @@ import java.util.LinkedList;
 public class Inventory extends Actor implements Fixed {
     private Player p;
     private LinkedList<Pickable> items;
+
+    private LinkedList<Weapon> weapons;
+
     private int capacity;
     GreenfootImage InventoryScreen = new GreenfootImage("images/MyInventoryV2.png");
 
@@ -22,6 +25,13 @@ public class Inventory extends Actor implements Fixed {
     }
     public void getItems(Player p){
         items = p.getInventory();
+
+    }
+
+    public void sortItems(LinkedList<Pickable> items, LinkedList<Weapon> weapons){
+        for(Pickable item :items){
+
+        }
     }
 
     //shows Text on screen|not working|may be used for WeaponNameDisplay

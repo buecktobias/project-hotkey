@@ -8,9 +8,11 @@ public class Bow extends Weapon implements Pickable{
     private Player player;
 
     // Pickable Atributes
+    ItemManager itemManager = ItemManager.Bow;
     public int itemCount;
-    public final int itemId = 3;
-    public String itemName = "Dragonslayer GreatBow";
+    public final int itemId = itemManager.getItemID();
+    public final String itemType = itemManager.getItemTYPE();
+    public String itemName = itemManager.getItemNAME();
 
     public Bow(int attackSpeed, Player player) {
         this.attackSpeed = attackSpeed;
@@ -58,8 +60,5 @@ public class Bow extends Weapon implements Pickable{
     }
     public String getItemName() {
         return itemName;
-    }
-    public void setItemNameame(String itemName) {
-        this.itemName = itemName;
     }
 }

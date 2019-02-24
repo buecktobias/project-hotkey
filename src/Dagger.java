@@ -7,9 +7,11 @@ public class Dagger extends Weapon implements Pickable{
     private int attackRange;
 
     // Pickable Atributes
+    ItemManager itemManager = ItemManager.Dagger;
     public int itemCount;
-    public final int itemId = 3;
-    public String itemName = "Zahnstocher";
+    public final int itemId = itemManager.getItemID();
+    public final String itemType = itemManager.getItemTYPE();
+    public String itemName = itemManager.getItemNAME();
 
     public void setDamage(double damage) {
         this.damage = damage;
@@ -86,7 +88,5 @@ public class Dagger extends Weapon implements Pickable{
     public String getItemName() {
         return itemName;
     }
-    public void setItemName(String name) {
-        this.itemName = name;
-    }
+
 }
