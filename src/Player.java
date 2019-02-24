@@ -29,9 +29,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private double enduranceRegeneration = 1;
     private int minEndurance = 0;
     private boolean isIActive = false;
-
-    Inventory inventoryInstance = new Inventory(this);
-
+    private Inventory inventoryInstance;
     private int maxEndurance = 1000;
     private double endurance = maxEndurance;
     private final int gameSpeed = 50;
@@ -43,6 +41,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
     @Override
     protected void addedToWorld(World world) {
         skillWindow = new SkillWindow(world);
+        inventoryInstance = new Inventory(this, world);
     }
     private void move(Direction d, int distance){
         super.moveDirection(d,distance);
@@ -173,7 +172,6 @@ public class Player extends MovingActor implements Attackable,Blocking {
         if (currentItem instanceof Pickable) {
             if (inventory != null && inventory.isEmpty()) {
                 ((Pickable) currentItem).pick(this, inventory);
-                System.out.println("Player says:" + ((Pickable) currentItem).getItemName() + "now in Inventory");
                 return;
             }else{
                 for (Pickable item : inventory) {
@@ -187,12 +185,9 @@ public class Player extends MovingActor implements Attackable,Blocking {
         if (("m".equals(key)&& isIActive) ){
             getWorld().removeObject(inventoryInstance);
             setIActive(false);
-            System.out.println("off");
         }else if("m".equals(key) && !isIActive()) {
-
             getWorld().addObject(inventoryInstance, getWorld().getWidth()/2, getWorld().getHeight()/2);
             setIActive(true);
-            System.out.println("on");
         }
     }
 

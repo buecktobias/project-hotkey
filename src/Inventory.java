@@ -1,12 +1,14 @@
 import greenfoot.Actor;
 import greenfoot.GreenfootImage;
+import greenfoot.World;
 
 import java.awt.*;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-
 public class Inventory extends Actor implements Fixed {
+
+    private World world;
     private Player p;
     private LinkedList<Pickable> allItems;
     private LinkedList<Pickable> ArmorList = new LinkedList<>();
@@ -15,25 +17,21 @@ public class Inventory extends Actor implements Fixed {
     private int inventoryTab = 0;
     GreenfootImage InventoryScreen = new GreenfootImage("images/MyInventoryV3.png");
 
-    public Inventory(Player p){
-        this.p = p;
-        setImage(InventoryScreen);
-        drawTabFonts(InventoryScreen);
-        System.out.println("I made it 1");
-        getItems(p);
-        System.out.println("I made it3");
-        Iterator<Pickable> allItemsIT = allItems.iterator();
-        if (!allItemsIT.hasNext()) {
-            return;
-        }else{
-            System.out.println("Inventory says:" + allItemsIT.next().getItemName() + "now in Inventory");
-        }
-        drawCurrentTab();
-    }
-    public void act(){
-        //System.out.println("I made it4");
+    protected void addedToWorld(World world) {
+        inventoryLogic();
     }
 
+    public Inventory(Player p, World world){
+        this.p = p;
+        this.world = world;
+    }
+
+    public void inventoryLogic(){
+        getItems(p);
+        setImage(InventoryScreen);
+        drawTabFonts(InventoryScreen);
+        drawCurrentTab();
+    }
     public void drawTabFonts(GreenfootImage g){
         String armor = "Armor";
         String weapons = "Weapons";
@@ -53,9 +51,7 @@ public class Inventory extends Actor implements Fixed {
         }
     }
     public void getItems(Player p){
-        System.out.println("I made it2");
         allItems = p.getInventory();
-
     }
     public void sortItems(LinkedList<Pickable> allItems){
         Iterator<Pickable> allItemsIT = allItems.iterator();
@@ -84,20 +80,16 @@ public class Inventory extends Actor implements Fixed {
             setInventoryTab(0);
         }
     }
-
     public void drawTab(LinkedList<Pickable> itemsToDraw){
-        int drawAtX = 500;
-        int drawAtY = 500;
+        int drawAtX = 400;
+        int drawAtY = 200;
         int itemsDrawn = 0;
         for (Pickable item: itemsToDraw) {
-            /*
             if(itemsDrawn == 7){
                 drawAtY = drawAtY +32;
                 drawAtX = drawAtX - 32*7;
                 itemsDrawn = 0;
             }
-            */
-            System.out.println(item.getItemName());
             InventoryScreen.drawImage(item.getItemImage(), drawAtX, drawAtY);
             drawAtX = drawAtX + 32;
             itemsDrawn++;
@@ -105,7 +97,6 @@ public class Inventory extends Actor implements Fixed {
     }
 
     //Getters and Setters
-
     public int getInventoryTab() {
         return inventoryTab;
     }
