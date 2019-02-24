@@ -13,7 +13,6 @@ public class Staff extends Weapon implements Pickable {
     public final String itemType = itemManager.getItemTYPE();
     public String itemName = itemManager.getItemNAME();
 
-
     public Staff(int attackRange) {
         this.attackRange = attackRange;
         this.attackSpeed = attackSpeed;
@@ -42,8 +41,12 @@ public class Staff extends Weapon implements Pickable {
             }
     }
 
+    //Pickable Getters and Setters
     public int getItemCount() {
         return itemCount;
+    }
+    public String getItemType() {
+        return itemType;
     }
     public void setItemCount(int itemCount) {
         this.itemCount = itemCount;

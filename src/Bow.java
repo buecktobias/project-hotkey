@@ -49,8 +49,12 @@ public class Bow extends Weapon implements Pickable{
         }
     }
 
+    //Pickable Getters and Setters
     public int getItemCount() {
         return itemCount;
+    }
+    public String getItemType() {
+        return itemType;
     }
     public void setItemCount(int itemCount) {
         this.itemCount = itemCount;

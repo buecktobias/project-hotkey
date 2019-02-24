@@ -7,6 +7,7 @@ public interface Pickable {
     String itemName = "noNameAssigned";
 
     int getItemId();
+    String getItemType();
     int getItemCount();
     void setItemCount(int itemCount);
     String getItemName();

@@ -23,7 +23,6 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private int maxLife = 1000;
     private int life = maxLife;
     private final int minLife = 0;
-
     private LinkedList<Pickable> inventory = new LinkedList<>();
     private int waitEndurance=0;
     private final int waitTimeWhenEnduranceIsZero = 5;
@@ -243,11 +242,9 @@ public class Player extends MovingActor implements Attackable,Blocking {
     public void setIActive(boolean IActive) {
         isIActive = IActive;
     }
-
     public LinkedList<Pickable> getInventory() {
         return inventory;
     }
-
     public void setInventory(LinkedList<Pickable> inventory) {
         this.inventory = inventory;
     }

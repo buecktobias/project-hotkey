@@ -19,7 +19,7 @@ public class Sector0_0 extends OpenWorld {
         setBackground("cell_debug.png");
         Player player = new Player();
         addObject(player, 0, 0);
-        addObject(enemy, 200, 200);
+        //addObject(enemy, 200, 200);
         HUD hud = new HUD();
         addObject(hud, getWidth() / 2, getHeight() / 2);
         setScrollingBackground(new GreenfootImage("cell_debug.png"));
@@ -34,7 +34,7 @@ public class Sector0_0 extends OpenWorld {
         randomObjects(Fire.class, -1000, -1000, -100, -200, 10);
         randomObjects(Grass.class, BorderX1, BorderY1, BorderX2, BorderY2, 12);
 
-        addObject(new Spider(), -400, -500);
+        //addObject(new Spider(), -400, -500);
         addObject(new Pig(), -200, 200);
         boundingRocks(BorderX1, BorderY1, BorderX2, BorderY2);
 

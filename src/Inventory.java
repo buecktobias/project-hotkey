@@ -8,8 +8,9 @@ import java.util.LinkedList;
 public class Inventory extends Actor implements Fixed {
     private Player p;
     private LinkedList<Pickable> items;
-
-    private LinkedList<Weapon> weapons;
+    private LinkedList<Pickable> ArmorTab;
+    private LinkedList<Pickable> WeaponTab;
+    private LinkedList<Pickable> ItemTab;
 
     private int capacity;
     GreenfootImage InventoryScreen = new GreenfootImage("images/MyInventoryV2.png");
@@ -19,6 +20,7 @@ public class Inventory extends Actor implements Fixed {
         this.capacity = 42;
         setImage(InventoryScreen);
         getItems(p);
+        sortItems(items);
     }
     public void drawItems(){
 
@@ -27,10 +29,15 @@ public class Inventory extends Actor implements Fixed {
         items = p.getInventory();
 
     }
-
-    public void sortItems(LinkedList<Pickable> items, LinkedList<Weapon> weapons){
+    public void sortItems(LinkedList<Pickable> items){
         for(Pickable item :items){
-
+            if(item.getItemType() == "Weapon"){
+                WeaponTab.add(item);
+            }else if(item.getItemType() == "Armor"){
+                ArmorTab.add(item);
+            }else {
+                ItemTab.add(item);
+            }
         }
     }
 
