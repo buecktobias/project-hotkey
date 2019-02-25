@@ -14,7 +14,7 @@ public abstract class Button extends Actor implements Fixed {
 
     @Override
     public void act() {
-        System.out.println(Greenfoot.getMouseInfo());
+       // System.out.println(Greenfoot.getMouseInfo());
         if (Greenfoot.mousePressed(this)) {
             setImage(Clicked);
         } else if (Greenfoot.mouseClicked(this)) {

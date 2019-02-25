@@ -7,22 +7,22 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Inventory extends Actor implements Fixed {
-    //TODO implement "switchTab-Buttons"
-    //TODO implement InventoryTab is full message /
-    //TODO better colors
-    //TODO drag and drop Items to respective slots
+    //1. TODO clear Method/ fix bug where items are drawn new each time inventory is opened
+    //2. TODO implement "switchTab-Buttons"
+    //3. TODO implement InventoryTab is full message /
+    //4. TODO drag and drop Items to respective slots
+    //4. TODO better colors/Item background
+    //5. TODO ItemInfo displayed when clicked and/or mouse hovers over it
     private World world;
     private Player p;
-    private LinkedList<Pickable> allItems;
-    private LinkedList<Pickable> ArmorList = new LinkedList<>();
-    private LinkedList<Pickable> WeaponList = new LinkedList<>();
-    private LinkedList<Pickable> ItemList = new LinkedList<>();
     private int inventoryTab = 0;
+    private LinkedList<Pickable> allItems;
+    private LinkedList<Pickable> ArmorList  = new LinkedList<>();
+    private LinkedList<Pickable> WeaponList = new LinkedList<>();
+    private LinkedList<Pickable> ItemList   = new LinkedList<>();
     private GreenfootImage InventoryScreen    = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV3.png");
-    private GreenfootImage ArrowLeftInAktive  = new GreenfootImage("images/Arrows/Arrow_left.png");
-    private GreenfootImage ArrowLeftAktive    = new GreenfootImage("images/Arrows/Arrow_left_aktive.png");
-    private GreenfootImage ArrowRightInAktive = new GreenfootImage("images/Arrows/Arrow_right.png");
-    private GreenfootImage ArrowRightAktive   = new GreenfootImage("images/Arrows/Arrow_right_aktive.png");
+
+    private LinkedList<Button> buttonList;
 
 
     protected void addedToWorld(World world) {
@@ -32,31 +32,33 @@ public class Inventory extends Actor implements Fixed {
     public Inventory(Player p, World world){
         this.p = p;
         this.world = world;
+        buttonList = new LinkedList<Button>();
+        buttonList = new LinkedList<>();
     }
 
     public void inventoryLogic(){
         getItems(p);
         setImage(InventoryScreen);
-        testArrows();
-        drawTabFonts(InventoryScreen);
-        drawCurrentTab();
+        drawTabFonts();
+        createLeftArrow();
+        createRighttArrow();
     }
-    public void drawTabFonts(GreenfootImage g){
+    public void drawTabFonts(){
         String armor = "Armor";
         String weapons = "Weapons";
         String items = "Items";
-        g.setFont(new Font(Font.SANS_SERIF, Font.ITALIC, 20));
-        g.setColor(Color.WHITE);
-        g.drawString(weapons,   470,175);
-        g.drawString(armor,     580,175);
-        g.drawString(items,     680,175);
-        g.setColor(Color.RED);
+        InventoryScreen.setFont(new Font(Font.SANS_SERIF, Font.ITALIC, 20));
+        InventoryScreen.setColor(Color.WHITE);
+        InventoryScreen.drawString(weapons,   470,175);
+        InventoryScreen.drawString(armor,     580,175);
+        InventoryScreen.drawString(items,     680,175);
+        InventoryScreen.setColor(Color.RED);
         if(inventoryTab == 0){
-            g.drawString(weapons,   470,175);
+            InventoryScreen.drawString(weapons,   470,175);
         }else if(inventoryTab == 1){
-            g.drawString(armor,     580,175);
+            InventoryScreen.drawString(armor,     580,175);
         }else if(inventoryTab == 2){
-            g.drawString(items,     680,175);
+            InventoryScreen.drawString(items,     680,175);
         }
     }
     public void getItems(Player p){
@@ -110,12 +112,71 @@ public class Inventory extends Actor implements Fixed {
         InventoryScreen.fillRect(400,200, 32,32);
     }
 
-
-    public void testArrows(){
-        InventoryScreen.drawImage(ArrowLeftAktive, 400, 150);
-        InventoryScreen.drawImage(ArrowLeftInAktive, 350, 150);
-        InventoryScreen.drawImage(ArrowRightAktive, 300, 150);
+    public void clearInventoryScreen(){
+        deleteButtons();
     }
+
+
+    private void createLeftArrow(){
+        Button button;
+        GreenfootImage buttonImgUnClicked;
+        GreenfootImage buttonImgClicked;
+            buttonImgUnClicked = new GreenfootImage("images/Arrows/Arrow_left.png");
+            buttonImgClicked = new GreenfootImage("images/Arrows/Arrow_left_aktive.png");
+            buttonImgUnClicked.scale(20, 30);
+            buttonImgClicked.scale(20, 30);
+            button = new Button(buttonImgUnClicked,buttonImgClicked) {
+                @Override
+                public void clicked() {
+                    if(0 < inventoryTab){
+                        inventoryTab--;
+                    }else{
+                        inventoryTab = 2;
+                    }
+                    System.out.println(inventoryTab);
+                }
+            };
+            buttonList.add(button);
+            world.addObject(button, 440,165);
+
+    }
+    private void createRighttArrow(){
+        Button button;
+        GreenfootImage buttonImgUnClicked;
+        GreenfootImage buttonImgClicked;
+        buttonImgUnClicked = new GreenfootImage("images/Arrows/Arrow_right.png");
+        buttonImgClicked = new GreenfootImage("images/Arrows/Arrow_right_aktive.png");
+        buttonImgUnClicked.scale(20, 30);
+        buttonImgClicked.scale(20, 30);
+        button = new Button(buttonImgUnClicked,buttonImgClicked) {
+            @Override
+            public void clicked() {
+                if(inventoryTab < 2){
+                    inventoryTab++;
+                }else{
+                    inventoryTab = 0;
+                }
+                System.out.println(inventoryTab);
+            }
+        };
+        buttonList.add(button);
+        world.addObject(button, 780,165);
+
+    }
+    public void deleteButtons(){
+        for(Button button:buttonList){
+            world.removeObject(button);
+        }
+        buttonList = new LinkedList<>();
+    }
+
+    public void act(){
+            drawTabFonts();
+            drawCurrentTab();
+    }
+
+
+
 
     //Getters and Setters
     public int getInventoryTab() {
@@ -124,4 +185,5 @@ public class Inventory extends Actor implements Fixed {
     public void setInventoryTab(int inventoryTab) {
         this.inventoryTab = inventoryTab;
     }
+
 }

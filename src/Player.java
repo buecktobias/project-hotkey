@@ -183,6 +183,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
     public void useInventory() {
         String key = Greenfoot.getKey();
         if (("m".equals(key)&& isIActive) ){
+            inventoryInstance.clearInventoryScreen();
             getWorld().removeObject(inventoryInstance);
             setIActive(false);
         }else if("m".equals(key) && !isIActive()) {
@@ -192,56 +193,56 @@ public class Player extends MovingActor implements Attackable,Blocking {
     }
 
     //Getters and Setters
-    public int getSpeed() {
+    public int      getSpeed() {
         return currentSpeed;
     }
-    public void setSpeed(int currentSpeed) {
+    public void     setSpeed(int currentSpeed) {
         this.currentSpeed = currentSpeed;
     }
-    public int getMaxLife() { return maxLife; }
-    public int getLife() {
+    public int      getMaxLife() { return maxLife; }
+    public int      getLife() {
         return life;
     }
-    public void setLife(int life) {
+    public void     setLife(int life) {
         this.life = life;
     }
-    public double getEndurance() {
+    public double   getEndurance() {
         return endurance;
     }
-    public int getLevel() {
+    public int      getLevel() {
         return level;
     }
-    public void setNormalSpeed(int normalSpeed) {
+    public void     setNormalSpeed(int normalSpeed) {
         this.normalSpeed = normalSpeed;
     }
-    public void setSprintSpeed(int sprintSpeed) {
+    public void     setSprintSpeed(int sprintSpeed) {
         this.sprintSpeed = sprintSpeed;
     }
-    public int getNormalSpeed() {
+    public int      getNormalSpeed() {
         return normalSpeed;
     }
-    public int getSprintSpeed() {
+    public int      getSprintSpeed() {
         return sprintSpeed;
     }
-    public int getDamage() {
+    public int      getDamage() {
         return damage;
     }
-    public void setDamage(int damage) {
+    public void     setDamage(int damage) {
         this.damage = damage;
     }
-    public int getMaxEndurance() {
+    public int      getMaxEndurance() {
         return maxEndurance;
     }
-    public void setMaxLife(int maxLife) {
+    public void     setMaxLife(int maxLife) {
         this.maxLife = maxLife;
     }
-    public void setMaxEndurance(int maxEndurance) {
+    public void     setMaxEndurance(int maxEndurance) {
         this.maxEndurance = maxEndurance;
     }
-    public boolean isIActive() {
+    public boolean  isIActive() {
         return isIActive;
     }
-    public void setIActive(boolean IActive) {
+    public void     setIActive(boolean IActive) {
         isIActive = IActive;
     }
     public LinkedList<Pickable> getInventory() {
