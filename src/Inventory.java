@@ -18,10 +18,11 @@ public class Inventory extends Actor implements Fixed {
     private LinkedList<Pickable> WeaponList = new LinkedList<>();
     private LinkedList<Pickable> ItemList = new LinkedList<>();
     private int inventoryTab = 0;
-    private GreenfootImage InventoryScreen = new GreenfootImage("images/MyInventoryV3.png");
-    private GreenfootImage PfeilImage31 = new GreenfootImage("images/31.png");
-    private GreenfootImage PfeilLinksAktiv = new GreenfootImage("images/PfeilLinksAkiv.png");
-    private GreenfootImage PfeilLinksInAktiv = new GreenfootImage("images/PfeilLinksInAkiv.png");
+    private GreenfootImage InventoryScreen    = new GreenfootImage("images/MyInventoryV3.png");
+    private GreenfootImage ArrowLeftInAktive  = new GreenfootImage("images/Arrows/Arrow_left.png");
+    private GreenfootImage ArrowLeftAktive    = new GreenfootImage("images/Arrows/Arrow_left_aktive.png");
+    private GreenfootImage ArrowRightInAktive = new GreenfootImage("images/Arrows/Arrow_right.png");
+    private GreenfootImage ArrowRightAktive   = new GreenfootImage("images/Arrows/Arrow_right_aktive.png");
 
 
     protected void addedToWorld(World world) {
@@ -111,12 +112,9 @@ public class Inventory extends Actor implements Fixed {
 
 
     public void testArrows(){
-        //Hight  okay
-        // use normal images
-        // touchups on red frame
-        InventoryScreen.drawImage(PfeilImage31, 400, 150);
-        InventoryScreen.drawImage(PfeilLinksAktiv, 350, 150);
-        InventoryScreen.drawImage(PfeilLinksInAktiv, 300, 150);
+        InventoryScreen.drawImage(ArrowLeftAktive, 400, 150);
+        InventoryScreen.drawImage(ArrowLeftInAktive, 350, 150);
+        InventoryScreen.drawImage(ArrowRightAktive, 300, 150);
     }
 
     //Getters and Setters
