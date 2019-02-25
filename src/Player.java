@@ -163,12 +163,12 @@ public class Player extends MovingActor implements Attackable,Blocking {
         }
     }
     public void pick() {
-        List<Item> objs = getWorld().getObjectsAt(getX(), getY(), Item.class);
-        Iterator<Item> objsIt = objs.iterator();
-        if (!objsIt.hasNext()) {
+        List<Item> objects = getWorld().getObjectsAt(getX(), getY(), Item.class);
+        Iterator<Item> objectsIt = objects.iterator();
+        if (!objectsIt.hasNext()) {
             return;
         }
-        Item currentItem = objs.get(0);
+        Item currentItem = objects.get(0);
         if (currentItem instanceof Pickable) {
             if (inventory != null && inventory.isEmpty()) {
                 ((Pickable) currentItem).pick(this, inventory);

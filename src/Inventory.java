@@ -7,23 +7,21 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Inventory extends Actor implements Fixed {
-    //1. TODO clear Method/ fix bug where items are drawn new each time inventory is opened
-    //2. TODO implement "switchTab-Buttons"
-    //3. TODO implement InventoryTab is full message /
-    //4. TODO drag and drop Items to respective slots
-    //4. TODO better colors/Item background
-    //5. TODO ItemInfo displayed when clicked and/or mouse hovers over it
-    private World world;
+    // TODO clear Method/ fix bug where items are drawn new each time inventory is opened
+    // TODO implement InventoryTab is full message /
+    // TODO drag and drop Items to respective slots
+    // TODO better colors/Item background
+    // TODO make "switchTab-Buttons" look good
+    // TODO ItemInfo displayed when clicked and/or mouse hovers over it
     private Player p;
+    private World world;
     private int inventoryTab = 0;
+    private LinkedList<Button>   buttonList;
     private LinkedList<Pickable> allItems;
     private LinkedList<Pickable> ArmorList  = new LinkedList<>();
     private LinkedList<Pickable> WeaponList = new LinkedList<>();
     private LinkedList<Pickable> ItemList   = new LinkedList<>();
-    private GreenfootImage InventoryScreen    = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV3.png");
-
-    private LinkedList<Button> buttonList;
-
+    private GreenfootImage InventoryScreen  = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV3.png");
 
     protected void addedToWorld(World world) {
         inventoryLogic();
@@ -32,7 +30,7 @@ public class Inventory extends Actor implements Fixed {
     public Inventory(Player p, World world){
         this.p = p;
         this.world = world;
-        buttonList = new LinkedList<Button>();
+        buttonList = new LinkedList<>();
         buttonList = new LinkedList<>();
     }
 
@@ -70,9 +68,9 @@ public class Inventory extends Actor implements Fixed {
             return;
         }
         for(Pickable item :allItems){
-            if(item.getItemType() == "Weapon"){
+            if(item.getItemType().equals("Weapon")) {
                 WeaponList.add(item);
-            }else if(item.getItemType() == "Armor"){
+            }else if(item.getItemType().equals("Armor")){
                 ArmorList.add(item);
             }else {
                 ItemList.add(item);
