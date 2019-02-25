@@ -17,7 +17,6 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private int damage = 5;
     private int waitScreen = 0;
     private final int timewaitScreen = 30;
-    private int last = 0;
     private SkillWindow skillWindow;
     private boolean skillScreenShown = false;
     private int maxLife = 1000;
@@ -29,6 +28,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private double enduranceRegeneration = 1;
     private int minEndurance = 0;
     private boolean isIActive = false;
+    private boolean isSettingsWindowShown = false;
     private Inventory inventoryInstance;
     private int maxEndurance = 1000;
     private double endurance = maxEndurance;
@@ -132,21 +132,8 @@ public class Player extends MovingActor implements Attackable,Blocking {
             print(x +"\n"+y);
         }
     }
-    public void act() {
-        useInventory();
-        performMovement();
-        calculateEndurance();
-        super.act();
-        if(Greenfoot.isKeyDown("E")){
-            pick();
-        }
-        if(Greenfoot.isKeyDown("H")){
-            attackNPCs();
-        }
-        printCoords();
-        waitScreen++;
-        if(timewaitScreen < waitScreen) {
-            if (Greenfoot.isKeyDown("R")) {
+    public void showScreenWindow() {
+        if (timewaitScreen < waitScreen) {
                 if (skillScreenShown) {
                     skillWindow.deleteButtons();
                     getWorld().removeObject(skillWindow);
@@ -155,8 +142,34 @@ public class Player extends MovingActor implements Attackable,Blocking {
                 }
                 skillScreenShown = !skillScreenShown;
                 waitScreen = 0;
-            }
         }
+    }
+    public void testkeys(){
+        if(Greenfoot.isKeyDown("E")){
+            pick();
+        }
+        if(Greenfoot.isKeyDown("H")){
+            attackNPCs();
+        }
+        if(Greenfoot.isKeyDown("R")){
+            showScreenWindow();
+        }
+        if(Greenfoot.isKeyDown("T")){
+            showSettingsWindow();
+        }
+        performMovement();
+    }
+    public void showSettingsWindow(){
+        this.getWorld().addObject(new SettingsWindow(),500,500);
+    }
+    public void act() {
+        useInventory();
+        calculateEndurance();
+        super.act();
+        testkeys();
+        waitScreen++;
+        printCoords();
+        regenerateLife();
         if(this.life < minLife){
             Greenfoot.setWorld(new DeathScreen());
             Greenfoot.stop();
