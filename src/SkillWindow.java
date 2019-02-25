@@ -45,7 +45,7 @@ public class SkillWindow extends General implements Fixed{
         buttonList = new LinkedList<Button>();
         this.world = world;
         buttonList = new LinkedList<>();
-        bg = new GreenfootImage("images/SkillScreenV1.png");
+        bg = new GreenfootImage("images/Hud_Menu_Images/SkillScreenV1.png");
         bg.setTransparency(150);
         }
     public void showSkills() {

@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class HUD extends Actor implements Fixed {
 
-    GreenfootImage Background = new GreenfootImage("StatBars.png");
+    GreenfootImage Background = new GreenfootImage("images/Hud_Menu_Images/StatBars.png");
 
     public HUD(){
         setImage(Background);
@@ -13,7 +13,7 @@ public class HUD extends Actor implements Fixed {
 
     public void act(){
         Background.clear();
-        Background = new GreenfootImage("StatBars.png");
+        Background = new GreenfootImage("images/Hud_Menu_Images/StatBars.png");
         setImage(Background);
         if (getWorld().getObjects(Player.class).get(0)!= null) {
             Player p = getWorld().getObjects(Player.class).get(0);

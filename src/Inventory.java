@@ -18,7 +18,7 @@ public class Inventory extends Actor implements Fixed {
     private LinkedList<Pickable> WeaponList = new LinkedList<>();
     private LinkedList<Pickable> ItemList = new LinkedList<>();
     private int inventoryTab = 0;
-    private GreenfootImage InventoryScreen    = new GreenfootImage("images/MyInventoryV3.png");
+    private GreenfootImage InventoryScreen    = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV3.png");
     private GreenfootImage ArrowLeftInAktive  = new GreenfootImage("images/Arrows/Arrow_left.png");
     private GreenfootImage ArrowLeftAktive    = new GreenfootImage("images/Arrows/Arrow_left_aktive.png");
     private GreenfootImage ArrowRightInAktive = new GreenfootImage("images/Arrows/Arrow_right.png");
