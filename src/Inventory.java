@@ -9,6 +9,8 @@ import java.util.LinkedList;
 public class Inventory extends Actor implements Fixed {
     //TODO implement "switchTab-Buttons"
     //TODO implement InventoryTab is full message /
+    //TODO better colors
+    //TODO drag and drop Items to respective slots
     private World world;
     private Player p;
     private LinkedList<Pickable> allItems;
@@ -17,6 +19,10 @@ public class Inventory extends Actor implements Fixed {
     private LinkedList<Pickable> ItemList = new LinkedList<>();
     private int inventoryTab = 0;
     private GreenfootImage InventoryScreen = new GreenfootImage("images/MyInventoryV3.png");
+    private GreenfootImage PfeilImage31 = new GreenfootImage("images/31.png");
+    private GreenfootImage PfeilLinksAktiv = new GreenfootImage("images/PfeilLinksAkiv.png");
+    private GreenfootImage PfeilLinksInAktiv = new GreenfootImage("images/PfeilLinksInAkiv.png");
+
 
     protected void addedToWorld(World world) {
         inventoryLogic();
@@ -30,6 +36,7 @@ public class Inventory extends Actor implements Fixed {
     public void inventoryLogic(){
         getItems(p);
         setImage(InventoryScreen);
+        testArrows();
         drawTabFonts(InventoryScreen);
         drawCurrentTab();
     }
@@ -100,6 +107,16 @@ public class Inventory extends Actor implements Fixed {
     public void drawItemBase(){
         InventoryScreen.setColor(Color.cyan);
         InventoryScreen.fillRect(400,200, 32,32);
+    }
+
+
+    public void testArrows(){
+        //Hight  okay
+        // use normal images
+        // touchups on red frame
+        InventoryScreen.drawImage(PfeilImage31, 400, 150);
+        InventoryScreen.drawImage(PfeilLinksAktiv, 350, 150);
+        InventoryScreen.drawImage(PfeilLinksInAktiv, 300, 150);
     }
 
     //Getters and Setters

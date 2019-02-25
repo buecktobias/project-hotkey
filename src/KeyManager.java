@@ -1,9 +1,10 @@
-import greenfoot.*;
+import greenfoot.Actor;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class KeyManager extends Actor implements KeyListener {
-
+    //TODO decide how we handle with keys..maybe central assignment location
     public boolean[] keys;
     public boolean up, down, left, right;
 
@@ -23,7 +24,6 @@ public class KeyManager extends Actor implements KeyListener {
         keys[e.getKeyCode()]= true;
         System.out.println("Pressed!");
     }
-
     @Override
     public void keyReleased(KeyEvent e) {
         keys[e.getKeyCode()]= false;
