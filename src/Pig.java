@@ -16,7 +16,7 @@ public class Pig extends Friendly implements Blocking,Attackable {
     }
 
     public Pig(){
-        GreenfootImage img = new GreenfootImage("images/lilpig.png");
+        GreenfootImage img = new GreenfootImage("images/Characters/lilpig.png");
         img.scale(64,32);
         setImage(img);
     }

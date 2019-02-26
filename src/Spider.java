@@ -6,8 +6,8 @@ public class Spider extends Hostile implements Blocking,Attackable {
     private int life = 10;
     private int visualRange;
     private int attackRange;
-    private final GreenfootImage angryImage = new GreenfootImage("images/Spider_RED_EYES.png");
-    private final GreenfootImage defaultImage = new GreenfootImage("images/Spider.png");
+    private final GreenfootImage angryImage = new GreenfootImage("images/Characters/Spider_RED_EYES.png");
+    private final GreenfootImage defaultImage = new GreenfootImage("images/Characters/Spider.png");
     private int damage = 5;
     public Spider(){
         defaultImage.scale(64,32);

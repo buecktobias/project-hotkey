@@ -8,7 +8,7 @@ public class Enemy extends Hostile implements Attackable,Blocking {
     private int life = 100;
     private int hitboxRadius=getWidth();
     public Enemy(){
-        GreenfootImage img = new GreenfootImage("images/Enemy.png");
+        GreenfootImage img = new GreenfootImage("images/Characters/Enemy.png");
         img.scale(128,128);
         setImage(img);
         attackRange =  img.getWidth();

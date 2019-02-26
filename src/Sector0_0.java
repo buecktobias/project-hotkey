@@ -16,13 +16,13 @@ public class Sector0_0 extends OpenWorld {
 
     public Sector0_0() {
         setPaintOrder(Button.class, Inventory.class, HUD.class,FPS.class, MovingActor.class);
-        setBackground("cell_debug.png");
+        setBackground("images/Screens/cell_debug.png");
         Player player = new Player();
         addObject(player, 0, 0);
         //addObject(enemy, 200, 200);
         HUD hud = new HUD();
         addObject(hud, getWidth() / 2, getHeight() / 2);
-        setScrollingBackground(new GreenfootImage("cell_debug.png"));
+        setScrollingBackground(new GreenfootImage("images/Screens/cell_debug.png"));
         Staff staff = new Staff(42);
         addObject(staff, 100, 100);
         addObject(new FPS(),1000,32);

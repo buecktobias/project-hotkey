@@ -3,8 +3,12 @@
     "moveUp":"W",
     "moveRight":"D",
     "moveLeft":"A",
-    "moveBottom":"S",
+    "moveDown":"S",
+    "sprint":"SHIFT",
     "openSkillWindow":"R",
-    "openInventar":"M"
+    "openInventar":"m",
+    "openSettingWindow":"T",
+    "attack":"H",
+    "pick":"E"
   }
 }

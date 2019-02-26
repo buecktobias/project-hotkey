@@ -14,7 +14,7 @@ public class FPS extends Actor implements Fixed {
         frame = 0;
         fps = 0;
         startTime = System.currentTimeMillis();
-        bg = new GreenfootImage("images/FPS_Window.png");
+        bg = new GreenfootImage("images/Screens/FPS_Window.png");
         bg.scale(128,64);
     }
 

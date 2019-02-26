@@ -79,8 +79,8 @@ public class SkillWindow extends General implements Fixed{
         GreenfootImage buttonImgClicked;
         for (int i = 0; i < keys.length; i++) {
             int finalI = i;
-            buttonImgUnClicked = new GreenfootImage("images/plus.png");
-            buttonImgClicked = new GreenfootImage("images/plus_clicked.png");
+            buttonImgUnClicked = new GreenfootImage("images/Buttons/plus.png");
+            buttonImgClicked = new GreenfootImage("images/Buttons/plus_clicked.png");
             buttonImgUnClicked.scale(40, 40);
             buttonImgClicked.scale(35, 35);
             button = new Button(buttonImgUnClicked,buttonImgClicked) {
