@@ -7,10 +7,9 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Inventory extends Actor implements Fixed {
-    // TODO clear Method/ fix bug where items are drawn new each time inventory is opened
     // TODO implement InventoryTab is full message /
     // TODO drag and drop Items to respective slots
-    // TODO better colors/Item background
+    // TODO better colors/Item background  (#FFD700?)
     // TODO make "switchTab-Buttons" look good
     // TODO ItemInfo displayed when clicked and/or mouse hovers over it
     private Player p;
@@ -24,7 +23,7 @@ public class Inventory extends Actor implements Fixed {
     private GreenfootImage InventoryScreen  = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV3.png");
 
     protected void addedToWorld(World world) {
-        inventoryLogic();
+        sortItems(p);
     }
 
     public Inventory(Player p, World world){
@@ -33,15 +32,17 @@ public class Inventory extends Actor implements Fixed {
         buttonList = new LinkedList<>();
         buttonList = new LinkedList<>();
     }
-
-    public void inventoryLogic(){
-        getItems(p);
+    public void act(){
+        InventoryScreen.clear();
+        InventoryScreen  = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV3.png");
         setImage(InventoryScreen);
         drawTabFonts();
         createLeftArrow();
         createRighttArrow();
+        drawCurrentTab();
     }
-    public void drawTabFonts(){
+
+    private void drawTabFonts(){
         String armor = "Armor";
         String weapons = "Weapons";
         String items = "Items";
@@ -59,10 +60,8 @@ public class Inventory extends Actor implements Fixed {
             InventoryScreen.drawString(items,     680,175);
         }
     }
-    public void getItems(Player p){
+    private void sortItems(Player p){
         allItems = p.getInventory();
-    }
-    public void sortItems(LinkedList<Pickable> allItems){
         Iterator<Pickable> allItemsIT = allItems.iterator();
         if (!allItemsIT.hasNext()) {
             return;
@@ -77,8 +76,8 @@ public class Inventory extends Actor implements Fixed {
             }
         }
     }
-    public void drawCurrentTab(){
-        sortItems(allItems);
+    private void drawCurrentTab(){
+
         if(inventoryTab == 0){
             drawTab(WeaponList);
         }else if(inventoryTab == 1){
@@ -89,31 +88,26 @@ public class Inventory extends Actor implements Fixed {
             setInventoryTab(0);
         }
     }
-    public void drawTab(LinkedList<Pickable> itemsToDraw){
+    private void drawTab(LinkedList<Pickable> itemsToDraw){
         int drawAtX = 400;
         int drawAtY = 200;
         int itemsDrawn = 0;
+        if(itemsDrawn == 7){
+            drawAtY = drawAtY +32;
+            drawAtX = drawAtX - 32*7;
+            itemsDrawn = 0;
+        }
         for (Pickable item: itemsToDraw) {
-            if(itemsDrawn == 7){
-                drawAtY = drawAtY +32;
-                drawAtX = drawAtX - 32*7;
-                itemsDrawn = 0;
-            }
             drawItemBase();
             InventoryScreen.drawImage(item.getItemImage(), drawAtX, drawAtY);
             drawAtX = drawAtX + 32;
             itemsDrawn++;
         }
     }
-    public void drawItemBase(){
+    private void drawItemBase(){
         InventoryScreen.setColor(Color.cyan);
         InventoryScreen.fillRect(400,200, 32,32);
     }
-
-    public void clearInventoryScreen(){
-        deleteButtons();
-    }
-
 
     private void createLeftArrow(){
         Button button;
@@ -131,7 +125,7 @@ public class Inventory extends Actor implements Fixed {
                     }else{
                         inventoryTab = 2;
                     }
-                    System.out.println(inventoryTab);
+                   // System.out.println(inventoryTab);
                 }
             };
             buttonList.add(button);
@@ -154,7 +148,7 @@ public class Inventory extends Actor implements Fixed {
                 }else{
                     inventoryTab = 0;
                 }
-                System.out.println(inventoryTab);
+                //System.out.println(inventoryTab);
             }
         };
         buttonList.add(button);
@@ -167,14 +161,6 @@ public class Inventory extends Actor implements Fixed {
         }
         buttonList = new LinkedList<>();
     }
-
-    public void act(){
-            drawTabFonts();
-            drawCurrentTab();
-    }
-
-
-
 
     //Getters and Setters
     public int getInventoryTab() {

@@ -183,7 +183,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
     public void useInventory() {
         String key = Greenfoot.getKey();
         if (("m".equals(key)&& isIActive) ){
-            inventoryInstance.clearInventoryScreen();
+            inventoryInstance.deleteButtons();
             getWorld().removeObject(inventoryInstance);
             setIActive(false);
         }else if("m".equals(key) && !isIActive()) {
