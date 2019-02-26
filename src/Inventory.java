@@ -7,8 +7,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Inventory extends Actor implements Fixed {
-    // TODO implement InventoryTab is full message /
-    // TODO drag and drop Items to respective slots
+    // TODO implement pick limit
+    // TODO drag and drop Items to respective slots -> CREATE SLOTS
     // TODO better colors/Item background  (#FFD700?)
     // TODO make "switchTab-Buttons" look good
     // TODO ItemInfo displayed when clicked and/or mouse hovers over it
@@ -158,12 +158,10 @@ public class Inventory extends Actor implements Fixed {
         world.addObject(button, 780,165);
 
     }
-    public void clearInventoryScreen(){
-        //InventoryScreen.clear();
+    public void deleteButtons(){
         for(Button button:buttonList){
             world.removeObject(button);
         }
-        buttonList = new LinkedList<>();
     }
 
     //Getters and Setters
