@@ -100,7 +100,6 @@ public class Inventory extends Actor implements Fixed {
             itemsDrawn = 0;
         }
         for (Pickable item: itemsToDraw) {
-            System.out.println(itemsToDraw.size());
             drawItemBase();
             InventoryScreen.drawImage(item.getItemImage(), drawAtX, drawAtY);
             drawAtX = drawAtX + 32;
