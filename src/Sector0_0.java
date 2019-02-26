@@ -149,15 +149,13 @@ public class Sector0_0 extends OpenWorld {
 
     @Override
     public void act() {
-        /*
-        if (time % 30 == 0) {
+        if (time % 100 == 0) {
             randomSpawn(Pig.class);
 
         }
-        if (time % 20 == 0) {
+        if (time % 200 == 0) {
             randomSpawn(Spider.class);
         }
         time++;
-        */
     }
 }

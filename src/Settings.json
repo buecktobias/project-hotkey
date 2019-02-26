@@ -1,0 +1,10 @@
+{
+  "keys":{
+    "moveUp":"W",
+    "moveRight":"D",
+    "moveLeft":"A",
+    "moveBottom":"S",
+    "openSkillWindow":"R",
+    "openInventar":"M"
+  }
+}
