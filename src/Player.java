@@ -55,6 +55,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
     Player(){
         Greenfoot.setSpeed(gameSpeed);
         Object obj = null;
+
         try {
             obj = parser.parse(new FileReader("src/Settings.json"));
         } catch (FileNotFoundException e) {
@@ -64,6 +65,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         JSONObject jsonObject = (JSONObject)obj;
         JSONObject keys = (JSONObject) jsonObject.get("keys");
         keyMoveLeft = keys.get("moveLeft").toString();
@@ -76,6 +78,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
         keyOpenSettings = keys.get("openSettingWindow").toString();
         keyOpenSkillWindow = keys.get("openSkillWindow").toString();
         keyPick = keys.get("pick").toString();
+
     }
 
     @Override
@@ -199,6 +202,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
         }
         performMovement();
     }
+
     public void showSettingsWindow(){
         if(getWorld().getObjects(SettingsWindow.class) == null) {
             this.getWorld().addObject(settingsWindow, 500, 500);
@@ -206,6 +210,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
             this.getWorld().removeObject(settingsWindow);
         }
     }
+
     public void act() {
         useInventory();
         calculateEndurance();
@@ -239,10 +244,11 @@ public class Player extends MovingActor implements Attackable,Blocking {
     }
     public void useInventory() {
         String key = Greenfoot.getKey();
-        if ((keyOpenInventar.equals(key)&& isIActive) ){
+        if (("m".equals(key)&& isIActive) ){
+            inventoryInstance.deleteButtons();
             getWorld().removeObject(inventoryInstance);
             setIActive(false);
-        }else if(keyOpenInventar.equals(key) && !isIActive()) {
+        }else if("m".equals(key) && !isIActive()) {
             getWorld().addObject(inventoryInstance, getWorld().getWidth()/2, getWorld().getHeight()/2);
             setIActive(true);
         }
