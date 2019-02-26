@@ -17,19 +17,23 @@ public class Inventory extends Actor implements Fixed {
     private int inventoryTab = 0;
     private LinkedList<Button>   buttonList;
     private LinkedList<Pickable> allItems;
-    private LinkedList<Pickable> ArmorList  = new LinkedList<>();
-    private LinkedList<Pickable> WeaponList = new LinkedList<>();
-    private LinkedList<Pickable> ItemList   = new LinkedList<>();
+    private LinkedList<Pickable> ArmorList;
+    private LinkedList<Pickable> WeaponList;
+    private LinkedList<Pickable> ItemList;
     private GreenfootImage InventoryScreen  = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV3.png");
 
     protected void addedToWorld(World world) {
+        ArmorList  = new LinkedList<>();
+        WeaponList = new LinkedList<>();
+        ItemList   = new LinkedList<>();
         sortItems(p);
+        createLeftArrow();
+        createRightArrow();
     }
 
     public Inventory(Player p, World world){
         this.p = p;
         this.world = world;
-        buttonList = new LinkedList<>();
         buttonList = new LinkedList<>();
     }
 
@@ -38,8 +42,6 @@ public class Inventory extends Actor implements Fixed {
         InventoryScreen  = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV3.png");
         setImage(InventoryScreen);
         drawTabFonts();
-        createLeftArrow();
-        createRightArrow();
         drawCurrentTab();
     }
 
@@ -98,6 +100,7 @@ public class Inventory extends Actor implements Fixed {
             itemsDrawn = 0;
         }
         for (Pickable item: itemsToDraw) {
+            System.out.println(itemsToDraw.size());
             drawItemBase();
             InventoryScreen.drawImage(item.getItemImage(), drawAtX, drawAtY);
             drawAtX = drawAtX + 32;
@@ -156,7 +159,8 @@ public class Inventory extends Actor implements Fixed {
         world.addObject(button, 780,165);
 
     }
-    public void deleteButtons(){
+    public void clearInventoryScreen(){
+        //InventoryScreen.clear();
         for(Button button:buttonList){
             world.removeObject(button);
         }

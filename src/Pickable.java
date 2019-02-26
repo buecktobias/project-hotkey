@@ -10,11 +10,11 @@ public interface Pickable {
     String itemName = "noNameAssigned";
 
     int getItemId();
-    String getItemType();
     int getItemCount();
-    void setItemCount(int itemCount);
+    String getItemType();
     String getItemName();
     GreenfootImage getItemImage();
+    void setItemCount(int itemCount);
     void pick(Player p, LinkedList inventory);
     void compareIDs(Player p, LinkedList<Pickable> inventory, Pickable item);
 }

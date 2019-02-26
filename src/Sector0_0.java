@@ -154,7 +154,8 @@ public class Sector0_0 extends OpenWorld {
 
         }
         if (time % 200 == 0) {
-            randomSpawn(Spider.class);
+            // TODO spawn spiders at locations where they are not annoying while testing
+            //randomSpawn(Spider.class);
         }
         time++;
     }
