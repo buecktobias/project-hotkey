@@ -98,19 +98,22 @@ public class Inventory extends Actor implements Fixed {
             drawAtY = drawAtY +32;
             drawAtX = drawAtX - 32*7;
             itemsDrawn = 0;
+            System.out.println(itemsDrawn);
         }
         for (Pickable item: itemsToDraw) {
-            drawItemBase();
+            //drawItemBase();
             InventoryScreen.drawImage(item.getItemImage(), drawAtX, drawAtY);
             drawAtX = drawAtX + 32;
             itemsDrawn++;
         }
     }
 
+    /*
     private void drawItemBase(){
         InventoryScreen.setColor(Color.cyan);
         InventoryScreen.fillRect(400,200, 32,32);
     }
+    */
 
     private void createLeftArrow(){
         Button button;

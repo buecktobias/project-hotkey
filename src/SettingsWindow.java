@@ -16,11 +16,13 @@ public class SettingsWindow extends Actor implements Fixed {
     @Override
     protected void addedToWorld(World world) {
         System.out.println("settings");
+
         try {
             System.out.println("no error");
+
             Object obj = parser.parse(new FileReader("src/Settings.json"));
-            JSONObject jsonObject = (JSONObject)obj;
-            JSONObject keys = (JSONObject)jsonObject.get("keys");
+            JSONObject jsonObject = (JSONObject) obj;
+            JSONObject keys = (JSONObject) jsonObject.get("keys");
             showKeys(keys);
 
         } catch (IOException e) {
@@ -31,15 +33,17 @@ public class SettingsWindow extends Actor implements Fixed {
         setImage(bg);
 
     }
-    private void showKeys(JSONObject keys){
+
+    private void showKeys(JSONObject keys) {
         int i = 0;
         bg.setColor(Color.WHITE);
         bg.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 20));
-        for(Object key :keys.keySet()){
-            bg.drawString(key.toString() + ":" + keys.get(key),50,i*20+50);
+        for (Object key : keys.keySet()) {
+            bg.drawString(key.toString() + ":" + keys.get(key), 50, i * 20 + 50);
             i++;
         }
 
 
     }
 }
+
