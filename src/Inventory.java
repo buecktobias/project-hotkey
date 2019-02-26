@@ -32,13 +32,14 @@ public class Inventory extends Actor implements Fixed {
         buttonList = new LinkedList<>();
         buttonList = new LinkedList<>();
     }
+
     public void act(){
         InventoryScreen.clear();
         InventoryScreen  = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV3.png");
         setImage(InventoryScreen);
         drawTabFonts();
         createLeftArrow();
-        createRighttArrow();
+        createRightArrow();
         drawCurrentTab();
     }
 
@@ -77,7 +78,6 @@ public class Inventory extends Actor implements Fixed {
         }
     }
     private void drawCurrentTab(){
-
         if(inventoryTab == 0){
             drawTab(WeaponList);
         }else if(inventoryTab == 1){
@@ -104,6 +104,7 @@ public class Inventory extends Actor implements Fixed {
             itemsDrawn++;
         }
     }
+
     private void drawItemBase(){
         InventoryScreen.setColor(Color.cyan);
         InventoryScreen.fillRect(400,200, 32,32);
@@ -132,7 +133,7 @@ public class Inventory extends Actor implements Fixed {
             world.addObject(button, 440,165);
 
     }
-    private void createRighttArrow(){
+    private void createRightArrow(){
         Button button;
         GreenfootImage buttonImgUnClicked;
         GreenfootImage buttonImgClicked;

@@ -160,7 +160,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
         performMovement();
     }
     public void showSettingsWindow(){
-        this.getWorld().addObject(new SettingsWindow(),500,500);
+      //  this.getWorld().addObject(new SettingsWindow(),500,500);
     }
     public void act() {
         useInventory();

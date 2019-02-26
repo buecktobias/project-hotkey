@@ -1,9 +1,11 @@
+/*
 import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 import greenfoot.World;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
 
 import java.awt.*;
 import java.io.FileReader;
@@ -42,3 +44,4 @@ public class SettingsWindow extends Actor implements Fixed {
 
     }
 }
+*/
