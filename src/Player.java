@@ -23,8 +23,10 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private int sprintSpeed = 4;
     private int attackRange = 500;
     private int damage = 5;
-    private int waitScreen = 0;
-    private final int timewaitScreen = 30;
+    private final int waitTimeOpenSkillWindow = 10;
+    private final int waitTimeOpenSettingsWindow = 10;
+    private int lastFrameSkillWindowOpened = 0;
+    private int lastFrameSettingsWindowOpened = 0;
     private SkillWindow skillWindow;
     private boolean skillScreenShown = false;
     private int maxLife = 1000;
@@ -41,6 +43,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private int maxEndurance = 1000;
     private double endurance = maxEndurance;
     private final int gameSpeed = 50;
+    private FPS fps;
     private String keyMoveLeft;
     private String keyMoveRight;
     private String keyMoveUp;
@@ -65,7 +68,6 @@ public class Player extends MovingActor implements Attackable,Blocking {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         JSONObject jsonObject = (JSONObject)obj;
         JSONObject keys = (JSONObject) jsonObject.get("keys");
         keyMoveLeft = keys.get("moveLeft").toString();
@@ -78,13 +80,13 @@ public class Player extends MovingActor implements Attackable,Blocking {
         keyOpenSettings = keys.get("openSettingWindow").toString();
         keyOpenSkillWindow = keys.get("openSkillWindow").toString();
         keyPick = keys.get("pick").toString();
-
     }
 
     @Override
     protected void addedToWorld(World world) {
         skillWindow = new SkillWindow(world);
         inventoryInstance = new Inventory(this, world);
+        fps = world.getObjects(FPS.class).get(0);
     }
     private void move(Direction d, int distance){
         super.moveDirection(d,distance);
@@ -176,7 +178,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
         }
     }
     public void showSkillWindow() {
-        if (timewaitScreen < waitScreen) {
+        if (fps.getFrame() - lastFrameSkillWindowOpened > waitTimeOpenSkillWindow) {
                 if (skillScreenShown) {
                     skillWindow.deleteButtons();
                     getWorld().removeObject(skillWindow);
@@ -184,7 +186,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
                     getWorld().addObject(skillWindow, 500, 400);
                 }
                 skillScreenShown = !skillScreenShown;
-                waitScreen = 0;
+                lastFrameSkillWindowOpened = fps.getFrame();
         }
     }
     public void testkeys(){
@@ -204,10 +206,13 @@ public class Player extends MovingActor implements Attackable,Blocking {
     }
 
     public void showSettingsWindow(){
-        if(getWorld().getObjects(SettingsWindow.class) == null) {
-            this.getWorld().addObject(settingsWindow, 500, 500);
-        }else{
-            this.getWorld().removeObject(settingsWindow);
+        if(fps.getFrame() - lastFrameSettingsWindowOpened > waitTimeOpenSettingsWindow) {
+            if (getWorld().getObjects(SettingsWindow.class).size() == 0) {
+                this.getWorld().addObject(settingsWindow, 500, 500);
+            } else {
+                this.getWorld().removeObject(settingsWindow);
+            }
+            lastFrameSettingsWindowOpened = fps.getFrame();
         }
     }
 
@@ -216,7 +221,6 @@ public class Player extends MovingActor implements Attackable,Blocking {
         calculateEndurance();
         super.act();
         testkeys();
-        waitScreen++;
         printCoords();
         regenerateLife();
         if(this.life < minLife){
@@ -244,11 +248,11 @@ public class Player extends MovingActor implements Attackable,Blocking {
     }
     public void useInventory() {
         String key = Greenfoot.getKey();
-        if (("m".equals(key)&& isIActive) ){
+        if ((keyOpenInventar.equals(key)&& isIActive) ){
             inventoryInstance.deleteButtons();
             getWorld().removeObject(inventoryInstance);
             setIActive(false);
-        }else if("m".equals(key) && !isIActive()) {
+        }else if(keyOpenInventar.equals(key) && !isIActive()) {
             getWorld().addObject(inventoryInstance, getWorld().getWidth()/2, getWorld().getHeight()/2);
             setIActive(true);
         }

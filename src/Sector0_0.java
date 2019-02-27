@@ -17,6 +17,7 @@ public class Sector0_0 extends OpenWorld {
     public Sector0_0() {
         setPaintOrder(Button.class, Inventory.class, HUD.class,FPS.class, MovingActor.class);
         setBackground("images/Screens/cell_debug.png");
+        addObject(new FPS(),1000,32);
         Player player = new Player();
         addObject(player, 0, 0);
         //addObject(enemy, 200, 200);
@@ -25,7 +26,7 @@ public class Sector0_0 extends OpenWorld {
         setScrollingBackground(new GreenfootImage("images/Screens/cell_debug.png"));
         Staff staff = new Staff(42);
         addObject(staff, 100, 100);
-        addObject(new FPS(),1000,32);
+
 
         randomObjects(Tree.class, 20, 100, 800, 600, 2);
         randomObjects(Grass.class, 700, 600, 1000, 900, 6);
@@ -154,7 +155,6 @@ public class Sector0_0 extends OpenWorld {
 
         }
         if (time % 200 == 0) {
-            // TODO spawn spiders at locations where they are not annoying while testing
             //randomSpawn(Spider.class);
         }
         time++;

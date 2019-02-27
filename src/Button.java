@@ -27,8 +27,8 @@ public abstract class Button extends Actor implements Fixed {
                 int width = this.getImage().getWidth();
                 int height = this.getImage().getHeight();
                 if (mouseX > getX() - width / 2 && mouseX < getX() + width / 2 && mouseY < getY() + height / 2 && mouseY > getY() - height / 2) {
-                    GreenfootImage img = new GreenfootImage(getImage());
-                    img.scale(50, 50);
+                    GreenfootImage img = new GreenfootImage(unClicked);
+                    img.scale((int) Math.round(img.getWidth()*1.2), (int) Math.round(img.getHeight()*1.2));
                     setImage(img);
                 } else {
                     setImage(unClicked);
