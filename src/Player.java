@@ -58,7 +58,6 @@ public class Player extends MovingActor implements Attackable,Blocking {
     Player(){
         Greenfoot.setSpeed(gameSpeed);
         Object obj = null;
-
         try {
             obj = parser.parse(new FileReader("src/Settings.json"));
         } catch (FileNotFoundException e) {
@@ -247,6 +246,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
         }
     }
     public void useInventory() {
+        //TODO fix inventory not opening when caps lock is on
         String key = Greenfoot.getKey();
         if ((keyOpenInventar.equals(key)&& isIActive) ){
             inventoryInstance.deleteButtons();
