@@ -9,17 +9,20 @@ import java.util.LinkedList;
 
 
 public class Inventory extends Actor implements Fixed {
-    // TODO ItemInfo displayed when clicked and/or mouse hovers over it
+    // TODO
+    // TODO make Items equipable
     // TODO implement pick limit
-    // TODO better colors/Item background  (#FFD700?)
     // TODO make "switchTab-Buttons" look good
     // TODO This will probably never happen.....drag and drop Items to respective slots -> CREATE SLOTS
     private Player p;
     private World world;
+    private Pickable itemForInfo;
     private int itemsDrawn;
     private int drawAtX = 416;
     private int drawAtY = 196;
     private int inventoryTab = 0;
+    private boolean infoScreenActive = false;
+    private ItemInfoScreen itemInfoScreenInstance;
     private LinkedList<Button>   buttonList;
     private LinkedList<Pickable> allItems;
     private LinkedList<Pickable> ArmorList;
@@ -38,6 +41,8 @@ public class Inventory extends Actor implements Fixed {
         sortItems(p);
         createArrow("left");
         createArrow("right");
+
+        itemInfoScreenInstance = new ItemInfoScreen(p, world);
     }
 
     public Inventory(Player p, World world){
@@ -118,7 +123,6 @@ public class Inventory extends Actor implements Fixed {
             itemsDrawn++;
         }
     }
-
     private void itemMouseLogic(int X, int Y, Pickable item){
         int width = 55, height = 55;
         if (Greenfoot.getMouseInfo() != null){
@@ -142,6 +146,8 @@ public class Inventory extends Actor implements Fixed {
         InventoryScreen.drawString(item.getItemName(), X + 10,Y + 20 );
         InventoryScreen.drawString(itemInfo, X + 10, Y + 40);
         InventoryScreen.drawString(equipItem,X + 10,Y + 60);
+        itemForInfo = item;
+        createItemInfoScreen();
     }
 
     private void createArrow(String position){
@@ -156,7 +162,7 @@ public class Inventory extends Actor implements Fixed {
                 button = new Button(buttonImgUnClicked,buttonImgClicked) {
                     @Override
                     public void clicked() {
-                        if (0 < inventoryTab) {
+                        if (inventoryTab > 0) {
                             inventoryTab--;
                         } else {
                             inventoryTab = 2;
@@ -173,10 +179,10 @@ public class Inventory extends Actor implements Fixed {
                 button = new Button(buttonImgUnClicked,buttonImgClicked) {
                     @Override
                     public void clicked() {
-                        if (0 < inventoryTab) {
-                            inventoryTab--;
+                        if (inventoryTab < 2 ) {
+                            inventoryTab++;
                         } else {
-                            inventoryTab = 2;
+                            inventoryTab = 0;
                         }
                     }
                 };
@@ -189,38 +195,19 @@ public class Inventory extends Actor implements Fixed {
             world.removeObject(button);
         }
     }
-
-
-    public void mouseAreas(){
-        //Inventar (7|6)
-        int XX = 416;
-        int YY = 196;
-        InventoryScreen.setColor(Color.RED);
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 6; j++) {
-                InventoryScreen.fillRect(XX,YY, 55,55);
-                XX = XX + 55 + 12;
-            }
-            XX = XX - 6*(55 + 12);
-            YY = YY + 55 + 12;
-        }
-
-
-        XX = 194;
-        YY = 190;
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 2; j++) {
-                InventoryScreen.fillRect(XX, YY, 52, 52);
-                XX = XX + 56 + 8 + 14;
-                if(i == 3){
-                    return;
-                }
-            }
-            XX = XX - 2 * (56 + 8 + 14);
-            YY = YY + 56 + 18;
+    public void createItemInfoScreen(){
+        String key = Greenfoot.getKey();
+        if (("x".equals(key) && infoScreenActive) ){
+            getWorld().removeObject(itemInfoScreenInstance);
+            System.out.println("-2");
+            infoScreenActive = false;
+        }else if("x".equals(key) && !infoScreenActive) {
+            System.out.println("-1");
+            getWorld().addObject(itemInfoScreenInstance, getWorld().getWidth()/2, getWorld().getHeight()/2);
+            System.out.println("0");
+            infoScreenActive = true;
         }
     }
-
 
     //Getters and Setters
     public int getInventoryTab() {
@@ -228,5 +215,11 @@ public class Inventory extends Actor implements Fixed {
     }
     public void setInventoryTab(int inventoryTab){
         this.inventoryTab = inventoryTab;
+    }
+    public Pickable getItemForInfo() {
+        return itemForInfo;
+    }
+    public void setItemForInfo(Pickable itemForInfo) {
+        this.itemForInfo = itemForInfo;
     }
 }
