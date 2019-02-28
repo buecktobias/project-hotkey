@@ -113,22 +113,35 @@ public class Inventory extends Actor implements Fixed {
             InventoryScreen.setColor(Color.cyan);
             InventoryScreen.fillRect(drawAtX,drawAtY, 55,55);
             InventoryScreen.drawImage(item.getItemImage(), drawAtX, drawAtY);
-            itemMouseLogic(drawAtX, drawAtY);
+            itemMouseLogic(drawAtX, drawAtY, item);
             drawAtX = drawAtX + 55 ;
             itemsDrawn++;
         }
     }
 
-    private void itemMouseLogic(int X, int Y){
+    private void itemMouseLogic(int X, int Y, Pickable item){
         int width = 55, height = 55;
         if (Greenfoot.getMouseInfo() != null){
             int mouseX = Greenfoot.getMouseInfo().getX();
             int mouseY = Greenfoot.getMouseInfo().getY();
             if(mouseX > X - width / 2 && mouseX < X + width  && mouseY < Y + height && mouseY > Y - height / 2) {
-                InventoryScreen.setColor(Color.RED);
-                InventoryScreen.fillRect(mouseX, mouseY, 30, 50);
+                itemHoverInfo(mouseX, mouseY, item);
             }
         }
+    }
+
+    private void itemHoverInfo(int X, int Y, Pickable item){
+        String itemInfo = "Item info: X";
+        String equipItem = "equip Item: C";
+        InventoryScreen.setColor(Color.DARK_GRAY);
+        InventoryScreen.fillRect(X, Y, 150, 70);
+        InventoryScreen.setColor(Color.lightGray);
+        InventoryScreen.drawRect(X, Y, 150, 70);
+        InventoryScreen.setFont(new Font(Font.SANS_SERIF, Font.ITALIC, 18));
+        InventoryScreen.setColor(Color.decode("#FFD700"));
+        InventoryScreen.drawString(item.getItemName(), X + 10,Y + 20 );
+        InventoryScreen.drawString(itemInfo, X + 10, Y + 40);
+        InventoryScreen.drawString(equipItem,X + 10,Y + 60);
     }
 
     private void createArrow(String position){
