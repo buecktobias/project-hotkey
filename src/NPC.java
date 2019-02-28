@@ -46,11 +46,13 @@ public abstract class NPC extends MovingActor {
         moveDirection(getRandomDirection(), getSpeed());
     }
 
-    private void move() {
+    private boolean move() {
         Direction directionToGo = movingList.poll();
         if (directionToGo != null) {
             moveDirection(directionToGo, getSpeed());
+            return true;
         }
+        return false;
     }
 
     private void addToMovingList(Direction d, int times) {
@@ -67,11 +69,12 @@ public abstract class NPC extends MovingActor {
     }
 
 
-    public void randomMove(int range) {
+    public boolean randomMove(int range) {
         while (movingList.size() <= 0) {
-            addToMovingList(getRandomDirectionOrNull(), r.nextInt(range));
+            Direction d = getRandomDirectionOrNull();
+            addToMovingList(d, r.nextInt(range));
         }
-        move();
+        return move();
     }
 
 }

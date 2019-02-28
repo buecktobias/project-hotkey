@@ -1,14 +1,1 @@
-{
-  "keys":{
-    "moveUp":"W",
-    "moveRight":"D",
-    "moveLeft":"A",
-    "moveDown":"S",
-    "sprint":"SHIFT",
-    "openSkillWindow":"R",
-    "openInventar":"m",
-    "openSettingWindow":"T",
-    "attack":"H",
-    "pick":"E"
-  }
-}
+{"keys":{"openSettingWindow":"T","pick":"E","attack":"H","sprint":"shift","moveRight":"D","moveLeft":"A","openSkillWindow":"G","moveDown":"S","openInventar":"R","moveUp":"W"}}

@@ -57,28 +57,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
 
     Player(){
         Greenfoot.setSpeed(gameSpeed);
-        Object obj = null;
-        try {
-            obj = parser.parse(new FileReader("src/Settings.json"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        JSONObject jsonObject = (JSONObject)obj;
-        JSONObject keys = (JSONObject) jsonObject.get("keys");
-        keyMoveLeft = keys.get("moveLeft").toString();
-        keyMoveDown = keys.get("moveDown").toString();
-        keyMoveRight = keys.get("moveRight").toString();
-        keyMoveUp = keys.get("moveUp").toString();
-        keySprint = keys.get("sprint").toString();
-        keyAttack = keys.get("attack").toString();
-        keyOpenInventar = keys.get("openInventar").toString();
-        keyOpenSettings = keys.get("openSettingWindow").toString();
-        keyOpenSkillWindow = keys.get("openSkillWindow").toString();
-        keyPick = keys.get("pick").toString();
+        updateKeys();
     }
 
     @Override
@@ -188,6 +167,31 @@ public class Player extends MovingActor implements Attackable,Blocking {
                 lastFrameSkillWindowOpened = fps.getFrame();
         }
     }
+    private void updateKeys(){
+        Object obj = null;
+
+        try {
+            obj = parser.parse(new FileReader("src/Settings.json"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        JSONObject jsonObject = (JSONObject)obj;
+        JSONObject keys = (JSONObject) jsonObject.get("keys");
+        keyMoveLeft = keys.get("moveLeft").toString();
+        keyMoveDown = keys.get("moveDown").toString();
+        keyMoveRight = keys.get("moveRight").toString();
+        keyMoveUp = keys.get("moveUp").toString();
+        keySprint = keys.get("sprint").toString();
+        keyAttack = keys.get("attack").toString();
+        keyOpenInventar = keys.get("openInventar").toString();
+        keyOpenSettings = keys.get("openSettingWindow").toString();
+        keyOpenSkillWindow = keys.get("openSkillWindow").toString();
+        keyPick = keys.get("pick").toString();
+    }
     public void testkeys(){
         if(Greenfoot.isKeyDown(keyPick)){
             pick();
@@ -209,6 +213,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
             if (getWorld().getObjects(SettingsWindow.class).size() == 0) {
                 this.getWorld().addObject(settingsWindow, 500, 500);
             } else {
+                settingsWindow.deleteButtons();
                 this.getWorld().removeObject(settingsWindow);
             }
             lastFrameSettingsWindowOpened = fps.getFrame();
@@ -216,6 +221,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
     }
 
     public void act() {
+        updateKeys();
         useInventory();
         calculateEndurance();
         super.act();
@@ -246,7 +252,6 @@ public class Player extends MovingActor implements Attackable,Blocking {
         }
     }
     public void useInventory() {
-        //TODO fix inventory not opening when caps lock is on
         String key = Greenfoot.getKey();
         if ((keyOpenInventar.equals(key)&& isIActive) ){
             inventoryInstance.deleteButtons();

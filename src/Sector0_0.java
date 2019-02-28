@@ -154,8 +154,8 @@ public class Sector0_0 extends OpenWorld {
             randomSpawn(Pig.class);
 
         }
-        if (time % 200 == 0) {
-            //randomSpawn(Spider.class);
+        if (time % 50 == 0) {
+            randomSpawn(Spider.class);
         }
         time++;
     }

@@ -4,12 +4,18 @@ public class Spider extends Hostile implements Blocking,Attackable {
     private final int defaultSpeed = 2;
     private int speed = defaultSpeed;
     private int life = 10;
+    private int attackSpeed = 20;
     private int visualRange;
+    private int lastFrameAttacked=0;
     private int attackRange;
     private final GreenfootImage angryImage = new GreenfootImage("images/Characters/Spider_RED_EYES.png");
     private final GreenfootImage defaultImage = new GreenfootImage("images/Characters/Spider.png");
-    private int damage = 5;
+    private final GreenfootImage move1 = new GreenfootImage("images/Characters/Spider_Move1.png");
+    private final GreenfootImage attack1 = new GreenfootImage("images/Characters/Spider_Attack1.png");
+    private int damage = 100;
     public Spider(){
+        attack1.scale(64,32);
+        move1.scale(64,32);
         defaultImage.scale(64,32);
         setImage(defaultImage);
         visualRange = this.getWidth() *3;
@@ -22,12 +28,20 @@ public class Spider extends Hostile implements Blocking,Attackable {
         if(moveToPlayer(this.visualRange)){
             angryImage.scale(64,32);
             setImage(angryImage);
+            moveAnimation(angryImage,move1);
         }else{
             defaultImage.scale(64,32);
             setImage(defaultImage);
-            randomMove(200);
+            if(randomMove(200)){
+                moveAnimation(defaultImage,move1);
+            }
         }
-        if(attackPlayer(this.attackRange, this.damage)){
+        FPS fps = getWorld().getObjects(FPS.class).get(0);
+
+        if(fps.getFrame()-lastFrameAttacked > attackSpeed){
+            if(attackPlayer(attackRange,damage)){
+                lastFrameAttacked = fps.getFrame();
+            }
         }
         if(life <0){
             getWorld().removeObject(this);

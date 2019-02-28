@@ -1,4 +1,5 @@
 import greenfoot.Actor;
+import greenfoot.GreenfootImage;
 import helper.Direction;
 
 import java.util.*;
@@ -9,7 +10,7 @@ import java.util.*;
  */
 public abstract class MovingActor extends General {
     public int hitboxRadius=getWidth()*4;
-
+    private boolean moveAnimation = false;
     abstract int getSpeed();
     abstract void setSpeed(int n);
 
@@ -30,6 +31,15 @@ public abstract class MovingActor extends General {
         getEffects();
     }
 
+
+    public void moveAnimation(GreenfootImage img1, GreenfootImage img2){
+        if(moveAnimation){
+            setImage(img1);
+        }else{
+            setImage(img2);
+        }
+        moveAnimation = !moveAnimation;
+    }
     public void moveInDirectionOf(Actor actor){
         int actorX = actor.getX();
         int actorY = actor.getY();
@@ -176,6 +186,7 @@ public abstract class MovingActor extends General {
         int y = getY()+distance;
         moveTo(x,y);
     }
+
     public void attack(Attackable actor,int damage){
         actor.setLife(actor.getLife()-damage);
     }
