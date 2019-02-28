@@ -1,4 +1,5 @@
 import greenfoot.Actor;
+import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
 import greenfoot.World;
 
@@ -16,6 +17,7 @@ public class Inventory extends Actor implements Fixed {
     private Player p;
     private World world;
     private int itemsDrawn;
+
     private int drawAtX = 416;
     private int drawAtY = 196;
     private int inventoryTab = 0;
@@ -24,7 +26,7 @@ public class Inventory extends Actor implements Fixed {
     private LinkedList<Pickable> ArmorList;
     private LinkedList<Pickable> WeaponList;
     private LinkedList<Pickable> ItemList;
-    private GreenfootImage InventoryScreen  = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV3.png");
+    private GreenfootImage InventoryScreen      = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV3.png");
     private GreenfootImage leftArrowClicked     = new GreenfootImage("images/Arrows/Arrow_left_aktive.png");
     private GreenfootImage leftArrowNotClicked  = new GreenfootImage("images/Arrows/Arrow_left.png");
     private GreenfootImage rightArrowClicked    = new GreenfootImage("images/Arrows/Arrow_right_aktive.png");
@@ -53,7 +55,7 @@ public class Inventory extends Actor implements Fixed {
         drawTabFonts();
         drawCurrentTab();
 
-        //aaaaassssssamouseAreas();
+        //mouseAreas();
     }
 
     private void drawTabFonts(){
@@ -109,16 +111,31 @@ public class Inventory extends Actor implements Fixed {
           drawAtY = drawAtY + 55 + 12;
         }
         int itemsDrawn = 0;
-        System.out.println("start value" + itemsDrawn);
         for (Pickable item: itemsToDraw) {
             InventoryScreen.setColor(Color.cyan);
             InventoryScreen.fillRect(drawAtX,drawAtY, 55,55);
             InventoryScreen.drawImage(item.getItemImage(), drawAtX, drawAtY);
+            itemHoverInfo(drawAtX, drawAtY);
             drawAtX = drawAtX + 55 ;
             itemsDrawn++;
-            System.out.println("reset value" + itemsDrawn);
+
+
         }
     }
+
+
+    private void itemHoverInfo(int X, int Y){
+        int width = 55, height = 55;
+        if (Greenfoot.getMouseInfo() != null){
+            int mouseX = Greenfoot.getMouseInfo().getX();
+            int mouseY = Greenfoot.getMouseInfo().getY();
+            if(mouseX > X - width && mouseX < X + width && mouseY < Y + height && mouseY > Y - height) {
+                InventoryScreen.setColor(Color.RED);
+                InventoryScreen.fillRect(mouseX, mouseY, 30, 50);
+            }
+        }
+    }
+
     private void createArrow(String position){
         Button button;
         GreenfootImage buttonImgUnClicked;
