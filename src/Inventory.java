@@ -13,7 +13,7 @@ public class Inventory extends Actor implements Fixed {
     // TODO make Items equipable
     // TODO implement pick limit
     // TODO make "switchTab-Buttons" look good
-    // TODO This will probably never happen.....drag and drop Items to respective slots -> CREATE SLOTS
+    // TODO drag and drop Items to respective slots -> CREATE SLOTS
     private Player p;
     private World world;
     private Pickable itemForInfo;
@@ -41,7 +41,6 @@ public class Inventory extends Actor implements Fixed {
         sortItems(p);
         createArrow("left");
         createArrow("right");
-
         itemInfoScreenInstance = new ItemInfoScreen(p, world);
     }
 
@@ -57,8 +56,6 @@ public class Inventory extends Actor implements Fixed {
         setImage(InventoryScreen);
         drawTabFonts();
         drawCurrentTab();
-
-        //mouseAreas();
     }
 
     private void drawTabFonts(){
@@ -133,7 +130,6 @@ public class Inventory extends Actor implements Fixed {
             }
         }
     }
-
     private void itemHoverInfo(int X, int Y, Pickable item){
         String itemInfo = "Item info: X";
         String equipItem = "equip Item: C";
@@ -149,7 +145,6 @@ public class Inventory extends Actor implements Fixed {
         itemForInfo = item;
         createItemInfoScreen();
     }
-
     private void createArrow(String position){
         Button button;
         GreenfootImage buttonImgUnClicked;
@@ -195,16 +190,16 @@ public class Inventory extends Actor implements Fixed {
             world.removeObject(button);
         }
     }
-    public void createItemInfoScreen(){
+    private void createItemInfoScreen(){
         String key = Greenfoot.getKey();
         if (("x".equals(key) && infoScreenActive) ){
+            createArrow("left");
+            createArrow("right");
             getWorld().removeObject(itemInfoScreenInstance);
-            System.out.println("-2");
             infoScreenActive = false;
         }else if("x".equals(key) && !infoScreenActive) {
-            System.out.println("-1");
+            deleteButtons();
             getWorld().addObject(itemInfoScreenInstance, getWorld().getWidth()/2, getWorld().getHeight()/2);
-            System.out.println("0");
             infoScreenActive = true;
         }
     }
