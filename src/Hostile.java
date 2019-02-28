@@ -1,15 +1,17 @@
 public abstract class Hostile extends NPC {
     abstract int getAttackRange();
     abstract int getDamage();
-    public int attack(int lastFrameAttacked,double attackSpeed) {
+    private int lastFrameAttacked = 0;
+    public boolean attack(double attackSpeed) {
         FPS fps = getWorld().getObjects(FPS.class).get(0);
 
         if (fps.getFrame() - lastFrameAttacked > attackSpeed) {
             if (attackPlayer(getAttackRange(), getDamage())) {
                 lastFrameAttacked = fps.getFrame();
+                return true;
             }
         }
-        return lastFrameAttacked;
+        return false;
     }
     public boolean moveToPlayer(int visualRange){
         Player player = getPlayer(visualRange);

@@ -38,9 +38,11 @@ public class Spider extends Hostile implements Blocking,Attackable {
         setSpeed(defaultSpeed);
         if(moveToPlayer(this.visualRange)){
             angryImage.scale(64,32);
-            lastFrameAttacked = attack(lastFrameAttacked,attackSpeed);
-            setImage(angryImage);
-            moveAnimation(angryImage,move1);
+            if(attack(attackSpeed)){
+                setImage(attack1);
+            }else{
+                moveAnimation(angryImage,move1);
+            }
         }else{
             defaultImage.scale(64,32);
             setImage(defaultImage);

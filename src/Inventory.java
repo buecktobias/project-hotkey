@@ -2,8 +2,14 @@ import greenfoot.Actor;
 import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
 import greenfoot.World;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 import java.awt.*;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -14,6 +20,7 @@ public class Inventory extends Actor implements Fixed {
     // TODO implement pick limit
     // TODO make "switchTab-Buttons" look good
     // TODO drag and drop Items to respective slots -> CREATE SLOTS
+    private JSONParser parser = new JSONParser();
     private Player p;
     private World world;
     private Pickable itemForInfo;
@@ -33,6 +40,7 @@ public class Inventory extends Actor implements Fixed {
     private GreenfootImage leftArrowNotClicked  = new GreenfootImage("images/Arrows/Arrow_left.png");
     private GreenfootImage rightArrowClicked    = new GreenfootImage("images/Arrows/Arrow_right_aktive.png");
     private GreenfootImage rightArrowNotClicked = new GreenfootImage("images/Arrows/Arrow_right.png");
+    private String keyCreateItemInfoScreen;
 
     protected void addedToWorld(World world) {
         ArmorList  = new LinkedList<>();
@@ -49,8 +57,21 @@ public class Inventory extends Actor implements Fixed {
         this.world = world;
         buttonList = new LinkedList<>();
     }
-
     public void act(){
+        Object obj = null;
+
+        try {
+            obj = parser.parse(new FileReader("src/Settings.json"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        JSONObject jsonObject = (JSONObject)obj;
+        JSONObject keys = (JSONObject) jsonObject.get("keys");
+        keyCreateItemInfoScreen = keys.get("createItemInfoScreen").toString();
         InventoryScreen.clear();
         InventoryScreen  = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV4.png");
         setImage(InventoryScreen);
@@ -192,12 +213,12 @@ public class Inventory extends Actor implements Fixed {
     }
     private void createItemInfoScreen(){
         String key = Greenfoot.getKey();
-        if (("x".equals(key) && infoScreenActive) ){
+        if ((keyCreateItemInfoScreen.equals(key) && infoScreenActive) ){
             createArrow("left");
             createArrow("right");
             getWorld().removeObject(itemInfoScreenInstance);
             infoScreenActive = false;
-        }else if("x".equals(key) && !infoScreenActive) {
+        }else if(keyCreateItemInfoScreen.equals(key) && !infoScreenActive) {
             deleteButtons();
             getWorld().addObject(itemInfoScreenInstance, getWorld().getWidth()/2, getWorld().getHeight()/2);
             infoScreenActive = true;
