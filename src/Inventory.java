@@ -1,4 +1,5 @@
 import greenfoot.Actor;
+import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
 import greenfoot.World;
 
@@ -6,29 +7,41 @@ import java.awt.*;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+
 public class Inventory extends Actor implements Fixed {
+    // TODO
+    // TODO make Items equipable
     // TODO implement pick limit
-    // TODO drag and drop Items to respective slots -> CREATE SLOTS
-    // TODO better colors/Item background  (#FFD700?)
     // TODO make "switchTab-Buttons" look good
-    // TODO ItemInfo displayed when clicked and/or mouse hovers over it
+    // TODO drag and drop Items to respective slots -> CREATE SLOTS
     private Player p;
     private World world;
+    private Pickable itemForInfo;
+    private int itemsDrawn;
+    private int drawAtX = 416;
+    private int drawAtY = 196;
     private int inventoryTab = 0;
+    private boolean infoScreenActive = false;
+    private ItemInfoScreen itemInfoScreenInstance;
     private LinkedList<Button>   buttonList;
     private LinkedList<Pickable> allItems;
     private LinkedList<Pickable> ArmorList;
     private LinkedList<Pickable> WeaponList;
     private LinkedList<Pickable> ItemList;
-    private GreenfootImage InventoryScreen  = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV3.png");
+    private GreenfootImage InventoryScreen      = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV3.png");
+    private GreenfootImage leftArrowClicked     = new GreenfootImage("images/Arrows/Arrow_left_aktive.png");
+    private GreenfootImage leftArrowNotClicked  = new GreenfootImage("images/Arrows/Arrow_left.png");
+    private GreenfootImage rightArrowClicked    = new GreenfootImage("images/Arrows/Arrow_right_aktive.png");
+    private GreenfootImage rightArrowNotClicked = new GreenfootImage("images/Arrows/Arrow_right.png");
 
     protected void addedToWorld(World world) {
         ArmorList  = new LinkedList<>();
         WeaponList = new LinkedList<>();
         ItemList   = new LinkedList<>();
         sortItems(p);
-        createLeftArrow();
-        createRightArrow();
+        createArrow("left");
+        createArrow("right");
+        itemInfoScreenInstance = new ItemInfoScreen(p, world);
     }
 
     public Inventory(Player p, World world){
@@ -39,7 +52,7 @@ public class Inventory extends Actor implements Fixed {
 
     public void act(){
         InventoryScreen.clear();
-        InventoryScreen  = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV3.png");
+        InventoryScreen  = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV4.png");
         setImage(InventoryScreen);
         drawTabFonts();
         drawCurrentTab();
@@ -91,79 +104,103 @@ public class Inventory extends Actor implements Fixed {
         }
     }
     private void drawTab(LinkedList<Pickable> itemsToDraw){
-        int drawAtX = 400;
-        int drawAtY = 200;
-        int itemsDrawn = 0;
-        if(itemsDrawn == 7){
-            drawAtY = drawAtY +32;
-            drawAtX = drawAtX - 32*7;
-            itemsDrawn = 0;
-            System.out.println(itemsDrawn);
+        drawAtX = 416;
+        drawAtY = 196;
+        if(itemsDrawn == 6){
+          drawAtX = 416;
+          drawAtY = drawAtY + 55 + 12;
         }
+        itemsDrawn = 0;
         for (Pickable item: itemsToDraw) {
-            //drawItemBase();
+            InventoryScreen.setColor(Color.cyan);
+            InventoryScreen.fillRect(drawAtX,drawAtY, 55,55);
             InventoryScreen.drawImage(item.getItemImage(), drawAtX, drawAtY);
-            drawAtX = drawAtX + 32;
+            itemMouseLogic(drawAtX, drawAtY, item);
+            drawAtX = drawAtX + 55 ;
             itemsDrawn++;
         }
     }
-
-    /*
-    private void drawItemBase(){
-        InventoryScreen.setColor(Color.cyan);
-        InventoryScreen.fillRect(400,200, 32,32);
-    }
-    */
-
-    private void createLeftArrow(){
-        Button button;
-        GreenfootImage buttonImgUnClicked;
-        GreenfootImage buttonImgClicked;
-            buttonImgUnClicked = new GreenfootImage("images/Arrows/Arrow_left.png");
-            buttonImgClicked = new GreenfootImage("images/Arrows/Arrow_left_aktive.png");
-            buttonImgUnClicked.scale(20, 30);
-            buttonImgClicked.scale(20, 30);
-            button = new Button(buttonImgUnClicked,buttonImgClicked) {
-                @Override
-                public void clicked() {
-                    if(0 < inventoryTab){
-                        inventoryTab--;
-                    }else{
-                        inventoryTab = 2;
-                    }
-                   // System.out.println(inventoryTab);
-                }
-            };
-            buttonList.add(button);
-            world.addObject(button, 440,165);
-
-    }
-    private void createRightArrow(){
-        Button button;
-        GreenfootImage buttonImgUnClicked;
-        GreenfootImage buttonImgClicked;
-        buttonImgUnClicked = new GreenfootImage("images/Arrows/Arrow_right.png");
-        buttonImgClicked = new GreenfootImage("images/Arrows/Arrow_right_aktive.png");
-        buttonImgUnClicked.scale(20, 30);
-        buttonImgClicked.scale(20, 30);
-        button = new Button(buttonImgUnClicked,buttonImgClicked) {
-            @Override
-            public void clicked() {
-                if(inventoryTab < 2){
-                    inventoryTab++;
-                }else{
-                    inventoryTab = 0;
-                }
-                //System.out.println(inventoryTab);
+    private void itemMouseLogic(int X, int Y, Pickable item){
+        int width = 55, height = 55;
+        if (Greenfoot.getMouseInfo() != null){
+            int mouseX = Greenfoot.getMouseInfo().getX();
+            int mouseY = Greenfoot.getMouseInfo().getY();
+            if(mouseX > X - width / 2 && mouseX < X + width  && mouseY < Y + height && mouseY > Y - height / 2) {
+                itemHoverInfo(mouseX, mouseY, item);
             }
-        };
-        buttonList.add(button);
-        world.addObject(button, 780,165);
-
+        }
     }
+    private void itemHoverInfo(int X, int Y, Pickable item){
+        String itemInfo = "Item info: X";
+        String equipItem = "equip Item: C";
+        InventoryScreen.setColor(Color.DARK_GRAY);
+        InventoryScreen.fillRect(X, Y, 150, 70);
+        InventoryScreen.setColor(Color.lightGray);
+        InventoryScreen.drawRect(X, Y, 150, 70);
+        InventoryScreen.setFont(new Font(Font.SANS_SERIF, Font.ITALIC, 18));
+        InventoryScreen.setColor(Color.decode("#FFD700"));
+        InventoryScreen.drawString(item.getItemName(), X + 10,Y + 20 );
+        InventoryScreen.drawString(itemInfo, X + 10, Y + 40);
+        InventoryScreen.drawString(equipItem,X + 10,Y + 60);
+        itemForInfo = item;
+        createItemInfoScreen();
+    }
+    private void createArrow(String position){
+        Button button;
+        GreenfootImage buttonImgUnClicked;
+        GreenfootImage buttonImgClicked;
+            if(position.equals("left")){
+                buttonImgUnClicked = leftArrowNotClicked;
+                buttonImgClicked = leftArrowClicked;
+                buttonImgUnClicked.scale(20, 30);
+                buttonImgClicked.scale(20, 30);
+                button = new Button(buttonImgUnClicked,buttonImgClicked) {
+                    @Override
+                    public void clicked() {
+                        if (inventoryTab > 0) {
+                            inventoryTab--;
+                        } else {
+                            inventoryTab = 2;
+                        }
+                    }
+                };
+                buttonList.add(button);
+                world.addObject(button, 440,165);
+            }else{
+                buttonImgUnClicked = rightArrowNotClicked;
+                buttonImgClicked = rightArrowClicked;
+                buttonImgUnClicked.scale(20, 30);
+                buttonImgClicked.scale(20, 30);
+                button = new Button(buttonImgUnClicked,buttonImgClicked) {
+                    @Override
+                    public void clicked() {
+                        if (inventoryTab < 2 ) {
+                            inventoryTab++;
+                        } else {
+                            inventoryTab = 0;
+                        }
+                    }
+                };
+                buttonList.add(button);
+                world.addObject(button, 780,165);
+            }
+        }
     public void deleteButtons(){
         for(Button button:buttonList){
             world.removeObject(button);
+        }
+    }
+    private void createItemInfoScreen(){
+        String key = Greenfoot.getKey();
+        if (("x".equals(key) && infoScreenActive) ){
+            createArrow("left");
+            createArrow("right");
+            getWorld().removeObject(itemInfoScreenInstance);
+            infoScreenActive = false;
+        }else if("x".equals(key) && !infoScreenActive) {
+            deleteButtons();
+            getWorld().addObject(itemInfoScreenInstance, getWorld().getWidth()/2, getWorld().getHeight()/2);
+            infoScreenActive = true;
         }
     }
 
@@ -171,8 +208,13 @@ public class Inventory extends Actor implements Fixed {
     public int getInventoryTab() {
         return inventoryTab;
     }
-    public void setInventoryTab(int inventoryTab) {
+    public void setInventoryTab(int inventoryTab){
         this.inventoryTab = inventoryTab;
     }
-
+    public Pickable getItemForInfo() {
+        return itemForInfo;
+    }
+    public void setItemForInfo(Pickable itemForInfo) {
+        this.itemForInfo = itemForInfo;
+    }
 }

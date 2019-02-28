@@ -23,26 +23,23 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private int sprintSpeed = 4;
     private int attackRange = 500;
     private int damage = 5;
-    private final int waitTimeOpenSkillWindow = 10;
-    private final int waitTimeOpenSettingsWindow = 10;
     private int lastFrameSkillWindowOpened = 0;
     private int lastFrameSettingsWindowOpened = 0;
-    private SkillWindow skillWindow;
-    private boolean skillScreenShown = false;
     private int maxLife = 1000;
     private int life = maxLife;
-    private final int minLife = 0;
-    private LinkedList<Pickable> inventory = new LinkedList<>();
     private int waitEndurance=0;
-    private final int waitTimeWhenEnduranceIsZero = 5;
-    private double enduranceRegeneration = 1;
     private int minEndurance = 0;
+    private int maxEndurance = 1000;
+    private final int waitTimeOpenSkillWindow = 10;
+    private final int waitTimeOpenSettingsWindow = 10;
+    private final int minLife = 0;
+    private final int waitTimeWhenEnduranceIsZero = 5;
+    private final int gameSpeed = 50;
+    private double endurance = maxEndurance;
+    private double enduranceRegeneration = 1;
+    private boolean skillScreenShown = false;
     private boolean isIActive = false;
     private boolean isSettingsWindowShown = false;
-    private Inventory inventoryInstance;
-    private int maxEndurance = 1000;
-    private double endurance = maxEndurance;
-    private final int gameSpeed = 50;
     private FPS fps;
     private String keyMoveLeft;
     private String keyMoveRight;
@@ -54,6 +51,9 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private String keyOpenSkillWindow;
     private String keyOpenInventar;
     private String keyOpenSettings;
+    private Inventory inventoryInstance;
+    private SkillWindow skillWindow;
+    private LinkedList<Pickable> inventory = new LinkedList<>();
 
     Player(){
         Greenfoot.setSpeed(gameSpeed);
