@@ -16,6 +16,8 @@ public class Inventory extends Actor implements Fixed {
     // TODO This will probably never happen.....drag and drop Items to respective slots -> CREATE SLOTS
     private Player p;
     private World world;
+    private int drawAtX = 416;
+    private int drawAtY = 196;
     private int inventoryTab = 0;
     private LinkedList<Button>   buttonList;
     private LinkedList<Pickable> allItems;
@@ -46,7 +48,7 @@ public class Inventory extends Actor implements Fixed {
 
     public void act(){
         InventoryScreen.clear();
-        InventoryScreen  = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV3.png");
+        InventoryScreen  = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV4.png");
         setImage(InventoryScreen);
         drawTabFonts();
         drawCurrentTab();
@@ -100,25 +102,19 @@ public class Inventory extends Actor implements Fixed {
         }
     }
     private void drawTab(LinkedList<Pickable> itemsToDraw){
-        int drawAtX = 395;
-        int drawAtY = 195;
+        drawAtX = 416;
+        drawAtY = 196;
         int itemsDrawn = 0;
-        if(itemsDrawn == 7){
-            drawAtY = drawAtY + 52;
-            drawAtX = drawAtX - 52*7;
-            itemsDrawn = 0;
-            System.out.println(itemsDrawn);
-        }
         for (Pickable item: itemsToDraw) {
-            drawItemBase();
+            if(itemsDrawn == 5){
+
+            }
+            InventoryScreen.setColor(Color.cyan);
+            InventoryScreen.fillRect(drawAtX,drawAtY, 55,55);
             InventoryScreen.drawImage(item.getItemImage(), drawAtX, drawAtY);
-            drawAtX = drawAtX + 52;
+            drawAtX = drawAtX + 55;
             itemsDrawn++;
         }
-    }
-    private void drawItemBase(){
-        InventoryScreen.setColor(Color.cyan);
-        InventoryScreen.fillRect(395,195, 52,52);
     }
     private void createArrow(String position){
         Button button;
@@ -169,17 +165,19 @@ public class Inventory extends Actor implements Fixed {
 
     public void mouseAreas(){
         //Inventar (7|6)
-        int XX = 395;
-        int YY = 195;
+        int XX = 416;
+        int YY = 196;
         InventoryScreen.setColor(Color.RED);
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 7; j++) {
-                InventoryScreen.fillRect(XX,YY, 52,52);
-                XX = XX + 56 + 8;
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 6; j++) {
+                InventoryScreen.fillRect(XX,YY, 55,55);
+                XX = XX + 55 + 12;
             }
-            XX = XX - 7*(56 + 8);
-            YY = YY + 56 + 8;
+            XX = XX - 6*(55 + 12);
+            YY = YY + 55 + 12;
         }
+
+
         XX = 194;
         YY = 190;
         for (int i = 0; i < 4; i++) {
@@ -194,6 +192,7 @@ public class Inventory extends Actor implements Fixed {
             YY = YY + 56 + 18;
         }
     }
+
 
     //Getters and Setters
     public int getInventoryTab() {
