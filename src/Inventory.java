@@ -9,15 +9,14 @@ import java.util.LinkedList;
 
 
 public class Inventory extends Actor implements Fixed {
+    // TODO ItemInfo displayed when clicked and/or mouse hovers over it
     // TODO implement pick limit
     // TODO better colors/Item background  (#FFD700?)
     // TODO make "switchTab-Buttons" look good
-    // TODO ItemInfo displayed when clicked and/or mouse hovers over it
     // TODO This will probably never happen.....drag and drop Items to respective slots -> CREATE SLOTS
     private Player p;
     private World world;
     private int itemsDrawn;
-
     private int drawAtX = 416;
     private int drawAtY = 196;
     private int inventoryTab = 0;
@@ -31,7 +30,6 @@ public class Inventory extends Actor implements Fixed {
     private GreenfootImage leftArrowNotClicked  = new GreenfootImage("images/Arrows/Arrow_left.png");
     private GreenfootImage rightArrowClicked    = new GreenfootImage("images/Arrows/Arrow_right_aktive.png");
     private GreenfootImage rightArrowNotClicked = new GreenfootImage("images/Arrows/Arrow_right.png");
-
 
     protected void addedToWorld(World world) {
         ArmorList  = new LinkedList<>();
@@ -110,26 +108,23 @@ public class Inventory extends Actor implements Fixed {
           drawAtX = 416;
           drawAtY = drawAtY + 55 + 12;
         }
-        int itemsDrawn = 0;
+        itemsDrawn = 0;
         for (Pickable item: itemsToDraw) {
             InventoryScreen.setColor(Color.cyan);
             InventoryScreen.fillRect(drawAtX,drawAtY, 55,55);
             InventoryScreen.drawImage(item.getItemImage(), drawAtX, drawAtY);
-            itemHoverInfo(drawAtX, drawAtY);
+            itemMouseLogic(drawAtX, drawAtY);
             drawAtX = drawAtX + 55 ;
             itemsDrawn++;
-
-
         }
     }
 
-
-    private void itemHoverInfo(int X, int Y){
+    private void itemMouseLogic(int X, int Y){
         int width = 55, height = 55;
         if (Greenfoot.getMouseInfo() != null){
             int mouseX = Greenfoot.getMouseInfo().getX();
             int mouseY = Greenfoot.getMouseInfo().getY();
-            if(mouseX > X - width && mouseX < X + width && mouseY < Y + height && mouseY > Y - height) {
+            if(mouseX > X - width / 2 && mouseX < X + width  && mouseY < Y + height && mouseY > Y - height / 2) {
                 InventoryScreen.setColor(Color.RED);
                 InventoryScreen.fillRect(mouseX, mouseY, 30, 50);
             }
