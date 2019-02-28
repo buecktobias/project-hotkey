@@ -8,7 +8,6 @@ import java.util.LinkedList;
 
 
 public class Inventory extends Actor implements Fixed {
-    // TODO new Inventory Screen image
     // TODO implement pick limit
     // TODO better colors/Item background  (#FFD700?)
     // TODO make "switchTab-Buttons" look good
@@ -16,6 +15,7 @@ public class Inventory extends Actor implements Fixed {
     // TODO This will probably never happen.....drag and drop Items to respective slots -> CREATE SLOTS
     private Player p;
     private World world;
+    private int itemsDrawn;
     private int drawAtX = 416;
     private int drawAtY = 196;
     private int inventoryTab = 0;
@@ -53,7 +53,7 @@ public class Inventory extends Actor implements Fixed {
         drawTabFonts();
         drawCurrentTab();
 
-        mouseAreas();
+        //aaaaassssssamouseAreas();
     }
 
     private void drawTabFonts(){
@@ -104,16 +104,19 @@ public class Inventory extends Actor implements Fixed {
     private void drawTab(LinkedList<Pickable> itemsToDraw){
         drawAtX = 416;
         drawAtY = 196;
+        if(itemsDrawn == 6){
+          drawAtX = 416;
+          drawAtY = drawAtY + 55 + 12;
+        }
         int itemsDrawn = 0;
+        System.out.println("start value" + itemsDrawn);
         for (Pickable item: itemsToDraw) {
-            if(itemsDrawn == 5){
-
-            }
             InventoryScreen.setColor(Color.cyan);
             InventoryScreen.fillRect(drawAtX,drawAtY, 55,55);
             InventoryScreen.drawImage(item.getItemImage(), drawAtX, drawAtY);
-            drawAtX = drawAtX + 55;
+            drawAtX = drawAtX + 55 ;
             itemsDrawn++;
+            System.out.println("reset value" + itemsDrawn);
         }
     }
     private void createArrow(String position){
