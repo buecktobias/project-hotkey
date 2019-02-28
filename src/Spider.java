@@ -8,6 +8,17 @@ public class Spider extends Hostile implements Blocking,Attackable {
     private int visualRange;
     private int lastFrameAttacked=0;
     private int attackRange;
+
+    @Override
+    int getAttackRange() {
+        return attackRange;
+    }
+
+    @Override
+    int getDamage() {
+        return damage;
+    }
+
     private final GreenfootImage angryImage = new GreenfootImage("images/Characters/Spider_RED_EYES.png");
     private final GreenfootImage defaultImage = new GreenfootImage("images/Characters/Spider.png");
     private final GreenfootImage move1 = new GreenfootImage("images/Characters/Spider_Move1.png");
@@ -27,6 +38,7 @@ public class Spider extends Hostile implements Blocking,Attackable {
         setSpeed(defaultSpeed);
         if(moveToPlayer(this.visualRange)){
             angryImage.scale(64,32);
+            lastFrameAttacked = attack(lastFrameAttacked,attackSpeed);
             setImage(angryImage);
             moveAnimation(angryImage,move1);
         }else{
@@ -34,13 +46,6 @@ public class Spider extends Hostile implements Blocking,Attackable {
             setImage(defaultImage);
             if(randomMove(200)){
                 moveAnimation(defaultImage,move1);
-            }
-        }
-        FPS fps = getWorld().getObjects(FPS.class).get(0);
-
-        if(fps.getFrame()-lastFrameAttacked > attackSpeed){
-            if(attackPlayer(attackRange,damage)){
-                lastFrameAttacked = fps.getFrame();
             }
         }
         if(life <0){
