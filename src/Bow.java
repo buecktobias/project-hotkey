@@ -16,6 +16,7 @@ public class Bow extends Weapon implements Pickable{
     public final String itemType = itemManager.getItemTYPE();
     public String itemName = itemManager.getItemNAME();
     public GreenfootImage itemImage = itemManager.getItemIMAGE();
+    public boolean IEquipped = false;
 
     public Bow(int attackSpeed, Player player) {
         this.attackSpeed = attackSpeed;
@@ -74,4 +75,11 @@ public class Bow extends Weapon implements Pickable{
     public GreenfootImage getItemImage() {
         return itemImage;
     }
+    public boolean isIEquipped() {
+        return IEquipped;
+    }
+    public void setIEquipped(boolean IEquipped) {
+        this.IEquipped = IEquipped;
+    }
+
 }

@@ -13,5 +13,8 @@ public interface Pickable {
     void setItemCount(int itemCount);
     void pick(Player p, LinkedList inventory);
     void compareIDs(Player p, LinkedList<Pickable> inventory, Pickable item);
+    void setIEquipped(boolean IEquipped);
+    boolean isIEquipped();
+
 }
 

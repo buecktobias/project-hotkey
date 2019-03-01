@@ -323,11 +323,9 @@ public class Player extends MovingActor implements Attackable,Blocking {
     public void setInventory(LinkedList<Pickable> inventory) {
         this.inventory = inventory;
     }
-
     public Pickable[] getEquippedItems() {
         return equippedItems;
     }
-
     public void setEquippedItems(Pickable[] equippedItems) {
         this.equippedItems = equippedItems;
     }

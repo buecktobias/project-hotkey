@@ -15,11 +15,10 @@ import java.util.LinkedList;
 
 
 public class Inventory extends Actor implements Fixed {
-    // TODO
-    // TODO make Items equipable
+    // TODO remove unequiped items from equippedItems array
+    // TODO drag and drop Items to respective slots
     // TODO implement pick limit
     // TODO make "switchTab-Buttons" look good
-    // TODO drag and drop Items to respective slots -> CREATE SLOTS
     private Player p;
     private World world;
     private Pickable itemForInfo;
@@ -82,7 +81,7 @@ public class Inventory extends Actor implements Fixed {
         drawTabFonts();
         drawCurrentTab();
         if(itemsEquipped){
-            //drawEquippedItems();
+            drawEquippedItems();
         }
     }
 
@@ -153,8 +152,14 @@ public class Inventory extends Actor implements Fixed {
             int mouseY = Greenfoot.getMouseInfo().getY();
             if(mouseX > X - width / 2 && mouseX < X + width  && mouseY < Y + height && mouseY > Y - height / 2) {
                 if(item instanceof Equippable){
-                   if(Greenfoot.getMouseInfo().getClickCount() == 2){
-                       equippItem(item);
+                   if(Greenfoot.getMouseInfo().getClickCount() == 2) {
+                       if(item.isIEquipped()){
+                           System.out.println("1");
+                           unequippItem(item);
+                       }else if(item.getItemSlotId() != -1){
+                           equippItem(item);
+                           System.out.println("2");
+                       }
                    }
                 }
                 itemHoverInfo(mouseX, mouseY, item);
@@ -241,21 +246,32 @@ public class Inventory extends Actor implements Fixed {
     }
 
     private void drawEquippedItems(){
-        for(Pickable item: equippedItems){
-            if( 0 == item.getItemSlotId()){
-                drawItemAt(10,10, item);
-            }else if(item.getItemSlotId() == 1 ){
-                drawItemAt(10,10, item);
-            }else if(item.getItemSlotId() == 2 ){
-                drawItemAt(10,10, item);
-            }else if(item.getItemSlotId() == 3 ){
-                drawItemAt(10,10, item);
-            }else if(item.getItemSlotId() == 4 ){
-                drawItemAt(10,10, item);
-            }else if(item.getItemSlotId() == 5 ){
-                drawItemAt(10,10, item);
-            }else if(item.getItemSlotId() == 6 ){
-                drawItemAt(10,10, item);
+        for(int i = 0; i < 6; i++){
+            if(equippedItems[i] != null){
+                Pickable item = equippedItems[i];
+                switch (item.getItemSlotId()){
+                    case 0 :
+                        drawItemAt(196,196, item);
+                        break;
+                    case 1 :
+                        drawItemAt(196,286, item);
+                        break;
+                    case 2:
+                        drawItemAt(196,376, item);
+                        break;
+                    case 3:
+                        drawItemAt(196,466, item);
+                        break;
+                    case 4:
+                        drawItemAt(276,196, item);
+                        break;
+                    case 5:
+                        drawItemAt(276,286, item);
+                        break;
+                    case 6:
+                        drawItemAt(276,376, item);
+                        break;
+                }
             }
         }
     }
@@ -270,32 +286,31 @@ public class Inventory extends Actor implements Fixed {
     }
 
     public void equippItem(Pickable item){
-        // Helmet  0
-        // Chest   1
-        // Legs    2
-        // Boots   3
-        // Pet     4
-        // Primary 5
-        // Secondary 6
+        // Helmet  0, Chest   1, Legs    2, Boots   3, Pet     4, Primary 5, Secondary 6,
        if(equippedItems[item.getItemSlotId()] == null){
            equippedItems[item.getItemSlotId()] = item;
            allItems.remove(item);
+           item.setIEquipped(true);
            itemsEquipped = true;
 
-           System.out.println("Item Equiped");
+           System.out.println("Item Equiped1");
 
        }else{
            Pickable oldItem = equippedItems[item.getItemSlotId()];
            equippedItems[item.getItemSlotId()] = item;
            itemsEquipped = true;
+           Equippable itemE = (Equippable)item;
+           item.setIEquipped(true);
            allItems.remove(item);
 
-           System.out.println("Item Equiped");
+           System.out.println("Item Equiped2");
 
            if(oldItem.getItemType().contains("Armor")){
-               ArmorList.add(ArmorList.indexOf(item), oldItem);
+               ArmorList.add(oldItem);
+               oldItem.setIEquipped(false);
            }else if(oldItem.getItemType().contains("Weapon")) {
-               WeaponList.add(WeaponList.indexOf(item), oldItem);
+               WeaponList.add(oldItem);
+               oldItem.setIEquipped(false);
            }
        }
         /* old List code
@@ -311,6 +326,15 @@ public class Inventory extends Actor implements Fixed {
             }
         }
         */
+    }
+    private void unequippItem(Pickable item){
+        if(item.getItemType().contains("Armor")){
+            ArmorList.add(item);
+            item.setIEquipped(false);
+        }else if(item.getItemType().contains("Weapon")) {
+            WeaponList.add(item);
+            item.setIEquipped(false);
+        }
     }
 
     //Getters and Setters

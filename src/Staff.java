@@ -15,7 +15,8 @@ public class Staff extends Weapon implements Pickable, Equippable {
     public final int itemId = itemManager.getItemID();
     public final String itemType = itemManager.getItemTYPE();
     public String itemName = itemManager.getItemNAME();
-    public GreenfootImage itemImage = itemManager.getItemIMAGE();
+    private GreenfootImage itemImage = itemManager.getItemIMAGE();
+    public boolean IEquipped = false;
 
     public Staff(int attackRange) {
         this.attackRange = attackRange;
@@ -63,5 +64,11 @@ public class Staff extends Weapon implements Pickable, Equippable {
     }
     public GreenfootImage getItemImage() {
         return itemImage;
+    }
+    public boolean isIEquipped() {
+        return IEquipped;
+    }
+    public void setIEquipped(boolean IEquipped) {
+        this.IEquipped = IEquipped;
     }
 }
