@@ -20,7 +20,6 @@ public class Inventory extends Actor implements Fixed {
     // TODO implement pick limit
     // TODO make "switchTab-Buttons" look good
     // TODO drag and drop Items to respective slots -> CREATE SLOTS
-    private JSONParser parser = new JSONParser();
     private Player p;
     private World world;
     private Pickable itemForInfo;
@@ -29,9 +28,12 @@ public class Inventory extends Actor implements Fixed {
     private int drawAtY = 196;
     private int inventoryTab = 0;
     private boolean infoScreenActive = false;
+    private String keyCreateItemInfoScreen;
+    private JSONParser parser = new JSONParser();
     private ItemInfoScreen itemInfoScreenInstance;
     private LinkedList<Button>   buttonList;
     private LinkedList<Pickable> allItems;
+    private LinkedList<Pickable> equippedItems;
     private LinkedList<Pickable> ArmorList;
     private LinkedList<Pickable> WeaponList;
     private LinkedList<Pickable> ItemList;
@@ -40,7 +42,6 @@ public class Inventory extends Actor implements Fixed {
     private GreenfootImage leftArrowNotClicked  = new GreenfootImage("images/Arrows/Arrow_left.png");
     private GreenfootImage rightArrowClicked    = new GreenfootImage("images/Arrows/Arrow_right_aktive.png");
     private GreenfootImage rightArrowNotClicked = new GreenfootImage("images/Arrows/Arrow_right.png");
-    private String keyCreateItemInfoScreen;
 
     protected void addedToWorld(World world) {
         ArmorList  = new LinkedList<>();
@@ -57,9 +58,9 @@ public class Inventory extends Actor implements Fixed {
         this.world = world;
         buttonList = new LinkedList<>();
     }
+
     public void act(){
         Object obj = null;
-
         try {
             obj = parser.parse(new FileReader("src/Settings.json"));
         } catch (FileNotFoundException e) {
@@ -99,14 +100,15 @@ public class Inventory extends Actor implements Fixed {
     }
     private void sortItems(Player p){
         allItems = p.getInventory();
+        equippedItems = p.getEquippedItems();
         Iterator<Pickable> allItemsIT = allItems.iterator();
         if (!allItemsIT.hasNext()) {
             return;
         }
         for(Pickable item :allItems){
-            if(item.getItemType().equals("Weapon")) {
+            if(item.getItemType().contains("Weapon")) {
                 WeaponList.add(item);
-            }else if(item.getItemType().equals("Armor")){
+            }else if(item.getItemType().contains("Armor")){
                 ArmorList.add(item);
             }else {
                 ItemList.add(item);
@@ -133,8 +135,11 @@ public class Inventory extends Actor implements Fixed {
         }
         itemsDrawn = 0;
         for (Pickable item: itemsToDraw) {
-            InventoryScreen.setColor(Color.cyan);
+            InventoryScreen.setColor(Color.WHITE);
             InventoryScreen.fillRect(drawAtX,drawAtY, 55,55);
+            InventoryScreen.setColor(Color.BLUE);
+            InventoryScreen.drawRect(drawAtX,drawAtY, 55, 55);
+            InventoryScreen.drawRect(drawAtX + 1,drawAtY +1, 54, 54);
             InventoryScreen.drawImage(item.getItemImage(), drawAtX, drawAtY);
             itemMouseLogic(drawAtX, drawAtY, item);
             drawAtX = drawAtX + 55 ;
@@ -147,13 +152,15 @@ public class Inventory extends Actor implements Fixed {
             int mouseX = Greenfoot.getMouseInfo().getX();
             int mouseY = Greenfoot.getMouseInfo().getY();
             if(mouseX > X - width / 2 && mouseX < X + width  && mouseY < Y + height && mouseY > Y - height / 2) {
+
                 itemHoverInfo(mouseX, mouseY, item);
             }
         }
     }
     private void itemHoverInfo(int X, int Y, Pickable item){
-        String itemInfo = "Item info: X";
-        String equipItem = "equip Item: C";
+        String InfoOpenInfo = "Item info: X";
+        String InfoEquippItem = "equip Item: DoubleLeftClick";
+        String InfoMouseButton = "select Item: right Click";
         InventoryScreen.setColor(Color.DARK_GRAY);
         InventoryScreen.fillRect(X, Y, 150, 70);
         InventoryScreen.setColor(Color.lightGray);
@@ -161,10 +168,14 @@ public class Inventory extends Actor implements Fixed {
         InventoryScreen.setFont(new Font(Font.SANS_SERIF, Font.ITALIC, 18));
         InventoryScreen.setColor(Color.decode("#FFD700"));
         InventoryScreen.drawString(item.getItemName(), X + 10,Y + 20 );
-        InventoryScreen.drawString(itemInfo, X + 10, Y + 40);
-        InventoryScreen.drawString(equipItem,X + 10,Y + 60);
+        InventoryScreen.drawString(InfoOpenInfo, X + 10, Y + 40);
+        if(item instanceof Equippable){
+            InventoryScreen.drawString(InfoEquippItem,X + 10,Y + 60);
+            //equippItem(item);
+        }
         itemForInfo = item;
         createItemInfoScreen();
+
     }
     private void createArrow(String position){
         Button button;
@@ -222,6 +233,26 @@ public class Inventory extends Actor implements Fixed {
             deleteButtons();
             getWorld().addObject(itemInfoScreenInstance, getWorld().getWidth()/2, getWorld().getHeight()/2);
             infoScreenActive = true;
+        }
+    }
+
+    public void equippItem(Pickable item){
+        // Helmet  0
+        // Chest   1
+        // Legs    2
+        // Boots   3
+        // Pet     4
+        // Primary 5
+        // Secondary 6
+        if(equippedItems.get(item.getItemSlotId()) != null){
+            Pickable oldItem = equippedItems.get(item.getItemSlotId());
+            if(oldItem.getItemType().contains("Armor")){
+                ArmorList.add(ArmorList.indexOf(item), oldItem);
+            }else if(oldItem.getItemType().contains("Weapon")) {
+                WeaponList.add(WeaponList.indexOf(item), oldItem);
+            }
+        }else{
+            equippedItems.add(item.getItemSlotId(),item);
         }
     }
 

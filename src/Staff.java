@@ -2,7 +2,7 @@ import greenfoot.GreenfootImage;
 
 import java.util.LinkedList;
 
-public class Staff extends Weapon implements Pickable {
+public class Staff extends Weapon implements Pickable, Equippable {
 
     private double damage;
     private int attackSpeed;
@@ -11,6 +11,7 @@ public class Staff extends Weapon implements Pickable {
     //Pickable Atributes
     ItemManager itemManager = ItemManager.Staff;
     public int itemCount = 0;
+    public final int itemSlotId = itemManager.getItemSLOTID();
     public final int itemId = itemManager.getItemID();
     public final String itemType = itemManager.getItemTYPE();
     public String itemName = itemManager.getItemNAME();
@@ -42,17 +43,20 @@ public class Staff extends Weapon implements Pickable {
     }
 
     //Pickable Getters and Setters
+    public int getItemSlotId() {
+        return itemSlotId;
+    }
     public int getItemCount() {
         return itemCount;
     }
-    public String getItemType() {
-        return itemType;
+    public int getItemId() {
+        return itemId;
     }
     public void setItemCount(int itemCount) {
         this.itemCount = itemCount;
     }
-    public int getItemId() {
-        return itemId;
+    public String getItemType() {
+        return itemType;
     }
     public String getItemName() {
         return itemName;

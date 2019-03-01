@@ -5,6 +5,7 @@ import java.util.LinkedList;
 public interface Pickable {
 
     int getItemId();
+    int getItemSlotId();
     int getItemCount();
     String getItemType();
     String getItemName();
