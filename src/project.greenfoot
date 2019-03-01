@@ -1,7 +1,7 @@
 #Greenfoot project file
 class.MovingActor.superclass=greenfoot.Actor
 class.Level1.superclass=greenfoot.World
-class.Player.image=test_player.png
+class.Player.image=images/Characters/Player/test_player.png
 class.Player.superclass=MovingActor
 class.Enemy.image=images/Enemy.png
 class.World.superclass=

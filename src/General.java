@@ -2,6 +2,8 @@ import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 import helper.Direction;
 
+import java.util.List;
+
 public abstract class General extends Actor {
 
     private int timer = 0;
@@ -15,7 +17,9 @@ public abstract class General extends Actor {
 
         this.defaultImage = new GreenfootImage(getImage());
     }
-
+    public <A extends Actor> List<A> getIntersectingObjects(Class<A> c){
+        return super.getIntersectingObjects(c);
+    }
     @Override
     public void act() {
         timer++;

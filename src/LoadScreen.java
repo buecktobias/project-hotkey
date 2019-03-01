@@ -4,7 +4,7 @@ import greenfoot.World;
 public class LoadScreen extends World {
     public LoadScreen(){
         super(1024, 736, 1);
-        setBackground("loadscreen.png");
+        setBackground("images/Screens/loadscreen.png");
     }
 
     @Override

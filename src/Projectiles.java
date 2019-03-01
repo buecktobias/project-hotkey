@@ -4,6 +4,7 @@ import helper.Direction;
 import java.util.*;
 
 public class Projectiles extends Weapon{
+
     public int hitboxRadius=getWidth()*4;
     public void moveInDirectionOf(Actor actor){
         int actorX = actor.getX();

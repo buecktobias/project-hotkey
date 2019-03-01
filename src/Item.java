@@ -1,3 +1,2 @@
-public abstract class Item extends NotMoving{
-
+public abstract class Item extends NotMoving {
 }

@@ -10,6 +10,30 @@ public abstract class OpenWorld extends World {
         setPaintOrder(Player.class);
     }
 
+    public void addObjectTopLeftCorner(Actor object, int x, int y) {
+        int width = object.getImage().getWidth();
+        int height = object.getImage().getHeight();
+        int topLeftX = x - width / 2;
+        int topLeftY = y - height / 2;
+        super.addObject(object, topLeftX, topLeftY);
+    }
+
+    public int getTotalXMovement() {
+        return totalXMovement;
+    }
+
+    public void setTotalXMovement(int totalXMovement) {
+        this.totalXMovement = totalXMovement;
+    }
+
+    public int getTotalYMovement() {
+        return totalYMovement;
+    }
+
+    public void setTotalYMovement(int totalYMovement) {
+        this.totalYMovement = totalYMovement;
+    }
+
     private int totalXMovement = 0;
     private int totalYMovement = 0;
 
