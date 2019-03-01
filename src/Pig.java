@@ -4,7 +4,7 @@ public class Pig extends Friendly implements Blocking,Attackable {
     private int speed = 1;
     private final int defaultLife = 20;
     private int life = defaultLife;
-
+    private GreenfootImage defaultImage = new GreenfootImage("images/Characters/lilpig.png");
     @Override
     public int getLife() {
         return life;
@@ -15,10 +15,14 @@ public class Pig extends Friendly implements Blocking,Attackable {
         this.life = life;
     }
 
+    @Override
+    GreenfootImage[] getMovingAnimationImages() {
+        return new GreenfootImage[]{defaultImage};
+    }
+
     public Pig(){
-        GreenfootImage img = new GreenfootImage("images/Characters/lilpig.png");
-        img.scale(64,32);
-        setImage(img);
+        defaultImage.scale(64,32);
+        setImage(defaultImage);
     }
 
     @Override

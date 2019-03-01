@@ -7,6 +7,7 @@ import java.util.List;
 public abstract class General extends Actor {
 
     private int timer = 0;
+    private int animationImage=0;
     private GreenfootImage defaultImage;
 
     /**
@@ -44,7 +45,14 @@ public abstract class General extends Actor {
     public Direction getDirection() {
         return Direction.fromValue(getRotation());
     }
-
+    public void animate(GreenfootImage... images ){
+        assert images.length != 0;
+        if(animationImage>=images.length){
+            animationImage = 0;
+        }
+        setImage(images[animationImage]);
+        animationImage++;
+    }
 
     @Override
     public void turn(int amount) {

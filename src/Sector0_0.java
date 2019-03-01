@@ -57,6 +57,11 @@ public class Sector0_0 extends OpenWorld {
         }
     }
 
+    public void spawnInCircle(Actor a,double radius,int x,int y){
+        assert radius > 0;
+
+    }
+
 
     public void randomSpawn(Class c) {
         int x = r.nextInt(Math.abs(BorderX2 - BorderX1)) + BorderX1;
@@ -155,7 +160,7 @@ public class Sector0_0 extends OpenWorld {
 
         }
         if (time % 50 == 0) {
-           // randomSpawn(Spider.class);
+           randomSpawn(Spider.class);
         }
         time++;
     }

@@ -6,7 +6,13 @@ public class Enemy extends Hostile implements Attackable,Blocking {
     private int damage = 5;
     private int speed = 1;
     private int life = 100;
-    private int hitboxRadius=getWidth();
+    private int hitboxRadius = getWidth();
+    private GreenfootImage defaultImage = new GreenfootImage("src/images/Characters/lilpig.png");
+
+    @Override
+    GreenfootImage[] getMovingAnimationImages() {
+        return new GreenfootImage[]{defaultImage};
+    }
 
     @Override
     int getAttackRange() {
@@ -42,6 +48,11 @@ public class Enemy extends Hostile implements Attackable,Blocking {
     @Override
     public void setSpeed(int speed) {
         this.speed = speed;
+    }
+
+    @Override
+    GreenfootImage getAngryImage() {
+        return defaultImage;
     }
 
     @Override

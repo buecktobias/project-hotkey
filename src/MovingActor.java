@@ -10,6 +10,7 @@ import java.util.*;
  */
 public abstract class MovingActor extends General {
     public int hitboxRadius=getWidth()*4;
+    abstract GreenfootImage[] getMovingAnimationImages();
     private boolean moveAnimation = false;
     abstract int getSpeed();
     abstract void setSpeed(int n);
@@ -29,16 +30,6 @@ public abstract class MovingActor extends General {
     @Override
     public void act() {
         getEffects();
-    }
-
-
-    public void moveAnimation(GreenfootImage img1, GreenfootImage img2){
-        if(moveAnimation){
-            setImage(img1);
-        }else{
-            setImage(img2);
-        }
-        moveAnimation = !moveAnimation;
     }
     public void moveInDirectionOf(Actor actor){
         int actorX = actor.getX();
@@ -157,34 +148,38 @@ public abstract class MovingActor extends General {
         }
         return false;
     }
-    private void moveTo(int x,int y){
+    private boolean moveTo(int x,int y){
         int oldX = this.getX();
         int oldY = this.getY();
         setLocation(x,y);
         if(intersectsWithBlockingObject(true)){
             setLocation(oldX,oldY);
+            return false;
+        }else {
+            animate(getMovingAnimationImages());
         }
+        return true;
 
     }
-    private void moveUp(int distance){
+    private boolean moveUp(int distance){
         int x = getX();
         int y = getY() - distance;
-        moveTo(x,y);
+        return moveTo(x,y);
     }
-    private void moveRight(int distance){
+    private boolean moveRight(int distance){
         int x = getX()+distance;
         int y = getY();
-        moveTo(x,y);
+        return moveTo(x,y);
     }
-    private void moveLeft(int distance){
+    private boolean moveLeft(int distance){
         int x = getX()-distance;
         int y = getY();
-        moveTo(x,y);
+        return moveTo(x,y);
     }
-    private void moveDown(int distance){
+    private boolean moveDown(int distance){
         int x = getX();
         int y = getY()+distance;
-        moveTo(x,y);
+        return moveTo(x,y);
     }
 
     public void attack(Attackable actor,int damage){
