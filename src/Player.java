@@ -53,7 +53,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private String keyOpenSettings;
     private Inventory inventoryInstance;
     private SkillWindow skillWindow;
-    private LinkedList<Pickable> equippedItems = new LinkedList<>();
+    private Pickable[] equippedItems = new Pickable[7];
     private LinkedList<Pickable> inventory = new LinkedList<>();
 
     Player(){
@@ -324,11 +324,11 @@ public class Player extends MovingActor implements Attackable,Blocking {
         this.inventory = inventory;
     }
 
-    public LinkedList<Pickable> getEquippedItems() {
+    public Pickable[] getEquippedItems() {
         return equippedItems;
     }
 
-    public void setEquippedItems(LinkedList<Pickable> equippedItems) {
+    public void setEquippedItems(Pickable[] equippedItems) {
         this.equippedItems = equippedItems;
     }
 }
