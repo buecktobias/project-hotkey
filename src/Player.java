@@ -1,4 +1,5 @@
 import greenfoot.Greenfoot;
+import greenfoot.GreenfootImage;
 import greenfoot.World;
 import helper.Direction;
 import org.json.simple.JSONObject;
@@ -55,8 +56,17 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private SkillWindow skillWindow;
     private Pickable[] equippedItems = new Pickable[7];
     private LinkedList<Pickable> inventory = new LinkedList<>();
+    private GreenfootImage defaultImage = new GreenfootImage("src/images/Characters/Player/test_player.png");
+    private GreenfootImage move1 = new GreenfootImage("src/images/Characters/Player/player_move1.png");
+
+    @Override
+    GreenfootImage[] getMovingAnimationImages() {
+        return new GreenfootImage[]{defaultImage};
+    }
 
     Player(){
+        this.getImage().clear();
+        setImage(defaultImage);
         Greenfoot.setSpeed(gameSpeed);
         updateKeys();
     }
@@ -158,14 +168,14 @@ public class Player extends MovingActor implements Attackable,Blocking {
     }
     public void showSkillWindow() {
         if (fps.getFrame() - lastFrameSkillWindowOpened > waitTimeOpenSkillWindow) {
-                if (skillScreenShown) {
-                    skillWindow.deleteButtons();
-                    getWorld().removeObject(skillWindow);
-                } else {
-                    getWorld().addObject(skillWindow, 500, 400);
-                }
-                skillScreenShown = !skillScreenShown;
-                lastFrameSkillWindowOpened = fps.getFrame();
+            if (skillScreenShown) {
+                skillWindow.deleteButtons();
+                getWorld().removeObject(skillWindow);
+            } else {
+                getWorld().addObject(skillWindow, 500, 400);
+            }
+            skillScreenShown = !skillScreenShown;
+            lastFrameSkillWindowOpened = fps.getFrame();
         }
     }
     private void updateKeys(){
