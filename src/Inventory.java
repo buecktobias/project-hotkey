@@ -30,11 +30,11 @@ public class Inventory extends Actor implements Fixed {
     private boolean infoScreenActive = false;
     private boolean itemsEquipped = false;
     private String keyCreateItemInfoScreen;
+    private Pickable[] equippedItems = new Pickable[7];
     private JSONParser parser = new JSONParser();
     private ItemInfoScreen itemInfoScreenInstance;
     private LinkedList<Button>   buttonList;
     private LinkedList<Pickable> allItems;
-    private Pickable[] equippedItems = new Pickable[7];
     private LinkedList<Pickable> ArmorList;
     private LinkedList<Pickable> WeaponList;
     private LinkedList<Pickable> ItemList;
@@ -45,7 +45,6 @@ public class Inventory extends Actor implements Fixed {
     private GreenfootImage rightArrowNotClicked = new GreenfootImage("images/Arrows/Arrow_right.png");
 
     protected void addedToWorld(World world) {
-
         createArrow("left");
         createArrow("right");
         itemInfoScreenInstance = new ItemInfoScreen(p, world);
@@ -154,11 +153,9 @@ public class Inventory extends Actor implements Fixed {
                 if(item instanceof Equippable){
                    if(Greenfoot.getMouseInfo().getClickCount() == 2) {
                        if(item.isIEquipped()){
-                           System.out.println("1");
                            unequippItem(item);
                        }else if(item.getItemSlotId() != -1){
                            equippItem(item);
-                           System.out.println("2");
                        }
                    }
                 }
@@ -292,19 +289,12 @@ public class Inventory extends Actor implements Fixed {
            allItems.remove(item);
            item.setIEquipped(true);
            itemsEquipped = true;
-
-           System.out.println("Item Equiped1");
-
        }else{
            Pickable oldItem = equippedItems[item.getItemSlotId()];
            equippedItems[item.getItemSlotId()] = item;
            itemsEquipped = true;
-           Equippable itemE = (Equippable)item;
            item.setIEquipped(true);
            allItems.remove(item);
-
-           System.out.println("Item Equiped2");
-
            if(oldItem.getItemType().contains("Armor")){
                ArmorList.add(oldItem);
                oldItem.setIEquipped(false);
@@ -328,13 +318,9 @@ public class Inventory extends Actor implements Fixed {
         */
     }
     private void unequippItem(Pickable item){
-        if(item.getItemType().contains("Armor")){
-            ArmorList.add(item);
-            item.setIEquipped(false);
-        }else if(item.getItemType().contains("Weapon")) {
-            WeaponList.add(item);
-            item.setIEquipped(false);
-        }
+        allItems.add(item);
+        equippedItems[item.getItemSlotId()] = null;
+        item.setIEquipped(false);
     }
 
     //Getters and Setters

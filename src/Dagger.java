@@ -2,7 +2,7 @@ import greenfoot.GreenfootImage;
 
 import java.util.LinkedList;
 
-public class Dagger extends Weapon implements Pickable{
+public class Dagger extends Weapon implements Pickable, Equippable{
 
     private double damage;
     private int attackSpeed;

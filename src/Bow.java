@@ -3,7 +3,7 @@ import greenfoot.GreenfootImage;
 
 import java.util.LinkedList;
 
-public class Bow extends Weapon implements Pickable{
+public class Bow extends Weapon implements Pickable, Equippable{
 
     private int attackSpeed;
     private Player player;
