@@ -17,6 +17,9 @@ import java.util.List;
 public class Player extends MovingActor implements Attackable,Blocking {
     private JSONParser parser = new JSONParser();
     private SettingsWindow settingsWindow = new SettingsWindow();
+    private int weaponsPicked = 0;
+    private int itemsPicked = 0;
+    private int armorPicked = 0;
     private int currentSpeed;
     private int normalSpeed = 2;
     private int level = 1;
@@ -252,6 +255,24 @@ public class Player extends MovingActor implements Attackable,Blocking {
         }
         Item currentItem = objs.get(0);
         if (currentItem instanceof Pickable) {
+           switch (((Pickable) currentItem).getItemType()){
+               case "PrimaryWeapon":
+                   addItemToInventory(currentItem, weaponsPicked);
+                   weaponsPicked++;
+                   break;
+               case "SecondaryWeapon":
+                   addItemToInventory(currentItem, weaponsPicked);
+                   weaponsPicked++;
+                   break;
+               case "Armor":
+                   addItemToInventory(currentItem, armorPicked);
+                   armorPicked++;
+                   break;
+           }
+        }
+    }
+    public void addItemToInventory(Item currentItem, int pickedItems){
+        if(pickedItems < 30){
             if (inventory != null && inventory.isEmpty()) {
                 ((Pickable) currentItem).pick(this, inventory);
                 return;
@@ -262,6 +283,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
             }
         }
     }
+
     public void useInventory() {
         String key = Greenfoot.getKey();
         if ((keyOpenInventar.equals(key)&& isIActive) ){

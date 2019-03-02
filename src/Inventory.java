@@ -15,10 +15,10 @@ import java.util.LinkedList;
 
 
 public class Inventory extends Actor implements Fixed {
-    // TODO remove unequiped items from equippedItems array
+    // TODO use arrays instead of lists for items
     // TODO drag and drop Items to respective slots
-    // TODO implement pick limit
     // TODO make "switchTab-Buttons" look good
+    // TODO make Armor and Weapons not stackable (remove count variable/ compare id method)
     private Player p;
     private World world;
     private Pickable itemForInfo;
@@ -31,13 +31,17 @@ public class Inventory extends Actor implements Fixed {
     private boolean itemsEquipped = false;
     private String keyCreateItemInfoScreen;
     private Pickable[] equippedItems = new Pickable[7];
+    private Pickable[] armorArray;
+    private Pickable[] weaponArray;
+    private Pickable[] itemArray;
+
     private JSONParser parser = new JSONParser();
     private ItemInfoScreen itemInfoScreenInstance;
     private LinkedList<Button>   buttonList;
     private LinkedList<Pickable> allItems;
-    private LinkedList<Pickable> ArmorList;
-    private LinkedList<Pickable> WeaponList;
-    private LinkedList<Pickable> ItemList;
+    //private LinkedList<Pickable> ArmorList;
+    //private LinkedList<Pickable> WeaponList;
+    // private LinkedList<Pickable> ItemList;
     private GreenfootImage InventoryScreen      = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV3.png");
     private GreenfootImage leftArrowClicked     = new GreenfootImage("images/Arrows/Arrow_left_aktive.png");
     private GreenfootImage leftArrowNotClicked  = new GreenfootImage("images/Arrows/Arrow_left.png");
@@ -47,6 +51,7 @@ public class Inventory extends Actor implements Fixed {
     protected void addedToWorld(World world) {
         createArrow("left");
         createArrow("right");
+        //sortItems(p);
         itemInfoScreenInstance = new ItemInfoScreen(p, world);
     }
 
@@ -57,10 +62,14 @@ public class Inventory extends Actor implements Fixed {
     }
 
     public void act(){
-        ArmorList  = new LinkedList<>();
-        WeaponList = new LinkedList<>();
-        ItemList   = new LinkedList<>();
+        // ArmorList  = new LinkedList<>();
+        // WeaponList = new LinkedList<>();
+        //ItemList   = new LinkedList<>();
+        armorArray = new Pickable[30];
+        weaponArray = new Pickable[30];
+        itemArray = new Pickable[30];
         sortItems(p);
+
         Object obj = null;
         try {
             obj = parser.parse(new FileReader("src/Settings.json"));
@@ -84,6 +93,108 @@ public class Inventory extends Actor implements Fixed {
         }
     }
 
+
+    private void sortItems(Player p){
+        allItems = p.getInventory();
+        equippedItems = p.getEquippedItems();
+        Iterator<Pickable> allItemsIT = allItems.iterator();
+        if (!allItemsIT.hasNext()) {
+            return;
+        }
+        for(Pickable item :allItems){
+            if(item.getItemType().contains("Weapon")) {
+                //WeaponList.add(item);
+                addItemToArray(weaponArray, item);
+            }else if(item.getItemType().contains("Armor")){
+                //ArmorList.add(item);
+                addItemToArray(armorArray, item);
+            }else {
+                //ItemList.add(item);
+                addItemToArray(itemArray, item);
+            }
+        }
+
+    }
+    private void addItemToArray(Pickable[] array, Pickable  item){
+        for(int i = 0; i < array.length; i++){
+            if(array[i] == null){
+                addItemToArray(array, item, i);
+                return;
+            }
+        }
+    }
+    private void addItemToArray(Pickable[] array, Pickable item, int index){
+        array[index] = item;
+    }
+
+
+    // draw methods
+    private void drawCurrentTab(){
+        if(inventoryTab == 0){
+            drawTab(weaponArray);
+        }else if(inventoryTab == 1){
+            drawTab(armorArray);
+        }else if(inventoryTab == 2){
+            drawTab(itemArray);
+        }else{
+            setInventoryTab(0);
+        }
+    }
+    private void drawTab(Pickable[] itemsToDraw){
+        drawAtX = 416;
+        drawAtY = 196;
+        if(itemsDrawn == 6){
+          drawAtX = 416;
+          drawAtY = drawAtY + 55 + 12;
+        }
+        itemsDrawn = 0;
+        for (Pickable item: itemsToDraw) {
+            drawItemAt(drawAtX,drawAtY,item);
+            drawAtX = drawAtX + 55 ;
+            itemsDrawn++;
+        }
+    }
+    private void drawEquippedItems(){
+        for(int i = 0; i < 6; i++){
+            if(equippedItems[i] != null){
+                Pickable item = equippedItems[i];
+                switch (item.getItemSlotId()){
+                    case 0 :
+                        drawItemAt(196,196, item);
+                        break;
+                    case 1 :
+                        drawItemAt(196,286, item);
+                        break;
+                    case 2:
+                        drawItemAt(196,376, item);
+                        break;
+                    case 3:
+                        drawItemAt(196,466, item);
+                        break;
+                    case 4:
+                        drawItemAt(276,196, item);
+                        break;
+                    case 5:
+                        drawItemAt(276,286, item);
+                        break;
+                    case 6:
+                        drawItemAt(276,376, item);
+                        break;
+                }
+            }
+        }
+    }
+    private void drawItemAt(int X, int Y, Pickable item){
+        if(item != null){
+            InventoryScreen.setColor(Color.WHITE);
+            InventoryScreen.fillRect(X, Y, 55,55);
+            InventoryScreen.setColor(Color.BLUE);
+            InventoryScreen.drawRect(X, Y, 55, 55);
+            InventoryScreen.drawRect(X + 1,Y +1, 54, 54);
+            InventoryScreen.drawImage(item.getItemImage(), X, Y);
+            itemMouseLogic(X, Y, item);
+        }
+    }
     private void drawTabFonts(){
         String armor = "Armor";
         String weapons = "Weapons";
@@ -102,62 +213,32 @@ public class Inventory extends Actor implements Fixed {
             InventoryScreen.drawString(items,     680,175);
         }
     }
-    private void sortItems(Player p){
-        allItems = p.getInventory();
-        equippedItems = p.getEquippedItems();
-        Iterator<Pickable> allItemsIT = allItems.iterator();
-        if (!allItemsIT.hasNext()) {
-            return;
-        }
-        for(Pickable item :allItems){
-            if(item.getItemType().contains("Weapon")) {
-                WeaponList.add(item);
-            }else if(item.getItemType().contains("Armor")){
-                ArmorList.add(item);
-            }else {
-                ItemList.add(item);
-            }
-        }
-    }
-    private void drawCurrentTab(){
-        if(inventoryTab == 0){
-            drawTab(WeaponList);
-        }else if(inventoryTab == 1){
-            drawTab(ArmorList);
-        }else if(inventoryTab == 2){
-            drawTab(ItemList);
-        }else{
-            setInventoryTab(0);
-        }
-    }
-    private void drawTab(LinkedList<Pickable> itemsToDraw){
-        drawAtX = 416;
-        drawAtY = 196;
-        if(itemsDrawn == 6){
-          drawAtX = 416;
-          drawAtY = drawAtY + 55 + 12;
-        }
-        itemsDrawn = 0;
-        for (Pickable item: itemsToDraw) {
-            drawItemAt(drawAtX,drawAtY,item);
-            drawAtX = drawAtX + 55 ;
-            itemsDrawn++;
-        }
-    }
+
     private void itemMouseLogic(int X, int Y, Pickable item){
         int width = 55, height = 55;
         if (Greenfoot.getMouseInfo() != null){
             int mouseX = Greenfoot.getMouseInfo().getX();
             int mouseY = Greenfoot.getMouseInfo().getY();
+            //System.out.println(Greenfoot.mouseDragged(item));
+            //System.out.println(Greenfoot.mouseDragEnded(item));
             if(mouseX > X - width / 2 && mouseX < X + width  && mouseY < Y + height && mouseY > Y - height / 2) {
                 if(item instanceof Equippable){
+
+                    //System.out.println(Greenfoot.mousePressed(item));
+
                    if(Greenfoot.getMouseInfo().getClickCount() == 2) {
                        if(item.isIEquipped()){
                            unequippItem(item);
                        }else if(item.getItemSlotId() != -1){
                            equippItem(item);
                        }
+                   }else if(Greenfoot.mouseDragged(item)){
+
+                       //System.out.println(Greenfoot.mouseDragged(item));
+
+                       drawItemAt(mouseX, mouseY, item);
                    }
+
                 }
                 itemHoverInfo(mouseX, mouseY, item);
             }
@@ -242,51 +323,14 @@ public class Inventory extends Actor implements Fixed {
         }
     }
 
-    private void drawEquippedItems(){
-        for(int i = 0; i < 6; i++){
-            if(equippedItems[i] != null){
-                Pickable item = equippedItems[i];
-                switch (item.getItemSlotId()){
-                    case 0 :
-                        drawItemAt(196,196, item);
-                        break;
-                    case 1 :
-                        drawItemAt(196,286, item);
-                        break;
-                    case 2:
-                        drawItemAt(196,376, item);
-                        break;
-                    case 3:
-                        drawItemAt(196,466, item);
-                        break;
-                    case 4:
-                        drawItemAt(276,196, item);
-                        break;
-                    case 5:
-                        drawItemAt(276,286, item);
-                        break;
-                    case 6:
-                        drawItemAt(276,376, item);
-                        break;
-                }
-            }
-        }
-    }
-    private void drawItemAt(int X, int Y, Pickable item){
-        InventoryScreen.setColor(Color.WHITE);
-        InventoryScreen.fillRect(X, Y, 55,55);
-        InventoryScreen.setColor(Color.BLUE);
-        InventoryScreen.drawRect(X, Y, 55, 55);
-        InventoryScreen.drawRect(X + 1,Y +1, 54, 54);
-        InventoryScreen.drawImage(item.getItemImage(), X, Y);
-        itemMouseLogic(X, Y, item);
-    }
+
 
     public void equippItem(Pickable item){
         // Helmet  0, Chest   1, Legs    2, Boots   3, Pet     4, Primary 5, Secondary 6,
        if(equippedItems[item.getItemSlotId()] == null){
            equippedItems[item.getItemSlotId()] = item;
            allItems.remove(item);
+           removeItemFromInventory(item);
            item.setIEquipped(true);
            itemsEquipped = true;
        }else{
@@ -295,13 +339,8 @@ public class Inventory extends Actor implements Fixed {
            itemsEquipped = true;
            item.setIEquipped(true);
            allItems.remove(item);
-           if(oldItem.getItemType().contains("Armor")){
-               ArmorList.add(oldItem);
-               oldItem.setIEquipped(false);
-           }else if(oldItem.getItemType().contains("Weapon")) {
-               WeaponList.add(oldItem);
-               oldItem.setIEquipped(false);
-           }
+           removeItemFromInventory(item);
+           unequippItem(oldItem);
        }
         /* old List code
         Iterator<Pickable> eqItemsIt = equippedItems.iterator();
@@ -317,10 +356,28 @@ public class Inventory extends Actor implements Fixed {
         }
         */
     }
-    private void unequippItem(Pickable item){
-        allItems.add(item);
-        equippedItems[item.getItemSlotId()] = null;
-        item.setIEquipped(false);
+    private void unequippItem(Pickable oldItem){
+        allItems.add(oldItem);
+        if(oldItem.getItemType().contains("Armor")){
+            //ArmorList.add(oldItem);
+            addItemToArray(armorArray, oldItem);
+            oldItem.setIEquipped(false);
+        }else if(oldItem.getItemType().contains("Weapon")) {
+            //WeaponList.add(oldItem);
+            addItemToArray(weaponArray, oldItem);
+            oldItem.setIEquipped(false);
+        }
+        equippedItems[oldItem.getItemSlotId()] = null;
+        oldItem.setIEquipped(false);
+    }
+    private void removeItemFromInventory(Pickable item){
+        if(item.getItemType().contains("Armor")){
+            armorArray[java.util.Arrays.asList(armorArray).indexOf(item)] = null;
+        }else if(item.getItemType().contains("Weapon")) {
+            weaponArray[java.util.Arrays.asList(weaponArray).indexOf(item)] = null;
+        }else {
+            itemArray[java.util.Arrays.asList(itemArray).indexOf(item)] = null;
+        }
     }
 
     //Getters and Setters

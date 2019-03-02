@@ -160,7 +160,7 @@ public class Sector0_0 extends OpenWorld {
 
         }
         if (time % 50 == 0) {
-           randomSpawn(Spider.class);
+           //randomSpawn(Spider.class);
         }
         time++;
     }

@@ -12,7 +12,7 @@ public enum ItemManager {
     private final GreenfootImage itemIMAGE;
 
     ItemManager(String itemType, int itemId, String itemName, int itemSlotId, GreenfootImage itemImage){
-        itemTYPE = itemType;
+        itemTYPE = itemType;    // current Types pickable: "SecondaryWeapon", "PrimaryWeapon", "Armor"
         itemID = itemId;
         itemNAME = itemName;
         itemSLOTID = itemSlotId;
