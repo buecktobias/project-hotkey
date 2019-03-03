@@ -26,6 +26,8 @@ public class Sector0_0 extends OpenWorld {
         setScrollingBackground(new GreenfootImage("images/Screens/cell_debug.png"));
         Staff staff = new Staff(42);
         addObject(staff, 100, 100);
+        Bow bow = new Bow(2500,player);
+        addObject(bow,150,100);
 
 
         randomObjects(Tree.class, 20, 100, 800, 600, 2);

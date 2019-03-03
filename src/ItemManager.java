@@ -2,8 +2,8 @@ import greenfoot.GreenfootImage;
 
 public enum ItemManager {
     Staff(  "PrimaryWeapon",  0, "The Elder Wand",       5, new GreenfootImage("images/ItemImages/Wand.png")),
-    Dagger( "PrimaryWeapon",  1, "Zahnstocher",          6, new GreenfootImage("images/ItemImages/Dagger.png")),
-    Bow(    "SecondaryWeapon",2, "Dragonslayer GreatBow",5, new GreenfootImage("images/ItemImages/Key.png"));
+    Dagger( "SecondaryWeapon",  1, "Zahnstocher",          6, new GreenfootImage("images/ItemImages/Dagger.png")),
+    Bow(    "PrimaryWeapon",2, "Dragonslayer GreatBow",5, new GreenfootImage("images/ItemImages/Key.png"));
 
     private final int itemID;
     private final String itemTYPE;

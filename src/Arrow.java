@@ -17,7 +17,7 @@ public class Arrow extends Projectiles {
 
     public void act() {
         for(int i = 0;i < attackRange; i++) {
-            move(getDirection(),1);
+            move(player.getDirection(),1);
         }
     }
     private void move(Direction d, int distance){

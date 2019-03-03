@@ -21,17 +21,27 @@ public class Bow extends Weapon implements Pickable, Equippable{
     public Bow(int attackSpeed, Player player) {
         this.attackSpeed = attackSpeed;
         this.player = player;
+        setImage(itemImage);
     }
 
     public void shoot() {
-        Arrow arrow = new Arrow(42, 1,10120,player);
+        Arrow arrow = new Arrow(42, 1,100,player);
         getWorld().addObject(arrow,getX(),getY());
+        attackSpeedWait(attackSpeed);
+
     }
 
     public void act() {
         if(Greenfoot.isKeyDown("V")) {
             shoot();
         }
+    }
+
+    public void attackSpeedWait(int attackSpeed) {
+        try {
+           Thread.sleep(attackSpeed);
+        }
+        catch (Exception e) {}
     }
 
     //Pickable Methods
