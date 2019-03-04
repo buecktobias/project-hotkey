@@ -25,7 +25,29 @@ public abstract class General extends Actor {
     public void act() {
         timer++;
     }
-
+    /*
+    public void setLocation(int x, int y) {
+        if (OpenWorld.WORLD_WIDTH != 0) {
+            if (getDistanceToScrollingActor('x') - ((OpenWorld)getWorld()).getTotalXMovement() > OpenWorld.WORLD_WIDTH/2) {
+                x = (int) (getStartingPoint().getX() + OpenWorld.WORLD_WIDTH/2);
+            }
+            else if (getDistanceToScrollingActor('x') - ((OpenWorld)getWorld()).getTotalXMovement() < - OpenWorld.WORLD_WIDTH/2) {
+                x = (int) (getStartingPoint().getX() - OpenWorld.WORLD_WIDTH/2);
+            }
+        }
+        if (OpenWorld.WORLD_HEIGHT != 0) {
+            if(getDistanceToScrollingActor('y') - ((OpenWorld)getWorld()).getTotalYMovement() > OpenWorld.WORLD_HEIGHT/2) {
+                y = (int) (getStartingPoint().getY() + OpenWorld.WORLD_HEIGHT/2);
+            }
+            else if(getDistanceToScrollingActor('y') - ((OpenWorld)getWorld()).getTotalYMovement() < - OpenWorld.WORLD_HEIGHT/2) {
+                y = (int) (getStartingPoint().getY() - OpenWorld.WORLD_HEIGHT/2);
+            }
+        }
+        exactX = x;
+        exactY = y;
+        super.setLocation(x, y);
+    }
+    */
     /**
      * Determines if this part of the environment is blocking.
      *

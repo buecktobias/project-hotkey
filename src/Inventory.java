@@ -96,7 +96,7 @@ public class Inventory extends Actor implements Fixed {
 
     private void sortItems(Player p){
         allItems = p.getInventory();
-        equippedItems = p.getEquippedItems();
+        //equippedItems = p.getEquippedItems();
         Iterator<Pickable> allItemsIT = allItems.iterator();
         if (!allItemsIT.hasNext()) {
             return;

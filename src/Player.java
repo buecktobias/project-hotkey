@@ -55,6 +55,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private String keyOpenSkillWindow;
     private String keyOpenInventar;
     private String keyOpenSettings;
+    private String keyShootArrow;
     private Inventory inventoryInstance;
     private SkillWindow skillWindow;
     private Pickable[] equippedItems = new Pickable[7];
@@ -204,6 +205,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
         keyOpenInventar = keys.get("openInventar").toString();
         keyOpenSettings = keys.get("openSettingWindow").toString();
         keyOpenSkillWindow = keys.get("openSkillWindow").toString();
+        keyShootArrow = keys.get("shootArrow").toString();
         keyPick = keys.get("pick").toString();
     }
     public void testkeys(){
@@ -218,6 +220,9 @@ public class Player extends MovingActor implements Attackable,Blocking {
         }
         if(Greenfoot.isKeyDown(keyOpenSettings)){
             showSettingsWindow();
+        }
+        if(Greenfoot.isKeyDown(keyShootArrow)){
+            getWorld().addObject(new Arrow(2,2,2,this),this.getX(),this.getY());
         }
         performMovement();
     }

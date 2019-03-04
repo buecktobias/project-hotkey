@@ -28,6 +28,8 @@ public class Spider extends Hostile implements Blocking,Attackable {
     private final GreenfootImage defaultImage = new GreenfootImage("images/Characters/Spider.png");
     private final GreenfootImage move1 = new GreenfootImage("images/Characters/Spider_Move1.png");
     private final GreenfootImage attack1 = new GreenfootImage("images/Characters/Spider_Attack1.png");
+    private final GreenfootImage moveAngry1 = new GreenfootImage("images/Characters/Spider_Angry_Move1.png");
+
     private int damage = 100;
 
 
@@ -44,14 +46,19 @@ public class Spider extends Hostile implements Blocking,Attackable {
     }
 
     @Override
-    GreenfootImage[] getMovingAnimationImages() {
-        return new GreenfootImage[]{defaultImage,move1};
+    public GreenfootImage[] getMovingAnimationImages() {
+        if(getPlayer(visualRange) != null){
+            return new GreenfootImage[]{angryImage,moveAngry1};
+        }
+        return new GreenfootImage[]{defaultImage, move1};
     }
 
     public Spider(){
         attack1.scale(64,32);
         move1.scale(64,32);
         defaultImage.scale(64,32);
+        angryImage.scale(64,32);
+        moveAngry1.scale(64,32);
         setImage(defaultImage);
         visualRange = this.getWidth() * 3;
         attackRange = this.getWidth() + this.getHeight();

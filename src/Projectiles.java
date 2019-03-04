@@ -1,9 +1,41 @@
 import greenfoot.Actor;
+import greenfoot.Greenfoot;
+import greenfoot.World;
 import helper.Direction;
 
 import java.util.*;
 
 public class Projectiles extends Weapon{
+    private double x;
+    private double y;
+    private double xSpeed;
+    private double ySpeed;
+    private double xAcceleration;
+    private double yAcceleration;
+
+    @Override
+    protected void addedToWorld(World world) {
+        x=getX();
+        y=getY();
+    }
+
+    @Override
+    public void act() {
+        x += xSpeed;
+        y += ySpeed;
+        xSpeed += xAcceleration;
+        ySpeed += yAcceleration;
+        setLocation((int)Math.round(x),(int)Math.round(y));
+    }
+    public void moveInDirectionOfMouse(double velocity){
+        int mouseX=Greenfoot.getMouseInfo().getX();
+        int mouseY=Greenfoot.getMouseInfo().getY();
+        double adjacent = mouseX - x;
+        double opposite = mouseY - y;
+        double angle = Math.atan(opposite/adjacent);
+        xSpeed = velocity * Math.cos(angle);
+        ySpeed = velocity * Math.sin(angle);
+    }
 
     public int hitboxRadius=getWidth()*4;
     public void moveInDirectionOf(Actor actor){

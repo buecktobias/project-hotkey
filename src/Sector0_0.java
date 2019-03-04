@@ -15,11 +15,12 @@ public class Sector0_0 extends OpenWorld {
     private final int BorderY2 = 1_000;
 
     public Sector0_0() {
+        super(2000,2000);
         setPaintOrder(Button.class, ItemInfoScreen.class, Inventory.class, HUD.class,FPS.class, MovingActor.class);
         setBackground("images/Screens/cell_debug.png");
         addObject(new FPS(),1000,32);
         Player player = new Player();
-        addObject(player, 0, 0);
+        addObject(player, 100, 100);
         //addObject(enemy, 200, 200);
         HUD hud = new HUD();
         addObject(hud, getWidth() / 2, getHeight() / 2);
@@ -58,12 +59,6 @@ public class Sector0_0 extends OpenWorld {
             addObject(new Rock(), maxX, y);
         }
     }
-
-    public void spawnInCircle(Actor a,double radius,int x,int y){
-        assert radius > 0;
-
-    }
-
 
     public void randomSpawn(Class c) {
         int x = r.nextInt(Math.abs(BorderX2 - BorderX1)) + BorderX1;

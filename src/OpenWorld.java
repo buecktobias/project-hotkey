@@ -5,9 +5,13 @@ import greenfoot.World;
 import java.util.List;
 
 public abstract class OpenWorld extends World {
-    public OpenWorld() {
+    public static int WORLD_WIDTH;
+    public static int WORLD_HEIGHT;
+    public OpenWorld(int scrollingWidth,int scrollingHeight) {
         super(1024, 736, 1, false);
         setPaintOrder(Player.class);
+        WORLD_WIDTH = scrollingWidth;
+        WORLD_HEIGHT = scrollingHeight;
     }
 
     public void addObjectTopLeftCorner(Actor object, int x, int y) {
@@ -92,5 +96,10 @@ public abstract class OpenWorld extends World {
     public void setScrollingBackground(GreenfootImage bgImage) {
         textur = bgImage;
     }
-
+    public int getScrollingWidth() {
+        return WORLD_WIDTH;
+    }
+    public int getScrollingHeight() {
+        return WORLD_HEIGHT;
+    }
 }
