@@ -1,7 +1,5 @@
 import greenfoot.GreenfootImage;
 
-import java.util.LinkedList;
-
 public interface Pickable {
 
     int getItemId();
@@ -11,10 +9,9 @@ public interface Pickable {
     String getItemName();
     GreenfootImage getItemImage();
     void setItemCount(int itemCount);
-    void pick(Player p, LinkedList inventory);
-    void compareIDs(Player p, LinkedList<Pickable> inventory, Pickable item);
     void setIEquipped(boolean IEquipped);
     boolean isIEquipped();
-
+    boolean compareIDWith(Pickable item, Pickable[] inventoryArray);
+    void pick(Pickable[] inventoryArray);
 }
 

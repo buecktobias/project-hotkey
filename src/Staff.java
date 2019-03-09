@@ -1,7 +1,5 @@
 import greenfoot.GreenfootImage;
 
-import java.util.LinkedList;
-
 public class Staff extends Weapon implements Pickable, Equippable {
 
     private double damage;
@@ -26,21 +24,25 @@ public class Staff extends Weapon implements Pickable, Equippable {
     }
 
     //Pickable Methods
-    public void pick(Player p, LinkedList inventory){
-        this.itemCount = this.itemCount + 1;
-        inventory.add(this);
+    public void pick(Pickable[] inventoryArray){
+        inventoryArray[0] = this;
         getWorld().removeObject(this);
     }
-    public void compareIDs(Player p, LinkedList inventory, Pickable item) {
-            if (item.getItemId() == this.getItemId()) {
-                item.setItemCount(item.getItemCount() + 1);
-                getWorld().removeObject(this);
-                return;
-            }else{
-                inventory.add(this);
-                getWorld().removeObject(this);
-                return;
+    public boolean compareIDWith(Pickable item, Pickable[] inventoryArray){
+        if (item.getItemId() == this.getItemId()) {
+            item.setItemCount(item.getItemCount() + 1);
+            getWorld().removeObject(this);
+            return true;
+        }else{
+            for (int i = 0; i < 30; i++) {
+                if(inventoryArray[i] == null){
+                    inventoryArray[i] = item;
+                    getWorld().removeObject(this);
+                }
+                return true;
             }
+        }
+        return false;
     }
 
     //Pickable Getters and Setters
@@ -56,6 +58,9 @@ public class Staff extends Weapon implements Pickable, Equippable {
     public void setItemCount(int itemCount) {
         this.itemCount = itemCount;
     }
+    public void setIEquipped(boolean IEquipped) {
+        this.IEquipped = IEquipped;
+    }
     public String getItemType() {
         return itemType;
     }
@@ -67,8 +72,5 @@ public class Staff extends Weapon implements Pickable, Equippable {
     }
     public boolean isIEquipped() {
         return IEquipped;
-    }
-    public void setIEquipped(boolean IEquipped) {
-        this.IEquipped = IEquipped;
     }
 }

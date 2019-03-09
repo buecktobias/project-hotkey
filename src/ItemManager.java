@@ -1,18 +1,20 @@
 import greenfoot.GreenfootImage;
 
 public enum ItemManager {
-    Staff(  "PrimaryWeapon",  0, "The Elder Wand",       5, new GreenfootImage("images/ItemImages/Wand.png")),
-    Dagger( "SecondaryWeapon",  1, "Zahnstocher",          6, new GreenfootImage("images/ItemImages/Dagger.png")),
-    Bow(    "PrimaryWeapon",2, "Dragonslayer GreatBow",5, new GreenfootImage("images/ItemImages/Key.png"));
+
+    //Weapons
+    Staff(  "Weapon",0,"The Elder Wand",       5, new GreenfootImage("images/ItemImages/Wand.png")),
+    Dagger( "Weapon",1,"Zahnstocher",          6, new GreenfootImage("images/ItemImages/Dagger.png")),
+    Bow(    "Weapon",2,"Dragonslayer GreatBow",5, new GreenfootImage("images/ItemImages/Key.png"));
 
     private final int itemID;
+    private final int itemSLOTID;
     private final String itemTYPE;
     private final String itemNAME;
-    private final int itemSLOTID;
     private final GreenfootImage itemIMAGE;
 
     ItemManager(String itemType, int itemId, String itemName, int itemSlotId, GreenfootImage itemImage){
-        itemTYPE = itemType;    // current Types pickable: "SecondaryWeapon", "PrimaryWeapon", "Armor"
+        itemTYPE = itemType;    // current Types: "SecondaryWeapon", "PrimaryWeapon", "Armor", || if new Type is needed message Julian
         itemID = itemId;
         itemNAME = itemName;
         itemSLOTID = itemSlotId;

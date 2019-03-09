@@ -1,8 +1,6 @@
 import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
 
-import java.util.LinkedList;
-
 public class Bow extends Weapon implements Pickable, Equippable{
 
     private int attackSpeed;
@@ -45,24 +43,26 @@ public class Bow extends Weapon implements Pickable, Equippable{
     }
 
     //Pickable Methods
-    public void pick(Player p, LinkedList inventory){
-        this.itemCount = this.itemCount + 1;
-        inventory.add(this);
+    public void pick(Pickable[] inventoryArray){
+        inventoryArray[0] = this;
         getWorld().removeObject(this);
-        System.out.println("Count: " + this.getItemCount() + "| Id: " + this.getItemId() + "| Name: " + this.getItemName());
     }
-    public void compareIDs(Player p, LinkedList inventory, Pickable item) {
+    public boolean compareIDWith(Pickable item, Pickable[] inventoryArray){
         if (item.getItemId() == this.getItemId()) {
             item.setItemCount(item.getItemCount() + 1);
             getWorld().removeObject(this);
-            return;
+            return true;
         }else{
-            inventory.add(this);
-            getWorld().removeObject(this);
-            return;
+            for (int i = 0; i < 30; i++) {
+                if(inventoryArray[i] == null){
+                    inventoryArray[i] = item;
+                    getWorld().removeObject(this);
+                }
+                return true;
+            }
         }
+        return false;
     }
-
     //Pickable Getters and Setters
     public int getItemSlotId() {
         return itemSlotId;

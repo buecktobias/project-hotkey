@@ -1,7 +1,5 @@
 import greenfoot.GreenfootImage;
 
-import java.util.LinkedList;
-
 public class Dagger extends Weapon implements Pickable, Equippable{
 
     private double damage;
@@ -18,26 +16,8 @@ public class Dagger extends Weapon implements Pickable, Equippable{
     public GreenfootImage itemImage = itemManager.getItemIMAGE();
     public boolean IEquipped = false;
 
-    public void setDamage(double damage) {
-        this.damage = damage;
-    }
 
-    public double getDamage() {
-        return damage;
-    }
-
-    public void setAttackSpeed(int attackSpeed) {
-        this.attackSpeed = attackSpeed;
-    }
-
-    public int getAttackSpeed() {
-        return attackSpeed;
-    }
-
-    public void setAttackRange(int attackRange) {
-        this.attackRange = attackRange;
-    }
-
+    //Dagger methods
     public Dagger(int damage, int attackRange, int attackSpeed) {
         this.damage = damage;
         this.attackRange = attackRange;
@@ -63,22 +43,25 @@ public class Dagger extends Weapon implements Pickable, Equippable{
     */
 
     //Pickable Methods
-    public void pick(Player p, LinkedList inventory){
-        this.itemCount = this.itemCount + 1;
-        inventory.add(this);
+    public void pick(Pickable[] inventoryArray){
+        inventoryArray[0] = this;
         getWorld().removeObject(this);
-        System.out.println("Count: " + this.getItemCount() + "| Id: " + this.getItemId() + "| Name: " + this.getItemName());
     }
-    public void compareIDs(Player p, LinkedList inventory, Pickable item) {
+    public boolean compareIDWith(Pickable item, Pickable[] inventoryArray){
         if (item.getItemId() == this.getItemId()) {
             item.setItemCount(item.getItemCount() + 1);
             getWorld().removeObject(this);
-            return;
+            return true;
         }else{
-            inventory.add(this);
-            getWorld().removeObject(this);
-            return;
+            for (int i = 0; i < 30; i++) {
+                if(inventoryArray[i] == null){
+                    inventoryArray[i] = item;
+                    getWorld().removeObject(this);
+                }
+                return true;
+            }
         }
+        return false;
     }
 
     //Pickable Getters and Setters
@@ -108,5 +91,22 @@ public class Dagger extends Weapon implements Pickable, Equippable{
     }
     public void setIEquipped(boolean IEquipped) {
         this.IEquipped = IEquipped;
+    }
+
+    //Getters and Setters
+    public void setDamage(double damage) {
+        this.damage = damage;
+    }
+    public double getDamage() {
+        return damage;
+    }
+    public void setAttackSpeed(int attackSpeed) {
+        this.attackSpeed = attackSpeed;
+    }
+    public int getAttackSpeed() {
+        return attackSpeed;
+    }
+    public void setAttackRange(int attackRange) {
+        this.attackRange = attackRange;
     }
 }
