@@ -7,7 +7,8 @@ import java.util.List;
 public abstract class OpenWorld extends World {
     public static int WORLD_WIDTH;
     public static int WORLD_HEIGHT;
-    public OpenWorld(int scrollingWidth,int scrollingHeight) {
+
+    public OpenWorld(int scrollingWidth, int scrollingHeight) {
         super(1024, 736, 1, false);
         setPaintOrder(Player.class);
         WORLD_WIDTH = scrollingWidth;
@@ -57,8 +58,14 @@ public abstract class OpenWorld extends World {
             } else if (actor instanceof Fixed) {
 
             } else {
-                actor.setLocation(actor.getX() + xMovement, actor.getY() + yMovement);
+                if (actor instanceof Projectiles) {
+                    ((Projectiles) actor).setPositionX(((Projectiles) actor).getPositionX() + xMovement);
+                    ((Projectiles) actor).setPositionY(((Projectiles) actor).getPositionY() + yMovement);
+                } else {
+                    actor.setLocation(actor.getX() + xMovement, actor.getY() + yMovement);
+                }
             }
+
         }
         createTextur();
     }
@@ -93,12 +100,15 @@ public abstract class OpenWorld extends World {
             }
         }
     }
+
     public void setScrollingBackground(GreenfootImage bgImage) {
         textur = bgImage;
     }
+
     public int getScrollingWidth() {
         return WORLD_WIDTH;
     }
+
     public int getScrollingHeight() {
         return WORLD_HEIGHT;
     }

@@ -6,33 +6,62 @@ import helper.Direction;
 import java.util.*;
 
 public class Projectiles extends Weapon{
-    private double x;
-    private double y;
+    private double PositionX;
+    private double PositionY;
     private double xSpeed;
     private double ySpeed;
     private double xAcceleration;
     private double yAcceleration;
+    private double damage;
+    private double attackRange;
+    private double projectileSpeed;
+    private MovingActor movingActor;
 
+
+    public double getPositionX() {
+        return PositionX;
+    }
+
+    public void setPositionX(double positionX) {
+        this.PositionX = positionX;
+    }
+
+
+    public double getPositionY() {
+        return PositionY;
+    }
+
+    public void setPositionY(double positionY) {
+        this.PositionY = positionY;
+    }
+
+    public Projectiles(String fileName,int damage, int projectileSpeed, int attackRange, MovingActor movingActor) {
+        setImage(fileName);
+        this.damage = damage;
+        this.attackRange = attackRange;
+        this.projectileSpeed = projectileSpeed;
+        this.movingActor = movingActor;
+    }
     @Override
     protected void addedToWorld(World world) {
-        setLocation(world.getWidth()/2,world.getHeight()/2);
-        x =world.getWidth()/2;
-        y=world.getHeight()/2;
+        PositionX = movingActor.getX();
+        PositionY = movingActor.getY();
+        setLocation((int) PositionX,(int) PositionY);
     }
 
     @Override
     public void act() {
-        x += xSpeed;
-        y += ySpeed;
+        PositionX += xSpeed;
+        PositionY += ySpeed;
         xSpeed *= xAcceleration;
         ySpeed *= yAcceleration;
-        setLocation((int)Math.round(x),(int)Math.round(y));
+        setLocation((int)Math.round(PositionX),(int)Math.round(PositionY));
     }
     public void moveInDirectionOfMouse(double velocity){
         int mouseX=Greenfoot.getMouseInfo().getX();
         int mouseY=Greenfoot.getMouseInfo().getY();
-        double adjacent = mouseX - x;
-        double opposite = mouseY - y;
+        double adjacent = mouseX - PositionX;
+        double opposite = mouseY - PositionY;
         double angle = Math.atan(opposite/adjacent);
         xSpeed = velocity * Math.cos(angle);
         ySpeed = velocity * Math.sin(angle);

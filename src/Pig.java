@@ -27,6 +27,7 @@ public class Pig extends Friendly implements Blocking,Attackable {
 
     @Override
     public void act() {
+        super.act();
         randomMove(200);
         if(life<0){
             getWorld().removeObject(this);

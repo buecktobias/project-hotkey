@@ -85,6 +85,7 @@ public class Player extends MovingActor implements Attackable, Blocking {
     protected void addedToWorld(World world) {
         skillWindow = new SkillWindow(world);
         inventoryInstance = new Inventory(this, world);
+        this.setImage(defaultImage);
     }
 
     private void move(Direction d, int distance) {
@@ -220,7 +221,7 @@ public class Player extends MovingActor implements Attackable, Blocking {
         keyPick = keys.get("pick").toString();
     }
 
-    private void testkeys() {
+    private void testKeys() {
         if (Greenfoot.isKeyDown(keyPick)) {
             pick();
         }
@@ -234,7 +235,7 @@ public class Player extends MovingActor implements Attackable, Blocking {
             showSettingsWindow();
         }
         if (Greenfoot.isKeyDown(keyShootArrow)) {
-            getWorld().addObject(new Arrow(2, 2, 2, this), this.getX(), this.getY());
+            getWorld().addObject(new Arrow(2, 20, 2, this), this.getX(), this.getY());
         }
         performMovement();
     }
@@ -256,7 +257,7 @@ public class Player extends MovingActor implements Attackable, Blocking {
         useInventory();
         calculateEndurance();
         super.act();
-        testkeys();
+        testKeys();
         printCoords();
         regenerateLife();
         if (this.life < minLife) {

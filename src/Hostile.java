@@ -42,6 +42,6 @@ public abstract class Hostile extends NPC {
 
     @Override
     public void act() {
-
+        super.act();
     }
 }

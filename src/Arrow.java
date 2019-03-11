@@ -8,12 +8,8 @@ public class Arrow extends Projectiles{
     private int projectileSpeed;
     private Player player;
 
-    public Arrow(int damage, int projectileSpeed, int attackRange,Player player) {
-        setImage("images/Arrows/Arrow_left.png");
-        this.damage = damage;
-        this.attackRange = attackRange;
-        this.projectileSpeed = projectileSpeed;
-        this.player = player;
+    public Arrow(int damage, int projectileSpeed, int attackRange,MovingActor movingActor) {
+        super("images/Arrows/Arrow_left.png",damage,projectileSpeed,attackRange,movingActor);
     }
 
     @Override
@@ -22,10 +18,6 @@ public class Arrow extends Projectiles{
     }
 
     public void act() {
-        /*for(int i = 0;i < attackRange; i++) {
-            move(player.getDirection(),1);
-        }
-        */
         super.act();
     }
     private void move(Direction d, int distance){

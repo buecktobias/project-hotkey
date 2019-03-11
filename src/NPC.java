@@ -11,6 +11,12 @@ public abstract class NPC extends MovingActor {
     private Queue<Direction> movingList = new LinkedList<>();
     private static final Random r = new Random();
 
+
+    @Override
+    public void act() {
+        super.act();
+    }
+
     public Player getPlayer(int visualRange) {
         List<Player> playersInVisualRange = getObjectsInRange(visualRange, Player.class);
         if (playersInVisualRange.size() != 0) {
