@@ -9,6 +9,11 @@ public class FPS extends Actor implements Fixed {
     private int fps;
     private long startTime;
     private GreenfootImage bg ;
+    private static FPS ourInstance = new FPS();
+
+    public static FPS getInstance() {
+        return ourInstance;
+    }
     @Override
     protected void addedToWorld(World world) {
         frame = 0;

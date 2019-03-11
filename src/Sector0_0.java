@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Random;
 
 public class Sector0_0 extends OpenWorld {
-    private int time = 0;
     private Enemy enemy = new Enemy();
     private Random r = new Random();
+    private final GreenfootImage bg = new GreenfootImage("images/Screens/cell_debug.png");
     private final int BorderX1 = -1_000;
     private final int BorderY1 = -1_000;
     private final int BorderX2 = 1_000;
@@ -17,14 +17,14 @@ public class Sector0_0 extends OpenWorld {
     public Sector0_0() {
         super(2000,2000);
         setPaintOrder(Button.class, ItemInfoScreen.class, Inventory.class, HUD.class,FPS.class, MovingActor.class);
-        setBackground("images/Screens/cell_debug.png");
-        addObject(new FPS(),1000,32);
-        Player player = new Player();
+        setBackground(bg);
+        addObject(FPS.getInstance(),1000,32);
+        Player player = Player.getInstance();
         addObject(player, 100, 100);
-        //addObject(enemy, 200, 200);
+        addObject(enemy, 200, 200);
         HUD hud = new HUD();
         addObject(hud, getWidth() / 2, getHeight() / 2);
-        setScrollingBackground(new GreenfootImage("images/Screens/cell_debug.png"));
+        setScrollingBackground(new GreenfootImage(bg));
         Staff staff = new Staff(42);
         addObject(staff, 100, 100);
         Bow bow = new Bow(2500,player);
@@ -152,13 +152,13 @@ public class Sector0_0 extends OpenWorld {
 
     @Override
     public void act() {
-        if (time % 100 == 0) {
+        FPS fps = FPS.getInstance();
+        if (fps.getFrame() % 100 == 0) {
             randomSpawn(Pig.class);
 
         }
-        if (time % 50 == 0) {
-           //randomSpawn(Spider.class);
+        if (fps.getFrame() % 500 == 0) {
+           randomSpawn(Spider.class);
         }
-        time++;
     }
 }

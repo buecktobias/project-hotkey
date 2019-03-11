@@ -15,16 +15,17 @@ public class Projectiles extends Weapon{
 
     @Override
     protected void addedToWorld(World world) {
-        x=getX();
-        y=getY();
+        setLocation(world.getWidth()/2,world.getHeight()/2);
+        x =world.getWidth()/2;
+        y=world.getHeight()/2;
     }
 
     @Override
     public void act() {
         x += xSpeed;
         y += ySpeed;
-        xSpeed += xAcceleration;
-        ySpeed += yAcceleration;
+        xSpeed *= xAcceleration;
+        ySpeed *= yAcceleration;
         setLocation((int)Math.round(x),(int)Math.round(y));
     }
     public void moveInDirectionOfMouse(double velocity){
@@ -35,6 +36,8 @@ public class Projectiles extends Weapon{
         double angle = Math.atan(opposite/adjacent);
         xSpeed = velocity * Math.cos(angle);
         ySpeed = velocity * Math.sin(angle);
+        xAcceleration = 0.9;
+        yAcceleration = 0.9;
     }
 
     public int hitboxRadius=getWidth()*4;

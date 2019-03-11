@@ -6,14 +6,19 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 
 
-public class Player extends MovingActor implements Attackable,Blocking {
+public class Player extends MovingActor implements Attackable, Blocking {
+    private static Player ourInstance = new Player();
+
+    public static Player getInstance() {
+        return ourInstance;
+    }
+
     private JSONParser parser = new JSONParser();
     private SettingsWindow settingsWindow = new SettingsWindow();
     private int weaponsPicked = 0;
@@ -43,7 +48,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
     private boolean skillScreenShown = false;
     private boolean isIActive = false;
     private boolean isSettingsWindowShown = false;
-    private FPS fps;
+    private final FPS fps = FPS.getInstance();
     private String keyMoveLeft;
     private String keyMoveRight;
     private String keyMoveUp;
@@ -80,7 +85,6 @@ public class Player extends MovingActor implements Attackable,Blocking {
     protected void addedToWorld(World world) {
         skillWindow = new SkillWindow(world);
         inventoryInstance = new Inventory(this, world);
-        fps = world.getObjects(FPS.class).get(0);
     }
 
     private void move(Direction d, int distance) {
@@ -123,7 +127,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
         }
     }
 
-    public void calculateEndurance() {
+    private void calculateEndurance() {
         if (Greenfoot.isKeyDown(keySprint) && testIfMoveKeys()) {
             if (endurance > minEndurance) {
                 this.currentSpeed = this.sprintSpeed;
@@ -150,7 +154,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
         }
     }
 
-    public void attackNPCs() {
+    private void attackNPCs() {
         List<NPC> NPCs = getObjectsInRange(attackRange, NPC.class);
         NPCs.removeIf(npc -> !(npc instanceof Attackable));
         if (NPCs.size() > 0) {
@@ -164,13 +168,13 @@ public class Player extends MovingActor implements Attackable,Blocking {
         }
     }
 
-    public void regenerateLife() {
+    private void regenerateLife() {
         if (life < maxLife) {
             life += lifeGeneration;
         }
     }
 
-    public void printCoords() {
+    private void printCoords() {
         World w = getWorld();
         if (w instanceof OpenWorld) {
             int x = ((OpenWorld) w).getTotalXMovement();
@@ -179,7 +183,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
         }
     }
 
-    public void showSkillWindow() {
+    private void showSkillWindow() {
         if (fps.getFrame() - lastFrameSkillWindowOpened > waitTimeOpenSkillWindow) {
             if (skillScreenShown) {
                 skillWindow.deleteButtons();
@@ -197,14 +201,11 @@ public class Player extends MovingActor implements Attackable,Blocking {
 
         try {
             obj = parser.parse(new FileReader("src/Settings.json"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (ParseException | IOException e) {
             e.printStackTrace();
         }
         JSONObject jsonObject = (JSONObject) obj;
+        assert jsonObject != null;
         JSONObject keys = (JSONObject) jsonObject.get("keys");
         keyMoveLeft = keys.get("moveLeft").toString();
         keyMoveDown = keys.get("moveDown").toString();
@@ -219,7 +220,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
         keyPick = keys.get("pick").toString();
     }
 
-    public void testkeys() {
+    private void testkeys() {
         if (Greenfoot.isKeyDown(keyPick)) {
             pick();
         }
@@ -238,7 +239,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
         performMovement();
     }
 
-    public void showSettingsWindow() {
+    private void showSettingsWindow() {
         if (fps.getFrame() - lastFrameSettingsWindowOpened > waitTimeOpenSettingsWindow) {
             if (getWorld().getObjects(SettingsWindow.class).size() == 0) {
                 this.getWorld().addObject(settingsWindow, 500, 500);
@@ -265,7 +266,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
     }
 
     // inventory related methods
-    public void pick() {
+    private void pick() {
         List<Item> objs = getWorld().getObjectsAt(getX(), getY(), Item.class);
         Iterator<Item> objsIt = objs.iterator();
         if (!objsIt.hasNext()) {
@@ -296,11 +297,11 @@ public class Player extends MovingActor implements Attackable,Blocking {
             }
         }
     }
+
     public void addItemToInventory(Pickable currentItem, Pickable[] inventoryArray) {
         if (!anyItemsInArray(inventoryArray)) {
             // old part of if condition inventoryArray != null && java.util.Arrays.asList(inventoryArray).isEmpty()
             currentItem.pick(inventoryArray);
-            return;
         } else {
             for (Pickable item : inventoryArray) {
                 if (item != null) {
@@ -311,20 +312,22 @@ public class Player extends MovingActor implements Attackable,Blocking {
             }
         }
     }
+
     public void useInventory() {
         String key = Greenfoot.getKey();
-        if ((keyOpenInventar.equals(key)&& isIActive) ){
+        if ((keyOpenInventar.equals(key) && isIActive)) {
             inventoryInstance.deleteButtons();
             getWorld().removeObject(inventoryInstance);
             setIActive(false);
-        }else if(keyOpenInventar.equals(key) && !isIActive()) {
-            getWorld().addObject(inventoryInstance, getWorld().getWidth()/2, getWorld().getHeight()/2);
+        } else if (keyOpenInventar.equals(key) && !isIActive()) {
+            getWorld().addObject(inventoryInstance, getWorld().getWidth() / 2, getWorld().getHeight() / 2);
             setIActive(true);
         }
     }
-    public boolean anyItemsInArray(Pickable[] arrayTocheck){
+
+    public boolean anyItemsInArray(Pickable[] arrayTocheck) {
         for (int i = 0; i < arrayTocheck.length; i++) {
-            if(arrayTocheck[i] != null){
+            if (arrayTocheck[i] != null) {
                 return true;
             }
         }
@@ -335,58 +338,79 @@ public class Player extends MovingActor implements Attackable,Blocking {
     public int getSpeed() {
         return currentSpeed;
     }
+
     public void setSpeed(int currentSpeed) {
         this.currentSpeed = currentSpeed;
     }
-    public int getMaxLife() { return maxLife; }
+
+    public int getMaxLife() {
+        return maxLife;
+    }
+
     public int getLife() {
         return life;
     }
+
     public void setLife(int life) {
         this.life = life;
     }
+
     public double getEndurance() {
         return endurance;
     }
+
     public int getLevel() {
         return level;
     }
+
     public void setNormalSpeed(int normalSpeed) {
         this.normalSpeed = normalSpeed;
     }
+
     public void setSprintSpeed(int sprintSpeed) {
         this.sprintSpeed = sprintSpeed;
     }
+
     public int getNormalSpeed() {
         return normalSpeed;
     }
+
     public int getSprintSpeed() {
         return sprintSpeed;
     }
+
     public int getDamage() {
         return damage;
     }
+
     public void setDamage(int damage) {
         this.damage = damage;
     }
+
     public int getMaxEndurance() {
         return maxEndurance;
     }
+
     public void setMaxLife(int maxLife) {
         this.maxLife = maxLife;
     }
+
     public void setMaxEndurance(int maxEndurance) {
         this.maxEndurance = maxEndurance;
     }
+
     public boolean isIActive() {
         return isIActive;
     }
+
     public void setIActive(boolean IActive) {
         isIActive = IActive;
     }
+
     public Pickable[] getEquippedItems() {
         return equippedItems;
     }
+
     public void setEquippedItems(Pickable[] equippedItems) {
         this.equippedItems = equippedItems;
     }
@@ -402,18 +426,23 @@ public class Player extends MovingActor implements Attackable,Blocking {
     public int getWeaponsPicked() {
         return weaponsPicked;
     }
+
     public void setWeaponsPicked(int weaponsPicked) {
         this.weaponsPicked = weaponsPicked;
     }
+
     public int getItemsPicked() {
         return itemsPicked;
     }
+
     public void setItemsPicked(int itemsPicked) {
         this.itemsPicked = itemsPicked;
     }
+
     public int getArmorPicked() {
         return armorPicked;
     }
+
     public void setArmorPicked(int armorPicked) {
         this.armorPicked = armorPicked;
     }
@@ -429,6 +458,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
     public Pickable[] getWeaponsArray() {
         return weaponsArray;
     }
+
     public void setWeaponsArray(Pickable[] weaponsArray) {
         this.weaponsArray = weaponsArray;
     }
@@ -436,6 +466,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
     public Pickable[] getArmorArray() {
         return armorArray;
     }
+
     public void setArmorArray(Pickable[] armorArray) {
         this.armorArray = armorArray;
     }
@@ -443,6 +474,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
     public Pickable[] getItemsArray() {
         return itemsArray;
     }
+
     public void setItemsArray(Pickable[] itemsArray) {
         this.itemsArray = itemsArray;
     }
