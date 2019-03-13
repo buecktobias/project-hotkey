@@ -31,8 +31,8 @@ public class Player extends MovingActor implements Attackable, Blocking {
     private int sprintSpeed = 4;
     private int attackRange = 500;
     private int damage = 5;
-    private int lastFrameSkillWindowOpened = 0;
-    private int lastFrameSettingsWindowOpened = 0;
+    private long lastFrameSkillWindowOpened = 0;
+    private long lastFrameSettingsWindowOpened = 0;
     private int maxLife = 1000;
     private int life = maxLife;
     private int waitEndurance = 0;
@@ -74,7 +74,7 @@ public class Player extends MovingActor implements Attackable, Blocking {
         return new GreenfootImage[]{defaultImage};
     }
 
-    Player() {
+    public Player() {
         this.getImage().clear();
         setImage(defaultImage);
         Greenfoot.setSpeed(gameSpeed);

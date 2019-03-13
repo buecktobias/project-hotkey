@@ -5,7 +5,7 @@ import greenfoot.World;
 import java.awt.*;
 
 public class FPS extends Actor implements Fixed {
-    private int frame;
+    private long frame;
     private int fps;
     private long startTime;
     private GreenfootImage bg ;
@@ -43,7 +43,7 @@ public class FPS extends Actor implements Fixed {
         img.drawString(String.valueOf(fps), 30, 40);
         setImage(img);
     }
-    public int getFrame() {
+    public long getFrame() {
         return frame;
     }
 }
