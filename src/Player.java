@@ -75,8 +75,6 @@ public class Player extends MovingActor implements Attackable, Blocking {
     }
 
     public Player() {
-        this.getImage().clear();
-        setImage(defaultImage);
         Greenfoot.setSpeed(gameSpeed);
         updateKeys();
     }
@@ -256,7 +254,7 @@ public class Player extends MovingActor implements Attackable, Blocking {
         updateKeys();
         useInventory();
         calculateEndurance();
-        super.act();
+        getEffects();
         testKeys();
         printCoords();
         regenerateLife();
@@ -264,6 +262,7 @@ public class Player extends MovingActor implements Attackable, Blocking {
             Greenfoot.setWorld(new DeathScreen());
             Greenfoot.stop();
         }
+
     }
 
     // inventory related methods

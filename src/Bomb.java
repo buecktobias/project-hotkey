@@ -1,6 +1,6 @@
 import greenfoot.GreenfootImage;
 
-public class Enemy extends Hostile implements Attackable,Blocking {
+public class Bomb extends Hostile implements Attackable,Blocking {
     private int visualRange = 500;
     private int attackRange;
     private int damage = 5;
@@ -24,10 +24,11 @@ public class Enemy extends Hostile implements Attackable,Blocking {
         return damage;
     }
 
-    public Enemy(){
+    public Bomb(){
         GreenfootImage img = new GreenfootImage("images/Characters/Enemy.png");
         img.scale(128,128);
         setImage(img);
+        defaultImage = img;
         attackRange =  img.getWidth();
     }
     @Override
@@ -57,7 +58,7 @@ public class Enemy extends Hostile implements Attackable,Blocking {
 
     @Override
     public void act() {
-        super.act();
+        getEffects();
         if(moveToPlayer(this.visualRange)){
 
         }else{

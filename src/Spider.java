@@ -67,7 +67,7 @@ public class Spider extends Hostile implements Blocking,Attackable {
 
     @Override
     public void act() {
-        super.act();
+        getEffects();
         setSpeed(defaultSpeed);
         if(moveToPlayer(this.visualRange)){
             angryImage.scale(64,32);

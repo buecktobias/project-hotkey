@@ -14,11 +14,17 @@ public class Arrow extends Projectiles{
 
     @Override
     protected void addedToWorld(World world) {
-        moveInDirectionOfMouse(projectileSpeed);
+
     }
 
     public void act() {
-        super.act();
+        if(getWorld().getObjects(Hostile.class).size()>0) {
+            Hostile hostile = getWorld().getObjects(Hostile.class).get(0);
+            moveInDirectionOf(hostile);
+        } else{
+            System.out.println("no Enemy");
+
+        }
     }
     private void move(Direction d, int distance){
         super.moveDirection(d,distance);

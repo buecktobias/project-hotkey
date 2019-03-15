@@ -55,7 +55,6 @@ public class Projectiles extends Weapon{
         PositionY += ySpeed;
         xSpeed *= xAcceleration;
         ySpeed *= yAcceleration;
-        setLocation((int)Math.round(PositionX),(int)Math.round(PositionY));
     }
     public void moveInDirectionOfMouse(double velocity){
         int mouseX=Greenfoot.getMouseInfo().getX();
@@ -69,7 +68,7 @@ public class Projectiles extends Weapon{
         yAcceleration = 0.9;
     }
 
-    public int hitboxRadius=getWidth()*4;
+    private int hitboxRadius=getWidth()*4;
     public void moveInDirectionOf(Actor actor){
         int actorX = actor.getX();
         int actorY = actor.getY();
@@ -82,15 +81,15 @@ public class Projectiles extends Weapon{
 
         if(Math.max(absXDifference,absYDifference) == absXDifference){
             if(xDifference > 0){
-                moveLeft();
+                moveLeft((int)this.projectileSpeed);
             }else if (xDifference <0){
-                moveRight();
+                moveRight((int)this.projectileSpeed);
             }
         }else if(Math.max(absXDifference,absYDifference) == absYDifference){
             if(yDifference > 0){
-                moveUp();
+                moveUp((int)this.projectileSpeed);
             }else{
-                moveDown();
+                moveDown((int)this.projectileSpeed);
 
             }
 

@@ -9,8 +9,8 @@ public class Water extends Environment implements HasEffect {
 
     @Override
     public void effects(MovingActor movingActor) {
-        if(movingActor.getSpeed()>1) {
-            movingActor.setSpeed((int) Math.round(movingActor.getSpeed() / 2));
+        if(movingActor.getSpeed() > 1) {
+            movingActor.setSpeed(Math.round(movingActor.getSpeed() / 2));
         }
     }
 }

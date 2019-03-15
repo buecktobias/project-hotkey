@@ -4,7 +4,7 @@ public abstract class Hostile extends NPC {
     abstract int getAttackRange();
     abstract GreenfootImage getAngryImage();
     abstract int getDamage();
-    private int lastFrameAttacked = 0;
+    private long lastFrameAttacked = 0;
     public void attackAnimation(GreenfootImage attack1){
         setImage(attack1);
     }
