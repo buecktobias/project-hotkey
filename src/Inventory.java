@@ -30,7 +30,6 @@ public class Inventory extends Actor implements Fixed {
     private Item itemForInfo;
     private JSONParser parser = new JSONParser();
     private ItemInfoScreen itemInfoScreenInstance;
-
     private int itemsDrawn;
     private int drawAtX = 416;
     private int drawAtY = 196;
@@ -137,11 +136,11 @@ public class Inventory extends Actor implements Fixed {
         itemsDrawn = 0;
         for (int i = 0; i < 30; i++) {
             if(itemsToDraw[i] == null){
-                drawAtX += 35;
+                drawAtX += 55 + 12;
                 itemsDrawn++;
             }else{
                 drawItemAt(drawAtX,drawAtY, itemsToDraw[i]);
-                drawAtX += 35;
+                drawAtX += 55 + 12;
                 itemsDrawn++;
             }
         }
