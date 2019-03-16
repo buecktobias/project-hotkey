@@ -43,26 +43,26 @@ public class Dagger extends Weapon implements Equippable{
 
     //Item Methods
     public void pick(Item[] inventoryArray){
-        inventoryArray[0] = this;
-        getWorld().removeObject(this);
+        System.out.println("3.1.1");
+        for (int i = 0; i < 30; i++) {
+            if(inventoryArray[i] == null){
+                inventoryArray[i] = this;
+                getWorld().removeObject(this);
+                System.out.println("3.1.2");
+                break;
+            }
+        }
     }
-    public boolean compareIDWith(Item item, Item[] inventoryArray){
+    public void compareIDWith(Item item, Item[] inventoryArray){
+        System.out.println("5");
         if (item.getItemId() == this.getItemId()) {
             item.setItemCount(item.getItemCount() + 1);
             getWorld().removeObject(this);
-            return true;
-        }else{
-            for (int i = 0; i < 30; i++) {
-                if(inventoryArray[i] == null){
-                    inventoryArray[i] = item;
-                    getWorld().removeObject(this);
-                }
-                return true;
-            }
+            System.out.println("5.1");
+        }else {
+            pick(inventoryArray);
         }
-        return false;
     }
-
 
     //Item Getters and Setters
     public int getItemSlotId() {
@@ -92,7 +92,6 @@ public class Dagger extends Weapon implements Equippable{
     public void setIEquipped(boolean IEquipped) {
         this.IEquipped = IEquipped;
     }
-
 
     //Getters and Setters
     public void setDamage(double damage) {

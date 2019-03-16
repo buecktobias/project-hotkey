@@ -13,6 +13,6 @@ public abstract class Item extends NotMoving {
     abstract boolean isIEquipped();
 
     abstract void pick(Item[] inventoryArray);
-    abstract boolean compareIDWith(Item item, Item[] inventoryArray);
+    abstract void compareIDWith(Item item, Item[] inventoryArray);
 
 }

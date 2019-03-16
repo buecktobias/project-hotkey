@@ -274,9 +274,11 @@ public class Player extends MovingActor implements Attackable, Blocking {
             return;
         }
         Item currentItem = objs.get(0);
+        System.out.println("1 " + currentItem.getItemName());
         switch (currentItem.getItemType()) {
             case "Weapon":
                 if (weaponsPicked < 30) {
+                    System.out.println("2");
                     addItemToInventory(currentItem, weaponsArray);
                     weaponsPicked++;
                 }
@@ -294,19 +296,21 @@ public class Player extends MovingActor implements Attackable, Blocking {
                 }
                 break;
         }
-
     }
 
     public void addItemToInventory(Item currentItem, Item[] inventoryArray) {
+        // TODO check anyItemsInArray method, it might be flawed
         if (!anyItemsInArray(inventoryArray)) {
             // old part of if condition inventoryArray != null && java.util.Arrays.asList(inventoryArray).isEmpty()
+            System.out.println("3.1");
             currentItem.pick(inventoryArray);
         } else {
+            System.out.println("3.2");
             for (Item item : inventoryArray) {
                 if (item != null) {
-                    if (currentItem.compareIDWith(item, inventoryArray)) {
-                        break;
-                    }
+                    System.out.println("4");
+                    currentItem.compareIDWith(item, inventoryArray);
+                    break;
                 }
             }
         }
@@ -324,9 +328,9 @@ public class Player extends MovingActor implements Attackable, Blocking {
         }
     }
 
-    public boolean anyItemsInArray(Item[] arrayTocheck) {
-        for (int i = 0; i < arrayTocheck.length; i++) {
-            if (arrayTocheck[i] != null) {
+    public boolean anyItemsInArray(Item[] arrayToCheck) {
+        for (int i = 0; i < arrayToCheck.length; i++) {
+            if (arrayToCheck[i] != null) {
                 return true;
             }
         }
@@ -337,19 +341,13 @@ public class Player extends MovingActor implements Attackable, Blocking {
     public int getSpeed() {
         return currentSpeed;
     }
-
     public void setSpeed(int currentSpeed) {
         this.currentSpeed = currentSpeed;
-    }
-
-    public int getMaxLife() {
-        return maxLife;
     }
 
     public int getLife() {
         return life;
     }
-
     public void setLife(int life) {
         this.life = life;
     }
@@ -365,15 +363,12 @@ public class Player extends MovingActor implements Attackable, Blocking {
     public void setNormalSpeed(int normalSpeed) {
         this.normalSpeed = normalSpeed;
     }
-
     public void setSprintSpeed(int sprintSpeed) {
         this.sprintSpeed = sprintSpeed;
     }
-
     public int getNormalSpeed() {
         return normalSpeed;
     }
-
     public int getSprintSpeed() {
         return sprintSpeed;
     }
@@ -381,19 +376,19 @@ public class Player extends MovingActor implements Attackable, Blocking {
     public int getDamage() {
         return damage;
     }
-
     public void setDamage(int damage) {
         this.damage = damage;
     }
 
+    public int getMaxLife() {
+        return maxLife;
+    }
     public int getMaxEndurance() {
         return maxEndurance;
     }
-
     public void setMaxLife(int maxLife) {
         this.maxLife = maxLife;
     }
-
     public void setMaxEndurance(int maxEndurance) {
         this.maxEndurance = maxEndurance;
     }
@@ -401,7 +396,6 @@ public class Player extends MovingActor implements Attackable, Blocking {
     public boolean isIActive() {
         return isIActive;
     }
-
     public void setIActive(boolean IActive) {
         isIActive = IActive;
     }
@@ -409,7 +403,6 @@ public class Player extends MovingActor implements Attackable, Blocking {
     public Item[] getEquippedItems() {
         return equippedItems;
     }
-
     public void setEquippedItems(Item[] equippedItems) {
         this.equippedItems = equippedItems;
     }
@@ -417,7 +410,6 @@ public class Player extends MovingActor implements Attackable, Blocking {
     public JSONParser getParser() {
         return parser;
     }
-
     public void setParser(JSONParser parser) {
         this.parser = parser;
     }
@@ -425,7 +417,6 @@ public class Player extends MovingActor implements Attackable, Blocking {
     public int getWeaponsPicked() {
         return weaponsPicked;
     }
-
     public void setWeaponsPicked(int weaponsPicked) {
         this.weaponsPicked = weaponsPicked;
     }
@@ -433,7 +424,6 @@ public class Player extends MovingActor implements Attackable, Blocking {
     public int getItemsPicked() {
         return itemsPicked;
     }
-
     public void setItemsPicked(int itemsPicked) {
         this.itemsPicked = itemsPicked;
     }
@@ -441,7 +431,6 @@ public class Player extends MovingActor implements Attackable, Blocking {
     public int getArmorPicked() {
         return armorPicked;
     }
-
     public void setArmorPicked(int armorPicked) {
         this.armorPicked = armorPicked;
     }
@@ -449,7 +438,6 @@ public class Player extends MovingActor implements Attackable, Blocking {
     public SettingsWindow getSettingsWindow() {
         return settingsWindow;
     }
-
     public void setSettingsWindow(SettingsWindow settingsWindow) {
         this.settingsWindow = settingsWindow;
     }
@@ -457,7 +445,6 @@ public class Player extends MovingActor implements Attackable, Blocking {
     public Item[] getWeaponsArray() {
         return weaponsArray;
     }
-
     public void setWeaponsArray(Item[] weaponsArray) {
         this.weaponsArray = weaponsArray;
     }
@@ -465,7 +452,6 @@ public class Player extends MovingActor implements Attackable, Blocking {
     public Item[] getArmorArray() {
         return armorArray;
     }
-
     public void setArmorArray(Item[] armorArray) {
         this.armorArray = armorArray;
     }
@@ -473,7 +459,6 @@ public class Player extends MovingActor implements Attackable, Blocking {
     public Item[] getItemsArray() {
         return itemsArray;
     }
-
     public void setItemsArray(Item[] itemsArray) {
         this.itemsArray = itemsArray;
     }
