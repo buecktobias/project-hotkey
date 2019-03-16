@@ -29,6 +29,9 @@ public class Sector0_0 extends OpenWorld {
         addObject(staff, 300, 100);
         Bow bow = new Bow(2500,player);
         addObject(bow,200,100);
+        Companion companion = new Companion(player);
+        addObject(companion,150,0);
+
 
 
         randomObjects(Tree.class, 20, 100, 800, 600, 2);
