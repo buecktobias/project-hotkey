@@ -14,17 +14,15 @@ import java.util.LinkedList;
 
 public class Inventory extends Actor implements Fixed {
     //TODO fix known issues:
-    // 1) only one Item can be picked up;
-    // 2) item in inventory will vanish when an item of the same type is unequipped;
+    // 1)
+    // 2) item in inventory will vanish when an item of the same type is equipped;
     // 3) item info screen does not open/close as it is supposed;
 
     // TODO enable player to sort items as wished -> drag and drop system required
     // TODO drag and drop Items to respective slots
     // TODO make Armor and Weapons not stackable (remove count variable/ compare id method)
-    // TODO !! rework createArrows method
     // TODO GUI overhaul, make everything look nice
 
-    // TODO Testing : check compareIdWith method of Pickable,
     private Player p;
     private World world;
     private Item itemForInfo;
@@ -255,51 +253,48 @@ public class Inventory extends Actor implements Fixed {
         createItemInfoScreen();
     }
 
-    private void createArrow(String position){
+    private void createArrow(String position) {
+        if (position.equals("left")) {
+            createButton(leftArrowNotClicked, leftArrowClicked, position,440, 165);
+        }else{
+            createButton(rightArrowNotClicked, rightArrowClicked, position, 780, 165);
+        }
+    }
+    public void createButton(GreenfootImage buttonImgUnClicked1, GreenfootImage buttonImgClicked1, String position, int X, int Y) {
         Button button;
         GreenfootImage buttonImgUnClicked;
         GreenfootImage buttonImgClicked;
-            if(position.equals("left")){
-                buttonImgUnClicked = leftArrowNotClicked;
-                buttonImgClicked = leftArrowClicked;
-                buttonImgUnClicked.scale(20, 30);
-                buttonImgClicked.scale(20, 30);
-                button = new Button(buttonImgUnClicked,buttonImgClicked) {
-                    @Override
-                    public void clicked() {
-                        if (inventoryTab > 0) {
-                            inventoryTab--;
-                        } else {
-                            inventoryTab = 2;
-                        }
+        buttonImgUnClicked = buttonImgUnClicked1;
+        buttonImgClicked = buttonImgClicked1;
+        buttonImgUnClicked.scale(20, 30);
+        buttonImgClicked.scale(20, 30);
+        button = new Button(buttonImgUnClicked, buttonImgClicked) {
+            @Override
+            public void clicked() {
+                if (position.equals("left")) {
+                    if (inventoryTab > 0) {
+                        inventoryTab--;
+                    } else {
+                        inventoryTab = 2;
                     }
-                };
-                buttonList.add(button);
-                world.addObject(button, 440,165);
-            }else{
-                buttonImgUnClicked = rightArrowNotClicked;
-                buttonImgClicked = rightArrowClicked;
-                buttonImgUnClicked.scale(20, 30);
-                buttonImgClicked.scale(20, 30);
-                button = new Button(buttonImgUnClicked,buttonImgClicked) {
-                    @Override
-                    public void clicked() {
-                        if (inventoryTab < 2 ) {
-                            inventoryTab++;
-                        } else {
-                            inventoryTab = 0;
-                        }
+                } else {
+                    if (inventoryTab < 2) {
+                        inventoryTab++;
+                    } else {
+                        inventoryTab = 0;
                     }
-                };
-                buttonList.add(button);
-                world.addObject(button, 780,165);
+                }
             }
-        }
+        };
+        buttonList.add(button);
+        world.addObject(button, X, Y);
+    }
     public void deleteButtons(){
         for(Button button:buttonList){
             world.removeObject(button);
         }
     }
+
     private void createItemInfoScreen(){
         String key = Greenfoot.getKey();
         if ((keyCreateItemInfoScreen.equals(key) && infoScreenActive) ){
