@@ -310,6 +310,7 @@ public class Inventory extends Actor implements Fixed {
     }
 
     // equipment methods
+    //TODO Fix: item not drawn if put in an already occupied slot
     public void equipItem(Item item){
         // Helmet  0, Chest   1, Legs    2, Boots   3, Pet     4, Primary 5, Secondary 6,
        if(equippedItems[item.getItemSlotId()] == null){
@@ -319,11 +320,11 @@ public class Inventory extends Actor implements Fixed {
            itemsEquipped = true;
        }else{
            Item oldItem = equippedItems[item.getItemSlotId()];
-           equippedItems[item.getItemSlotId()] = item;
-           itemsEquipped = true;
-           item.setIEquipped(true);
-           removeItemFromInventory(item);
            unequippItem(oldItem);
+           equippedItems[item.getItemSlotId()] = item;
+           removeItemFromInventory(item);
+           item.setIEquipped(true);
+           itemsEquipped = true;
        }
     }
     private void unequippItem(Item oldItem){

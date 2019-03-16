@@ -297,7 +297,6 @@ public class Player extends MovingActor implements Attackable, Blocking {
                 break;
         }
     }
-
     public void addItemToInventory(Item currentItem, Item[] inventoryArray) {
         Iterator<Item> inArIt =  java.util.Arrays.asList(inventoryArray).iterator();
         if (inArIt.hasNext()) {
