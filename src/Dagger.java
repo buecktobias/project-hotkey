@@ -1,21 +1,20 @@
 import greenfoot.GreenfootImage;
 
-public class Dagger extends Weapon implements Pickable, Equippable{
+public class Dagger extends Weapon implements Equippable{
 
     private double damage;
     private int attackSpeed;
     private int attackRange;
 
-    // Pickable Atributes
+    // Item Attributes
     ItemManager itemManager = ItemManager.Dagger;
-    public int itemCount;
-    public final int itemSlotId = itemManager.getItemSLOTID();
-    public final int itemId = itemManager.getItemID();
-    public final String itemType = itemManager.getItemTYPE();
-    public String itemName = itemManager.getItemNAME();
+    public int            itemCount;
+    public final int      itemSlotId = itemManager.getItemSLOTID();
+    public final int      itemId = itemManager.getItemID();
+    public final String   itemType = itemManager.getItemTYPE();
+    public String         itemName = itemManager.getItemNAME();
     public GreenfootImage itemImage = itemManager.getItemIMAGE();
-    public boolean IEquipped = false;
-
+    public boolean        IEquipped = false;
 
     //Dagger methods
     public Dagger(int damage, int attackRange, int attackSpeed) {
@@ -42,12 +41,12 @@ public class Dagger extends Weapon implements Pickable, Equippable{
     }
     */
 
-    //Pickable Methods
-    public void pick(Pickable[] inventoryArray){
+    //Item Methods
+    public void pick(Item[] inventoryArray){
         inventoryArray[0] = this;
         getWorld().removeObject(this);
     }
-    public boolean compareIDWith(Pickable item, Pickable[] inventoryArray){
+    public boolean compareIDWith(Item item, Item[] inventoryArray){
         if (item.getItemId() == this.getItemId()) {
             item.setItemCount(item.getItemCount() + 1);
             getWorld().removeObject(this);
@@ -64,7 +63,8 @@ public class Dagger extends Weapon implements Pickable, Equippable{
         return false;
     }
 
-    //Pickable Getters and Setters
+
+    //Item Getters and Setters
     public int getItemSlotId() {
         return itemSlotId;
     }
@@ -92,6 +92,7 @@ public class Dagger extends Weapon implements Pickable, Equippable{
     public void setIEquipped(boolean IEquipped) {
         this.IEquipped = IEquipped;
     }
+
 
     //Getters and Setters
     public void setDamage(double damage) {

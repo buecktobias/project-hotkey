@@ -1,12 +1,12 @@
 import greenfoot.GreenfootImage;
 
-public class Staff extends Weapon implements Pickable, Equippable {
+public class Staff extends Weapon implements Equippable {
 
     private double damage;
     private int attackSpeed;
     private int attackRange;
 
-    //Pickable Atributes
+    //Item Atributes
     ItemManager itemManager = ItemManager.Staff;
     public int itemCount = 0;
     public final int itemSlotId = itemManager.getItemSLOTID();
@@ -23,12 +23,12 @@ public class Staff extends Weapon implements Pickable, Equippable {
         setImage(itemImage);
     }
 
-    //Pickable Methods
-    public void pick(Pickable[] inventoryArray){
+    //Item Methods
+    public void pick(Item[] inventoryArray){
         inventoryArray[0] = this;
         getWorld().removeObject(this);
     }
-    public boolean compareIDWith(Pickable item, Pickable[] inventoryArray){
+    public boolean compareIDWith(Item item, Item[] inventoryArray){
         if (item.getItemId() == this.getItemId()) {
             item.setItemCount(item.getItemCount() + 1);
             getWorld().removeObject(this);
@@ -45,7 +45,7 @@ public class Staff extends Weapon implements Pickable, Equippable {
         return false;
     }
 
-    //Pickable Getters and Setters
+    //Item Getters and Setters
     public int getItemSlotId() {
         return itemSlotId;
     }

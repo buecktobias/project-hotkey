@@ -13,7 +13,12 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 public class Inventory extends Actor implements Fixed {
-    // TODO enable player to sort items as wished -> arrays needed, way to safe arrays even if inventory is closed
+    //TODO fix known issues:
+    // 1) only one Item can be picked up;
+    // 2) item in inventory will vanish when an item of the same type is unequipped;
+    // 3) item info screen does not open/close as it is supposed;
+
+    // TODO enable player to sort items as wished -> drag and drop system required
     // TODO drag and drop Items to respective slots
     // TODO make Armor and Weapons not stackable (remove count variable/ compare id method)
     // TODO !! rework createArrows method
@@ -22,7 +27,7 @@ public class Inventory extends Actor implements Fixed {
     // TODO Testing : check compareIdWith method of Pickable,
     private Player p;
     private World world;
-    private Pickable itemForInfo;
+    private Item itemForInfo;
     private JSONParser parser = new JSONParser();
     private ItemInfoScreen itemInfoScreenInstance;
 
@@ -33,10 +38,10 @@ public class Inventory extends Actor implements Fixed {
     private boolean infoScreenActive = false;
     private boolean itemsEquipped = false;
     private String keyCreateItemInfoScreen;
-    private Pickable[] armorArray;
-    private Pickable[] weaponArray;
-    private Pickable[] itemArray;
-    private Pickable[] equippedItems = new Pickable[7];
+    private Item[] armorArray;
+    private Item[] weaponArray;
+    private Item[] itemArray;
+    private Item[] equippedItems = new Item[7];
     private LinkedList<Button>  buttonList;
     private GreenfootImage InventoryScreen      = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV3.png");
     private GreenfootImage leftArrowClicked     = new GreenfootImage("images/Arrows/Arrow_left_aktive.png");
@@ -89,7 +94,7 @@ public class Inventory extends Actor implements Fixed {
     }
 
     // "Item Array" methods
-    private void addItemToArray(Pickable[] array, Pickable  item){
+    private void addItemToArray(Item[] array, Item  item){
         for(int i = 0; i < array.length; i++){
             if(array[i] == null){
                 addItemToArrayAt(array, item, i);
@@ -97,10 +102,10 @@ public class Inventory extends Actor implements Fixed {
             }
         }
     }
-    public void addItemToArrayAt(Pickable[] array, Pickable item, int index){
+    public void addItemToArrayAt(Item[] array, Item item, int index){
         array[index] = item;
     }
-    private void removeItemFromInventory(Pickable item){
+    private void removeItemFromInventory(Item item){
         if(item.getItemType().contains("Armor")){
             armorArray[java.util.Arrays.asList(armorArray).indexOf(item)] = null;
         }else if(item.getItemType().contains("Weapon")) {
@@ -122,7 +127,7 @@ public class Inventory extends Actor implements Fixed {
             setInventoryTab(0);
         }
     }
-    private void drawTab(Pickable[] itemsToDraw){
+    private void drawTab(Item[] itemsToDraw){
         drawAtX = 416;
         drawAtY = 196;
         if(itemsDrawn == 6){
@@ -144,7 +149,7 @@ public class Inventory extends Actor implements Fixed {
     private void drawEquippedItems(){
         for(int i = 0; i < 6; i++){
             if(equippedItems[i] != null){
-                Pickable item = equippedItems[i];
+                Item item = equippedItems[i];
                 switch (item.getItemSlotId()){
                     case 0 :
                         drawItemAt(196,196, item);
@@ -171,7 +176,7 @@ public class Inventory extends Actor implements Fixed {
             }
         }
     }
-    private void drawItemAt(int X, int Y, Pickable item){
+    private void drawItemAt(int X, int Y, Item item){
         if(item != null){
             InventoryScreen.setColor(Color.WHITE);
             InventoryScreen.fillRect(X, Y, 55,55);
@@ -201,7 +206,7 @@ public class Inventory extends Actor implements Fixed {
         }
     }
 
-    private void itemMouseLogic(int X, int Y, Pickable item){
+    private void itemMouseLogic(int X, int Y, Item item){
         int width = 55, height = 55;
         if (Greenfoot.getMouseInfo() != null){
             int mouseX = Greenfoot.getMouseInfo().getX();
@@ -232,7 +237,7 @@ public class Inventory extends Actor implements Fixed {
             }
         }
     }
-    private void itemHoverInfo(int X, int Y, Pickable item){
+    private void itemHoverInfo(int X, int Y, Item item){
         String InfoOpenInfo = "Item info: X";
         String InfoEquippItem = "equip Item: DoubleLeftClick";
         String InfoMouseButton = "select Item: right Click";
@@ -311,7 +316,7 @@ public class Inventory extends Actor implements Fixed {
     }
 
     // equipment methods
-    public void equipItem(Pickable item){
+    public void equipItem(Item item){
         // Helmet  0, Chest   1, Legs    2, Boots   3, Pet     4, Primary 5, Secondary 6,
        if(equippedItems[item.getItemSlotId()] == null){
            equippedItems[item.getItemSlotId()] = item;
@@ -319,7 +324,7 @@ public class Inventory extends Actor implements Fixed {
            item.setIEquipped(true);
            itemsEquipped = true;
        }else{
-           Pickable oldItem = equippedItems[item.getItemSlotId()];
+           Item oldItem = equippedItems[item.getItemSlotId()];
            equippedItems[item.getItemSlotId()] = item;
            itemsEquipped = true;
            item.setIEquipped(true);
@@ -327,7 +332,7 @@ public class Inventory extends Actor implements Fixed {
            unequippItem(oldItem);
        }
     }
-    private boolean unequippItem(Pickable oldItem){
+    private boolean unequippItem(Item oldItem){
         if(oldItem.getItemType().contains("Armor")){
             if(unequippItem(armorArray, oldItem, p.getArmorPicked())){
                 p.setArmorPicked(p.getArmorPicked() +1);
@@ -341,7 +346,7 @@ public class Inventory extends Actor implements Fixed {
         }
         return false;
     }
-    private boolean unequippItem(Pickable[] addIto, Pickable item, int alreadyPicked){
+    private boolean unequippItem(Item[] addIto, Item item, int alreadyPicked){
         if(alreadyPicked < 30){
             addItemToArray(addIto, item);
             item.setIEquipped(false);
@@ -355,7 +360,7 @@ public class Inventory extends Actor implements Fixed {
     public void setInventoryTab(int inventoryTab){
         this.inventoryTab = inventoryTab;
     }
-    public Pickable getItemForInfo() {
+    public Item getItemForInfo() {
         return itemForInfo;
     }
 }

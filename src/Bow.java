@@ -1,12 +1,12 @@
 import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
 
-public class Bow extends Weapon implements Pickable, Equippable{
+public class Bow extends Weapon implements Equippable{
 
     private int attackSpeed;
     private Player player;
 
-    // Pickable Atributes
+    // Item Atributes
     ItemManager itemManager = ItemManager.Bow;
     public int itemCount;
     public final int itemSlotId = itemManager.getItemSLOTID();
@@ -42,12 +42,12 @@ public class Bow extends Weapon implements Pickable, Equippable{
         catch (Exception e) {}
     }
 
-    //Pickable Methods
-    public void pick(Pickable[] inventoryArray){
+    //Item Methods
+    public void pick(Item[] inventoryArray){
         inventoryArray[0] = this;
         getWorld().removeObject(this);
     }
-    public boolean compareIDWith(Pickable item, Pickable[] inventoryArray){
+    public boolean compareIDWith(Item item, Item[] inventoryArray){
         if (item.getItemId() == this.getItemId()) {
             item.setItemCount(item.getItemCount() + 1);
             getWorld().removeObject(this);
@@ -63,7 +63,8 @@ public class Bow extends Weapon implements Pickable, Equippable{
         }
         return false;
     }
-    //Pickable Getters and Setters
+
+    //Item Getters and Setters
     public int getItemSlotId() {
         return itemSlotId;
     }

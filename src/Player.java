@@ -62,10 +62,10 @@ public class Player extends MovingActor implements Attackable, Blocking {
     private String keyShootArrow;
     private Inventory inventoryInstance;
     private SkillWindow skillWindow;
-    private Pickable[] equippedItems = new Pickable[7];
-    private Pickable[] weaponsArray = new Pickable[30];
-    private Pickable[] armorArray = new Pickable[30];
-    private Pickable[] itemsArray = new Pickable[30];
+    private Item[] equippedItems = new Item[7];
+    private Item[] weaponsArray = new Item[30];
+    private Item[] armorArray = new Item[30];
+    private Item[] itemsArray = new Item[30];
     private GreenfootImage defaultImage = new GreenfootImage("src/images/Characters/Player/test_player.png");
     private GreenfootImage move1 = new GreenfootImage("src/images/Characters/Player/player_move1.png");
 
@@ -273,38 +273,36 @@ public class Player extends MovingActor implements Attackable, Blocking {
         if (!objsIt.hasNext()) {
             return;
         }
-        Item Item = objs.get(0);
-        if (Item instanceof Pickable) {
-            Pickable currentItem = (Pickable) Item;
-            switch (currentItem.getItemType()) {
-                case "Weapon":
-                    if (weaponsPicked < 30) {
-                        addItemToInventory(currentItem, weaponsArray);
-                        weaponsPicked++;
-                    }
-                    break;
-                case "Armor":
-                    if (armorPicked < 30) {
-                        addItemToInventory(currentItem, armorArray);
-                        armorPicked++;
-                    }
-                    break;
-                case "Consumable":
-                    if (itemsPicked < 30) {
-                        addItemToInventory(currentItem, itemsArray);
-                        itemsPicked++;
-                    }
-                    break;
-            }
+        Item currentItem = objs.get(0);
+        switch (currentItem.getItemType()) {
+            case "Weapon":
+                if (weaponsPicked < 30) {
+                    addItemToInventory(currentItem, weaponsArray);
+                    weaponsPicked++;
+                }
+                break;
+            case "Armor":
+                if (armorPicked < 30) {
+                    addItemToInventory(currentItem, armorArray);
+                    armorPicked++;
+                }
+                break;
+            case "Consumable":
+                if (itemsPicked < 30) {
+                    addItemToInventory(currentItem, itemsArray);
+                    itemsPicked++;
+                }
+                break;
         }
+
     }
 
-    public void addItemToInventory(Pickable currentItem, Pickable[] inventoryArray) {
+    public void addItemToInventory(Item currentItem, Item[] inventoryArray) {
         if (!anyItemsInArray(inventoryArray)) {
             // old part of if condition inventoryArray != null && java.util.Arrays.asList(inventoryArray).isEmpty()
             currentItem.pick(inventoryArray);
         } else {
-            for (Pickable item : inventoryArray) {
+            for (Item item : inventoryArray) {
                 if (item != null) {
                     if (currentItem.compareIDWith(item, inventoryArray)) {
                         break;
@@ -326,7 +324,7 @@ public class Player extends MovingActor implements Attackable, Blocking {
         }
     }
 
-    public boolean anyItemsInArray(Pickable[] arrayTocheck) {
+    public boolean anyItemsInArray(Item[] arrayTocheck) {
         for (int i = 0; i < arrayTocheck.length; i++) {
             if (arrayTocheck[i] != null) {
                 return true;
@@ -408,11 +406,11 @@ public class Player extends MovingActor implements Attackable, Blocking {
         isIActive = IActive;
     }
 
-    public Pickable[] getEquippedItems() {
+    public Item[] getEquippedItems() {
         return equippedItems;
     }
 
-    public void setEquippedItems(Pickable[] equippedItems) {
+    public void setEquippedItems(Item[] equippedItems) {
         this.equippedItems = equippedItems;
     }
 
@@ -456,27 +454,27 @@ public class Player extends MovingActor implements Attackable, Blocking {
         this.settingsWindow = settingsWindow;
     }
 
-    public Pickable[] getWeaponsArray() {
+    public Item[] getWeaponsArray() {
         return weaponsArray;
     }
 
-    public void setWeaponsArray(Pickable[] weaponsArray) {
+    public void setWeaponsArray(Item[] weaponsArray) {
         this.weaponsArray = weaponsArray;
     }
 
-    public Pickable[] getArmorArray() {
+    public Item[] getArmorArray() {
         return armorArray;
     }
 
-    public void setArmorArray(Pickable[] armorArray) {
+    public void setArmorArray(Item[] armorArray) {
         this.armorArray = armorArray;
     }
 
-    public Pickable[] getItemsArray() {
+    public Item[] getItemsArray() {
         return itemsArray;
     }
 
-    public void setItemsArray(Pickable[] itemsArray) {
+    public void setItemsArray(Item[] itemsArray) {
         this.itemsArray = itemsArray;
     }
 }
