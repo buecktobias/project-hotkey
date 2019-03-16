@@ -326,19 +326,16 @@ public class Inventory extends Actor implements Fixed {
            unequippItem(oldItem);
        }
     }
-    private boolean unequippItem(Item oldItem){
+    private void unequippItem(Item oldItem){
         if(oldItem.getItemType().contains("Armor")){
             if(unequippItem(armorArray, oldItem, p.getArmorPicked())){
                 p.setArmorPicked(p.getArmorPicked() +1);
-                return true;
             }
         }else if(oldItem.getItemType().contains("Weapon")) {
             if(unequippItem(weaponArray, oldItem, p.getWeaponsPicked())){
                 p.setWeaponsPicked(p.getWeaponsPicked() +1);
-                return true;
             }
         }
-        return false;
     }
     private boolean unequippItem(Item[] addIto, Item item, int alreadyPicked){
         if(alreadyPicked < 30){

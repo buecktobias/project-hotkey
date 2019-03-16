@@ -21,12 +21,12 @@ public class Sector0_0 extends OpenWorld {
         addObject(FPS.getInstance(),1000,32);
         Player player = Player.getInstance();
         addObject(player, 100, 100);
-        addObject(enemy, 200, 200);
+        //addObject(enemy, 200, 200);
         HUD hud = new HUD();
         addObject(hud, getWidth() / 2, getHeight() / 2);
         setScrollingBackground(new GreenfootImage(bg));
         Staff staff = new Staff(42);
-        addObject(staff, 100, 100);
+        addObject(staff, 300, 100);
         Bow bow = new Bow(2500,player);
         addObject(bow,200,100);
 

@@ -8,13 +8,13 @@ public class Dagger extends Weapon implements Equippable{
 
     // Item Attributes
     ItemManager itemManager = ItemManager.Dagger;
-    public int            itemCount;
-    public final int      itemSlotId = itemManager.getItemSLOTID();
-    public final int      itemId = itemManager.getItemID();
-    public final String   itemType = itemManager.getItemTYPE();
-    public String         itemName = itemManager.getItemNAME();
-    public GreenfootImage itemImage = itemManager.getItemIMAGE();
-    public boolean        IEquipped = false;
+    private int            itemCount;
+    private final int      itemSlotId = itemManager.getItemSLOTID();
+    private final int      itemId = itemManager.getItemID();
+    private final String   itemType = itemManager.getItemTYPE();
+    private String         itemName = itemManager.getItemNAME();
+    private GreenfootImage itemImage = itemManager.getItemIMAGE();
+    private boolean        IEquipped = false;
 
     //Dagger methods
     public Dagger(int damage, int attackRange, int attackSpeed) {
@@ -43,22 +43,18 @@ public class Dagger extends Weapon implements Equippable{
 
     //Item Methods
     public void pick(Item[] inventoryArray){
-        System.out.println("3.1.1");
         for (int i = 0; i < 30; i++) {
             if(inventoryArray[i] == null){
                 inventoryArray[i] = this;
                 getWorld().removeObject(this);
-                System.out.println("3.1.2");
                 break;
             }
         }
     }
     public void compareIDWith(Item item, Item[] inventoryArray){
-        System.out.println("5");
         if (item.getItemId() == this.getItemId()) {
             item.setItemCount(item.getItemCount() + 1);
             getWorld().removeObject(this);
-            System.out.println("5.1");
         }else {
             pick(inventoryArray);
         }

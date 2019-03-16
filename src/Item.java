@@ -11,8 +11,6 @@ public abstract class Item extends NotMoving {
     abstract void setItemCount(int itemCount);
     abstract void setIEquipped(boolean IEquipped);
     abstract boolean isIEquipped();
-
     abstract void pick(Item[] inventoryArray);
     abstract void compareIDWith(Item item, Item[] inventoryArray);
-
 }

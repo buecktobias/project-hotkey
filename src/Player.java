@@ -222,8 +222,9 @@ public class Player extends MovingActor implements Attackable, Blocking {
     }
 
     private void testKeys() {
+        //TODO @Tobias remove "keyPick" -> items are now picked up automatically
         if (Greenfoot.isKeyDown(keyPick)) {
-            pick();
+            //pick();
         }
         if (Greenfoot.isKeyDown(keyAttack)) {
             attackNPCs();
@@ -254,6 +255,7 @@ public class Player extends MovingActor implements Attackable, Blocking {
 
     public void act() {
         updateKeys();
+        pick();
         useInventory();
         calculateEndurance();
         super.act();
@@ -274,11 +276,9 @@ public class Player extends MovingActor implements Attackable, Blocking {
             return;
         }
         Item currentItem = objs.get(0);
-        System.out.println("1 " + currentItem.getItemName());
         switch (currentItem.getItemType()) {
             case "Weapon":
                 if (weaponsPicked < 30) {
-                    System.out.println("2");
                     addItemToInventory(currentItem, weaponsArray);
                     weaponsPicked++;
                 }
@@ -299,24 +299,21 @@ public class Player extends MovingActor implements Attackable, Blocking {
     }
 
     public void addItemToInventory(Item currentItem, Item[] inventoryArray) {
-        // TODO check anyItemsInArray method, it might be flawed
-        if (!anyItemsInArray(inventoryArray)) {
+        Iterator<Item> inArIt =  java.util.Arrays.asList(inventoryArray).iterator();
+        if (inArIt.hasNext()) {
             // old part of if condition inventoryArray != null && java.util.Arrays.asList(inventoryArray).isEmpty()
-            System.out.println("3.1");
+            // another one !anyItemsInArray(inventoryArray
             currentItem.pick(inventoryArray);
         } else {
-            System.out.println("3.2");
             for (Item item : inventoryArray) {
                 if (item != null) {
-                    System.out.println("4");
                     currentItem.compareIDWith(item, inventoryArray);
                     break;
                 }
             }
         }
     }
-
-    public void useInventory() {
+    private void useInventory() {
         String key = Greenfoot.getKey();
         if ((keyOpenInventar.equals(key) && isIActive)) {
             inventoryInstance.deleteButtons();
@@ -326,15 +323,6 @@ public class Player extends MovingActor implements Attackable, Blocking {
             getWorld().addObject(inventoryInstance, getWorld().getWidth() / 2, getWorld().getHeight() / 2);
             setIActive(true);
         }
-    }
-
-    public boolean anyItemsInArray(Item[] arrayToCheck) {
-        for (int i = 0; i < arrayToCheck.length; i++) {
-            if (arrayToCheck[i] != null) {
-                return true;
-            }
-        }
-        return false;
     }
 
     //Getters and Setters
