@@ -8,7 +8,7 @@ public class ItemInfoScreen extends Inventory implements Fixed {
 
     // TODO fix Screen not appearing/ disappearing correctly
     // TODO get current Item
-    private Item item = super.getItemForInfo();
+    private Pickable item = super.getItemForInfo();
     private GreenfootImage ItemInfoScreen = new GreenfootImage("images/Hud_Menu_Images/ItemInfoScreenV1.png");
 
     protected void addedToWorld(World world) {
@@ -25,7 +25,7 @@ public class ItemInfoScreen extends Inventory implements Fixed {
         drawItemInfo(item);
     }
 
-    public void drawItemInfo(Item item){
+    public void drawItemInfo(Pickable item){
         ItemInfoScreen.setFont(new Font(Font.SANS_SERIF, Font.ITALIC, 40));
         ItemInfoScreen.setColor(Color.decode("#FFD700"));
         //ItemInfoScreen.drawString(item.getItemName(), 300,300);

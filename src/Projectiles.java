@@ -1,12 +1,11 @@
 import greenfoot.Actor;
 import greenfoot.Greenfoot;
-import greenfoot.GreenfootImage;
 import greenfoot.World;
 import helper.Direction;
 
 import java.util.*;
 
-public class Projectiles extends MovingActor{
+public class Projectiles extends Weapon{
     private double PositionX;
     private double PositionY;
     private double xSpeed;
@@ -48,21 +47,6 @@ public class Projectiles extends MovingActor{
         PositionX = movingActor.getX();
         PositionY = movingActor.getY();
         setLocation((int) PositionX,(int) PositionY);
-    }
-
-    @Override
-    GreenfootImage[] getMovingAnimationImages() {
-        return new GreenfootImage[0];
-    }
-
-    @Override
-    int getSpeed() {
-        return 0;
-    }
-
-    @Override
-    void setSpeed(int n) {
-
     }
 
     @Override
