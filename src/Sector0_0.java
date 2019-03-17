@@ -23,14 +23,17 @@ public class Sector0_0 extends OpenWorld {
         addObject(FPS.getInstance(),1000,32);
         Player player = Player.getInstance();
         addObject(player, 100, 100);
-        addObject(enemy, 200, 200);
+        //addObject(enemy, 200, 200);
         HUD hud = new HUD();
         addObject(hud, getWidth() / 2, getHeight() / 2);
         setScrollingBackground(new GreenfootImage(bg));
         Staff staff = new Staff(42);
-        addObject(staff, 100, 100);
-        Blocking.Bow bow = new Blocking.Bow(2500,player);
-        addObject(bow,150,100);
+        addObject(staff, 300, 100);
+        Bow bow = new Bow(2500,player);
+        addObject(bow,200,100);
+        Companion companion = new Companion(player);
+        addObject(companion,150,0);
+
 
         randomObjects(Cobweb.class, 200, -600,800, 400, 10);
         randomObjects(Sand.class, 600, 700,1000, 1000, 1);
@@ -64,11 +67,6 @@ public class Sector0_0 extends OpenWorld {
         }
     }
 
-    private boolean intersectsWithBlocking(General actor) {
-        List<General> generalList = actor.getIntersectingObjects(General.class);
-        generalList.removeIf(general -> !(general instanceof Blocking));
-        return generalList.size() > 0;
-    }
     public void randomSpawn(Class c) {
         int x = r.nextInt(Math.abs(BorderX2 - BorderX1)) + BorderX1;
         int y = r.nextInt(Math.abs(BorderY2 - BorderY1)) + BorderY1;

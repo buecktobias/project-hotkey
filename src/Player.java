@@ -62,10 +62,10 @@ public class Player extends MovingActor implements Attackable, Blocking {
     private String keyShootArrow;
     private Inventory inventoryInstance;
     private SkillWindow skillWindow;
-    private Pickable[] equippedItems = new Pickable[7];
-    private Pickable[] weaponsArray = new Pickable[30];
-    private Pickable[] armorArray = new Pickable[30];
-    private Pickable[] itemsArray = new Pickable[30];
+    private Item[] equippedItems = new Item[7];
+    private Item[] weaponsArray = new Item[30];
+    private Item[] armorArray = new Item[30];
+    private Item[] itemsArray = new Item[30];
     private GreenfootImage defaultImage = new GreenfootImage("src/images/Characters/Player/test_player.png");
     private GreenfootImage move1 = new GreenfootImage("src/images/Characters/Player/player_move1.png");
 
@@ -220,8 +220,9 @@ public class Player extends MovingActor implements Attackable, Blocking {
     }
 
     private void testKeys() {
+        //TODO @Tobias remove "keyPick" -> items are now picked up automatically
         if (Greenfoot.isKeyDown(keyPick)) {
-            pick();
+            //pick();
         }
         if (Greenfoot.isKeyDown(keyAttack)) {
             attackNPCs();
@@ -252,6 +253,7 @@ public class Player extends MovingActor implements Attackable, Blocking {
 
     public void act() {
         updateKeys();
+        pick();
         useInventory();
         calculateEndurance();
         getEffects();
@@ -272,48 +274,44 @@ public class Player extends MovingActor implements Attackable, Blocking {
         if (!objsIt.hasNext()) {
             return;
         }
-        Item Item = objs.get(0);
-        if (Item instanceof Pickable) {
-            Pickable currentItem = (Pickable) Item;
-            switch (currentItem.getItemType()) {
-                case "Weapon":
-                    if (weaponsPicked < 30) {
-                        addItemToInventory(currentItem, weaponsArray);
-                        weaponsPicked++;
-                    }
-                    break;
-                case "Armor":
-                    if (armorPicked < 30) {
-                        addItemToInventory(currentItem, armorArray);
-                        armorPicked++;
-                    }
-                    break;
-                case "Consumable":
-                    if (itemsPicked < 30) {
-                        addItemToInventory(currentItem, itemsArray);
-                        itemsPicked++;
-                    }
-                    break;
-            }
+        Item currentItem = objs.get(0);
+        switch (currentItem.getItemType()) {
+            case "Weapon":
+                if (weaponsPicked < 30) {
+                    addItemToInventory(currentItem, weaponsArray);
+                    weaponsPicked++;
+                }
+                break;
+            case "Armor":
+                if (armorPicked < 30) {
+                    addItemToInventory(currentItem, armorArray);
+                    armorPicked++;
+                }
+                break;
+            case "Consumable":
+                if (itemsPicked < 30) {
+                    addItemToInventory(currentItem, itemsArray);
+                    itemsPicked++;
+                }
+                break;
         }
     }
-
-    public void addItemToInventory(Pickable currentItem, Pickable[] inventoryArray) {
-        if (!anyItemsInArray(inventoryArray)) {
+    public void addItemToInventory(Item currentItem, Item[] inventoryArray) {
+        Iterator<Item> inArIt =  java.util.Arrays.asList(inventoryArray).iterator();
+        if (inArIt.hasNext()) {
             // old part of if condition inventoryArray != null && java.util.Arrays.asList(inventoryArray).isEmpty()
+            // another one !anyItemsInArray(inventoryArray
             currentItem.pick(inventoryArray);
         } else {
-            for (Pickable item : inventoryArray) {
+            for (Item item : inventoryArray) {
                 if (item != null) {
-                    if (currentItem.compareIDWith(item, inventoryArray)) {
-                        break;
-                    }
+                    currentItem.compareIDWith(item, inventoryArray);
+                    break;
                 }
             }
         }
     }
-
-    public void useInventory() {
+    private void useInventory() {
         String key = Greenfoot.getKey();
         if ((keyOpenInventar.equals(key) && isIActive)) {
             inventoryInstance.deleteButtons();
@@ -325,32 +323,17 @@ public class Player extends MovingActor implements Attackable, Blocking {
         }
     }
 
-    public boolean anyItemsInArray(Pickable[] arrayTocheck) {
-        for (int i = 0; i < arrayTocheck.length; i++) {
-            if (arrayTocheck[i] != null) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     //Getters and Setters
     public int getSpeed() {
         return currentSpeed;
     }
-
     public void setSpeed(int currentSpeed) {
         this.currentSpeed = currentSpeed;
-    }
-
-    public int getMaxLife() {
-        return maxLife;
     }
 
     public int getLife() {
         return life;
     }
-
     public void setLife(int life) {
         this.life = life;
     }
@@ -366,15 +349,12 @@ public class Player extends MovingActor implements Attackable, Blocking {
     public void setNormalSpeed(int normalSpeed) {
         this.normalSpeed = normalSpeed;
     }
-
     public void setSprintSpeed(int sprintSpeed) {
         this.sprintSpeed = sprintSpeed;
     }
-
     public int getNormalSpeed() {
         return normalSpeed;
     }
-
     public int getSprintSpeed() {
         return sprintSpeed;
     }
@@ -382,19 +362,19 @@ public class Player extends MovingActor implements Attackable, Blocking {
     public int getDamage() {
         return damage;
     }
-
     public void setDamage(int damage) {
         this.damage = damage;
     }
 
+    public int getMaxLife() {
+        return maxLife;
+    }
     public int getMaxEndurance() {
         return maxEndurance;
     }
-
     public void setMaxLife(int maxLife) {
         this.maxLife = maxLife;
     }
-
     public void setMaxEndurance(int maxEndurance) {
         this.maxEndurance = maxEndurance;
     }
@@ -402,23 +382,20 @@ public class Player extends MovingActor implements Attackable, Blocking {
     public boolean isIActive() {
         return isIActive;
     }
-
     public void setIActive(boolean IActive) {
         isIActive = IActive;
     }
 
-    public Pickable[] getEquippedItems() {
+    public Item[] getEquippedItems() {
         return equippedItems;
     }
-
-    public void setEquippedItems(Pickable[] equippedItems) {
+    public void setEquippedItems(Item[] equippedItems) {
         this.equippedItems = equippedItems;
     }
 
     public JSONParser getParser() {
         return parser;
     }
-
     public void setParser(JSONParser parser) {
         this.parser = parser;
     }
@@ -426,7 +403,6 @@ public class Player extends MovingActor implements Attackable, Blocking {
     public int getWeaponsPicked() {
         return weaponsPicked;
     }
-
     public void setWeaponsPicked(int weaponsPicked) {
         this.weaponsPicked = weaponsPicked;
     }
@@ -434,7 +410,6 @@ public class Player extends MovingActor implements Attackable, Blocking {
     public int getItemsPicked() {
         return itemsPicked;
     }
-
     public void setItemsPicked(int itemsPicked) {
         this.itemsPicked = itemsPicked;
     }
@@ -442,7 +417,6 @@ public class Player extends MovingActor implements Attackable, Blocking {
     public int getArmorPicked() {
         return armorPicked;
     }
-
     public void setArmorPicked(int armorPicked) {
         this.armorPicked = armorPicked;
     }
@@ -450,32 +424,28 @@ public class Player extends MovingActor implements Attackable, Blocking {
     public SettingsWindow getSettingsWindow() {
         return settingsWindow;
     }
-
     public void setSettingsWindow(SettingsWindow settingsWindow) {
         this.settingsWindow = settingsWindow;
     }
 
-    public Pickable[] getWeaponsArray() {
+    public Item[] getWeaponsArray() {
         return weaponsArray;
     }
-
-    public void setWeaponsArray(Pickable[] weaponsArray) {
+    public void setWeaponsArray(Item[] weaponsArray) {
         this.weaponsArray = weaponsArray;
     }
 
-    public Pickable[] getArmorArray() {
+    public Item[] getArmorArray() {
         return armorArray;
     }
-
-    public void setArmorArray(Pickable[] armorArray) {
+    public void setArmorArray(Item[] armorArray) {
         this.armorArray = armorArray;
     }
 
-    public Pickable[] getItemsArray() {
+    public Item[] getItemsArray() {
         return itemsArray;
     }
-
-    public void setItemsArray(Pickable[] itemsArray) {
+    public void setItemsArray(Item[] itemsArray) {
         this.itemsArray = itemsArray;
     }
 }
