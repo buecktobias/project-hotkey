@@ -6,10 +6,9 @@ import java.util.List;
 import java.util.Random;
 
 public class Sector0_0 extends OpenWorld {
-    private Bomb enemy = new Bomb();
+    private Enemy enemy = new Enemy();
     private Random r = new Random();
-    private final GreenfootImage bg = new GreenfootImage("images/Screens/background_white.png");
-
+    private final GreenfootImage bg = new GreenfootImage("images/Screens/cell_debug.png");
     private final int BorderX1 = -1_000;
     private final int BorderY1 = -1_000;
     private final int BorderX2 = 1_000;
@@ -17,24 +16,24 @@ public class Sector0_0 extends OpenWorld {
 
     public Sector0_0() {
         super(2000,2000);
-        bg.scale(32,32);
         setPaintOrder(Button.class, ItemInfoScreen.class, Inventory.class, HUD.class,FPS.class, MovingActor.class);
         setBackground(bg);
         addObject(FPS.getInstance(),1000,32);
         Player player = Player.getInstance();
         addObject(player, 100, 100);
-        addObject(enemy, 200, 200);
+        //addObject(enemy, 200, 200);
         HUD hud = new HUD();
         addObject(hud, getWidth() / 2, getHeight() / 2);
         setScrollingBackground(new GreenfootImage(bg));
         Staff staff = new Staff(42);
-        addObject(staff, 100, 100);
-        Blocking.Bow bow = new Blocking.Bow(2500,player);
-        addObject(bow,150,100);
+        addObject(staff, 300, 100);
+        Bow bow = new Bow(2500,player);
+        addObject(bow,200,100);
+        Companion companion = new Companion(player);
+        addObject(companion,150,0);
 
-        randomObjects(Cobweb.class, 200, -600,800, 400, 10);
-        randomObjects(Sand.class, 600, 700,1000, 1000, 1);
-        randomObjects(Grass.class, -500, -300,400, 800, 2);
+
+
         randomObjects(Tree.class, 20, 100, 800, 600, 2);
         randomObjects(Grass.class, 700, 600, 1000, 900, 6);
         randomObjects(Rock.class, 500, -500, 900, 300, 8);
@@ -64,11 +63,6 @@ public class Sector0_0 extends OpenWorld {
         }
     }
 
-    private boolean intersectsWithBlocking(General actor) {
-        List<General> generalList = actor.getIntersectingObjects(General.class);
-        generalList.removeIf(general -> !(general instanceof Blocking));
-        return generalList.size() > 0;
-    }
     public void randomSpawn(Class c) {
         int x = r.nextInt(Math.abs(BorderX2 - BorderX1)) + BorderX1;
         int y = r.nextInt(Math.abs(BorderY2 - BorderY1)) + BorderY1;
@@ -78,10 +72,14 @@ public class Sector0_0 extends OpenWorld {
         try {
             General actor = (General) c.newInstance();
             addObject(actor, x, y);
-            if(intersectsWithBlocking(actor)){
+            List<General> generalList = actor.getIntersectingObjects(General.class);
+            generalList.removeIf(general -> !(general instanceof Blocking));
+            if (generalList.size() > 0) {
                 removeObject(actor);
             }
-        } catch (InstantiationException | IllegalAccessException e) {
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
 

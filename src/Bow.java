@@ -1,14 +1,14 @@
+import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
 
-public class Staff extends Weapon implements Equippable {
+public class Bow extends Weapon implements Equippable{
 
-    private double damage;
     private int attackSpeed;
-    private int attackRange;
+    private Player player;
 
-    //Item Atributes
-    ItemManager itemManager = ItemManager.Staff;
-    private int itemCount = 0;
+    // Item Atributes
+    ItemManager itemManager = ItemManager.Bow;
+    private int itemCount;
     private final int itemSlotId = itemManager.getItemSLOTID();
     private final int itemId = itemManager.getItemID();
     private final String itemType = itemManager.getItemTYPE();
@@ -16,12 +16,30 @@ public class Staff extends Weapon implements Equippable {
     private GreenfootImage itemImage = itemManager.getItemIMAGE();
     private boolean IEquipped = false;
 
-
-    public Staff(int attackRange) {
-        this.attackRange = attackRange;
+    public Bow(int attackSpeed, Player player) {
         this.attackSpeed = attackSpeed;
-        this.damage = damage;
+        this.player = player;
         setImage(itemImage);
+    }
+
+    public void shoot() {
+        Arrow arrow = new Arrow(42, 1,100,player);
+        getWorld().addObject(arrow,getX(),getY());
+        attackSpeedWait(attackSpeed);
+
+    }
+
+    public void act() {
+        if(Greenfoot.isKeyDown("V")) {
+            shoot();
+        }
+    }
+
+    public void attackSpeedWait(int attackSpeed) {
+        try {
+           Thread.sleep(attackSpeed);
+        }
+        catch (Exception e) {}
     }
 
     //Item Methods
@@ -56,9 +74,6 @@ public class Staff extends Weapon implements Equippable {
     public void setItemCount(int itemCount) {
         this.itemCount = itemCount;
     }
-    public void setIEquipped(boolean IEquipped) {
-        this.IEquipped = IEquipped;
-    }
     public String getItemType() {
         return itemType;
     }
@@ -71,4 +86,8 @@ public class Staff extends Weapon implements Equippable {
     public boolean isIEquipped() {
         return IEquipped;
     }
+    public void setIEquipped(boolean IEquipped) {
+        this.IEquipped = IEquipped;
+    }
+
 }

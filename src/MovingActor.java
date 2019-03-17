@@ -17,15 +17,19 @@ public abstract class MovingActor extends General {
 
     public void getEffects(){
         List<Environment> environments = getIntersectingObjects(Environment.class);
+        HashSet<Class> classes = new HashSet<>();
         for(Environment hasEffect:environments){
             if(hasEffect instanceof HasEffect){
-                ((HasEffect) hasEffect).effects(this);
+                if( !(classes.contains(hasEffect.getClass()))) {
+                    ((HasEffect) hasEffect).effects(this);
+                }
+                classes.add(hasEffect.getClass());
             }
         }
     }
     @Override
     public void act() {
-
+        getEffects();
     }
     public void moveInDirectionOf(Actor actor){
         int actorX = actor.getX();

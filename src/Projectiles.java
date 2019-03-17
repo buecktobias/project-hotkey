@@ -1,11 +1,12 @@
 import greenfoot.Actor;
 import greenfoot.Greenfoot;
+import greenfoot.GreenfootImage;
 import greenfoot.World;
 import helper.Direction;
 
 import java.util.*;
 
-public class Projectiles extends Weapon{
+public class Projectiles extends MovingActor{
     private double PositionX;
     private double PositionY;
     private double xSpeed;
@@ -50,11 +51,27 @@ public class Projectiles extends Weapon{
     }
 
     @Override
+    GreenfootImage[] getMovingAnimationImages() {
+        return new GreenfootImage[0];
+    }
+
+    @Override
+    int getSpeed() {
+        return 0;
+    }
+
+    @Override
+    void setSpeed(int n) {
+
+    }
+
+    @Override
     public void act() {
         PositionX += xSpeed;
         PositionY += ySpeed;
         xSpeed *= xAcceleration;
         ySpeed *= yAcceleration;
+        setLocation((int)Math.round(PositionX),(int)Math.round(PositionY));
     }
     public void moveInDirectionOfMouse(double velocity){
         int mouseX=Greenfoot.getMouseInfo().getX();
@@ -68,7 +85,7 @@ public class Projectiles extends Weapon{
         yAcceleration = 0.9;
     }
 
-    private int hitboxRadius=getWidth()*4;
+    public int hitboxRadius=getWidth()*4;
     public void moveInDirectionOf(Actor actor){
         int actorX = actor.getX();
         int actorY = actor.getY();
@@ -81,15 +98,15 @@ public class Projectiles extends Weapon{
 
         if(Math.max(absXDifference,absYDifference) == absXDifference){
             if(xDifference > 0){
-                moveLeft((int)this.projectileSpeed);
+                moveLeft();
             }else if (xDifference <0){
-                moveRight((int)this.projectileSpeed);
+                moveRight();
             }
         }else if(Math.max(absXDifference,absYDifference) == absYDifference){
             if(yDifference > 0){
-                moveUp((int)this.projectileSpeed);
+                moveUp();
             }else{
-                moveDown((int)this.projectileSpeed);
+                moveDown();
 
             }
 

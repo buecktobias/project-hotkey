@@ -4,7 +4,7 @@ public abstract class Hostile extends NPC {
     abstract int getAttackRange();
     abstract GreenfootImage getAngryImage();
     abstract int getDamage();
-    private long lastFrameAttacked = 0;
+    private int lastFrameAttacked = 0;
     public void attackAnimation(GreenfootImage attack1){
         setImage(attack1);
     }
@@ -14,7 +14,7 @@ public abstract class Hostile extends NPC {
         if (fps.getFrame() - lastFrameAttacked > attackSpeed) {
             if (attackPlayer(getAttackRange(), getDamage())) {
                 attackAnimation(attack1);
-                lastFrameAttacked = fps.getFrame();
+                //lastFrameAttacked = fps.getFrame();
                 return true;
             }
         }
