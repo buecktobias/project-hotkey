@@ -8,7 +8,7 @@ import java.util.Random;
 public class Sector0_0 extends OpenWorld {
     private WalkingBomb enemy = new WalkingBomb();
     private Random r = new Random();
-    private final GreenfootImage bg = new GreenfootImage("images/Screens/cell_debug.png");
+    private final GreenfootImage bg = new GreenfootImage("images/Screens/background_grass.png");
 
     private final int BorderX1 = -1_000;
     private final int BorderY1 = -1_000;
