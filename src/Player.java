@@ -12,7 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 
 
-public class Player extends MovingActor implements Attackable, Blocking,FireSensitive {
+public class Player extends MovingActor implements Attackable, Blocking, FireSensitive, CanSwim {
     private static Player ourInstance = new Player();
 
     public static Player getInstance() {
