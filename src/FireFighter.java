@@ -1,14 +1,21 @@
 import greenfoot.GreenfootImage;
 import greenfoot.World;
 
+import java.util.Random;
+
 public class FireFighter extends Hostile implements  Blocking,Attackable {
     private int attackRange = 50;
+    private int fireSpawnSpeed = 60;
+    private int fireSpawnRange = 200;
+    private long lastSpawnFire = 0;
     private int damage = 1;
     private final int DEFAULT_SPEED = 2;
     private int speed = DEFAULT_SPEED;
     private double life = 20;
-    private int visualRange = 400;
+    private int visualRange = 200;
     private int attackSpeed = 30;
+    private FPS timer = FPS.getInstance();
+    private static Random random= new Random();
 
 
     @Override
@@ -20,7 +27,9 @@ public class FireFighter extends Hostile implements  Blocking,Attackable {
         this.life = life;
     }
 
-    private GreenfootImage defaultImage = new GreenfootImage("images/Characters/lilpig.png");
+    private GreenfootImage defaultImage = new GreenfootImage("images/Characters/FireEnemy1.png");
+    private GreenfootImage move1 = new GreenfootImage("images/Characters/FireEnemy2.png");
+    private GreenfootImage move2 = new GreenfootImage("images/Characters/FireEnemy3.png");
 
     @Override
     protected void addedToWorld(World world) {
@@ -28,8 +37,25 @@ public class FireFighter extends Hostile implements  Blocking,Attackable {
         setImage(defaultImage);
     }
 
+    public void spawnFireNearby(){
+        if(timer.getFrame()- lastSpawnFire > fireSpawnSpeed){
+            lastSpawnFire = timer.getFrame();
+            int x = getX();
+            int y = getY();
+            World world = getWorld();
+            int randomX;
+            int randomY;
+            for(int i = 0;i < 5;i++){
+                randomX = random.nextInt(fireSpawnRange)-fireSpawnRange/2;
+                randomY = random.nextInt(fireSpawnRange)-fireSpawnRange/2;
+                world.addObject(new Fire(60),x+randomX,y+randomY);
+            }
+            }
+
+    }
     @Override
     public void act() {
+        spawnFireNearby();
         setSpeed(DEFAULT_SPEED);
         getEffects();
         if(moveToPlayer(this.visualRange)){
@@ -55,7 +81,7 @@ public class FireFighter extends Hostile implements  Blocking,Attackable {
 
     @Override
     GreenfootImage[] getMovingAnimationImages() {
-        return new GreenfootImage[]{defaultImage};
+        return new GreenfootImage[]{defaultImage,defaultImage,move1,move1,move2,move2};
     }
 
     @Override
