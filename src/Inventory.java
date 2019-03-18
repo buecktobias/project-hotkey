@@ -13,15 +13,17 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 public class Inventory extends Actor implements Fixed {
-    //TODO fix known issues:
-    // 1)
-    // 2) item in inventory will vanish when an item of the same type is equipped;
-    // 3) item info screen does not open/close as it is supposed;
+    //TODO make Armor and Weapons not stackable (remove count variable/ compare id method)
+    //TODO GUI overhaul, make everything look nice
+    //TODO enable Player to summon different familiars
 
-    // TODO enable player to sort items as wished -> drag and drop system required
-    // TODO drag and drop Items to respective slots
-    // TODO make Armor and Weapons not stackable (remove count variable/ compare id method)
-    // TODO GUI overhaul, make everything look nice
+    //TODO fix known issues:
+    // 1) item info screen does not open/close as it is supposed;
+
+    // TODO !!OUT OF SCOPE!!
+    //  1)enable player to sort items as wished -> drag and drop system required
+    //  2) drag and drop Items to respective slots
+
 
     private Player p;
     private World world;
@@ -103,6 +105,7 @@ public class Inventory extends Actor implements Fixed {
         array[index] = item;
     }
     private void removeItemFromInventory(Item item){
+
         if(item.getItemType().contains("Armor")){
             armorArray[java.util.Arrays.asList(armorArray).indexOf(item)] = null;
         }else if(item.getItemType().contains("Weapon")) {
@@ -327,6 +330,7 @@ public class Inventory extends Actor implements Fixed {
        }
     }
     private void unequippItem(Item oldItem){
+        // TODO use switch case instead of if statements
         if(oldItem.getItemType().contains("Armor")){
             if(unequippItem(armorArray, oldItem, p.getArmorPicked())){
                 p.setArmorPicked(p.getArmorPicked() +1);
