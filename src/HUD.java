@@ -5,32 +5,51 @@ import java.awt.*;
 
 public class HUD extends Actor implements Fixed {
 
-    GreenfootImage Background = new GreenfootImage("images/Hud_Menu_Images/StatBars.png");
+    private Player p;
+    private GreenfootImage Background = new GreenfootImage("images/Hud_Menu_Images/Hud_V2.png");
 
-    public HUD(){
+    public HUD(Player p){
         setImage(Background);
+        this.p = p;
     }
+
 
     public void act(){
         Background.clear();
-        Background = new GreenfootImage("images/Hud_Menu_Images/StatBars.png");
+        Background = new GreenfootImage("images/Hud_Menu_Images/Hud_V2.png");
         setImage(Background);
-        if (getWorld().getObjects(Player.class).get(0)!= null) {
-            Player p = getWorld().getObjects(Player.class).get(0);
-            drawStatBars(p);
-        }else{
-            System.out.println("No Player found");
-        }
+        drawHealthBar();
+        drawEnduranceBar();
     }
 
-    private void drawStatBars(Player p){
+    private void drawStatBars(){
         double health = p.getLife();
         Background.setColor(Color.RED);
         int healthBarWidth = (int) ((double) p.getLife()/ (double) p.getMaxLife() * 280);
-        Background.fillRect(50,20, healthBarWidth,27);
+        Background.fillRect(10,10, healthBarWidth,27);
         double endurance = p.getEndurance() /p.getMaxEndurance() * 180;
         Background.setColor(Color.GREEN);
         Background.fillRect(60,60, (int)endurance,27);
+    }
+    private void drawHealthBar(){
+        double health = p.getLife();
+        int healthBarWidth = (int) (health / (double) p.getMaxLife() * 280);
+        Background.setColor(Color.decode("#7f0000"));
+        Background.fillRect(12,12, healthBarWidth,23);
+        Background.setColor(Color.decode("#990000"));
+        Background.fillRect(12,12, healthBarWidth,16);
+        Background.setColor(Color.decode("#cc0000"));
+        Background.fillRect(12,12, healthBarWidth,9);
+    }
+    private void drawEnduranceBar(){
+        double endurance = p.getEndurance();
+        int enduranceBarWidth = (int) (endurance / (double) p.getMaxEndurance() * 180);
+        Background.setColor(Color.decode("#007f00"));
+        Background.fillRect(12,42, enduranceBarWidth,23);
+        Background.setColor(Color.decode("#009900"));
+        Background.fillRect(12,42, enduranceBarWidth,16);
+        Background.setColor(Color.decode("#00cc00"));
+        Background.fillRect(12,42, enduranceBarWidth,9);
     }
 
     //Getters and Setters
