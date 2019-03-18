@@ -24,7 +24,7 @@ public class Sector0_0 extends OpenWorld {
         Player player = Player.getInstance();
         addObject(player, 100, 100);
         //addObject(enemy, 200, 200);
-        HUD hud = new HUD();
+        HUD hud = new HUD(player);
         addObject(hud, getWidth() / 2, getHeight() / 2);
         setScrollingBackground(new GreenfootImage(bg));
         Staff staff = new Staff(42);

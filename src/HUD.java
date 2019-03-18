@@ -21,16 +21,6 @@ public class HUD extends Actor implements Fixed {
         drawHealthBar();
         drawEnduranceBar();
     }
-
-    private void drawStatBars(){
-        double health = p.getLife();
-        Background.setColor(Color.RED);
-        int healthBarWidth = (int) ((double) p.getLife()/ (double) p.getMaxLife() * 280);
-        Background.fillRect(10,10, healthBarWidth,27);
-        double endurance = p.getEndurance() /p.getMaxEndurance() * 180;
-        Background.setColor(Color.GREEN);
-        Background.fillRect(60,60, (int)endurance,27);
-    }
     private void drawHealthBar(){
         double health = p.getLife();
         int healthBarWidth = (int) (health / (double) p.getMaxLife() * 280);
