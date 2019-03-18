@@ -1,6 +1,9 @@
 
 
 public interface Countable {
+    void setItemCount(int itemCount);
+    int getItemCount();
+
     void compareIDWith(Item item, Item[] inventoryArray);
     /* compareIDWith method implementation:
     public void compareIDWith(Item item, Item[] inventoryArray){

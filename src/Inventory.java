@@ -262,7 +262,7 @@ public class Inventory extends Actor implements Fixed {
             createButton(rightArrowNotClicked, rightArrowClicked, position, 780, 165);
         }
     }
-    public void createButton(GreenfootImage buttonImgUnClicked1, GreenfootImage buttonImgClicked1, String position, int X, int Y) {
+    private void createButton(GreenfootImage buttonImgUnClicked1, GreenfootImage buttonImgClicked1, String position, int X, int Y) {
         Button button;
         GreenfootImage buttonImgUnClicked;
         GreenfootImage buttonImgClicked;

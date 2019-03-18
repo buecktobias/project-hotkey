@@ -7,8 +7,7 @@ public class Dagger extends Weapon implements Equippable{
     private int attackRange;
 
     // Item Attributes
-    ItemManager itemManager = ItemManager.Dagger;
-    private int            itemCount;
+    private ItemManager itemManager = ItemManager.Dagger;
     private final int      itemSlotId = itemManager.getItemSLOTID();
     private final int      itemId = itemManager.getItemID();
     private final String   itemType = itemManager.getItemTYPE();
@@ -45,14 +44,8 @@ public class Dagger extends Weapon implements Equippable{
     public int getItemSlotId() {
         return itemSlotId;
     }
-    public int getItemCount() {
-        return itemCount;
-    }
     public int getItemId() {
         return itemId;
-    }
-    public void setItemCount(int itemCount) {
-        this.itemCount = itemCount;
     }
     public String getItemType() {
         return itemType;

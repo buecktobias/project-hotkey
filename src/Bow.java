@@ -6,15 +6,14 @@ public class Bow extends Weapon implements Equippable{
     private int attackSpeed;
     private Player player;
 
-    // Pickable Atributes
-    ItemManager itemManager = ItemManager.Bow;
-    public int itemCount;
-    public final int itemSlotId = itemManager.getItemSLOTID();
-    public final int itemId = itemManager.getItemID();
-    public final String itemType = itemManager.getItemTYPE();
-    public String itemName = itemManager.getItemNAME();
-    public GreenfootImage itemImage = itemManager.getItemIMAGE();
-    public boolean IEquipped = false;
+    // Item Attributes
+    private ItemManager itemManager = ItemManager.Bow;
+    private final int itemSlotId = itemManager.getItemSLOTID();
+    private final int itemId = itemManager.getItemID();
+    private final String itemType = itemManager.getItemTYPE();
+    private String itemName = itemManager.getItemNAME();
+    private GreenfootImage itemImage = itemManager.getItemIMAGE();
+    private boolean IEquipped = false;
 
     public Bow(int attackSpeed, Player player) {
         this.attackSpeed = attackSpeed;
@@ -46,14 +45,8 @@ public class Bow extends Weapon implements Equippable{
     public int getItemSlotId() {
         return itemSlotId;
     }
-    public int getItemCount() {
-        return itemCount;
-    }
     public int getItemId() {
         return itemId;
-    }
-    public void setItemCount(int itemCount) {
-        this.itemCount = itemCount;
     }
     public String getItemType() {
         return itemType;
