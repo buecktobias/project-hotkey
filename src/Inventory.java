@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 public class Inventory extends Actor implements Fixed {
-    //TODO make Armor and Weapons not stackable (remove count variable/ compare id method)
     //TODO GUI overhaul, make everything look nice
     //TODO enable Player to summon different familiars
 

@@ -311,37 +311,31 @@ public class Player extends MovingActor implements Attackable, Blocking,FireSens
         switch (currentItem.getItemType()) {
             case "Weapon":
                 if (weaponsPicked < 30) {
-                    addItemToInventory(currentItem, weaponsArray);
+                    currentItem.pick(weaponsArray);
                     weaponsPicked++;
                 }
                 break;
             case "Armor":
                 if (armorPicked < 30) {
-                    addItemToInventory(currentItem, armorArray);
+                    currentItem.pick(armorArray);
                     armorPicked++;
                 }
                 break;
             case "Consumable":
                 if (itemsPicked < 30) {
-                    addItemToInventory(currentItem, itemsArray);
+                    if(currentItem instanceof Countable){
+                        for (Item item : itemsArray) {
+                            if (item != null) {
+                                ((Countable) currentItem).compareIDWith(item, itemsArray);
+                                break;
+                            }
+                        }
+                    }else{
+                        currentItem.pick(itemsArray);
+                    }
                     itemsPicked++;
                 }
                 break;
-        }
-    }
-    public void addItemToInventory(Item currentItem, Item[] inventoryArray) {
-        Iterator<Item> inArIt =  java.util.Arrays.asList(inventoryArray).iterator();
-        if (inArIt.hasNext()) {
-            // old part of if condition inventoryArray != null && java.util.Arrays.asList(inventoryArray).isEmpty()
-            // another one !anyItemsInArray(inventoryArray
-            currentItem.pick(inventoryArray);
-        } else {
-            for (Item item : inventoryArray) {
-                if (item != null) {
-                    currentItem.compareIDWith(item, inventoryArray);
-                    break;
-                }
-            }
         }
     }
     private void useInventory() {

@@ -42,20 +42,7 @@ public class Bow extends Weapon implements Equippable{
         catch (Exception e) {}
     }
 
-    //Pickable Methods
-    public void pick(Item[] inventoryArray){
-        inventoryArray[0] = this;
-        getWorld().removeObject(this);
-    }
-    public void compareIDWith(Item item, Item[] inventoryArray){
-        if (item.getItemId() == this.getItemId()) {
-            item.setItemCount(item.getItemCount() + 1);
-            getWorld().removeObject(this);
-        }else {
-            pick(inventoryArray);
-        }
-    }
-    //Pickable Getters and Setters
+    //Item Getters and Setters
     public int getItemSlotId() {
         return itemSlotId;
     }
