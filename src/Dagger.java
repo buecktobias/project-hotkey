@@ -41,25 +41,6 @@ public class Dagger extends Weapon implements Equippable{
     }
     */
 
-    //Item Methods
-    public void pick(Item[] inventoryArray){
-        for (int i = 0; i < 30; i++) {
-            if(inventoryArray[i] == null){
-                inventoryArray[i] = this;
-                getWorld().removeObject(this);
-                break;
-            }
-        }
-    }
-    public void compareIDWith(Item item, Item[] inventoryArray){
-        if (item.getItemId() == this.getItemId()) {
-            item.setItemCount(item.getItemCount() + 1);
-            getWorld().removeObject(this);
-        }else {
-            pick(inventoryArray);
-        }
-    }
-
     //Item Getters and Setters
     public int getItemSlotId() {
         return itemSlotId;
