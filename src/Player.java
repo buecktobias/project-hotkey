@@ -240,12 +240,11 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     }
 
     private void usePrimaryWeapon() {
-        if(getPrimaryWeapon() == null |! getWorld().getObjects(AttackingWeapon.class).isEmpty()) {
+        if(getPrimaryWeapon() == null |! getWorld().getObjects(WeaponAnimation.class).isEmpty()) {
             return;
         }
         getPrimaryWeapon().useWeapon();
-        // getWorld().addObject(new AttackingWeapon(getPrimaryWeapon().getItemImage()), getWorld().getWidth()/2+16, getWorld().getHeight()/2);
-        // TODO: Zur jeweiligen Waffe tun weil keine Ahnung
+
     }
 
     private void showSettingsWindow() {

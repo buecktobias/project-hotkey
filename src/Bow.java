@@ -22,11 +22,11 @@ public class Bow extends Weapon implements Equippable{
     }
 
     public void useWeapon(){
-        //Arrow arrow = new Arrow(player);
-        //System.out.println(player.getX());
-        //System.out.println(player.getY());
-        //getWorld().addObject(arrow,player.getX(),player.getY());
-        //attackSpeedWait(attackSpeed);
+        Arrow arrow = new Arrow(player);
+        System.out.println(player.getX());
+        System.out.println(player.getY());
+        player.getWorld().addObject(arrow,player.getX(),player.getY());
+        attackSpeedWait(attackSpeed);
     }
     public void act() {
         this.player = player;

@@ -27,14 +27,14 @@ public class Sector0_0 extends OpenWorld {
         HUD hud = new HUD(player);
         addObject(hud, getWidth() / 2, getHeight() / 2);
         setScrollingBackground(new GreenfootImage(bg));
-        Staff staff = new Staff(42);
+        Staff staff = new Staff(42, player);
         addObject(staff, 300, 100);
         Bow bow = new Bow(2500,player);
         addObject(bow,200,100);
         Companion companion = new Companion(player);
         addObject(companion,150,0);
 
-        addObject(new Chest(new Item[]{new Staff(5), new Staff(5), new Staff(6)}), 400, 100);
+        addObject(new Chest(new Item[]{new Staff(5, player), new Staff(5, player), new Staff(6, player)}), 400, 100);
 
 
         //randomObjects(Cobweb.class, 200, -600,800, 400, 10);

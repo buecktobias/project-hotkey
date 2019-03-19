@@ -14,12 +14,18 @@ public class Staff extends Weapon implements Equippable {
     private String itemName = itemManager.getItemNAME();
     private GreenfootImage itemImage = itemManager.getItemIMAGE();
     private boolean IEquipped = false;
+    private Player player;
 
-    public void useWeapon(){}
-    public Staff(int attackRange) {
+    public void useWeapon(){
+        player.getWorld().addObject(new WeaponAnimation(this.getItemImage(), 7, 80, 180), player.getWorld().getWidth()/2+16, player.getWorld().getHeight()/2);
+
+    }
+
+    public Staff(int attackRange, Player player) {
         this.attackRange = attackRange;
         this.attackSpeed = attackSpeed;
         this.damage = damage;
+        this.player = player;
         setImage(itemImage);
     }
 
