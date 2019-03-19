@@ -53,17 +53,8 @@ public abstract class OpenWorld extends World {
         totalYMovement += yMovement;
         List<Actor> actors = getObjects(Actor.class);
         for (Actor actor : actors) {
-            if (actor instanceof Player) {
-                ((Player) actor).setLocation(actor.getX() + xMovement, actor.getY() + yMovement);
-            } else if (actor instanceof Fixed) {
-
-            } else {
-                if (actor instanceof Projectiles) {
-                    ((Projectiles) actor).setPositionX(((Projectiles) actor).getPositionX() + xMovement);
-                    ((Projectiles) actor).setPositionY(((Projectiles) actor).getPositionY() + yMovement);
-                } else {
-                    actor.setLocation(actor.getX() + xMovement, actor.getY() + yMovement);
-                }
+            if (actor instanceof Fixed == false) {
+                actor.setLocation(actor.getX() + xMovement, actor.getY() + yMovement);
             }
 
         }

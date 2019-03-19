@@ -1,4 +1,10 @@
-public abstract class Weapon extends Item {
+public abstract class Weapon extends Item implements Equippable {
+    private int damage = 1;
+    private int attackSpeed = 1;
+    private int attackRange = 1;
+
+    private int animationStartDegrees = 0;
+    private int animationStopDegrees = 180;
 
     private double poisonDamage = 1;  // sollen multiplier sein
     private double fireDamage = 1;
@@ -9,7 +15,6 @@ public abstract class Weapon extends Item {
     private boolean iceApplied = false;
     private boolean lightningStrikeApplied = false;
 
-    abstract void useWeapon();
     //Getter & Settter
     public double getPoisonDamage() {
         return poisonDamage;
@@ -59,7 +64,15 @@ public abstract class Weapon extends Item {
     public void setLightningStrikeApplied(boolean lightningStrikeApplied) {
         this.lightningStrikeApplied = lightningStrikeApplied;
     }
-    public double hit(int damage) {
-        return damage;
-    }
+    public int getDamage() { return damage; }
+    public void setDamage(int damage) { this.damage = damage; }
+    public int getAttackRange() { return attackRange; }
+    public void setAttackRange(int attackRange) { this.attackRange = attackRange; }
+    public int getAttackSpeed() { return attackSpeed; }
+    public void setAttackSpeed(int attackSpeed) { this.attackSpeed = attackSpeed; }
+
+    public int getAnimationStartDegrees() { return animationStartDegrees; }
+    public void setAnimationStartDegrees(int animationStartDegrees) { this.animationStartDegrees = animationStartDegrees; }
+    public int getAnimationStopDegrees() { return animationStopDegrees; }
+    public void setAnimationStopDegrees(int animationStopDegrees) { this.animationStopDegrees = animationStopDegrees; }
 }

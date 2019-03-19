@@ -5,7 +5,7 @@ public enum ItemManager {
     //Weapons
     Staff(  "Weapon",0,"The Elder Wand",       5, new GreenfootImage("images/ItemImages/Wand.png")),
     Dagger( "Weapon",1,"Zahnstocher",          6, new GreenfootImage("images/ItemImages/Dagger.png")),
-    Bow(    "Weapon",2,"Dragonslayer GreatBow",5, new GreenfootImage("images/ItemImages/Key.png"));
+    Bow(    "Weapon",2,"Dragonslayer GreatBow",5, new GreenfootImage("images/ItemImages/Bow.png"));
 
     private final int itemID;
     private final int itemSLOTID;

@@ -1,44 +1,21 @@
 import greenfoot.GreenfootImage;
 
-public class Dagger extends Weapon implements Equippable{
-
-    private double damage;
-    private int attackSpeed;
-    private int attackRange;
-
+public class Dagger extends Weapon {
     // Item Attributes
     private ItemManager itemManager = ItemManager.Dagger;
-    private final int      itemSlotId = itemManager.getItemSLOTID();
-    private final int      itemId = itemManager.getItemID();
-    private final String   itemType = itemManager.getItemTYPE();
-    private String         itemName = itemManager.getItemNAME();
+    private final int itemSlotId = itemManager.getItemSLOTID();
+    private final int itemId = itemManager.getItemID();
+    private final String itemType = itemManager.getItemTYPE();
+    private String itemName = itemManager.getItemNAME();
     private GreenfootImage itemImage = itemManager.getItemIMAGE();
-    private boolean        IEquipped = false;
+    private boolean IEquipped = false;
 
-    //Dagger methods
-    public Dagger(int damage, int attackRange, int attackSpeed) {
-        this.damage = damage;
-        this.attackRange = attackRange;
-        this.attackSpeed = attackSpeed;
-
+    public Dagger() {
+        setImage(itemImage);
+        setDamage(1);
+        setAttackRange(1);
+        setAttackSpeed(1);
     }
-    public void useWeapon(){}
-
-    /*public void specialEffects() {
-        if(poisonApplied) {
-            damage = damage * poisonDamage;
-        }
-        if(fireApplied) {
-            damage = damage * fireDamage;
-        }
-        if(iceApplied) {
-            damage = damage * iceDamage;
-        }
-        if(lightningStrikeApplied) {
-            damage = damage * lightningStrikeDamage ;
-        }
-    }
-    */
 
     //Item Getters and Setters
     public int getItemSlotId() {
@@ -61,22 +38,5 @@ public class Dagger extends Weapon implements Equippable{
     }
     public void setIEquipped(boolean IEquipped) {
         this.IEquipped = IEquipped;
-    }
-
-    //Getters and Setters
-    public void setDamage(double damage) {
-        this.damage = damage;
-    }
-    public double getDamage() {
-        return damage;
-    }
-    public void setAttackSpeed(int attackSpeed) {
-        this.attackSpeed = attackSpeed;
-    }
-    public int getAttackSpeed() {
-        return attackSpeed;
-    }
-    public void setAttackRange(int attackRange) {
-        this.attackRange = attackRange;
     }
 }
