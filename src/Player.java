@@ -483,4 +483,11 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     public void setItemsArray(Item[] itemsArray) {
         this.itemsArray = itemsArray;
     }
+
+    public Item getPrimaryWeapon(){
+        return equippedItems[5];
+    }
+    public Item getSecondaryWeapon(){
+        return equippedItems[6];
+    }
 }

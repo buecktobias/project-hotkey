@@ -30,8 +30,6 @@ public class Inventory extends Actor implements Fixed {
     private JSONParser parser = new JSONParser();
     private ItemInfoScreen itemInfoScreenInstance;
     private int itemsDrawn;
-    private int drawAtX = 416;
-    private int drawAtY = 196;
     private int inventoryTab = 0;
     private boolean infoScreenActive = false;
     private boolean itemsEquipped = false;
@@ -75,6 +73,7 @@ public class Inventory extends Actor implements Fixed {
         p.setArmorArray(armorArray);
         p.setWeaponsArray(weaponArray);
         p.setItemsArray(itemArray);
+        p.setEquippedItems(equippedItems);
 
         Object obj = null;
         try {
@@ -104,7 +103,7 @@ public class Inventory extends Actor implements Fixed {
         array[index] = item;
     }
     private void removeItemFromInventory(Item item){
-
+        // TODO Switch case?
         if(item.getItemType().contains("Armor")){
             armorArray[java.util.Arrays.asList(armorArray).indexOf(item)] = null;
         }else if(item.getItemType().contains("Weapon")) {
@@ -127,8 +126,8 @@ public class Inventory extends Actor implements Fixed {
         }
     }
     private void drawTab(Item[] itemsToDraw){
-        drawAtX = 416;
-        drawAtY = 196;
+        int drawAtX = 416;
+        int drawAtY = 196;
         if(itemsDrawn == 6){
           drawAtX = 416;
           drawAtY = drawAtY + 55 + 12;
