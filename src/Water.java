@@ -3,8 +3,7 @@ import greenfoot.GreenfootImage;
 public class Water extends Environment implements HasEffect {
     private int waterDamage = 1;
     public Water(){
-        GreenfootImage img = new GreenfootImage("images/Environment/water.jpg");
-        img.scale(32,32);
+        GreenfootImage img = new GreenfootImage("images/Environment/Water.png");
         setImage(img);
     }
 
