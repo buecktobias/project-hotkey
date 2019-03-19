@@ -65,6 +65,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private String keyOpenInventar;
     private String keyOpenSettings;
     private String usePrimaryWeapon;
+    private String keyOpenChest;
     private Inventory inventoryInstance;
     private SkillWindow skillWindow;
     private int[] levelUps = new int[]{20,300,125,175, 200};
@@ -161,26 +162,6 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         }
     }
 
-    private void attackPrimary() {
-        Weapon weapon = getPrimaryWeapon();
-        if(weapon == null |! getWorld().getObjects(AttackingWeapon.class).isEmpty()) {
-            return;
-        }
-        getWorld().addObject(new AttackingWeapon(weapon.getItemImage()), getWorld().getWidth()/2+16, getWorld().getHeight()/2);
-
-        List<NPC> NPCs = getObjectsInRange(attackRange, NPC.class);
-        NPCs.removeIf(npc -> !(npc instanceof Attackable));
-        if (NPCs.size() > 0) {
-            if (NPCs.get(0) instanceof Attackable) {
-                Attackable attackable = (Attackable) NPCs.get(0);
-                attack(attackable, damage);
-                if (attackable.getLife() < 0) {
-                    level++;
-                }
-            }
-        }
-    }
-
     private void regenerateLife() {
 
         if (life < maxLife) {
@@ -231,10 +212,12 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         keyOpenSettings = keys.get("openSettingWindow").toString();
         keyOpenSkillWindow = keys.get("openSkillWindow").toString();
         usePrimaryWeapon = keys.get("useWeapon").toString();
+        keyOpenChest = keys.get("openChest").toString();
     }
     private void testKeys() {
         if (Greenfoot.isKeyDown(keyAttack)) {
-            attackPrimary();
+            // attackPrimary();
+            // TODO: Wir haben usePrimaryWeapon, wird das jetzt noch benötigt?
         }
         if (Greenfoot.isKeyDown(keyOpenSkillWindow)) {
             showSkillWindow();
@@ -243,12 +226,21 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
             showSettingsWindow();
         }
         if (Greenfoot.isKeyDown(usePrimaryWeapon)) {
-            if(getPrimaryWeapon() instanceof Bow) {
-                Weapon bow = getPrimaryWeapon();
-                bow.useWeapon();
-            }
+            usePrimaryWeapon();
+        }
+        if(Greenfoot.isKeyDown(keyOpenChest)) {
+            openChest();
         }
         performMovement();
+    }
+
+    private void usePrimaryWeapon() {
+        if(getPrimaryWeapon() == null |! getWorld().getObjects(AttackingWeapon.class).isEmpty()) {
+            return;
+        }
+        getPrimaryWeapon().useWeapon();
+        // getWorld().addObject(new AttackingWeapon(getPrimaryWeapon().getItemImage()), getWorld().getWidth()/2+16, getWorld().getHeight()/2);
+        // TODO: Zur jeweiligen Waffe tun weil keine Ahnung
     }
 
     private void showSettingsWindow() {
@@ -261,6 +253,15 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
             }
             lastFrameSettingsWindowOpened = fps.getFrame();
         }
+    }
+
+    public void openChest() {
+        List<Chest> chests = getObjectsInRange(attackRange, Chest.class);
+
+        if(!chests.isEmpty()) {
+            chests.get(0).open();
+        }
+
     }
 
     public void act() {
