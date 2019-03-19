@@ -5,9 +5,17 @@ import greenfoot.World;
 import java.util.List;
 
 public class Bomb extends Environment implements Blocking,ExplodingBehaviour {
-    private int attackRange = 100;
-    private int damage = 200;
+    private int attackRange;
+    private int damage;
     private GreenfootImage defaultImage = new GreenfootImage("images/Environment/bomb.png");
+    public Bomb(){
+        attackRange = 200;
+        damage = 200;
+    }
+    public Bomb(int attackRange,int damage){
+        this.attackRange = attackRange;
+        this.damage = damage;
+    }
     public void explode(final int radius){
         List<Environment> environmentList = getObjectsInRange(radius,Environment.class);
         getWorld().removeObjects(environmentList);

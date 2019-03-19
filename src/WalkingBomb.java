@@ -1,7 +1,4 @@
-import greenfoot.Actor;
 import greenfoot.GreenfootImage;
-
-import java.util.List;
 
 public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSensitive {
     private int visualRange = 500;
@@ -78,12 +75,8 @@ public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSe
     }
 
 
-    private void explode(final int radius){
-        List<Environment> environmentList = getObjectsInRange(radius,Environment.class);
-        getWorld().removeObjects(environmentList);
-        List<Actor> actorList = getObjectsInRange(radius, Actor.class);
-        actorList.removeIf(actor -> !(actor instanceof Attackable));
-        actorList.forEach(attackable -> ((Attackable)attackable).setLife(((Attackable)attackable).getLife() - this.damage));
+    private void explode(){
+        getWorld().addObject(new Bomb(this.attackRange,this.damage),this.getX(),this.getY());
         getWorld().removeObject(this);
     }
 
@@ -91,7 +84,7 @@ public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSe
     public boolean attackPlayer(int attackRange, int damage) {
         Player player = getPlayer(attackRange);
         if(player!=null){
-            explode(this.attackRange);
+            explode();
             return true;
         }
         return false;
@@ -106,8 +99,8 @@ public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSe
         }else{
             randomMove(500);
         }
-        if(life <0){
-            explode(this.attackRange);
+        if(life < 0){
+            explode();
         }
     }
 
