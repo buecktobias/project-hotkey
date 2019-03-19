@@ -13,7 +13,7 @@ public abstract class Hostile extends NPC {
         if (fps.getFrame() - lastFrameAttacked > attackSpeed) {
             if (attackPlayer(getAttackRange(), getDamage())) {
                 attackAnimation(attack1);
-               // lastFrameAttacked = fps.getFrame();
+                lastFrameAttacked = fps.getFrame(); // this is important !
                 return true;
             }
         }

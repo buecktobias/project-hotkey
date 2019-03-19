@@ -52,7 +52,7 @@ public abstract class NPC extends MovingActor {
         moveDirection(getRandomDirection(), getSpeed());
     }
 
-    private boolean move() {
+    public boolean move() {
         Direction directionToGo = movingList.poll();
         if (directionToGo != null) {
             moveDirection(directionToGo, getSpeed());
@@ -61,7 +61,7 @@ public abstract class NPC extends MovingActor {
         return false;
     }
 
-    private void addToMovingList(Direction d, int times) {
+    public void addToMovingList(Direction d, int times) {
         for (int i = 0; i < times; i++) {
             movingList.add(d);
         }

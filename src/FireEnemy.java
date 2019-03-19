@@ -3,7 +3,7 @@ import greenfoot.World;
 
 import java.util.Random;
 
-public class FireFighter extends Hostile implements  Blocking,Attackable {
+public class FireEnemy extends Hostile implements  Blocking,Attackable {
     private int attackRange = 50;
     private int fireSpawnSpeed = 60;
     private int fireSpawnRange = 200;
@@ -37,7 +37,7 @@ public class FireFighter extends Hostile implements  Blocking,Attackable {
         setImage(defaultImage);
     }
 
-    public void spawnFireNearby(){
+    public boolean spawnFireNearby(){
         if(timer.getFrame()- lastSpawnFire > fireSpawnSpeed){
             lastSpawnFire = timer.getFrame();
             int x = getX();
@@ -50,19 +50,23 @@ public class FireFighter extends Hostile implements  Blocking,Attackable {
                 randomY = random.nextInt(fireSpawnRange)-fireSpawnRange/2;
                 world.addObject(new Fire(60),x+randomX,y+randomY);
             }
-            }
+            return true;
+        }
+        return false;
 
     }
     @Override
     public void act() {
-        spawnFireNearby();
+        boolean fireSpawned = spawnFireNearby();
         setSpeed(DEFAULT_SPEED);
         getEffects();
-        if(moveToPlayer(this.visualRange)){
-            attack(attackSpeed);
-        }else{
-            setImage(defaultImage);
-            randomMove(200);
+        if(!(fireSpawned)) {
+            if (moveToPlayer(this.visualRange)) {
+                attack(attackSpeed);
+            } else {
+                setImage(defaultImage);
+                randomMove(200);
+            }
         }
         if(life <0){
             getWorld().removeObject(this);

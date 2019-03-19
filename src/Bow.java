@@ -22,7 +22,7 @@ public class Bow extends Weapon implements Equippable{
     }
 
     public void shoot() {
-        Arrow arrow = new Arrow(42, 1,100,player);
+        Arrow arrow = new Arrow();
         getWorld().addObject(arrow,getX(),getY());
         attackSpeedWait(attackSpeed);
 

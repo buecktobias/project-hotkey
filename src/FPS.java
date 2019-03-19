@@ -1,10 +1,9 @@
-import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 import greenfoot.World;
 
 import java.awt.*;
 
-public class FPS extends Actor implements Fixed {
+public class FPS extends Window {
     private long frame;
     private int fps;
     private long startTime;
@@ -19,7 +18,7 @@ public class FPS extends Actor implements Fixed {
         frame = 0;
         fps = 0;
         startTime = System.currentTimeMillis();
-        bg = new GreenfootImage("images/Screens/FPS_Window.png");
+        bg = new GreenfootImage("images/Screens/Transparent.png");
         bg.scale(128,64);
     }
 

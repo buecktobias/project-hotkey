@@ -31,7 +31,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     }
 
     private double fireDamageReduction = 0.99;
-
+    private EffectWindow effectWindow = new EffectWindow();
     private int weaponsPicked = 0;
     private int itemsPicked = 0;
     private int armorPicked = 0;
@@ -120,7 +120,8 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     protected void addedToWorld(World world) {
         skillWindow = new SkillWindow(world);
         inventoryInstance = new Inventory(this, world);
-        this.setImage(defaultImage);
+        this.setImage(new GreenfootImage("images/Characters/Enemy.png"));
+        getWorld().addObject(effectWindow,400,20);
     }
 
     private void move(Direction d, int distance) {
@@ -266,7 +267,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
             showSettingsWindow();
         }
         if (Greenfoot.isKeyDown(keyShootArrow)) {
-            getWorld().addObject(new Arrow(2, 20, 2, this), this.getX(), this.getY());
+            getWorld().addObject(new Arrow(), this.getX(), this.getY());
         }
         performMovement();
     }
@@ -288,10 +289,13 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         pick();
         useInventory();
         calculateEndurance();
-        testKeys();
         getEffects();
+        testKeys();
         printCoords();
         subtractFireDamageFromLife();
+        if(fireDamage > lifeRegeneration){
+            effectWindow.addEffect(new Fire().getImage());
+        }
         regenerateLife();
         if (this.life < minLife) {
             Greenfoot.setWorld(new DeathScreen());

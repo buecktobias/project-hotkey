@@ -5,7 +5,7 @@ import java.awt.*;
 import java.util.HashMap;
 import java.util.LinkedList;
 
-public class SkillWindow extends General implements Fixed{
+public class SkillWindow extends Window{
     private World world;
     private final  GreenfootImage bg;
     private LinkedList<Button> buttonList;
@@ -90,7 +90,7 @@ public class SkillWindow extends General implements Fixed{
                 }
             };
             buttonList.add(button);
-            world.addObject(button, 100 + getX(), ySkill + i * 60 + getY() - getHeight() / 2);
+            world.addObject(button, 100 + getX(), ySkill + i * 60 + getY() - this.getImage().getHeight() / 2);
         }
     }
     private void updatePlayersAttributes(){

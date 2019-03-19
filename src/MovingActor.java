@@ -92,7 +92,7 @@ public abstract class MovingActor extends General {
     public void move(Direction d){
         moveDirection(d,1);
     }
-    public void moveDirection(helper.Direction d,int distance){
+    public void moveDirection(Direction d,int distance){
         switch(d){
             case RIGHT:
                 moveRight(distance);

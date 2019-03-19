@@ -27,8 +27,6 @@ public class Fire extends Environment implements HasEffect {
     @Override
     public void effects(MovingActor movingActor) {
         if(movingActor instanceof FireSensitive){
-             //GreenfootImage img =movingActor.getImage();
-             //img.drawImage(this.getImage(),img.getWidth()/2,img.getHeight()/2);
             ((FireSensitive) movingActor).setLife(((FireSensitive) movingActor).getLife()-this.damage);
             ((FireSensitive) movingActor).setFireDamage(this.damage);
         }

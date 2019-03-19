@@ -9,6 +9,9 @@ public class Water extends Environment implements HasEffect {
 
     @Override
     public void effects(MovingActor movingActor) {
+        if(movingActor instanceof FireSensitive){
+            ((FireSensitive) movingActor).setFireDamage(0);
+        }
         if(movingActor instanceof CanSwim) {
             if (movingActor.getSpeed() > 1) {
                 movingActor.setSpeed((int) Math.round(movingActor.getSpeed() / 2));
