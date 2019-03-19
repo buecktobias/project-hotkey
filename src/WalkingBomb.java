@@ -2,8 +2,8 @@ import greenfoot.GreenfootImage;
 
 public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSensitive {
     private int visualRange = 500;
-    private int attackRange;
-    private int damage = 5;
+    private int attackRange = 200;
+    private int damage = 200;
     private int speed = 1;
     private double life = 100;
     private int hitboxRadius = getWidth();
@@ -46,10 +46,9 @@ public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSe
 
     public WalkingBomb(){
         GreenfootImage img = new GreenfootImage("images/Characters/Enemy.png");
-        img.scale(128,128);
+        img.scale(64,64);
         setImage(img);
         defaultImage = img;
-        attackRange =  img.getWidth();
     }
     @Override
     public double getLife() {
@@ -75,19 +74,33 @@ public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSe
         return defaultImage;
     }
 
+
+    private void explode(){
+        getWorld().addObject(new Bomb(this.attackRange,this.damage),this.getX(),this.getY());
+        getWorld().removeObject(this);
+    }
+
+    @Override
+    public boolean attackPlayer(int attackRange, int damage) {
+        Player player = getPlayer(attackRange);
+        if(player!=null){
+            explode();
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public void act() {
         subtractFireDamageFromLife();
         getEffects();
         if(moveToPlayer(this.visualRange)){
-
+            attackPlayer(this.attackRange, this.damage);
         }else{
             randomMove(500);
         }
-        if(attackPlayer(this.attackRange, this.damage)){
-        }
-        if(life <0){
-            getWorld().removeObject(this);
+        if(life < 0){
+            explode();
         }
     }
 

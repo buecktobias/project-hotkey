@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Sector0_0 extends OpenWorld {
-    private WalkingBomb enemy = new WalkingBomb();
+    private WalkingBomb walkingBomb = new WalkingBomb();
     private Random r = new Random();
     private final GreenfootImage bg = new GreenfootImage("images/Screens/background_grass.png");
 
@@ -18,12 +18,12 @@ public class Sector0_0 extends OpenWorld {
     public Sector0_0() {
         super(2000,2000);
         bg.scale(32,32);
-        setPaintOrder(Button.class, ItemInfoScreen.class, Inventory.class, HUD.class, MovingActor.class);
+        setPaintOrder(Button.class, ItemInfoScreen.class, Inventory.class, HUD.class, MovingActor.class,Window.class);
         setBackground(bg);
         addObject(FPS.getInstance(),1000,32);
         Player player = Player.getInstance();
-        addObject(player, 100, 100);
-        //addObject(enemy, 200, 200);
+        addObject(player, getWidth()/2, this.getHeight()/2);
+        addObject(walkingBomb, 200, 200);
         HUD hud = new HUD(player);
         addObject(hud, getWidth() / 2, getHeight() / 2);
         setScrollingBackground(new GreenfootImage(bg));
@@ -160,15 +160,24 @@ public class Sector0_0 extends OpenWorld {
     @Override
     public void act() {
         FPS fps = FPS.getInstance();
-        if (fps.getFrame() % 1000000 == 0) {
-            randomSpawn(Pig.class);
+        long currentFrame = fps.getFrame();
+        if(currentFrame != 0) {
+            if (currentFrame % 250 == 0) {
+                randomSpawn(Pig.class);
 
-        }
-        if (fps.getFrame() % 3000000 == 0) {
-           randomSpawn(Spider.class);
-        }
-        if (fps.getFrame() % 500000 == 0) {
-            randomSpawn(FireEnemy.class);
+            }
+            if (currentFrame % 150 == 0) {
+                randomSpawn(Bomb.class);
+            }
+            if (currentFrame % 450 == 0) {
+                randomSpawn(WalkingBomb.class);
+            }
+            if (fps.getFrame() % 100 == 0) {
+                randomSpawn(Spider.class);
+            }
+            if (fps.getFrame() % 350 == 0) {
+                randomSpawn(FireEnemy.class);
+            }
         }
     }
 }

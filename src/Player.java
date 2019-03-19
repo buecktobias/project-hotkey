@@ -23,6 +23,11 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private SettingsWindow settingsWindow = new SettingsWindow();
 
     private EffectWindow effectWindow = new EffectWindow();
+
+    public EffectWindow getEffectWindow() {
+        return effectWindow;
+    }
+
     private int weaponsPicked = 0;
     private int itemsPicked = 0;
     private int armorPicked = 0;
@@ -31,7 +36,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private int level = 1;
     private int exp = 20;
     private int sprintSpeed = 4;
-    private int attackRange = 500;
+    private int attackRange = 128;
     private int damage = 5;
     private int maxLife = 1000;
     private int waitEndurance = 0;
@@ -161,7 +166,13 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         }
     }
 
-    private void attackNPCs() {
+    private void attackPrimary() {
+        Weapon weapon = getPrimaryWeapon();
+        if(weapon == null |! getWorld().getObjects(AttackingWeapon.class).isEmpty()) {
+            return;
+        }
+        getWorld().addObject(new AttackingWeapon(weapon.getItemImage()), getWorld().getWidth()/2+16, getWorld().getHeight()/2);
+
         List<NPC> NPCs = getObjectsInRange(attackRange, NPC.class);
         NPCs.removeIf(npc -> !(npc instanceof Attackable));
         if (NPCs.size() > 0) {
@@ -228,7 +239,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     }
     private void testKeys() {
         if (Greenfoot.isKeyDown(keyAttack)) {
-            attackNPCs();
+            attackPrimary();
         }
         if (Greenfoot.isKeyDown(keyOpenSkillWindow)) {
             showSkillWindow();
