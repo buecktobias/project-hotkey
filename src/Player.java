@@ -22,15 +22,6 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private JSONParser parser = new JSONParser();
     private SettingsWindow settingsWindow = new SettingsWindow();
 
-    public double getFireDamageReduction() {
-        return fireDamageReduction;
-    }
-
-    public void setFireDamageReduction(double fireDamageReduction) {
-        this.fireDamageReduction = fireDamageReduction;
-    }
-
-    private double fireDamageReduction = 0.99;
     private EffectWindow effectWindow = new EffectWindow();
     private int weaponsPicked = 0;
     private int itemsPicked = 0;
@@ -38,15 +29,11 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private int currentSpeed;
     private int normalSpeed = 2;
     private int level = 1;
-    private final double NORMAL_LIFE_REGENERATION = 0.1;
-    private double lifeRegeneration = NORMAL_LIFE_REGENERATION;
+    private int exp = 20;
     private int sprintSpeed = 4;
     private int attackRange = 500;
     private int damage = 5;
-    private long lastFrameSkillWindowOpened = 0;
-    private long lastFrameSettingsWindowOpened = 0;
     private int maxLife = 1000;
-    private double life = maxLife;
     private int waitEndurance = 0;
     private int minEndurance = 0;
     private int maxEndurance = 1000;
@@ -55,37 +42,19 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private final int minLife = 0;
     private final int waitTimeWhenEnduranceIsZero = 5;
     private final int gameSpeed = 50;
+    private long lastFrameSettingsWindowOpened = 0;
+    private long lastFrameSkillWindowOpened = 0;
+    private final double NORMAL_LIFE_REGENERATION = 0.1;
+    private double fireDamageReduction = 0.99;
+    private double life = maxLife;
+    private double lifeRegeneration = NORMAL_LIFE_REGENERATION;
     private double endurance = maxEndurance;
     private double enduranceRegeneration = 1;
+    private double fireDamage = 0;
     private boolean skillScreenShown = false;
     private boolean isIActive = false;
     private boolean isSettingsWindowShown = false;
     private final FPS fps = FPS.getInstance();
-
-    @Override
-    public double getFireDamage() {
-        return fireDamage;
-    }
-
-    private double fireDamage = 0;
-
-    @Override
-    public void setFireDamage(double fireDamage) {
-        this.fireDamage = fireDamage;
-    }
-
-    public double getNORMAL_LIFE_REGENERATION() {
-        return NORMAL_LIFE_REGENERATION;
-    }
-
-    public double getLifeRegeneration() {
-        return lifeRegeneration;
-    }
-
-    public void setLifeRegeneration(double lifeRegeneration) {
-        this.lifeRegeneration = lifeRegeneration;
-    }
-
     private String keyMoveLeft;
     private String keyMoveRight;
     private String keyMoveUp;
@@ -98,6 +67,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private String keyShootArrow;
     private Inventory inventoryInstance;
     private SkillWindow skillWindow;
+    private int[] levelUps = new int[]{20,300,125,175, 200};
     private Item[] equippedItems = new Item[7];
     private Item[] weaponsArray = new Item[30];
     private Item[] armorArray = new Item[30];
@@ -373,10 +343,6 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         return endurance;
     }
 
-    public int getLevel() {
-        return level;
-    }
-
     public void setNormalSpeed(int normalSpeed) {
         this.normalSpeed = normalSpeed;
     }
@@ -488,10 +454,43 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         this.itemsArray = itemsArray;
     }
 
-    public Item getPrimaryWeapon(){
-        return equippedItems[5];
+    public Weapon getPrimaryWeapon(){
+        return (Weapon)equippedItems[5];
     }
-    public Item getSecondaryWeapon(){
-        return equippedItems[6];
+    public Weapon getSecondaryWeapon(){
+        return (Weapon)equippedItems[6];
     }
+
+    public double getFireDamageReduction() {
+        return fireDamageReduction;
+    }
+    public void setFireDamageReduction(double fireDamageReduction) {
+        this.fireDamageReduction = fireDamageReduction;
+    }
+    public double getFireDamage() {
+        return fireDamage;
+    }
+    public void setFireDamage(double fireDamage) {
+        this.fireDamage = fireDamage;
+    }
+    public double getNORMAL_LIFE_REGENERATION() {
+        return NORMAL_LIFE_REGENERATION;
+    }
+    public double getLifeRegeneration() {
+        return lifeRegeneration;
+    }
+    public void setLifeRegeneration(double lifeRegeneration) {
+        this.lifeRegeneration = lifeRegeneration;
+    }
+
+    public int getLevelUpValue(int index) {
+        return levelUps[index];
+    }
+    public int getLevel() {
+        return level;
+    }
+    public int getExp() {
+        return exp;
+    }
+
 }

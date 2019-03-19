@@ -15,7 +15,7 @@ public class Staff extends Weapon implements Equippable {
     private GreenfootImage itemImage = itemManager.getItemIMAGE();
     private boolean IEquipped = false;
 
-
+    public void useWeapon(){}
     public Staff(int attackRange) {
         this.attackRange = attackRange;
         this.attackSpeed = attackSpeed;

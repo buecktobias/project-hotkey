@@ -22,7 +22,7 @@ public class Dagger extends Weapon implements Equippable{
         this.attackSpeed = attackSpeed;
 
     }
-
+    public void useWeapon(){}
 
     /*public void specialEffects() {
         if(poisonApplied) {

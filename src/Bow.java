@@ -21,6 +21,8 @@ public class Bow extends Weapon implements Equippable{
         setImage(itemImage);
     }
 
+    public void useWeapon(){}
+
     public void shoot() {
         Arrow arrow = new Arrow();
         getWorld().addObject(arrow,getX(),getY());
