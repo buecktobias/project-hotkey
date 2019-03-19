@@ -23,6 +23,11 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private SettingsWindow settingsWindow = new SettingsWindow();
 
     private EffectWindow effectWindow = new EffectWindow();
+
+    public EffectWindow getEffectWindow() {
+        return effectWindow;
+    }
+
     private int weaponsPicked = 0;
     private int itemsPicked = 0;
     private int armorPicked = 0;
