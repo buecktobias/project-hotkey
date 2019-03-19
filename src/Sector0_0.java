@@ -31,6 +31,8 @@ public class Sector0_0 extends OpenWorld {
         addObject(staff, 300, 100);
         Bow bow = new Bow(2500,player);
         addObject(bow,200,100);
+        Dagger dagger = new Dagger(42, 42,42);
+        addObject(dagger, 400, 100);
         Companion companion = new Companion(player);
         addObject(companion,150,0);
 
