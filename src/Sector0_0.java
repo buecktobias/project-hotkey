@@ -18,7 +18,7 @@ public class Sector0_0 extends OpenWorld {
     public Sector0_0() {
         super(2000,2000);
         bg.scale(32,32);
-        setPaintOrder(Button.class, ItemInfoScreen.class, Inventory.class, HUD.class, MovingActor.class);
+        setPaintOrder(Button.class, ItemInfoScreen.class, Inventory.class, HUD.class,FPS.class, MovingActor.class);
         setBackground(bg);
         addObject(FPS.getInstance(),1000,32);
         Player player = Player.getInstance();
