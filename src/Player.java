@@ -69,7 +69,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private String keyOpenSkillWindow;
     private String keyOpenInventar;
     private String keyOpenSettings;
-    private String keyShootArrow;
+    private String usePrimaryWeapon;
     private Inventory inventoryInstance;
     private SkillWindow skillWindow;
     private int[] levelUps = new int[]{20,300,125,175, 200};
@@ -229,7 +229,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         keyOpenInventar = keys.get("openInventar").toString();
         keyOpenSettings = keys.get("openSettingWindow").toString();
         keyOpenSkillWindow = keys.get("openSkillWindow").toString();
-        keyShootArrow = keys.get("shootArrow").toString();
+        usePrimaryWeapon = keys.get("useWeapon").toString();
     }
     private void testKeys() {
         if (Greenfoot.isKeyDown(keyAttack)) {
@@ -241,8 +241,11 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         if (Greenfoot.isKeyDown(keyOpenSettings)) {
             showSettingsWindow();
         }
-        if (Greenfoot.isKeyDown(keyShootArrow)) {
-            getWorld().addObject(new Arrow(), this.getX(), this.getY());
+        if (Greenfoot.isKeyDown(usePrimaryWeapon)) {
+            if(getPrimaryWeapon() instanceof Bow) {
+                Weapon bow = getPrimaryWeapon();
+                bow.useWeapon();
+            }
         }
         performMovement();
     }

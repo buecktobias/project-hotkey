@@ -60,7 +60,6 @@ public abstract class Weapon extends Item {
         this.lightningStrikeApplied = lightningStrikeApplied;
     }
     public double hit(int damage) {
-
         return damage;
     }
 }

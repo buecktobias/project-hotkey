@@ -21,11 +21,12 @@ public class Arrow extends MovingActor{
     private Player player;
     private GreenfootImage defaultImage = new GreenfootImage("images/Arrows/Arrow_left.png");
 
-    public Arrow() {
+    public Arrow(Player player) {
         setImage(defaultImage);
+        this.player = player;
         int mouseX= Greenfoot.getMouseInfo().getX();
         int mouseY=Greenfoot.getMouseInfo().getY();
-        direction = Direction.RIGHT;
+        direction = this.player.getDirection();
     }
 
     @Override
@@ -37,9 +38,6 @@ public class Arrow extends MovingActor{
     protected void addedToWorld(World world) {
     }
     public void act() {
-        moveDirection(Direction.RIGHT,10);
+        moveDirection(direction,10);
     }
 }
-
-
-

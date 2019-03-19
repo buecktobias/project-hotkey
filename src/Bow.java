@@ -1,5 +1,5 @@
-import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
+
 
 public class Bow extends Weapon implements Equippable{
 
@@ -21,26 +21,17 @@ public class Bow extends Weapon implements Equippable{
         setImage(itemImage);
     }
 
-    public void useWeapon(){}
-
-    public void shoot() {
-        Arrow arrow = new Arrow();
-        getWorld().addObject(arrow,getX(),getY());
-        attackSpeedWait(attackSpeed);
-
+    public void useWeapon(){
+        //Arrow arrow = new Arrow(player);
+        //System.out.println(player.getX());
+        //System.out.println(player.getY());
+        //getWorld().addObject(arrow,player.getX(),player.getY());
+        //attackSpeedWait(attackSpeed);
     }
-
     public void act() {
-        if(Greenfoot.isKeyDown("V")) {
-            shoot();
-        }
+        this.player = player;
     }
-
     public void attackSpeedWait(int attackSpeed) {
-        try {
-           Thread.sleep(attackSpeed);
-        }
-        catch (Exception e) {}
     }
 
     //Item Getters and Setters
