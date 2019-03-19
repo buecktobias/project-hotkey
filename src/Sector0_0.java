@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Sector0_0 extends OpenWorld {
-    private WalkingBomb enemy = new WalkingBomb();
+    private WalkingBomb walkingBomb = new WalkingBomb();
     private Random r = new Random();
     private final GreenfootImage bg = new GreenfootImage("images/Screens/background_grass.png");
 
@@ -22,8 +22,8 @@ public class Sector0_0 extends OpenWorld {
         setBackground(bg);
         addObject(FPS.getInstance(),1000,32);
         Player player = Player.getInstance();
-        addObject(player, 100, 100);
-        //addObject(enemy, 200, 200);
+        addObject(player, getWidth()/2, this.getHeight()/2);
+        addObject(walkingBomb, 200, 200);
         HUD hud = new HUD(player);
         addObject(hud, getWidth() / 2, getHeight() / 2);
         setScrollingBackground(new GreenfootImage(bg));

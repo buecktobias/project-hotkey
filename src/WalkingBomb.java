@@ -1,9 +1,12 @@
+import greenfoot.Actor;
 import greenfoot.GreenfootImage;
+
+import java.util.List;
 
 public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSensitive {
     private int visualRange = 500;
     private int attackRange;
-    private int damage = 5;
+    private int damage = 200;
     private int speed = 1;
     private double life = 100;
     private int hitboxRadius = getWidth();
@@ -75,19 +78,38 @@ public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSe
         return defaultImage;
     }
 
+
+    private void explode(){
+        final int explodeRadius = attackRange;
+        List<Environment> environmentList = getObjectsInRange(explodeRadius,Environment.class);
+        getWorld().removeObjects(environmentList);
+        List<Actor> actorList = getObjectsInRange(explodeRadius, Actor.class);
+        actorList.removeIf(actor -> !(actor instanceof Attackable));
+        actorList.forEach(attackable -> ((Attackable)attackable).setLife(((Attackable)attackable).getLife() - this.damage));
+        getWorld().removeObject(this);
+    }
+
+    @Override
+    public boolean attackPlayer(int attackRange, int damage) {
+        Player player = getPlayer(attackRange);
+        if(player!=null){
+            explode();
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public void act() {
         subtractFireDamageFromLife();
         getEffects();
         if(moveToPlayer(this.visualRange)){
-
+            attackPlayer(this.attackRange, this.damage);
         }else{
             randomMove(500);
         }
-        if(attackPlayer(this.attackRange, this.damage)){
-        }
         if(life <0){
-            getWorld().removeObject(this);
+            explode();
         }
     }
 
