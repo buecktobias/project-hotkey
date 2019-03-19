@@ -36,6 +36,8 @@ public class Sector0_0 extends OpenWorld {
         Companion companion = new Companion(player);
         addObject(companion,150,0);
 
+        addObject(new Chest(new Item[]{new Staff(5), new Staff(5), new Staff(6)}), 400, 100);
+
 
         //randomObjects(Cobweb.class, 200, -600,800, 400, 10);
         //randomObjects(Sand.class, 600, 700,1000, 1000, 1);
