@@ -1,4 +1,3 @@
-import greenfoot.Actor;
 import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
 import greenfoot.World;
@@ -12,7 +11,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.LinkedList;
 
-public class Inventory extends Actor implements Fixed {
+public class Inventory extends GUI implements Fixed {
     //TODO GUI overhaul, make everything look nice
     //TODO enable Player to summon different familiars
 
@@ -175,15 +174,8 @@ public class Inventory extends Actor implements Fixed {
         }
     }
     private void drawItemAt(int X, int Y, Item item){
-        if(item != null){
-            InventoryScreen.setColor(Color.WHITE);
-            InventoryScreen.fillRect(X, Y, 55,55);
-            InventoryScreen.setColor(Color.BLUE);
-            InventoryScreen.drawRect(X, Y, 55, 55);
-            InventoryScreen.drawRect(X + 1,Y +1, 54, 54);
-            InventoryScreen.drawImage(item.getItemImage(), X, Y);
-            itemMouseLogic(X, Y, item);
-        }
+        super.drawItemAt(InventoryScreen, X, Y,item);
+        itemMouseLogic(X, Y, item);
     }
     private void drawTabFonts(){
         String armor = "Armor";
