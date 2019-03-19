@@ -5,7 +5,7 @@ import java.util.List;
 
 public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSensitive {
     private int visualRange = 500;
-    private int attackRange;
+    private int attackRange = 200;
     private int damage = 200;
     private int speed = 1;
     private double life = 100;
@@ -49,10 +49,9 @@ public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSe
 
     public WalkingBomb(){
         GreenfootImage img = new GreenfootImage("images/Characters/Enemy.png");
-        img.scale(128,128);
+        img.scale(64,64);
         setImage(img);
         defaultImage = img;
-        attackRange =  img.getWidth();
     }
     @Override
     public double getLife() {
@@ -79,11 +78,10 @@ public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSe
     }
 
 
-    private void explode(){
-        final int explodeRadius = attackRange;
-        List<Environment> environmentList = getObjectsInRange(explodeRadius,Environment.class);
+    private void explode(final int radius){
+        List<Environment> environmentList = getObjectsInRange(radius,Environment.class);
         getWorld().removeObjects(environmentList);
-        List<Actor> actorList = getObjectsInRange(explodeRadius, Actor.class);
+        List<Actor> actorList = getObjectsInRange(radius, Actor.class);
         actorList.removeIf(actor -> !(actor instanceof Attackable));
         actorList.forEach(attackable -> ((Attackable)attackable).setLife(((Attackable)attackable).getLife() - this.damage));
         getWorld().removeObject(this);
@@ -93,7 +91,7 @@ public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSe
     public boolean attackPlayer(int attackRange, int damage) {
         Player player = getPlayer(attackRange);
         if(player!=null){
-            explode();
+            explode(this.attackRange);
             return true;
         }
         return false;
@@ -109,7 +107,7 @@ public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSe
             randomMove(500);
         }
         if(life <0){
-            explode();
+            explode(this.attackRange);
         }
     }
 
