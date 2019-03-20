@@ -1,11 +1,6 @@
 import greenfoot.GreenfootImage;
 
-
-public class Bow extends Weapon implements Equippable{
-
-    private int attackSpeed;
-    private Player player;
-
+public class Bow extends RangedWeapon {
     // Item Attributes
     private ItemManager itemManager = ItemManager.Bow;
     private final int itemSlotId = itemManager.getItemSLOTID();
@@ -15,23 +10,17 @@ public class Bow extends Weapon implements Equippable{
     private GreenfootImage itemImage = itemManager.getItemIMAGE();
     private boolean IEquipped = false;
 
-    public Bow(int attackSpeed, Player player) {
-        this.attackSpeed = attackSpeed;
-        this.player = player;
+    public Bow() {
         setImage(itemImage);
+        setDamage(7);
+        setAttackRange(12);
+        setAttackSpeed(1);
+        setAnimationStartDegrees(-10);
+        setAnimationStopDegrees(10);
     }
 
-    public void useWeapon(){
-        //Arrow arrow = new Arrow(player);
-        //System.out.println(player.getX());
-        //System.out.println(player.getY());
-        //getWorld().addObject(arrow,player.getX(),player.getY());
-        //attackSpeedWait(attackSpeed);
-    }
-    public void act() {
-        this.player = player;
-    }
-    public void attackSpeedWait(int attackSpeed) {
+    public void shootFrom(Player player) {
+        player.getWorld().addObject(new Projectile(getDamage(), getAttackRange(), .1, player, new GreenfootImage("images/ItemImages/Arrow.png"), 0), player.getX(), player.getY());
     }
 
     //Item Getters and Setters
@@ -56,5 +45,4 @@ public class Bow extends Weapon implements Equippable{
     public void setIEquipped(boolean IEquipped) {
         this.IEquipped = IEquipped;
     }
-
 }

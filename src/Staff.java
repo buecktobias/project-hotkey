@@ -1,12 +1,9 @@
 import greenfoot.GreenfootImage;
 
-public class Staff extends Weapon implements Equippable {
+import java.util.Random;
 
-    private double damage;
-    private int attackSpeed;
-    private int attackRange;
-
-    //Item Attributes
+public class Staff extends RangedWeapon {
+    // Item Attributes
     private ItemManager itemManager = ItemManager.Staff;
     private final int itemSlotId = itemManager.getItemSLOTID();
     private final int itemId = itemManager.getItemID();
@@ -15,12 +12,24 @@ public class Staff extends Weapon implements Equippable {
     private GreenfootImage itemImage = itemManager.getItemIMAGE();
     private boolean IEquipped = false;
 
-    public void useWeapon(){}
-    public Staff(int attackRange) {
-        this.attackRange = attackRange;
-        this.attackSpeed = attackSpeed;
-        this.damage = damage;
+    public Staff() {
         setImage(itemImage);
+        setDamage(3);
+        setAttackRange(10);
+        setAttackSpeed(5);
+        setAnimationStartDegrees(50);
+        setAnimationStopDegrees(200);
+    }
+
+    public void shootFrom(Player player) {
+        Random r = new Random();
+        for (int i = 0; i < 12; i++) {
+            int scatter = r.nextInt(65)-32;
+            int rangeScatter = r.nextInt(5)-2;
+            player.getWorld().addObject(new Projectile(getDamage(), getAttackRange()+rangeScatter, .2, player, new GreenfootImage("images/ItemImages/magicMatter.png"), 30), player.getX()+scatter, player.getY()+scatter);
+
+        }
+
     }
 
     //Item Getters and Setters
@@ -29,9 +38,6 @@ public class Staff extends Weapon implements Equippable {
     }
     public int getItemId() {
         return itemId;
-    }
-    public void setIEquipped(boolean IEquipped) {
-        this.IEquipped = IEquipped;
     }
     public String getItemType() {
         return itemType;
@@ -44,5 +50,8 @@ public class Staff extends Weapon implements Equippable {
     }
     public boolean isIEquipped() {
         return IEquipped;
+    }
+    public void setIEquipped(boolean IEquipped) {
+        this.IEquipped = IEquipped;
     }
 }

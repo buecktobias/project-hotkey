@@ -36,12 +36,12 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private int level = 1;
     private int exp = 20;
     private int sprintSpeed = 4;
-    private int attackRange = 128;
-    private int damage = 5;
     private int maxLife = 1000;
     private int waitEndurance = 0;
     private int minEndurance = 0;
     private int maxEndurance = 1000;
+    private int interactingRange = 128;
+    private int damage = 5;
     private final int waitTimeOpenSkillWindow = 10;
     private final int waitTimeOpenSettingsWindow = 10;
     private final int minLife = 0;
@@ -78,13 +78,20 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private Item[] weaponsArray = new Item[30];
     private Item[] armorArray = new Item[30];
     private Item[] itemsArray = new Item[30];
-    private GreenfootImage defaultImage = new GreenfootImage("src/images/Characters/Player/test_player.png");
-    private GreenfootImage currentImage = defaultImage;
-    private GreenfootImage move1 = new GreenfootImage("src/images/Characters/Player/player_move1.png");
+    private GreenfootImage defaultImage = new GreenfootImage("src/images/Characters/Player/player_standing.png");
+    private GreenfootImage imageWalking1 = new GreenfootImage("src/images/Characters/Player/player_walking1.png");
+    private GreenfootImage imageWalking2 = new GreenfootImage("src/images/Characters/Player/player_walking2.png");
+    private GreenfootImage imageWalking3 = new GreenfootImage("src/images/Characters/Player/player_walking3.png");
+    private GreenfootImage imageWalking4 = new GreenfootImage("src/images/Characters/Player/player_walking4.png");
 
     @Override
     GreenfootImage[] getMovingAnimationImages() {
-        return new GreenfootImage[]{currentImage};
+        return new GreenfootImage[]{
+                imageWalking1, imageWalking1, imageWalking1, imageWalking1,
+                imageWalking2, imageWalking2, imageWalking2, imageWalking2,
+                imageWalking3, imageWalking3, imageWalking3, imageWalking3,
+                imageWalking4, imageWalking4, imageWalking4, imageWalking4
+        };
     }
 
     public Player() {
@@ -96,7 +103,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     protected void addedToWorld(World world) {
         skillWindow = new SkillWindow(world);
         inventoryInstance = new Inventory(this, world);
-        this.setImage(new GreenfootImage("images/Characters/Enemy.png"));
+        this.setImage(defaultImage);
         getWorld().addObject(effectWindow,400,20);
     }
 
@@ -240,12 +247,31 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     }
 
     private void usePrimaryWeapon() {
-        if(getPrimaryWeapon() == null |! getWorld().getObjects(AttackingWeapon.class).isEmpty()) {
+        if(getPrimaryWeapon() == null |! getWorld().getObjects(WeaponAnimation.class).isEmpty()) {
             return;
         }
-        getPrimaryWeapon().useWeapon();
-        // getWorld().addObject(new AttackingWeapon(getPrimaryWeapon().getItemImage()), getWorld().getWidth()/2+16, getWorld().getHeight()/2);
-        // TODO: Zur jeweiligen Waffe tun weil keine Ahnung
+        Weapon weapon = getPrimaryWeapon();
+
+        getWorld().addObject(
+                new WeaponAnimation(weapon.getItemImage(),
+                        weapon.getAttackSpeed(),
+                        weapon.getAnimationStartDegrees(),
+                        weapon.getAnimationStopDegrees()),
+                getWorld().getWidth()/2+16,
+                getWorld().getHeight()/2
+        );
+
+        if(weapon instanceof RangedWeapon) {
+            ((RangedWeapon) weapon).shootFrom(this);
+            return;
+        }
+
+        List<NPC> npcs = getObjectsInRange(weapon.getAttackRange(), NPC.class);
+        npcs.removeIf(npc -> !(npc instanceof Attackable));
+        if(!npcs.isEmpty()) {
+            Attackable attackable = (Attackable) npcs.get(0);
+            attack(attackable, weapon.getDamage());
+        }
     }
 
     private void showSettingsWindow() {
@@ -261,7 +287,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     }
 
     public void openChest() {
-        List<Chest> chests = getObjectsInRange(attackRange, Chest.class);
+        List<Chest> chests = getObjectsInRange(interactingRange, Chest.class);
 
         if(!chests.isEmpty()) {
             chests.get(0).open();
@@ -276,7 +302,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         calculateEndurance();
         getEffects();
         testKeys();
-        printCoords();
+        //printCoords();
         subtractFireDamageFromLife();
         if(fireDamage > lifeRegeneration){
             effectWindow.addEffect(new Fire().getImage());
@@ -371,13 +397,6 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         return sprintSpeed;
     }
 
-    public int getDamage() {
-        return damage;
-    }
-    public void setDamage(int damage) {
-        this.damage = damage;
-    }
-
     public int getMaxLife() {
         return maxLife;
     }
@@ -398,19 +417,18 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         isIActive = IActive;
     }
 
+    public int getDamage() {
+        return damage;
+    }
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
     public Item[] getEquippedItems() {
         return equippedItems;
     }
     public void setEquippedItems(Item[] equippedItems) {
         this.equippedItems = equippedItems;
-    }
-
-    public GreenfootImage getCurrentImage() {
-        return currentImage;
-    }
-
-    public void setCurrentImage(GreenfootImage currentImage) {
-        this.currentImage = currentImage;
     }
 
     public JSONParser getParser() {
@@ -507,5 +525,6 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     public int getExp() {
         return exp;
     }
+
 
 }
