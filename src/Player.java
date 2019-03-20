@@ -74,10 +74,10 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private Inventory inventoryInstance;
     private SkillWindow skillWindow;
     private int[] levelUps = new int[]{20,300,125,175, 200};
-    private Item[] equippedItems = new Item[7];
-    private Item[] weaponsArray = new Item[30];
-    private Item[] armorArray = new Item[30];
-    private Item[] itemsArray = new Item[30];
+    private Item[] equippedItems = new Item[6];
+    private Item[] weaponsArray = new Item[20];
+    private Item[] armorArray = new Item[20];
+    private Item[] itemsArray = new Item[20];
     private GreenfootImage defaultImage = new GreenfootImage("src/images/Characters/Player/player_standing.png");
     private GreenfootImage imageWalking1 = new GreenfootImage("src/images/Characters/Player/player_walking1.png");
     private GreenfootImage imageWalking2 = new GreenfootImage("src/images/Characters/Player/player_walking2.png");
@@ -491,10 +491,10 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     }
 
     public Weapon getPrimaryWeapon(){
-        return (Weapon)equippedItems[5];
+        return (Weapon)equippedItems[4];
     }
     public Weapon getSecondaryWeapon(){
-        return (Weapon)equippedItems[6];
+        return (Weapon)equippedItems[5];
     }
 
     public double getFireDamageReduction() {
