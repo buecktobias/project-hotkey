@@ -35,7 +35,7 @@ public class Fire extends Environment implements HasEffect {
     @Override
     public void act() {
         framesInWhichItDiappears--;
-        animate(moveAnimationList);
+        animate(4,moveAnimationList);
         if(framesInWhichItDiappears < 0){
             getWorld().removeObject(this);
         }

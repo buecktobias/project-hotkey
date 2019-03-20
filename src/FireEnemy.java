@@ -32,6 +32,11 @@ public class FireEnemy extends Hostile implements  Blocking,Attackable {
     private GreenfootImage move2 = new GreenfootImage("images/Characters/FireEnemy3.png");
 
     @Override
+    void movingAnimation() {
+        animate(4,defaultImage,move1,move2);
+    }
+
+    @Override
     protected void addedToWorld(World world) {
 
         setImage(defaultImage);
@@ -83,10 +88,6 @@ public class FireEnemy extends Hostile implements  Blocking,Attackable {
         this.speed = speed;
     }
 
-    @Override
-    GreenfootImage[] getMovingAnimationImages() {
-        return new GreenfootImage[]{defaultImage,defaultImage,move1,move1,move2,move2};
-    }
 
     @Override
     public int getDamage() {

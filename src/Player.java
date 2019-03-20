@@ -84,14 +84,8 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private GreenfootImage imageWalking3 = new GreenfootImage("src/images/Characters/Player/player_walking3.png");
     private GreenfootImage imageWalking4 = new GreenfootImage("src/images/Characters/Player/player_walking4.png");
 
-    @Override
-    GreenfootImage[] getMovingAnimationImages() {
-        return new GreenfootImage[]{
-                imageWalking1, imageWalking1, imageWalking1, imageWalking1,
-                imageWalking2, imageWalking2, imageWalking2, imageWalking2,
-                imageWalking3, imageWalking3, imageWalking3, imageWalking3,
-                imageWalking4, imageWalking4, imageWalking4, imageWalking4
-        };
+    public void movingAnimation(){
+        animate(4,imageWalking1,imageWalking2,imageWalking3,imageWalking4);
     }
 
     public Player() {

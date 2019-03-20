@@ -8,6 +8,7 @@ public abstract class General extends Actor {
 
     private int timer = 0;
     private int animationImage=0;
+    private long lastFrameAnimated =0;
     private GreenfootImage defaultImage;
 
     /**
@@ -74,6 +75,17 @@ public abstract class General extends Actor {
         }
         setImage(images[animationImage]);
         animationImage++;
+    }
+    public void animate(int speed,GreenfootImage... images){
+        assert images.length != 0;
+        if(animationImage >= images.length){
+            animationImage = 0;
+        }
+        if(FPS.getInstance().getFrame() - lastFrameAnimated > speed) {
+            setImage(images[animationImage]);
+            animationImage++;
+            lastFrameAnimated = FPS.getInstance().getFrame();
+        }
     }
 
     @Override

@@ -37,8 +37,7 @@ public class Pig extends Friendly implements Blocking,Attackable, FireSensitive 
     }
 
     @Override
-    GreenfootImage[] getMovingAnimationImages() {
-        return new GreenfootImage[]{defaultImage};
+    void movingAnimation() {
     }
 
     public Pig(){

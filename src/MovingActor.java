@@ -1,5 +1,4 @@
 import greenfoot.Actor;
-import greenfoot.GreenfootImage;
 import helper.Direction;
 
 import java.util.*;
@@ -10,8 +9,7 @@ import java.util.*;
  */
 public abstract class MovingActor extends General {
     public int hitboxRadius=getWidth()*4;
-    abstract GreenfootImage[] getMovingAnimationImages();
-    private boolean moveAnimation = false;
+    abstract void movingAnimation();
     abstract int getSpeed();
     abstract void setSpeed(int n);
 
@@ -156,7 +154,7 @@ public abstract class MovingActor extends General {
             setLocation(oldX,oldY);
             return false;
         }else {
-            animate(getMovingAnimationImages());
+            movingAnimation();
         }
         return true;
 

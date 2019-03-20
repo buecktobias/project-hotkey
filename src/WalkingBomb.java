@@ -29,9 +29,10 @@ public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSe
     public void setFireDamage(double fireDamage) {
         this.fireDamage = fireDamage;
     }
+
     @Override
-    GreenfootImage[] getMovingAnimationImages() {
-        return new GreenfootImage[]{defaultImage};
+    public void movingAnimation() {
+        animate(defaultImage);
     }
 
     @Override

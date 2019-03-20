@@ -64,12 +64,11 @@ public class Spider extends Hostile implements Blocking,Attackable,FireSensitive
         return attack1;
     }
 
-    @Override
-    public GreenfootImage[] getMovingAnimationImages() {
+    public void movingAnimation() {
         if(getPlayer(visualRange) != null){
-            return new GreenfootImage[]{angryImage,moveAngry1};
+            animate(4,angryImage,moveAngry1);
         }
-        return new GreenfootImage[]{defaultImage, move1};
+        animate(4,defaultImage, move1);
     }
     public boolean moveToPlayer(int visualRange){
         Player player = getPlayer(visualRange);

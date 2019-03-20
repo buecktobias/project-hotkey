@@ -1,12 +1,8 @@
-import greenfoot.GreenfootImage;
-
 public class Familiar extends Friendly {
     private int lifePoints = 100;
 
     @Override
-    GreenfootImage[] getMovingAnimationImages() {
-        return new GreenfootImage[0];
-    }
+    void movingAnimation() { }
 
     @Override
     int getSpeed() {
