@@ -56,7 +56,6 @@ public class Sector0_0 extends OpenWorld {
             //addObject(new Spider(), -400, -500);
             addObject(new Pig(), -200, 200);
             boundingRocks(BorderX1, BorderY1, BorderX2, BorderY2);
-
         }
 
     private void getSettings(){
@@ -64,7 +63,7 @@ public class Sector0_0 extends OpenWorld {
             Object obj = parser.parse(new FileReader("src/Settings.json"));
             jsonObject = (JSONObject) obj;
             stringGameMode = jsonObject.get("gameMode").toString();
-            System.out.println(stringGameMode);
+           // System.out.println(stringGameMode);
             for (GameMode value : GameMode.values()) {
                 if (value.name.equals(stringGameMode)) {
                     gameMode = value;
@@ -110,9 +109,7 @@ public class Sector0_0 extends OpenWorld {
 
     }
 
-    public void randomObjects(Class a, final int fromX, final int fromY, final int toX, final int toY,
-                              double density) {
-
+    public void randomObjects(Class a, final int fromX, final int fromY, final int toX, final int toY, double density) {
         int width;
         int height;
         if (density < 1) {

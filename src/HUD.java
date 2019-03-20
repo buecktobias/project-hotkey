@@ -4,7 +4,7 @@ public class HUD extends GUI implements Fixed {
 
     private Player p;
     private Weapon secondaryWeapon;
-    private GreenfootImage Background = new GreenfootImage("images/Hud_Menu_Images/Hud_V3.png");
+    private GreenfootImage Background = new GreenfootImage("images/Hud_Menu_Images/Hud_V4.png");
 
     public HUD(Player p){
         setImage(Background);
@@ -13,7 +13,7 @@ public class HUD extends GUI implements Fixed {
 
     public void act(){
         Background.clear();
-        Background = new GreenfootImage("images/Hud_Menu_Images/Hud_V3.png");
+        Background = new GreenfootImage("images/Hud_Menu_Images/Hud_V4.png");
         setImage(Background);
         super.drawBarAt(Background, p.getLife(), p.getMaxLife(), 308, "#7f0000", "#990000", "#cc0000", 12, 12);
         super.drawBarAt(Background,p.getEndurance(), p.getMaxEndurance(), 246, "#007f00", "#009900", "#00cc00",12,42 );

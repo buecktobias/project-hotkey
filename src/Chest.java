@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Chest extends Environment {
+public class Chest extends GUI {
 
     Item[] contents;
 

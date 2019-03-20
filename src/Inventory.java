@@ -12,8 +12,11 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 public class Inventory extends GUI implements Fixed {
+    //TODO Implement ammunition and quick access/ belt slots
     //TODO GUI overhaul, make everything look nice
-    //TODO enable Player to summon different familiars
+
+
+    //TODO enable Player to summon different familiars -> will not be done in inventory
 
     //TODO fix known issues:
     // 1) item info screen does not open/close as it is supposed;
@@ -28,7 +31,7 @@ public class Inventory extends GUI implements Fixed {
     private Item itemForInfo;
     private JSONParser parser = new JSONParser();
     private ItemInfoScreen itemInfoScreenInstance;
-    private int itemsDrawn;
+    private int itemsDrawn = 0;
     private int inventoryTab = 0;
     private boolean infoScreenActive = false;
     private boolean itemsEquipped = false;
@@ -38,7 +41,7 @@ public class Inventory extends GUI implements Fixed {
     private Item[] itemArray;
     private Item[] equippedItems = new Item[7];
     private LinkedList<Button>  buttonList;
-    private GreenfootImage InventoryScreen      = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV3.png");
+    private GreenfootImage InventoryScreen      = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV5.png");
     private GreenfootImage leftArrowClicked     = new GreenfootImage("images/Arrows/Arrow_left_aktive.png");
     private GreenfootImage leftArrowNotClicked  = new GreenfootImage("images/Arrows/Arrow_left.png");
     private GreenfootImage rightArrowClicked    = new GreenfootImage("images/Arrows/Arrow_right_aktive.png");
@@ -61,7 +64,7 @@ public class Inventory extends GUI implements Fixed {
         equippedItems = p.getEquippedItems();
 
         InventoryScreen.clear();
-        InventoryScreen  = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV4.png");
+        InventoryScreen  = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV5.png");
         setImage(InventoryScreen);
         drawTabFonts();
         drawCurrentTab();
@@ -125,14 +128,14 @@ public class Inventory extends GUI implements Fixed {
         }
     }
     private void drawTab(Item[] itemsToDraw){
-        int drawAtX = 416;
-        int drawAtY = 196;
-        if(itemsDrawn == 6){
-          drawAtX = 416;
+        int drawAtX = 553;
+        int drawAtY = 226;
+        if(itemsDrawn == 4){
+          drawAtX = 553;
           drawAtY = drawAtY + 55 + 12;
+            itemsDrawn = 0;
         }
-        itemsDrawn = 0;
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 20; i++) {
             if(itemsToDraw[i] == null){
                 drawAtX += 55 + 12;
                 itemsDrawn++;
@@ -144,32 +147,35 @@ public class Inventory extends GUI implements Fixed {
         }
     }
     private void drawEquippedItems(){
-        for(int i = 0; i < 7; i++){
+        for(int i = 0; i < 6; i++){
             if(equippedItems[i] != null){
                 Item item = equippedItems[i];
                 switch (item.getItemSlotId()){
                     case 0 :
-                        drawItemAt(196,196, item);
+                        drawItemAt(204,312, item);
                         break;
                     case 1 :
-                        drawItemAt(196,286, item);
+                        drawItemAt(204,312, item);
                         break;
                     case 2:
-                        drawItemAt(196,376, item);
+                        drawItemAt(375,312, item);
                         break;
                     case 3:
-                        drawItemAt(196,466, item);
+                        drawItemAt(459,312, item);
                         break;
                     case 4:
-                        drawItemAt(276,196, item);
+                        drawItemAt(375,226, item);
                         break;
                     case 5:
-                        drawItemAt(276,286, item);
-                        break;
-                    case 6:
-                        drawItemAt(276,376, item);
+                        drawItemAt(289,226, item);
                         break;
                 }
+                // Helmet  0
+                // Chest   1
+                // Legs    2
+                // Boots   3
+                // Primary 4
+                // Secondary 5
             }
         }
     }
@@ -181,18 +187,18 @@ public class Inventory extends GUI implements Fixed {
         String armor = "Armor";
         String weapons = "Weapons";
         String items = "Items";
-        InventoryScreen.setFont(new Font(Font.SANS_SERIF, Font.ITALIC, 20));
+        InventoryScreen.setFont(new Font(Font.SANS_SERIF, Font.ITALIC, 19));
         InventoryScreen.setColor(Color.WHITE);
-        InventoryScreen.drawString(weapons,   470,175);
-        InventoryScreen.drawString(armor,     580,175);
-        InventoryScreen.drawString(items,     680,175);
+        InventoryScreen.drawString(weapons,   560,198);
+        InventoryScreen.drawString(armor,     660,198);
+        InventoryScreen.drawString(items,     740,198);
         InventoryScreen.setColor(Color.RED);
         if(inventoryTab == 0){
-            InventoryScreen.drawString(weapons,   470,175);
+            InventoryScreen.drawString(weapons,   560,198);
         }else if(inventoryTab == 1){
-            InventoryScreen.drawString(armor,     580,175);
+            InventoryScreen.drawString(armor,     660,198);
         }else if(inventoryTab == 2){
-            InventoryScreen.drawString(items,     680,175);
+            InventoryScreen.drawString(items,     740,198);
         }
     }
 
@@ -248,9 +254,9 @@ public class Inventory extends GUI implements Fixed {
 
     private void createArrow(String position) {
         if (position.equals("left")) {
-            createButton(leftArrowNotClicked, leftArrowClicked, position,440, 165);
+            createButton(leftArrowNotClicked, leftArrowClicked, position,540, 189);
         }else{
-            createButton(rightArrowNotClicked, rightArrowClicked, position, 780, 165);
+            createButton(rightArrowNotClicked, rightArrowClicked, position, 820, 189);
         }
     }
     private void createButton(GreenfootImage buttonImgUnClicked1, GreenfootImage buttonImgClicked1, String position, int X, int Y) {
