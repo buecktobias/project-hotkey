@@ -13,7 +13,7 @@ import java.util.List;
 
 
 public class Player extends MovingActor implements Attackable, Blocking, FireSensitive, CanSwim {
-    private static Player ourInstance = new Player();
+    private static Player ourInstance;
 
     public static Player getInstance() {
         return ourInstance;
@@ -95,6 +95,9 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     }
 
     public Player() {
+        if(ourInstance == null){
+            ourInstance = this;
+        }
         Greenfoot.setSpeed(gameSpeed);
         updateKeys();
     }

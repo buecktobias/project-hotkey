@@ -1,6 +1,11 @@
 import greenfoot.Actor;
 import greenfoot.GreenfootImage;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -9,53 +14,67 @@ public class Sector0_0 extends OpenWorld {
     private WalkingBomb walkingBomb = new WalkingBomb();
     private Random r = new Random();
     private final GreenfootImage bg = new GreenfootImage("images/Screens/background_grass.png");
-
+    private JSONParser parser = new JSONParser();
+    private JSONObject jsonObject;
+    private String stringGameMode;
+    private GameMode gameMode;
     private final int BorderX1 = -1_000;
     private final int BorderY1 = -1_000;
     private final int BorderX2 = 1_000;
     private final int BorderY2 = 1_000;
 
     public Sector0_0() {
-        super(2000,2000);
-        bg.scale(32,32);
-        setPaintOrder(Button.class, ItemInfoScreen.class, Inventory.class, HUD.class, MovingActor.class,Window.class);
-        setBackground(bg);
-        addObject(FPS.getInstance(),1000,32);
-        Player player = Player.getInstance();
-        addObject(player, getWidth()/2, this.getHeight()/2);
-        addObject(walkingBomb, 200, 200);
-        HUD hud = new HUD(player);
-        addObject(hud, getWidth() / 2, getHeight() / 2);
-        setScrollingBackground(new GreenfootImage(bg));
-        Staff staff = new Staff();
-        addObject(staff, 300, 100);
-        Bow bow = new Bow();
-        addObject(bow,200,100);
-        Dagger dagger = new Dagger(42, 42,42);
-        addObject(dagger, 400, 100);
-        Companion companion = new Companion(player);
-        addObject(companion,150,0);
-
-        addObject(new Chest(new Item[]{new Staff(), new Staff(), new Staff()}), 400, 100);
+        super(2000, 2000);
+            bg.scale(32, 32);
+            getSettings();
+            setPaintOrder(Button.class, ItemInfoScreen.class, Inventory.class, HUD.class, MovingActor.class, Window.class);
+            setBackground(bg);
+            addObject(FPS.getInstance(), 1000, 32);
+            Player player = new Player();
+            addObject(player, getWidth() / 2, this.getHeight() / 2);
+           // addObject(walkingBomb, 200, 200);
+            HUD hud = new HUD(player);
+            addObject(hud, getWidth() / 2, getHeight() / 2);
+            setScrollingBackground(new GreenfootImage(bg));
+            Bow bow = new Bow();
+            addObject(bow, 200, 100);
+            Companion companion = new Companion(player);
+            addObject(companion, 150, 0);
 
 
-        //randomObjects(Cobweb.class, 200, -600,800, 400, 10);
-        //randomObjects(Sand.class, 600, 700,1000, 1000, 1);
-        randomObjects(Grass.class, -500, -300,400, 800, 2);
-        randomObjects(Tree.class, 20, 100, 800, 600, 2);
-        randomObjects(Grass.class, 700, 600, 1000, 900, 6);
-        randomObjects(Rock.class, 500, -500, 900, 300, 8);
-        randomObjects(Water.class, -600, 200, -100, 1_000, 1);
-        randomObjects(Fire.class, 700, 600, 1000, 900, 5);
-        randomObjects(Fire.class, -1000, -1000, -100, -200, 10);
-        randomObjects(Grass.class, BorderX1, BorderY1, BorderX2, BorderY2, 12);
+            randomObjects(Cobweb.class, 200, -600,800, 400, 10);
+            randomObjects(Sand.class, 600, 700,1000, 1000, 1);
+            randomObjects(Grass.class, -500, -300, 400, 800, 2);
+            randomObjects(Tree.class, 20, 100, 800, 600, 2);
+            randomObjects(Grass.class, 700, 600, 1000, 900, 6);
+            randomObjects(Rock.class, 500, -500, 900, 300, 8);
+            randomObjects(Water.class, -600, 200, -100, 1_000, 1);
+            randomObjects(Fire.class, 700, 600, 1000, 900, 5);
+            randomObjects(Fire.class, -1000, -1000, -100, -200, 10);
+            randomObjects(Grass.class, BorderX1, BorderY1, BorderX2, BorderY2, 12);
 
-        //addObject(new Spider(), -400, -500);
-        addObject(new Pig(), -200, 200);
-        boundingRocks(BorderX1, BorderY1, BorderX2, BorderY2);
+            //addObject(new Spider(), -400, -500);
+            addObject(new Pig(), -200, 200);
+            boundingRocks(BorderX1, BorderY1, BorderX2, BorderY2);
 
+        }
+
+    private void getSettings(){
+        try {
+            Object obj = parser.parse(new FileReader("src/Settings.json"));
+            jsonObject = (JSONObject) obj;
+            stringGameMode = jsonObject.get("gameMode").toString();
+            System.out.println(stringGameMode);
+            for (GameMode value : GameMode.values()) {
+                if (value.name.equals(stringGameMode)) {
+                    gameMode = value;
+                }
+            }
+
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
     }
-
     private void boundingRocks(final int smallX, final int smallY, final int maxX, final int maxY) {
         for (int x = smallX; x < maxX; x += 32) {
             addObject(new Rock(), x, smallY);
@@ -91,7 +110,8 @@ public class Sector0_0 extends OpenWorld {
 
     }
 
-    public void randomObjects(Class a, final int fromX, final int fromY, final int toX, final int toY, double density) {
+    public void randomObjects(Class a, final int fromX, final int fromY, final int toX, final int toY,
+                              double density) {
 
         int width;
         int height;
@@ -156,29 +176,46 @@ public class Sector0_0 extends OpenWorld {
             }
         }
         return max;
-
     }
 
     @Override
     public void act() {
+        getSettings();
         FPS fps = FPS.getInstance();
         long currentFrame = fps.getFrame();
-        if(currentFrame != 0) {
-            if (currentFrame % 250 == 0) {
-                randomSpawn(Pig.class);
-
+        if(gameMode != null){
+            if (currentFrame % 200 == 0) {
+                //randomSpawn(Pig.class);
             }
-            if (currentFrame % 150 == 0) {
-                randomSpawn(Bomb.class);
+            if (currentFrame % gameMode.eachFrameEnemySpawns == 0) {
+                //randomSpawn(Bomb.class);
             }
-            if (currentFrame % 450 == 0) {
-                randomSpawn(WalkingBomb.class);
+            if (currentFrame % gameMode.eachFrameEnemySpawns == 0) {
+                //randomSpawn(WalkingBomb.class);
             }
-            if (fps.getFrame() % 100 == 0) {
-                randomSpawn(Spider.class);
+            if (fps.getFrame() % gameMode.eachFrameEnemySpawns == 0) {
+                //randomSpawn(Spider.class);
             }
-            if (fps.getFrame() % 350 == 0) {
-                randomSpawn(FireEnemy.class);
+            if (fps.getFrame() % gameMode.eachFrameEnemySpawns == 0) {
+                //randomSpawn(FireEnemy.class);
+            }
+        }else {
+            if (currentFrame != 0) {
+                if (currentFrame % 250 == 0) {
+                   // randomSpawn(Pig.class);
+                }
+                if (currentFrame % 150 == 0) {
+                    // randomSpawn(Bomb.class);
+                }
+                if (currentFrame % 450 == 0) {
+                    //randomSpawn(WalkingBomb.class);
+                }
+                if (fps.getFrame() % 100 == 0) {
+                    //randomSpawn(Spider.class);
+                }
+                if (fps.getFrame() % 350 == 0) {
+                    //randomSpawn(FireEnemy.class);
+                }
             }
         }
     }
