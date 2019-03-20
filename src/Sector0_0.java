@@ -25,21 +25,8 @@ public class Sector0_0 extends OpenWorld {
 
     public Sector0_0() {
         super(2000, 2000);
-        try {
-            Object obj = parser.parse(new FileReader("src/Settings.json"));
-            jsonObject = (JSONObject) obj;
-            stringGameMode = jsonObject.get("gameMode").toString();
-            System.out.println(stringGameMode);
-            for (GameMode value : GameMode.values()) {
-                if (value.toString().equals(stringGameMode)) {
-                    gameMode = value;
-                }
-            }
-
-        } catch (IOException | ParseException e) {
-            e.printStackTrace();
-        }
             bg.scale(32, 32);
+            getSettings();
             setPaintOrder(Button.class, ItemInfoScreen.class, Inventory.class, HUD.class, MovingActor.class, Window.class);
             setBackground(bg);
             addObject(FPS.getInstance(), 1000, 32);
@@ -72,6 +59,22 @@ public class Sector0_0 extends OpenWorld {
 
         }
 
+    private void getSettings(){
+        try {
+            Object obj = parser.parse(new FileReader("src/Settings.json"));
+            jsonObject = (JSONObject) obj;
+            stringGameMode = jsonObject.get("gameMode").toString();
+            System.out.println(stringGameMode);
+            for (GameMode value : GameMode.values()) {
+                if (value.name.equals(stringGameMode)) {
+                    gameMode = value;
+                }
+            }
+
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
+    }
     private void boundingRocks(final int smallX, final int smallY, final int maxX, final int maxY) {
         for (int x = smallX; x < maxX; x += 32) {
             addObject(new Rock(), x, smallY);
@@ -178,23 +181,44 @@ public class Sector0_0 extends OpenWorld {
 
     @Override
     public void act() {
+        getSettings();
         FPS fps = FPS.getInstance();
         long currentFrame = fps.getFrame();
-        if (currentFrame != 0) {
-            if (currentFrame % 250 == 0) {
+        if(gameMode != null){
+            if (currentFrame % 200 == 0) {
                 randomSpawn(Pig.class);
             }
-            if (currentFrame % 150 == 0) {
+            if (currentFrame % gameMode.eachFrameEnemySpawns == 0) {
                 randomSpawn(Bomb.class);
             }
-            if (currentFrame % 450 == 0) {
+            if (currentFrame % gameMode.eachFrameEnemySpawns == 0) {
                 randomSpawn(WalkingBomb.class);
             }
-            if (fps.getFrame() % 100 == 0) {
+            if (fps.getFrame() % gameMode.eachFrameEnemySpawns == 0) {
                 randomSpawn(Spider.class);
             }
-            if (fps.getFrame() % 350 == 0) {
+            if (fps.getFrame() % gameMode.eachFrameEnemySpawns == 0) {
                 randomSpawn(FireEnemy.class);
+            }
+
+
+        }else {
+            if (currentFrame != 0) {
+                if (currentFrame % 250 == 0) {
+                    randomSpawn(Pig.class);
+                }
+                if (currentFrame % 150 == 0) {
+                    randomSpawn(Bomb.class);
+                }
+                if (currentFrame % 450 == 0) {
+                    randomSpawn(WalkingBomb.class);
+                }
+                if (fps.getFrame() % 100 == 0) {
+                    randomSpawn(Spider.class);
+                }
+                if (fps.getFrame() % 350 == 0) {
+                    randomSpawn(FireEnemy.class);
+                }
             }
         }
     }

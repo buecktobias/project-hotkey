@@ -9,8 +9,12 @@ public class Cobweb extends Environment implements HasEffect {
 
     @Override
     public void effects(MovingActor movingActor) {
+
         movingActor.setSpeed(0);
         health--;
+        if(movingActor instanceof Player){
+            ((Player) movingActor).getEffectWindow().addEffect(this.defaultImage);
+        }
     }
 
     @Override
