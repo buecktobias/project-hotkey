@@ -18,6 +18,7 @@ public class Bomb extends Environment implements Blocking,ExplodingBehaviour {
     }
     public void explode(final int radius){
         List<Environment> environmentList = getObjectsInRange(radius,Environment.class);
+        environmentList.removeIf(environment -> !(environment instanceof Explodes));
         getWorld().removeObjects(environmentList);
         List<Actor> actorList = getObjectsInRange(radius, Actor.class);
         actorList.removeIf(actor -> !(actor instanceof Attackable));

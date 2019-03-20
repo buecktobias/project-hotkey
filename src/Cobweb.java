@@ -1,6 +1,6 @@
 import greenfoot.GreenfootImage;
 
-public class Cobweb extends Environment implements HasEffect {
+public class Cobweb extends Environment implements HasEffect,Explodes {
     private GreenfootImage defaultImage = new GreenfootImage("images/Environment/cobweb.png");
     private int health = 20;
     public Cobweb(){
