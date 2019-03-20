@@ -19,18 +19,17 @@ public class SettingsWindow extends Window {
     private JSONParser parser = new JSONParser();
     private LinkedList<Button> buttonList = new LinkedList<>();
     private GreenfootImage bg = new GreenfootImage("images/Screens/Settings_test.png");
-
+    private String gameMode;
     @Override
     protected void addedToWorld(World world) {
         try {
             Object obj = parser.parse(new FileReader("src/Settings.json"));
             jsonObject = (JSONObject) obj;
             JSONObject keys = (JSONObject) jsonObject.get("keys");
+            gameMode = jsonObject.get("gameMode").toString();
             showKeys(keys);
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
+        } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
     }
