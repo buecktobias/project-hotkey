@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Random;
 
 public class Sector0_0 extends OpenWorld {
-    private WalkingBomb walkingBomb = new WalkingBomb();
     private Random r = new Random();
     private final GreenfootImage bg = new GreenfootImage("images/Screens/background_grass.png");
     private JSONParser parser = new JSONParser();
@@ -32,7 +31,6 @@ public class Sector0_0 extends OpenWorld {
             addObject(FPS.getInstance(), 1000, 32);
             Player player = new Player();
             addObject(player, getWidth() / 2, this.getHeight() / 2);
-           // addObject(walkingBomb, 200, 200);
             HUD hud = new HUD(player);
             addObject(hud, getWidth() / 2, getHeight() / 2);
             setScrollingBackground(new GreenfootImage(bg));
@@ -52,9 +50,6 @@ public class Sector0_0 extends OpenWorld {
             randomObjects(Fire.class, 700, 600, 1000, 900, 5);
             randomObjects(Fire.class, -1000, -1000, -100, -200, 10);
             randomObjects(Grass.class, BorderX1, BorderY1, BorderX2, BorderY2, 12);
-
-            //addObject(new Spider(), -400, -500);
-            addObject(new Pig(), -200, 200);
             boundingRocks(BorderX1, BorderY1, BorderX2, BorderY2);
         }
 
