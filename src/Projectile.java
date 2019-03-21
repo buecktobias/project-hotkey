@@ -10,7 +10,6 @@ public class Projectile extends General {
     private double velocityY;
     private double speed;
     private int damage;
-    private Player player;
     private int rotation;
     private double drag;
     private int scatter;
@@ -20,11 +19,10 @@ public class Projectile extends General {
 
     private boolean failed;
 
-    public Projectile(int damage, double speed, double drag, Player player, GreenfootImage image, int scatter) {
+    public Projectile(int damage, double speed, double drag, GreenfootImage image, int scatter) {
         this.defaultImage = image;
         this.damage = damage;
         this.speed = speed;
-        this.player = player;
         this.drag = drag;
         this.scatter = scatter;
 
@@ -33,29 +31,28 @@ public class Projectile extends General {
             this.failed = true;
             return;
         }
-        int destinationX = mouseInfo.getX()-player.getWorld().getWidth()/2;
-        int destinationY = mouseInfo.getY()-player.getWorld().getHeight()/2;
 
+    }
+    public void shootFromTo(int fromX,int fromY,int toX,int toY){
+        int destinationX = toX - fromX;
+        int destinationY = toY - fromY;
         this.rotation = (int) Math.toDegrees(Math.atan2(destinationY, destinationX));
         GreenfootImage rotatedImage = new GreenfootImage(defaultImage);
         rotatedImage.rotate(this.rotation);
         setImage(rotatedImage);
-
-
         this.rotation = this.rotation + r.nextInt(2*scatter+1)-scatter;
-
-
-
         this.velocityX = Math.cos(Math.toRadians(this.rotation))*this.speed;
         this.velocityY = Math.sin(Math.toRadians(this.rotation))*this.speed;
-
     }
 
     public void act() {
         if(this.failed) {
-            player.getWorld().removeObject(this);
+            getWorld().removeObject(this);
             return;
         }
+        updatePosition();
+    }
+    public void updatePosition(){
 
         int newX = getX() + (int) Math.round(velocityX);
         int newY = getY() + (int) Math.round(velocityY);
@@ -70,7 +67,8 @@ public class Projectile extends General {
                     break;
                 }
             }
-            player.getWorld().removeObject(this);
+
+            getWorld().removeObject(this);
             return;
         }
 
@@ -78,14 +76,13 @@ public class Projectile extends General {
         setLocation(newX, newY);
 
         if(speed <= 0) {
-            this.player.getWorld().removeObject(this);
+            getWorld().removeObject(this);
             return;
         }
 
         this.speed = this.speed - drag;
         this.velocityX = Math.cos(Math.toRadians(this.rotation))*this.speed;
         this.velocityY = Math.sin(Math.toRadians(this.rotation))*this.speed;
-
     }
 
 }

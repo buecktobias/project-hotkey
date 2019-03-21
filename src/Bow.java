@@ -1,3 +1,4 @@
+import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 
 public class Bow extends RangedWeapon {
@@ -19,8 +20,10 @@ public class Bow extends RangedWeapon {
         setAnimationStopDegrees(10);
     }
 
-    public void shootFrom(Player player) {
-        player.getWorld().addObject(new Projectile(getDamage(), getAttackRange(), .1, player, new GreenfootImage("images/ItemImages/Arrow.png"), 0), player.getX(), player.getY());
+    public void shootFrom(Actor a, int toX, int toY) {
+        Projectile projectile = new Projectile(getDamage(), getAttackRange(), .1, new GreenfootImage("images/ItemImages/Arrow.png"), 0);
+        a.getWorld().addObject(projectile, a.getX(), a.getY());
+        projectile.shootFromTo(a.getX(),a.getY(),toX,toY);
     }
 
     //Item Getters and Setters

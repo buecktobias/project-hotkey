@@ -1,5 +1,8 @@
+import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 
 public class Staff extends RangedWeapon {
@@ -21,14 +24,18 @@ public class Staff extends RangedWeapon {
         setAnimationStopDegrees(200);
     }
 
-    public void shootFrom(Player player) {
+    public void shootFrom(Actor a, int toX, int toY) {
         Random r = new Random();
+        List<Projectile> projectiles = new LinkedList<>();
         for (int i = 0; i < 12; i++) {
             int scatter = r.nextInt(65)-32;
             int rangeScatter = r.nextInt(5)-2;
-            player.getWorld().addObject(new Projectile(getDamage(), getAttackRange()+rangeScatter, .2, player, new GreenfootImage("images/ItemImages/magicMatter.png"), 30), player.getX()+scatter, player.getY()+scatter);
-
+            Projectile projectile = new Projectile(getDamage(), getAttackRange()+rangeScatter, .2, new GreenfootImage("images/ItemImages/magicMatter.png"), 30);
+            projectiles.add(projectile);
+            a.getWorld().addObject(projectile, a.getX()+scatter, a.getY()+scatter);
+            projectile.shootFromTo(a.getX()+scatter,a.getY()+scatter,toX,toY);
         }
+
 
     }
 

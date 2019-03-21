@@ -1,5 +1,6 @@
 import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
+import greenfoot.MouseInfo;
 import greenfoot.World;
 import helper.Direction;
 import org.json.simple.JSONObject;
@@ -259,8 +260,10 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         );
 
         if(weapon instanceof RangedWeapon) {
-            ((RangedWeapon) weapon).shootFrom(this);
-            return;
+            MouseInfo mouseInfo = Greenfoot.getMouseInfo();
+            if(mouseInfo != null) {
+                ((RangedWeapon) weapon).shootFrom(this,mouseInfo.getX(),mouseInfo.getY());
+            }
         }
 
         List<NPC> npcs = getObjectsInRange(weapon.getAttackRange(), NPC.class);
