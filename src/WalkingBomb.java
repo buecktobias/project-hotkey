@@ -2,8 +2,8 @@ import greenfoot.GreenfootImage;
 
 public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSensitive {
     private int visualRange = 500;
-    private int attackRange = 200;
-    private int damage = 200;
+    private int attackRange = 150;
+    private int damage = 100;
     private int speed = 1;
     private double life = 100;
     private int hitboxRadius = getWidth();

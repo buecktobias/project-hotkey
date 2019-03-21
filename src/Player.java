@@ -224,6 +224,8 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         usePrimaryWeapon = keys.get("useWeapon").toString();
         keyOpenChest = keys.get("openChest").toString();
     }
+
+
     private void testKeys() {
         if (Greenfoot.isKeyDown(keyAttack)) {
             // attackPrimary();
@@ -235,7 +237,11 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         if (Greenfoot.isKeyDown(keyOpenSettings)) {
             showSettingsWindow();
         }
-        if (Greenfoot.isKeyDown(usePrimaryWeapon)) {
+        //if (Greenfoot.isKeyDown(usePrimaryWeapon)) {
+        //    usePrimaryWeapon();
+        //}
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+        if(mouse.getButton() == 1){
             usePrimaryWeapon();
         }
         if(Greenfoot.isKeyDown(keyOpenChest)) {

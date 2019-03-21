@@ -9,8 +9,8 @@ public class Bomb extends Environment implements Blocking,ExplodingBehaviour {
     private int damage;
     private GreenfootImage defaultImage = new GreenfootImage("images/Environment/bomb.png");
     public Bomb(){
-        attackRange = 200;
-        damage = 200;
+        attackRange = 150;
+        damage = 100;
     }
     public Bomb(int attackRange,int damage){
         this.attackRange = attackRange;
