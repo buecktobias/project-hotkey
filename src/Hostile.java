@@ -8,12 +8,10 @@ public abstract class Hostile extends NPC {
         setImage(attack1);
     }
     public boolean attack(double attackSpeed,GreenfootImage attack1) {
-        FPS fps = getWorld().getObjects(FPS.class).get(0);
-
-        if (fps.getFrame() - lastFrameAttacked > attackSpeed) {
+        if (FPS.getFrame() - lastFrameAttacked > attackSpeed) {
             if (attackPlayer(getAttackRange(), getDamage())) {
                 attackAnimation(attack1);
-                lastFrameAttacked = fps.getFrame(); // this is important !
+                lastFrameAttacked = FPS.getFrame(); // this is important !
                 return true;
             }
         }
@@ -22,9 +20,9 @@ public abstract class Hostile extends NPC {
     public boolean attack(double attackSpeed) {
         FPS fps = getWorld().getObjects(FPS.class).get(0);
 
-        if (fps.getFrame() - lastFrameAttacked > attackSpeed) {
+        if (FPS.getFrame() - lastFrameAttacked > attackSpeed) {
             if (attackPlayer(getAttackRange(), getDamage())) {
-                lastFrameAttacked = fps.getFrame();
+                lastFrameAttacked = FPS.getFrame();
                 return true;
             }
         }

@@ -30,7 +30,7 @@ public class Staff extends RangedWeapon {
         for (int i = 0; i < 12; i++) {
             int scatter = r.nextInt(65)-32;
             int rangeScatter = r.nextInt(5)-2;
-            Projectile projectile = new Projectile(getDamage(), getAttackRange()+rangeScatter, .2, new GreenfootImage("images/ItemImages/magicMatter.png"), 30);
+            Projectile projectile = new Projectile(getDamage(), getAttackRange()+rangeScatter, .2,a, new GreenfootImage("images/ItemImages/magicMatter.png"), 30);
             projectiles.add(projectile);
             a.getWorld().addObject(projectile, a.getX()+scatter, a.getY()+scatter);
             projectile.shootFromTo(a.getX()+scatter,a.getY()+scatter,toX,toY);

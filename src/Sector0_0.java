@@ -40,6 +40,11 @@ public class Sector0_0 extends OpenWorld {
             addObject(companion, 150, 0);
 
 
+            Archer archer = new Archer();
+            addObject(archer,200,100);
+            Archer archer2 = new Archer();
+            addObject(archer2,350,100);
+
             randomObjects(Cobweb.class, 200, -600,800, 400, 10);
             randomObjects(Sand.class, 600, 700,1000, 1000, 1);
             randomObjects(Grass.class, -500, -300, 400, 800, 2);

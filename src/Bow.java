@@ -21,7 +21,7 @@ public class Bow extends RangedWeapon {
     }
 
     public void shootFrom(Actor a, int toX, int toY) {
-        Projectile projectile = new Projectile(getDamage(), getAttackRange(), .1, new GreenfootImage("images/ItemImages/Arrow.png"), 0);
+        Projectile projectile = new Projectile(getDamage(), getAttackRange(), .1,a, new GreenfootImage("images/ItemImages/Arrow.png"), 0);
         a.getWorld().addObject(projectile, a.getX(), a.getY());
         projectile.shootFromTo(a.getX(),a.getY(),toX,toY);
     }

@@ -3,18 +3,36 @@ import greenfoot.GreenfootImage;
 import java.util.Arrays;
 import java.util.List;
 
-public class Archer extends Hostile implements Attackable,Blocking {
+public class Archer extends Hostile implements Attackable,Blocking,FireSensitive {
     private double life = 100;
-    private int speed = 1;
+    private int defaultSpeed = 1;
+    private int speed = defaultSpeed;
+    private int visualRange = 400;
+    private int attackSpeed = 20;
     private int damage = 10;
-    private int attackRange = 200;
+    private long lastFrameAttacked = 0;
+    private int attackRange = 300;
+    private double fireDamage = 0;
+
+
+    @Override
+    public double getFireDamage() {
+        return fireDamage;
+    }
+
+    public void setFireDamage(double fireDamage) {
+        this.fireDamage = fireDamage;
+    }
+
     private GreenfootImage defaultImage = new GreenfootImage("src/images/Characters/Player/player_standing.png");
     private GreenfootImage imageWalking1 = new GreenfootImage("src/images/Characters/Player/player_walking1.png");
     private GreenfootImage imageWalking2 = new GreenfootImage("src/images/Characters/Player/player_walking2.png");
     private GreenfootImage imageWalking3 = new GreenfootImage("src/images/Characters/Player/player_walking3.png");
     private GreenfootImage imageWalking4 = new GreenfootImage("src/images/Characters/Player/player_walking4.png");
     private GreenfootImage[] animationImages;
+    private Bow bow = new Bow();
     public Archer(){
+        setImage(defaultImage);
         GreenfootImage bowImage = new GreenfootImage(new Bow().getItemImage());
         bowImage.scale(30,30);
         GreenfootImage[] walkingImages = new GreenfootImage[]{imageWalking1,imageWalking2,imageWalking3,imageWalking4};
@@ -64,8 +82,30 @@ public class Archer extends Hostile implements Attackable,Blocking {
         this.speed = speed;
     }
 
+
+    public void attack(General g,double attackSpeed) {
+        if(FPS.getFrame() - lastFrameAttacked > attackSpeed){
+            lastFrameAttacked = FPS.getFrame();
+            this.bow.shootFrom(this,g.getX(),g.getY());
+        }
+    }
+
     @Override
     public void act() {
-        randomMove(400);
+        subtractFireDamageFromLife();
+        setSpeed(defaultSpeed);
+        getEffects();
+        if(getPlayer(attackRange) != null){
+            attack((General) getPlayer(this.attackRange), this.attackSpeed);
+        }else {
+            if (moveToPlayer(this.visualRange)) {
+            } else {
+                randomMove(400);
+            }
+            if (life < 0) {
+                getWorld().removeObject(this);
+            }
+        }
     }
-}
+
+    }

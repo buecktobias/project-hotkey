@@ -4,7 +4,7 @@ import greenfoot.World;
 import java.awt.*;
 
 public class FPS extends Window {
-    private long frame;
+    private static long frame;
     private int fps;
     private long startTime;
     private GreenfootImage bg ;
@@ -42,7 +42,7 @@ public class FPS extends Window {
         img.drawString(String.valueOf(fps), 30, 40);
         setImage(img);
     }
-    public long getFrame() {
+    public static long getFrame() {
         return frame;
     }
 }
