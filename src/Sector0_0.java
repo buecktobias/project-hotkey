@@ -188,8 +188,8 @@ public class Sector0_0 extends OpenWorld {
         long currentFrame = fps.getFrame();
         if(gameMode != null){
             if(currentFrame != 0) {
-                if (currentFrame % 200 == 0) {
-                    //randomSpawn(Pig.class);
+                if (currentFrame % 100 == 0) {
+                    randomSpawn(Pig.class);
                 }
                 if (currentFrame % gameMode.eachFrameEnemySpawns == 0) {
                     //randomSpawn(Bomb.class);
@@ -197,13 +197,13 @@ public class Sector0_0 extends OpenWorld {
                 if (currentFrame % gameMode.eachFrameEnemySpawns == 0) {
                     randomSpawn(WalkingBomb.class);
                 }
-                if (fps.getFrame() % gameMode.eachFrameEnemySpawns == 0) {
+                if (currentFrame % gameMode.eachFrameEnemySpawns == 0) {
                     randomSpawn(Spider.class);
                 }
-                if (fps.getFrame() % gameMode.eachFrameEnemySpawns == 0) {
+                if (currentFrame % gameMode.eachFrameEnemySpawns == 0) {
                     randomSpawn(FireEnemy.class);
                 }
-                if (fps.getFrame() % gameMode.eachFrameEnemySpawns == 0) {
+                if (currentFrame % gameMode.eachFrameEnemySpawns == 0) {
                     randomSpawn(Archer.class);
                 }
             }

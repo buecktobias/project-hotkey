@@ -1,7 +1,7 @@
 import greenfoot.GreenfootImage;
 
 public class Fire extends Environment implements HasEffect {
-    private int framesInWhichItDiappears = 99999999;
+    private int framesInWhichItDisappears = 999999999;
     private GreenfootImage[] moveAnimationList = new GreenfootImage[4];
     private int damage = 2;
     private int duration = 200;
@@ -21,12 +21,14 @@ public class Fire extends Environment implements HasEffect {
     }
     public Fire(int framesInWhichItDisappears){
         getImages();
-        framesInWhichItDiappears = framesInWhichItDisappears;
+        this.framesInWhichItDisappears = framesInWhichItDisappears;
     }
 
     @Override
     public void effects(MovingActor movingActor) {
         if(movingActor instanceof FireSensitive){
+            GreenfootImage copyMovingActorImage = new GreenfootImage(movingActor.getImage());
+             copyMovingActorImage.drawImage(this.getImage(),0,0);
             ((FireSensitive) movingActor).setLife(((FireSensitive) movingActor).getLife()-this.damage);
             ((FireSensitive) movingActor).setFireDamage(this.damage);
         }
@@ -34,9 +36,9 @@ public class Fire extends Environment implements HasEffect {
 
     @Override
     public void act() {
-        framesInWhichItDiappears--;
+        framesInWhichItDisappears--;
         animate(4,moveAnimationList);
-        if(framesInWhichItDiappears < 0){
+        if(framesInWhichItDisappears < 0){
             getWorld().removeObject(this);
         }
 

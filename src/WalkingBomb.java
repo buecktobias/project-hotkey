@@ -95,6 +95,9 @@ public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSe
     public void act() {
         subtractFireDamageFromLife();
         getEffects();
+        if(fireDamage > 0.1){
+            drawFireImage();
+        }
         if(moveToPlayer(this.visualRange)){
             attackPlayer(this.attackRange, this.damage);
         }else{

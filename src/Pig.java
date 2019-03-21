@@ -2,7 +2,7 @@ import greenfoot.GreenfootImage;
 
 public class Pig extends Friendly implements Blocking,Attackable, FireSensitive {
     private int speed = 1;
-    private final int defaultLife = 20;
+    private final int defaultLife = 800;
     private double life = defaultLife;
     private double fireDamage = 0;
     private double fireDamageReduction = 0.99;
@@ -25,7 +25,7 @@ public class Pig extends Friendly implements Blocking,Attackable, FireSensitive 
         this.fireDamage = fireDamage;
     }
 
-    private GreenfootImage defaultImage = new GreenfootImage("images/Characters/lilpig.png");
+    private GreenfootImage defaultImage;
     @Override
     public double getLife() {
         return life;
@@ -41,16 +41,25 @@ public class Pig extends Friendly implements Blocking,Attackable, FireSensitive 
     }
 
     public Pig(){
-        defaultImage.scale(64,32);
+        resetPigImages();
         setImage(defaultImage);
+    }
+    private void resetPigImages(){
+        defaultImage = new GreenfootImage("images/Characters/lilpig.png");
+        defaultImage.scale(64,32);
     }
 
     @Override
     public void act() {
+        resetPigImages();
+        setImage(defaultImage);
         subtractFireDamageFromLife();
         getEffects();
+        if(fireDamage > 0.1){
+            drawFireImage();
+        }
         randomMove(200);
-        if(life<0){
+        if(life < 0){
             getWorld().removeObject(this);
         }
     }

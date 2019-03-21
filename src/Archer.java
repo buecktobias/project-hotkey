@@ -28,7 +28,7 @@ public class Archer extends Hostile implements Attackable,Blocking,FireSensitive
     private GreenfootImage imageWalking1 = new GreenfootImage("src/images/Characters/Player/player_walking1.png");
     private GreenfootImage imageWalking2 = new GreenfootImage("src/images/Characters/Player/player_walking2.png");
     private GreenfootImage imageWalking3 = new GreenfootImage("src/images/Characters/Player/player_walking3.png");
-    private GreenfootImage imageWalking4 = new GreenfootImage("src/images/Characters/Player/player_walking4.png");
+    private GreenfootImage imageWalking4 = new GreenfootImage("src/images/Characters/archer_walking4.png");
     private GreenfootImage[] animationImages;
     private Bow bow = new Bow(this.damage,10);
     public Archer(){
@@ -95,6 +95,9 @@ public class Archer extends Hostile implements Attackable,Blocking,FireSensitive
         subtractFireDamageFromLife();
         setSpeed(defaultSpeed);
         getEffects();
+        if(fireDamage > 0.1){
+            drawFireImage();
+        }
         if(getPlayer(attackRange) != null){
             attack((General) getPlayer(this.attackRange), this.attackSpeed);
         }else {

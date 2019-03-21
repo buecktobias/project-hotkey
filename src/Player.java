@@ -79,20 +79,28 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private Item[] weaponsArray = new Item[20];
     private Item[] armorArray = new Item[20];
     private Item[] itemsArray = new Item[20];
-    private GreenfootImage defaultImage = new GreenfootImage("src/images/Characters/Player/player_standing.png");
-    private GreenfootImage imageWalking1 = new GreenfootImage("src/images/Characters/Player/player_walking1.png");
-    private GreenfootImage imageWalking2 = new GreenfootImage("src/images/Characters/Player/player_walking2.png");
-    private GreenfootImage imageWalking3 = new GreenfootImage("src/images/Characters/Player/player_walking3.png");
-    private GreenfootImage imageWalking4 = new GreenfootImage("src/images/Characters/Player/player_walking4.png");
+    private GreenfootImage defaultImage;
+    private GreenfootImage imageWalking1;
+    private GreenfootImage imageWalking2;
+    private GreenfootImage imageWalking3;
+    private GreenfootImage imageWalking4;
 
     public void movingAnimation(){
         animate(4,imageWalking1,imageWalking2,imageWalking3,imageWalking4);
     }
 
+    private void setPlayerImagesDefault(){
+        defaultImage = new GreenfootImage("src/images/Characters/Player/player_standing.png");
+        imageWalking1 = new GreenfootImage("src/images/Characters/Player/player_walking1.png");
+        imageWalking2 = new GreenfootImage("src/images/Characters/Player/player_walking2.png");
+        imageWalking3 = new GreenfootImage("src/images/Characters/Player/player_walking3.png");
+        imageWalking4 = new GreenfootImage("src/images/Characters/Player/player_walking4.png");
+    }
     public Player() {
         if(ourInstance == null){
             ourInstance = this;
         }
+        setPlayerImagesDefault();
         Greenfoot.setSpeed(gameSpeed);
         updateKeys();
     }
@@ -173,23 +181,13 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     }
 
     private void regenerateLife() {
-
         if (life < maxLife) {
             life += lifeRegeneration;
         }
     }
 
-    private void printCoords() {
-        World w = getWorld();
-        if (w instanceof OpenWorld) {
-            int x = ((OpenWorld) w).getTotalXMovement();
-            int y = ((OpenWorld) w).getTotalYMovement();
-            print(x + "\n" + y);
-        }
-    }
-
     private void showSkillWindow() {
-        if (fps.getFrame() - lastFrameSkillWindowOpened > waitTimeOpenSkillWindow) {
+        if (FPS.getFrame() - lastFrameSkillWindowOpened > waitTimeOpenSkillWindow) {
             if (skillScreenShown) {
                 skillWindow.deleteButtons();
                 getWorld().removeObject(skillWindow);
@@ -197,7 +195,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
                 getWorld().addObject(skillWindow, 500, 400);
             }
             skillScreenShown = !skillScreenShown;
-            lastFrameSkillWindowOpened = fps.getFrame();
+            lastFrameSkillWindowOpened = FPS.getFrame();
         }
     }
 
@@ -227,10 +225,6 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
 
 
     private void testKeys() {
-        if (Greenfoot.isKeyDown(keyAttack)) {
-            // attackPrimary();
-            // TODO: Wir haben usePrimaryWeapon, wird das jetzt noch benötigt?
-        }
         if (Greenfoot.isKeyDown(keyOpenSkillWindow)) {
             showSkillWindow();
         }
@@ -241,8 +235,10 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         //    usePrimaryWeapon();
         //}
         MouseInfo mouse = Greenfoot.getMouseInfo();
-        if(mouse.getButton() == 1){
-            usePrimaryWeapon();
+        if(mouse != null) {
+            if (mouse.getButton() == 1) {
+                usePrimaryWeapon();
+            }
         }
         if(Greenfoot.isKeyDown(keyOpenChest)) {
             openChest();
@@ -281,14 +277,14 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     }
 
     private void showSettingsWindow() {
-        if (fps.getFrame() - lastFrameSettingsWindowOpened > waitTimeOpenSettingsWindow) {
+        if (FPS.getFrame() - lastFrameSettingsWindowOpened > waitTimeOpenSettingsWindow) {
             if (getWorld().getObjects(SettingsWindow.class).size() == 0) {
                 this.getWorld().addObject(settingsWindow, 500, 500);
             } else {
                 settingsWindow.deleteButtons();
                 this.getWorld().removeObject(settingsWindow);
             }
-            lastFrameSettingsWindowOpened = fps.getFrame();
+            lastFrameSettingsWindowOpened = FPS.getFrame();
         }
     }
 
@@ -302,16 +298,17 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     }
 
     public void act() {
+        setPlayerImagesDefault();
         updateKeys();
         pick();
         useInventory();
         calculateEndurance();
         getEffects();
         testKeys();
-        //printCoords();
         subtractFireDamageFromLife();
         if(fireDamage > lifeRegeneration){
             effectWindow.addEffect(new Fire().getImage());
+            drawFireImage();
         }
         regenerateLife();
         if (this.life < minLife) {
