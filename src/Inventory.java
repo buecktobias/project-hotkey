@@ -198,7 +198,7 @@ public class Inventory extends GUI implements Fixed {
         String armor = "Armor";
         String weapons = "Weapons";
         String items = "Items";
-        InventoryScreen.setFont(new Font(Font.MONOSPACED, Font.BOLD, 19));
+        InventoryScreen.setFont(GUILargeFont);
         InventoryScreen.setColor(Color.WHITE);
         InventoryScreen.drawString(weapons,   560,196);
         InventoryScreen.drawString(armor,     660,196);
@@ -246,13 +246,13 @@ public class Inventory extends GUI implements Fixed {
     }
     private void itemHoverInfo(int X, int Y, Item item){
         String InfoOpenInfo = "Item info: X";
-        String InfoEquippItem = "equip Item: DoubleLeftClick";
+        String InfoEquippItem = "equip Item: DoubleClick";
         String InfoMouseButton = "select Item: right Click";
         InventoryScreen.setColor(Color.DARK_GRAY);
         InventoryScreen.fillRect(X, Y, 300, 70);
         InventoryScreen.setColor(Color.lightGray);
         InventoryScreen.drawRect(X, Y, 300, 70);
-        InventoryScreen.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 18));
+        InventoryScreen.setFont(GUILargeFont);
         InventoryScreen.setColor(Color.decode("#FFD700"));
         InventoryScreen.drawString(item.getItemName(), X + 10,Y + 20 );
         InventoryScreen.drawString(InfoOpenInfo, X + 10, Y + 40);
@@ -304,7 +304,6 @@ public class Inventory extends GUI implements Fixed {
             world.removeObject(button);
         }
     }
-
     private void createItemInfoScreen(){
         String key = Greenfoot.getKey();
         if ((keyCreateItemInfoScreen.equals(key) && infoScreenActive) ){
@@ -363,6 +362,7 @@ public class Inventory extends GUI implements Fixed {
                 break;
             default:
                 unequippItem(itemArray, oldItem, p.getItemsPicked());
+                p.setItemsPicked(p.getItemsPicked() + 1);
                 break;
         }
     }

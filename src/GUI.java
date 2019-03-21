@@ -5,6 +5,8 @@ import java.awt.*;
 
 public abstract class GUI extends Actor {
 
+    public  final Font GUILargeFont = new Font(Font.MONOSPACED, Font.BOLD, 19);
+
     public void drawItemAt(GreenfootImage g, int X, int Y, Item item){
         if(item != null){
             g.setColor(Color.WHITE);

@@ -1,5 +1,7 @@
 import greenfoot.GreenfootImage;
 
+import java.awt.*;
+
 public class HUD extends GUI implements Fixed {
 
     private Player p;
@@ -14,10 +16,12 @@ public class HUD extends GUI implements Fixed {
         Background.clear();
         Background = new GreenfootImage("images/Hud_Menu_Images/Hud_V4.png");
         setImage(Background);
-        super.drawBarAt(Background, p.getLife(), p.getMaxLife(), 308, "#7f0000", "#990000", "#cc0000", 12, 12);
-        super.drawBarAt(Background,p.getEndurance(), p.getMaxEndurance(), 246, "#007f00", "#009900", "#00cc00",12,42 );
-        super.drawBarAt(Background,(double)(p.getExp()), p.getLevelUpValue(p.getLevel()), 200, "#7f007f", "#990099", "#cc00cc", 704,12);
+        drawBarAt(Background, p.getLife(), p.getMaxLife(), 308, "#7f0000", "#990000", "#cc0000", 12, 12);
+        drawBarAt(Background,p.getEndurance(), p.getMaxEndurance(), 246, "#007f00", "#009900", "#00cc00",12,42 );
+        drawBarAt(Background,(double)(p.getExp()), p.getLevelUpValue(p.getLevel()), 200, "#7f007f", "#990099", "#cc00cc", 704,12);
         drawEquippedWeapons();
+        drawLevelFonts();
+        drawActiveBeltItem();
     }
 
 
@@ -31,6 +35,11 @@ public class HUD extends GUI implements Fixed {
     }
     private void drawActiveBeltItem(){
         drawItemAt(Background, 100, 600, p.getActiveConsumable());
+    }
+    private void drawLevelFonts(){
+        Background.setFont(GUILargeFont);
+        Background.setColor(Color.BLACK);
+        Background.drawString("LVL: " + (p.getLevel()) + (p.getExp())  + "/" + p.getLevelUpValue(p.getLevel()+1), 780, 30);
     }
 
     //Getters and Setters
