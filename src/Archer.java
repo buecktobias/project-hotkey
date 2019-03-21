@@ -4,14 +4,14 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Archer extends Hostile implements Attackable,Blocking,FireSensitive {
-    private double life = 100;
+    private double life = 20;
     private int defaultSpeed = 1;
     private int speed = defaultSpeed;
-    private int visualRange = 400;
-    private int attackSpeed = 20;
-    private int damage = 10;
+    private int visualRange = 500;
+    private int attackSpeed = 100;
+    private int damage = 100;
     private long lastFrameAttacked = 0;
-    private int attackRange = 300;
+    private int attackRange = 400;
     private double fireDamage = 0;
 
 
@@ -30,7 +30,7 @@ public class Archer extends Hostile implements Attackable,Blocking,FireSensitive
     private GreenfootImage imageWalking3 = new GreenfootImage("src/images/Characters/Player/player_walking3.png");
     private GreenfootImage imageWalking4 = new GreenfootImage("src/images/Characters/Player/player_walking4.png");
     private GreenfootImage[] animationImages;
-    private Bow bow = new Bow();
+    private Bow bow = new Bow(this.damage,10);
     public Archer(){
         setImage(defaultImage);
         GreenfootImage bowImage = new GreenfootImage(new Bow().getItemImage());

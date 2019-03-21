@@ -19,6 +19,14 @@ public class Bow extends RangedWeapon {
         setAnimationStartDegrees(-10);
         setAnimationStopDegrees(10);
     }
+    public Bow(int damage,int attackRange) {
+        setImage(itemImage);
+        setDamage(damage);
+        setAttackRange(attackRange);
+        setAttackSpeed(1);
+        setAnimationStartDegrees(-10);
+        setAnimationStopDegrees(10);
+    }
 
     public void shootFrom(Actor a, int toX, int toY) {
         Projectile projectile = new Projectile(getDamage(), getAttackRange(), .1,a, new GreenfootImage("images/ItemImages/Arrow.png"), 0);
