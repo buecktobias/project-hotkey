@@ -4,7 +4,7 @@ import greenfoot.GreenfootImage;
 import java.util.List;
 import java.util.Random;
 
-public class Projectile extends General {
+public abstract class Projectile extends General {
     private double velocityX;
     private double velocityY;
     private double speed;
@@ -14,13 +14,8 @@ public class Projectile extends General {
     private int scatter;
     private Random r = new Random();
     private Actor whoIsShooting;
-
-    private GreenfootImage defaultImage;
-
-    private boolean failed;
-
-    public Projectile(int damage, double speed, double drag,Actor whoIsShooting, GreenfootImage image, int scatter) {
-        this.defaultImage = image;
+    abstract public GreenfootImage getDefaultImage();
+    public Projectile(int damage, double speed, double drag,Actor whoIsShooting, int scatter) {
         this.damage = damage;
         this.speed = speed;
         this.drag = drag;
@@ -31,7 +26,7 @@ public class Projectile extends General {
         int destinationX = toX - fromX;
         int destinationY = toY - fromY;
         this.rotation = (int) Math.toDegrees(Math.atan2(destinationY, destinationX));
-        GreenfootImage rotatedImage = new GreenfootImage(defaultImage);
+        GreenfootImage rotatedImage = new GreenfootImage(getDefaultImage());
         rotatedImage.rotate(this.rotation);
         this.setImage(rotatedImage);
         this.rotation = this.rotation + r.nextInt(2*scatter+1)-scatter;

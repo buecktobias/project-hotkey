@@ -4,14 +4,14 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Archer extends Hostile implements Attackable,Blocking,FireSensitive {
-    private double life = 5;
+    private double life = 1;
     private int defaultSpeed = 1;
     private int speed = defaultSpeed;
-    private int visualRange = 500;
+    private int visualRange = 450;
     private int attackSpeed = 100;
     private int damage = 100;
     private long lastFrameAttacked = 0;
-    private int attackRange = 400;
+    private int attackRange = 350;
     private double fireDamage = 0;
 
 
@@ -102,9 +102,9 @@ public class Archer extends Hostile implements Attackable,Blocking,FireSensitive
             } else {
                 randomMove(400);
             }
-            if (life < 0) {
-                getWorld().removeObject(this);
-            }
+        }
+        if (life < 0) {
+            getWorld().removeObject(this);
         }
     }
 
