@@ -19,6 +19,13 @@ public abstract class General extends Actor {
 
         this.defaultImage = new GreenfootImage(getImage());
     }
+    public Player getPlayer(int visualRange) {
+        List<Player> playersInVisualRange = getObjectsInRange(visualRange, Player.class);
+        if (playersInVisualRange.size() != 0) {
+            return playersInVisualRange.get(0);
+        }
+        return null;
+    }
     public <A extends Actor> List<A> getIntersectingObjects(Class<A> c){
         return super.getIntersectingObjects(c);
     }

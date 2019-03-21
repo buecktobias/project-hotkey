@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Archer extends Hostile implements Attackable,Blocking,FireSensitive {
-    private double life = 20;
+    private double life = 5;
     private int defaultSpeed = 1;
     private int speed = defaultSpeed;
     private int visualRange = 500;

@@ -17,14 +17,6 @@ public abstract class NPC extends MovingActor {
         super.act();
     }
 
-    public Player getPlayer(int visualRange) {
-        List<Player> playersInVisualRange = getObjectsInRange(visualRange, Player.class);
-        if (playersInVisualRange.size() != 0) {
-            return playersInVisualRange.get(0);
-        }
-        return null;
-    }
-
     public Player getPlayer() {
         List<Player> playersInVisualRange = getWorld().getObjects(Player.class);
         if (playersInVisualRange.size() != 0) {
