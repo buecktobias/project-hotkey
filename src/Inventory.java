@@ -12,19 +12,14 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 public class Inventory extends GUI implements Fixed {
-    //TODO Implement ammunition and quick access/ belt slots
     //TODO GUI overhaul, make everything look nice
-
 
     //TODO enable Player to summon different familiars -> will not be done in inventory
 
     //TODO fix known issues:
     // 1) item info screen does not open/close as it is supposed;
-
-    // TODO !!OUT OF SCOPE!!
-    //  1)enable player to sort items as wished -> drag and drop system required
-    //  2) drag and drop Items to respective slots
-
+    // 2) item hover info is drawn beneath items following items in inventory,
+    //    possible fix: reverse draw order of items
 
     private Player p;
     private World world;
@@ -39,6 +34,8 @@ public class Inventory extends GUI implements Fixed {
     private Item[] armorArray;
     private Item[] weaponArray;
     private Item[] itemArray;
+    private Item[] beltItems;
+    private Item[] ammunition;
     private Item[] equippedItems = new Item[7];
     private LinkedList<Button>  buttonList;
     private GreenfootImage InventoryScreen      = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV5.png");
@@ -61,6 +58,8 @@ public class Inventory extends GUI implements Fixed {
         armorArray  = p.getArmorArray();
         weaponArray = p.getWeaponsArray();
         itemArray   = p.getItemsArray();
+        beltItems = p.getBeltItems();
+        ammunition = p.getAmmunition();
         equippedItems = p.getEquippedItems();
 
         InventoryScreen.clear();
@@ -69,12 +68,16 @@ public class Inventory extends GUI implements Fixed {
         drawTabFonts();
         drawCurrentTab();
         if(itemsEquipped){
-            drawEquippedItems();
+            drawEquippedWeaponry();
+            drawEquippedConsumables(ammunition, 204, 404);
+            drawEquippedConsumables(beltItems, 204, 496);
         }
 
         p.setArmorArray(armorArray);
         p.setWeaponsArray(weaponArray);
         p.setItemsArray(itemArray);
+        p.setBeltItems(beltItems);
+        p.setAmmunition(ammunition);
         p.setEquippedItems(equippedItems);
 
         Object obj = null;
@@ -117,14 +120,16 @@ public class Inventory extends GUI implements Fixed {
 
     // draw methods
     private void drawCurrentTab(){
-        if(inventoryTab == 0){
-            drawTab(weaponArray);
-        }else if(inventoryTab == 1){
-            drawTab(armorArray);
-        }else if(inventoryTab == 2){
-            drawTab(itemArray);
-        }else{
-            setInventoryTab(0);
+        switch (inventoryTab){
+            case 1:
+                drawTab(armorArray);
+                break;
+            case 2:
+                drawTab(itemArray);
+                break;
+            default:
+                drawTab(weaponArray);
+                break;
         }
     }
     private void drawTab(Item[] itemsToDraw){
@@ -146,7 +151,7 @@ public class Inventory extends GUI implements Fixed {
             }
         }
     }
-    private void drawEquippedItems(){
+    private void drawEquippedWeaponry(){
         for(int i = 0; i < 6; i++){
             if(equippedItems[i] != null){
                 Item item = equippedItems[i];
@@ -179,6 +184,12 @@ public class Inventory extends GUI implements Fixed {
             }
         }
     }
+    private void drawEquippedConsumables(Item[] itemArray, int startX, int startY){
+        for (int i = 0; i < itemArray.length; i++) {
+            drawItemAt(startX, startY, itemArray[i]);
+            startX = startX + 55 + 12 + 40;
+        }
+    }
     private void drawItemAt(int X, int Y, Item item){
         super.drawItemAt(InventoryScreen, X, Y,item);
         itemMouseLogic(X, Y, item);
@@ -187,18 +198,18 @@ public class Inventory extends GUI implements Fixed {
         String armor = "Armor";
         String weapons = "Weapons";
         String items = "Items";
-        InventoryScreen.setFont(new Font(Font.SANS_SERIF, Font.ITALIC, 19));
+        InventoryScreen.setFont(new Font(Font.MONOSPACED, Font.BOLD, 19));
         InventoryScreen.setColor(Color.WHITE);
-        InventoryScreen.drawString(weapons,   560,198);
-        InventoryScreen.drawString(armor,     660,198);
-        InventoryScreen.drawString(items,     740,198);
-        InventoryScreen.setColor(Color.RED);
+        InventoryScreen.drawString(weapons,   560,196);
+        InventoryScreen.drawString(armor,     660,196);
+        InventoryScreen.drawString(items,     740,196);
+        InventoryScreen.setColor(Color.decode("#FFD700"));
         if(inventoryTab == 0){
-            InventoryScreen.drawString(weapons,   560,198);
+            InventoryScreen.drawString(weapons,   560,196);
         }else if(inventoryTab == 1){
-            InventoryScreen.drawString(armor,     660,198);
+            InventoryScreen.drawString(armor,     660,196);
         }else if(inventoryTab == 2){
-            InventoryScreen.drawString(items,     740,198);
+            InventoryScreen.drawString(items,     740,196);
         }
     }
 
@@ -241,7 +252,7 @@ public class Inventory extends GUI implements Fixed {
         InventoryScreen.fillRect(X, Y, 300, 70);
         InventoryScreen.setColor(Color.lightGray);
         InventoryScreen.drawRect(X, Y, 300, 70);
-        InventoryScreen.setFont(new Font(Font.SANS_SERIF, Font.ITALIC, 18));
+        InventoryScreen.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 18));
         InventoryScreen.setColor(Color.decode("#FFD700"));
         InventoryScreen.drawString(item.getItemName(), X + 10,Y + 20 );
         InventoryScreen.drawString(InfoOpenInfo, X + 10, Y + 40);
@@ -309,32 +320,50 @@ public class Inventory extends GUI implements Fixed {
     }
 
     // equipment methods
-    public void equipItem(Item item){
-        // Helmet  0, Chest   1, Legs    2, Boots   3, Pet     4, Primary 5, Secondary 6,
-       if(equippedItems[item.getItemSlotId()] == null){
-           equippedItems[item.getItemSlotId()] = item;
-           removeItemFromInventory(item);
-           item.setIEquipped(true);
-           itemsEquipped = true;
-       }else{
-           Item oldItem = equippedItems[item.getItemSlotId()];
-           unequippItem(oldItem);
-           equippedItems[item.getItemSlotId()] = item;
-           removeItemFromInventory(item);
-           item.setIEquipped(true);
-           itemsEquipped = true;
-       }
+    private void equipItem(Item item){
+        switch(item.getItemSlotId()){
+            case 6:
+                addItemToArray(ammunition, item);
+                break;
+            case 7:
+                addItemToArray(beltItems, item);
+                break;
+            default:
+                 equipItem(equippedItems, item.getItemSlotId(), item);
+                 break;
+        }
+        // Helmet  0, Chest   1, Legs    2, Boots   3, Primary 4, Secondary 5, ammunition 6, consumable 7
+    }
+    private void equipItem(Item[] itemArray, int index, Item item){
+        if(itemArray[item.getItemSlotId()] == null){
+            itemArray[index] = item;
+            removeItemFromInventory(item);
+            item.setIEquipped(true);
+            itemsEquipped = true;
+        }else{
+            Item oldItem = itemArray[index];
+            unequippItem(oldItem);
+            itemArray [index] = item;
+            removeItemFromInventory(item);
+            item.setIEquipped(true);
+            itemsEquipped = true;
+        }
     }
     private void unequippItem(Item oldItem){
-        // TODO use switch case instead of if statements
-        if(oldItem.getItemType().contains("Armor")){
-            if(unequippItem(armorArray, oldItem, p.getArmorPicked())){
-                p.setArmorPicked(p.getArmorPicked() +1);
-            }
-        }else if(oldItem.getItemType().contains("Weapon")) {
-            if(unequippItem(weaponArray, oldItem, p.getWeaponsPicked())){
-                p.setWeaponsPicked(p.getWeaponsPicked() +1);
-            }
+        switch (oldItem.getItemType()) {
+            case "Weapon":
+                if (unequippItem(weaponArray, oldItem, p.getWeaponsPicked())) {
+                    p.setWeaponsPicked(p.getWeaponsPicked() + 1);
+                }
+                break;
+            case "Armor":
+                if (unequippItem(armorArray, oldItem, p.getArmorPicked())) {
+                    p.setArmorPicked(p.getArmorPicked() + 1);
+                }
+                break;
+            default:
+                unequippItem(itemArray, oldItem, p.getItemsPicked());
+                break;
         }
     }
     private boolean unequippItem(Item[] addIto, Item item, int alreadyPicked){

@@ -28,7 +28,7 @@ public class Sector0_0 extends OpenWorld {
             getSettings();
             setPaintOrder(Button.class, ItemInfoScreen.class, Inventory.class, HUD.class, MovingActor.class, Window.class);
             setBackground(bg);
-            addObject(FPS.getInstance(), 1000, 32);
+            addObject(FPS.getInstance(), 1000, 700);
             Player player = new Player();
             addObject(player, getWidth() / 2, this.getHeight() / 2);
             HUD hud = new HUD(player);

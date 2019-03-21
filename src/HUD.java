@@ -3,7 +3,6 @@ import greenfoot.GreenfootImage;
 public class HUD extends GUI implements Fixed {
 
     private Player p;
-    private Weapon secondaryWeapon;
     private GreenfootImage Background = new GreenfootImage("images/Hud_Menu_Images/Hud_V4.png");
 
     public HUD(Player p){
@@ -29,6 +28,9 @@ public class HUD extends GUI implements Fixed {
         if(p.getSecondaryWeapon() != null){
             super.drawItemAt(Background, 42, 585, p.getSecondaryWeapon());
         }
+    }
+    private void drawActiveBeltItem(){
+        drawItemAt(Background, 100, 600, p.getActiveConsumable());
     }
 
     //Getters and Setters

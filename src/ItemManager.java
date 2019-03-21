@@ -14,7 +14,7 @@ public enum ItemManager {
     private final GreenfootImage itemIMAGE;
 
     ItemManager(String itemType, int itemId, String itemName, int itemSlotId, GreenfootImage itemImage){
-        itemTYPE = itemType;    // current Types: "SecondaryWeapon", "PrimaryWeapon", "Armor", || if new Type is needed message Julian
+        itemTYPE = itemType;    // current Types: "Weapon", "Weapon", "Armor", "Consumable" || if new Type is needed message Julian
         itemID = itemId;
         itemNAME = itemName;
         itemSLOTID = itemSlotId;

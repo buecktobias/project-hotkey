@@ -75,6 +75,9 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private Inventory inventoryInstance;
     private SkillWindow skillWindow;
     private int[] levelUps = new int[]{20,300,125,175, 200};
+    private Item activeConsumable;    // boolean might be mor complicated?
+    private Item[] beltItems = new Item[4];
+    private Item[] ammunition = new Item[4];
     private Item[] equippedItems = new Item[6];
     private Item[] weaponsArray = new Item[20];
     private Item[] armorArray = new Item[20];
@@ -475,19 +478,30 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     public void setWeaponsArray(Item[] weaponsArray) {
         this.weaponsArray = weaponsArray;
     }
-
     public Item[] getArmorArray() {
         return armorArray;
     }
     public void setArmorArray(Item[] armorArray) {
         this.armorArray = armorArray;
     }
-
     public Item[] getItemsArray() {
         return itemsArray;
     }
     public void setItemsArray(Item[] itemsArray) {
         this.itemsArray = itemsArray;
+    }
+
+    public Item[] getBeltItems() {
+        return beltItems;
+    }
+    public void setBeltItems(Item[] beltItems) {
+        this.beltItems = beltItems;
+    }
+    public Item[] getAmmunition() {
+        return ammunition;
+    }
+    public void setAmmunition(Item[] ammunition) {
+        this.ammunition = ammunition;
     }
 
     public Weapon getPrimaryWeapon(){
@@ -529,5 +543,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         return exp;
     }
 
-
+    public Item getActiveConsumable() {
+        return activeConsumable;
+    }
 }
