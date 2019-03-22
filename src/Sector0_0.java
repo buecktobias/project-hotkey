@@ -36,11 +36,15 @@ public class Sector0_0 extends OpenWorld {
             setScrollingBackground(new GreenfootImage(bg));
             Bow bow = new Bow();
             addObject(bow, 200, 100);
+            Bomb bomb = new Bomb();
+            addObject(bomb,-420,-220);
             Companion companion = new Companion(player);
             addObject(companion, 150, 0);
 
 
+            /*
             Archer archer = new Archer();
+
             addObject(archer,200,100);
             Archer archer2 = new Archer();
             addObject(archer2,350,100);
@@ -50,6 +54,7 @@ public class Sector0_0 extends OpenWorld {
 
             Staff staff = new Staff();
             addObject(staff,-350,210);
+            */
 
             randomObjects(Cobweb.class, 200, -600,800, 400, 10);
             randomObjects(Sand.class, 600, 700,1000, 1000, 1);

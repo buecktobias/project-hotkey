@@ -7,9 +7,14 @@ import java.util.List;
 public class Bomb extends Environment implements Blocking,ExplodingBehaviour {
     private int attackRange;
     private int damage;
+    private boolean triggered = false;
+    private int framesInWhichItExplodes = 100;
     private GreenfootImage defaultImage = new GreenfootImage("images/Environment/bomb.png");
+    private GreenfootImage triggeredImage1 = new GreenfootImage("images/Environment/bomb_triggered1.png");
+    private GreenfootImage triggeredImage2 = new GreenfootImage("images/Environment/bomb_triggered2.png");
+
     public Bomb(){
-        attackRange = 150;
+        attackRange = 250;
         damage = 100;
     }
     public Bomb(int attackRange,int damage){
@@ -29,6 +34,8 @@ public class Bomb extends Environment implements Blocking,ExplodingBehaviour {
     @Override
     protected void addedToWorld(World world) {
         defaultImage.scale(32,32);
+        triggeredImage1.scale(32,32);
+        triggeredImage2.scale(32,32);
         setImage(defaultImage);
     }
 
@@ -36,7 +43,14 @@ public class Bomb extends Environment implements Blocking,ExplodingBehaviour {
     public void act() {
         List<Player> player = getObjectsInRange(attackRange,Player.class);
         if(player.size() > 0){
-            explode(attackRange);
+            this.triggered = true;
+        }
+        if(triggered){
+            framesInWhichItExplodes--;
+            animate(20,triggeredImage1,triggeredImage2);
+        }
+        if(framesInWhichItExplodes <= 0){
+            explode(this.attackRange);
         }
 
     }
