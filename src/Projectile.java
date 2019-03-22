@@ -37,6 +37,10 @@ public abstract class Projectile extends General {
     public void act() {
         updatePosition();
     }
+
+    public void hits(Attackable attackable){
+        attackable.setLife(attackable.getLife() - damage);
+    }
     public void updatePosition(){
 
         int newX = getX() + (int) Math.round(velocityX);
@@ -48,11 +52,10 @@ public abstract class Projectile extends General {
         if(!intersecting.isEmpty()) {
             for (General general: intersecting) {
                 if(general instanceof Attackable) {
-                    ((Attackable) general).setLife(((Attackable) general).getLife() - damage);
+                    hits((Attackable)general);
                     break;
                 }
             }
-
             getWorld().removeObject(this);
             return;
         }
