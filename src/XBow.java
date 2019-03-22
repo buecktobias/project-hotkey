@@ -23,7 +23,7 @@ public class XBow extends Environment implements Attackable,Explodes,Blocking {
     public void setLife(double life) {
         this.life = life;
     }
-    public void attack(General g,double attackSpeed) {
+    public void attack(Entity g, double attackSpeed) {
         if(FPS.getFrame() - lastFrameAttacked > attackSpeed){
             lastFrameAttacked = FPS.getFrame();
             this.bow.shootFrom(this,g.getX(),g.getY(),new Arrow(this.damage,30,.1,this,0));
@@ -32,7 +32,7 @@ public class XBow extends Environment implements Attackable,Explodes,Blocking {
     @Override
     public void act() {
         if(getPlayer(visualRange) != null){
-            attack((General)getPlayer(visualRange),this.attackSpeed);
+            attack((Entity)getPlayer(visualRange),this.attackSpeed);
         }
         if(life < 0){
             getWorld().removeObject(this);

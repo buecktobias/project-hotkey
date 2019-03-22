@@ -4,7 +4,7 @@ import greenfoot.GreenfootImage;
 import java.util.List;
 import java.util.Random;
 
-public abstract class Projectile extends General {
+public abstract class Projectile extends Entity {
     private double velocityX;
     private double velocityY;
     private double speed;
@@ -46,13 +46,13 @@ public abstract class Projectile extends General {
         int newX = getX() + (int) Math.round(velocityX);
         int newY = getY() + (int) Math.round(velocityY);
 
-        List<General> intersecting = getIntersectingObjects(General.class);
+        List<Entity> intersecting = getIntersectingObjects(Entity.class);
         intersecting.removeIf(obj -> (obj == whoIsShooting) || !(obj instanceof Blocking));
 
         if(!intersecting.isEmpty()) {
-            for (General general: intersecting) {
-                if(general instanceof Attackable) {
-                    hits((Attackable)general);
+            for (Entity entity : intersecting) {
+                if(entity instanceof Attackable) {
+                    hits((Attackable) entity);
                     break;
                 }
             }

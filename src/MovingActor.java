@@ -7,7 +7,7 @@ import java.util.*;
  * MovingActor provides basic methods for movement control, as well as text based methods.
  * @author SAE
  */
-public abstract class MovingActor extends General {
+public abstract class MovingActor extends Entity {
     public int hitboxRadius=getWidth()*4;
     abstract void movingAnimation();
     abstract int getSpeed();
@@ -120,13 +120,13 @@ public abstract class MovingActor extends General {
     }
 
     public boolean intersectsWithBlockingObject(boolean again){
-        List<General> intersectingObjects = getIntersectingObjects(General.class);
+        List<Entity> intersectingObjects = getIntersectingObjects(Entity.class);
         intersectingObjects.removeIf(intersect -> !(intersect instanceof Blocking));
-        List<General> objectsInRange = getObjectsInRange(this.hitboxRadius,General.class);
+        List<Entity> objectsInRange = getObjectsInRange(this.hitboxRadius, Entity.class);
         objectsInRange.removeIf(object -> !(object instanceof Blocking));
         if(intersectingObjects.size() > 0) {
-            for(General intersect:intersectingObjects){
-                for(General object:objectsInRange){
+            for(Entity intersect:intersectingObjects){
+                for(Entity object:objectsInRange){
                     if(intersect == object){
                         if(!(again)){
                             return true;

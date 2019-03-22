@@ -4,18 +4,19 @@ import helper.Direction;
 
 import java.util.List;
 
-public abstract class General extends Actor {
+public abstract class Entity extends Actor {
 
     private int timer = 0;
     private int animationImage=0;
     private long lastFrameAnimated =0;
     private GreenfootImage defaultImage;
 
+
     /**
      * Default constructor
      */
 
-    public General() {
+    public Entity() {
 
         this.defaultImage = new GreenfootImage(getImage());
     }

@@ -84,7 +84,7 @@ public class Archer extends Hostile implements Attackable,Blocking,FireSensitive
     }
 
 
-    public void attack(General g,double attackSpeed) {
+    public void attack(Entity g, double attackSpeed) {
         if(FPS.getFrame() - lastFrameAttacked > attackSpeed){
             lastFrameAttacked = FPS.getFrame();
             this.bow.shootFrom(this,g.getX(),g.getY(),new FireArrow(this.damage,10,.1,this,0,5));
@@ -100,7 +100,7 @@ public class Archer extends Hostile implements Attackable,Blocking,FireSensitive
             drawFireImage();
         }
         if(getPlayer(attackRange) != null){
-            attack((General) getPlayer(this.attackRange), this.attackSpeed);
+            attack((Entity) getPlayer(this.attackRange), this.attackSpeed);
         }else {
             if (moveToPlayer(this.visualRange)) {
             } else {

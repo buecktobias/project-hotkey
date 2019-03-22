@@ -6,6 +6,7 @@ public class Pig extends Friendly implements Blocking,Attackable, FireSensitive 
     private double life = defaultLife;
     private double fireDamage = 0;
     private double fireDamageReduction = 0.99;
+    private int framesShowDamageImage;
 
     public double getFireDamageReduction() {
         return fireDamageReduction;
@@ -26,6 +27,7 @@ public class Pig extends Friendly implements Blocking,Attackable, FireSensitive 
     }
 
     private GreenfootImage defaultImage;
+    private GreenfootImage damageImage;
     @Override
     public double getLife() {
         return life;
@@ -33,6 +35,9 @@ public class Pig extends Friendly implements Blocking,Attackable, FireSensitive 
 
     @Override
     public void setLife(double life) {
+        if(life < this.life && framesShowDamageImage < -20) {
+            framesShowDamageImage = 3;
+        }
         this.life = life;
     }
 
@@ -46,7 +51,9 @@ public class Pig extends Friendly implements Blocking,Attackable, FireSensitive 
     }
     private void resetPigImages(){
         defaultImage = new GreenfootImage("images/Characters/lilpig.png");
+        damageImage = new GreenfootImage("images/Characters/lilpig_damage.png");
         defaultImage.scale(64,32);
+        damageImage.scale(64,32);
     }
 
     @Override
@@ -55,6 +62,10 @@ public class Pig extends Friendly implements Blocking,Attackable, FireSensitive 
         setImage(defaultImage);
         subtractFireDamageFromLife();
         getEffects();
+        if(framesShowDamageImage > 0){
+            setImage(damageImage);
+        }
+        framesShowDamageImage--;
         if(fireDamage > 0.1){
             drawFireImage();
         }

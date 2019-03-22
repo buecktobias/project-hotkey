@@ -1,6 +1,6 @@
 import greenfoot.GreenfootImage;
 
-public class WeaponAnimation extends General implements Fixed {
+public class WeaponAnimation extends Entity implements Fixed {
 
     /*  Diese Klasse ist nur dafür da, die Animation von der Waffe in der Welt anzuzeigen.
      *  Deswegen wird auch nur ein Bild übergeben.

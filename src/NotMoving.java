@@ -1,2 +1,2 @@
-public abstract class NotMoving extends General {
+public abstract class NotMoving extends Entity {
 }

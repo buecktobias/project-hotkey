@@ -27,7 +27,10 @@ public class Bomb extends Environment implements Blocking,ExplodingBehaviour {
         getWorld().removeObjects(environmentList);
         List<Actor> actorList = getObjectsInRange(radius, Actor.class);
         actorList.removeIf(actor -> !(actor instanceof Attackable));
-        actorList.forEach(attackable -> ((Attackable)attackable).setLife(((Attackable)attackable).getLife() - this.damage));
+        actorList.forEach(attackable ->
+                attackable.setLocation((int)(attackable.getX() + ((attackable.getX() - getX()) / 5) * (10*this.damage / Math.abs(attackable.getX() - getX()))),(int)(attackable.getY() + ((attackable.getY() - getY())/5) * (10*this.damage / Math.abs(attackable.getX() - getX())))));
+        actorList.forEach(attackable -> ((Attackable)attackable).setLife(((Attackable) attackable).getLife()-this.damage));
+        ((OpenWorld)getWorld()).resetPlayersPosition(Player.getInstance());
         getWorld().removeObject(this);
     }
 

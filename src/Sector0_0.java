@@ -55,6 +55,8 @@ public class Sector0_0 extends OpenWorld {
             Staff staff = new Staff();
             addObject(staff,-350,210);
             */
+            Dagger dagger = new Dagger();
+            addObject(dagger,200,200);
 
             randomObjects(Cobweb.class, 200, -600,800, 400, 10);
             randomObjects(Sand.class, 600, 700,1000, 1000, 1);
@@ -107,11 +109,11 @@ public class Sector0_0 extends OpenWorld {
             return;
         }
         try {
-            General actor = (General) c.newInstance();
+            Entity actor = (Entity) c.newInstance();
             addObject(actor, x, y);
-            List<General> generalList = actor.getIntersectingObjects(General.class);
-            generalList.removeIf(general -> !(general instanceof Blocking));
-            if (generalList.size() > 0) {
+            List<Entity> entityList = actor.getIntersectingObjects(Entity.class);
+            entityList.removeIf(general -> !(general instanceof Blocking));
+            if (entityList.size() > 0) {
                 removeObject(actor);
             }
         } catch (InstantiationException | IllegalAccessException e) {

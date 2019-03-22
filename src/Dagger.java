@@ -12,9 +12,11 @@ public class Dagger extends Weapon {
 
     public Dagger() {
         setImage(itemImage);
-        setDamage(1);
-        setAttackRange(1);
+        setDamage(50);
+        setAttackRange(150);
         setAttackSpeed(1);
+        setAnimationStartDegrees(0);
+        setAnimationStopDegrees(10);
     }
 
     //Item Getters and Setters

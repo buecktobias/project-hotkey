@@ -250,10 +250,19 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     }
 
     private void usePrimaryWeapon() {
-        if(getPrimaryWeapon() == null |! getWorld().getObjects(WeaponAnimation.class).isEmpty()) {
+        Weapon weapon;
+        if(!getWorld().getObjects(WeaponAnimation.class).isEmpty()){
             return;
         }
-        Weapon weapon = getPrimaryWeapon();
+        if(getPrimaryWeapon() == null) {
+            if(getSecondaryWeapon() != null) {
+                weapon = getSecondaryWeapon();
+            }else{
+                return;
+            }
+        }else{
+            weapon = getPrimaryWeapon();
+        }
 
         getWorld().addObject(
                 new WeaponAnimation(weapon.getItemImage(),
@@ -269,13 +278,13 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
             if(mouseInfo != null) {
                 ((RangedWeapon) weapon).shootFrom(this,mouseInfo.getX(),mouseInfo.getY(),new Arrow(10,10,.1,this,0));
             }
-        }
-
-        List<NPC> npcs = getObjectsInRange(weapon.getAttackRange(), NPC.class);
-        npcs.removeIf(npc -> !(npc instanceof Attackable));
-        if(!npcs.isEmpty()) {
-            Attackable attackable = (Attackable) npcs.get(0);
-            attack(attackable, weapon.getDamage());
+        }else {
+            List<NPC> npcs = getObjectsInRange(weapon.getAttackRange(), NPC.class);
+            npcs.removeIf(npc -> !(npc instanceof Attackable));
+            if (!npcs.isEmpty()) {
+                Attackable attackable = (Attackable) npcs.get(0);
+                attack(attackable, weapon.getDamage());
+            }
         }
     }
 
