@@ -4,7 +4,7 @@ public class XBow extends Environment implements Attackable,Explodes,Blocking {
     private double life = 200;
     private int damage = 2;
     private int speedProjectiles = 30;
-    private Bow bow = new Bow(damage,speedProjectiles);
+    private Bow bow;
     private int visualRange = 500;
     private long lastFrameAttacked = 0;
     private int attackSpeed = 5;
@@ -12,6 +12,7 @@ public class XBow extends Environment implements Attackable,Explodes,Blocking {
     public XBow(){
         defaultImage.scale(64,64);
         setImage(defaultImage);
+        bow = new Bow(damage,speedProjectiles);
     }
     @Override
     public double getLife() {
@@ -25,7 +26,7 @@ public class XBow extends Environment implements Attackable,Explodes,Blocking {
     public void attack(General g,double attackSpeed) {
         if(FPS.getFrame() - lastFrameAttacked > attackSpeed){
             lastFrameAttacked = FPS.getFrame();
-            this.bow.shootFrom(this,g.getX(),g.getY());
+            this.bow.shootFrom(this,g.getX(),g.getY(),new Arrow(this.damage,30,.1,this,0));
         }
     }
     @Override

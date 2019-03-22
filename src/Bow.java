@@ -10,6 +10,7 @@ public class Bow extends RangedWeapon {
     private String itemName = itemManager.getItemNAME();
     private GreenfootImage itemImage = itemManager.getItemIMAGE();
     private boolean IEquipped = false;
+    private Class<Projectile> projectileClass;
 
     public Bow() {
         setImage(itemImage);
@@ -26,10 +27,10 @@ public class Bow extends RangedWeapon {
         setAttackSpeed(1);
         setAnimationStartDegrees(-10);
         setAnimationStopDegrees(10);
+
     }
 
-    public void shootFrom(Actor a, int toX, int toY) {
-        Projectile projectile = new Arrow(getDamage(), getAttackRange(), .1,a,0);
+    public void shootFrom(Actor a, int toX, int toY,Projectile projectile) {
         a.getWorld().addObject(projectile, a.getX(), a.getY());
         projectile.shootFromTo(a.getX(),a.getY(),toX,toY);
     }

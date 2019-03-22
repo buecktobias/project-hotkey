@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b052e2bc-c100-4699-b9d4-b65ca5c8f191" name="Default Changelist" comment="merged">
-      <change afterPath="$PROJECT_DIR$/src/RangedWeapon.java" afterDir="false" />
+    <list default="true" id="b052e2bc-c100-4699-b9d4-b65ca5c8f191" name="Default Changelist" comment="improved Walking Bomb">
+      <change afterPath="$PROJECT_DIR$/src/images/ItemImages/FireArrow.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class_diagramm.uml" beforeDir="false" afterPath="$PROJECT_DIR$/class_diagramm.uml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Arrow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Archer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Bow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dagger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dagger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ItemManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ItemManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OpenWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OpenWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FireArrow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FireArrow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Projectiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Projectile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sector0_0.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sector0_0.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RangedWeapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RangedWeapon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Staff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Weapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/XBow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/XBow.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,85 +40,42 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Player.java">
+        <entry file="file://$PROJECT_DIR$/src/Projectile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="259" column="43" lean-forward="true" selection-start-line="259" selection-start-column="43" selection-end-line="259" selection-end-column="43" />
-              <folding>
-                <element signature="e#790#791#0" expanded="true" />
-                <element signature="e#825#826#0" expanded="true" />
-                <element signature="e#13048#13049#0" expanded="true" />
-                <element signature="e#13086#13087#0" expanded="true" />
-                <element signature="e#13508#13509#0" expanded="true" />
-                <element signature="e#13544#13545#0" expanded="true" />
-                <element signature="e#13882#13883#0" expanded="true" />
-                <element signature="e#13911#13912#0" expanded="true" />
-                <element signature="e#15085#15086#0" expanded="true" />
-                <element signature="e#15118#15119#0" expanded="true" />
-                <element signature="e#15169#15170#0" expanded="true" />
-                <element signature="e#15213#15214#0" expanded="true" />
-                <element signature="e#15543#15544#0" expanded="true" />
-                <element signature="e#15605#15606#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-125">
+              <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/FireArrow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#797#798#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Bow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="36" lean-forward="true" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+            <state relative-caret-position="200">
+              <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
               <folding>
-                <element signature="e#1015#1016#0" expanded="true" />
-                <element signature="e#1048#1049#0" expanded="true" />
-                <element signature="e#1077#1078#0" expanded="true" />
-                <element signature="e#1106#1107#0" expanded="true" />
-                <element signature="e#1140#1141#0" expanded="true" />
-                <element signature="e#1171#1172#0" expanded="true" />
-                <element signature="e#1205#1206#0" expanded="true" />
-                <element signature="e#1236#1237#0" expanded="true" />
-                <element signature="e#1279#1280#0" expanded="true" />
-                <element signature="e#1311#1312#0" expanded="true" />
-                <element signature="e#1346#1347#0" expanded="true" />
-                <element signature="e#1378#1379#0" expanded="true" />
-                <element signature="e#1428#1429#0" expanded="true" />
-                <element signature="e#1470#1471#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dagger.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Staff.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Projectile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-56">
-              <caret line="43" column="31" lean-forward="true" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1328#1329#0" expanded="true" />
+                <element signature="e#1386#1387#0" expanded="true" />
+                <element signature="e#1451#1452#0" expanded="true" />
+                <element signature="e#1516#1517#0" expanded="true" />
+                <element signature="e#1591#1592#0" expanded="true" />
+                <element signature="e#1658#1659#0" expanded="true" />
+                <element signature="e#1750#1751#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -131,8 +84,62 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Weapon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+            <state relative-caret-position="325">
+              <caret line="76" column="28" lean-forward="true" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RangedWeapon.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="268" column="35" lean-forward="true" selection-start-line="268" selection-start-column="35" selection-end-line="268" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/XBow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="28" column="88" selection-start-line="28" selection-start-column="88" selection-end-line="28" selection-end-column="88" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Archer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="89" column="82" selection-start-line="89" selection-start-column="82" selection-end-line="89" selection-end-column="82" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Staff.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="26" column="64" selection-start-line="26" selection-start-column="64" selection-end-line="26" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Arrow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -142,9 +149,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Tag Library Descriptor" />
         <option value="Singleton" />
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -152,40 +159,30 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>keyOpenChest</find>
-      <find>attackP</find>
-      <find>random</find>
-      <find>AttackingWeapon</find>
-      <find>WeaponAnimation</find>
-      <find>Bow</find>
-      <find>player</find>
-      <find>getWorld()</find>
-      <find>getWorld</find>
-      <find>usePrimary</find>
-      <find>Weapon</find>
-      <find>damage</find>
-      <find>setAttackRange</find>
-      <find>getDamage</find>
-      <find>attack</find>
-      <find>NPCs</find>
-      <find>scale</find>
-      <find>addToMoving</find>
-      <find>Projecile</find>
-      <find>abstract</find>
-      <find>setLife</find>
-      <find>maxli</find>
-      <find>speed</find>
-      <find>acce</find>
-      <find>primary</find>
-      <find>Print</find>
-      <find>printCoords</find>
-      <find>Animation</find>
+      <find>setima</find>
+      <find>rotation</find>
+      <find>create</find>
+      <find>createclo</find>
+      <find>rabitRight</find>
+      <find>imageFileName</find>
+      <find>equa</find>
+      <find>draw</find>
+      <find>target2.</find>
+      <find>background</find>
+      <find>Player</find>
+      <find>keys</find>
+      <find>act</find>
+      <find>move</find>
+      <find>Arrow</find>
+      <find>sub</find>
       <find>setImage</find>
-      <find>currentImage</find>
+      <find>subr</find>
+      <find>WalkingBomb</find>
+      <find>Spider</find>
+      <find>getPlayer()</find>
+      <find>setLife</find>
+      <find>fireDamage</find>
     </findStrings>
-    <dirStrings>
-      <dir>C:\Users\Paul\Desktop\Dateien\Programmieren\project-hotkey\src</dir>
-    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -200,57 +197,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/HUD.java" />
-        <option value="$PROJECT_DIR$/src/Item.java" />
-        <option value="$PROJECT_DIR$/src/Pickable.java" />
-        <option value="$PROJECT_DIR$/src/form.form" />
-        <option value="$PROJECT_DIR$/src/Keys" />
-        <option value="$PROJECT_DIR$/src/Settings.java" />
-        <option value="$PROJECT_DIR$/src/Settings" />
-        <option value="$PROJECT_DIR$/src/LoadScreen.java" />
-        <option value="$PROJECT_DIR$/.idea/libraries/json_simple_1_1_1.xml" />
-        <option value="$PROJECT_DIR$/src/SkillWindow.java" />
-        <option value="$PROJECT_DIR$/src/Button.java" />
-        <option value="$PROJECT_DIR$/src/SettingsWindow.java" />
         <option value="$PROJECT_DIR$/src/CanAttack.java" />
         <option value="$PROJECT_DIR$/src/Environment.java" />
-        <option value="$PROJECT_DIR$/src/MovingActor.java" />
         <option value="$PROJECT_DIR$/src/Enemy.java" />
         <option value="$PROJECT_DIR$/src/Inventory.java" />
-        <option value="$PROJECT_DIR$/src/General.java" />
-        <option value="$PROJECT_DIR$/src/FPS.java" />
-        <option value="$PROJECT_DIR$/src/Projectiles.java" />
-        <option value="$PROJECT_DIR$/src/Spider.java" />
-        <option value="$PROJECT_DIR$/src/Hostile.java" />
-        <option value="$PROJECT_DIR$/src/NPC.java" />
-        <option value="$PROJECT_DIR$/src/Pig.java" />
+        <option value="$PROJECT_DIR$/src/OpenWorld.java" />
         <option value="$PROJECT_DIR$/src/Friendly.java" />
+        <option value="$PROJECT_DIR$/src/project.greenfoot" />
         <option value="$PROJECT_DIR$/src/FireFighter.java" />
         <option value="$PROJECT_DIR$/src/CanSwim.java" />
+        <option value="$PROJECT_DIR$/src/EffectScreen.java" />
+        <option value="$PROJECT_DIR$/src/Projectiles.java" />
+        <option value="$PROJECT_DIR$/src/Window.java" />
+        <option value="$PROJECT_DIR$/src/SkillWindow.java" />
+        <option value="$PROJECT_DIR$/src/LoadScreen.java" />
+        <option value="$PROJECT_DIR$/src/EffectWindow.java" />
         <option value="$PROJECT_DIR$/src/Water.java" />
-        <option value="$PROJECT_DIR$/src/Grass.java" />
-        <option value="$PROJECT_DIR$/src/Rock.java" />
-        <option value="$PROJECT_DIR$/src/Fire.java" />
-        <option value="$PROJECT_DIR$/src/project.greenfoot" />
-        <option value="$PROJECT_DIR$/src/AttackingWeapon.java" />
+        <option value="$PROJECT_DIR$/src/ExplodingBehaviour.java" />
+        <option value="$PROJECT_DIR$/src/GameModes.java" />
+        <option value="$PROJECT_DIR$/src/images/Environment/Sand.java" />
+        <option value="$PROJECT_DIR$/src/GameMode.java" />
+        <option value="$PROJECT_DIR$/src/SettingsWindow.java" />
+        <option value="$PROJECT_DIR$/src/Explodes.java" />
         <option value="$PROJECT_DIR$/src/Tree.java" />
-        <option value="$PROJECT_DIR$/src/Settings.json" />
-        <option value="$PROJECT_DIR$/src/Chest.java" />
-        <option value="$PROJECT_DIR$/src/WeaponAnimation.java" />
-        <option value="$PROJECT_DIR$/src/WeaponClose.java" />
-        <option value="$PROJECT_DIR$/src/WeaponRanged.java" />
-        <option value="$PROJECT_DIR$/src/Dagger.java" />
-        <option value="$PROJECT_DIR$/src/Sector0_0.java" />
-        <option value="$PROJECT_DIR$/src/Weapon.java" />
-        <option value="$PROJECT_DIR$/src/ItemManager.java" />
+        <option value="$PROJECT_DIR$/src/Grass.java" />
+        <option value="$PROJECT_DIR$/src/Sand.java" />
+        <option value="$PROJECT_DIR$/src/Cobweb.java" />
+        <option value="$PROJECT_DIR$/src/MovingActor.java" />
+        <option value="$PROJECT_DIR$/src/Spider.java" />
+        <option value="$PROJECT_DIR$/src/Familiar.java" />
+        <option value="$PROJECT_DIR$/src/FireEnemy.java" />
+        <option value="$PROJECT_DIR$/src/FPS.java" />
+        <option value="$PROJECT_DIR$/src/Hostile.java" />
+        <option value="$PROJECT_DIR$/src/NPC.java" />
+        <option value="$PROJECT_DIR$/src/General.java" />
         <option value="$PROJECT_DIR$/src/Arrow.java" />
-        <option value="$PROJECT_DIR$/src/RangedWeapon.java" />
-        <option value="$PROJECT_DIR$/src/OpenWorld.java" />
-        <option value="$PROJECT_DIR$/src/ProjectileTarget.java" />
-        <option value="$PROJECT_DIR$/src/Player.java" />
+        <option value="$PROJECT_DIR$/src/MagicMatter.java" />
+        <option value="$PROJECT_DIR$/src/Bomb.java" />
+        <option value="$PROJECT_DIR$/src/Fire.java" />
+        <option value="$PROJECT_DIR$/src/FireSensitive.java" />
+        <option value="$PROJECT_DIR$/src/Settings.json" />
+        <option value="$PROJECT_DIR$/src/WalkingBomb.java" />
+        <option value="$PROJECT_DIR$/src/Sector0_0.java" />
+        <option value="$PROJECT_DIR$/src/Pig.java" />
         <option value="$PROJECT_DIR$/src/Projectile.java" />
-        <option value="$PROJECT_DIR$/src/Staff.java" />
         <option value="$PROJECT_DIR$/src/Bow.java" />
+        <option value="$PROJECT_DIR$/src/RangedWeapon.java" />
+        <option value="$PROJECT_DIR$/src/Player.java" />
+        <option value="$PROJECT_DIR$/src/XBow.java" />
+        <option value="$PROJECT_DIR$/src/Staff.java" />
+        <option value="$PROJECT_DIR$/src/Archer.java" />
+        <option value="$PROJECT_DIR$/src/FireArrow.java" />
       </list>
     </option>
   </component>
@@ -261,9 +258,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="x" value="-605" />
+    <option name="y" value="335" />
+    <option name="width" value="1940" />
+    <option name="height" value="1060" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -298,7 +296,7 @@
               <item name="project-hotkey" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="Characters" type="462c0819:PsiDirectoryNode" />
+              <item name="ItemImages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -313,19 +311,22 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="grundbegriffeoop_v6" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553037850455" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../project-hotkey WIP" />
-    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552832606207" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="settings.editor.splitter.proportion" value="0.2263798" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="helper" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ThomasBueck\IdeaProjects\das_neueste_project-hotkey\project-hotkey\src\images\Characters" />
+      <recent name="C:\Users\ThomasBueck\IdeaProjects\project-hotkey1.0\project-hotkey\src\images\Characters\Player" />
+      <recent name="C:\Users\ThomasBueck\IdeaProjects\project-hotkey1.0\project-hotkey\src\images\Characters" />
+      <recent name="C:\Users\ThomasBueck\IdeaProjects\project-hotkey1.0\project-hotkey\src\images\Buttons" />
+      <recent name="C:\Users\ThomasBueck\IdeaProjects\project-hotkey1.0\project-hotkey\src\images\Logos" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ThomasBueck\IdeaProjects\project-hotkey1.0\project-hotkey\src\images\Buttons" />
@@ -333,12 +334,8 @@
       <recent name="D:\Ordner\Schule\Info\ProjectHotkey\ProjectHotkey\src\images" />
       <recent name="F:\workspaces\IntelliJWS\GrundbegriffeOOP_v5\lib" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ThomasBueck\IdeaProjects\project-hotkey1.0\project-hotkey\src\images\Characters\Player" />
-      <recent name="C:\Users\ThomasBueck\IdeaProjects\project-hotkey1.0\project-hotkey\src\images\Characters" />
-      <recent name="C:\Users\ThomasBueck\IdeaProjects\project-hotkey1.0\project-hotkey\src\images\Buttons" />
-      <recent name="C:\Users\ThomasBueck\IdeaProjects\project-hotkey1.0\project-hotkey\src\images\Logos" />
-      <recent name="C:\Users\ThomasBueck\IdeaProjects\project-hotkey1.0\project-hotkey\src\images\Window" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="helper" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -392,60 +389,9 @@
       <workItem from="1552831532728" duration="179000" />
       <workItem from="1552831713114" duration="145000" />
       <workItem from="1552831859739" duration="747000" />
-      <workItem from="1552845885534" duration="5928000" />
-      <workItem from="1552944562578" duration="727000" />
-      <workItem from="1552953188609" duration="4293000" />
-      <workItem from="1553000164953" duration="6421000" />
-      <workItem from="1553010039440" duration="26945000" />
-    </task>
-    <task id="LOCAL-00001" summary="project base">
-      <created>1549046329316</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1549046329316</updated>
-    </task>
-    <task id="LOCAL-00002" summary="project base">
-      <created>1549058611793</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1549058611793</updated>
-    </task>
-    <task id="LOCAL-00003" summary="logo update, palette">
-      <created>1549106221776</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1549106221777</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Made an Infinite Scrolling World.">
-      <created>1549147359374</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1549147359374</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Added Endurance to Player.">
-      <created>1549151008117</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1549151008117</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Added HealthBar to Player.&#10;Still Work In Progress">
-      <created>1549387787343</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1549387787343</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Added new Image (StatBars.png)&#10;Player Healt is now displayed at corect position on HUD Background&#10;Player Endurance is now displayed on screen //still out of sync">
-      <created>1549394039770</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1549394039770</updated>
+      <workItem from="1552845885534" duration="28365000" />
+      <workItem from="1553086139879" duration="23130000" />
+      <workItem from="1553268191673" duration="3924000" />
     </task>
     <task id="LOCAL-00008" summary="Added HealthBar to Player.&#10;Still Work In Progress">
       <created>1549471453602</created>
@@ -650,46 +596,151 @@
       <option name="project" value="LOCAL" />
       <updated>1552846112289</updated>
     </task>
-    <task id="LOCAL-00037" summary="Added grass background so the game doesn't look completely fucked up.">
-      <created>1552953332692</created>
+    <task id="LOCAL-00037" summary="FireFighter">
+      <created>1552925033612</created>
       <option name="number" value="00037" />
       <option name="presentableId" value="LOCAL-00037" />
       <option name="project" value="LOCAL" />
-      <updated>1552953332692</updated>
+      <updated>1552925033612</updated>
     </task>
-    <task id="LOCAL-00038" summary="texture update">
-      <created>1552957108839</created>
+    <task id="LOCAL-00038" summary="Effect Window , FPS transparent background">
+      <created>1552986090683</created>
       <option name="number" value="00038" />
       <option name="presentableId" value="LOCAL-00038" />
       <option name="project" value="LOCAL" />
-      <updated>1552957108839</updated>
+      <updated>1552986090683</updated>
     </task>
-    <task id="LOCAL-00039" summary="Bruder muss Waffen animieren">
-      <created>1553007239783</created>
+    <task id="LOCAL-00039" summary="Water Effect">
+      <created>1553003388128</created>
       <option name="number" value="00039" />
       <option name="presentableId" value="LOCAL-00039" />
       <option name="project" value="LOCAL" />
-      <updated>1553007239783</updated>
+      <updated>1553003388128</updated>
     </task>
-    <task id="LOCAL-00040" summary="Chest">
-      <created>1553013412800</created>
+    <task id="LOCAL-00040" summary="Walking Bomb explodes">
+      <created>1553004529207</created>
       <option name="number" value="00040" />
       <option name="presentableId" value="LOCAL-00040" />
       <option name="project" value="LOCAL" />
-      <updated>1553013412800</updated>
+      <updated>1553004529207</updated>
     </task>
-    <task id="LOCAL-00041" summary="Weapons brauchen jetzt einen Spieler der übergeben wird">
-      <created>1553017194759</created>
+    <task id="LOCAL-00041" summary="Added Bomb">
+      <created>1553007745870</created>
       <option name="number" value="00041" />
       <option name="presentableId" value="LOCAL-00041" />
       <option name="project" value="LOCAL" />
-      <updated>1553017194759</updated>
+      <updated>1553007745870</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="improved Walking Bomb">
+      <created>1553010397782</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1553010397782</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Cobweb and Sand">
+      <created>1553074537920</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1553074537920</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Cobwebs hold Movingactors">
+      <created>1553074966798</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1553074966798</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Added GameModes ,GameMode can be changed in the SettingsWindow">
+      <created>1553078573774</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1553078573774</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Only Classes which implement Explodes explode">
+      <created>1553108671582</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1553108671582</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Hot stuff">
+      <created>1553112774514</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1553112774514</updated>
+    </task>
+    <task id="LOCAL-00048" summary="removed useless bs">
+      <created>1553113122586</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1553113122586</updated>
+    </task>
+    <task id="LOCAL-00049" summary="changed shoot function so it is more general and can be used from any actor not just the player.">
+      <created>1553150323637</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1553150323637</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Archer(looks like Player) shoots on Player">
+      <created>1553153714716</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1553153714717</updated>
+    </task>
+    <task id="LOCAL-00051" summary="improved Archer">
+      <created>1553154177563</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1553154177563</updated>
+    </task>
+    <task id="LOCAL-00052" summary="added XBow(shoots at Player very fast) needs image">
+      <created>1553156018113</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1553156018113</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Arrow and MagicMatter are own classes now">
+      <created>1553180370245</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1553180370245</updated>
+    </task>
+    <task id="LOCAL-00054" summary="attack with mouse Click now">
+      <created>1553181423461</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1553181423461</updated>
+    </task>
+    <task id="LOCAL-00055" summary="hot!">
+      <created>1553185589388</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1553185589388</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Projectile">
+      <created>1553268979512</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1553268979512</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131701000" />
+    <option name="totallyTimeSpent" value="142806000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -701,11 +752,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6511376" visible="true" weight="0.14232409" />
-      <window_info id="Structure" order="1" sideWeight="0.3488624" side_tool="true" weight="0.14072494" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18791947" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
@@ -714,19 +765,20 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info id="Repositories" order="8" weight="0.3295302" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.38136512" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.20910075" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.38243628" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.10056657" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.22521247" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4989339" weight="0.30769232" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4989339" weight="0.04249292" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010661" side_tool="true" weight="0.32827735" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4989339" weight="0.31960997" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4989339" weight="0.04249292" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Statistic" order="13" weight="0.0" />
+      <window_info anchor="bottom" id="Statistic" order="13" weight="0.04249292" />
+      <window_info anchor="bottom" id="Duplicates" order="14" weight="0.29886687" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -740,8 +792,8 @@
       <window_info anchor="right" id="Maven Projects" order="10" weight="0.3295302" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6511376" visible="true" weight="0.14072494" />
-      <window_info id="Structure" order="1" sideWeight="0.3488624" side_tool="true" visible="true" weight="0.14072494" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18791947" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
@@ -751,7 +803,7 @@
       <window_info id="Repositories" order="8" weight="0.3295302" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.38243628" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.16576381" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.04249292" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.22521247" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -759,10 +811,11 @@
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4989339" weight="0.04249292" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010661" side_tool="true" weight="0.32827735" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4989339" weight="0.4073673" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4989339" weight="0.27903682" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Statistic" order="13" weight="0.0" />
+      <window_info anchor="bottom" id="Statistic" order="13" weight="0.04249292" />
+      <window_info anchor="bottom" id="Duplicates" order="14" weight="0.29886687" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -830,1043 +883,253 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Inventory toggle on off now working..kinda" />
-    <MESSAGE value="HUD now extends NotMoving" />
-    <MESSAGE value="SkillWindow updadet" />
-    <MESSAGE value="Added FPS window" />
-    <MESSAGE value="few cleanups in Player and added a SettingsWindow(will be improved!!)" />
-    <MESSAGE value="fixed ...maybe" />
-    <MESSAGE value="added libary" />
-    <MESSAGE value="libary should work now" />
-    <MESSAGE value="fixed ??" />
-    <MESSAGE value="improved SettingsWindow:can change key now" />
-    <MESSAGE value="Updatet SettingsWindow" />
-    <MESSAGE value="Spider has simple Move Animation" />
-    <MESSAGE value="attack function for Hostile not attacking Permanently" />
-    <MESSAGE value="a key for julian" />
-    <MESSAGE value="crazy fire animation and more ..." />
     <MESSAGE value="shoot Arrow" />
     <MESSAGE value="Arrow" />
     <MESSAGE value="Player is now a Singleton(There can only be one instance of Player)" />
     <MESSAGE value="." />
     <MESSAGE value="merged" />
-    <MESSAGE value="Added grass background so the game doesn't look completely fucked up." />
-    <MESSAGE value="texture update" />
-    <MESSAGE value="Bruder muss Waffen animieren" />
-    <MESSAGE value="Chest" />
-    <MESSAGE value="Weapons brauchen jetzt einen Spieler der übergeben wird" />
-    <option name="LAST_COMMIT_MESSAGE" value="Weapons brauchen jetzt einen Spieler der übergeben wird" />
+    <MESSAGE value="FireFighter" />
+    <MESSAGE value="Effect Window , FPS transparent background" />
+    <MESSAGE value="Water Effect" />
+    <MESSAGE value="Walking Bomb explodes" />
+    <MESSAGE value="Added Bomb" />
+    <MESSAGE value="improved Walking Bomb" />
+    <MESSAGE value="Cobweb and Sand" />
+    <MESSAGE value="Cobwebs hold Movingactors" />
+    <MESSAGE value="Added GameModes ,GameMode can be changed in the SettingsWindow" />
+    <MESSAGE value="Only Classes which implement Explodes explode" />
+    <MESSAGE value="Hot stuff" />
+    <MESSAGE value="removed useless bs" />
+    <MESSAGE value="changed shoot function so it is more general and can be used from any actor not just the player." />
+    <MESSAGE value="Archer(looks like Player) shoots on Player" />
+    <MESSAGE value="improved Archer" />
+    <MESSAGE value="added XBow(shoots at Player very fast) needs image" />
+    <MESSAGE value="Arrow and MagicMatter are own classes now" />
+    <MESSAGE value="attack with mouse Click now" />
+    <MESSAGE value="hot!" />
+    <MESSAGE value="Projectile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Projectile" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/standalone.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/images/Hud_Menu_Images/Hud_V4.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project.greenfoot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="57" selection-start-column="57" selection-end-column="57" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/images/Hud_Menu_Images/Hud_V3.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Fixed.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/images/Hud_Menu_Images/Hud_V2.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HUD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/images/Hud_Menu_Images/ChestScreenV1.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Fire.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/images/Environment/XBow_test.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProjectHotkey.iml">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/images/Environment/Water.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/images/Environment/water.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Rock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/images/Environment/tree2.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Settings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret column="76" selection-start-column="76" selection-end-column="76" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/images/Environment/Sand.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Chest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/images/Environment/rock.gif">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/images/Environment/pine_tree.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Spider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
-          <folding>
-            <element signature="e#961#962#0" expanded="true" />
-            <element signature="e#990#991#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/images/Environment/grass.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WeaponClose.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/images/Environment/fire4.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FireSensitive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/images/Environment/fire3.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WeaponRanged.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="51" lean-forward="true" selection-start-column="51" selection-end-column="51" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/images/Environment/fire2.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Equippable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/images/Environment/fire1.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ExplodingBehaviour.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="35" lean-forward="true" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/images/Environment/cobweb.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/greenfoot.jar!/greenfoot/GreenfootImage.class">
+    <entry file="file://$PROJECT_DIR$/src/images/Environment/chest.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/Environment/bomb.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/Characters/FireEnemy1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/Characters/FireEnemy2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/Characters/lilpig.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/Characters/Spider.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/Characters/Spider_RED_EYES.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/Characters/Spider_Move1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/Characters/Spider_Attack1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/Characters/Spider_Angry_Move1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/Arrows/Arrow_right_aktive.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/Arrows/Arrow_right.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/Arrows/Arrow_left_aktive.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/Arrows/Arrow_left.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/Buttons/test_Button.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/Buttons/test.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/Buttons/plus_clicked.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/Buttons/plus.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/Buttons/Button_clicked.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/Buttons/Button.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovingActor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        <state relative-caret-position="150">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WeaponAnimation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+        <state relative-caret-position="200">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ItemManager.java">
+    <entry file="file://$PROJECT_DIR$/src/MagicMatter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Inventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="176" column="20" selection-start-line="176" selection-start-column="20" selection-end-line="176" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="36" lean-forward="true" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+        <state relative-caret-position="350">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Sector0_0.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="33" column="52" lean-forward="true" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SkillWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="96" column="35" selection-start-line="96" selection-start-column="35" selection-end-line="96" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/class_diagramm.uml">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement />
-          <nodes>
-            <node x="995.840909090909" y="266.5">helper</node>
-            <node x="0.0" y="1052.0">Player</node>
-            <node x="639.0" y="1569.5">Environment</node>
-            <node x="328.84090909090907" y="79.0">General</node>
-            <node x="346.0" y="1470.0">NPC</node>
-            <node x="312.25" y="2243.0">Friendly</node>
-            <node x="640.840909090909" y="211.5">Sector0_0</node>
-            <node x="738.7500000000001" y="0.0">greenfoot</node>
-            <node x="163.84090909090907" y="533.0">MovingActor</node>
-            <node x="642.5" y="753.0">NotMoving</node>
-            <node x="451.25" y="2166.0">Hostile</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="helper" target="greenfoot">
-              <point x="0.0" y="-14.5" />
-              <point x="1051.840909090909" y="54.0" />
-              <point x="847.9166666666667" y="54.0" />
-              <point x="43.66666666666663" y="14.5" />
-            </edge>
-            <edge source="Friendly" target="NPC">
-              <point x="0.0" y="-25.5" />
-              <point x="371.75" y="2141.0" />
-              <point x="414.25" y="2141.0" />
-              <point x="-68.25" y="114.0" />
-            </edge>
-            <edge source="NPC" target="MovingActor">
-              <point x="0.0" y="-114.0" />
-              <point x="482.5" y="1027.0" />
-              <point x="408.34090909090907" y="1027.0" />
-              <point x="81.5" y="234.5" />
-            </edge>
-            <edge source="Environment" target="NotMoving">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="NotMoving" target="General">
-              <point x="0.0" y="-14.5" />
-              <point x="697.0" y="508.0" />
-              <point x="547.840909090909" y="508.0" />
-              <point x="73.0" y="202.0" />
-            </edge>
-            <edge source="General" target="greenfoot">
-              <point x="0.0" y="-202.0" />
-              <point x="474.84090909090907" y="54.0" />
-              <point x="760.5833333333335" y="54.0" />
-              <point x="-43.66666666666663" y="14.5" />
-            </edge>
-            <edge source="MovingActor" target="General">
-              <point x="0.0" y="-234.5" />
-              <point x="326.84090909090907" y="508.0" />
-              <point x="401.84090909090907" y="508.0" />
-              <point x="-73.0" y="202.0" />
-            </edge>
-            <edge source="Hostile" target="NPC">
-              <point x="0.0" y="-102.5" />
-              <point x="593.25" y="2141.0" />
-              <point x="550.75" y="2141.0" />
-              <point x="68.25" y="114.0" />
-            </edge>
-            <edge source="Sector0_0" target="greenfoot">
-              <point x="1.1368683772161603E-13" y="-69.5" />
-              <point x="808.3409090909092" y="54.0" />
-              <point x="804.2500000000001" y="54.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="Player" target="MovingActor">
-              <point x="0.0" y="-532.0" />
-              <point x="163.0" y="1027.0" />
-              <point x="245.34090909090907" y="1027.0" />
-              <point x="-81.5" y="234.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.7000000000000001" x="-152.4285714285714" y="727.4285714285714" />
-          <SelectedNodes>
-            <node>helper</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Methods</Category>
-            <Category>Properties</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement />
-          <nodes>
-            <node x="150.0" y="881.0">com</node>
-            <node x="1860.6041666666665" y="575.0">Water</node>
-            <node x="1579.6041666666665" y="575.0">Chest</node>
-            <node x="2035.3541666666665" y="654.0">Staff</node>
-            <node x="1677.6041666666665" y="575.0">Grass</node>
-            <node x="1355.2304945054943" y="386.0">ExplodingBehaviour</node>
-            <node x="2044.1041666666665" y="386.0">Weapon</node>
-            <node x="640.0" y="277.0">ItemInfoScreen</node>
-            <node x="1999.3541666666665" y="277.0">Item</node>
-            <node x="656.0" y="728.0">groovyjarjarasm</node>
-            <node x="593.0" y="881.0">java</node>
-            <node x="1440.1888278388278" y="99.0">helper</node>
-            <node x="0.0" y="881.0">javax</node>
-            <node x="748.1041666666665" y="198.0">Button</node>
-            <node x="1963.5234432234429" y="99.0">LoadScreen</node>
-            <node x="1488.6041666666665" y="575.0">Tree</node>
-            <node x="374.0" y="277.0">EffectWindow</node>
-            <node x="412.125" y="99.0">GUI</node>
-            <node x="2039.0" y="728.0">javafx</node>
-            <node x="1039.1041666666665" y="277.0">Arrow</node>
-            <node x="1560.0" y="728.0">images</node>
-            <node x="1822.8541666666665" y="386.0">HasEffect</node>
-            <node x="1037.6041666666665" y="575.0">Player</node>
-            <node x="1883.0" y="728.0">oracle</node>
-            <node x="849.9375" y="575.0">FireEnemy</node>
-            <node x="1394.6041666666665" y="575.0">Rock</node>
-            <node x="220.0" y="277.0">SettingsWindow</node>
-            <node x="1396.0" y="728.0">ItemManager</node>
-            <node x="1237.2304945054943" y="386.0">CanSwim</node>
-            <node x="1944.3541666666665" y="654.0">Bow</node>
-            <node x="516.0" y="277.0">Attackable</node>
-            <node x="1046.0" y="728.0">META-INF</node>
-            <node x="865.0" y="728.0">stylesheets</node>
-            <node x="1722.0" y="728.0">groovy</node>
-            <node x="1035.1041666666665" y="99.0">General</node>
-            <node x="1592.9804945054943" y="386.0">Environment</node>
-            <node x="192.0" y="728.0">groovyjarjarcommonscli</node>
-            <node x="2111.604166666667" y="575.0">Dagger</node>
-            <node x="445.0" y="728.0">groovyjarjarantlr</node>
-            <node x="625.25" y="198.0">Inventory</node>
-            <node x="298.0" y="881.0">Countable</node>
-            <node x="788.0" y="277.0">NPC</node>
-            <node x="1225.0" y="728.0">netscape</node>
-            <node x="328.25" y="386.0">Friendly</node>
-            <node x="21.0" y="728.0">bluej</node>
-            <node x="0.0" y="277.0">FPS</node>
-            <node x="1840.0234432234429" y="198.0">Sector0_0</node>
-            <node x="913.3541666666665" y="0.0">greenfoot</node>
-            <node x="738.0" y="881.0">sun</node>
-            <node x="220.0" y="654.0">Companion</node>
-            <node x="478.0" y="386.0">FireSensitive</node>
-            <node x="377.75" y="198.0">HUD</node>
-            <node x="446.0" y="881.0">lang</node>
-            <node x="1020.1041666666665" y="198.0">MovingActor</node>
-            <node x="1294.6041666666665" y="575.0">Bomb</node>
-            <node x="678.75" y="99.0">Fixed</node>
-            <node x="169.25" y="198.0">Window</node>
-            <node x="861.3541666666665" y="99.0">DeathScreen</node>
-            <node x="1834.5234432234429" y="99.0">OpenWorld</node>
-            <node x="881.0" y="881.0">org</node>
-            <node x="1663.490705128205" y="198.0">NotMoving</node>
-            <node x="900.3541666666665" y="386.0">Blocking</node>
-            <node x="0.0" y="807.0">rmiextension</node>
-            <node x="230.5" y="575.0">Familiar</node>
-            <node x="434.875" y="575.0">WalkingBomb</node>
-            <node x="852.1041666666665" y="198.0">WeaponAnimation</node>
-            <node x="1080.7304945054943" y="386.0">Projectile</node>
-            <node x="781.5" y="386.0">Hostile</node>
-            <node x="340.5" y="575.0">Pig</node>
-            <node x="1023.0" y="881.0">jdk</node>
-            <node x="2091.354166666667" y="277.0">Equippable</node>
-            <node x="1773.6041666666665" y="575.0">Fire</node>
-            <node x="668.3541666666665" y="575.0">Spider</node>
-            <node x="87.0" y="277.0">SkillWindow</node>
-            <node x="1959.6041666666665" y="575.0">RangedWeapon</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="Fire" target="HasEffect">
-              <point x="16.75" y="-14.5" />
-              <point x="1823.8541666666665" y="555.0" />
-              <point x="1847.3541666666665" y="555.0" />
-              <point x="-24.5" y="14.5" />
-            </edge>
-            <edge source="Player" target="FireSensitive">
-              <point x="-32.0" y="-14.5" />
-              <point x="1045.6041666666665" y="475.0" />
-              <point x="576.875" y="475.0" />
-              <point x="42.375" y="14.5" />
-            </edge>
-            <edge source="Window" target="greenfoot">
-              <point x="-23.0" y="-14.5" />
-              <point x="192.25" y="49.0" />
-              <point x="921.5416666666665" y="49.0" />
-              <point x="-57.3125" y="14.5" />
-            </edge>
-            <edge source="Spider" target="Hostile">
-              <point x="10.125" y="-14.5" />
-              <point x="718.9791666666665" y="515.0" />
-              <point x="824.0" y="515.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="Rock" target="Blocking">
-              <point x="-18.5" y="-14.5" />
-              <point x="1413.1041666666665" y="435.0" />
-              <point x="987.6398809523807" y="435.0" />
-              <point x="40.28571428571422" y="14.5" />
-            </edge>
-            <edge source="HUD" target="GUI">
-              <point x="-18.25" y="-14.5" />
-              <point x="396.0" y="148.0" />
-              <point x="428.875" y="148.0" />
-              <point x="-16.75" y="14.5" />
-            </edge>
-            <edge source="FireSensitive" target="Attackable">
-              <point x="0.0" y="-14.5" />
-              <point x="534.5" y="356.0" />
-              <point x="559.3333333333333" y="356.0" />
-              <point x="-8.666666666666742" y="14.5" />
-            </edge>
-            <edge source="Pig" target="Attackable">
-              <point x="-24.375" y="-14.5" />
-              <point x="348.625" y="545.0" />
-              <point x="243.8762820512818" y="545.0" />
-              <point x="243.8762820512818" y="336.0" />
-              <point x="524.6666666666667" y="336.0" />
-              <point x="-43.33333333333326" y="14.5" />
-            </edge>
-            <edge source="Spider" target="Blocking">
-              <point x="30.375" y="-14.5" />
-              <point x="739.2291666666665" y="545.0" />
-              <point x="933.9255952380952" y="545.0" />
-              <point x="-13.428571428571331" y="14.5" />
-            </edge>
-            <edge source="Button" target="greenfoot">
-              <point x="21.0" y="-14.5" />
-              <point x="811.1041666666665" y="69.0" />
-              <point x="954.2916666666665" y="69.0" />
-              <point x="-24.5625" y="14.5" />
-            </edge>
-            <edge source="Fire" target="Environment">
-              <point x="-16.75" y="-14.5" />
-              <point x="1790.3541666666665" y="545.0" />
-              <point x="1684.1233516483514" y="545.0" />
-              <point x="33.14285714285711" y="14.5" />
-            </edge>
-            <edge source="Weapon" target="Equippable">
-              <point x="23.0" y="-14.5" />
-              <point x="2113.1041666666665" y="366.0" />
-              <point x="2144.854166666667" y="366.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="Rock" target="Environment">
-              <point x="18.5" y="-14.5" />
-              <point x="1450.1041666666665" y="535.0" />
-              <point x="1617.8376373626372" y="535.0" />
-              <point x="-33.14285714285711" y="14.5" />
-            </edge>
-            <edge source="Player" target="MovingActor">
-              <point x="16.0" y="-14.5" />
-              <point x="1093.6041666666665" y="545.0" />
-              <point x="1226.7304945054943" y="545.0" />
-              <point x="1226.7304945054943" y="257.0" />
-              <point x="1118.4374999999998" y="257.0" />
-              <point x="39.33333333333326" y="14.5" />
-            </edge>
-            <edge source="ItemInfoScreen" target="Fixed">
-              <point x="32.0" y="-14.5" />
-              <point x="736.0" y="257.0" />
-              <point x="733.75" y="257.0" />
-              <point x="733.75" y="178.0" />
-              <point x="722.5" y="178.0" />
-              <point x="6.25" y="14.5" />
-            </edge>
-            <edge source="DeathScreen" target="greenfoot">
-              <point x="0.0" y="-14.5" />
-              <point x="918.3541666666665" y="79.0" />
-              <point x="970.6666666666665" y="79.0" />
-              <point x="-8.1875" y="14.5" />
-            </edge>
-            <edge source="ItemInfoScreen" target="Inventory">
-              <point x="-32.0" y="-14.5" />
-              <point x="672.0" y="257.0" />
-              <point x="674.25" y="257.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="Spider" target="FireSensitive">
-              <point x="-30.375" y="-14.5" />
-              <point x="678.4791666666665" y="495.0" />
-              <point x="548.625" y="495.0" />
-              <point x="14.125" y="14.5" />
-            </edge>
-            <edge source="Water" target="Environment">
-              <point x="-19.75" y="-14.5" />
-              <point x="1880.3541666666665" y="535.0" />
-              <point x="1700.6947802197801" y="535.0" />
-              <point x="49.71428571428578" y="14.5" />
-            </edge>
-            <edge source="WalkingBomb" target="FireSensitive">
-              <point x="-15.375" y="-14.5" />
-              <point x="481.0" y="495.0" />
-              <point x="520.375" y="495.0" />
-              <point x="-14.125" y="14.5" />
-            </edge>
-            <edge source="Water" target="HasEffect">
-              <point x="19.75" y="-14.5" />
-              <point x="1919.8541666666665" y="555.0" />
-              <point x="1896.3541666666665" y="555.0" />
-              <point x="24.5" y="14.5" />
-            </edge>
-            <edge source="Inventory" target="GUI">
-              <point x="-24.5" y="-14.5" />
-              <point x="649.75" y="148.0" />
-              <point x="462.375" y="148.0" />
-              <point x="16.75" y="14.5" />
-            </edge>
-            <edge source="FireEnemy" target="Attackable">
-              <point x="0.0" y="-14.5" />
-              <point x="901.4375" y="515.0" />
-              <point x="889.8541666666665" y="515.0" />
-              <point x="889.8541666666665" y="346.0" />
-              <point x="594.0" y="346.0" />
-              <point x="26.0" y="14.5" />
-            </edge>
-            <edge source="Familiar" target="Friendly">
-              <point x="0.0" y="-14.5" />
-              <point x="275.5" y="555.0" />
-              <point x="350.75" y="555.0" />
-              <point x="-22.5" y="14.5" />
-            </edge>
-            <edge source="Sector0_0" target="OpenWorld">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="NPC" target="MovingActor">
-              <point x="0.0" y="-14.5" />
-              <point x="824.0" y="257.0" />
-              <point x="1039.7708333333333" y="257.0" />
-              <point x="-39.33333333333326" y="14.5" />
-            </edge>
-            <edge source="WalkingBomb" target="Blocking">
-              <point x="46.125" y="-14.5" />
-              <point x="542.5" y="535.0" />
-              <point x="920.4970238095236" y="535.0" />
-              <point x="-26.85714285714289" y="14.5" />
-            </edge>
-            <edge source="WalkingBomb" target="Hostile">
-              <point x="15.375" y="-14.5" />
-              <point x="511.75" y="505.0" />
-              <point x="795.6666666666667" y="505.0" />
-              <point x="-28.333333333333258" y="14.5" />
-            </edge>
-            <edge source="Weapon" target="Item">
-              <point x="-23.0" y="-14.5" />
-              <point x="2067.1041666666665" y="366.0" />
-              <point x="2035.3541666666665" y="366.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="Pig" target="Friendly">
-              <point x="-8.125" y="-14.5" />
-              <point x="364.875" y="475.0" />
-              <point x="395.75" y="475.0" />
-              <point x="22.5" y="14.5" />
-            </edge>
-            <edge source="Companion" target="Familiar">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="Projectile" target="NPC">
-              <point x="0.0" y="-14.5" />
-              <point x="1129.2304945054943" y="326.0" />
-              <point x="848.0" y="326.0" />
-              <point x="24.0" y="14.5" />
-            </edge>
-            <edge source="FireEnemy" target="Blocking">
-              <point x="34.33333333333326" y="-14.5" />
-              <point x="935.7708333333333" y="555.0" />
-              <point x="947.3541666666665" y="555.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="Chest" target="Environment">
-              <point x="0.0" y="-14.5" />
-              <point x="1618.6041666666665" y="555.0" />
-              <point x="1650.9804945054943" y="555.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="FireEnemy" target="Hostile">
-              <point x="-34.33333333333326" y="-14.5" />
-              <point x="867.1041666666667" y="515.0" />
-              <point x="852.3333333333333" y="515.0" />
-              <point x="28.333333333333258" y="14.5" />
-            </edge>
-            <edge source="Arrow" target="MovingActor">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="Player" target="CanSwim">
-              <point x="32.0" y="-14.5" />
-              <point x="1109.6041666666665" y="555.0" />
-              <point x="1286.2304945054943" y="555.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="helper" target="greenfoot">
-              <point x="0.0" y="-14.5" />
-              <point x="1496.1888278388278" y="69.0" />
-              <point x="1003.4166666666665" y="69.0" />
-              <point x="24.5625" y="14.5" />
-            </edge>
-            <edge source="Bomb" target="Blocking">
-              <point x="-26.666666666666742" y="-14.5" />
-              <point x="1307.9374999999998" y="445.0" />
-              <point x="974.2113095238094" y="445.0" />
-              <point x="26.85714285714289" y="14.5" />
-            </edge>
-            <edge source="Pig" target="Blocking">
-              <point x="24.375" y="-14.5" />
-              <point x="397.375" y="525.0" />
-              <point x="907.0684523809523" y="525.0" />
-              <point x="-40.28571428571422" y="14.5" />
-            </edge>
-            <edge source="Bow" target="RangedWeapon">
-              <point x="0.0" y="-14.5" />
-              <point x="1979.8541666666665" y="629.0" />
-              <point x="1992.6041666666665" y="629.0" />
-              <point x="-33.0" y="14.5" />
-            </edge>
-            <edge source="Inventory" target="Fixed">
-              <point x="24.5" y="-14.5" />
-              <point x="698.75" y="178.0" />
-              <point x="710.0" y="178.0" />
-              <point x="-6.25" y="14.5" />
-            </edge>
-            <edge source="OpenWorld" target="greenfoot">
-              <point x="0.0" y="-14.5" />
-              <point x="1889.0234432234429" y="59.0" />
-              <point x="1019.7916666666665" y="59.0" />
-              <point x="40.9375" y="14.5" />
-            </edge>
-            <edge source="Item" target="NotMoving">
-              <point x="0.0" y="-14.5" />
-              <point x="2035.3541666666665" y="257.0" />
-              <point x="1745.240705128205" y="257.0" />
-              <point x="27.25" y="14.5" />
-            </edge>
-            <edge source="WeaponAnimation" target="Fixed">
-              <point x="-37.0" y="-14.5" />
-              <point x="889.1041666666665" y="158.0" />
-              <point x="747.5" y="158.0" />
-              <point x="31.25" y="14.5" />
-            </edge>
-            <edge source="Bomb" target="Environment">
-              <point x="26.666666666666742" y="-14.5" />
-              <point x="1361.2708333333333" y="525.0" />
-              <point x="1601.2662087912086" y="525.0" />
-              <point x="-49.71428571428578" y="14.5" />
-            </edge>
-            <edge source="Friendly" target="NPC">
-              <point x="0.0" y="-14.5" />
-              <point x="373.25" y="366.0" />
-              <point x="800.0" y="366.0" />
-              <point x="-24.0" y="14.5" />
-            </edge>
-            <edge source="Environment" target="NotMoving">
-              <point x="0.0" y="-14.5" />
-              <point x="1650.9804945054943" y="257.0" />
-              <point x="1690.740705128205" y="257.0" />
-              <point x="-27.25" y="14.5" />
-            </edge>
-            <edge source="General" target="greenfoot">
-              <point x="0.0" y="-14.5" />
-              <point x="1079.1041666666665" y="79.0" />
-              <point x="987.0416666666665" y="79.0" />
-              <point x="8.1875" y="14.5" />
-            </edge>
-            <edge source="Player" target="Attackable">
-              <point x="0.0" y="-14.5" />
-              <point x="1077.6041666666665" y="455.0" />
-              <point x="1004.8541666666665" y="455.0" />
-              <point x="1004.8541666666665" y="336.0" />
-              <point x="611.3333333333333" y="336.0" />
-              <point x="43.33333333333326" y="14.5" />
-            </edge>
-            <edge source="RangedWeapon" target="Weapon">
-              <point x="0.0" y="-14.5" />
-              <point x="2025.6041666666665" y="555.0" />
-              <point x="2067.1041666666665" y="555.0" />
-              <point x="-23.0" y="14.5" />
-            </edge>
-            <edge source="Hostile" target="NPC">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="Button" target="Fixed">
-              <point x="-21.0" y="-14.5" />
-              <point x="769.1041666666665" y="168.0" />
-              <point x="735.0" y="168.0" />
-              <point x="18.75" y="14.5" />
-            </edge>
-            <edge source="Pig" target="FireSensitive">
-              <point x="8.125" y="-14.5" />
-              <point x="381.125" y="485.0" />
-              <point x="492.125" y="485.0" />
-              <point x="-42.375" y="14.5" />
-            </edge>
-            <edge source="WeaponAnimation" target="General">
-              <point x="37.0" y="-14.5" />
-              <point x="963.1041666666665" y="178.0" />
-              <point x="1049.7708333333333" y="178.0" />
-              <point x="-29.333333333333258" y="14.5" />
-            </edge>
-            <edge source="EffectWindow" target="Window">
-              <point x="0.0" y="-14.5" />
-              <point x="435.0" y="247.0" />
-              <point x="249.75" y="247.0" />
-              <point x="34.5" y="14.5" />
-            </edge>
-            <edge source="NotMoving" target="General">
-              <point x="0.0" y="-14.5" />
-              <point x="1717.990705128205" y="178.0" />
-              <point x="1108.4374999999998" y="178.0" />
-              <point x="29.333333333333258" y="14.5" />
-            </edge>
-            <edge source="WalkingBomb" target="Attackable">
-              <point x="-46.125" y="-14.5" />
-              <point x="450.25" y="475.0" />
-              <point x="439.1875" y="475.0" />
-              <point x="439.1875" y="346.0" />
-              <point x="542.0" y="346.0" />
-              <point x="-26.0" y="14.5" />
-            </edge>
-            <edge source="SkillWindow" target="Window">
-              <point x="0.0" y="-14.5" />
-              <point x="143.5" y="257.0" />
-              <point x="203.75" y="257.0" />
-              <point x="-11.5" y="14.5" />
-            </edge>
-            <edge source="Tree" target="Environment">
-              <point x="0.0" y="-14.5" />
-              <point x="1524.1041666666665" y="545.0" />
-              <point x="1634.4090659340657" y="545.0" />
-              <point x="-16.57142857142867" y="14.5" />
-            </edge>
-            <edge source="GUI" target="greenfoot">
-              <point x="0.0" y="-14.5" />
-              <point x="445.625" y="59.0" />
-              <point x="937.9166666666665" y="59.0" />
-              <point x="-40.9375" y="14.5" />
-            </edge>
-            <edge source="MovingActor" target="General">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="Dagger" target="Weapon">
-              <point x="0.0" y="-14.5" />
-              <point x="2154.604166666667" y="555.0" />
-              <point x="2113.1041666666665" y="555.0" />
-              <point x="23.0" y="14.5" />
-            </edge>
-            <edge source="Window" target="Fixed">
-              <point x="23.0" y="-14.5" />
-              <point x="238.25" y="158.0" />
-              <point x="685.0" y="158.0" />
-              <point x="-31.25" y="14.5" />
-            </edge>
-            <edge source="HUD" target="Fixed">
-              <point x="18.25" y="-14.5" />
-              <point x="432.5" y="168.0" />
-              <point x="697.5" y="168.0" />
-              <point x="-18.75" y="14.5" />
-            </edge>
-            <edge source="Staff" target="RangedWeapon">
-              <point x="0.0" y="-14.5" />
-              <point x="2071.3541666666665" y="629.0" />
-              <point x="2058.6041666666665" y="629.0" />
-              <point x="33.0" y="14.5" />
-            </edge>
-            <edge source="Spider" target="Attackable">
-              <point x="-10.125" y="-14.5" />
-              <point x="698.7291666666665" y="485.0" />
-              <point x="601.5" y="485.0" />
-              <point x="601.5" y="356.0" />
-              <point x="576.6666666666667" y="356.0" />
-              <point x="8.666666666666742" y="14.5" />
-            </edge>
-            <edge source="FPS" target="Window">
-              <point x="0.0" y="-14.5" />
-              <point x="33.5" y="247.0" />
-              <point x="180.75" y="247.0" />
-              <point x="-34.5" y="14.5" />
-            </edge>
-            <edge source="Bomb" target="ExplodingBehaviour">
-              <point x="0.0" y="-14.5" />
-              <point x="1334.6041666666665" y="515.0" />
-              <point x="1431.7304945054943" y="515.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="LoadScreen" target="greenfoot">
-              <point x="0.0" y="-14.5" />
-              <point x="2018.0234432234429" y="49.0" />
-              <point x="1036.1666666666665" y="49.0" />
-              <point x="57.3125" y="14.5" />
-            </edge>
-            <edge source="rmiextension" target="bluej">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="Grass" target="Environment">
-              <point x="0.0" y="-14.5" />
-              <point x="1715.6041666666665" y="555.0" />
-              <point x="1667.551923076923" y="555.0" />
-              <point x="16.57142857142867" y="14.5" />
-            </edge>
-            <edge source="SettingsWindow" target="Window">
-              <point x="0.0" y="-14.5" />
-              <point x="287.0" y="257.0" />
-              <point x="226.75" y="257.0" />
-              <point x="11.5" y="14.5" />
-            </edge>
-            <edge source="Player" target="Blocking">
-              <point x="-16.0" y="-14.5" />
-              <point x="1061.6041666666665" y="465.0" />
-              <point x="960.7827380952378" y="465.0" />
-              <point x="13.428571428571331" y="14.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.241935483870968" x="679.1311053928545" y="271.1035289612156" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NPC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovingActor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-378">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding>
-            <element signature="e#5865#5866#0" expanded="true" />
-            <element signature="e#5918#5919#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FireEnemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="25" column="23" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Hostile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/Screens/Transparent.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/Screens/null.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/Screens/DeathScreen.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/Screens/Settings_test.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/palette/nature.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ProjectileTarget.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="46" lean-forward="true" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
-          <folding>
-            <element signature="e#101#102#0" expanded="true" />
-            <element signature="e#127#128#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OpenWorld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="56" column="34" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
-          <folding>
-            <element signature="e#2963#2964#0" expanded="true" />
-            <element signature="e#3035#3036#0" expanded="true" />
-            <element signature="e#3109#3110#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NotMoving.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="42" lean-forward="true" selection-start-column="42" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/General.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Attackable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Environment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="45" selection-start-column="45" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/greenfoot.jar!/greenfoot/Actor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7265">
-          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
-          <folding>
-            <element signature="e#2694#2695#0" expanded="true" />
-            <element signature="e#2736#2737#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Window.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Arrow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="275">
+          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RangedWeapon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="259" column="43" lean-forward="true" selection-start-line="259" selection-start-column="43" selection-end-line="259" selection-end-column="43" />
-          <folding>
-            <element signature="e#790#791#0" expanded="true" />
-            <element signature="e#825#826#0" expanded="true" />
-            <element signature="e#13048#13049#0" expanded="true" />
-            <element signature="e#13086#13087#0" expanded="true" />
-            <element signature="e#13508#13509#0" expanded="true" />
-            <element signature="e#13544#13545#0" expanded="true" />
-            <element signature="e#13882#13883#0" expanded="true" />
-            <element signature="e#13911#13912#0" expanded="true" />
-            <element signature="e#15085#15086#0" expanded="true" />
-            <element signature="e#15118#15119#0" expanded="true" />
-            <element signature="e#15169#15170#0" expanded="true" />
-            <element signature="e#15213#15214#0" expanded="true" />
-            <element signature="e#15543#15544#0" expanded="true" />
-            <element signature="e#15605#15606#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dagger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Projectile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-56">
-          <caret line="43" column="31" lean-forward="true" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="50">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Weapon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Staff.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="325">
+          <caret line="76" column="28" lean-forward="true" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Bow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="36" lean-forward="true" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+        <state relative-caret-position="200">
+          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
           <folding>
-            <element signature="e#1015#1016#0" expanded="true" />
-            <element signature="e#1048#1049#0" expanded="true" />
-            <element signature="e#1077#1078#0" expanded="true" />
-            <element signature="e#1106#1107#0" expanded="true" />
-            <element signature="e#1140#1141#0" expanded="true" />
-            <element signature="e#1171#1172#0" expanded="true" />
-            <element signature="e#1205#1206#0" expanded="true" />
-            <element signature="e#1236#1237#0" expanded="true" />
-            <element signature="e#1279#1280#0" expanded="true" />
-            <element signature="e#1311#1312#0" expanded="true" />
-            <element signature="e#1346#1347#0" expanded="true" />
-            <element signature="e#1378#1379#0" expanded="true" />
-            <element signature="e#1428#1429#0" expanded="true" />
-            <element signature="e#1470#1471#0" expanded="true" />
+            <element signature="e#1328#1329#0" expanded="true" />
+            <element signature="e#1386#1387#0" expanded="true" />
+            <element signature="e#1451#1452#0" expanded="true" />
+            <element signature="e#1516#1517#0" expanded="true" />
+            <element signature="e#1591#1592#0" expanded="true" />
+            <element signature="e#1658#1659#0" expanded="true" />
+            <element signature="e#1750#1751#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Projectile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-125">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="268" column="35" lean-forward="true" selection-start-line="268" selection-start-column="35" selection-end-line="268" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/XBow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="28" column="88" selection-start-line="28" selection-start-column="88" selection-end-line="28" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Staff.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="26" column="64" selection-start-line="26" selection-start-column="64" selection-end-line="26" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Archer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="89" column="82" selection-start-line="89" selection-start-column="82" selection-end-line="89" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Arrow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FireArrow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#797#798#0" expanded="true" />
           </folding>
         </state>
       </provider>

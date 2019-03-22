@@ -24,7 +24,7 @@ public class Staff extends RangedWeapon {
         setAnimationStopDegrees(200);
     }
 
-    public void shootFrom(Actor a, int toX, int toY) {
+    public void shootFrom(Actor a, int toX, int toY,Projectile p) {
         Random r = new Random();
         List<Projectile> projectiles = new LinkedList<>();
         for (int i = 0; i < 12; i++) {
