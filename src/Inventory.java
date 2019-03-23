@@ -118,7 +118,7 @@ public class Inventory extends GUI implements Fixed {
         if(item.getItemType().contains("Armor")){
             armorArray[getIndexOfItemInArray(item, armorArray)] = null;
         }else if(item.getItemType().contains("Weapon")) {
-            weaponArray[getIndexOfItemInArray(item, armorArray)] = null;
+            weaponArray[getIndexOfItemInArray(item, weaponArray)] = null;
         }else {
             itemArray[getIndexOfItemInArray(item, itemArray)] = null;
         }
@@ -139,20 +139,20 @@ public class Inventory extends GUI implements Fixed {
         }
     }
     private void drawTab(Item[] itemsToDraw){
-        int drawAtX = 553;
+        int drawAtX = 754;
         int drawAtY = 226;
         if(itemsDrawn == 4){
-          drawAtX = 553;
+          drawAtX = 754;
           drawAtY = drawAtY + 55 + 12;
             itemsDrawn = 0;
         }
         for (int i = 0; i < 20; i++) {
             if(itemsToDraw[i] == null){
-                drawAtX += 55 + 12;
+                drawAtX -= 55 + 12;
                 itemsDrawn++;
             }else{
                 drawItemAt(drawAtX,drawAtY, itemsToDraw[i]);
-                drawAtX += 55 + 12;
+                drawAtX -= 55 + 12;
                 itemsDrawn++;
             }
         }
