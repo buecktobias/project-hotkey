@@ -34,7 +34,7 @@ public class Sector0_0 extends OpenWorld {
             HUD hud = new HUD(player);
             addObject(hud, getWidth() / 2, getHeight() / 2);
             setScrollingBackground(new GreenfootImage(bg));
-            Bow bow = new Bow();
+            Bow bow = new Bow(20,20);
             addObject(bow, 200, 100);
             Bomb bomb = new Bomb();
             addObject(bomb,-420,-220);

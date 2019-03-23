@@ -15,8 +15,8 @@ public class Dagger extends Weapon {
         setDamage(50);
         setAttackRange(150);
         setAttackSpeed(1);
-        setAnimationStartDegrees(0);
-        setAnimationStopDegrees(10);
+        setAnimationStartDegrees(50);
+        setAnimationStopDegrees(60);
     }
 
     //Item Getters and Setters

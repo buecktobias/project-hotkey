@@ -35,8 +35,8 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private int armorPicked = 0;
     private int currentSpeed;
     private int normalSpeed = 2;
-    private int level = 1;
-    private int exp = 20;
+    private int level = 0;
+    private int exp = 0;
     private int sprintSpeed = 4;
     private int maxLife = 1000;
     private int waitEndurance = 0;
@@ -76,7 +76,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private String keyOpenChest;
     private Inventory inventoryInstance;
     private SkillWindow skillWindow;
-    private int[] levelUps = new int[]{20,300,125,175, 200};
+    private int[] levelUps = new int[]{20,50,90,150,300,500,750,1200,1500,5_000,10_000};
     private Item[] beltItems = new Item[4];
     private Item[] ammunition = new Item[4];
     private Item[] equippedItems = new Item[6];
@@ -242,7 +242,6 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         //}
         MouseInfo mouse = Greenfoot.getMouseInfo();
         if(mouse != null) {
-            //System.out.println(mouse.getButton());
             if (mouse.getButton() == 1) {
                 usePrimaryWeapon();
             }
@@ -252,7 +251,34 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         }
         performMovement();
     }
+    public void killedEnemy(Attackable actor){
+        exp += 50;
+    }
+    public void updateLevel(){
+        if(exp > levelUps[level]){
+            level++;
+        }
+    }
+    public void attackNPCAt(int x,int y,Weapon weapon){
+        int attackRange;
+        int damage;
+        if(weapon == null){
+            attackRange = 100;
+            damage = this.damage;
+        }else{
+            attackRange = weapon.getAttackRange();
+            damage = weapon.getDamage();
+        }
 
+        List<NPC> npcs = getObjectsInRange(attackRange, NPC.class);
+        npcs.removeIf(npc -> !(npc instanceof Attackable));
+        npcs.removeIf(npc -> !(Math.abs(npc.getX() - x) < npc.getWidth() && Math.abs(npc.getY() - y) < npc.getHeight()));
+        if (!npcs.isEmpty()) {
+            Attackable attackable = (Attackable) npcs.get(0);
+            attack(attackable, damage);
+        }
+
+    }
     private void usePrimaryWeapon() {
         Weapon weapon;
         if(!getWorld().getObjects(WeaponAnimation.class).isEmpty()){
@@ -262,6 +288,8 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
             if(getSecondaryWeapon() != null) {
                 weapon = getSecondaryWeapon();
             }else{
+                MouseInfo mouseInfo = Greenfoot.getMouseInfo();
+                attackNPCAt(mouseInfo.getX(),mouseInfo.getY(),null);
                 return;
             }
         }else{
@@ -273,8 +301,8 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
                         weapon.getAttackSpeed(),
                         weapon.getAnimationStartDegrees(),
                         weapon.getAnimationStopDegrees()),
-                getWorld().getWidth()/2+16,
-                getWorld().getHeight()/2
+                getWorld().getWidth()/2+10,
+                getWorld().getHeight()/2+30
         );
 
         if(weapon instanceof RangedWeapon) {
@@ -287,13 +315,8 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
             }
         }else {
             MouseInfo mouseInfo = Greenfoot.getMouseInfo();
-            List<NPC> npcs = getObjectsInRange(weapon.getAttackRange(), NPC.class);
-            npcs.removeIf(npc -> !(npc instanceof Attackable));
-            npcs.removeIf(npc -> !(Math.abs(npc.getX() - mouseInfo.getX()) < npc.getWidth() && Math.abs(npc.getY() - mouseInfo.getY()) < npc.getHeight()));
-            if (!npcs.isEmpty()) {
-                Attackable attackable = (Attackable) npcs.get(0);
-                attack(attackable, weapon.getDamage());
-            }
+            attackNPCAt(mouseInfo.getX(), mouseInfo.getY(),weapon);
+
         }
     }
 
@@ -318,6 +341,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     }
 
     public void act() {
+        updateLevel();
         setPlayerImagesDefault();
         updateKeys();
         pick();
@@ -333,7 +357,6 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         regenerateLife();
         if (this.life < minLife) {
             Greenfoot.setWorld(new DeathScreen());
-            Greenfoot.stop();
         }
 
     }

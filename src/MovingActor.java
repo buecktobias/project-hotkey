@@ -179,9 +179,13 @@ public abstract class MovingActor extends Entity {
         int y = getY()+distance;
         return moveTo(x,y);
     }
-
+    public void killedEnemy(Attackable actor){ }
     public void attack(Attackable actor,int damage){
-        actor.setLife(actor.getLife()-damage);
+        double newLife = actor.getLife() - damage;
+        if(newLife < 0){
+            killedEnemy(actor);
+        }
+        actor.setLife(newLife);
     }
 
 }

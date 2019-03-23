@@ -5,10 +5,11 @@ public class DeathScreen extends World {
     public DeathScreen(){
         super(1024, 736, 1);
         setBackground("images/Screens/DeathScreen.png");
+        Greenfoot.stop();
     }
 
     @Override
     public void started() {
-        Greenfoot.setWorld(new Sector0_0());
+        Greenfoot.setWorld(new LoadScreen());
     }
 }

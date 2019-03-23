@@ -39,7 +39,13 @@ public abstract class Projectile extends Entity {
     }
 
     public void hits(Attackable attackable){
-        attackable.setLife(attackable.getLife() - damage);
+        double newLife = attackable.getLife() - damage;
+        attackable.setLife(newLife);
+        if(newLife < 0) {
+            if (whoIsShooting instanceof Player) {
+                ((Player) this.whoIsShooting).killedEnemy(attackable);
+            }
+        }
     }
     public void updatePosition(){
 
