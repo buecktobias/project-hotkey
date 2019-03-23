@@ -279,8 +279,10 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
                 ((RangedWeapon) weapon).shootFrom(this,mouseInfo.getX(),mouseInfo.getY(),new Arrow(10,10,.1,this,0));
             }
         }else {
+            MouseInfo mouseInfo = Greenfoot.getMouseInfo();
             List<NPC> npcs = getObjectsInRange(weapon.getAttackRange(), NPC.class);
             npcs.removeIf(npc -> !(npc instanceof Attackable));
+            npcs.removeIf(npc -> !(Math.abs(npc.getX() - mouseInfo.getX()) < npc.getWidth() && Math.abs(npc.getY() - mouseInfo.getY()) < npc.getHeight()));
             if (!npcs.isEmpty()) {
                 Attackable attackable = (Attackable) npcs.get(0);
                 attack(attackable, weapon.getDamage());

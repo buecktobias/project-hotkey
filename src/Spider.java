@@ -107,7 +107,7 @@ public class Spider extends Hostile implements Blocking,Attackable,FireSensitive
             setImage(defaultImage);
             randomMove(200);
         }
-        if(life <0){
+        if(life < 0){
             getWorld().removeObject(this);
         }
     }
