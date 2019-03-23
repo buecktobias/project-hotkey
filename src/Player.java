@@ -249,7 +249,6 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         }
         if(Greenfoot.isKeyDown(keyOpenChest)) {
             openChest();
-            updateAC();
         }
         performMovement();
     }
@@ -349,6 +348,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         Item currentItem = objs.get(0);
         switch (currentItem.getItemType()) {
             case "Weapon":
+
                 if (weaponsPicked < 30) {
                     currentItem.pick(weaponsArray);
                     weaponsPicked++;
@@ -396,6 +396,11 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
             indexOfAC++;
         }
         activeConsumable = beltItems[indexOfAC];
+    }
+    private void useAC(){
+        if(activeConsumable instanceof  Usable){
+            ((Usable) activeConsumable).use(this);
+        }
     }
 
     //Getters and Setters

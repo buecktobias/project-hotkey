@@ -1,6 +1,6 @@
 import greenfoot.GreenfootImage;
 
-public class HealthPotion extends Item implements Countable, Equippable {
+public class HealthPotion extends Item implements Countable, Equippable, Usable {
 
 
     private ItemManager itemManager = ItemManager.HealthPotion;

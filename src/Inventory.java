@@ -18,8 +18,6 @@ public class Inventory extends GUI implements Fixed {
 
     //TODO fix known issues:
     // 1) item info screen does not open/close as it is supposed;
-    // 2) item hover info is drawn beneath items following items in inventory,
-    //    possible fix: reverse draw order of items
 
     private Player p;
     private World world;
@@ -225,25 +223,15 @@ public class Inventory extends GUI implements Fixed {
         if (Greenfoot.getMouseInfo() != null){
             int mouseX = Greenfoot.getMouseInfo().getX();
             int mouseY = Greenfoot.getMouseInfo().getY();
-
-            //System.out.println(Greenfoot.mouseDragged(item));
-            //System.out.println(Greenfoot.mouseDragEnded(item));
-
             if(mouseX > X - width / 2 && mouseX < X + width  && mouseY < Y + height && mouseY > Y - height / 2) {
                 if(item instanceof Equippable){
-
-                    //System.out.println(Greenfoot.mousePressed(item));
-
                    if(Greenfoot.getMouseInfo().getClickCount() == 2) {
                        if(item.isIEquipped()){
-                           unequippItem(item);
+                           obtainItem(item);
                        }else if(item.getItemSlotId() != -1 && !item.isIEquipped()){
                            equipItem(item);
                        }
                    }else if(Greenfoot.mouseDragged(item)){
-
-                       //System.out.println(Greenfoot.mouseDragged(item));
-
                        drawItemAt(mouseX, mouseY, item);
                    }
                 }
@@ -343,7 +331,7 @@ public class Inventory extends GUI implements Fixed {
         // Helmet  0, Chest   1, Legs    2, Boots   3, Primary 4, Secondary 5, ammunition 6, consumable 7
     }
     private void equipItem(Item[] itemArray, Item item){
-        if(item.getItemType() == "Consumable"){
+        if(item.getItemType().contains("Consumable")){
             addItemToArray(itemArray, item);
         }else{
             int index = item.getItemSlotId();
@@ -351,7 +339,7 @@ public class Inventory extends GUI implements Fixed {
                 itemArray[index] = item;
             }else{
                 Item oldItem = itemArray[index];
-                unequippItem(oldItem);
+                obtainItem(oldItem);
                 itemArray [index] = item;
             }
         }
@@ -359,25 +347,25 @@ public class Inventory extends GUI implements Fixed {
         item.setIEquipped(true);
         itemsEquipped = true;
     }
-    private void unequippItem(Item oldItem){
+    private void obtainItem(Item oldItem){
         switch (oldItem.getItemType()) {
             case "Weapon":
-                if (unequippItem(weaponArray, oldItem, p.getWeaponsPicked())) {
+                if (obtainItem(weaponArray, oldItem, p.getWeaponsPicked())) {
                     p.setWeaponsPicked(p.getWeaponsPicked() + 1);
                 }
                 break;
             case "Armor":
-                if (unequippItem(armorArray, oldItem, p.getArmorPicked())) {
+                if (obtainItem(armorArray, oldItem, p.getArmorPicked())) {
                     p.setArmorPicked(p.getArmorPicked() + 1);
                 }
                 break;
             default:
-                unequippItem(itemArray, oldItem, p.getItemsPicked());
+                obtainItem(itemArray, oldItem, p.getItemsPicked());
                 p.setItemsPicked(p.getItemsPicked() + 1);
                 break;
         }
     }
-    private boolean unequippItem(Item[] addIto, Item item, int alreadyPicked){
+    private boolean obtainItem(Item[] addIto, Item item, int alreadyPicked){
         if(alreadyPicked < 30){
             addItemToArray(addIto, item);
             item.setIEquipped(false);
