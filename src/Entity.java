@@ -86,14 +86,15 @@ public abstract class Entity extends Actor {
     }
     public void animate(int speed,GreenfootImage... images){
         assert images.length != 0;
+        if(FPS.getFrame() - lastFrameAnimated > speed) {
+            animationImage++;
+            lastFrameAnimated = FPS.getFrame();
+
+        }
         if(animationImage >= images.length){
             animationImage = 0;
         }
-        if(FPS.getInstance().getFrame() - lastFrameAnimated > speed) {
-            setImage(images[animationImage]);
-            animationImage++;
-            lastFrameAnimated = FPS.getInstance().getFrame();
-        }
+        setImage(images[animationImage]);
     }
 
     @Override

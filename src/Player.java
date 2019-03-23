@@ -29,6 +29,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         return effectWindow;
     }
 
+    private int rightMouseButtonClickedFramesLong = 0;
     private int weaponsPicked = 0;
     private int itemsPicked = 0;
     private int armorPicked = 0;
@@ -239,6 +240,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         //}
         MouseInfo mouse = Greenfoot.getMouseInfo();
         if(mouse != null) {
+            System.out.println(mouse.getButton());
             if (mouse.getButton() == 1) {
                 usePrimaryWeapon();
             }
@@ -276,6 +278,9 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         if(weapon instanceof RangedWeapon) {
             MouseInfo mouseInfo = Greenfoot.getMouseInfo();
             if(mouseInfo != null) {
+                if(weapon instanceof Bow){
+                    ((Bow) weapon).shootFrom(this,mouseInfo.getX(),mouseInfo.getY(),new Arrow(10,this.rightMouseButtonClickedFramesLong,.1,this,0));
+                }
                 ((RangedWeapon) weapon).shootFrom(this,mouseInfo.getX(),mouseInfo.getY(),new Arrow(10,10,.1,this,0));
             }
         }else {

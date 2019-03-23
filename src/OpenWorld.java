@@ -11,8 +11,6 @@ public abstract class OpenWorld extends World {
     public OpenWorld(int scrollingWidth, int scrollingHeight) {
         super(1024, 736, 1, false);
         setPaintOrder(Player.class);
-        WORLD_WIDTH = scrollingWidth;
-        WORLD_HEIGHT = scrollingHeight;
     }
 
     public void addObjectTopLeftCorner(Actor object, int x, int y) {

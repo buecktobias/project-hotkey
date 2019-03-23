@@ -23,7 +23,7 @@ public class Sector0_0 extends OpenWorld {
     private final int BorderY2 = 1_000;
 
     public Sector0_0() {
-        super(2000, 2000);
+            super(2000,2000);
             bg.scale(32, 32);
             getSettings();
             setPaintOrder(Button.class, ItemInfoScreen.class, Inventory.class, HUD.class, MovingActor.class, Window.class);

@@ -9,17 +9,25 @@ public class Bomb extends Environment implements Blocking,ExplodingBehaviour {
     private int damage;
     private boolean triggered = false;
     private int framesInWhichItExplodes = 100;
+    private double sizeImage=32;
     private GreenfootImage defaultImage = new GreenfootImage("images/Environment/bomb.png");
-    private GreenfootImage triggeredImage1 = new GreenfootImage("images/Environment/bomb_triggered1.png");
-    private GreenfootImage triggeredImage2 = new GreenfootImage("images/Environment/bomb_triggered2.png");
-
+    private GreenfootImage triggeredImage1;
+    private GreenfootImage triggeredImage2;
+    private int triggerRange = 200;
     public Bomb(){
-        attackRange = 250;
-        damage = 100;
+        attackRange = 300;
+        damage = 50_000;
     }
     public Bomb(int attackRange,int damage){
         this.attackRange = attackRange;
         this.damage = damage;
+    }
+    public void resetImages(){
+        triggeredImage1 = new GreenfootImage("images/Environment/bomb_triggered1.png");
+        triggeredImage2 = new GreenfootImage("images/Environment/bomb_triggered2.png");
+    }
+    public double distanceBetween(Actor a1,Actor a2){
+        return Math.abs(a1.getX() - a2.getX()) + Math.abs(a1.getY() - a2.getY());
     }
     public void explode(final int radius){
         List<Environment> environmentList = getObjectsInRange(radius,Environment.class);
@@ -27,15 +35,14 @@ public class Bomb extends Environment implements Blocking,ExplodingBehaviour {
         getWorld().removeObjects(environmentList);
         List<Actor> actorList = getObjectsInRange(radius, Actor.class);
         actorList.removeIf(actor -> !(actor instanceof Attackable));
-        actorList.forEach(attackable ->
-                attackable.setLocation((int)(attackable.getX() + ((attackable.getX() - getX()) / 5) * (10*this.damage / Math.abs(attackable.getX() - getX()))),(int)(attackable.getY() + ((attackable.getY() - getY())/5) * (10*this.damage / Math.abs(attackable.getX() - getX())))));
-        actorList.forEach(attackable -> ((Attackable)attackable).setLife(((Attackable) attackable).getLife()-this.damage));
+        actorList.forEach(attackable -> ((Attackable)attackable).setLife(((Attackable) attackable).getLife()- (this.damage / distanceBetween(this,attackable))));
         ((OpenWorld)getWorld()).resetPlayersPosition(Player.getInstance());
         getWorld().removeObject(this);
     }
 
     @Override
     protected void addedToWorld(World world) {
+        resetImages();
         defaultImage.scale(32,32);
         triggeredImage1.scale(32,32);
         triggeredImage2.scale(32,32);
@@ -49,8 +56,12 @@ public class Bomb extends Environment implements Blocking,ExplodingBehaviour {
             this.triggered = true;
         }
         if(triggered){
+            resetImages();
             framesInWhichItExplodes--;
-            animate(20,triggeredImage1,triggeredImage2);
+            sizeImage *= 1.01;
+            triggeredImage1.scale((int)Math.round(sizeImage),(int)Math.round(sizeImage));
+            triggeredImage2.scale((int)Math.round(sizeImage),(int)Math.round(sizeImage));
+            animate((int)1 + framesInWhichItExplodes / 2,triggeredImage1,triggeredImage2);
         }
         if(framesInWhichItExplodes <= 0){
             explode(this.attackRange);
