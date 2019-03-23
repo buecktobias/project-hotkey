@@ -44,6 +44,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private int maxEndurance = 1000;
     private int interactingRange = 128;
     private int damage = 5;
+    private int indexOfAC;
     private final int waitTimeOpenSkillWindow = 10;
     private final int waitTimeOpenSettingsWindow = 10;
     private final int minLife = 0;
@@ -76,13 +77,13 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private Inventory inventoryInstance;
     private SkillWindow skillWindow;
     private int[] levelUps = new int[]{20,300,125,175, 200};
-    private Item activeConsumable;    // boolean might be mor complicated?
     private Item[] beltItems = new Item[4];
     private Item[] ammunition = new Item[4];
     private Item[] equippedItems = new Item[6];
     private Item[] weaponsArray = new Item[20];
     private Item[] armorArray = new Item[20];
     private Item[] itemsArray = new Item[20];
+    private Item activeConsumable;
     private GreenfootImage defaultImage;
     private GreenfootImage imageWalking1;
     private GreenfootImage imageWalking2;
@@ -115,6 +116,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         inventoryInstance = new Inventory(this, world);
         this.setImage(defaultImage);
         getWorld().addObject(effectWindow,400,20);
+         indexOfAC = java.util.Arrays.asList(beltItems).indexOf(activeConsumable);
     }
 
     private void move(Direction d, int distance) {
@@ -240,13 +242,14 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         //}
         MouseInfo mouse = Greenfoot.getMouseInfo();
         if(mouse != null) {
-            System.out.println(mouse.getButton());
+            //System.out.println(mouse.getButton());
             if (mouse.getButton() == 1) {
                 usePrimaryWeapon();
             }
         }
         if(Greenfoot.isKeyDown(keyOpenChest)) {
             openChest();
+            updateAC();
         }
         performMovement();
     }
@@ -309,9 +312,8 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
 
     public void openChest() {
         List<Chest> chests = getObjectsInRange(interactingRange, Chest.class);
-
         if(!chests.isEmpty()) {
-            chests.get(0).open();
+            //chests.get(0).open(inventoryInstance);
         }
 
     }
@@ -364,13 +366,13 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
                         for (Item item : itemsArray) {
                             if (item != null) {
                                 ((Countable) currentItem).compareIDWith(item, itemsArray);
-                                break;
+                                itemsPicked++;
+                                return;
                             }
                         }
-                    }else{
                         currentItem.pick(itemsArray);
+                        itemsPicked++;
                     }
-                    itemsPicked++;
                 }
                 break;
         }
@@ -385,6 +387,15 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
             getWorld().addObject(inventoryInstance, getWorld().getWidth() / 2, getWorld().getHeight() / 2);
             setIActive(true);
         }
+    }
+    private void updateAC(){
+        // TODO only execute once
+        if(indexOfAC == 3){
+            indexOfAC = 0;
+        }else {
+            indexOfAC++;
+        }
+        activeConsumable = beltItems[indexOfAC];
     }
 
     //Getters and Setters
@@ -561,5 +572,8 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
 
     public Item getActiveConsumable() {
         return activeConsumable;
+    }
+    public void setActiveConsumable(Item activeConsumable) {
+        this.activeConsumable = activeConsumable;
     }
 }

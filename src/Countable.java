@@ -1,5 +1,3 @@
-
-
 public interface Countable {
     void setItemCount(int itemCount);
     int getItemCount();

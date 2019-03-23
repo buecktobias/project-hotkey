@@ -34,13 +34,17 @@ public class HUD extends GUI implements Fixed {
         }
     }
     private void drawActiveBeltItem(){
-        drawItemAt(Background, 100, 600, p.getActiveConsumable());
+        drawItemAt(Background, 113, 625, p.getActiveConsumable());
     }
     private void drawLevelFonts(){
         Background.setFont(GUILargeFont);
         Background.setColor(Color.BLACK);
-        Background.drawString("LVL: " + (p.getLevel()) + (p.getExp())  + "/" + p.getLevelUpValue(p.getLevel()+1), 780, 30);
+        Background.drawString("LVL:" + (p.getLevel()) + " "+ (p.getExp())  + "/" + p.getLevelUpValue(p.getLevel()+1), 780, 30);
     }
 
     //Getters and Setters
+
+    public GreenfootImage getBackground() {
+        return Background;
+    }
 }

@@ -79,6 +79,9 @@ public class Inventory extends GUI implements Fixed {
         p.setBeltItems(beltItems);
         p.setAmmunition(ammunition);
         p.setEquippedItems(equippedItems);
+        if(p.getActiveConsumable() == null){
+            p.setActiveConsumable(beltItems[0]);
+        }
 
         Object obj = null;
         try {
@@ -107,14 +110,17 @@ public class Inventory extends GUI implements Fixed {
     public void addItemToArrayAt(Item[] array, Item item, int index){
         array[index] = item;
     }
+    private int getIndexOfItemInArray(Item item, Item[] itemArray){
+         return java.util.Arrays.asList(itemArray).indexOf(item);
+    }
     private void removeItemFromInventory(Item item){
         // TODO Switch case?
         if(item.getItemType().contains("Armor")){
-            armorArray[java.util.Arrays.asList(armorArray).indexOf(item)] = null;
+            armorArray[getIndexOfItemInArray(item, armorArray)] = null;
         }else if(item.getItemType().contains("Weapon")) {
-            weaponArray[java.util.Arrays.asList(weaponArray).indexOf(item)] = null;
+            weaponArray[getIndexOfItemInArray(item, armorArray)] = null;
         }else {
-            itemArray[java.util.Arrays.asList(itemArray).indexOf(item)] = null;
+            itemArray[getIndexOfItemInArray(item, itemArray)] = null;
         }
     }
 
@@ -185,13 +191,14 @@ public class Inventory extends GUI implements Fixed {
         }
     }
     private void drawEquippedConsumables(Item[] itemArray, int startX, int startY){
-        for (int i = 0; i < itemArray.length; i++) {
-            drawItemAt(startX, startY, itemArray[i]);
-            startX = startX + 55 + 12 + 40;
-        }
+            for (Item item: itemArray) {
+                if(item != null)
+                drawItemAt(startX, startY, item);
+                startX = startX + 55 + 12 + 40;
+            }
     }
     private void drawItemAt(int X, int Y, Item item){
-        super.drawItemAt(InventoryScreen, X, Y,item);
+        drawItemAt(InventoryScreen, X, Y,item);
         itemMouseLogic(X, Y, item);
     }
     private void drawTabFonts(){
@@ -322,31 +329,35 @@ public class Inventory extends GUI implements Fixed {
     private void equipItem(Item item){
         switch(item.getItemSlotId()){
             case 6:
-                addItemToArray(ammunition, item);
+                equipItem(ammunition, item);
+                item.setIEquipped(true);
+                itemsEquipped = true;
                 break;
             case 7:
-                addItemToArray(beltItems, item);
+                equipItem(beltItems, item);
                 break;
             default:
-                 equipItem(equippedItems, item.getItemSlotId(), item);
+                 equipItem(equippedItems, item);
                  break;
         }
         // Helmet  0, Chest   1, Legs    2, Boots   3, Primary 4, Secondary 5, ammunition 6, consumable 7
     }
-    private void equipItem(Item[] itemArray, int index, Item item){
-        if(itemArray[item.getItemSlotId()] == null){
-            itemArray[index] = item;
-            removeItemFromInventory(item);
-            item.setIEquipped(true);
-            itemsEquipped = true;
+    private void equipItem(Item[] itemArray, Item item){
+        if(item.getItemType() == "Consumable"){
+            addItemToArray(itemArray, item);
         }else{
-            Item oldItem = itemArray[index];
-            unequippItem(oldItem);
-            itemArray [index] = item;
-            removeItemFromInventory(item);
-            item.setIEquipped(true);
-            itemsEquipped = true;
+            int index = item.getItemSlotId();
+            if(itemArray[index] == null){
+                itemArray[index] = item;
+            }else{
+                Item oldItem = itemArray[index];
+                unequippItem(oldItem);
+                itemArray [index] = item;
+            }
         }
+        removeItemFromInventory(item);
+        item.setIEquipped(true);
+        itemsEquipped = true;
     }
     private void unequippItem(Item oldItem){
         switch (oldItem.getItemType()) {

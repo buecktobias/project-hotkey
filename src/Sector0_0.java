@@ -23,7 +23,7 @@ public class Sector0_0 extends OpenWorld {
     private final int BorderY2 = 1_000;
 
     public Sector0_0() {
-            super(2000,2000);
+        super(2000, 2000);
             bg.scale(32, 32);
             getSettings();
             setPaintOrder(Button.class, ItemInfoScreen.class, Inventory.class, HUD.class, MovingActor.class, Window.class);
@@ -39,7 +39,11 @@ public class Sector0_0 extends OpenWorld {
             Bomb bomb = new Bomb();
             addObject(bomb,-420,-220);
             Companion companion = new Companion(player);
-            addObject(companion, 150, 0);
+           // addObject(companion, 150, 0);
+            HealthPotion healthPotion = new HealthPotion();
+            addObject(healthPotion, 150, 50);
+            HealthPotion healthPotion1 = new HealthPotion();
+            addObject(healthPotion1, 150, 100);
 
 
             /*
@@ -56,7 +60,7 @@ public class Sector0_0 extends OpenWorld {
             addObject(staff,-350,210);
             */
             Dagger dagger = new Dagger();
-            addObject(dagger,200,200);
+            addObject(dagger,250,50);
 
             randomObjects(Cobweb.class, 200, -600,800, 400, 10);
             randomObjects(Sand.class, 600, 700,1000, 1000, 1);
@@ -119,7 +123,6 @@ public class Sector0_0 extends OpenWorld {
         } catch (InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
         }
-
     }
 
     public void randomObjects(Class a, final int fromX, final int fromY, final int toX, final int toY, double density) {
