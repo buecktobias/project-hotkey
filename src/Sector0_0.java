@@ -27,16 +27,25 @@ public class Sector0_0 extends OpenWorld {
     private final int WORLD_WIDTH = 1024;
     private final int WORLD_HEIGHT = 736;
 
+    public int getWORLD_WIDTH() {
+        return WORLD_WIDTH;
+    }
+
+    public int getWORLD_HEIGHT() {
+        return WORLD_HEIGHT;
+    }
+
     public Sector0_0() {
+
         super(1024, 736);
         setScrollingBackground(new GreenfootImage(bg));
         bgSound.setVolume(10);
         bgSound.playLoop();
         bg.scale(32, 32);
         getSettings();
-        setPaintOrder(MiniMap.class,Button.class, ItemInfoScreen.class, Inventory.class, HUD.class, MovingActor.class, Window.class);
+        setPaintOrder(Button.class,MiniMap.class,ItemInfoScreen.class, Inventory.class, HUD.class,MovingActor.class,Window.class);
         setBackground(bg);
-        addObjectTopLeftCorner(new MiniMap(),WORLD_WIDTH,WORLD_HEIGHT);
+        addObjectTopLeftCorner(new MiniMap(),WORLD_WIDTH - 10,WORLD_HEIGHT - 10);
         addObjectTopLeftCorner(FPS.getInstance(), 1000, WORLD_HEIGHT - 250);
         Player player = new Player();
         addObject(player, 0, 0);
