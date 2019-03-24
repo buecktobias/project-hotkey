@@ -42,6 +42,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private int interactingRange = 128;
     private int damage = 5;
     private int indexOfAC;
+    private int damageSoundWaitFrames = 20;
     private final int waitTimeOpenSkillWindow = 10;
     private final int waitTimeOpenSettingsWindow = 10;
     private final int minLife = 0;
@@ -49,12 +50,13 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private final int gameSpeed = 50;
     private long lastFrameSettingsWindowOpened = 0;
     private long lastFrameSkillWindowOpened = 0;
+    private long lastTimeDamageSoundPlayed = 0;
     private final double NORMAL_LIFE_REGENERATION = 0.1;
     private double fireDamageReduction = 0.99;
     private double life = maxLife;
     private double lifeRegeneration = NORMAL_LIFE_REGENERATION;
     private double endurance = maxEndurance;
-    private double enduranceRegeneration = 1;
+    private double enduranceRegeneration = 30;
     private double fireDamage = 0;
     private boolean skillScreenShown = false;
     private boolean isIActive = false;
@@ -75,7 +77,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private String keyOpenChest;
     private Inventory inventoryInstance;
     private SkillWindow skillWindow;
-    private int[] levelUps = new int[]{20,50,90,150,300,500,750,1200,1500,5_000,10_000};
+    private int[] levelUps = new int[]{25,50,100,150,300,600,1200,1800};
     private Item[] beltItems = new Item[4];
     private Item[] ammunition = new Item[4];
     private Item[] equippedItems = new Item[6];
@@ -88,12 +90,10 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private GreenfootImage imageWalking2;
     private GreenfootImage imageWalking3;
     private GreenfootImage imageWalking4;
-
     private GreenfootSound walkingSound = new GreenfootSound("sounds/walkingSound.wav");
     private GreenfootSound gameOverSound = new GreenfootSound("sounds/gameOver.wav");
     private GreenfootSound damageSound = new GreenfootSound("sounds/gotDamage.wav");
-    private int damageSoundWaitFrames = 20;
-    private long lastTimeDamageSoundPlayed = 0;
+
     public void movingAnimation(){
         animate(4,imageWalking1,imageWalking2,imageWalking3,imageWalking4);
     }
@@ -239,10 +239,10 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
 
     private void testKeys() {
         if(Greenfoot.isKeyDown(keyUpdateAc)){
-            // TODO
+            updateAC();
         }
         if(Greenfoot.isKeyDown(keyUseAc)){
-            // TODO
+            useAC();
         }
         if (Greenfoot.isKeyDown(keyOpenSkillWindow)) {
             showSkillWindow();
@@ -352,6 +352,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
 
     public void act() {
         updateLevel();
+        setAC();
         setPlayerImagesDefault();
         updateKeys();
         pick();
@@ -430,6 +431,16 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private void useAC(){
         if(activeConsumable instanceof  Usable){
             ((Usable) activeConsumable).use(this);
+        }
+    }
+    private void setAC(){
+        if(activeConsumable == null){
+            for (int i = 0; i < beltItems.length; i++) {
+                if(beltItems[i] != null){
+                    activeConsumable = beltItems[i];
+                    return;
+                }
+            }
         }
     }
 
@@ -520,14 +531,12 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     public void setWeaponsPicked(int weaponsPicked) {
         this.weaponsPicked = weaponsPicked;
     }
-
     public int getItemsPicked() {
         return itemsPicked;
     }
     public void setItemsPicked(int itemsPicked) {
         this.itemsPicked = itemsPicked;
     }
-
     public int getArmorPicked() {
         return armorPicked;
     }

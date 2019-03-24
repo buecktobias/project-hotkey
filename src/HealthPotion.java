@@ -10,24 +10,33 @@ public class HealthPotion extends Item implements Countable, Equippable, Usable 
     private String itemName = itemManager.getItemNAME();
     private GreenfootImage itemImage = itemManager.getItemIMAGE();
     private boolean IEquipped = false;
-    private int itemCount = 0;
+    private int itemCount;
 
     private int healValue = 50;
 
-    public HealthPotion(){
+    public HealthPotion(int itemCount){
         setImage(itemImage);
+        this.itemCount = itemCount;
     }
     public void use(Player p){
-        p.setLife(p.getLife() + healValue);
+        double currentLife = p.getLife();
+        double maxLife = p.getMaxLife();
+        if(currentLife + healValue > maxLife){
+            p.setLife(maxLife);
+        }else{
+            p.setLife(currentLife + healValue);
+        }
     }
+
     public void compareIDWith(Item item, Item[] inventoryArray){
+        Countable cItem = (Countable) item;
         if (item.getItemId() == this.getItemId()) {
-            Countable cItem = (Countable) item;
-            cItem.setItemCount(cItem.getItemCount() + 1);
             getWorld().removeObject(this);
+
         }else {
             pick(inventoryArray);
         }
+        cItem.setItemCount(this.itemCount + cItem.getItemCount());
     }
 
     //Countable Getters & Setters

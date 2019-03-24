@@ -77,9 +77,11 @@ public class Inventory extends GUI implements Fixed {
         p.setBeltItems(beltItems);
         p.setAmmunition(ammunition);
         p.setEquippedItems(equippedItems);
+        /*
         if(p.getActiveConsumable() == null){
             p.setActiveConsumable(beltItems[0]);
         }
+        */
 
         Object obj = null;
         try {
@@ -108,17 +110,15 @@ public class Inventory extends GUI implements Fixed {
     public void addItemToArrayAt(Item[] array, Item item, int index){
         array[index] = item;
     }
-    private int getIndexOfItemInArray(Item item, Item[] itemArray){
-         return java.util.Arrays.asList(itemArray).indexOf(item);
-    }
+
     private void removeItemFromInventory(Item item){
         // TODO Switch case?
         if(item.getItemType().contains("Armor")){
-            armorArray[getIndexOfItemInArray(item, armorArray)] = null;
+            armorArray[item.getIndexOfItemInArray(item, armorArray)] = null;
         }else if(item.getItemType().contains("Weapon")) {
-            weaponArray[getIndexOfItemInArray(item, weaponArray)] = null;
+            weaponArray[item.getIndexOfItemInArray(item, weaponArray)] = null;
         }else {
-            itemArray[getIndexOfItemInArray(item, itemArray)] = null;
+            itemArray[item.getIndexOfItemInArray(item, itemArray)] = null;
         }
     }
 
@@ -140,7 +140,7 @@ public class Inventory extends GUI implements Fixed {
         int drawAtX = 754;
         int drawAtY = 226;
         if(itemsDrawn == 4){
-          drawAtX = 754;
+          drawAtX = 553;
           drawAtY = drawAtY + 55 + 12;
             itemsDrawn = 0;
         }
@@ -331,7 +331,18 @@ public class Inventory extends GUI implements Fixed {
         // Helmet  0, Chest   1, Legs    2, Boots   3, Primary 4, Secondary 5, ammunition 6, consumable 7
     }
     private void equipItem(Item[] itemArray, Item item){
-        if(item.getItemType().contains("Consumable")){
+        if(item instanceof Countable){
+            for (Item itemA : itemArray) {
+                if (itemA != null) {
+                    if (itemA.getItemId() == item.getItemId()) {
+                        Countable cItemA = (Countable) itemA;
+                        // if there already is an Item of the same Type in player´s belt, their count will be added up
+                        (cItemA).setItemCount(cItemA.getItemCount() + ((Countable) item).getItemCount());
+                        removeItemFromInventory(item);
+                        return;
+                    }
+                }
+            }
             addItemToArray(itemArray, item);
         }else{
             int index = item.getItemSlotId();
@@ -350,12 +361,12 @@ public class Inventory extends GUI implements Fixed {
     private void obtainItem(Item oldItem){
         switch (oldItem.getItemType()) {
             case "Weapon":
-                if (obtainItem(weaponArray, oldItem, p.getWeaponsPicked())) {
+                if (obtainWeaponry(weaponArray, oldItem, p.getWeaponsPicked())) {
                     p.setWeaponsPicked(p.getWeaponsPicked() + 1);
                 }
                 break;
             case "Armor":
-                if (obtainItem(armorArray, oldItem, p.getArmorPicked())) {
+                if (obtainWeaponry(armorArray, oldItem, p.getArmorPicked())) {
                     p.setArmorPicked(p.getArmorPicked() + 1);
                 }
                 break;
@@ -365,7 +376,7 @@ public class Inventory extends GUI implements Fixed {
                 break;
         }
     }
-    private boolean obtainItem(Item[] addIto, Item item, int alreadyPicked){
+    private boolean obtainWeaponry(Item[] addIto, Item item, int alreadyPicked){
         if(alreadyPicked < 30){
             addItemToArray(addIto, item);
             item.setIEquipped(false);
@@ -373,6 +384,13 @@ public class Inventory extends GUI implements Fixed {
             return true;
         }
         else return false;
+    }
+    private void obtainItem(Item[] addIto, Item item, int alreadyPicked){
+        if(alreadyPicked < 30) {
+            addItemToArray(addIto, item);
+            item.setIEquipped(false);
+            beltItems[item.getIndexOfItemInArray(item, beltItems)] = null;
+        }
     }
 
     //Getters and Setters

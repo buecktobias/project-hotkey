@@ -44,14 +44,13 @@ public class Sector0_0 extends OpenWorld {
         addObject(bomb, -420, -220);
         Companion companion = new Companion(player);
         // addObject(companion, 150, 0);
-        HealthPotion healthPotion = new HealthPotion();
+        HealthPotion healthPotion = new HealthPotion(3);
         addObject(healthPotion, 150, 50);
-        HealthPotion healthPotion1 = new HealthPotion();
+        HealthPotion healthPotion1 = new HealthPotion(5);
         addObject(healthPotion1, 150, 100);
 
 
         Archer archer = new Archer();
-
         addObject(archer, 200, 100);
         Archer archer2 = new Archer();
         addObject(archer2, 350, 100);

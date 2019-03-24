@@ -18,4 +18,7 @@ public abstract class Item extends NotMoving {
             }
         }
     }
+    int getIndexOfItemInArray(Item item, Item[] itemArray){
+        return java.util.Arrays.asList(itemArray).indexOf(item);
+    }
 }
