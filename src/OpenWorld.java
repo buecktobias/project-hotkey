@@ -8,9 +8,8 @@ public abstract class OpenWorld extends World {
     public static int WORLD_WIDTH;
     public static int WORLD_HEIGHT;
 
-    public OpenWorld(int scrollingWidth, int scrollingHeight) {
-        super(1024, 736, 1, false);
-        setPaintOrder(Player.class);
+    public OpenWorld(int width, int height) {
+        super(width, height, 1, false);
     }
 
     public void addObjectTopLeftCorner(Actor object, int x, int y) {
@@ -43,6 +42,8 @@ public abstract class OpenWorld extends World {
     //This image is used as the background image of the scrolling world.
     //If you want to use another image just chang the path.
     private GreenfootImage textur;
+
+
 
     public final void resetPlayersPosition(Player player) {
         int xMovement = (int) ((double) getWidth() / 2 - player.getX());

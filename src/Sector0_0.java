@@ -24,20 +24,24 @@ public class Sector0_0 extends OpenWorld {
     private final int BorderX2 = 1_000;
     private final int BorderY2 = 1_000;
 
+    private final int WORLD_WIDTH = 1024;
+    private final int WORLD_HEIGHT = 736;
+
     public Sector0_0() {
-        super(2000, 2000);
+        super(1024, 736);
+        setScrollingBackground(new GreenfootImage(bg));
         bgSound.setVolume(10);
         bgSound.playLoop();
         bg.scale(32, 32);
         getSettings();
-        setPaintOrder(Button.class, ItemInfoScreen.class, Inventory.class, HUD.class, MovingActor.class, Window.class);
+        setPaintOrder(MiniMap.class,Button.class, ItemInfoScreen.class, Inventory.class, HUD.class, MovingActor.class, Window.class);
         setBackground(bg);
-        addObject(FPS.getInstance(), 1000, 700);
+        addObjectTopLeftCorner(new MiniMap(),WORLD_WIDTH,WORLD_HEIGHT);
+        addObjectTopLeftCorner(FPS.getInstance(), 1000, WORLD_HEIGHT - 250);
         Player player = new Player();
-        addObject(player, getWidth() / 2, this.getHeight() / 2);
+        addObject(player, 0, 0);
         HUD hud = new HUD(player);
         addObject(hud, getWidth() / 2, getHeight() / 2);
-        setScrollingBackground(new GreenfootImage(bg));
         Bow bow = new Bow(20, 20);
         addObject(bow, 200, 100);
         Bomb bomb = new Bomb();
@@ -76,6 +80,7 @@ public class Sector0_0 extends OpenWorld {
         randomObjects(Fire.class, -1000, -1000, -100, -200, 10);
         randomObjects(Grass.class, BorderX1, BorderY1, BorderX2, BorderY2, 12);
         boundingRocks(BorderX1, BorderY1, BorderX2, BorderY2);
+        this.resetPlayersPosition(player);
     }
 
     private void getSettings() {
