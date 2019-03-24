@@ -1,5 +1,6 @@
 import greenfoot.Actor;
 import greenfoot.GreenfootImage;
+import greenfoot.GreenfootSound;
 import greenfoot.World;
 
 import java.util.List;
@@ -11,6 +12,7 @@ public class Bomb extends Environment implements Blocking,ExplodingBehaviour {
     private int framesInWhichItExplodes = 100;
     private double sizeImage=32;
     private GreenfootImage defaultImage = new GreenfootImage("images/Environment/bomb.png");
+    private GreenfootSound explosionSound = new GreenfootSound("sounds/explosion.wav");
     private GreenfootImage triggeredImage1;
     private GreenfootImage triggeredImage2;
     private int triggerRange = 200;
@@ -30,6 +32,7 @@ public class Bomb extends Environment implements Blocking,ExplodingBehaviour {
         return Math.abs(a1.getX() - a2.getX()) + Math.abs(a1.getY() - a2.getY());
     }
     public void explode(final int radius){
+        explosionSound.play();
         List<Environment> environmentList = getObjectsInRange(radius,Environment.class);
         environmentList.removeIf(environment -> !(environment instanceof Explodes));
         getWorld().removeObjects(environmentList);

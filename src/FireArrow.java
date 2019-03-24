@@ -1,8 +1,10 @@
 import greenfoot.Actor;
 import greenfoot.GreenfootImage;
+import greenfoot.GreenfootSound;
 
 public class FireArrow extends Projectile{
     private GreenfootImage defaultImage = new GreenfootImage("images/ItemImages/FireArrow.png");
+    private GreenfootSound arrowSound = new GreenfootSound("sounds/arrow2.wav");
     private double fireDamage = 5;
     public GreenfootImage getDefaultImage() {
         return defaultImage;
@@ -19,6 +21,12 @@ public class FireArrow extends Projectile{
             ((FireSensitive) attackable).setFireDamage(fireDamage);
         }
     }
+
+    @Override
+    void makeShootingSound() {
+        arrowSound.play();
+    }
+
     public void act() {
         updatePosition();
     }

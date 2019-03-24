@@ -1,7 +1,4 @@
-import greenfoot.Greenfoot;
-import greenfoot.GreenfootImage;
-import greenfoot.MouseInfo;
-import greenfoot.World;
+import greenfoot.*;
 import helper.Direction;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -72,6 +69,8 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private String keyOpenSkillWindow;
     private String keyOpenInventar;
     private String keyOpenSettings;
+    private String keyUseAc;
+    private String keyUpdateAc;
     private String usePrimaryWeapon;
     private String keyOpenChest;
     private Inventory inventoryInstance;
@@ -89,6 +88,8 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private GreenfootImage imageWalking2;
     private GreenfootImage imageWalking3;
     private GreenfootImage imageWalking4;
+
+    private GreenfootSound gameOverSound = new GreenfootSound("sounds/gameOver.wav");
 
     public void movingAnimation(){
         animate(4,imageWalking1,imageWalking2,imageWalking3,imageWalking4);
@@ -225,21 +226,25 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         keyOpenInventar = keys.get("openInventar").toString();
         keyOpenSettings = keys.get("openSettingWindow").toString();
         keyOpenSkillWindow = keys.get("openSkillWindow").toString();
-        usePrimaryWeapon = keys.get("useWeapon").toString();
+        keyUseAc = keys.get("useAc").toString();
+        keyUpdateAc = keys.get("updateAc").toString();
         keyOpenChest = keys.get("openChest").toString();
     }
 
 
     private void testKeys() {
+        if(Greenfoot.isKeyDown(keyUpdateAc)){
+            // TODO
+        }
+        if(Greenfoot.isKeyDown(keyUseAc)){
+            // TODO
+        }
         if (Greenfoot.isKeyDown(keyOpenSkillWindow)) {
             showSkillWindow();
         }
         if (Greenfoot.isKeyDown(keyOpenSettings)) {
             showSettingsWindow();
         }
-        //if (Greenfoot.isKeyDown(usePrimaryWeapon)) {
-        //    usePrimaryWeapon();
-        //}
         MouseInfo mouse = Greenfoot.getMouseInfo();
         if(mouse != null) {
             if (mouse.getButton() == 1) {
@@ -356,6 +361,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         }
         regenerateLife();
         if (this.life < minLife) {
+            gameOverSound.play();
             Greenfoot.setWorld(new DeathScreen());
         }
 

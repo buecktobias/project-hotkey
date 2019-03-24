@@ -23,6 +23,7 @@ public abstract class Projectile extends Entity {
         this.whoIsShooting = whoIsShooting;
     }
     public void shootFromTo(int fromX,int fromY,int toX,int toY){
+        makeShootingSound();
         int destinationX = toX - fromX;
         int destinationY = toY - fromY;
         this.rotation = (int) Math.toDegrees(Math.atan2(destinationY, destinationX));
@@ -32,7 +33,9 @@ public abstract class Projectile extends Entity {
         this.rotation = this.rotation + r.nextInt(2*scatter+1)-scatter;
         this.velocityX = Math.cos(Math.toRadians(this.rotation))*this.speed;
         this.velocityY = Math.sin(Math.toRadians(this.rotation))*this.speed;
+
     }
+    abstract void makeShootingSound();
 
     public void act() {
         updatePosition();
