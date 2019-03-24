@@ -89,8 +89,11 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private GreenfootImage imageWalking3;
     private GreenfootImage imageWalking4;
 
+    private GreenfootSound walkingSound = new GreenfootSound("sounds/walkingSound.wav");
     private GreenfootSound gameOverSound = new GreenfootSound("sounds/gameOver.wav");
-
+    private GreenfootSound damageSound = new GreenfootSound("sounds/gotDamage.wav");
+    private int damageSoundWaitFrames = 20;
+    private long lastTimeDamageSoundPlayed = 0;
     public void movingAnimation(){
         animate(4,imageWalking1,imageWalking2,imageWalking3,imageWalking4);
     }
@@ -103,6 +106,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         imageWalking4 = new GreenfootImage("src/images/Characters/Player/player_walking4.png");
     }
     public Player() {
+        walkingSound.setVolume(60);
         if(ourInstance == null){
             ourInstance = this;
         }
@@ -122,6 +126,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
 
     private void move(Direction d, int distance) {
         super.moveDirection(d, distance);
+        walkingSound.play();
         if (getWorld() instanceof OpenWorld) {
             ((OpenWorld) getWorld()).resetPlayersPosition(this);
         }
@@ -360,10 +365,6 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
             drawFireImage();
         }
         regenerateLife();
-        if (this.life < minLife) {
-            gameOverSound.play();
-            Greenfoot.setWorld(new DeathScreen());
-        }
 
     }
 
@@ -444,7 +445,15 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         return life;
     }
     public void setLife(double life) {
+        if(life < this.life && FPS.getFrame() - lastTimeDamageSoundPlayed > damageSoundWaitFrames){
+            damageSound.play();
+            lastTimeDamageSoundPlayed = FPS.getFrame();
+        }
         this.life = life;
+        if (this.life < minLife) {
+            gameOverSound.play();
+            Greenfoot.setWorld(new DeathScreen());
+        }
     }
 
     public double getEndurance() {
