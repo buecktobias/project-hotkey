@@ -98,7 +98,7 @@ public class Inventory extends GUI implements Fixed {
         keyCreateItemInfoScreen = keys.get("createItemInfoScreen").toString();
     }
 
-    // "Item Array" methods
+    // "Item-Array" methods
     private void addItemToArray(Item[] array, Item  item){
         for(int i = 0; i < array.length; i++){
             if(array[i] == null){
@@ -110,7 +110,6 @@ public class Inventory extends GUI implements Fixed {
     public void addItemToArrayAt(Item[] array, Item item, int index){
         array[index] = item;
     }
-
     private void removeItemFromInventory(Item item){
         // TODO Switch case?
         if(item.getItemType().contains("Armor")){

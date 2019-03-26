@@ -31,7 +31,6 @@ public class HUD extends GUI implements Fixed {
         return scale;
     }
 
-
     private void drawEquippedWeapons(){
         if(p.getPrimaryWeapon() != null){
             super.drawItemAt(Background, 184, 585, p.getPrimaryWeapon());
@@ -54,12 +53,8 @@ public class HUD extends GUI implements Fixed {
     private void drawLevelFonts(){
         Background.setFont(GUILargeFont);
         Background.setColor(Color.BLACK);
-        Background.drawString("LVL:" + (p.getLevel()) + " "+ (p.getExp())  + "/" + p.getLevelUpValue(p.getLevel()), 780, 30);
+        Background.drawString("LVL:" + (p.getLevel()) + " "+ (p.getExp())  + "/" + p.getLevelUpValue(p.getLevel()), 803, 30);
     }
 
     //Getters and Setters
-
-    public GreenfootImage getBackground() {
-        return Background;
-    }
 }

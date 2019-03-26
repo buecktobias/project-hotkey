@@ -1,13 +1,514 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/Player.java" line="211" />
+    <bookmark url="file://$PROJECT_DIR$/src/Player.java" line="217" />
+    <bookmark url="file://$PROJECT_DIR$/src/Player.java" line="343" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b052e2bc-c100-4699-b9d4-b65ca5c8f191" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/MiniMap.java" afterDir="false" />
+    <list default="true" id="b052e2bc-c100-4699-b9d4-b65ca5c8f191" name="Default Changelist" comment="libary should work now">
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/A_Armor04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/A_Armor05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/A_Armour01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/A_Armour02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/A_Armour03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/A_Clothing01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/A_Clothing02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/A_Shoes01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/A_Shoes02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/A_Shoes03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/A_Shoes04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/A_Shoes05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/A_Shoes06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/A_Shoes07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/Ac_Medal01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/Ac_Medal02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/Ac_Medal03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/Ac_Medal04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/Ac_Necklace01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/Ac_Necklace02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/Ac_Necklace03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/Ac_Necklace04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/Ac_Necklace05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/Ac_Necklace06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/Ac_Necklace07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/Ac_Necklace08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/Ac_Ring01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/Ac_Ring02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/C_Elm01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/C_Elm03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/C_Elm04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/C_Hat01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/C_Hat02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/E_Bones02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/E_Bones03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/E_Gold01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/E_Gold02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/E_Metal01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/E_Metal02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/E_Metal03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/E_Metal04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/E_Metal05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/E_Metal06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/E_Metal07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/E_Metal08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/E_Metal09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/E_Wood01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/E_Wood02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/E_Wood03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/E_Wood04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Agate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Amethist.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Antidote.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_BatWing.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_BirdsBeak.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Bone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Book.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Bottle01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Bottle02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Bottle03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Bottle04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_BronzeBar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_BronzeCoin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_Banana.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_Bread.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_Carrot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_Cheese.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_Cherry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_Fish.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_Grapes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_GreenGrapes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_GreenPepper.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_Lemon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_Meat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_Mulberry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_Mushroom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_Nut.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_Orange.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_Pear.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_Pie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_Pineapple.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_Radish.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_RawFish.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_RawMeat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_RedPepper.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_Strawberry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_Watermellon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_C_YellowPepper.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Cannon01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Cannon02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Cannon03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Cannon04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Cannon05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Chest01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Chest02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Clock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Clover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Coal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Crystal01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Crystal02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Crystal03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Diamond.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Eye.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Fabric.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Fang.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Feather01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Feather02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_FishTail.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_FoxTail.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_FrogLeg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_GoldBar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_GoldCoin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Ink.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_IronBall.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Jade.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Key01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Key02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Key03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Key04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Key05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Key06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Key07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Leaf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Map.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Mirror.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Opal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_RabbitPaw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Rock01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Rock02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Rock03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Rock04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Rock05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Ruby.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Sapphire.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_ScorpionClaw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Scroll.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Scroll02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_SilverBar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_SilverCoin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_SnailShell.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_SolidShell.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Telescope.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Tentacle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Torch01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Torch02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_Water.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/I_WolfFur.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Blue01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Blue02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Blue03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Blue04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Blue05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Blue06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Blue07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Blue08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Green01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Green02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Green03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Green04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Green05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Green06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Medicine01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Medicine02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Medicine03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Medicine04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Medicine05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Medicine06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Medicine07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Medicine08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Medicine09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Orange01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Orange02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Orange03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Orange04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Orange05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Orange06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Pink01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Pink02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Pink03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Pink04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Pink05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Pink06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Pink07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Pink08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Red01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Red02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Red03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Red04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Red05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Red06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Red07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_White01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_White02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_White03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_White04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_White05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Yellow01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Yellow02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Yellow03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Yellow04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Yellow05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Yellow06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Yellow07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/P_Yellow08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Axe01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Axe02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Axe03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Axe04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Axe05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Axe06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Axe07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Bow01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Bow02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Bow03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Bow04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Bow05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Bow06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Bow07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Bow08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Bow09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Bow10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Bow11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Bow12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Bow13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Bow14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Buff01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Buff02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Buff03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Buff04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Buff05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Buff06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Buff07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Buff08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Buff09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Buff10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Buff11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Buff12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Buff13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Buff14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Dagger02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Dagger03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Dagger04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Dagger05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Dagger06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Earth01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Earth02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Earth03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Earth04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Earth05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Earth06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Earth07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Fire01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Fire02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Fire03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Fire04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Fire05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Fire06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Fire07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Fire08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Holy01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Holy02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Holy03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Holy04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Holy05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Holy06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Holy07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Holy08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Holy09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Holy10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Ice01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Ice02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Ice03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Ice04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Ice05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Ice06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Ice07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Ice08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Ice09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Light01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Light02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Light03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Light04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Magic01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Magic02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Magic03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Magic04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Magic05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Magic06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Magic07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Magic08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Magic09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Magic10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Magic11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Physic01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Physic02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Poison01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Poison02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Poison03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Poison04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Poison05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Poison06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Poison07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Poison08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Poison09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Shadow01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Shadow02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Shadow03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Shadow04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Shadow05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Shadow06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Shadow07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Shadow08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Shadow09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Shadow10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Shadow11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Shadow12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Shadow13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Shadow14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Shadow15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Shadow16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Sword01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Sword02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Sword03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Sword04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Sword05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Sword06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Sword07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Sword08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Sword09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Sword10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Sword15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Sword16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Sword17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Sword18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Sword19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Sword20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Sword21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Thunder01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Thunder02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Thunder03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Thunder04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Thunder05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Thunder06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Thunder07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Water01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Water02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Water03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Water04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Water05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Water06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Water07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Wind01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Wind02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Wind03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Wind04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Wind05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Wind06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/S_Wind07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Axe001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Axe002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Axe003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Axe004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Axe005.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Axe006.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Axe007.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Axe008.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Axe009.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Axe010.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Axe011.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Axe012.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Axe013.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Axe014.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Book01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Book02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Book03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Book04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Book05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Book06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Book07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Bow01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Bow02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Bow03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Bow04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Bow05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Bow06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Bow07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Bow08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Bow09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Bow10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Bow11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Bow12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Bow13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Bow14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Bow15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Bow16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Bow17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Dagger001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Dagger002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Dagger003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Dagger004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Dagger005.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Dagger006.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Dagger007.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Dagger008.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Dagger009.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Dagger010.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Dagger011.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Dagger012.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Dagger013.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Dagger014.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Dagger015.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Dagger016.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Dagger017.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Dagger018.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Dagger019.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Dagger020.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Dagger021.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Fist001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Fist002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Fist003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Fist004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Fist005.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Gold_Axe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Gold_Bow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Gold_Dagger.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Gold_Mace.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Gold_Spear.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Gold_Sword.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Gun001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Gun002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Gun003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Mace001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Mace002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Mace003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Mace004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Mace005.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Mace006.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Mace007.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Mace008.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Mace009.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Mace010.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Mace011.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Mace012.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Mace013.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Mace014.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Mace15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Mace16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Spear001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Spear002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Spear003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Spear004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Spear005.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Spear006.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Spear007.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Spear008.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Spear009.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Spear010.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Spear011.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Spear012.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Spear013.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Spear014.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Staff01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Staff02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Staff03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Staff04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Staff05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Staff06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Staff07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Staff08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Sword001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Sword002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Sword003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Sword004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Sword005.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Sword006.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Sword007.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Sword008.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Sword009.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Sword010.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Sword011.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Sword012.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Sword013.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Sword014.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Sword015.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Sword016.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Sword017.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Sword018.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Sword019.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Sword020.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Sword021.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Sword022.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Throw001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Throw002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Throw003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Throw004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/496_RPG_icons(1)/W_Throw05.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OpenWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OpenWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Sector0_0.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sector0_0.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Settings.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,181 +520,34 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/ProjectHotkey$GreenfootOOP.ic" NAME="GreenfootOOP Coverage Results" MODIFIED="1549484627762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
-  </component>
-  <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Settings.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="283" selection-start-column="283" selection-end-column="283" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Sector0_0.java">
+        <entry file="file://$PROJECT_DIR$/src/Inventory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/OpenWorld.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+            <state relative-caret-position="378">
+              <caret line="396" column="72" selection-start-line="396" selection-start-column="72" selection-end-line="396" selection-end-column="72" />
               <folding>
-                <element signature="e#270#271#0" expanded="true" />
-                <element signature="e#316#317#0" expanded="true" />
+                <element signature="e#3958#4225#0" />
+                <element signature="e#4789#5127#0" />
+                <element signature="e#5132#5679#0" />
+                <element signature="e#5684#6777#0" />
+                <element signature="e#6782#7053#0" />
+                <element signature="e#7058#7197#0" />
+                <element signature="e#7202#7952#0" />
+                <element signature="e#7958#8927#0" />
+                <element signature="e#8932#9780#0" />
+                <element signature="e#9786#10070#0" />
+                <element signature="e#10075#11160#0" />
+                <element signature="e#11165#11288#0" />
+                <element signature="e#11293#11877#0" />
+                <element signature="e#11883#12450#0" />
+                <element signature="e#12455#13587#0" />
+                <element signature="e#13592#14281#0" />
+                <element signature="e#14286#14598#0" />
+                <element signature="e#14603#14876#0" />
+                <element signature="e#14704#14870#1" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2011">
-              <caret line="86" column="5" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
-              <folding>
-                <element signature="e#3990#3991#0" expanded="true" />
-                <element signature="e#4171#4172#0" expanded="true" />
-                <element signature="e#4355#4356#0" expanded="true" />
-                <element signature="e#5287#5288#0" expanded="true" />
-                <element signature="e#5671#5672#0" expanded="true" />
-                <element signature="e#5728#5729#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/greenfoot.jar!/greenfoot/GreenfootImage.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="228" selection-start-line="228" selection-end-line="228" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LoadScreen.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="134" column="21" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="21" />
-              <folding>
-                <element signature="e#14909#14910#0" expanded="true" />
-                <element signature="e#14944#14945#0" expanded="true" />
-                <element signature="e#14989#14990#0" expanded="true" />
-                <element signature="e#15037#15038#0" expanded="true" />
-                <element signature="e#15068#15069#0" expanded="true" />
-                <element signature="e#15095#15096#0" expanded="true" />
-                <element signature="e#15762#15763#0" expanded="true" />
-                <element signature="e#15859#15860#0" expanded="true" />
-                <element signature="e#15955#15956#0" expanded="true" />
-                <element signature="e#16023#16024#0" expanded="true" />
-                <element signature="e#16091#16092#0" expanded="true" />
-                <element signature="e#16152#16153#0" expanded="true" />
-                <element signature="e#16222#16223#0" expanded="true" />
-                <element signature="e#16302#16303#0" expanded="true" />
-                <element signature="e#16402#16403#0" expanded="true" />
-                <element signature="e#16468#16469#0" expanded="true" />
-                <element signature="e#16549#16550#0" expanded="true" />
-                <element signature="e#16608#16609#0" expanded="true" />
-                <element signature="e#16684#16685#0" expanded="true" />
-                <element signature="e#16760#16761#0" expanded="true" />
-                <element signature="e#16867#16868#0" expanded="true" />
-                <element signature="e#16933#16934#0" expanded="true" />
-                <element signature="e#17016#17017#0" expanded="true" />
-                <element signature="e#17089#17090#0" expanded="true" />
-                <element signature="e#17193#17194#0" expanded="true" />
-                <element signature="e#17262#17263#0" expanded="true" />
-                <element signature="e#17358#17359#0" expanded="true" />
-                <element signature="e#17427#17428#0" expanded="true" />
-                <element signature="e#17523#17524#0" expanded="true" />
-                <element signature="e#17609#17610#0" expanded="true" />
-                <element signature="e#17728#17729#0" expanded="true" />
-                <element signature="e#17802#17803#0" expanded="true" />
-                <element signature="e#17905#17906#0" expanded="true" />
-                <element signature="e#17974#17975#0" expanded="true" />
-                <element signature="e#18069#18070#0" expanded="true" />
-                <element signature="e#18138#18139#0" expanded="true" />
-                <element signature="e#18233#18234#0" expanded="true" />
-                <element signature="e#18301#18302#0" expanded="true" />
-                <element signature="e#18392#18393#0" expanded="true" />
-                <element signature="e#18461#18462#0" expanded="true" />
-                <element signature="e#18556#18557#0" expanded="true" />
-                <element signature="e#18336#18337#0" expanded="true" />
-                <element signature="e#18383#18384#0" expanded="true" />
-                <element signature="e#18423#18424#0" expanded="true" />
-                <element signature="e#18470#18471#0" expanded="true" />
-                <element signature="e#18817#18818#0" expanded="true" />
-                <element signature="e#18948#18949#0" expanded="true" />
-                <element signature="e#19017#19018#0" expanded="true" />
-                <element signature="e#19112#19113#0" expanded="true" />
-                <element signature="e#19209#19210#0" expanded="true" />
-                <element signature="e#19290#19291#0" expanded="true" />
-                <element signature="e#19409#19410#0" expanded="true" />
-                <element signature="e#19492#19493#0" expanded="true" />
-                <element signature="e#19548#19549#0" expanded="true" />
-                <element signature="e#19600#19601#0" expanded="true" />
-                <element signature="e#19680#19681#0" expanded="true" />
-                <element signature="e#19797#19798#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/images/Screens/background_grass.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MiniMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="28" column="68" lean-forward="true" selection-start-line="28" selection-start-column="68" selection-end-line="28" selection-end-column="68" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Window.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" column="61" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -203,50 +557,37 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Tag Library Descriptor" />
-        <option value="Singleton" />
         <option value="Enum" />
         <option value="Interface" />
+        <option value="Tag Library Descriptor" />
         <option value="Class" />
+        <option value="Singleton" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>setima</find>
+      <find>rotation</find>
+      <find>create</find>
       <find>createclo</find>
       <find>rabitRight</find>
       <find>imageFileName</find>
       <find>equa</find>
       <find>draw</find>
+      <find>Player</find>
       <find>target2.</find>
       <find>background</find>
-      <find>Player</find>
-      <find>keys</find>
-      <find>Arrow</find>
-      <find>sub</find>
-      <find>setImage</find>
-      <find>subr</find>
-      <find>WalkingBomb</find>
-      <find>Spider</find>
-      <find>getPlayer()</find>
-      <find>fireDamage</find>
-      <find>setLocation</find>
-      <find>act</find>
-      <find>ac</find>
+      <find>Arch</find>
+      <find>fi</find>
+      <find>setItem</find>
+      <find>System</find>
+      <find>&quot;#FFD700&quot;</find>
       <find>System.out</find>
       <find>Sys</find>
-      <find>exp</find>
-      <find>level</find>
-      <find>updateLe</find>
-      <find>killed</find>
-      <find>attackNPC</find>
-      <find>testKeys</find>
-      <find>move</find>
-      <find>setLife</find>
+      <find>fon</find>
+      <find>get</find>
     </findStrings>
-    <dirStrings>
-      <dir>C:\Users\ThomasBueck\IdeaProjects\das_neueste_project-hotkey\project-hotkey\src</dir>
-    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -256,76 +597,72 @@
     </option>
     <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Projectiles.java" />
-        <option value="$PROJECT_DIR$/src/Window.java" />
-        <option value="$PROJECT_DIR$/src/SkillWindow.java" />
-        <option value="$PROJECT_DIR$/src/EffectWindow.java" />
-        <option value="$PROJECT_DIR$/src/Water.java" />
-        <option value="$PROJECT_DIR$/src/ExplodingBehaviour.java" />
-        <option value="$PROJECT_DIR$/src/GameModes.java" />
-        <option value="$PROJECT_DIR$/src/images/Environment/Sand.java" />
-        <option value="$PROJECT_DIR$/src/GameMode.java" />
-        <option value="$PROJECT_DIR$/src/SettingsWindow.java" />
-        <option value="$PROJECT_DIR$/src/Explodes.java" />
-        <option value="$PROJECT_DIR$/src/Tree.java" />
-        <option value="$PROJECT_DIR$/src/Grass.java" />
-        <option value="$PROJECT_DIR$/src/Sand.java" />
-        <option value="$PROJECT_DIR$/src/Cobweb.java" />
-        <option value="$PROJECT_DIR$/src/Familiar.java" />
-        <option value="$PROJECT_DIR$/src/FireEnemy.java" />
-        <option value="$PROJECT_DIR$/src/FPS.java" />
-        <option value="$PROJECT_DIR$/src/Hostile.java" />
-        <option value="$PROJECT_DIR$/src/NPC.java" />
-        <option value="$PROJECT_DIR$/src/General.java" />
-        <option value="$PROJECT_DIR$/src/Fire.java" />
-        <option value="$PROJECT_DIR$/src/FireSensitive.java" />
-        <option value="$PROJECT_DIR$/src/WalkingBomb.java" />
-        <option value="$PROJECT_DIR$/src/RangedWeapon.java" />
-        <option value="$PROJECT_DIR$/src/XBow.java" />
-        <option value="$PROJECT_DIR$/src/Staff.java" />
-        <option value="$PROJECT_DIR$/src/Archer.java" />
-        <option value="$PROJECT_DIR$/src/Pig.java" />
-        <option value="$PROJECT_DIR$/src/Spider.java" />
-        <option value="$PROJECT_DIR$/src/project.greenfoot" />
-        <option value="$PROJECT_DIR$/src/Consumable.java" />
-        <option value="$PROJECT_DIR$/src/HUD.java" />
+        <option value="$PROJECT_DIR$/src/level/RabbitWorld.java" />
+        <option value="$PROJECT_DIR$/src/character/PlayerRabbit.java" />
+        <option value="$PROJECT_DIR$/src/level/Level1.java" />
+        <option value="$PROJECT_DIR$/src/character/Rabbit.java" />
+        <option value="$PROJECT_DIR$/src/standalone.properties" />
+        <option value="$PROJECT_DIR$/src/PlayerRabbit.java" />
+        <option value="$PROJECT_DIR$/src/helper/DummyActor.java" />
+        <option value="$PROJECT_DIR$/src/Character.java" />
+        <option value="$PROJECT_DIR$/src/helper/Direction.java" />
+        <option value="$PROJECT_DIR$/src/Rabbit.java" />
+        <option value="$PROJECT_DIR$/src/Rock.java" />
+        <option value="$PROJECT_DIR$/src/Star.java" />
+        <option value="$PROJECT_DIR$/src/helper/Coordinates.java" />
+        <option value="$PROJECT_DIR$/src/Level1.java" />
+        <option value="$PROJECT_DIR$/src/Environment.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/MovingActor.java" />
-        <option value="$PROJECT_DIR$/src/DeathScreen.java" />
-        <option value="$PROJECT_DIR$/src/HighscoreScreen.java" />
-        <option value="$PROJECT_DIR$/src/Dagger.java" />
-        <option value="$PROJECT_DIR$/src/LoadScreen.java" />
-        <option value="$PROJECT_DIR$/src/Fist.java" />
-        <option value="$PROJECT_DIR$/src/Bomb.java" />
-        <option value="$PROJECT_DIR$/src/Bow.java" />
-        <option value="$PROJECT_DIR$/src/Arrow.java" />
-        <option value="$PROJECT_DIR$/src/Projectile.java" />
-        <option value="$PROJECT_DIR$/src/FireArrow.java" />
-        <option value="$PROJECT_DIR$/src/MagicMatter.java" />
-        <option value="$PROJECT_DIR$/src/Settings.json" />
-        <option value="$PROJECT_DIR$/src/Player.java" />
+        <option value="$PROJECT_DIR$/src/Attackable.java" />
+        <option value="$PROJECT_DIR$/src/Weapon.java" />
         <option value="$PROJECT_DIR$/src/OpenWorld.java" />
-        <option value="$PROJECT_DIR$/src/MiniMap.java" />
-        <option value="$PROJECT_DIR$/src/Entity.java" />
+        <option value="$PROJECT_DIR$/src/Carrot.java" />
+        <option value="$PROJECT_DIR$/src/KeyManagerAdapter.java" />
+        <option value="$PROJECT_DIR$/src/KeyManager.java" />
+        <option value="$PROJECT_DIR$/src/Pickable.java" />
+        <option value="$PROJECT_DIR$/src/Staff.java" />
+        <option value="$PROJECT_DIR$/src/SkillWindow.java" />
+        <option value="$PROJECT_DIR$/src/FPS.java" />
+        <option value="$PROJECT_DIR$/src/form.form" />
+        <option value="$PROJECT_DIR$/src/Keys" />
+        <option value="$PROJECT_DIR$/src/Settings.java" />
+        <option value="$PROJECT_DIR$/src/Settings" />
+        <option value="$PROJECT_DIR$/src/Settings.json" />
+        <option value="$PROJECT_DIR$/src/LoadScreen.java" />
+        <option value="$PROJECT_DIR$/src/project.greenfoot" />
+        <option value="$PROJECT_DIR$/src/SettingsWindow.java" />
+        <option value="$PROJECT_DIR$/.idea/libraries/json_simple_1_1_1.xml" />
+        <option value="$PROJECT_DIR$/src/ItemManager.java" />
+        <option value="$PROJECT_DIR$/src/GUI.java" />
+        <option value="$PROJECT_DIR$/src/Item.java" />
         <option value="$PROJECT_DIR$/src/Sector0_0.java" />
+        <option value="$PROJECT_DIR$/src/HealthPotion.java" />
+        <option value="$PROJECT_DIR$/src/Bow.java" />
+        <option value="$PROJECT_DIR$/src/Countable.java" />
+        <option value="$PROJECT_DIR$/src/HUD.java" />
+        <option value="$PROJECT_DIR$/src/Player.java" />
+        <option value="$PROJECT_DIR$/src/Pig.java" />
+        <option value="$PROJECT_DIR$/src/Inventory.java" />
       </list>
     </option>
   </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand />
-      <select />
-    </treeState>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="260" />
-    <option name="y" value="20" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+    <option name="x" value="-606" />
+    <option name="y" value="333" />
+    <option name="width" value="1941" />
+    <option name="height" value="1062" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -340,26 +677,26 @@
         <subPane>
           <expand>
             <path>
-              <item name="project-hotkey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-hotkey" type="462c0819:PsiDirectoryNode" />
+              <item name="project-hotkey-InteliJ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project-hotkey-InteliJ" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="project-hotkey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-hotkey" type="462c0819:PsiDirectoryNode" />
+              <item name="project-hotkey-InteliJ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project-hotkey-InteliJ" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="project-hotkey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-hotkey" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project-hotkey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-hotkey" type="462c0819:PsiDirectoryNode" />
+              <item name="project-hotkey-InteliJ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project-hotkey-InteliJ" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="Screens" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project-hotkey-InteliJ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project-hotkey-InteliJ" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="496_RPG_icons(1)" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -375,31 +712,29 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="grundbegriffeoop_v6" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552832606207" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553626681713" />
+    <property name="last_opened_file_path" value="D:/Info/Einfuerung_OOP/Probearbeit_Java/ProbeKursarbeit" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="settings.editor.splitter.proportion" value="0.2263798" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ThomasBueck\IdeaProjects\das_neueste_project-hotkey\project-hotkey\src\images\Characters" />
       <recent name="C:\Users\ThomasBueck\IdeaProjects\project-hotkey1.0\project-hotkey\src\images\Characters\Player" />
       <recent name="C:\Users\ThomasBueck\IdeaProjects\project-hotkey1.0\project-hotkey\src\images\Characters" />
       <recent name="C:\Users\ThomasBueck\IdeaProjects\project-hotkey1.0\project-hotkey\src\images\Buttons" />
       <recent name="C:\Users\ThomasBueck\IdeaProjects\project-hotkey1.0\project-hotkey\src\images\Logos" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ThomasBueck\IdeaProjects\project-hotkey1.0\project-hotkey\src\images\Buttons" />
-      <recent name="C:\Users\ThomasBueck\IdeaProjects\project-hotkey1.0\project-hotkey\.idea\libraries" />
-      <recent name="D:\Ordner\Schule\Info\ProjectHotkey\ProjectHotkey\src\images" />
-      <recent name="F:\workspaces\IntelliJWS\GrundbegriffeOOP_v5\lib" />
+      <recent name="C:\Users\ThomasBueck\IdeaProjects\project-hotkey1.0\project-hotkey\src\images\Window" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="helper" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Ordner\Schule\Info\ProjectHotkey\ProjectHotkey\src\images" />
+      <recent name="F:\workspaces\IntelliJWS\GrundbegriffeOOP_v5\lib" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -442,21 +777,112 @@
       <workItem from="1549144627268" duration="5630000" />
       <workItem from="1550957464341" duration="8900000" />
       <workItem from="1551071841027" duration="10566000" />
-      <workItem from="1551207389572" duration="19302000" />
-      <workItem from="1551424225983" duration="4320000" />
-      <workItem from="1551453521073" duration="9736000" />
-      <workItem from="1551546818956" duration="7834000" />
-      <workItem from="1551772599040" duration="518000" />
-      <workItem from="1551806835208" duration="1055000" />
-      <workItem from="1552234459754" duration="3060000" />
-      <workItem from="1552317324873" duration="2492000" />
-      <workItem from="1552831532728" duration="179000" />
-      <workItem from="1552831713114" duration="145000" />
-      <workItem from="1552831859739" duration="747000" />
-      <workItem from="1552845885534" duration="28365000" />
-      <workItem from="1553086139879" duration="23130000" />
-      <workItem from="1553268191673" duration="26626000" />
-      <workItem from="1553413834157" duration="14595000" />
+      <workItem from="1551207389572" duration="1477000" />
+    </task>
+    <task id="LOCAL-00001" summary="project base">
+      <created>1549046329316</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1549046329316</updated>
+    </task>
+    <task id="LOCAL-00002" summary="project base">
+      <created>1549058611793</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1549058611793</updated>
+    </task>
+    <task id="LOCAL-00003" summary="logo update, palette">
+      <created>1549106221776</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1549106221777</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Made an Infinite Scrolling World.">
+      <created>1549147359374</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1549147359374</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added Endurance to Player.">
+      <created>1549151008117</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1549151008117</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added HealthBar to Player.&#10;Still Work In Progress">
+      <created>1549387787343</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1549387787343</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added new Image (StatBars.png)&#10;Player Healt is now displayed at corect position on HUD Background&#10;Player Endurance is now displayed on screen //still out of sync">
+      <created>1549394039770</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1549394039770</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added HealthBar to Player.&#10;Still Work In Progress">
+      <created>1549471453602</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1549471453602</updated>
+    </task>
+    <task id="LOCAL-00009" summary="HUD now extends NotMoving">
+      <created>1549486856255</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1549486856255</updated>
+    </task>
+    <task id="LOCAL-00010" summary="HUD now extends NotMoving">
+      <created>1549486951595</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1549486951595</updated>
+    </task>
+    <task id="LOCAL-00011" summary="HUD now extends NotMoving">
+      <created>1549487044989</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1549487044989</updated>
+    </task>
+    <task id="LOCAL-00012" summary="HUD now extends NotMoving">
+      <created>1549487347225</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1549487347225</updated>
+    </task>
+    <task id="LOCAL-00013" summary="HUD now extends NotMoving">
+      <created>1550392808532</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1550392808532</updated>
+    </task>
+    <task id="LOCAL-00014" summary="HUD now extends NotMoving">
+      <created>1550392835766</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1550392835766</updated>
+    </task>
+    <task id="LOCAL-00015" summary="HUD now extends NotMoving">
+      <created>1550392977325</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1550392977325</updated>
     </task>
     <task id="LOCAL-00016" summary="Inventory toggle on off now working..kinda">
       <created>1550397243288</created>
@@ -521,291 +947,53 @@
       <option name="project" value="LOCAL" />
       <updated>1551208247554</updated>
     </task>
-    <task id="LOCAL-00025" summary="fixed ??">
-      <created>1551208908134</created>
+    <task id="LOCAL-00025" summary="don´t mind me, just switching devices">
+      <created>1552920399559</created>
       <option name="number" value="00025" />
       <option name="presentableId" value="LOCAL-00025" />
       <option name="project" value="LOCAL" />
-      <updated>1551208908134</updated>
+      <updated>1552920399559</updated>
     </task>
-    <task id="LOCAL-00026" summary="improved SettingsWindow:can change key now">
-      <created>1551292386834</created>
+    <task id="LOCAL-00026" summary="small improvement: Hud now less redundant">
+      <created>1552947264234</created>
       <option name="number" value="00026" />
       <option name="presentableId" value="LOCAL-00026" />
       <option name="project" value="LOCAL" />
-      <updated>1551292386834</updated>
+      <updated>1552947264234</updated>
     </task>
-    <task id="LOCAL-00027" summary="Updatet SettingsWindow">
-      <created>1551325727070</created>
+    <task id="LOCAL-00027" summary="you can now get the equiped weapons of the plyer wit Player.getPrimaryWeapon(); Player.getSecondaryWeapon; These will return an Item">
+      <created>1552985806840</created>
       <option name="number" value="00027" />
       <option name="presentableId" value="LOCAL-00027" />
       <option name="project" value="LOCAL" />
-      <updated>1551325727070</updated>
+      <updated>1552985806840</updated>
     </task>
-    <task id="LOCAL-00028" summary="Spider has simple Move Animation">
-      <created>1551334415634</created>
+    <task id="LOCAL-00028" summary="Started work on quick access items front end, cleaned up inventory a bit">
+      <created>1553200598534</created>
       <option name="number" value="00028" />
       <option name="presentableId" value="LOCAL-00028" />
       <option name="project" value="LOCAL" />
-      <updated>1551334415634</updated>
+      <updated>1553200598534</updated>
     </task>
-    <task id="LOCAL-00029" summary="attack function for Hostile not attacking Permanently">
-      <created>1551335674739</created>
+    <task id="LOCAL-00029" summary="EXP bar is now displaying EXP of player -&gt; only placeholder values">
+      <created>1553202004816</created>
       <option name="number" value="00029" />
       <option name="presentableId" value="LOCAL-00029" />
       <option name="project" value="LOCAL" />
-      <updated>1551335674739</updated>
+      <updated>1553202004816</updated>
     </task>
-    <task id="LOCAL-00030" summary="a key for julian">
-      <created>1551387787716</created>
+    <task id="LOCAL-00030" summary="lota bug fixn and stuff ya konw">
+      <created>1553459451818</created>
       <option name="number" value="00030" />
       <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1551387787716</updated>
+      <updated>1553459451818</updated>
     </task>
-    <task id="LOCAL-00031" summary="crazy fire animation and more ...">
-      <created>1551461461775</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1551461461775</updated>
-    </task>
-    <task id="LOCAL-00032" summary="shoot Arrow">
-      <created>1551689327613</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1551689327613</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Arrow">
-      <created>1551696941026</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1551696941026</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Player is now a Singleton(There can only be one instance of Player)">
-      <created>1552317462542</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1552317462542</updated>
-    </task>
-    <task id="LOCAL-00035" summary=".">
-      <created>1552845962404</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1552845962404</updated>
-    </task>
-    <task id="LOCAL-00036" summary="merged">
-      <created>1552846112289</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1552846112289</updated>
-    </task>
-    <task id="LOCAL-00037" summary="FireFighter">
-      <created>1552925033612</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1552925033612</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Effect Window , FPS transparent background">
-      <created>1552986090683</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1552986090683</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Water Effect">
-      <created>1553003388128</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1553003388128</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Walking Bomb explodes">
-      <created>1553004529207</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1553004529207</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Added Bomb">
-      <created>1553007745870</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1553007745870</updated>
-    </task>
-    <task id="LOCAL-00042" summary="improved Walking Bomb">
-      <created>1553010397782</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1553010397782</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Cobweb and Sand">
-      <created>1553074537920</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1553074537920</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Cobwebs hold Movingactors">
-      <created>1553074966798</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1553074966798</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Added GameModes ,GameMode can be changed in the SettingsWindow">
-      <created>1553078573774</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1553078573774</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Only Classes which implement Explodes explode">
-      <created>1553108671582</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1553108671582</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Hot stuff">
-      <created>1553112774514</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1553112774514</updated>
-    </task>
-    <task id="LOCAL-00048" summary="removed useless bs">
-      <created>1553113122586</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1553113122586</updated>
-    </task>
-    <task id="LOCAL-00049" summary="changed shoot function so it is more general and can be used from any actor not just the player.">
-      <created>1553150323637</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1553150323637</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Archer(looks like Player) shoots on Player">
-      <created>1553153714716</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1553153714717</updated>
-    </task>
-    <task id="LOCAL-00051" summary="improved Archer">
-      <created>1553154177563</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1553154177563</updated>
-    </task>
-    <task id="LOCAL-00052" summary="added XBow(shoots at Player very fast) needs image">
-      <created>1553156018113</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1553156018113</updated>
-    </task>
-    <task id="LOCAL-00053" summary="Arrow and MagicMatter are own classes now">
-      <created>1553180370245</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1553180370245</updated>
-    </task>
-    <task id="LOCAL-00054" summary="attack with mouse Click now">
-      <created>1553181423461</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1553181423461</updated>
-    </task>
-    <task id="LOCAL-00055" summary="hot!">
-      <created>1553185589388</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1553185589388</updated>
-    </task>
-    <task id="LOCAL-00056" summary="Projectile">
-      <created>1553268979512</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1553268979512</updated>
-    </task>
-    <task id="LOCAL-00057" summary="FireArrow">
-      <created>1553272195249</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1553272195252</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Bomb animation">
-      <created>1553277046034</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1553277046034</updated>
-    </task>
-    <task id="LOCAL-00059" summary="Bomb pushes Player away , Pig changes image when it gets damage">
-      <created>1553295589974</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1553295589974</updated>
-    </task>
-    <task id="LOCAL-00060" summary="Player attacks enemy on which he  clicks">
-      <created>1553332354180</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1553332354181</updated>
-    </task>
-    <task id="LOCAL-00061" summary="Bomb exploding!">
-      <created>1553342842620</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1553342842620</updated>
-    </task>
-    <task id="LOCAL-00062" summary="Levels, Player can attack without Weapon">
-      <created>1553384804252</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1553384804252</updated>
-    </task>
-    <task id="LOCAL-00063" summary="Added Sounds , Keys UpdateAc UseAc">
-      <created>1553418714437</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1553418714437</updated>
-    </task>
-    <task id="LOCAL-00064" summary="more Sounds">
-      <created>1553431133986</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1553431133986</updated>
-    </task>
-    <option name="localTasksCounter" value="65" />
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180103000" />
+    <option name="totallyTimeSpent" value="39476000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -817,10 +1005,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18657719" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22834007" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -828,59 +1015,20 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Learn" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info id="Repositories" order="8" weight="0.3295302" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.38243628" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.04249292" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.22521247" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.04249292" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4989339" weight="0.04249292" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010661" side_tool="true" weight="0.32827735" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4989339" weight="0.04249292" />
-      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Statistic" order="13" weight="0.19971672" />
-      <window_info anchor="bottom" id="Duplicates" order="14" weight="0.29886687" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Database" order="7" weight="0.3295302" />
-      <window_info anchor="right" id="Maven" order="8" weight="0.3295302" />
-      <window_info anchor="right" id="Coverage" order="9" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="10" weight="0.3295302" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18791947" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Learn" order="6" />
-      <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info id="Repositories" order="8" weight="0.3295302" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.38243628" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.04249292" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.22521247" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.38297874" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.18739635" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39966834" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4989339" weight="0.04249292" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4989339" weight="0.06933911" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010661" side_tool="true" weight="0.32827735" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4989339" weight="0.27903682" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4989339" weight="0.3084577" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Statistic" order="13" weight="0.04249292" />
-      <window_info anchor="bottom" id="Duplicates" order="14" weight="0.29886687" />
+      <window_info anchor="bottom" id="Statistic" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -888,10 +1036,43 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Database" order="7" weight="0.3295302" />
-      <window_info anchor="right" id="Maven" order="8" weight="0.3295302" />
-      <window_info anchor="right" id="Coverage" order="9" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="10" weight="0.3295302" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Maven" order="8" />
+      <window_info anchor="right" id="Database" order="9" />
+      <window_info anchor="right" id="Coverage" order="10" side_tool="true" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21002132" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Learn" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.34236187" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4989339" weight="0.06933911" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010661" side_tool="true" weight="0.04442037" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32827735" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Maven" order="8" />
+      <window_info anchor="right" id="Database" order="9" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -948,163 +1129,257 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Walking Bomb explodes" />
-    <MESSAGE value="Added Bomb" />
-    <MESSAGE value="improved Walking Bomb" />
-    <MESSAGE value="Cobweb and Sand" />
-    <MESSAGE value="Cobwebs hold Movingactors" />
-    <MESSAGE value="Added GameModes ,GameMode can be changed in the SettingsWindow" />
-    <MESSAGE value="Only Classes which implement Explodes explode" />
-    <MESSAGE value="Hot stuff" />
-    <MESSAGE value="removed useless bs" />
-    <MESSAGE value="changed shoot function so it is more general and can be used from any actor not just the player." />
-    <MESSAGE value="Archer(looks like Player) shoots on Player" />
-    <MESSAGE value="improved Archer" />
-    <MESSAGE value="added XBow(shoots at Player very fast) needs image" />
-    <MESSAGE value="Arrow and MagicMatter are own classes now" />
-    <MESSAGE value="attack with mouse Click now" />
-    <MESSAGE value="hot!" />
-    <MESSAGE value="Projectile" />
-    <MESSAGE value="FireArrow" />
-    <MESSAGE value="Bomb animation" />
-    <MESSAGE value="Bomb pushes Player away , Pig changes image when it gets damage" />
-    <MESSAGE value="Player attacks enemy on which he  clicks" />
-    <MESSAGE value="Bomb exploding!" />
-    <MESSAGE value="Levels, Player can attack without Weapon" />
-    <MESSAGE value="Added Sounds , Keys UpdateAc UseAc" />
-    <MESSAGE value="more Sounds" />
-    <option name="LAST_COMMIT_MESSAGE" value="more Sounds" />
+    <MESSAGE value="project base" />
+    <MESSAGE value="logo update, palette" />
+    <MESSAGE value="Made an Infinite Scrolling World." />
+    <MESSAGE value="Added Endurance to Player." />
+    <MESSAGE value="Added new Image (StatBars.png)&#10;Player Healt is now displayed at corect position on HUD Background&#10;Player Endurance is now displayed on screen //still out of sync" />
+    <MESSAGE value="Added HealthBar to Player.&#10;Still Work In Progress" />
+    <MESSAGE value="Inventory toggle on off now working..kinda" />
+    <MESSAGE value="HUD now extends NotMoving" />
+    <MESSAGE value="SkillWindow updadet" />
+    <MESSAGE value="Added FPS window" />
+    <MESSAGE value="few cleanups in Player and added a SettingsWindow(will be improved!!)" />
+    <MESSAGE value="fixed ...maybe" />
+    <MESSAGE value="added libary" />
+    <MESSAGE value="libary should work now" />
+    <MESSAGE value="don´t mind me, just switching devices" />
+    <MESSAGE value="small improvement: Hud now less redundant" />
+    <MESSAGE value="you can now get the equiped weapons of the plyer wit Player.getPrimaryWeapon(); Player.getSecondaryWeapon; These will return an Item" />
+    <MESSAGE value="Started work on quick access items front end, cleaned up inventory a bit" />
+    <MESSAGE value="EXP bar is now displaying EXP of player -&gt; only placeholder values" />
+    <MESSAGE value="lota bug fixn and stuff ya konw" />
+    <option name="LAST_COMMIT_MESSAGE" value="lota bug fixn and stuff ya konw" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/XBow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="28" column="88" selection-start-line="28" selection-start-column="88" selection-end-line="28" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1381" column="23" selection-start-line="1381" selection-start-column="23" selection-end-line="1381" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
-          <folding>
-            <element signature="e#2025#2026#0" expanded="true" />
-            <element signature="e#2112#2113#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Companion.java">
+    <entry file="file://$PROJECT_DIR$/src/Environment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="35" selection-start-column="35" selection-end-column="35" />
+          <caret column="22" selection-start-column="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ExplodingBehaviour.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Equippable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Explodes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Familiar.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Fire.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FireArrow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FireEnemy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FireSensitive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Fixed.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="34" selection-start-column="34" selection-end-column="34" />
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FPS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="36" column="24" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HasEffect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Hostile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-411">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Friendly.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="41" selection-start-column="41" selection-end-column="41" />
+          <caret column="22" selection-start-column="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameMode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Grass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ItemInfoScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ItemManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="16" column="91" selection-start-line="16" selection-start-column="91" selection-end-line="16" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LoadScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MagicMatter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovingActor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NotMoving.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" selection-start-column="22" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/NPC.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+        <state relative-caret-position="9">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WalkingBomb.java">
+    <entry file="file://$PROJECT_DIR$/src/OpenWorld.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/standalone.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="9">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project.greenfoot">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Projectile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="63" selection-start-column="63" selection-end-column="63" />
+        <state relative-caret-position="9">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Consumable.java" />
-    <entry file="file://$PROJECT_DIR$/src/Item.java">
+    <entry file="file://$PROJECT_DIR$/src/RangedWeapon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="34" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Weapon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="76" column="28" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Staff.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="26" column="64" selection-start-line="26" selection-start-column="64" selection-end-line="26" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Spider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="109" column="18" selection-start-line="109" selection-start-column="18" selection-end-line="109" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SettingsWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Sand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        <state relative-caret-position="40">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Rock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
+        <state relative-caret-position="40">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HealthPotion.java">
+    <entry file="file://$PROJECT_DIR$/src/Sand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
+        <state relative-caret-position="40">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Settings.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SettingsWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SkillWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Spider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Staff.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1115,299 +1390,260 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI.java">
+    <entry file="file://$PROJECT_DIR$/src/WalkingBomb.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="20" column="44" lean-forward="true" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
+        <state relative-caret-position="9">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SkillWindow.java">
+    <entry file="file://$PROJECT_DIR$/src/Water.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
+        <state relative-caret-position="9">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameMode.java">
+    <entry file="file://$PROJECT_DIR$/src/Weapon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/HUD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="41" column="113" selection-start-line="41" selection-start-column="113" selection-end-line="41" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovingActor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="175" column="5" lean-forward="true" selection-start-line="175" selection-start-column="5" selection-end-line="175" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/Screens/background_debug.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/Screens/background_debug2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/Screens/cell_debug.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/Screens/DeathScreen.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/Screens/FPS_Window.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Fist.java" />
-    <entry file="file://$PROJECT_DIR$/src/HighscoreScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dagger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+        <state relative-caret-position="-31">
+          <caret column="22" selection-start-column="22" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WeaponAnimation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="21" />
+        <state relative-caret-position="9">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DeathScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bomb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="14" column="69" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-          <folding>
-            <element signature="e#1295#1296#0" expanded="true" />
-            <element signature="e#1328#1329#0" expanded="true" />
-            <element signature="e#1357#1358#0" expanded="true" />
-            <element signature="e#1386#1387#0" expanded="true" />
-            <element signature="e#1420#1421#0" expanded="true" />
-            <element signature="e#1451#1452#0" expanded="true" />
-            <element signature="e#1485#1486#0" expanded="true" />
-            <element signature="e#1516#1517#0" expanded="true" />
-            <element signature="e#1559#1560#0" expanded="true" />
-            <element signature="e#1591#1592#0" expanded="true" />
-            <element signature="e#1626#1627#0" expanded="true" />
-            <element signature="e#1658#1659#0" expanded="true" />
-            <element signature="e#1708#1709#0" expanded="true" />
-            <element signature="e#1750#1751#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Projectile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Arrow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="6" column="80" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="80" />
-          <folding>
-            <element signature="e#449#450#0" expanded="true" />
-            <element signature="e#474#475#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FireArrow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#901#902#0" expanded="true" />
-            <element signature="e#926#927#0" expanded="true" />
-            <element signature="e#765#766#0" expanded="true" />
-            <element signature="e#797#798#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MagicMatter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
-          <folding>
-            <element signature="e#417#418#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-            <element signature="e#493#494#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Settings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="283" selection-start-column="283" selection-end-column="283" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/Screens/background_grass.png">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Window.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="61" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
+        <state relative-caret-position="40">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/greenfoot.jar!/greenfoot/GreenfootImage.class">
+    <entry file="file://$PROJECT_DIR$/src/XBow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="228" selection-start-line="228" selection-end-line="228" />
+        <state relative-caret-position="9">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoadScreen.java">
+    <entry file="file://$PROJECT_DIR$/src/Item.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="23" />
+        <state relative-caret-position="400">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/HealthPotion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="134" column="21" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="21" />
-          <folding>
-            <element signature="e#14909#14910#0" expanded="true" />
-            <element signature="e#14944#14945#0" expanded="true" />
-            <element signature="e#14989#14990#0" expanded="true" />
-            <element signature="e#15037#15038#0" expanded="true" />
-            <element signature="e#15068#15069#0" expanded="true" />
-            <element signature="e#15095#15096#0" expanded="true" />
-            <element signature="e#15762#15763#0" expanded="true" />
-            <element signature="e#15859#15860#0" expanded="true" />
-            <element signature="e#15955#15956#0" expanded="true" />
-            <element signature="e#16023#16024#0" expanded="true" />
-            <element signature="e#16091#16092#0" expanded="true" />
-            <element signature="e#16152#16153#0" expanded="true" />
-            <element signature="e#16222#16223#0" expanded="true" />
-            <element signature="e#16302#16303#0" expanded="true" />
-            <element signature="e#16402#16403#0" expanded="true" />
-            <element signature="e#16468#16469#0" expanded="true" />
-            <element signature="e#16549#16550#0" expanded="true" />
-            <element signature="e#16608#16609#0" expanded="true" />
-            <element signature="e#16684#16685#0" expanded="true" />
-            <element signature="e#16760#16761#0" expanded="true" />
-            <element signature="e#16867#16868#0" expanded="true" />
-            <element signature="e#16933#16934#0" expanded="true" />
-            <element signature="e#17016#17017#0" expanded="true" />
-            <element signature="e#17089#17090#0" expanded="true" />
-            <element signature="e#17193#17194#0" expanded="true" />
-            <element signature="e#17262#17263#0" expanded="true" />
-            <element signature="e#17358#17359#0" expanded="true" />
-            <element signature="e#17427#17428#0" expanded="true" />
-            <element signature="e#17523#17524#0" expanded="true" />
-            <element signature="e#17609#17610#0" expanded="true" />
-            <element signature="e#17728#17729#0" expanded="true" />
-            <element signature="e#17802#17803#0" expanded="true" />
-            <element signature="e#17905#17906#0" expanded="true" />
-            <element signature="e#17974#17975#0" expanded="true" />
-            <element signature="e#18069#18070#0" expanded="true" />
-            <element signature="e#18138#18139#0" expanded="true" />
-            <element signature="e#18233#18234#0" expanded="true" />
-            <element signature="e#18301#18302#0" expanded="true" />
-            <element signature="e#18392#18393#0" expanded="true" />
-            <element signature="e#18461#18462#0" expanded="true" />
-            <element signature="e#18556#18557#0" expanded="true" />
-            <element signature="e#18336#18337#0" expanded="true" />
-            <element signature="e#18383#18384#0" expanded="true" />
-            <element signature="e#18423#18424#0" expanded="true" />
-            <element signature="e#18470#18471#0" expanded="true" />
-            <element signature="e#18817#18818#0" expanded="true" />
-            <element signature="e#18948#18949#0" expanded="true" />
-            <element signature="e#19017#19018#0" expanded="true" />
-            <element signature="e#19112#19113#0" expanded="true" />
-            <element signature="e#19209#19210#0" expanded="true" />
-            <element signature="e#19290#19291#0" expanded="true" />
-            <element signature="e#19409#19410#0" expanded="true" />
-            <element signature="e#19492#19493#0" expanded="true" />
-            <element signature="e#19548#19549#0" expanded="true" />
-            <element signature="e#19600#19601#0" expanded="true" />
-            <element signature="e#19680#19681#0" expanded="true" />
-            <element signature="e#19797#19798#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2011">
-          <caret line="86" column="5" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
-          <folding>
-            <element signature="e#3990#3991#0" expanded="true" />
-            <element signature="e#4171#4172#0" expanded="true" />
-            <element signature="e#4355#4356#0" expanded="true" />
-            <element signature="e#5287#5288#0" expanded="true" />
-            <element signature="e#5671#5672#0" expanded="true" />
-            <element signature="e#5728#5729#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MiniMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="28" column="68" lean-forward="true" selection-start-line="28" selection-start-column="68" selection-end-line="28" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OpenWorld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
-          <folding>
-            <element signature="e#270#271#0" expanded="true" />
-            <element signature="e#316#317#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="287">
+          <caret line="39" column="5" lean-forward="true" selection-start-line="30" selection-start-column="3" selection-end-line="39" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Sector0_0.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
+        <state relative-caret-position="425">
+          <caret line="74" column="8" selection-start-line="74" selection-start-column="8" selection-end-line="74" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="7" column="79" selection-start-line="7" selection-start-column="79" selection-end-line="7" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Countable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2640">
+          <caret line="368" column="89" selection-start-line="368" selection-start-column="89" selection-end-line="368" selection-end-column="89" />
+          <folding>
+            <element signature="e#3710#4233#0" />
+            <element signature="e#4238#4467#0" />
+            <element signature="e#4473#4808#0" />
+            <element signature="e#4814#5059#0" />
+            <element signature="e#5065#5493#0" />
+            <element signature="e#5499#5980#0" />
+            <element signature="e#5986#6903#0" />
+            <element signature="e#6909#7024#0" />
+            <element signature="e#7030#7501#0" />
+            <element signature="e#7507#8574#0" />
+            <element signature="e#8581#9250#0" />
+            <element signature="e#9327#9425#0" />
+            <element signature="e#9430#10137#0" />
+            <element signature="e#10142#11689#0" />
+            <element signature="e#11695#12186#0" />
+            <element signature="e#12192#12398#0" />
+            <element signature="e#15499#15500#0" expanded="true" />
+            <element signature="e#15534#15535#0" expanded="true" />
+            <element signature="e#15579#15580#0" expanded="true" />
+            <element signature="e#15627#15628#0" expanded="true" />
+            <element signature="e#15658#15659#0" expanded="true" />
+            <element signature="e#15685#15686#0" expanded="true" />
+            <element signature="e#16120#16121#0" expanded="true" />
+            <element signature="e#16152#16153#0" expanded="true" />
+            <element signature="e#16203#16204#0" expanded="true" />
+            <element signature="e#16249#16250#0" expanded="true" />
+            <element signature="e#16299#16300#0" expanded="true" />
+            <element signature="e#16345#16346#0" expanded="true" />
+            <element signature="e#16379#16380#0" expanded="true" />
+            <element signature="e#16413#16414#0" expanded="true" />
+            <element signature="e#16447#16448#0" expanded="true" />
+            <element signature="e#16481#16482#0" expanded="true" />
+            <element signature="e#16512#16513#0" expanded="true" />
+            <element signature="e#16542#16543#0" expanded="true" />
+            <element signature="e#16577#16578#0" expanded="true" />
+            <element signature="e#16612#16613#0" expanded="true" />
+            <element signature="e#16654#16655#0" expanded="true" />
+            <element signature="e#16692#16693#0" expanded="true" />
+            <element signature="e#16744#16745#0" expanded="true" />
+            <element signature="e#16792#16793#0" expanded="true" />
+            <element signature="e#16826#16827#0" expanded="true" />
+            <element signature="e#16858#16859#0" expanded="true" />
+            <element signature="e#16904#16905#0" expanded="true" />
+            <element signature="e#16939#16940#0" expanded="true" />
+            <element signature="e#16969#16970#0" expanded="true" />
+            <element signature="e#16998#16999#0" expanded="true" />
+            <element signature="e#17038#17039#0" expanded="true" />
+            <element signature="e#17074#17075#0" expanded="true" />
+            <element signature="e#17114#17115#0" expanded="true" />
+            <element signature="e#17150#17151#0" expanded="true" />
+            <element signature="e#17207#17208#0" expanded="true" />
+            <element signature="e#17257#17258#0" expanded="true" />
+            <element signature="e#17294#17295#0" expanded="true" />
+            <element signature="e#17323#17324#0" expanded="true" />
+            <element signature="e#17370#17371#0" expanded="true" />
+            <element signature="e#17406#17407#0" expanded="true" />
+            <element signature="e#17443#17444#0" expanded="true" />
+            <element signature="e#17479#17480#0" expanded="true" />
+            <element signature="e#17533#17534#0" expanded="true" />
+            <element signature="e#17583#17584#0" expanded="true" />
+            <element signature="e#17617#17618#0" expanded="true" />
+            <element signature="e#17651#17652#0" expanded="true" />
+            <element signature="e#17701#17702#0" expanded="true" />
+            <element signature="e#17747#17748#0" expanded="true" />
+            <element signature="e#17781#17782#0" expanded="true" />
+            <element signature="e#17815#17816#0" expanded="true" />
+            <element signature="e#17865#17866#0" expanded="true" />
+            <element signature="e#17911#17912#0" expanded="true" />
+            <element signature="e#17960#17961#0" expanded="true" />
+            <element signature="e#17997#17998#0" expanded="true" />
+            <element signature="e#18064#18065#0" expanded="true" />
+            <element signature="e#18116#18117#0" expanded="true" />
+            <element signature="e#18155#18156#0" expanded="true" />
+            <element signature="e#18190#18191#0" expanded="true" />
+            <element signature="e#18245#18246#0" expanded="true" />
+            <element signature="e#18293#18294#0" expanded="true" />
+            <element signature="e#18329#18330#0" expanded="true" />
+            <element signature="e#18362#18363#0" expanded="true" />
+            <element signature="e#18413#18414#0" expanded="true" />
+            <element signature="e#18457#18458#0" expanded="true" />
+            <element signature="e#18493#18494#0" expanded="true" />
+            <element signature="e#18526#18527#0" expanded="true" />
+            <element signature="e#18577#18578#0" expanded="true" />
+            <element signature="e#18621#18622#0" expanded="true" />
+            <element signature="e#18657#18658#0" expanded="true" />
+            <element signature="e#18689#18690#0" expanded="true" />
+            <element signature="e#18738#18739#0" expanded="true" />
+            <element signature="e#18780#18781#0" expanded="true" />
+            <element signature="e#18816#18817#0" expanded="true" />
+            <element signature="e#18849#18850#0" expanded="true" />
+            <element signature="e#18900#18901#0" expanded="true" />
+            <element signature="e#18944#18945#0" expanded="true" />
+            <element signature="e#19163#19164#0" expanded="true" />
+            <element signature="e#19205#19206#0" expanded="true" />
+            <element signature="e#19274#19275#0" expanded="true" />
+            <element signature="e#19336#19337#0" expanded="true" />
+            <element signature="e#19372#19373#0" expanded="true" />
+            <element signature="e#19405#19406#0" expanded="true" />
+            <element signature="e#19456#19457#0" expanded="true" />
+            <element signature="e#19500#19501#0" expanded="true" />
+            <element signature="e#19550#19551#0" expanded="true" />
+            <element signature="e#19597#19598#0" expanded="true" />
+            <element signature="e#19639#19640#0" expanded="true" />
+            <element signature="e#19678#19679#0" expanded="true" />
+            <element signature="e#19741#19742#0" expanded="true" />
+            <element signature="e#19797#19798#0" expanded="true" />
+            <element signature="e#19842#19843#0" expanded="true" />
+            <element signature="e#19880#19881#0" expanded="true" />
+            <element signature="e#19908#19909#0" expanded="true" />
+            <element signature="e#19936#19937#0" expanded="true" />
+            <element signature="e#19962#19963#0" expanded="true" />
+            <element signature="e#19988#19989#0" expanded="true" />
+            <element signature="e#20029#20030#0" expanded="true" />
+            <element signature="e#20068#20069#0" expanded="true" />
+            <element signature="e#20129#20130#0" expanded="true" />
+            <element signature="e#20185#20186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HUD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="42" column="32" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#HUD#0;class#HUD#0" />
+            <element signature="method#expScaling#0;class#HUD#0" />
+            <element signature="method#drawEquippedWeapons#0;class#HUD#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-960">
+          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Inventory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="396" column="72" selection-start-line="396" selection-start-column="72" selection-end-line="396" selection-end-column="72" />
+          <folding>
+            <element signature="e#3958#4225#0" />
+            <element signature="e#4789#5127#0" />
+            <element signature="e#5132#5679#0" />
+            <element signature="e#5684#6777#0" />
+            <element signature="e#6782#7053#0" />
+            <element signature="e#7058#7197#0" />
+            <element signature="e#7202#7952#0" />
+            <element signature="e#7958#8927#0" />
+            <element signature="e#8932#9780#0" />
+            <element signature="e#9786#10070#0" />
+            <element signature="e#10075#11160#0" />
+            <element signature="e#11165#11288#0" />
+            <element signature="e#11293#11877#0" />
+            <element signature="e#11883#12450#0" />
+            <element signature="e#12455#13587#0" />
+            <element signature="e#13592#14281#0" />
+            <element signature="e#14286#14598#0" />
+            <element signature="e#14603#14876#0" />
+            <element signature="e#14704#14870#1" />
+          </folding>
         </state>
       </provider>
     </entry>
