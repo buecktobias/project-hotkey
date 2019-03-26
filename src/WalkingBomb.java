@@ -7,10 +7,10 @@ public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSe
     private int speed = 1;
     private double life = 100;
     private int hitboxRadius = getWidth();
-    private GreenfootImage defaultImage = new GreenfootImage("src/images/Characters/lilpig.png");
 
     private double fireDamage = 0;
     private double fireDamageReduction = 0.99;
+    private GreenfootImage defaultImage = new GreenfootImage("images/Characters/Enemy.png");
 
     public double getFireDamageReduction() {
         return fireDamageReduction;
@@ -46,10 +46,8 @@ public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSe
     }
 
     public WalkingBomb(){
-        GreenfootImage img = new GreenfootImage("images/Characters/Enemy.png");
-        img.scale(64,64);
-        setImage(img);
-        defaultImage = img;
+        defaultImage.scale(64,64);
+        setImage(defaultImage);
     }
     @Override
     public double getLife() {
@@ -71,9 +69,6 @@ public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSe
         this.speed = speed;
     }
 
-    GreenfootImage getAngryImage() {
-        return defaultImage;
-    }
 
 
     private void explode(){

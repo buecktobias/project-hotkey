@@ -17,7 +17,7 @@ public class Staff extends RangedWeapon {
 
     public Staff() {
         setImage(itemImage);
-        setDamage(3);
+        setDamage(20);
         setAttackRange(10);
         setAttackSpeed(5);
         setAnimationStartDegrees(50);

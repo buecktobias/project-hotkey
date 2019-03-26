@@ -6,7 +6,10 @@ import java.util.List;
 public class MiniMap extends Window {
     private int updateFrames = 10;
     private long lastFrameUpdatet = -99999;
-    private final int sizeMap = 2000;
+
+    private int showedMapWidth = 2000;
+    private int showedMapHeight = 2000;
+
     private int mapWidth = 200;
     private int mapHeight = 200;
     private final int padding = 5;
@@ -15,9 +18,12 @@ public class MiniMap extends Window {
     private GreenfootImage backgroundImage = new GreenfootImage("images/Screens/FPS_Window.png");
     private GreenfootImage defaultImage = new GreenfootImage("images/Screens/background_grass.png");
     private GreenfootImage transparent = new GreenfootImage("images/Screens/Transparent.png");
-    public MiniMap(int mapWidth, int mapHeight){
+    private MiniMap(int mapWidth, int mapHeight,int showedMapWidth,int showedMapHeight){
         this.mapWidth = mapWidth;
         this.mapHeight = mapHeight;
+        this.showedMapWidth = showedMapWidth;
+        this.showedMapHeight = showedMapHeight;
+
         scaleImages();
     }
     public MiniMap(){
@@ -28,8 +34,8 @@ public class MiniMap extends Window {
         transparent.scale(mapWidth + padding * 2,mapHeight + padding * 2);
         setImage(backgroundImage);
         defaultImage.scale(mapWidth, mapHeight);
-        scaleX = (sizeMap/ mapWidth);
-        scaleY = (sizeMap/ mapHeight);
+        scaleX = (showedMapWidth / mapWidth);
+        scaleY = (showedMapHeight / mapHeight);
     }
 
     @Override
@@ -39,7 +45,7 @@ public class MiniMap extends Window {
             void clicked() {
                 if (mapWidth < 800) {
                     world.removeObject(MiniMap.this);
-                    ((OpenWorld) world).addObject(new MiniMap(800, 600), 450, 350);
+                    ((OpenWorld) world).addObject(new MiniMap(800, 600,4000,4000), 450, 350);
                     world.removeObject(this);
                 } else {
                     world.removeObject(MiniMap.this);
@@ -52,14 +58,14 @@ public class MiniMap extends Window {
     }
 
             @Override
-            public void act() {
+            public void act(){
                 if (FPS.getFrame() - lastFrameUpdatet > updateFrames) {
                     lastFrameUpdatet = FPS.getFrame();
                     Player player = Player.getInstance();
                     final int playerX = player.getX();
                     final int playerY = player.getY();
                     List<Entity> entityList = getWorld().getObjects(Entity.class);
-                    entityList.removeIf(entity -> Math.abs(entity.getX() - playerX) > sizeMap / 2 || Math.abs(entity.getY() - playerY) > sizeMap / 2);
+                    entityList.removeIf(entity -> Math.abs(entity.getX() - playerX) > showedMapWidth / 2 || Math.abs(entity.getY() - playerY) > showedMapHeight / 2);
                     GreenfootImage copyOfImage = new GreenfootImage(defaultImage);
                     for (Entity entity : entityList) {
                         if (entity instanceof Player) {
@@ -70,11 +76,15 @@ public class MiniMap extends Window {
                         int scaledX = xdifference / scaleX + mapWidth / 2;
                         int scaledY = ydifference / scaleY + mapHeight / 2;
                         GreenfootImage entitysImage = new GreenfootImage(entity.getImage());
-                        entitysImage.scale(Math.round(entitysImage.getWidth() / scaleX) + 1, Math.round(entitysImage.getHeight() / scaleY) + 1);
-                        copyOfImage.drawImage(entitysImage, scaledX, scaledY);
+                        int newWidth = Math.round(entitysImage.getWidth() / scaleX);
+                        int newHeight = Math.round(entitysImage.getHeight() / scaleY);
+                        if(newWidth > 0 || newHeight > 0){
+                            entitysImage.scale(newWidth,newHeight);
+                            copyOfImage.drawImage(entitysImage, scaledX, scaledY);
+                        }
                     }
                     GreenfootImage playerImage = new GreenfootImage(player.getImage());
-                    playerImage.scale(Math.round(playerImage.getWidth() / scaleX) + 1, Math.round(playerImage.getHeight() / scaleY) + 1);
+                    playerImage.scale(Math.round(playerImage.getWidth() / scaleX), Math.round(playerImage.getHeight() / scaleY));
                     copyOfImage.drawImage(playerImage, mapWidth / 2, mapHeight / 2);
                     backgroundImage.drawImage(copyOfImage, padding, padding);
                 }

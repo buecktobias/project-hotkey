@@ -43,7 +43,7 @@ public class Sector0_0 extends OpenWorld {
         bgSound.playLoop();
         bg.scale(32, 32);
         getSettings();
-        setPaintOrder(Button.class,MiniMap.class,ItemInfoScreen.class, Inventory.class, HUD.class,MovingActor.class,Window.class);
+        setPaintOrder(Button.class,MiniMap.class,ItemInfoScreen.class, Inventory.class, HUD.class,MovingActor.class,Window.class,Teleporter.class);
         setBackground(bg);
         addObjectTopLeftCorner(new MiniMap(),WORLD_WIDTH - 10,WORLD_HEIGHT - 10);
         addObjectTopLeftCorner(FPS.getInstance(), 1000, WORLD_HEIGHT - 250);
@@ -62,7 +62,21 @@ public class Sector0_0 extends OpenWorld {
         HealthPotion healthPotion1 = new HealthPotion(5);
         addObject(healthPotion1, 150, 100);
 
+        Teleporter teleporter2 = new Teleporter();
+        Teleporter teleporter = new Teleporter();
+        addObject(teleporter,200,430);
+        addObject(teleporter2,650,750);
+        teleporter2.setTeleporter(teleporter);
+        teleporter.setTeleporter(teleporter2);
 
+        Teleporter teleporter3 = new Teleporter();
+        Teleporter teleporter4 = new Teleporter();
+        addObject(teleporter3,160,130);
+        addObject(teleporter4,-800,-550);
+        teleporter3.setTeleporter(teleporter4);
+        teleporter4.setTeleporter(teleporter3);
+
+/*
         Archer archer = new Archer();
         addObject(archer, 200, 100);
         Archer archer2 = new Archer();
@@ -76,7 +90,7 @@ public class Sector0_0 extends OpenWorld {
 
         Dagger dagger = new Dagger();
         addObject(dagger, 250, 50);
-
+*/
         randomObjects(Cobweb.class, 200, -600, 800, 400, 10);
         randomObjects(Sand.class, 600, 700, 1000, 1000, 1);
         randomObjects(Grass.class, -500, -300, 400, 800, 2);

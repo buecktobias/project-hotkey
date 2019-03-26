@@ -17,7 +17,6 @@ public abstract class Entity extends Actor {
      */
 
     public Entity() {
-
         this.defaultImage = new GreenfootImage(getImage());
     }
     public Player getPlayer(int visualRange) {

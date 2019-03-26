@@ -47,7 +47,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private final int waitTimeOpenSettingsWindow = 10;
     private final int minLife = 0;
     private final int waitTimeWhenEnduranceIsZero = 5;
-    private final int gameSpeed = 50;
+    private final int gameSpeed = 60;
     private long lastFrameSettingsWindowOpened = 0;
     private long lastFrameSkillWindowOpened = 0;
     private long lastTimeDamageSoundPlayed = 0;
@@ -77,7 +77,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private String keyOpenChest;
     private Inventory inventoryInstance;
     private SkillWindow skillWindow;
-    private int[] levelUps = new int[]{25,50,100,150,300,600,1200,1800};
+    private int[] levelUps = new int[]{25,50,100,150,300,600,1200,1800,3000,5000,8000,15000,30000,50000};
     private Item[] beltItems = new Item[4];
     private Item[] ammunition = new Item[4];
     private Item[] equippedItems = new Item[6];
@@ -345,7 +345,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     public void openChest() {
         List<Chest> chests = getObjectsInRange(interactingRange, Chest.class);
         if(!chests.isEmpty()) {
-            //chests.get(0).open(inventoryInstance);
+            chests.get(0).open();
         }
 
     }
@@ -456,7 +456,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         return life;
     }
     public void setLife(double life) {
-        if(life < this.life && FPS.getFrame() - lastTimeDamageSoundPlayed > damageSoundWaitFrames){
+        if(life + this.getLifeRegeneration() < this.life && FPS.getFrame() - lastTimeDamageSoundPlayed > damageSoundWaitFrames){
             damageSound.play();
             lastTimeDamageSoundPlayed = FPS.getFrame();
         }
