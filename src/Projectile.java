@@ -78,8 +78,12 @@ public abstract class Projectile extends Entity {
         }
 
         this.speed = this.speed - drag;
-        this.velocityX = Math.cos(Math.toRadians(this.rotation))*this.speed;
-        this.velocityY = Math.sin(Math.toRadians(this.rotation))*this.speed;
+        this.velocityX = Math.cos(Math.toRadians(this.rotation)) * this.speed;
+        this.velocityY = Math.sin(Math.toRadians(this.rotation)) * this.speed;
+    }
+
+    private void follow(MovingActor movingActor){
+
     }
 
 }

@@ -10,7 +10,6 @@ public class Arrow extends Projectile{
         return defaultImage;
     }
 
-    @Override
     public void makeShootingSound() {
         arrowSound.play();
     }
