@@ -26,4 +26,8 @@ public abstract class GUI extends Actor {
         g.setColor(Color.decode(darkC));
         g.fillRect(X,Y, scaleWidth,9);
     }
+    public void drawItemCount(GreenfootImage g, Countable item, int X, int Y){
+        g.setColor(Color.BLACK);
+        g.drawString(String.valueOf(item.getItemCount()), X, Y);
+    }
 }

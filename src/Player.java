@@ -366,7 +366,6 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
             drawFireImage();
         }
         regenerateLife();
-
     }
 
     // inventory related methods

@@ -18,6 +18,17 @@ public class Inventory extends GUI implements Fixed {
 
     //TODO fix known issues:
     // 1) item info screen does not open/close as it is supposed;
+    // 2) old belt item is drawn even though it no loner equipped
+    //          -> never set to null correctly in Inventory
+
+
+    //Liste
+    // - Weltaufbau
+    // - Asset pack
+    // - Munition ??
+    // - GUI transparent???
+    // - Chest/Item problem -> mit Paul
+    //
 
     private Player p;
     private World world;
@@ -43,8 +54,8 @@ public class Inventory extends GUI implements Fixed {
     private GreenfootImage rightArrowNotClicked = new GreenfootImage("images/Arrows/Arrow_right.png");
 
     protected void addedToWorld(World world) {
-        createArrow("left");
-        createArrow("right");
+        createButton(leftArrowNotClicked, leftArrowClicked, "left",540, 189);
+        createButton(rightArrowNotClicked, rightArrowClicked, "right", 820, 189);
         itemInfoScreenInstance = new ItemInfoScreen(p, world);
     }
     public Inventory(Player p, World world){
@@ -77,11 +88,11 @@ public class Inventory extends GUI implements Fixed {
         p.setBeltItems(beltItems);
         p.setAmmunition(ammunition);
         p.setEquippedItems(equippedItems);
-        /*
-        if(p.getActiveConsumable() == null){
+
+        if(p.getActiveConsumable() == null || isArrayEmpty(beltItems)){
             p.setActiveConsumable(beltItems[0]);
         }
-        */
+
 
         Object obj = null;
         try {
@@ -107,8 +118,16 @@ public class Inventory extends GUI implements Fixed {
             }
         }
     }
-    public void addItemToArrayAt(Item[] array, Item item, int index){
+    private void addItemToArrayAt(Item[] array, Item item, int index){
         array[index] = item;
+    }
+    private boolean isArrayEmpty(Item[] array){
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] != null) {
+                return false;
+            }
+        }
+        return true;
     }
     private void removeItemFromInventory(Item item){
         // TODO Switch case?
@@ -196,6 +215,9 @@ public class Inventory extends GUI implements Fixed {
     }
     private void drawItemAt(int X, int Y, Item item){
         drawItemAt(InventoryScreen, X, Y,item);
+        if(item instanceof Countable){
+            drawItemCount(InventoryScreen, ((Countable)item), X + 40, Y + 45 );
+        }
         itemMouseLogic(X, Y, item);
     }
     private void drawTabFonts(){
@@ -230,8 +252,6 @@ public class Inventory extends GUI implements Fixed {
                        }else if(item.getItemSlotId() != -1 && !item.isIEquipped()){
                            equipItem(item);
                        }
-                   }else if(Greenfoot.mouseDragged(item)){
-                       drawItemAt(mouseX, mouseY, item);
                    }
                 }
                 itemHoverInfo(mouseX, mouseY, item);
@@ -257,13 +277,6 @@ public class Inventory extends GUI implements Fixed {
         createItemInfoScreen();
     }
 
-    private void createArrow(String position) {
-        if (position.equals("left")) {
-            createButton(leftArrowNotClicked, leftArrowClicked, position,540, 189);
-        }else{
-            createButton(rightArrowNotClicked, rightArrowClicked, position, 820, 189);
-        }
-    }
     private void createButton(GreenfootImage buttonImgUnClicked1, GreenfootImage buttonImgClicked1, String position, int X, int Y) {
         Button button;
         GreenfootImage buttonImgUnClicked;
@@ -301,8 +314,8 @@ public class Inventory extends GUI implements Fixed {
     private void createItemInfoScreen(){
         String key = Greenfoot.getKey();
         if ((keyCreateItemInfoScreen.equals(key) && infoScreenActive) ){
-            createArrow("left");
-            createArrow("right");
+            createButton(leftArrowNotClicked, leftArrowClicked, "left",540, 189);
+            createButton(rightArrowNotClicked, rightArrowClicked, "right", 820, 189);
             getWorld().removeObject(itemInfoScreenInstance);
             infoScreenActive = false;
         }else if(keyCreateItemInfoScreen.equals(key) && !infoScreenActive) {
@@ -386,9 +399,24 @@ public class Inventory extends GUI implements Fixed {
     }
     private void obtainItem(Item[] addIto, Item item, int alreadyPicked){
         if(alreadyPicked < 30) {
-            addItemToArray(addIto, item);
-            item.setIEquipped(false);
-            beltItems[item.getIndexOfItemInArray(item, beltItems)] = null;
+            // addItemToArray(addIto, item);
+            if (item instanceof Countable) {
+                for (Item itemA : addIto) {
+                    if (itemA != null) {
+                        if (itemA.getItemId() == item.getItemId()) {
+                            Countable cItemA = (Countable) itemA;
+                            // if there already is an Item of the same Type in player´s belt, their count will be added up
+                            (cItemA).setItemCount(cItemA.getItemCount() + ((Countable) item).getItemCount());
+                            beltItems[item.getIndexOfItemInArray(item, beltItems)] = null;
+                            item.setIEquipped(false);
+                            return;
+                        }
+                    }
+                }
+                addItemToArray(itemArray, item);
+                beltItems[item.getIndexOfItemInArray(item, beltItems)] = null;
+                item.setIEquipped(false);
+            }
         }
     }
 

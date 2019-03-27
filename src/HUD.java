@@ -43,12 +43,8 @@ public class HUD extends GUI implements Fixed {
         if(p.getActiveConsumable() != null){
             drawItemAt(Background, 113, 625, p.getActiveConsumable());
             Background.setFont(GUILargeFont);
-            Background.setColor(Color.BLACK);
-            if(p.getActiveConsumable() != null){
-                Background.drawString(String.valueOf(((Countable) p.getActiveConsumable()).getItemCount()), 155, 660);
-            }
+            drawItemCount(Background, ((Countable) p.getActiveConsumable()), 153, 670);
         }
-
     }
     private void drawLevelFonts(){
         Background.setFont(GUILargeFont);
