@@ -1,15 +1,14 @@
 import greenfoot.Actor;
 import greenfoot.GreenfootImage;
-import greenfoot.World;
 
 import java.util.List;
 
-public abstract class OpenWorld extends World {
+public abstract class OpenWorld extends MyWorld {
     public static int WORLD_WIDTH;
     public static int WORLD_HEIGHT;
 
     public OpenWorld(int width, int height) {
-        super(width, height, 1, false);
+        super(width, height, 1);
     }
 
     public void addObjectTopLeftCorner(Actor object, int x, int y) {

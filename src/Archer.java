@@ -1,4 +1,5 @@
 import greenfoot.GreenfootImage;
+import greenfoot.World;
 
 import java.util.Arrays;
 import java.util.List;
@@ -13,6 +14,7 @@ public class Archer extends Hostile implements Attackable,Blocking,FireSensitive
     private long lastFrameAttacked = 0;
     private int attackRange = 350;
     private double fireDamage = 0;
+    private MyWorld world;
 
 
     @Override
@@ -24,11 +26,11 @@ public class Archer extends Hostile implements Attackable,Blocking,FireSensitive
         this.fireDamage = fireDamage;
     }
 
-    private GreenfootImage defaultImage = new GreenfootImage("src/images/Characters/Player/player_standing.png");
-    private GreenfootImage imageWalking1 = new GreenfootImage("src/images/Characters/Player/player_walking1.png");
-    private GreenfootImage imageWalking2 = new GreenfootImage("src/images/Characters/Player/player_walking2.png");
-    private GreenfootImage imageWalking3 = new GreenfootImage("src/images/Characters/Player/player_walking3.png");
-    private GreenfootImage imageWalking4 = new GreenfootImage("src/images/Characters/archer_walking4.png");
+    private GreenfootImage defaultImage= new GreenfootImage("src/images/Characters/Player/player_standing.png");
+    private GreenfootImage imageWalking1= new GreenfootImage("src/images/Characters/Player/player_walking1.png");
+    private GreenfootImage imageWalking2= new GreenfootImage("src/images/Characters/Player/player_walking2.png");
+    private GreenfootImage imageWalking3= new GreenfootImage("src/images/Characters/Player/player_walking3.png");
+    private GreenfootImage imageWalking4= new GreenfootImage("src/images/Characters/archer_walking4.png");
     private GreenfootImage[] animationImages;
     private Bow bow;
     public Archer(){
@@ -41,6 +43,15 @@ public class Archer extends Hostile implements Attackable,Blocking,FireSensitive
         listWalkingImages.forEach(walkingImage -> walkingImage.drawImage(bowImage,0,0));
         animationImages = (GreenfootImage[]) listWalkingImages.toArray();
     }
+
+    @Override
+    protected void addedToWorld(World world) {
+        if(world instanceof MyWorld){
+            this.world = (MyWorld)world;
+
+        }
+    }
+
     @Override
     void movingAnimation() {
         animate(4,animationImages);
