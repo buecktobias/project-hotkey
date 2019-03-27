@@ -3,7 +3,7 @@ import greenfoot.GreenfootImage;
 import java.awt.*;
 
 public class HUD extends GUI implements Fixed {
-
+    //TODO align ammunition image
     private Player p;
     private double scale;
     private GreenfootImage Background = new GreenfootImage("images/Hud_Menu_Images/Hud_V4.png");
@@ -24,6 +24,7 @@ public class HUD extends GUI implements Fixed {
         drawEquippedWeapons();
         drawLevelFonts();
         drawActiveBeltItem();
+        drawActiveAmmunition();
     }
     // TODO fix scaling issues
     private double expScaling(double exp, double startScale){
@@ -44,6 +45,13 @@ public class HUD extends GUI implements Fixed {
             drawItemAt(Background, 113, 625, p.getActiveConsumable());
             Background.setFont(GUILargeFont);
             drawItemCount(Background, ((Countable) p.getActiveConsumable()), 153, 670);
+        }
+    }
+    private void drawActiveAmmunition(){
+        if(p.getActiveAmmunition() != null){
+            drawItemAt(Background, 113, 535, p.getActiveAmmunition());
+            Background.setFont(GUILargeFont);
+            drawItemCount(Background, ((Countable) p.getActiveAmmunition()), 153, 580);
         }
     }
     private void drawLevelFonts(){

@@ -52,15 +52,21 @@ public class Sector0_0 extends OpenWorld {
         HUD hud = new HUD(player);
         addObject(hud, getWidth() / 2, getHeight() / 2);
         Bow bow = new Bow(20, 20);
-        addObject(bow, 200, 100);
+        addObject(bow, 300, 50);
         Bomb bomb = new Bomb();
-        addObject(bomb, -420, -220);
+        //addObject(bomb, -420, -220);
         Companion companion = new Companion(player);
         // addObject(companion, 150, 0);
+
         HealthPotion healthPotion = new HealthPotion(3);
         addObject(healthPotion, 150, 50);
         HealthPotion healthPotion1 = new HealthPotion(5);
         addObject(healthPotion1, 150, 100);
+
+        WoodenArrow woodenArrow = new WoodenArrow(4);
+        addObject(woodenArrow, 200, 50);
+        WoodenArrow woodenArrow1 = new WoodenArrow(5);
+        addObject(woodenArrow1, 200, 100);
 
         Teleporter teleporter2 = new Teleporter();
         Teleporter teleporter = new Teleporter();
@@ -71,7 +77,7 @@ public class Sector0_0 extends OpenWorld {
 
         Teleporter teleporter3 = new Teleporter();
         Teleporter teleporter4 = new Teleporter();
-        addObject(teleporter3,160,130);
+        addObject(teleporter3,260,130);
         addObject(teleporter4,-800,-550);
         teleporter3.setTeleporter(teleporter4);
         teleporter4.setTeleporter(teleporter3);

@@ -77,14 +77,15 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private String keyOpenChest;
     private Inventory inventoryInstance;
     private SkillWindow skillWindow;
-    private int[] levelUps = new int[]{25,50,100,150,300,600,1200,1800,3000,5000,8000,15000,30000,50000};
+    private Item activeConsumable;
+    private Item activeAmmunition;
     private Item[] beltItems = new Item[4];
     private Item[] ammunition = new Item[4];
     private Item[] equippedItems = new Item[6];
     private Item[] weaponsArray = new Item[20];
     private Item[] armorArray = new Item[20];
     private Item[] itemsArray = new Item[20];
-    private Item activeConsumable;
+    private int[] levelUps = new int[]{25,50,100,150,300,600,1200,1800,3000,5000,8000,15000,30000,50000};
     private GreenfootImage defaultImage;
     private GreenfootImage imageWalking1;
     private GreenfootImage imageWalking2;
@@ -236,7 +237,6 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         keyOpenChest = keys.get("openChest").toString();
     }
 
-
     private void testKeys() {
         if(Greenfoot.isKeyDown(keyUpdateAc)){
             updateAC();
@@ -378,7 +378,6 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         Item currentItem = objs.get(0);
         switch (currentItem.getItemType()) {
             case "Weapon":
-
                 if (weaponsPicked < 30) {
                     currentItem.pick(weaponsArray);
                     weaponsPicked++;
@@ -418,6 +417,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
             setIActive(true);
         }
     }
+
     private void updateAC(){
         // TODO only execute once
         if(indexOfAC == 3){
@@ -626,5 +626,11 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     }
     public void setActiveConsumable(Item activeConsumable) {
         this.activeConsumable = activeConsumable;
+    }
+    public Item getActiveAmmunition() {
+        return activeAmmunition;
+    }
+    public void setActiveAmmunition(Item activeAmmunition) {
+        this.activeAmmunition = activeAmmunition;
     }
 }
