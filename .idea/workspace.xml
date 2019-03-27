@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/Player.java" line="183" />
-    <bookmark url="file://$PROJECT_DIR$/src/Player.java" line="188" />
-    <bookmark url="file://$PROJECT_DIR$/src/Player.java" line="240" />
+    <bookmark url="file://$PROJECT_DIR$/src/Player.java" line="179" />
+    <bookmark url="file://$PROJECT_DIR$/src/Player.java" line="178" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b052e2bc-c100-4699-b9d4-b65ca5c8f191" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectHotkey.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectHotkey.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FPS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FPS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/General.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/General.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ItemInfoScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ItemInfoScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sector0_0.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sector0_0.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SettingsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SettingsWindow.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,72 +26,27 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/ProjectHotkey$GreenfootOOP.ic" NAME="GreenfootOOP Coverage Results" MODIFIED="1549484627762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1958356195">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.13" value="1" />
-          <entry key="project.opened" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="Keys" value="9" />
-          <entry key="Settings" value="214" />
-          <entry key="greenfoot" value="60" />
-          <entry key="java" value="3170" />
-          <entry key="json" value="84" />
-          <entry key="txt" value="154" />
-          <entry key="xml" value="16" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="3170" />
-          <entry key="JSON" value="93" />
-          <entry key="JSON5" value="135" />
-          <entry key="PLAIN_TEXT" value="293" />
-          <entry key="XML" value="16" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="Keys" value="1" />
-          <entry key="Settings" value="1" />
-          <entry key="class" value="1" />
-          <entry key="form" value="1" />
-          <entry key="greenfoot" value="2" />
-          <entry key="java" value="16" />
-          <entry key="jpg" value="1" />
-          <entry key="png" value="17" />
-          <entry key="tld" value="1" />
-          <entry key="xml" value="7" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CLASS" value="1" />
-          <entry key="GUI_DESIGNER_FORM" value="1" />
-          <entry key="Image" value="18" />
-          <entry key="JAVA" value="16" />
-          <entry key="JSON" value="1" />
-          <entry key="JSON5" value="1" />
-          <entry key="PLAIN_TEXT" value="2" />
-          <entry key="XML" value="8" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Player.java">
+        <entry file="file://$PROJECT_DIR$/src/ItemInfoScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+            <state relative-caret-position="480">
+              <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Sector0_0.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-23">
+              <caret line="73" column="13" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#max#0;class#Sector0_0#0" />
+                <element signature="method#act#0;class#Sector0_0#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,53 +54,59 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SettingsWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+            <state relative-caret-position="564">
+              <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Settings.json">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/General.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+            <state relative-caret-position="300">
+              <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+        <entry file="file://$PROJECT_DIR$/src/FPS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="6" column="37" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="37" />
+            <state relative-caret-position="660">
+              <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/src/Inventory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-820">
+              <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+              <folding>
+                <element signature="method#act#0;class#Inventory#0" />
+                <element signature="e#2754#2798#0" />
+                <element signature="method#drawTabFonts#0;class#Inventory#0" />
+                <element signature="method#sortItems#0;class#Inventory#0" />
+                <element signature="method#drawCurrentTab#0;class#Inventory#0" />
+                <element signature="method#drawTab#0;class#Inventory#0" />
+                <element signature="e#5166#5666#1" />
+                <element signature="method#itemMouseLogic#0;class#Inventory#0" />
+                <element signature="method#createArrow#0;class#Inventory#0" />
+                <element signature="e#7952#8656#1" />
+                <element signature="method#clicked#0;class#8194:8551" />
+                <element signature="method#deleteButtons#0;class#Inventory#0" />
+                <element signature="method#createItemInfoScreen#0;class#Inventory#0" />
+                <element signature="method#equippItem#0;class#Inventory#0" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -150,9 +116,7 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Tag Library Descriptor" />
         <option value="Class" />
-        <option value="Singleton" />
       </list>
     </option>
   </component>
@@ -179,6 +143,11 @@
     </option>
     <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -199,34 +168,32 @@
         <option value="$PROJECT_DIR$/src/Level1.java" />
         <option value="$PROJECT_DIR$/src/Environment.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/project.greenfoot" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/MovingActor.java" />
         <option value="$PROJECT_DIR$/src/Attackable.java" />
         <option value="$PROJECT_DIR$/src/Weapon.java" />
+        <option value="$PROJECT_DIR$/src/Pickable.java" />
         <option value="$PROJECT_DIR$/src/ItemManager.java" />
-        <option value="$PROJECT_DIR$/src/OpenWorld.java" />
         <option value="$PROJECT_DIR$/src/Carrot.java" />
+        <option value="$PROJECT_DIR$/src/Staff.java" />
         <option value="$PROJECT_DIR$/src/KeyManagerAdapter.java" />
         <option value="$PROJECT_DIR$/src/KeyManager.java" />
-        <option value="$PROJECT_DIR$/src/Bow.java" />
-        <option value="$PROJECT_DIR$/src/HUD.java" />
         <option value="$PROJECT_DIR$/src/Item.java" />
-        <option value="$PROJECT_DIR$/src/Inventory.java" />
-        <option value="$PROJECT_DIR$/src/Pickable.java" />
-        <option value="$PROJECT_DIR$/src/Staff.java" />
+        <option value="$PROJECT_DIR$/src/Bow.java" />
+        <option value="$PROJECT_DIR$/src/OpenWorld.java" />
         <option value="$PROJECT_DIR$/src/SkillWindow.java" />
+        <option value="$PROJECT_DIR$/src/Button.java" />
+        <option value="$PROJECT_DIR$/src/HUD.java" />
+        <option value="$PROJECT_DIR$/src/Tree.java" />
+        <option value="$PROJECT_DIR$/src/Grass.java" />
+        <option value="$PROJECT_DIR$/src/General.java" />
         <option value="$PROJECT_DIR$/src/FPS.java" />
-        <option value="$PROJECT_DIR$/src/form.form" />
-        <option value="$PROJECT_DIR$/src/Keys" />
-        <option value="$PROJECT_DIR$/src/Settings.java" />
-        <option value="$PROJECT_DIR$/src/Settings" />
-        <option value="$PROJECT_DIR$/src/Settings.json" />
-        <option value="$PROJECT_DIR$/src/LoadScreen.java" />
-        <option value="$PROJECT_DIR$/src/Sector0_0.java" />
-        <option value="$PROJECT_DIR$/src/project.greenfoot" />
+        <option value="$PROJECT_DIR$/src/ItemInfoScreen.java" />
         <option value="$PROJECT_DIR$/src/Player.java" />
         <option value="$PROJECT_DIR$/src/SettingsWindow.java" />
-        <option value="$PROJECT_DIR$/.idea/libraries/json_simple_1_1_1.xml" />
+        <option value="$PROJECT_DIR$/src/Inventory.java" />
+        <option value="$PROJECT_DIR$/src/Sector0_0.java" />
       </list>
     </option>
   </component>
@@ -237,9 +204,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
+    <option name="x" value="-12" />
     <option name="y" value="30" />
-    <option name="width" value="1939" />
+    <option name="width" value="1941" />
     <option name="height" value="1059" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -250,47 +217,34 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="project-hotkey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-hotkey" type="462c0819:PsiDirectoryNode" />
+              <item name="latestGFverion" type="b2602c69:ProjectViewProjectNode" />
+              <item name="latestGFverion" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="project-hotkey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-hotkey" type="462c0819:PsiDirectoryNode" />
+              <item name="latestGFverion" type="b2602c69:ProjectViewProjectNode" />
+              <item name="latestGFverion" type="462c0819:PsiDirectoryNode" />
               <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="project-hotkey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-hotkey" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-              <item name="libraries" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project-hotkey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-hotkey" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-              <item name="libraries" type="462c0819:PsiDirectoryNode" />
-              <item name="json-simple-1.1.1.jar" type="ab9368bb:PsiFileNode" />
-            </path>
-            <path>
-              <item name="project-hotkey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-hotkey" type="462c0819:PsiDirectoryNode" />
+              <item name="latestGFverion" type="b2602c69:ProjectViewProjectNode" />
+              <item name="latestGFverion" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="project-hotkey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-hotkey" type="462c0819:PsiDirectoryNode" />
+              <item name="latestGFverion" type="b2602c69:ProjectViewProjectNode" />
+              <item name="latestGFverion" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -300,23 +254,15 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="grundbegriffeoop_v6" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551208876564" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/java/json-simple-1.1.1.jar!/" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553675559742" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../project-hotkey-InteliJ/lib/json-simple-1.1.1.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
-    <property name="settings.editor.splitter.proportion" value="0.2263798" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ThomasBueck\IdeaProjects\project-hotkey1.0\project-hotkey\src\images\Characters\Player" />
-      <recent name="C:\Users\ThomasBueck\IdeaProjects\project-hotkey1.0\project-hotkey\src\images\Characters" />
-      <recent name="C:\Users\ThomasBueck\IdeaProjects\project-hotkey1.0\project-hotkey\src\images\Buttons" />
-      <recent name="C:\Users\ThomasBueck\IdeaProjects\project-hotkey1.0\project-hotkey\src\images\Logos" />
-      <recent name="C:\Users\ThomasBueck\IdeaProjects\project-hotkey1.0\project-hotkey\src\images\Window" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="helper" />
     </key>
@@ -338,10 +284,10 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="GreenfootOOP" type="Application" factoryName="Application">
+    <configuration name="latestGFVersion" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="greenfoot.export.GreenfootScenarioMain" />
+      <option name="MAIN_CLASS_NAME" value="greenfoot.export.GreenfootScenarioApplication" />
       <module name="ProjectHotkey" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -363,9 +309,6 @@
       <workItem from="1549101158278" duration="1204000" />
       <workItem from="1549102620145" duration="6760000" />
       <workItem from="1549144627268" duration="5630000" />
-      <workItem from="1550957464341" duration="8900000" />
-      <workItem from="1551071841027" duration="10566000" />
-      <workItem from="1551207389572" duration="1477000" />
     </task>
     <task id="LOCAL-00001" summary="project base">
       <created>1549046329316</created>
@@ -472,74 +415,18 @@
       <option name="project" value="LOCAL" />
       <updated>1550392977325</updated>
     </task>
-    <task id="LOCAL-00016" summary="Inventory toggle on off now working..kinda">
-      <created>1550397243288</created>
+    <task id="LOCAL-00016" summary="Added Skill System">
+      <created>1550435507845</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1550397243288</updated>
+      <updated>1550435507845</updated>
     </task>
-    <task id="LOCAL-00017" summary="HUD now extends NotMoving">
-      <created>1550397309170</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1550397309170</updated>
-    </task>
-    <task id="LOCAL-00018" summary="HUD now extends NotMoving">
-      <created>1550397410810</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1550397410810</updated>
-    </task>
-    <task id="LOCAL-00019" summary="SkillWindow updadet">
-      <created>1550958531073</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1550958531073</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Added FPS window">
-      <created>1550962678632</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1550962678632</updated>
-    </task>
-    <task id="LOCAL-00021" summary="few cleanups in Player and added a SettingsWindow(will be improved!!)">
-      <created>1551123616855</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1551123616855</updated>
-    </task>
-    <task id="LOCAL-00022" summary="fixed ...maybe">
-      <created>1551200999300</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1551200999300</updated>
-    </task>
-    <task id="LOCAL-00023" summary="added libary">
-      <created>1551204150028</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1551204150028</updated>
-    </task>
-    <task id="LOCAL-00024" summary="libary should work now">
-      <created>1551208247554</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1551208247554</updated>
-    </task>
-    <option name="localTasksCounter" value="25" />
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39476000" />
+    <option name="totallyTimeSpent" value="25832000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -551,9 +438,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15973154" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17004049" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -562,19 +450,18 @@
       <window_info id="Learn" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.38297874" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.32907802" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.88539445" weight="0.15709643" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932885" weight="0.39858156" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4989339" weight="0.06933911" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010661" side_tool="true" weight="0.32827735" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4989339" visible="true" weight="0.30921987" />
-      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Statistic" order="13" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="9" sideWeight="0.5068826" side_tool="true" visible="true" weight="0.16252074" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Messages" order="12" sideWeight="0.49311742" visible="true" weight="0.32669982" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -659,9 +546,20 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="project base" />
@@ -670,19 +568,89 @@
     <MESSAGE value="Added Endurance to Player." />
     <MESSAGE value="Added new Image (StatBars.png)&#10;Player Healt is now displayed at corect position on HUD Background&#10;Player Endurance is now displayed on screen //still out of sync" />
     <MESSAGE value="Added HealthBar to Player.&#10;Still Work In Progress" />
-    <MESSAGE value="Inventory toggle on off now working..kinda" />
     <MESSAGE value="HUD now extends NotMoving" />
-    <MESSAGE value="SkillWindow updadet" />
-    <MESSAGE value="Added FPS window" />
-    <MESSAGE value="few cleanups in Player and added a SettingsWindow(will be improved!!)" />
-    <MESSAGE value="fixed ...maybe" />
-    <MESSAGE value="added libary" />
-    <MESSAGE value="libary should work now" />
-    <option name="LAST_COMMIT_MESSAGE" value="libary should work now" />
+    <MESSAGE value="Added Skill System" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Skill System" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/class_diagramm.uml" />
+    <entry file="file://$PROJECT_DIR$/src/images/test_player.png" />
+    <entry file="file://$PROJECT_DIR$/src/images/logo_8x.png" />
+    <entry file="file://$PROJECT_DIR$/src/images/logo.png" />
+    <entry file="file://$PROJECT_DIR$/src/images/cell_debug.png" />
+    <entry file="file://$PROJECT_DIR$/src/images/background_debug.png" />
+    <entry file="file://$PROJECT_DIR$/src/helper/Direction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovingActor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="157" column="5" selection-start-line="157" selection-start-column="5" selection-end-line="157" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/EmptyHealthbar.png" />
+    <entry file="file://$PROJECT_DIR$/src/images/StatBar.png" />
+    <entry file="file://$PROJECT_DIR$/src/images/StatBars.png" />
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Attackable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pickable.java" />
+    <entry file="file://$PROJECT_DIR$/src/ItemManager.java" />
+    <entry file="jar://$PROJECT_DIR$/lib/greenfoot.jar!/greenfoot/GreenfootImage.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="155" selection-start-line="155" selection-end-line="155" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/carrot.png" />
+    <entry file="file://$PROJECT_DIR$/src/InventoryDisplayAdapter.java" />
+    <entry file="file://$PROJECT_DIR$/src/LoadScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/greenfoot.jar!/greenfoot/gui/input/KeyboardManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49">
+          <caret line="140" selection-start-line="140" selection-end-line="140" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Staff.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Carrot.java" />
+    <entry file="file://$PROJECT_DIR$/src/KeyManager.java" />
+    <entry file="file://$PROJECT_DIR$/src/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Bow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -690,183 +658,117 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/NPC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Enemy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/ArrayList.java" />
+    <entry file="file://$PROJECT_DIR$/src/images/inventoryScreenTest.png" />
     <entry file="file://$PROJECT_DIR$/src/Button.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/KeyManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        <state relative-caret-position="136">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Attackable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/HUD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-          <folding>
-            <element signature="e#1231#1232#0" expanded="true" />
-            <element signature="e#1270#1271#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Inventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player2.java" />
-    <entry file="file://$PROJECT_DIR$/src/Keys.tld" />
-    <entry file="file://$PROJECT_DIR$/src/form.form" />
-    <entry file="file://$PROJECT_DIR$/src/form.java" />
-    <entry file="file://$PROJECT_DIR$/src/Settings.java" />
-    <entry file="file://$PROJECT_DIR$/src/FPS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="775">
-          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pickable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Staff.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/Screens/FPS_Window.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/MyInventoryV1.png" />
-    <entry file="file://$PROJECT_DIR$/src/images/MyInventoryV2.png" />
-    <entry file="file://$PROJECT_DIR$/src/images/MyInventoryV3.png" />
-    <entry file="file://$PROJECT_DIR$/src/images/SkillScreenV1.png" />
-    <entry file="file://$PROJECT_DIR$/src/images/Characters/Spider.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/Characters/Spider_RED_EYES.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/SkillScreen2.png" />
-    <entry file="file://$PROJECT_DIR$/src/images/StatBars.png" />
-    <entry file="file://$PROJECT_DIR$/src/images/Environment/tree2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/Wand.png" />
-    <entry file="file://$PROJECT_DIR$/src/images/Environment/water.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/Arrows/Arrow_left.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/Arrows/Arrow_left_aktive.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/Arrows/Arrow_right.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/Arrows/Arrow_right_aktive.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DeathScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SkillWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="54" column="66" lean-forward="true" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/Characters/Player/test_player.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Enemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoadScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project.greenfoot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="59" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/greenfoot.jar!/greenfoot/GreenfootImage.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3625">
-          <caret line="169" selection-start-line="169" selection-end-line="169" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ItemManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Sector0_0.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="24" column="65" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
+        <state relative-caret-position="1496">
+          <caret line="95" column="25" selection-start-line="95" selection-start-column="25" selection-end-line="95" selection-end-column="25" />
           <folding>
-            <element signature="method#boundingRocks#0;class#Sector0_0#0" />
-            <element signature="method#randomSpawn#0;class#Sector0_0#0" />
-            <element signature="method#randomObjects#0;class#Sector0_0#0" />
-            <element signature="method#max#0;class#Sector0_0#0" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Environment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" selection-start-column="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+          <folding>
+            <element signature="e#57#58#0" expanded="true" />
+            <element signature="e#101#102#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Weapon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="43" selection-start-column="43" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OpenWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HUD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="18" column="65" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#214#215#0" expanded="true" />
+            <element signature="e#250#251#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/greenfoot.jar!/greenfoot/World.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1938">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Grass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="63" selection-start-line="4" selection-start-column="63" selection-end-line="4" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Settings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="37" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -879,44 +781,94 @@
     <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+    <entry file="file://$PROJECT_DIR$/src/General.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="37" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="37" />
+        <state relative-caret-position="300">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SettingsWindow.java">
+    <entry file="file://$PROJECT_DIR$/src/FPS.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        <state relative-caret-position="660">
+          <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        <state relative-caret-position="-456">
+          <caret line="170" column="29" selection-start-line="170" selection-start-column="29" selection-end-line="170" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3026#3499#0" />
+            <element signature="e#3504#4399#0" />
+            <element signature="e#4404#4876#0" />
+            <element signature="e#4881#4991#0" />
+            <element signature="e#4996#5244#0" />
+            <element signature="e#5249#5751#0" />
+            <element signature="e#5756#6823#0" />
+            <element signature="e#6828#7224#0" />
+            <element signature="e#7230#7720#0" />
+            <element signature="e#7726#8041#0" />
+            <element signature="e#8046#8689#0" />
+            <element signature="e#8694#9168#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/libraries/json_simple_1_1_1.xml">
+    <entry file="file://$PROJECT_DIR$/src/SettingsWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="73" selection-start-line="3" selection-start-column="73" selection-end-line="3" selection-end-column="73" />
+        <state relative-caret-position="564">
+          <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Settings.json">
+    <entry file="file://$PROJECT_DIR$/src/ItemInfoScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        <state relative-caret-position="480">
+          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Inventory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-820">
+          <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+          <folding>
+            <element signature="method#act#0;class#Inventory#0" />
+            <element signature="e#2754#2798#0" />
+            <element signature="method#drawTabFonts#0;class#Inventory#0" />
+            <element signature="method#sortItems#0;class#Inventory#0" />
+            <element signature="method#drawCurrentTab#0;class#Inventory#0" />
+            <element signature="method#drawTab#0;class#Inventory#0" />
+            <element signature="e#5166#5666#1" />
+            <element signature="method#itemMouseLogic#0;class#Inventory#0" />
+            <element signature="method#createArrow#0;class#Inventory#0" />
+            <element signature="e#7952#8656#1" />
+            <element signature="method#clicked#0;class#8194:8551" />
+            <element signature="method#deleteButtons#0;class#Inventory#0" />
+            <element signature="method#createItemInfoScreen#0;class#Inventory#0" />
+            <element signature="method#equippItem#0;class#Inventory#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sector0_0.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-23">
+          <caret line="73" column="13" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#max#0;class#Sector0_0#0" />
+            <element signature="method#act#0;class#Sector0_0#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -949,7 +901,6 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>json-simple-1.1.1</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -978,6 +929,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -997,7 +949,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>lib</last-edited>
+          <last-edited>json-simple-1.1.1</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

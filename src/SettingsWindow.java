@@ -6,7 +6,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.awt.*;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -15,8 +14,9 @@ import java.util.Arrays;
 import java.util.LinkedList;
 
 public class SettingsWindow extends Actor implements Fixed {
+
     private JSONObject jsonObject;
-    private String[] possibleKeys = new String[]{"up","left","down","right","shift","control","backspace","tab","enter","F1","F2","F3","F4","F5","F6","F7","F8","F9","F10","F11","F12","0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
+    private String[] possibleKeys = new String[]{"up", "left", "down", "right", "shift", "control", "backspace", "tab", "enter", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
     private JSONParser parser = new JSONParser();
     private LinkedList<Button> buttonList = new LinkedList<>();
     private GreenfootImage bg = new GreenfootImage("images/Screens/Settings_test.png");
@@ -35,6 +35,7 @@ public class SettingsWindow extends Actor implements Fixed {
             e.printStackTrace();
         }
     }
+
     public void deleteButtons(){
         for(Button button:buttonList){
             getWorld().removeObject(button);
@@ -46,13 +47,13 @@ public class SettingsWindow extends Actor implements Fixed {
         GreenfootImage img = new GreenfootImage(bg);
         int i = 0;
         img.setTransparency(160);
-        img.setColor(Color.WHITE);
-        img.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 20));
+        //img.setColor(Color.WHITE);
+        //img.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 20));
         Button button;
         for (Object key : keys.keySet()) {
             img.drawString(key.toString(), 50, i * 40 + 50);
             GreenfootImage buttonImg = new GreenfootImage("images/Buttons/test.png");
-            buttonImg.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 30));
+           // buttonImg.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 30));
             buttonImg.scale(500,36);
             buttonImg.setTransparency(80);
             img.drawString(keys.get(key).toString(),450,i*40+50);
@@ -82,4 +83,5 @@ public class SettingsWindow extends Actor implements Fixed {
 
     }
 }
+
 

@@ -1,17 +1,15 @@
-import greenfoot.Actor;
-import greenfoot.Greenfoot;
-import greenfoot.GreenfootImage;
-import greenfoot.World;
+import greenfoot.*;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.LinkedList;
+
+//import  java.awt.Color;
 
 
 public class Inventory extends Actor implements Fixed {
@@ -84,8 +82,8 @@ public class Inventory extends Actor implements Fixed {
         String armor = "Armor";
         String weapons = "Weapons";
         String items = "Items";
-        InventoryScreen.setFont(new Font(Font.SANS_SERIF, Font.ITALIC, 20));
-        InventoryScreen.setColor(Color.WHITE);
+       // InventoryScreen.setFont(new Font(Font.SANS_SERIF, Font.ITALIC, 20));
+        //InventoryScreen.setColor(ColorUtil.ColorRGB(0,0, ));
         InventoryScreen.drawString(weapons,   470,175);
         InventoryScreen.drawString(armor,     580,175);
         InventoryScreen.drawString(items,     680,175);
@@ -163,15 +161,16 @@ public class Inventory extends Actor implements Fixed {
         String InfoMouseButton = "select Item: right Click";
         InventoryScreen.setColor(Color.DARK_GRAY);
         InventoryScreen.fillRect(X, Y, 150, 70);
-        InventoryScreen.setColor(Color.lightGray);
+        InventoryScreen.setColor(Color.LIGHT_GRAY);
         InventoryScreen.drawRect(X, Y, 150, 70);
-        InventoryScreen.setFont(new Font(Font.SANS_SERIF, Font.ITALIC, 18));
-        InventoryScreen.setColor(Color.decode("#FFD700"));
+        //TODO fix fonts #FFD700);
+        //InventoryScreen.setFont(new Font(Font.class);
+        //InventoryScreen.setColor(Color
         InventoryScreen.drawString(item.getItemName(), X + 10,Y + 20 );
         InventoryScreen.drawString(InfoOpenInfo, X + 10, Y + 40);
         if(item instanceof Equippable){
             InventoryScreen.drawString(InfoEquippItem,X + 10,Y + 60);
-            //equippItem(item);
+            equippItem(item);
         }
         itemForInfo = item;
         createItemInfoScreen();

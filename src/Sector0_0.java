@@ -67,17 +67,16 @@ public class Sector0_0 extends OpenWorld {
         try {
             General actor = (General) c.newInstance();
             addObject(actor, x, y);
-            List<General> generalList = actor.getIntersectingObjects(General.class);
-            generalList.removeIf(general -> !(general instanceof Blocking));
-            if (generalList.size() > 0) {
-                removeObject(actor);
-            }
+            //List<General> generalList = actor.getIntersectingObjects(General.class);
+            //generalList.removeIf(general -> !(general instanceof Blocking));
+           // if (generalList.size() > 0) {
+           //     removeObject(actor);
+           // }
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
-
     }
 
     public void randomObjects(Class a, final int fromX, final int fromY, final int toX, final int toY, double density) {
@@ -134,7 +133,6 @@ public class Sector0_0 extends OpenWorld {
                 addObject(actor, x + RandomX, y);
             }
         }
-
     }
 
     public int max(List<Integer> list) {

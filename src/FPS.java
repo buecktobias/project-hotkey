@@ -1,8 +1,8 @@
 import greenfoot.Actor;
+import greenfoot.Color;
 import greenfoot.GreenfootImage;
 import greenfoot.World;
 
-import java.awt.*;
 
 public class FPS extends Actor implements Fixed {
     private int frame;
@@ -34,7 +34,8 @@ public class FPS extends Actor implements Fixed {
             fps = (int) Math.round(update / secondselapsed);
         }
         img.setColor(Color.BLACK);
-        img.setFont(new Font(Font.SANS_SERIF, Font.ITALIC, 30));
+        //TODO fix font
+        //img.setFont (new Font(Font.SANS_SERIF, Font, 30));
         img.drawString(String.valueOf(fps), 30, 40);
         setImage(img);
     }

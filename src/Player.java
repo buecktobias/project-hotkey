@@ -170,7 +170,6 @@ public class Player extends MovingActor implements Attackable,Blocking {
     }
     private void updateKeys(){
         Object obj = null;
-
         try {
             obj = parser.parse(new FileReader("src/Settings.json"));
         } catch (FileNotFoundException e) {
@@ -214,7 +213,7 @@ public class Player extends MovingActor implements Attackable,Blocking {
             if (getWorld().getObjects(SettingsWindow.class).size() == 0) {
                 this.getWorld().addObject(settingsWindow, 500, 500);
             } else {
-                settingsWindow.deleteButtons();
+               // settingsWindow.deleteButtons();
                 this.getWorld().removeObject(settingsWindow);
             }
             lastFrameSettingsWindowOpened = fps.getFrame();
