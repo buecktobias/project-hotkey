@@ -14,7 +14,7 @@ public abstract class GUI extends Actor {
             g.setColor(Color.BLUE);
             g.drawRect(X, Y, 55, 55);
             g.drawRect(X + 1,Y +1, 54, 54);
-            g.drawImage(item.getItemImage(), X, Y);
+            g.drawImage(item.getItemImage(), X + 10, Y + 10);
         }
     }
     public void drawBarAt(GreenfootImage g, double width, int maxValue, int scale, String lightC, String medC, String darkC, int X, int Y){
