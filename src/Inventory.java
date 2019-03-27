@@ -92,7 +92,9 @@ public class Inventory extends GUI implements Fixed {
         if(p.getActiveConsumable() == null || isArrayEmpty(beltItems)){
             p.setActiveConsumable(beltItems[0]);
         }
-
+        if(p.getActiveAmmunition() == null || isArrayEmpty(ammunition)){
+            p.setActiveAmmunition(ammunition[0]);
+        }
 
         Object obj = null;
         try {
@@ -398,8 +400,8 @@ public class Inventory extends GUI implements Fixed {
         else return false;
     }
     private void obtainItem(Item[] addIto, Item item, int alreadyPicked){
+        //TODO remove redundancy
         if(alreadyPicked < 30) {
-            // addItemToArray(addIto, item);
             if (item instanceof Countable) {
                 for (Item itemA : addIto) {
                     if (itemA != null) {
@@ -407,14 +409,22 @@ public class Inventory extends GUI implements Fixed {
                             Countable cItemA = (Countable) itemA;
                             // if there already is an Item of the same Type in player´s belt, their count will be added up
                             (cItemA).setItemCount(cItemA.getItemCount() + ((Countable) item).getItemCount());
-                            beltItems[item.getIndexOfItemInArray(item, beltItems)] = null;
+                            if(item instanceof  Ammunition){
+                                ammunition[item.getIndexOfItemInArray(item, ammunition)] = null;
+                            }else{
+                                beltItems[item.getIndexOfItemInArray(item, beltItems)] = null;
+                            }
                             item.setIEquipped(false);
                             return;
                         }
                     }
                 }
                 addItemToArray(itemArray, item);
-                beltItems[item.getIndexOfItemInArray(item, beltItems)] = null;
+                if(item instanceof  Ammunition){
+                    ammunition[item.getIndexOfItemInArray(item, ammunition)] = null;
+                }else{
+                    beltItems[item.getIndexOfItemInArray(item, beltItems)] = null;
+                }
                 item.setIEquipped(false);
             }
         }
