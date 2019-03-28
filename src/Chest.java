@@ -1,11 +1,13 @@
+import greenfoot.GreenfootImage;
+
 import java.util.Random;
 
 public class Chest extends GUI {
 
     Item[] contents;
-
+    private GreenfootImage defaultImage = new GreenfootImage(Files.getENVIRONMENT_PATH() + "chest.png");
     public Chest(Item[] contents) {
-        setImage("images/Environment/chest.png");
+        setImage(defaultImage);
         this.contents = contents;
     }
 

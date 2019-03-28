@@ -27,9 +27,9 @@ public class FireEnemy extends Hostile implements  Blocking,Attackable {
         this.life = life;
     }
 
-    private GreenfootImage defaultImage = new GreenfootImage("images/Characters/FireEnemy1.png");
-    private GreenfootImage move1 = new GreenfootImage("images/Characters/FireEnemy2.png");
-    private GreenfootImage move2 = new GreenfootImage("images/Characters/FireEnemy3.png");
+    private GreenfootImage defaultImage = new GreenfootImage(Files.getCHARACTERS_PATH() + "FireEnemy1.png");
+    private GreenfootImage move1 = new GreenfootImage(Files.getCHARACTERS_PATH() + "FireEnemy2.png");
+    private GreenfootImage move2 = new GreenfootImage(Files.getCHARACTERS_PATH() + "FireEnemy3.png");
 
     @Override
     void movingAnimation() {

@@ -18,7 +18,7 @@ public class FPS extends Window {
         frame = 0;
         fps = 0;
         startTime = System.currentTimeMillis();
-        bg = new GreenfootImage("images/Screens/Transparent.png");
+        bg = new GreenfootImage(Files.getSCREENS_PATH() + "Transparent.png");
         bg.scale(128,64);
     }
 

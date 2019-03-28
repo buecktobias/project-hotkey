@@ -3,7 +3,7 @@ import greenfoot.GreenfootImage;
 import greenfoot.GreenfootSound;
 
 public class Arrow extends Projectile{
-    private GreenfootImage defaultImage = new GreenfootImage("images/ItemImages/Arrow.png");
+    private GreenfootImage defaultImage = new GreenfootImage(Files.getITEM_IMAGES_PATH() + "Arrow.png");
     private GreenfootSound arrowSound = new GreenfootSound("sounds/arrow2.wav");
     @Override
     public GreenfootImage getDefaultImage() {

@@ -1,7 +1,7 @@
 import greenfoot.GreenfootImage;
 
 public class Cobweb extends Environment implements HasEffect,Explodes {
-    private GreenfootImage defaultImage = new GreenfootImage("images/Environment/cobweb.png");
+    private GreenfootImage defaultImage = new GreenfootImage(Files.getENVIRONMENT_PATH() +  "cobweb.png");
     private int health = 20;
     public Cobweb(){
         defaultImage.scale(32,32);

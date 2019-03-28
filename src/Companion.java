@@ -7,7 +7,7 @@ public class Companion extends Familiar {
         this.player = p;
         this.alreadyHealed = false;
         this.visualRange = 1000000000;
-        setImage("images/ItemImages/Shoe.png");
+        setImage(Files.getITEM_IMAGES_PATH() + "Shoe.png");
         this.test = 0;
     }
     public void act(){

@@ -11,7 +11,7 @@ public class Bomb extends Environment implements Blocking,ExplodingBehaviour {
     private boolean triggered = false;
     private int framesInWhichItExplodes = 100;
     private double sizeImage=32;
-    private GreenfootImage defaultImage = new GreenfootImage("images/Environment/bomb.png");
+    private GreenfootImage defaultImage = new GreenfootImage(Files.getENVIRONMENT_PATH() + "bomb.png");
     private GreenfootSound explosionSound = new GreenfootSound("sounds/explosion.wav");
     private GreenfootImage triggeredImage1;
     private GreenfootImage triggeredImage2;
@@ -25,8 +25,8 @@ public class Bomb extends Environment implements Blocking,ExplodingBehaviour {
         this.damage = damage;
     }
     public void resetImages(){
-        triggeredImage1 = new GreenfootImage("images/Environment/bomb_triggered1.png");
-        triggeredImage2 = new GreenfootImage("images/Environment/bomb_triggered2.png");
+        triggeredImage1 = new GreenfootImage(Files.getENVIRONMENT_PATH() + "bomb_triggered1.png");
+        triggeredImage2 = new GreenfootImage(Files.getENVIRONMENT_PATH() + "images/Environment/bomb_triggered2.png");
     }
     public double distanceBetween(Actor a1,Actor a2){
         return Math.abs(a1.getX() - a2.getX()) + Math.abs(a1.getY() - a2.getY());

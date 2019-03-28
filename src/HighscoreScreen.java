@@ -12,7 +12,7 @@ import java.util.Iterator;
 public class HighscoreScreen extends World {
     private JSONParser parser = new JSONParser();
     private JSONObject jsonObject;
-    private GreenfootImage defaultImage = new GreenfootImage("images/Screens/FPS_Window.png");
+    private GreenfootImage defaultImage = new GreenfootImage(Files.getSCREENS_PATH() + "FPS_Window.png");
     public HighscoreScreen(){
         super(1024, 736, 1);
         defaultImage.scale(1024,736);

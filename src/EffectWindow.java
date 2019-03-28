@@ -2,7 +2,7 @@ import greenfoot.GreenfootImage;
 import greenfoot.World;
 
 public class EffectWindow extends Window {
-    private GreenfootImage bg = new GreenfootImage("images/Screens/Transparent.png");
+    private GreenfootImage bg = new GreenfootImage(Files.getSCREENS_PATH() +"Transparent.png");
 
     @Override
     protected void addedToWorld(World world) {

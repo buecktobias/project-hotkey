@@ -100,11 +100,11 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     }
 
     private void setPlayerImagesDefault(){
-        defaultImage = new GreenfootImage("src/images/Characters/Player/player_standing.png");
-        imageWalking1 = new GreenfootImage("src/images/Characters/Player/player_walking1.png");
-        imageWalking2 = new GreenfootImage("src/images/Characters/Player/player_walking2.png");
-        imageWalking3 = new GreenfootImage("src/images/Characters/Player/player_walking3.png");
-        imageWalking4 = new GreenfootImage("src/images/Characters/Player/player_walking4.png");
+        defaultImage = new GreenfootImage(Files.getPlayerPath() + "player_standing.png");
+        imageWalking1 = new GreenfootImage(Files.getPlayerPath() +"player_walking1.png");
+        imageWalking2 = new GreenfootImage(Files.getPlayerPath() +"player_walking2.png");
+        imageWalking3 = new GreenfootImage(Files.getPlayerPath() +"player_walking3.png");
+        imageWalking4 = new GreenfootImage(Files.getPlayerPath() +"player_walking4.png");
     }
     public Player() {
         walkingSound.setVolume(60);

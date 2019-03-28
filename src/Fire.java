@@ -6,7 +6,7 @@ public class Fire extends Environment implements HasEffect {
     private int damage = 2;
     private int duration = 200;
     public void getImages(){
-        GreenfootImage img = new GreenfootImage("images/Environment/fire1.png");
+        GreenfootImage img = new GreenfootImage(Files.getENVIRONMENT_PATH() + "fire1.png");
         img.scale(32,32);
         setImage(img);
         GreenfootImage aniImg;
