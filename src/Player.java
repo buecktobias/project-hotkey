@@ -47,7 +47,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private final int waitTimeOpenSettingsWindow = 10;
     private final int minLife = 0;
     private final int waitTimeWhenEnduranceIsZero = 5;
-    private final int gameSpeed = 60;
+    private final int gameSpeed = 50;
     private long lastFrameSettingsWindowOpened = 0;
     private long lastFrameSkillWindowOpened = 0;
     private long lastTimeDamageSoundPlayed = 0;
@@ -124,7 +124,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         skillWindow = new SkillWindow(world);
         inventoryInstance = new Inventory(this, world);
         this.setImage(defaultImage);
-        getWorld().addObject(effectWindow,400,20);
+        getWorld().addObject(effectWindow,450,20);
          indexOfAC = java.util.Arrays.asList(beltItems).indexOf(activeConsumable);
     }
 
@@ -321,10 +321,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         if(weapon instanceof RangedWeapon) {
             MouseInfo mouseInfo = Greenfoot.getMouseInfo();
             if(mouseInfo != null) {
-                if(weapon instanceof Bow){
-                    ((Bow) weapon).shootFrom(this,mouseInfo.getX(),mouseInfo.getY(),new Arrow(10,this.rightMouseButtonClickedFramesLong,.1,this,0));
-                }
-                ((RangedWeapon) weapon).shootFrom(this,mouseInfo.getX(),mouseInfo.getY(),new Arrow(10,10,.1,this,0));
+                ((RangedWeapon) weapon).shootFrom(this,mouseInfo.getX(),mouseInfo.getY(),new Arrow(200,10,.1,this,0));
             }
         }else {
             MouseInfo mouseInfo = Greenfoot.getMouseInfo();

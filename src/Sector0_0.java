@@ -51,7 +51,7 @@ public class Sector0_0 extends OpenWorld {
         addObject(player, 0, 0);
         HUD hud = new HUD(player);
         addObject(hud, getWidth() / 2, getHeight() / 2);
-        Bow bow = new Bow(20, 20);
+        Bow bow = new Bow(200, 20);
         addObject(bow, 300, 50);
         Bomb bomb = new Bomb();
         //addObject(bomb, -420, -220);

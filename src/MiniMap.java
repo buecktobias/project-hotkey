@@ -4,7 +4,7 @@ import greenfoot.World;
 import java.util.List;
 
 public class MiniMap extends Window {
-    private int updateFrames = 10;
+    private int updateFrames = 60;
     private long lastFrameUpdatet = -99999;
 
     private int showedMapWidth = 2000;
