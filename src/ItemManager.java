@@ -4,8 +4,8 @@ public enum ItemManager {
 
     //Weapons
     Staff(        "Weapon",    0,"The Elder Wand",       4, new GreenfootImage(Files.getRpgIcons() +"W_Staff04.png")),
-    Dagger(       "Weapon",    1,"Zahnstocher",          5, new GreenfootImage(Files.getRpgIcons() + "W_Dagger006.png")),
-    Bow(          "Weapon",    2,"Dragonslayer GreatBow",4, new GreenfootImage(Files.getRpgIcons() + "W_Bow03.png")),
+    Bow(          "Weapon",    1,"Dragonslayer GreatBow",4, new GreenfootImage(Files.getRpgIcons() + "W_Bow03.png")),
+    Dagger(       "Weapon",    2,"Zahnstocher",          5, new GreenfootImage(Files.getRpgIcons() + "W_Dagger006.png")),
     HealthPotion( "Consumable",3,"HealthPotion",         7, new GreenfootImage(Files.getRpgIcons() + "P_Red01.png")),
     WoodenArrow(  "Consumable",4,"wooden Arrow",         6, new GreenfootImage(Files.getRpgIcons() + "W_Bow17.png"));
 

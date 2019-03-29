@@ -329,7 +329,6 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         }else {
             MouseInfo mouseInfo = Greenfoot.getMouseInfo();
             attackNPCAt(mouseInfo.getX(), mouseInfo.getY(),weapon);
-
         }
     }
 
@@ -400,7 +399,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
                     if(currentItem instanceof Countable){
                         for (Item item : itemsArray) {
                             if (item != null) {
-                                ((Countable) currentItem).compareIDWith(item, itemsArray);
+                                ((Countable) currentItem).compareIDWith(itemsArray);
                                 itemsPicked++;
                                 return;
                             }
