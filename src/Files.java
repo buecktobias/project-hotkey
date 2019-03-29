@@ -3,7 +3,8 @@ import java.io.File;
 public class Files {
     private static final String IMAGES_PATH = "images" + File.separator;
 
-    private static final String ARROWS_PATH = IMAGES_PATH + "Arrows";
+    private static final String RPG_ICONS = IMAGES_PATH + "496_RPG_icons(1)" + File.separator;
+    private static final String ARROWS_PATH = IMAGES_PATH + "Arrows" + File.separator;
     private static final String BUTTONS_PATH = IMAGES_PATH  + "Buttons"+ File.separator;
     private static final String CHARACTERS_PATH = IMAGES_PATH  + "Characters"+ File.separator;
     private static final String ENVIRONMENT_PATH = IMAGES_PATH  + "Environment"+ File.separator;
@@ -11,11 +12,20 @@ public class Files {
     private static final String ITEM_IMAGES_PATH = IMAGES_PATH  + "ItemImages"+ File.separator;
     private static final String LOGOS_PATH = IMAGES_PATH  + "Logos"+File.separator;
     private static final String SCREENS_PATH =  IMAGES_PATH + "Screens"+ File.separator ;
-
+    private static final String EFFECT_IMAGES_PATH = IMAGES_PATH + "Effects" + File.separator;
     private static final String PLAYER_PATH =  CHARACTERS_PATH + "Player"+ File.separator ;
+
+
+    public static String getEffectImagesPath() {
+        return EFFECT_IMAGES_PATH;
+    }
 
     public static String getPlayerPath() {
         return PLAYER_PATH;
+    }
+
+    public static String getRpgIcons() {
+        return RPG_ICONS;
     }
 
     public static String getIMAGES_PATH() {

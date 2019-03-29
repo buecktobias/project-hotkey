@@ -91,6 +91,9 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private GreenfootImage imageWalking2;
     private GreenfootImage imageWalking3;
     private GreenfootImage imageWalking4;
+
+    private GreenfootImage fireEffect = new GreenfootImage(Files.getEffectImagesPath() +"S_Buff08.png");
+    private GreenfootImage sprintEffect = new GreenfootImage(Files.getEffectImagesPath() +"S_Buff11.png");
     private GreenfootSound walkingSound = new GreenfootSound("sounds/walkingSound.wav");
     private GreenfootSound gameOverSound = new GreenfootSound("sounds/gameOver.wav");
     private GreenfootSound damageSound = new GreenfootSound("sounds/gotDamage.wav");
@@ -362,8 +365,11 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         testKeys();
         subtractFireDamageFromLife();
         if(fireDamage > lifeRegeneration){
-            effectWindow.addEffect(new Fire().getImage());
+            effectWindow.addEffect(fireEffect);
             drawFireImage();
+        }
+        if(isSprinting()){
+            effectWindow.addEffect(sprintEffect);
         }
         regenerateLife();
     }
@@ -464,6 +470,10 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
             gameOverSound.play();
             Greenfoot.setWorld(new DeathScreen());
         }
+    }
+
+    public boolean isSprinting(){
+        return currentSpeed == sprintSpeed;
     }
 
     public double getEndurance() {

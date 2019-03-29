@@ -3,11 +3,11 @@ import greenfoot.GreenfootImage;
 public enum ItemManager {
 
     //Weapons
-    Staff(        "Weapon",    0,"The Elder Wand",       4, new GreenfootImage("images/496_RPG_icons(1)/W_Staff04.png")),
-    Dagger(       "Weapon",    1,"Zahnstocher",          5, new GreenfootImage("images/496_RPG_icons(1)/W_Dagger006.png")),
-    Bow(          "Weapon",    2,"Dragonslayer GreatBow",4, new GreenfootImage("images/496_RPG_icons(1)/W_Bow03.png")),
-    HealthPotion( "Consumable",3,"HealthPotion",         7, new GreenfootImage("images/496_RPG_icons(1)/P_Red01.png")),
-    WoodenArrow(  "Consumable",4,"wooden Arrow",         6, new GreenfootImage("images/496_RPG_icons(1)/W_Bow17.png"));
+    Staff(        "Weapon",    0,"The Elder Wand",       4, new GreenfootImage(Files.getRpgIcons() +"W_Staff04.png")),
+    Dagger(       "Weapon",    1,"Zahnstocher",          5, new GreenfootImage(Files.getRpgIcons() + "W_Dagger006.png")),
+    Bow(          "Weapon",    2,"Dragonslayer GreatBow",4, new GreenfootImage(Files.getRpgIcons() + "W_Bow03.png")),
+    HealthPotion( "Consumable",3,"HealthPotion",         7, new GreenfootImage(Files.getRpgIcons() + "P_Red01.png")),
+    WoodenArrow(  "Consumable",4,"wooden Arrow",         6, new GreenfootImage(Files.getRpgIcons() + "W_Bow17.png"));
 
     private final int itemID;
     private final int itemSLOTID;
@@ -16,7 +16,7 @@ public enum ItemManager {
     private final GreenfootImage itemIMAGE;
 
     ItemManager(String itemType, int itemId, String itemName, int itemSlotId, GreenfootImage itemImage){
-        itemTYPE = itemType;    // current Types: "Weapon", "Weapon", "Armor", "Consumable" || if new Type is needed message Julian
+        itemTYPE = itemType;    // current Types: "Weapon", "Weapon", "Armor", "Consumable" || if new Type is needed message  lol
         itemID = itemId;
         itemNAME = itemName;
         itemSLOTID = itemSlotId;
