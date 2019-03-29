@@ -49,9 +49,9 @@ public class HUD extends GUI implements Fixed {
     }
     private void drawActiveAmmunition(){
         if(p.getActiveAmmunition() != null){
-            drawItemAt(Background, 113, 535, p.getActiveAmmunition());
+            drawItemAt(Background, 113, 548, p.getActiveAmmunition());
             Background.setFont(GUILargeFont);
-            drawItemCount(Background, ((Countable) p.getActiveAmmunition()), 153, 580);
+            drawItemCount(Background, ((Countable) p.getActiveAmmunition()), 153, 593);
         }
     }
     private void drawLevelFonts(){
