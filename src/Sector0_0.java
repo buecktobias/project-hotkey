@@ -13,7 +13,7 @@ import java.util.Random;
 
 public class Sector0_0 extends OpenWorld {
     private Random r = new Random();
-    private final GreenfootImage bg = new GreenfootImage("images/Screens/background_grass.png");
+    private final GreenfootImage bg = new GreenfootImage(Files.getSCREENS_PATH() + "background_grass.png");
     private final GreenfootSound bgSound = new GreenfootSound("sounds/backgroundMusic.wav");
     private JSONParser parser = new JSONParser();
     private JSONObject jsonObject;

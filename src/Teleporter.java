@@ -5,8 +5,8 @@ public class Teleporter extends Environment implements HasEffect {
     private int transparency = 255;
     private boolean appears = false;
     private int makeAppearsFalseIn = -99;
-    private GreenfootImage defaultImage = new GreenfootImage("images/Environment/Teleporter.png");
-    private GreenfootImage activatedImage = new GreenfootImage("images/Environment/Teleporter_activated.png");
+    private GreenfootImage defaultImage = new GreenfootImage(Files.getENVIRONMENT_PATH() + "Teleporter.png");
+    private GreenfootImage activatedImage = new GreenfootImage(Files.getENVIRONMENT_PATH() +"Teleporter_activated.png");
     public Teleporter() {
         setImage(defaultImage);
     }
@@ -55,18 +55,20 @@ public class Teleporter extends Environment implements HasEffect {
 
     @Override
     public void effects(MovingActor movingActor) {
-        if(!(movingActor instanceof Player)){
-            return;
-        }
-        setImage(activatedImage);
-        if(appears){
-            makeAppear(movingActor);
+        if(this.teleporter != null) {
+            if (!(movingActor instanceof Player)) {
+                return;
+            }
+            setImage(activatedImage);
+            if (appears) {
+                makeAppear(movingActor);
 
-        }else {
-            makeDisappear(movingActor);
-        }
-        if(this.transparency < 200){
-            movingActor.setSpeed(0);
+            } else {
+                makeDisappear(movingActor);
+            }
+            if (this.transparency < 200) {
+                movingActor.setSpeed(0);
+            }
         }
     }
 }
