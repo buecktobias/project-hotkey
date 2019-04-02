@@ -1,8 +1,6 @@
 import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Random;
 
 public class Staff extends RangedWeapon {
@@ -14,6 +12,9 @@ public class Staff extends RangedWeapon {
     private String itemName = itemManager.getItemNAME();
     private GreenfootImage itemImage = itemManager.getItemIMAGE();
     private boolean IEquipped = false;
+    private final int AMOUNT_OF_PROJECTILES = 12;
+    private final int SCATTER = 64;
+    private final int SCATTER_RANGE = 4;
 
     public Staff() {
         setImage(itemImage);
@@ -26,19 +27,14 @@ public class Staff extends RangedWeapon {
 
     public void shootFrom(Actor a, int toX, int toY,Projectile p) {
         Random r = new Random();
-        List<Projectile> projectiles = new LinkedList<>();
-        for (int i = 0; i < 12; i++) {
-            int scatter = r.nextInt(65)-32;
-            int rangeScatter = r.nextInt(5)-2;
+        for (int i = 0; i < AMOUNT_OF_PROJECTILES; i++) {
+            int scatter = r.nextInt(SCATTER + 1) - SCATTER / 2;
+            int rangeScatter = r.nextInt(SCATTER_RANGE + 1) - SCATTER_RANGE / 2;
             Projectile projectile = new MagicMatter(getDamage(), getAttackRange()+rangeScatter, .2,a, 30);
-            projectiles.add(projectile);
             a.getWorld().addObject(projectile, a.getX()+scatter, a.getY()+scatter);
             projectile.shootFromTo(a.getX()+scatter,a.getY()+scatter,toX,toY);
         }
-
-
     }
-
     //Item Getters and Setters
     public int getItemSlotId() {
         return itemSlotId;
