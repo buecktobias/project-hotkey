@@ -8,7 +8,6 @@ import org.json.simple.parser.ParseException;
 import java.awt.*;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -20,7 +19,7 @@ public class SettingsWindow extends Window {
     private JSONParser parser = new JSONParser();
     private JSONObject keys;
     private LinkedList<Button> buttonList = new LinkedList<>();
-    private GreenfootImage bg = new GreenfootImage("images/Screens/Settings_test.png");
+    private GreenfootImage bg = new GreenfootImage(Files.getSCREENS_PATH() + "Settings_test.png");
     private String gameMode;
     private List<String> possibleGameModes;
     @Override
@@ -60,7 +59,7 @@ public class SettingsWindow extends Window {
         img.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 20));
         Button button;
         img.drawString(jsonObject.keySet().toArray()[1].toString(),50, i * 40 + 50);
-        GreenfootImage buttonImgGameMode = new GreenfootImage("images/Buttons/test.png");
+        GreenfootImage buttonImgGameMode = new GreenfootImage(Files.getBUTTONS_PATH() + "test.png");
         buttonImgGameMode.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 30));
         buttonImgGameMode.scale(500,36);
         buttonImgGameMode.setTransparency(80);
@@ -74,7 +73,7 @@ public class SettingsWindow extends Window {
                 }
                 jsonObject.put("gameMode",newGameMode);
                 try {
-                    Files.write(Paths.get("src/Settings.json"),jsonObject.toJSONString().getBytes());
+                    java.nio.file.Files.write(Paths.get("src/Settings.json"),jsonObject.toJSONString().getBytes());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -86,7 +85,7 @@ public class SettingsWindow extends Window {
         i++;
         for (Object key : keys.keySet()) {
             img.drawString(key.toString(), 50, i * 40 + 50);
-            GreenfootImage buttonImg = new GreenfootImage("images/Buttons/test.png");
+            GreenfootImage buttonImg = new GreenfootImage(Files.getBUTTONS_PATH() + "test.png");
             buttonImg.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 30));
             buttonImg.scale(500,36);
             buttonImg.setTransparency(80);
@@ -102,7 +101,7 @@ public class SettingsWindow extends Window {
                     keys.put(key,newKey);
                     jsonObject.put("keys",keys);
                     try {
-                        Files.write(Paths.get("src/Settings.json"),jsonObject.toJSONString().getBytes());
+                        java.nio.file.Files.write(Paths.get("src/Settings.json"),jsonObject.toJSONString().getBytes());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
