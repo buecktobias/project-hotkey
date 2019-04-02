@@ -57,6 +57,7 @@ public class Teleporter extends Environment implements HasEffect {
     public void effects(MovingActor movingActor) {
         if(this.teleporter != null) {
             if (!(movingActor instanceof Player)) {
+                getWorld().removeObject(movingActor);
                 return;
             }
             setImage(activatedImage);

@@ -1,10 +1,11 @@
 import greenfoot.GreenfootImage;
 import greenfoot.World;
 
+import java.awt.*;
 import java.util.List;
 
 public class MiniMap extends Window {
-    private int updateFrames = 60;
+    private int updateFrames = 5;
     private long lastFrameUpdatet = -99999;
 
     private int showedMapWidth = 2000;
@@ -30,10 +31,13 @@ public class MiniMap extends Window {
         scaleImages();
     }
     private void scaleImages(){
+        // TODO grass background
         backgroundImage.scale(mapWidth + padding * 2,mapHeight + padding * 2);
         transparent.scale(mapWidth + padding * 2,mapHeight + padding * 2);
         setImage(backgroundImage);
         defaultImage.scale(mapWidth, mapHeight);
+        defaultImage.setColor(Color.decode("#072105"));
+        defaultImage.fillRect(0,0,defaultImage.getWidth(),defaultImage.getHeight());
         scaleX = (showedMapWidth / mapWidth);
         scaleY = (showedMapHeight / mapHeight);
     }
