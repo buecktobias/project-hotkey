@@ -2,11 +2,7 @@ import greenfoot.Actor;
 import greenfoot.GreenfootImage;
 import greenfoot.GreenfootSound;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -15,7 +11,6 @@ public class Sector0_0 extends OpenWorld {
     private Random r = new Random();
     private final GreenfootImage bg = new GreenfootImage(Files.getSCREENS_PATH() + "background_grass.png");
     private final GreenfootSound bgSound = new GreenfootSound("sounds/backgroundMusic.wav");
-    private JSONParser parser = new JSONParser();
     private JSONObject jsonObject;
     private String stringGameMode;
     private GameMode gameMode;
@@ -98,7 +93,6 @@ public class Sector0_0 extends OpenWorld {
         addObject(dagger, 250, 50);
 */
         randomObjects(Cobweb.class, 200, -600, 800, 400, 10);
-        randomObjects(Sand.class, 600, 700, 1000, 1000, 1);
         randomObjects(Grass.class, -500, -300, 400, 800, 2);
         randomObjects(Tree.class, 20, 100, 800, 600, 2);
         randomObjects(Grass.class, 700, 600, 1000, 900, 6);
@@ -112,20 +106,12 @@ public class Sector0_0 extends OpenWorld {
     }
 
     private void getSettings() {
-        try {
-            Object obj = parser.parse(new FileReader("src/Settings.json"));
-            jsonObject = (JSONObject) obj;
-            stringGameMode = jsonObject.get("gameMode").toString();
-            // System.out.println(stringGameMode);
+            stringGameMode = Settings.getInstance().getGameMode();
             for (GameMode value : GameMode.values()) {
                 if (value.name.equals(stringGameMode)) {
                     gameMode = value;
                 }
             }
-
-        } catch (IOException | ParseException e) {
-            e.printStackTrace();
-        }
     }
 
     private void boundingRocks(final int smallX, final int smallY, final int maxX, final int maxY) {
@@ -144,6 +130,7 @@ public class Sector0_0 extends OpenWorld {
     }
 
     public void randomSpawn(Class c) {
+        // TODO entitys should not spawn outside the borders.
         int x = r.nextInt(Math.abs(BorderX2 - BorderX1)) + BorderX1;
         int y = r.nextInt(Math.abs(BorderY2 - BorderY1)) + BorderY1;
         if (x > BorderX2 || x < BorderX1 || y > BorderY2 || y < BorderY1) {
