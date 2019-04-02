@@ -6,20 +6,12 @@ public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSe
     private int damage = 100;
     private int speed = 1;
     private double life = 100;
-    private int hitboxRadius = getWidth();
-
     private double fireDamage = 0;
-    private double fireDamageReduction = 0.99;
-    private GreenfootImage defaultImage = new GreenfootImage("images/Characters/Enemy.png");
-
-    public double getFireDamageReduction() {
-        return fireDamageReduction;
-    }
-
-    public void setFireDamageReduction(double fireDamageReduction) {
-        this.fireDamageReduction = fireDamageReduction;
-    }
-
+    private GreenfootImage defaultImage = new GreenfootImage(Files.getCHARACTERS_PATH() + "WalkingBomb.png");
+    private final int RANDOM_MOVE_RANGE = 500;
+    private final double DRAW_FIRE_IMAGE = 0.1;  // to which amount of fire Damage a fire Image will be drawn
+    private final int IMAGE_WIDTH = 64;
+    private final int IMAGE_HEIGHT = 64;
     @Override
     public double getFireDamage() {
         return fireDamage;
@@ -46,7 +38,7 @@ public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSe
     }
 
     public WalkingBomb(){
-        defaultImage.scale(64,64);
+        defaultImage.scale(IMAGE_WIDTH,IMAGE_HEIGHT);
         setImage(defaultImage);
     }
     @Override
@@ -56,6 +48,9 @@ public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSe
 
     @Override
     public void setLife(double life) {
+        if(life < 0){
+            explode();
+        }
         this.life = life;
     }
 
@@ -90,16 +85,13 @@ public class WalkingBomb extends Hostile implements Attackable, Blocking, FireSe
     public void act() {
         subtractFireDamageFromLife();
         getEffects();
-        if(fireDamage > 0.1){
+        if(fireDamage > DRAW_FIRE_IMAGE){
             drawFireImage();
         }
         if(moveToPlayer(this.visualRange)){
             attackPlayer(this.attackRange, this.damage);
         }else{
-            randomMove(500);
-        }
-        if(life < 0){
-            explode();
+            randomMove(RANDOM_MOVE_RANGE);
         }
     }
 
