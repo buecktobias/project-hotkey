@@ -130,12 +130,12 @@ public class Sector0_0 extends OpenWorld {
     }
 
     public void randomSpawn(Class c) {
-        // TODO entitys should not spawn outside the borders.
-        int x = r.nextInt(Math.abs(BorderX2 - BorderX1)) + BorderX1;
-        int y = r.nextInt(Math.abs(BorderY2 - BorderY1)) + BorderY1;
-        if (x > BorderX2 || x < BorderX1 || y > BorderY2 || y < BorderY1) {
-            return;
-        }
+        int borderx2 = BorderX2 + super.getTotalXMovement();
+        int borderx1  = BorderX1 + super.getTotalXMovement();
+        int bordery1 = BorderY1 + super.getTotalYMovement();
+        int bordery2 = BorderY2 + super.getTotalYMovement();
+        int x = r.nextInt(Math.abs(borderx2 - borderx1)) + borderx1;
+        int y = r.nextInt(Math.abs(bordery2 - bordery1)) + bordery1;
         try {
             Entity actor = (Entity) c.newInstance();
             addObject(actor, x, y);

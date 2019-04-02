@@ -39,6 +39,7 @@ public abstract class OpenWorld extends World {
     private int totalXMovement = 0;
     private int totalYMovement = 0;
 
+
     //This image is used as the background image of the scrolling world.
     //If you want to use another image just chang the path.
     private GreenfootImage textur;
