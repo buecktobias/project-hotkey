@@ -24,8 +24,8 @@ public class WeaponAnimation extends Entity implements Fixed {
     }
 
     public void act() {
-
-        GreenfootImage newImg = new GreenfootImage(this.image.getWidth()+128, this.image.getHeight()+128);
+        int idk = 128; // TODO
+        GreenfootImage newImg = new GreenfootImage(this.image.getWidth()+idk, this.image.getHeight()+idk);
         newImg.drawImage(this.image, 32, 32);
         newImg.rotate(startAt + rotated);
         rotated = rotated + speed;

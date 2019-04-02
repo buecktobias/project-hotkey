@@ -1,9 +1,9 @@
 import greenfoot.GreenfootImage;
 
 public class Water extends Environment implements HasEffect {
-    private int waterDamage = 1;
+    private final int WATER_DAMAGE = 1;
     public Water(){
-        GreenfootImage img = new GreenfootImage("images/Environment/Water.png");
+        GreenfootImage img = new GreenfootImage(Files.getENVIRONMENT_PATH() + "Water.png");
         setImage(img);
     }
 
@@ -21,7 +21,7 @@ public class Water extends Environment implements HasEffect {
             }
         }else{
             if(movingActor instanceof Attackable) {
-                ((Attackable) movingActor).setLife(((Attackable) movingActor).getLife() - waterDamage);
+                ((Attackable) movingActor).setLife(((Attackable) movingActor).getLife() - WATER_DAMAGE);
             }
         }
     }
