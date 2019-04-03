@@ -7,6 +7,9 @@ public class Pig extends Friendly implements Blocking,Attackable, FireSensitive 
     private double fireDamage = 0;
     private double fireDamageReduction = 0.99;
     private int framesShowDamageImage;
+    private final int IMAGE_WIDTH = 64;
+    private final int IMAGE_HEIGHT = 32;
+    private final int RANDOM_MOVE_RANGE = 200;
 
     public double getFireDamageReduction() {
         return fireDamageReduction;
@@ -55,8 +58,8 @@ public class Pig extends Friendly implements Blocking,Attackable, FireSensitive 
     private void resetPigImages(){
         defaultImage = new GreenfootImage(Files.getCHARACTERS_PATH() + "lilpig.png");
         damageImage = new GreenfootImage(Files.getCHARACTERS_PATH() + "lilpig_damage.png");
-        defaultImage.scale(64,32);
-        damageImage.scale(64,32);
+        defaultImage.scale(IMAGE_WIDTH,IMAGE_HEIGHT);
+        damageImage.scale(IMAGE_WIDTH,IMAGE_HEIGHT);
     }
 
     @Override
@@ -72,7 +75,7 @@ public class Pig extends Friendly implements Blocking,Attackable, FireSensitive 
         if(fireDamage > 0.1){
             drawFireImage();
         }
-        randomMove(200);
+        randomMove(RANDOM_MOVE_RANGE);
     }
 
     @Override

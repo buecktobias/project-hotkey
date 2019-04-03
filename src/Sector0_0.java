@@ -159,10 +159,7 @@ public class Sector0_0 extends OpenWorld {
             Actor justToGetTheImage = (Actor) a.newInstance();
             width = justToGetTheImage.getImage().getWidth();
             height = justToGetTheImage.getImage().getHeight();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-            return;
-        } catch (IllegalAccessException e) {
+        } catch (InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
             return;
         }
@@ -191,10 +188,7 @@ public class Sector0_0 extends OpenWorld {
                 list.add(RandomX);
                 try {
                     actor = (Actor) a.newInstance();
-                } catch (InstantiationException e) {
-                    e.printStackTrace();
-                    return;
-                } catch (IllegalAccessException e) {
+                } catch (InstantiationException | IllegalAccessException e) {
                     e.printStackTrace();
                     return;
                 }
@@ -240,24 +234,7 @@ public class Sector0_0 extends OpenWorld {
                     randomSpawn(Archer.class);
                 }
             }
-        } else {
-            if (currentFrame != 0) {
-                if (currentFrame % 250 == 0) {
-                    // randomSpawn(Pig.class);
-                }
-                if (currentFrame % 150 == 0) {
-                    // randomSpawn(Bomb.class);
-                }
-                if (currentFrame % 450 == 0) {
-                    //randomSpawn(WalkingBomb.class);
-                }
-                if (currentFrame % 100 == 0) {
-                    //randomSpawn(Spider.class);
-                }
-                if (currentFrame % 350 == 0) {
-                    //randomSpawn(FireEnemy.class);
-                }
-            }
+
         }
     }
 }

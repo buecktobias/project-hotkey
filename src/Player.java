@@ -2,10 +2,7 @@ import greenfoot.*;
 import helper.Direction;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 
@@ -216,16 +213,8 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     }
 
     private void updateKeys() {
-        Object obj = null;
 
-        try {
-            obj = parser.parse(new FileReader("src/Settings.json"));
-        } catch (ParseException | IOException e) {
-            e.printStackTrace();
-        }
-        JSONObject jsonObject = (JSONObject) obj;
-        assert jsonObject != null;
-        JSONObject keys = (JSONObject) jsonObject.get("keys");
+        JSONObject keys = Settings.getInstance().getKeys();
         keyMoveLeft = keys.get("moveLeft").toString();
         keyMoveDown = keys.get("moveDown").toString();
         keyMoveRight = keys.get("moveRight").toString();
