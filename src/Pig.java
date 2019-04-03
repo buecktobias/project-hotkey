@@ -38,6 +38,9 @@ public class Pig extends Friendly implements Blocking,Attackable, FireSensitive 
         if(life < this.life && framesShowDamageImage < -20) {
             framesShowDamageImage = 3;
         }
+        if(life < 0){
+            getWorld().removeObject(this);
+        }
         this.life = life;
     }
 
@@ -50,8 +53,8 @@ public class Pig extends Friendly implements Blocking,Attackable, FireSensitive 
         setImage(defaultImage);
     }
     private void resetPigImages(){
-        defaultImage = new GreenfootImage("images/Characters/lilpig.png");
-        damageImage = new GreenfootImage("images/Characters/lilpig_damage.png");
+        defaultImage = new GreenfootImage(Files.getCHARACTERS_PATH() + "lilpig.png");
+        damageImage = new GreenfootImage(Files.getCHARACTERS_PATH() + "lilpig_damage.png");
         defaultImage.scale(64,32);
         damageImage.scale(64,32);
     }
@@ -70,9 +73,6 @@ public class Pig extends Friendly implements Blocking,Attackable, FireSensitive 
             drawFireImage();
         }
         randomMove(200);
-        if(life < 0){
-            getWorld().removeObject(this);
-        }
     }
 
     @Override

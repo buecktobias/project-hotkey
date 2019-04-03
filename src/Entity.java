@@ -6,7 +6,6 @@ import java.util.List;
 
 public abstract class Entity extends Actor {
 
-    private int timer = 0;
     private int animationImage=0;
     private long lastFrameAnimated =0;
     private GreenfootImage defaultImage;
@@ -28,10 +27,6 @@ public abstract class Entity extends Actor {
     }
     public <A extends Actor> List<A> getIntersectingObjects(Class<A> c){
         return super.getIntersectingObjects(c);
-    }
-    @Override
-    public void act() {
-        timer++;
     }
     /*
     public void setLocation(int x, int y) {
@@ -104,15 +99,6 @@ public abstract class Entity extends Actor {
         super.turn(amount);
     }
 
-
-    @Override
-    public void setRotation(int rotation) {
-        if (rotation % 90 != 0) {
-            return;
-        }
-
-        super.setRotation(rotation);
-    }
 
     /**
      * Turns toward the given direction.
@@ -207,7 +193,4 @@ public abstract class Entity extends Actor {
         return this.getClass().getCanonicalName() + "; at=(" + getX() + ", " + getY() + ")";
     }
 
-    public int getTimer() {
-        return timer;
-    }
 }

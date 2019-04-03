@@ -4,19 +4,22 @@ import greenfoot.GreenfootImage;
 
 public abstract class Button extends Actor implements Fixed {
     private GreenfootImage unClicked;
-    private GreenfootImage Clicked;
+    private GreenfootImage clicked;
 
-    Button(GreenfootImage unClicked, GreenfootImage Clicked) {
+    Button(GreenfootImage unClicked){
         this.unClicked = unClicked;
-        this.Clicked = Clicked;
+        this.clicked = unClicked;
+    }
+    Button(GreenfootImage unClicked, GreenfootImage clicked) {
+        this.unClicked = unClicked;
+        this.clicked = clicked;
         setImage(unClicked);
     }
 
     @Override
     public void act() {
-       // System.out.println(Greenfoot.getMouseInfo());
         if (Greenfoot.mousePressed(this)) {
-            setImage(Clicked);
+            setImage(clicked);
         } else if (Greenfoot.mouseClicked(this)) {
             setImage(unClicked);
             clicked();
@@ -27,14 +30,18 @@ public abstract class Button extends Actor implements Fixed {
                 int width = this.getImage().getWidth();
                 int height = this.getImage().getHeight();
                 if (mouseX > getX() - width / 2 && mouseX < getX() + width / 2 && mouseY < getY() + height / 2 && mouseY > getY() - height / 2) {
-                    GreenfootImage img = new GreenfootImage(unClicked);
-                    img.scale((int) Math.round(img.getWidth()*1.2), (int) Math.round(img.getHeight()*1.2));
-                    setImage(img);
+                    hover();
                 } else {
                     setImage(unClicked);
                 }
             }
         }
+    }
+    private void hover(){
+        GreenfootImage img = new GreenfootImage(unClicked);
+        double scale = 1.2;
+        img.scale((int) Math.round(img.getWidth() * scale), (int) Math.round(img.getHeight() * scale));
+        setImage(img);
     }
 
     abstract void clicked();

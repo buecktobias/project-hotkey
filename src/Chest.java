@@ -5,6 +5,7 @@ import java.util.Random;
 public class Chest extends GUI {
 
     Item[] contents;
+    private final int SCATTER = 128;
     private GreenfootImage defaultImage = new GreenfootImage(Files.getENVIRONMENT_PATH() + "chest.png");
     public Chest(Item[] contents) {
         setImage(defaultImage);
@@ -15,8 +16,8 @@ public class Chest extends GUI {
     public void open() {
         Random rand = new Random();
         for (Item item: contents) {
-            int scatterX = rand.nextInt(129)-64;
-            int scatterY = rand.nextInt(129)-64;
+            int scatterX = rand.nextInt(SCATTER + 1) - SCATTER / 2;
+            int scatterY = rand.nextInt(SCATTER + 1) - SCATTER / 2;
             getWorld().addObject(item, this.getX()+scatterX, this.getY()+scatterY);
         }
         getWorld().removeObject(this);

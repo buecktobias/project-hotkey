@@ -16,9 +16,9 @@ public class MiniMap extends Window {
     private final int padding = 5;
     private int scaleX;
     private int scaleY;
-    private GreenfootImage backgroundImage = new GreenfootImage("images/Screens/FPS_Window.png");
-    private GreenfootImage defaultImage = new GreenfootImage("images/Screens/background_grass.png");
-    private GreenfootImage transparent = new GreenfootImage("images/Screens/Transparent.png");
+    private GreenfootImage backgroundImage = new GreenfootImage(Files.getSCREENS_PATH() + "FPS_Window.png");
+    private GreenfootImage defaultImage = new GreenfootImage(Files.getSCREENS_PATH() + "background_grass.png");
+    private GreenfootImage transparent = new GreenfootImage(Files.getSCREENS_PATH()+"Transparent.png");
     private MiniMap(int mapWidth, int mapHeight,int showedMapWidth,int showedMapHeight){
         this.mapWidth = mapWidth;
         this.mapHeight = mapHeight;

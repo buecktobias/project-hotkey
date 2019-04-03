@@ -9,7 +9,7 @@ public class ItemInfoScreen extends Inventory implements Fixed {
     // TODO fix Screen not appearing/ disappearing correctly
     // TODO get current Item
     private Item item = super.getItemForInfo();
-    private GreenfootImage ItemInfoScreen = new GreenfootImage("images/Hud_Menu_Images/ItemInfoScreenV1.png");
+    private GreenfootImage ItemInfoScreen = new GreenfootImage(Files.getHUD_MENU_IMAGES_PATH() + "ItemInfoScreenV1.png");
 
     protected void addedToWorld(World world) {
     }
@@ -20,7 +20,7 @@ public class ItemInfoScreen extends Inventory implements Fixed {
 
     public void act() {
         ItemInfoScreen.clear();
-        ItemInfoScreen = new GreenfootImage("images/Hud_Menu_Images/ItemInfoScreenV1.png");
+        ItemInfoScreen = new GreenfootImage(Files.getHUD_MENU_IMAGES_PATH() + "ItemInfoScreenV1.png");
         setImage(ItemInfoScreen);
         drawItemInfo(item);
     }

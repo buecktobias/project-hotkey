@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.Iterator;
 
 public class HighscoreScreen extends World {
+    // TODO
     private JSONParser parser = new JSONParser();
     private JSONObject jsonObject;
     private GreenfootImage defaultImage = new GreenfootImage(Files.getSCREENS_PATH() + "FPS_Window.png");

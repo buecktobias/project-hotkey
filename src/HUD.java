@@ -6,7 +6,7 @@ public class HUD extends GUI implements Fixed {
     //TODO align ammunition image
     private Player p;
     private double scale;
-    private GreenfootImage Background = new GreenfootImage("images/Hud_Menu_Images/Hud_V4.png");
+    private GreenfootImage Background = new GreenfootImage(Files.getHUD_MENU_IMAGES_PATH() + "Hud_V4.png");
 
     public HUD(Player p){
         setImage(Background);
@@ -16,7 +16,7 @@ public class HUD extends GUI implements Fixed {
     public void act(){
         Background.clear();
         expScaling(p.getExp(),12.3);
-        Background = new GreenfootImage("images/Hud_Menu_Images/Hud_V4.png");
+        Background = new GreenfootImage(Files.getHUD_MENU_IMAGES_PATH() + "Hud_V4.png");
         setImage(Background);
         drawBarAt(Background, p.getLife(), p.getMaxLife(), 308, "#7f0000", "#990000", "#cc0000", 12, 12);
         drawBarAt(Background,p.getEndurance(), p.getMaxEndurance(), 246, "#007f00", "#009900", "#00cc00",12,42 );

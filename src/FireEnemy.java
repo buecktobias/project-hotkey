@@ -14,7 +14,6 @@ public class FireEnemy extends Hostile implements  Blocking,Attackable {
     private double life = 20;
     private int visualRange = 200;
     private int attackSpeed = 30;
-    private FPS timer = FPS.getInstance();
     private static Random random= new Random();
 
 
@@ -24,6 +23,9 @@ public class FireEnemy extends Hostile implements  Blocking,Attackable {
     }
 
     public void setLife(double life) {
+        if(life < 0){
+            getWorld().removeObject(this);
+        }
         this.life = life;
     }
 
@@ -43,8 +45,8 @@ public class FireEnemy extends Hostile implements  Blocking,Attackable {
     }
 
     public boolean spawnFireNearby(){
-        if(timer.getFrame()- lastSpawnFire > fireSpawnSpeed){
-            lastSpawnFire = timer.getFrame();
+        if(FPS.getFrame()- lastSpawnFire > fireSpawnSpeed){
+            lastSpawnFire = FPS.getFrame();
             int x = getX();
             int y = getY();
             World world = getWorld();
@@ -72,9 +74,6 @@ public class FireEnemy extends Hostile implements  Blocking,Attackable {
                 setImage(defaultImage);
                 randomMove(200);
             }
-        }
-        if(life <0){
-            getWorld().removeObject(this);
         }
     }
 

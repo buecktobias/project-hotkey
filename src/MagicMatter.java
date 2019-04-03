@@ -3,7 +3,7 @@ import greenfoot.GreenfootImage;
 import greenfoot.GreenfootSound;
 
 public class MagicMatter extends Projectile {
-    private GreenfootImage defaultImage =  new GreenfootImage("images/ItemImages/magicMatter.png");
+    private GreenfootImage defaultImage =  new GreenfootImage(Files.getITEM_IMAGES_PATH() + "magicMatter.png");
     private GreenfootSound magicSound = new GreenfootSound("sounds/magicMatter2.wav");
     @Override
     public GreenfootImage getDefaultImage() {

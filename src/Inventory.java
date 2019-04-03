@@ -47,11 +47,11 @@ public class Inventory extends GUI implements Fixed {
     private Item[] ammunition;
     private Item[] equippedItems = new Item[7];
     private LinkedList<Button>  buttonList;
-    private GreenfootImage InventoryScreen      = new GreenfootImage("images/Hud_Menu_Images/MyInventoryV5.png");
-    private GreenfootImage leftArrowClicked     = new GreenfootImage("images/Arrows/Arrow_left_aktive.png");
-    private GreenfootImage leftArrowNotClicked  = new GreenfootImage("images/Arrows/Arrow_left.png");
-    private GreenfootImage rightArrowClicked    = new GreenfootImage("images/Arrows/Arrow_right_aktive.png");
-    private GreenfootImage rightArrowNotClicked = new GreenfootImage("images/Arrows/Arrow_right.png");
+    private GreenfootImage InventoryScreen      = new GreenfootImage(Files.getHUD_MENU_IMAGES_PATH() + "MyInventoryV5.png");
+    private GreenfootImage leftArrowClicked     = new GreenfootImage(Files.getARROWS_PATH() + "Arrow_left_aktive.png");
+    private GreenfootImage leftArrowNotClicked  = new GreenfootImage(Files.getARROWS_PATH() + "Arrow_left.png");
+    private GreenfootImage rightArrowClicked    = new GreenfootImage(Files.getARROWS_PATH() +"Arrow_right_aktive.png");
+    private GreenfootImage rightArrowNotClicked = new GreenfootImage(Files.getARROWS_PATH() + "Arrow_right.png");
 
     protected void addedToWorld(World world) {
         createButton(leftArrowNotClicked, leftArrowClicked, "left",540, 189);

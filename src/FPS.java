@@ -4,7 +4,7 @@ import greenfoot.World;
 import java.awt.*;
 
 public class FPS extends Window {
-    private static long frame;
+    private static long frame = 0;
     private int fps;
     private long startTime;
     private GreenfootImage bg ;
@@ -15,7 +15,6 @@ public class FPS extends Window {
     }
     @Override
     protected void addedToWorld(World world) {
-        frame = 0;
         fps = 0;
         startTime = System.currentTimeMillis();
         bg = new GreenfootImage(Files.getSCREENS_PATH() + "Transparent.png");

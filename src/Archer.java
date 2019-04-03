@@ -8,12 +8,13 @@ public class Archer extends Hostile implements Attackable,Blocking,FireSensitive
     private double life = 1;
     private int defaultSpeed = 1;
     private int speed = defaultSpeed;
-    private int visualRange = 450;
+    private int visualRange = 600;
     private int attackSpeed = 100;
     private int damage = 100;
     private long lastFrameAttacked = 0;
     private int attackRange = 350;
     private double fireDamage = 0;
+    private final int RANDOM_MOVE_RANGE = 400;
 
 
     @Override
@@ -76,6 +77,10 @@ public class Archer extends Hostile implements Attackable,Blocking,FireSensitive
     }
 
     public void setLife(double life) {
+
+        if (life < 0) {
+            getWorld().removeObject(this);
+        }
         this.life = life;
     }
 
@@ -110,11 +115,8 @@ public class Archer extends Hostile implements Attackable,Blocking,FireSensitive
         }else {
             if (moveToPlayer(this.visualRange)) {
             } else {
-                randomMove(400);
+                randomMove(RANDOM_MOVE_RANGE);
             }
-        }
-        if (life < 0) {
-            getWorld().removeObject(this);
         }
     }
 
