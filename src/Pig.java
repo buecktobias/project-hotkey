@@ -64,18 +64,22 @@ public class Pig extends Friendly implements Blocking,Attackable, FireSensitive 
 
     @Override
     public void act() {
-        resetPigImages();
-        setImage(defaultImage);
-        subtractFireDamageFromLife();
-        getEffects();
-        if(framesShowDamageImage > 0){
-            setImage(damageImage);
+        if(getWorld() != null) {
+            resetPigImages();
+            setImage(defaultImage);
+            subtractFireDamageFromLife();
+            if(getWorld() != null) {
+                getEffects();
+            }
+            if (framesShowDamageImage > 0) {
+                setImage(damageImage);
+            }
+            framesShowDamageImage--;
+            if (fireDamage > 0.1) {
+                drawFireImage();
+            }
+            randomMove(RANDOM_MOVE_RANGE);
         }
-        framesShowDamageImage--;
-        if(fireDamage > 0.1){
-            drawFireImage();
-        }
-        randomMove(RANDOM_MOVE_RANGE);
     }
 
     @Override

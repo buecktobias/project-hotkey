@@ -1,6 +1,5 @@
 import greenfoot.*;
 import helper.Direction;
-import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import java.util.Iterator;
@@ -213,20 +212,19 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     }
 
     private void updateKeys() {
-
-        JSONObject keys = Settings.getInstance().getKeys();
-        keyMoveLeft = keys.get("moveLeft").toString();
-        keyMoveDown = keys.get("moveDown").toString();
-        keyMoveRight = keys.get("moveRight").toString();
-        keyMoveUp = keys.get("moveUp").toString();
-        keySprint = keys.get("sprint").toString();
-        keyAttack = keys.get("attack").toString();
-        keyOpenInventar = keys.get("openInventar").toString();
-        keyOpenSettings = keys.get("openSettingWindow").toString();
-        keyOpenSkillWindow = keys.get("openSkillWindow").toString();
-        keyUseAc = keys.get("useAc").toString();
-        keyUpdateAc = keys.get("updateAc").toString();
-        keyOpenChest = keys.get("openChest").toString();
+        Settings settings = Settings.getInstance();
+        keyMoveLeft = settings.getMoveLeftKey();
+        keyMoveDown = settings.getMoveDownKey();
+        keyMoveRight = settings.getMoveRightKey();
+        keyMoveUp = settings.getMoveUpKey();
+        keySprint = settings.getSprintKey();
+        keyAttack = settings.getAttackKey();
+        keyOpenInventar = settings.getOpenInventarKey();
+        keyOpenSettings = settings.getOpenSettingWindowKey();
+        keyOpenSkillWindow = settings.getOpenSkillWindowKey();
+        keyUseAc = settings.getUseAcKey();
+        keyUpdateAc = settings.getUpdateAcKey();
+        keyOpenChest = settings.getOpenChestKey();
     }
 
     private void testKeys() {

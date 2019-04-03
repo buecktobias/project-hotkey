@@ -91,19 +91,21 @@ public abstract class MovingActor extends Entity {
         moveDirection(d,1);
     }
     public void moveDirection(Direction d,int distance){
-        switch(d){
-            case RIGHT:
-                moveRight(distance);
-                break;
-            case LEFT:
-                moveLeft(distance);
-                break;
-            case UP:
-                moveUp(distance);
-                break;
-            case DOWN:
-                moveDown(distance);
-                break;
+        if(getWorld() != null) {
+            switch (d) {
+                case RIGHT:
+                    moveRight(distance);
+                    break;
+                case LEFT:
+                    moveLeft(distance);
+                    break;
+                case UP:
+                    moveUp(distance);
+                    break;
+                case DOWN:
+                    moveDown(distance);
+                    break;
+            }
         }
     }
     private void moveUp() {
@@ -162,7 +164,7 @@ public abstract class MovingActor extends Entity {
     private boolean moveUp(int distance){
         int x = getX();
         int y = getY() - distance;
-        return moveTo(x,y);
+        return moveTo(x, y);
     }
     private boolean moveRight(int distance){
         int x = getX()+distance;

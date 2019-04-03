@@ -42,6 +42,55 @@ public class Settings {
     public JSONObject getKeys() {
         return keys;
     }
+    public String getMoveLeftKey(){
+        return keys.get("moveLeft").toString();
+    }
+    public String getMoveRightKey(){
+        return keys.get("moveRight").toString();
+    }
+
+    public String getMoveDownKey(){
+        return keys.get("moveDown").toString();
+    }
+
+    public String getMoveUpKey(){
+        return keys.get("moveUp").toString();
+    }
+    public String getSprintKey(){
+        return keys.get("sprint").toString();
+    }
+
+    public String getAttackKey(){
+        return keys.get("attack").toString();
+    }
+
+    public String getOpenInventarKey(){
+        return keys.get("openInventar").toString();
+
+    }public String getOpenSettingWindowKey(){
+        return keys.get("openSettingWindow").toString();
+    }
+
+    public String getOpenSkillWindowKey(){
+        return keys.get("openSkillWindow").toString();
+    }
+
+    public String getUseAcKey(){
+        return keys.get("useAc").toString();
+    }
+    public String getUpdateAcKey(){
+        return keys.get("updateAc").toString();
+
+    }
+    public String getOpenChestKey(){
+        return keys.get("openChest").toString();
+    }
+
+
+
+
+
+
     public void setKeys(JSONObject keys){
         this.keys = keys;
         this.jsonObject.put("keys",keys);
