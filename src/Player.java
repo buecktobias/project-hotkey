@@ -306,6 +306,18 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         );
 
         if(weapon instanceof RangedWeapon) {
+            if(weapon instanceof Bow) {
+                Item projectile = getActiveAmmunition();
+                if(projectile instanceof Countable){
+                    if(((Countable) projectile).getItemCount() > 0){
+                        ((Countable) projectile).setItemCount(((Countable) projectile).getItemCount() - 1);
+                    }else {
+                        return;
+                    }
+                }else{
+                    return;
+                    }
+                }
             MouseInfo mouseInfo = Greenfoot.getMouseInfo();
             if(mouseInfo != null) {
                 ((RangedWeapon) weapon).shootFrom(this,mouseInfo.getX(),mouseInfo.getY(),new Arrow(200,10,.1,this,0));
