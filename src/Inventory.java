@@ -409,7 +409,7 @@ public class Inventory extends GUI implements Fixed {
                             Countable cItemA = (Countable) itemA;
                             // if there already is an Item of the same Type in player´s belt, their count will be added up
                             (cItemA).setItemCount(cItemA.getItemCount() + ((Countable) item).getItemCount());
-                            if(item instanceof  Ammunition){
+                            if(item instanceof  Projectile){
                                 ammunition[item.getIndexOfItemInArray(item, ammunition)] = null;
                             }else{
                                 beltItems[item.getIndexOfItemInArray(item, beltItems)] = null;
@@ -420,7 +420,7 @@ public class Inventory extends GUI implements Fixed {
                     }
                 }
                 addItemToArray(itemArray, item);
-                if(item instanceof  Ammunition){
+                if(item instanceof  Projectile){
                     ammunition[item.getIndexOfItemInArray(item, ammunition)] = null;
                 }else{
                     beltItems[item.getIndexOfItemInArray(item, beltItems)] = null;

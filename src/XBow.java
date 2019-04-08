@@ -31,7 +31,7 @@ public class XBow extends Environment implements Attackable,Explodes,Blocking {
     public void attack(Entity g, double attackSpeed) {
         if(FPS.getFrame() - lastFrameAttacked > attackSpeed){
             lastFrameAttacked = FPS.getFrame();
-            this.bow.shootFrom(this,g.getX(),g.getY(),new Arrow(this.damage,30,.1,this,0));
+            this.bow.shootFrom(this,g.getX(),g.getY(),new WoodenArrow(this.damage,30,.1,0));
         }
     }
     @Override

@@ -30,9 +30,9 @@ public class Staff extends RangedWeapon {
         for (int i = 0; i < AMOUNT_OF_PROJECTILES; i++) {
             int scatter = r.nextInt(SCATTER + 1) - SCATTER / 2;
             int rangeScatter = r.nextInt(SCATTER_RANGE + 1) - SCATTER_RANGE / 2;
-            Projectile projectile = new MagicMatter(getDamage(), getAttackRange()+rangeScatter, .2,a, 30);
+            Projectile projectile = new MagicMatter(getDamage(), getAttackRange()+rangeScatter, .2, 30);
             a.getWorld().addObject(projectile, a.getX()+scatter, a.getY()+scatter);
-            projectile.shootFromTo(a.getX()+scatter,a.getY()+scatter,toX,toY);
+            projectile.shootFromTo(a,a.getX()+scatter,a.getY()+scatter,toX,toY);
         }
     }
     //Item Getters and Setters

@@ -4,7 +4,7 @@ import greenfoot.GreenfootImage;
 import java.util.List;
 import java.util.Random;
 
-public abstract class Projectile extends Entity {
+public abstract class Projectile extends Item implements CanMove {
     private double velocityX;
     private double velocityY;
     private double speed;
@@ -15,14 +15,14 @@ public abstract class Projectile extends Entity {
     private Random r = new Random();
     private Actor whoIsShooting;
     abstract public GreenfootImage getDefaultImage();
-    public Projectile(int damage, double speed, double drag,Actor whoIsShooting, int scatter) {
+    public Projectile(int damage, double speed, double drag, int scatter) {
         this.damage = damage;
         this.speed = speed;
         this.drag = drag;
         this.scatter = scatter;
-        this.whoIsShooting = whoIsShooting;
     }
-    public void shootFromTo(int fromX,int fromY,int toX,int toY){
+    public void shootFromTo(Actor from,int fromX,int fromY,int toX,int toY){
+        this.whoIsShooting = from;
         makeShootingSound();
         int destinationX = toX - fromX;
         int destinationY = toY - fromY;
@@ -35,7 +35,9 @@ public abstract class Projectile extends Entity {
         this.velocityY = Math.sin(Math.toRadians(this.rotation))*this.speed;
 
     }
-    abstract void makeShootingSound();
+    public void makeShootingSound(){
+        // child classes can override this method to make a shooting sound
+    }
 
     public void act() {
         updatePosition();

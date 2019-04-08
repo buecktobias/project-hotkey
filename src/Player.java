@@ -320,7 +320,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
                 }
             MouseInfo mouseInfo = Greenfoot.getMouseInfo();
             if(mouseInfo != null) {
-                ((RangedWeapon) weapon).shootFrom(this,mouseInfo.getX(),mouseInfo.getY(),new Arrow(200,10,.1,this,0));
+                ((RangedWeapon) weapon).shootFrom(this,mouseInfo.getX(),mouseInfo.getY(),new WoodenArrow(200,10,.1,0));
             }
         }else {
             MouseInfo mouseInfo = Greenfoot.getMouseInfo();

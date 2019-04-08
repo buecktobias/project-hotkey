@@ -58,10 +58,11 @@ public class Sector0_0 extends OpenWorld {
         HealthPotion healthPotion1 = new HealthPotion(5);
         addObject(healthPotion1, 150, 100);
 
-        WoodenArrow woodenArrow = new WoodenArrow(4);
-        addObject(woodenArrow, 200, 50);
-        WoodenArrow woodenArrow1 = new WoodenArrow(5);
-        addObject(woodenArrow1, 200, 100);
+        addObject(new WoodenArrow(),0,70);
+        addObject(new WoodenArrow(),0,80);
+
+
+
 
         Teleporter teleporter2 = new Teleporter();
         Teleporter teleporter = new Teleporter();

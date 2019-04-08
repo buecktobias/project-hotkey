@@ -7,7 +7,9 @@ public enum ItemManager {
     Bow(          "Weapon",    1,"Dragonslayer GreatBow",4, new GreenfootImage(Files.getRpgIcons() + "W_Bow03.png")),
     Dagger(       "Weapon",    2,"Zahnstocher",          5, new GreenfootImage(Files.getRpgIcons() + "W_Dagger006.png")),
     HealthPotion( "Consumable",3,"HealthPotion",         7, new GreenfootImage(Files.getRpgIcons() + "P_Red01.png")),
-    WoodenArrow(  "Consumable",4,"wooden Arrow",         6, new GreenfootImage(Files.getRpgIcons() + "W_Bow17.png"));
+    WoodenArrow(  "Consumable",4,"wooden WoodenArrow",         6, new GreenfootImage(Files.getITEM_IMAGES_PATH() + "Arrow.png")),
+    MagicMatter("Consumable",5,"magic Matter",6,new GreenfootImage(Files.getRpgIcons() + "W_Bow17.png")),
+    FireArrow("Consumable",6,"fire Arrow",6,new GreenfootImage(Files.getRpgIcons() + "W_Bow17.png"));
 
     private final int itemID;
     private final int itemSLOTID;

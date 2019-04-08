@@ -14,11 +14,29 @@ public class Settings {
     private JSONObject keys;
     private String gameMode;
     private Object obj;
+    private boolean sound;
     // TODO turn sound off
     private final String JSON_FILE = "src/Settings.json";
     public Settings(){
             getSettings();
     }
+
+    public boolean isSound() {
+        return sound;
+    }
+
+    public void setSound(boolean sound) {
+        String sound_string;
+        if(sound){
+            sound_string = "true";
+        }else {
+            sound_string = "false";
+        }
+        jsonObject.put("sound",sound_string);
+        writeSettings();
+        this.sound = sound;
+    }
+
     private void getSettings() {
         {
             try {
@@ -29,6 +47,9 @@ public class Settings {
         }
         jsonObject = (JSONObject) obj;
         keys = (JSONObject) jsonObject.get("keys");
+        String sound_string = jsonObject.get("sound").toString();
+        sound = sound_string.equals("true");
+
         gameMode = jsonObject.get("gameMode").toString();
     }
     private void writeSettings(){

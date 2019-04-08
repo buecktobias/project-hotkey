@@ -1,5 +1,6 @@
 import greenfoot.Actor;
 import greenfoot.GreenfootImage;
+import greenfoot.GreenfootSound;
 import helper.Direction;
 
 import java.util.List;
@@ -25,6 +26,14 @@ public abstract class Entity extends Actor {
         }
         return null;
     }
+
+    public void makeSound(GreenfootSound sound){
+        if(Settings.getInstance().isSound()){
+            sound.play();
+        }
+    }
+
+
     public <A extends Actor> List<A> getIntersectingObjects(Class<A> c){
         return super.getIntersectingObjects(c);
     }

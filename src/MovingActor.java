@@ -7,7 +7,7 @@ import java.util.*;
  * MovingActor provides basic methods for movement control, as well as text based methods.
  * @author SAE
  */
-public abstract class MovingActor extends Entity {
+public abstract class MovingActor extends Entity implements CanMove {
     public int hitboxRadius=getWidth()*4;
     abstract void movingAnimation();
     abstract int getSpeed();

@@ -1,7 +1,7 @@
 import greenfoot.GreenfootImage;
+import greenfoot.GreenfootSound;
 
-public class WoodenArrow extends Ammunition implements Countable, Equippable {
-
+public class WoodenArrow extends Projectile implements Countable{
     private ItemManager itemManager = ItemManager.WoodenArrow;
     private final int itemSlotId = itemManager.getItemSLOTID();
     private final int itemId = itemManager.getItemID();
@@ -10,10 +10,81 @@ public class WoodenArrow extends Ammunition implements Countable, Equippable {
     private GreenfootImage itemImage = itemManager.getItemIMAGE();
     private boolean IEquipped = false;
     private int itemCount;
+    private GreenfootImage defaultImage = new GreenfootImage(Files.getITEM_IMAGES_PATH() + "Arrow.png");
+    private GreenfootSound arrowSound = new GreenfootSound("sounds/arrow2.wav");
+    @Override
+    public GreenfootImage getDefaultImage() {
+        return defaultImage;
+    }
 
-    public WoodenArrow(int itemCount){
-        this.itemCount = itemCount;
-        setImage(itemImage);
+    public ItemManager getItemManager() {
+        return itemManager;
+    }
+
+    public void setItemManager(ItemManager itemManager) {
+        this.itemManager = itemManager;
+    }
+
+    @Override
+    public int getItemSlotId() {
+        return itemSlotId;
+    }
+
+    @Override
+    public int getItemId() {
+        return itemId;
+    }
+
+    @Override
+    public String getItemType() {
+        return itemType;
+    }
+
+    @Override
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    @Override
+    public GreenfootImage getItemImage() {
+        return itemImage;
+    }
+
+    public void setItemImage(GreenfootImage itemImage) {
+        this.itemImage = itemImage;
+    }
+
+    @Override
+    public boolean isIEquipped() {
+        return IEquipped;
+    }
+
+    @Override
+    public void setIEquipped(boolean IEquipped) {
+        this.IEquipped = IEquipped;
+    }
+
+    public void makeShootingSound() {
+        arrowSound.play();
+    }
+
+    public WoodenArrow(){
+        super(10,40,0.1,0);
+        defaultImage.scale(32,32);
+        setImage(defaultImage);
+    }
+
+    public WoodenArrow(int damage, double speed, double drag, int scatter){
+        super(damage, speed, drag, scatter);
+        defaultImage.scale(32,32);
+        setImage(defaultImage);
+    }
+    public void act() {
+        //updatePosition();
     }
     public void compareIDWith(Item[] inventoryArray){
         for(Item item1: inventoryArray){
@@ -28,34 +99,10 @@ public class WoodenArrow extends Ammunition implements Countable, Equippable {
         }
         pick(inventoryArray);
     }
-
-    //Countable Getters & Setters
     public int getItemCount() {
         return itemCount;
     }
     public void setItemCount(int itemCount) {
         this.itemCount = itemCount;
-    }
-    //Item Getters and Setters
-    public int getItemSlotId() {
-        return itemSlotId;
-    }
-    public int getItemId() {
-        return itemId;
-    }
-    public String getItemType() {
-        return itemType;
-    }
-    public String getItemName() {
-        return itemName;
-    }
-    public GreenfootImage getItemImage() {
-        return itemImage;
-    }
-    public boolean isIEquipped() {
-        return IEquipped;
-    }
-    public void setIEquipped(boolean IEquipped) {
-        this.IEquipped = IEquipped;
     }
 }
