@@ -44,7 +44,7 @@ public class Inventory extends GUI implements Fixed {
     private Item[] weaponArray;
     private Item[] itemArray;
     private Item[] beltItems;
-    private Item[] ammunition;
+    private Projectile[] ammunition;
     private Item[] equippedItems = new Item[7];
     private LinkedList<Button>  buttonList;
     private GreenfootImage InventoryScreen      = new GreenfootImage(Files.getHUD_MENU_IMAGES_PATH() + "MyInventoryV5.png");

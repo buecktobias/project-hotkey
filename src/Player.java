@@ -76,7 +76,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private Item activeConsumable;
     private Item activeAmmunition;
     private Item[] beltItems = new Item[4];
-    private Item[] ammunition = new Item[4];
+    private Projectile[] ammunition = new Projectile[4];
     private Item[] equippedItems = new Item[6];
     private Item[] weaponsArray = new Item[20];
     private Item[] armorArray = new Item[20];
@@ -580,10 +580,10 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     public void setBeltItems(Item[] beltItems) {
         this.beltItems = beltItems;
     }
-    public Item[] getAmmunition() {
+    public Projectile[] getAmmunition() {
         return ammunition;
     }
-    public void setAmmunition(Item[] ammunition) {
+    public void setAmmunition(Projectile[] ammunition) {
         this.ammunition = ammunition;
     }
 

@@ -1,7 +1,7 @@
 import greenfoot.GreenfootImage;
 import greenfoot.GreenfootSound;
 
-public class WoodenArrow extends Projectile implements Countable{
+public class WoodenArrow extends Projectile implements Countable,Equippable{
     private ItemManager itemManager = ItemManager.WoodenArrow;
     private final int itemSlotId = itemManager.getItemSLOTID();
     private final int itemId = itemManager.getItemID();
@@ -75,7 +75,15 @@ public class WoodenArrow extends Projectile implements Countable{
     public WoodenArrow(){
         super(10,40,0.1,0);
         defaultImage.scale(32,32);
+        this.itemCount = 1;
         setImage(defaultImage);
+    }
+    public WoodenArrow(int itemCount){
+        super(10,40,0.1,0);
+        defaultImage.scale(32,32);
+        this.itemCount = itemCount;
+        setImage(defaultImage);
+
     }
 
     public WoodenArrow(int damage, double speed, double drag, int scatter){
