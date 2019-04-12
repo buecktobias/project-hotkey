@@ -1,7 +1,7 @@
 import greenfoot.GreenfootImage;
 import greenfoot.GreenfootSound;
 
-public class WoodenArrow extends Projectile implements Countable,Equippable{
+public class WoodenArrow extends Projectile implements playsSound,Countable,Equippable{
     private ItemManager itemManager = ItemManager.WoodenArrow;
     private final int itemSlotId = itemManager.getItemSLOTID();
     private final int itemId = itemManager.getItemID();
@@ -69,7 +69,7 @@ public class WoodenArrow extends Projectile implements Countable,Equippable{
     }
 
     public void makeShootingSound() {
-        arrowSound.play();
+        play(arrowSound);
     }
 
     public WoodenArrow(){

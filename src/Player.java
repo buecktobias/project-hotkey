@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 
 
-public class Player extends MovingActor implements Attackable, Blocking, FireSensitive, CanSwim {
+public class Player extends MovingActor implements playsSound,Attackable, Blocking, FireSensitive, CanSwim {
     private static Player ourInstance;
 
     public static Player getInstance() {
@@ -22,7 +22,6 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         return effectWindow;
     }
 
-    private int rightMouseButtonClickedFramesLong = 0;
     private int weaponsPicked = 0;
     private int itemsPicked = 0;
     private int armorPicked = 0;
@@ -56,8 +55,6 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private double fireDamage = 0;
     private boolean skillScreenShown = false;
     private boolean isIActive = false;
-    private boolean isSettingsWindowShown = false;
-    private final FPS fps = FPS.getInstance();
     private String keyMoveLeft;
     private String keyMoveRight;
     private String keyMoveUp;
@@ -81,7 +78,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private Item[] weaponsArray = new Item[20];
     private Item[] armorArray = new Item[20];
     private Item[] itemsArray = new Item[20];
-    private int[] levelUps = new int[]{25,50,100,150,300,600,1200,1800,3000,5000,8000,15000,30000,50000};
+    private int[] levelUps = new int[]{25,50,100,150,300,600,1_200,1_800,3_000,5_000,8_000,15_000,30_000,50_000};
     private GreenfootImage defaultImage;
     private GreenfootImage imageWalking1;
     private GreenfootImage imageWalking2;
@@ -126,7 +123,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
 
     private void move(Direction d, int distance) {
         super.moveDirection(d, distance);
-        walkingSound.play();
+        play(walkingSound);
         if (getWorld() instanceof OpenWorld) {
             ((OpenWorld) getWorld()).resetPlayersPosition(this);
         }
@@ -252,7 +249,8 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         performMovement();
     }
     public void killedEnemy(Attackable actor){
-        exp += 50;
+        exp += 50; // TODO different Exp for different enemies
+        updateLevel();
     }
     public void updateLevel(){
         if(exp > levelUps[level]){
@@ -263,7 +261,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
         int attackRange;
         int damage;
         if(weapon == null){
-            attackRange = 100;
+            attackRange = 100; // attack Range when you do not have a weapon.
             damage = this.damage;
         }else{
             attackRange = weapon.getAttackRange();
@@ -331,7 +329,7 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     private void showSettingsWindow() {
         if (FPS.getFrame() - lastFrameSettingsWindowOpened > waitTimeOpenSettingsWindow) {
             if (getWorld().getObjects(SettingsWindow.class).size() == 0) {
-                this.getWorld().addObject(settingsWindow, 500, 500);
+                this.getWorld().addObject(settingsWindow, 500, 450);
             } else {
                 settingsWindow.deleteButtons();
                 this.getWorld().removeObject(settingsWindow);
@@ -349,7 +347,6 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     }
 
     public void act() {
-        updateLevel();
         setAC();
         setPlayerImagesDefault();
         updateKeys();
@@ -457,12 +454,12 @@ public class Player extends MovingActor implements Attackable, Blocking, FireSen
     }
     public void setLife(double life) {
         if(life + this.getLifeRegeneration() < this.life && FPS.getFrame() - lastTimeDamageSoundPlayed > damageSoundWaitFrames){
-            damageSound.play();
+            play(damageSound);
             lastTimeDamageSoundPlayed = FPS.getFrame();
         }
         this.life = life;
         if (this.life < minLife) {
-            gameOverSound.play();
+            play(gameOverSound);
             Greenfoot.setWorld(new DeathScreen());
         }
     }

@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
-public class Sector0_0 extends OpenWorld {
+public class Sector0_0 extends OpenWorld implements playsSound {
     private Random r = new Random();
     private final GreenfootImage bg = new GreenfootImage(Files.getSCREENS_PATH() + "background_grass.png");
     private final GreenfootSound bgSound = new GreenfootSound("sounds/backgroundMusic.wav");
@@ -35,10 +35,10 @@ public class Sector0_0 extends OpenWorld {
         super(1024, 736);
         setScrollingBackground(new GreenfootImage(bg));
         bgSound.setVolume(10);
-        bgSound.playLoop();
+        //bgSound.playLoop();
         bg.scale(32, 32);
         getSettings();
-        setPaintOrder(Button.class,MiniMap.class,ItemInfoScreen.class, Inventory.class, HUD.class,MovingActor.class,Window.class,Teleporter.class);
+        setPaintOrder(Button.class,SettingsWindow.class,MiniMap.class,ItemInfoScreen.class, Inventory.class, HUD.class,MovingActor.class,Window.class,Teleporter.class);
         setBackground(bg);
         addObjectTopLeftCorner(new MiniMap(),WORLD_WIDTH - 10,WORLD_HEIGHT - 10);
         addObjectTopLeftCorner(FPS.getInstance(), 1000, WORLD_HEIGHT - 250);
@@ -213,6 +213,8 @@ public class Sector0_0 extends OpenWorld {
     @Override
     public void act() {
         getSettings();
+        play(bgSound);
+        stopIfSoundIsOff(bgSound);
         long currentFrame = FPS.getFrame();
         if (gameMode != null) {
             if (currentFrame != 0) {

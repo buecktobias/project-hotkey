@@ -24,6 +24,12 @@ public class Settings {
     public boolean isSound() {
         return sound;
     }
+    public String getSoundString(){
+        if(sound){
+            return "true";
+        }
+        return "false";
+    }
 
     public void setSound(boolean sound) {
         String sound_string;
