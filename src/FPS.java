@@ -1,8 +1,6 @@
 import greenfoot.GreenfootImage;
 import greenfoot.World;
 
-import java.awt.*;
-
 public class FPS extends Window {
     private static long frame = 0;
     private int fps;
@@ -36,8 +34,8 @@ public class FPS extends Window {
             //System.out.println(secondselapsed);
             fps = (int) Math.round(update / secondselapsed);
         }
-        img.setColor(Color.BLACK);
-        img.setFont(new Font(Font.SANS_SERIF, Font.ITALIC, 30));
+        //img.setColor(Color.BLACK);
+        //img.setFont(new GreenfootFont(new Font(Font.SANS_SERIF, Font.ITALIC, 30)));
         img.drawString(String.valueOf(fps), 30, 40);
         setImage(img);
     }

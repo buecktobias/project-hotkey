@@ -1,7 +1,5 @@
 import greenfoot.GreenfootImage;
 
-import java.awt.*;
-
 public class HUD extends GUI implements Fixed {
     //TODO align ammunition image
     private Player p;
@@ -56,7 +54,7 @@ public class HUD extends GUI implements Fixed {
     }
     private void drawLevelFonts(){
         Background.setFont(GUILargeFont);
-        Background.setColor(Color.BLACK);
+        //Background.setColor(Color.BLACK);
         Background.drawString("LVL:" + (p.getLevel()) + " "+ (p.getExp())  + "/" + p.getLevelUpValue(p.getLevel()), 803, 30);
     }
 

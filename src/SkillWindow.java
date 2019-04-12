@@ -1,7 +1,8 @@
+import greenfoot.Color;
+import greenfoot.Font;
 import greenfoot.GreenfootImage;
 import greenfoot.World;
 
-import java.awt.*;
 import java.util.HashMap;
 import java.util.LinkedList;
 
@@ -21,7 +22,7 @@ public class SkillWindow extends Window{
     private final int LIFE_REGENERATION_START_VALUE = 0;
     private final int IMAGE_TRANSPARENCY = 150;
     private final String SKILL_POINTS_STRING = "SkillPoints";
-    private final Font TEXT_FONT = new Font(Font.SANS_SERIF, Font.ITALIC, 20);
+    private final Font TEXT_FONT = new Font("SANS_SERIF",false,true, 20);
     private HashMap<String, Integer> skills = new HashMap<String, Integer>(){
         {
             put(STRENGTH_STRING,STRENGTH_START_VALUE);

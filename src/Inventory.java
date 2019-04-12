@@ -1,3 +1,4 @@
+import greenfoot.Color;
 import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
 import greenfoot.World;
@@ -5,7 +6,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -231,7 +231,7 @@ public class Inventory extends GUI implements Fixed {
         InventoryScreen.drawString(weapons,   560,196);
         InventoryScreen.drawString(armor,     660,196);
         InventoryScreen.drawString(items,     740,196);
-        InventoryScreen.setColor(Color.decode("#FFD700"));
+        InventoryScreen.setColor(new Color(255,215,0));
         if(inventoryTab == 0){
             InventoryScreen.drawString(weapons,   560,196);
         }else if(inventoryTab == 1){
@@ -266,10 +266,11 @@ public class Inventory extends GUI implements Fixed {
         String InfoMouseButton = "select Item: right Click";
         InventoryScreen.setColor(Color.DARK_GRAY);
         InventoryScreen.fillRect(X, Y, 300, 70);
-        InventoryScreen.setColor(Color.lightGray);
+        InventoryScreen.setColor(Color.LIGHT_GRAY);
         InventoryScreen.drawRect(X, Y, 300, 70);
         InventoryScreen.setFont(GUILargeFont);
-        InventoryScreen.setColor(Color.decode("#FFD700"));
+        // InventoryScreen.setColor(Color.decode("#FFD700"));
+        InventoryScreen.setColor(new Color(255,215,0));
         InventoryScreen.drawString(item.getItemName(), X + 10,Y + 20 );
         InventoryScreen.drawString(InfoOpenInfo, X + 10, Y + 40);
         if(item instanceof Equippable){

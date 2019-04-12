@@ -1,7 +1,7 @@
+import greenfoot.Color;
+import greenfoot.Font;
 import greenfoot.GreenfootImage;
 import greenfoot.World;
-
-import java.awt.*;
 
 public class ItemInfoScreen extends Inventory implements Fixed {
 
@@ -26,8 +26,8 @@ public class ItemInfoScreen extends Inventory implements Fixed {
     }
 
     public void drawItemInfo(Item item){
-        ItemInfoScreen.setFont(new Font(Font.SANS_SERIF, Font.ITALIC, 40));
-        ItemInfoScreen.setColor(Color.decode("#FFD700"));
+        ItemInfoScreen.setFont(new Font("SANS_SERIF",false, true, 40));
+        ItemInfoScreen.setColor(new Color(255,150,0));
         //ItemInfoScreen.drawString(item.getItemName(), 300,300);
         ItemInfoScreen.drawString("Hier könnte ihre Werbung stehen!!!!", 200,300);
     }

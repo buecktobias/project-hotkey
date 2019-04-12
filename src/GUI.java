@@ -1,11 +1,12 @@
 import greenfoot.Actor;
+import greenfoot.Color;
+import greenfoot.Font;
 import greenfoot.GreenfootImage;
 
-import java.awt.*;
 
 public abstract class GUI extends Actor {
 
-    public  final Font GUILargeFont = new Font(Font.MONOSPACED, Font.BOLD, 19);
+    public  final Font GUILargeFont = new Font("MONOSPACED", true, false, 19);
 
     public void drawItemAt(GreenfootImage g, int X, int Y, Item item){
         if(item != null){
@@ -19,11 +20,11 @@ public abstract class GUI extends Actor {
     }
     public void drawBarAt(GreenfootImage g, double width, int maxValue, int scale, String lightC, String medC, String darkC, int X, int Y){
         int scaleWidth = (int) (width / (double) maxValue * scale);
-        g.setColor(Color.decode(lightC));
+        //g.setColor(Color.decode(lightC));
         g.fillRect(X,Y, scaleWidth,23);
-        g.setColor(Color.decode(medC));
+        //g.setColor(Color.decode(medC));
         g.fillRect(X,Y, scaleWidth,16);
-        g.setColor(Color.decode(darkC));
+        //g.setColor(Color.decode(darkC));
         g.fillRect(X,Y, scaleWidth,9);
     }
     public void drawItemCount(GreenfootImage g, Countable item, int X, int Y){

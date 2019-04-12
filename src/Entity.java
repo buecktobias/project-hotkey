@@ -34,8 +34,10 @@ public abstract class Entity extends Actor {
     }
 
 
-    public <A extends Actor> List<A> getIntersectingObjects(Class<A> c){
-        return super.getIntersectingObjects(c);
+
+    @Override
+    public <A> List<A> getIntersectingObjects(Class<A> cls) {
+        return super.getIntersectingObjects(cls);
     }
     /*
     public void setLocation(int x, int y) {

@@ -1,9 +1,9 @@
+import greenfoot.Color;
 import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
 import greenfoot.World;
 import org.json.simple.JSONObject;
 
-import java.awt.*;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -48,7 +48,7 @@ public class SettingsWindow extends Window {
         int text2X = 400;
         int textSize = 20;
         int marginTop = 50;
-        Font textFont = new Font(Font.SANS_SERIF, Font.PLAIN, 20);
+        //Font textFont = new Font(Font.SANS_SERIF, Font.PLAIN, 20);
         getSettings();
 
 
@@ -58,11 +58,11 @@ public class SettingsWindow extends Window {
 
         img.setTransparency(255);
         img.setColor(Color.WHITE);
-        img.setFont(textFont);
+        //img.setFont(textFont);
         Button button;
         img.drawString("Sound",textX, i * (textSize * 2) + marginTop);
         GreenfootImage buttonImgG = new GreenfootImage(Files.getBUTTONS_PATH() + "test.png");
-        buttonImgG.setFont(textFont);
+        //buttonImgG.setFont(textFont);
         buttonImgG.scale(buttonWidth,buttonHeight);
         buttonImgG.setTransparency(buttonTransparency);
         img.drawString(Settings.getInstance().getSoundString(),text2X,i * (textSize * 2) + marginTop);
@@ -83,11 +83,11 @@ public class SettingsWindow extends Window {
 
         img.setTransparency(255);
         img.setColor(Color.WHITE);
-        img.setFont(textFont);
+        //img.setFont(textFont);
         Button button2;
         img.drawString("gameMode",textX, i * (textSize * 2) + marginTop);
         GreenfootImage buttonImgGameMode = new GreenfootImage(Files.getBUTTONS_PATH() + "test.png");
-        buttonImgGameMode.setFont(textFont);
+        //buttonImgGameMode.setFont(textFont);
         buttonImgGameMode.scale(buttonWidth,buttonHeight);
         buttonImgGameMode.setTransparency(buttonTransparency);
         img.drawString(gameMode,text2X,i * (textSize * 2) + marginTop);
@@ -108,7 +108,7 @@ public class SettingsWindow extends Window {
         for (Object key : keys.keySet()) {
             img.drawString(key.toString(), textX, i * (textSize * 2) + marginTop);
             GreenfootImage buttonImg = new GreenfootImage(Files.getBUTTONS_PATH() + "test.png");
-            buttonImg.setFont(textFont);
+            //buttonImg.setFont(textFont);
             buttonImg.scale(buttonWidth,buttonHeight);
             buttonImg.setTransparency(buttonTransparency);
             img.drawString(keys.get(key).toString(),text2X,i*(textSize * 2) + marginTop);
