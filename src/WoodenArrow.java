@@ -92,7 +92,9 @@ public class WoodenArrow extends Projectile implements playsSound,Countable,Equi
         setImage(defaultImage);
     }
     public void act() {
-        //updatePosition();
+        if(isShooted()) {
+            updatePosition();
+        }
     }
     public void compareIDWith(Item[] inventoryArray){
         for(Item item1: inventoryArray){

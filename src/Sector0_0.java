@@ -18,7 +18,6 @@ public class Sector0_0 extends OpenWorld implements playsSound {
     private final int BorderY1 = -1_000;
     private final int BorderX2 = 1_000;
     private final int BorderY2 = 1_000;
-
     private final int WORLD_WIDTH = 1024;
     private final int WORLD_HEIGHT = 736;
 
@@ -35,8 +34,7 @@ public class Sector0_0 extends OpenWorld implements playsSound {
         super(1024, 736);
         setScrollingBackground(new GreenfootImage(bg));
         bgSound.setVolume(10);
-        //bgSound.playLoop();
-        bg.scale(32, 32);
+        bg.scale(128, 128);
         getSettings();
         setPaintOrder(Button.class,SettingsWindow.class,MiniMap.class,ItemInfoScreen.class, Inventory.class, HUD.class,MovingActor.class,Window.class,Teleporter.class);
         setBackground(bg);
@@ -58,7 +56,10 @@ public class Sector0_0 extends OpenWorld implements playsSound {
         HealthPotion healthPotion1 = new HealthPotion(5);
         addObject(healthPotion1, 150, 100);
 
-        addObject(new WoodenArrow(),0,70);
+        WoodenArrow woodenArrow = new WoodenArrow();
+        woodenArrow.setItemCount(40);
+
+        addObject(woodenArrow,0,70);
         addObject(new WoodenArrow(),0,80);
 
 
@@ -96,12 +97,12 @@ public class Sector0_0 extends OpenWorld implements playsSound {
         randomObjects(Cobweb.class, 200, -600, 800, 400, 10);
         randomObjects(Grass.class, -500, -300, 400, 800, 2);
         randomObjects(Tree.class, 20, 100, 800, 600, 2);
-        randomObjects(Grass.class, 700, 600, 1000, 900, 6);
+        randomObjects(Grass.class, 700, 600, 900, 900, 6);
         randomObjects(Rock.class, 500, -500, 900, 300, 8);
-        randomObjects(Water.class, -600, 200, -100, 1_000, 1);
-        randomObjects(Fire.class, 700, 600, 1000, 900, 5);
-        randomObjects(Fire.class, -1000, -1000, -100, -200, 10);
-        randomObjects(Grass.class, BorderX1, BorderY1, BorderX2, BorderY2, 12);
+        randomObjects(Water.class, -600, 200, -100, 800, 1);
+        randomObjects(Fire.class, 700, 600, 900, 900, 5);
+        randomObjects(Fire.class, -900, -900, -100, -200, 10);
+        randomObjects(Grass.class, BorderX1+250, BorderY1+250, BorderX2-250, BorderY2-250, 12);
         boundingRocks(BorderX1, BorderY1, BorderX2, BorderY2);
         this.resetPlayersPosition(player);
     }
@@ -116,17 +117,18 @@ public class Sector0_0 extends OpenWorld implements playsSound {
     }
 
     private void boundingRocks(final int smallX, final int smallY, final int maxX, final int maxY) {
-        for (int x = smallX; x < maxX; x += 32) {
-            addObject(new Rock(), x, smallY);
+        int rockSize = 128;
+        for (int x = smallX; x < maxX; x += rockSize) {
+            addObject(new Rock(rockSize,rockSize), x, smallY);
         }
-        for (int x = smallX; x < maxX; x += 32) {
-            addObject(new Rock(), x, maxY);
+        for (int x = smallX; x < maxX; x += rockSize) {
+            addObject(new Rock(rockSize,rockSize), x, maxY);
         }
-        for (int y = smallY; y < maxY; y += 32) {
-            addObject(new Rock(), smallX, y);
+        for (int y = smallY; y < maxY; y += rockSize) {
+            addObject(new Rock(rockSize,rockSize), smallX, y);
         }
-        for (int y = smallY; y < maxY; y += 32) {
-            addObject(new Rock(), maxX, y);
+        for (int y = smallY; y < maxY; y += rockSize) {
+            addObject(new Rock(rockSize,rockSize), maxX, y);
         }
     }
 

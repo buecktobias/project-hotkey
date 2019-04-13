@@ -121,38 +121,17 @@ public abstract class MovingActor extends Entity implements CanMove {
         moveDown(1);
     }
 
-    public boolean intersectsWithBlockingObject(boolean again){
+    public boolean intersectsWithBlockingObject(){
         List<Entity> intersectingObjects = getIntersectingObjects(Entity.class);
         intersectingObjects.removeIf(intersect -> !(intersect instanceof Blocking));
-        List<Entity> objectsInRange = getObjectsInRange(this.hitboxRadius, Entity.class);
-        objectsInRange.removeIf(object -> !(object instanceof Blocking));
-        if(intersectingObjects.size() > 0) {
-            for(Entity intersect:intersectingObjects){
-                for(Entity object:objectsInRange){
-                    if(intersect == object){
-                        if(!(again)){
-                            return true;
-                        }else{
-                        if(intersect instanceof MovingActor){
-                            if(((MovingActor) intersect).intersectsWithBlockingObject(false)){
-                                return true;
-                            }
-                        }else{
-                            return true;
-                        }
-                    }
-                    }
-                }
 
-            }
-        }
-        return false;
+        return intersectingObjects.size() > 0;
     }
     private boolean moveTo(int x,int y){
         int oldX = this.getX();
         int oldY = this.getY();
         setLocation(x,y);
-        if(intersectsWithBlockingObject(true)){
+        if(intersectsWithBlockingObject()){
             setLocation(oldX,oldY);
             return false;
         }else {

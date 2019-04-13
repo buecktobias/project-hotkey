@@ -4,6 +4,7 @@ public class Water extends Environment implements HasEffect {
     private final int WATER_DAMAGE = 1;
     public Water(){
         GreenfootImage img = new GreenfootImage(Files.getENVIRONMENT_PATH() + "Water.png");
+        img.scale(32,32);
         setImage(img);
     }
 

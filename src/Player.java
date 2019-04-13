@@ -318,7 +318,7 @@ public class Player extends MovingActor implements playsSound,Attackable, Blocki
                 }
             MouseInfo mouseInfo = Greenfoot.getMouseInfo();
             if(mouseInfo != null) {
-                ((RangedWeapon) weapon).shootFrom(this,mouseInfo.getX(),mouseInfo.getY(),new WoodenArrow(200,10,.1,0));
+                ((RangedWeapon) weapon).shootFrom(this,mouseInfo.getX(),mouseInfo.getY(),new WoodenArrow(200,25,.2,0));
             }
         }else {
             MouseInfo mouseInfo = Greenfoot.getMouseInfo();

@@ -5,4 +5,9 @@ public class Rock extends Environment implements Blocking  {
         GreenfootImage img = new GreenfootImage(Files.getENVIRONMENT_PATH() + "rock.png");
         setImage(img);
     }
+    public Rock(int width,int height){
+        GreenfootImage img = new GreenfootImage(Files.getENVIRONMENT_PATH() + "rock.png");
+        img.scale(width, height);
+        setImage(img);
+    }
 }

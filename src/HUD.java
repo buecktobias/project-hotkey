@@ -1,3 +1,4 @@
+import greenfoot.Color;
 import greenfoot.GreenfootImage;
 
 public class HUD extends GUI implements Fixed {
@@ -16,9 +17,9 @@ public class HUD extends GUI implements Fixed {
         expScaling(p.getExp(),12.3);
         Background = new GreenfootImage(Files.getHUD_MENU_IMAGES_PATH() + "Hud_V4.png");
         setImage(Background);
-        drawBarAt(Background, p.getLife(), p.getMaxLife(), 308, "#7f0000", "#990000", "#cc0000", 12, 12);
-        drawBarAt(Background,p.getEndurance(), p.getMaxEndurance(), 246, "#007f00", "#009900", "#00cc00",12,42 );
-        drawBarAt(Background,(double)(p.getExp()), p.getLevelUpValue(p.getLevel()), ((int)(scale)), "#7f007f", "#990099", "#cc00cc", 704,12);
+        drawBarAt(Background, p.getLife(), p.getMaxLife(), 308, new Color(127,0,0), new Color(153,0,0), new Color(204,0,0), 12, 12);
+        drawBarAt(Background,p.getEndurance(), p.getMaxEndurance(), 246, new Color(0,127,0), new Color(0,153,0), new Color(0,204,0),12,42 );
+        drawBarAt(Background,(double)(p.getExp()), p.getLevelUpValue(p.getLevel()), ((int)(scale)), new Color(127,0,127), new Color(153,0,153), new Color(204,0,204), 704,12);
         drawEquippedWeapons();
         drawLevelFonts();
         drawActiveBeltItem();

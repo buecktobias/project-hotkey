@@ -12,6 +12,7 @@ public abstract class Projectile extends Item implements CanMove {
     private int rotation;
     private double drag;
     private int scatter;
+    public boolean shooted = false;
     private Random r = new Random();
     private Actor whoIsShooting;
     abstract public GreenfootImage getDefaultImage();
@@ -22,6 +23,7 @@ public abstract class Projectile extends Item implements CanMove {
         this.scatter = scatter;
     }
     public void shootFromTo(Actor from,int fromX,int fromY,int toX,int toY){
+        shooted = true;
         this.whoIsShooting = from;
         makeShootingSound();
         int destinationX = toX - fromX;
@@ -39,9 +41,6 @@ public abstract class Projectile extends Item implements CanMove {
         // child classes can override this method to make a shooting sound
     }
 
-    public void act() {
-        updatePosition();
-    }
 
     public void hits(Attackable attackable){
         double newLife = attackable.getLife() - damage;
@@ -64,10 +63,13 @@ public abstract class Projectile extends Item implements CanMove {
             for (Entity entity : intersecting) {
                 if(entity instanceof Attackable) {
                     hits((Attackable) entity);
+                    getWorld().removeObject(this);
                     break;
+                }else{
+
                 }
             }
-            getWorld().removeObject(this);
+            speed = 0;
             return;
         }
 
@@ -75,7 +77,7 @@ public abstract class Projectile extends Item implements CanMove {
         setLocation(newX, newY);
 
         if(speed <= 0) {
-            getWorld().removeObject(this);
+            setShooted(false);
             return;
         }
 
@@ -84,8 +86,11 @@ public abstract class Projectile extends Item implements CanMove {
         this.velocityY = Math.sin(Math.toRadians(this.rotation)) * this.speed;
     }
 
-    private void follow(MovingActor movingActor){
-
+    public boolean isShooted() {
+        return shooted;
     }
 
+    public void setShooted(boolean shooted) {
+        this.shooted = shooted;
+    }
 }
