@@ -94,15 +94,16 @@ public class Sector0_0 extends OpenWorld implements playsSound {
         Dagger dagger = new Dagger();
         addObject(dagger, 250, 50);
 */
+
         randomObjects(Cobweb.class, 200, -600, 800, 400, 10);
         randomObjects(Grass.class, -500, -300, 400, 800, 2);
-        randomObjects(Tree.class, 20, 100, 800, 600, 2);
-        randomObjects(Grass.class, 700, 600, 900, 900, 6);
-        randomObjects(Rock.class, 500, -500, 900, 300, 8);
+        //randomObjects(Tree.class, 20, 100, 800, 600, 2);
+        // randomObjects(Grass.class, 700, 600, 900, 900, 6);
+        //randomObjects(Rock.class, 500, -500, 900, 300, 8);
         randomObjects(Water.class, -600, 200, -100, 800, 1);
         randomObjects(Fire.class, 700, 600, 900, 900, 5);
         randomObjects(Fire.class, -900, -900, -100, -200, 10);
-        randomObjects(Grass.class, BorderX1+250, BorderY1+250, BorderX2-250, BorderY2-250, 12);
+        // randomObjects(Grass.class, BorderX1+250, BorderY1+250, BorderX2-250, BorderY2-250, 12);
         boundingRocks(BorderX1, BorderY1, BorderX2, BorderY2);
         this.resetPlayersPosition(player);
     }
