@@ -31,7 +31,7 @@ public class Sector0_0 extends OpenWorld implements playsSound {
 
     public Sector0_0() {
 
-        super(1024, 736);
+        super(1900, 950);
         setScrollingBackground(new GreenfootImage(bg));
         bgSound.setVolume(10);
         bg.scale(128, 128);
@@ -96,8 +96,8 @@ public class Sector0_0 extends OpenWorld implements playsSound {
 */
 
         randomObjects(Cobweb.class, 200, -600, 800, 400, 10);
-        randomObjects(Grass.class, -500, -300, 400, 800, 2);
-        //randomObjects(Tree.class, 20, 100, 800, 600, 2);
+        //randomObjects(Grass.class, -500, -300, 400, 800, 2);
+        randomObjects(Tree.class, 20, 100, 800, 600, 2);
         // randomObjects(Grass.class, 700, 600, 900, 900, 6);
         //randomObjects(Rock.class, 500, -500, 900, 300, 8);
         randomObjects(Water.class, -600, 200, -100, 800, 1);

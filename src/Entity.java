@@ -3,6 +3,7 @@ import greenfoot.GreenfootImage;
 import greenfoot.GreenfootSound;
 import helper.Direction;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public abstract class Entity extends Actor {
@@ -20,6 +21,9 @@ public abstract class Entity extends Actor {
         this.defaultImage = new GreenfootImage(getImage());
     }
     public Player getPlayer(int visualRange) {
+        if(this.getWorld() == null){
+            return null;
+        }
         List<Player> playersInVisualRange = getObjectsInRange(visualRange, Player.class);
         if (playersInVisualRange.size() != 0) {
             return playersInVisualRange.get(0);
@@ -37,6 +41,9 @@ public abstract class Entity extends Actor {
 
     @Override
     public <A> List<A> getIntersectingObjects(Class<A> cls) {
+        if( getWorld() == null){
+            return new LinkedList<>();
+        }
         return super.getIntersectingObjects(cls);
     }
     /*

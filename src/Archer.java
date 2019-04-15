@@ -30,7 +30,7 @@ public class Archer extends Hostile implements Attackable,Blocking,FireSensitive
     private GreenfootImage imageWalking1= new GreenfootImage(Files.getPlayerPath() + "player_walking1.png");
     private GreenfootImage imageWalking2= new GreenfootImage(Files.getPlayerPath() + "player_walking2.png");
     private GreenfootImage imageWalking3= new GreenfootImage(Files.getPlayerPath() + "player_walking3.png");
-    private GreenfootImage imageWalking4= new GreenfootImage(Files.getPlayerPath() + "archer_walking4.png");
+    private GreenfootImage imageWalking4= new GreenfootImage(Files.getCHARACTERS_PATH() + "archer_walking4.png");
     private GreenfootImage[] animationImages;
     private Bow bow;
     public Archer(){

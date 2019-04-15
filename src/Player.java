@@ -42,7 +42,7 @@ public class Player extends MovingActor implements playsSound,Attackable, Blocki
     private final int waitTimeOpenSettingsWindow = 10;
     private final int minLife = 0;
     private final int waitTimeWhenEnduranceIsZero = 5;
-    private final int gameSpeed = 50;
+    private final int gameSpeed = 48;
     private long lastFrameSettingsWindowOpened = 0;
     private long lastFrameSkillWindowOpened = 0;
     private long lastTimeDamageSoundPlayed = 0;

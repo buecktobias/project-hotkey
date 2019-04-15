@@ -26,7 +26,7 @@ public class Bomb extends Environment implements Blocking,ExplodingBehaviour {
     }
     public void resetImages(){
         triggeredImage1 = new GreenfootImage(Files.getENVIRONMENT_PATH() + "bomb_triggered1.png");
-        triggeredImage2 = new GreenfootImage(Files.getENVIRONMENT_PATH() + "images/Environment/bomb_triggered2.png");
+        triggeredImage2 = new GreenfootImage(Files.getENVIRONMENT_PATH() + "bomb_triggered2.png");
     }
     public double distanceBetween(Actor a1,Actor a2){
         return Math.abs(a1.getX() - a2.getX()) + Math.abs(a1.getY() - a2.getY());
